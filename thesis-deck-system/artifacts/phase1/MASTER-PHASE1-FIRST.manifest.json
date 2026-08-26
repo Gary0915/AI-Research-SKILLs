@@ -87,7 +87,7 @@
   ],
   "outputs": {
     "pptx": "thesis-deck-system/artifacts/phase1/master_first_build.pptx",
-    "pptx_sha256": "8a0b80945c688858c76696469305ceab4775a67f8472e633df40d48b0f8bf7c0"
+    "pptx_sha256": "7cc7bd4d6c0c6b35208e7980ba403fccb05477c7b331af6578dc41624178d422"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE1-REVISED"
