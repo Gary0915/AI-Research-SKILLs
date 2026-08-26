@@ -60,4 +60,3 @@ def profile_template(path: Path, output_path: Path) -> dict:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(profile, indent=2), encoding="utf-8")
     return profile
-

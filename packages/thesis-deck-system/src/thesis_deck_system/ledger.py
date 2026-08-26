@@ -75,4 +75,3 @@ class Ledger:
             elif event.event_type == "stage_revised":
                 state["stages"][payload["stage_id"]] = dict(payload)
         return state
-

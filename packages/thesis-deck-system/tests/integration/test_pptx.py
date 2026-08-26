@@ -14,4 +14,3 @@ def test_python_backend_preserves_native_layout_and_editable_content(tmp_path: P
     assert report["slide_count"] == 4
     assert report["has_editable_text"] is True
     assert report["orphan_parts"] == []
-

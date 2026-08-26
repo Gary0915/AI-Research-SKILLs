@@ -13,4 +13,3 @@ def test_template_profile_records_native_structure(tmp_path: Path):
     assert len(profile["layouts"]) >= 2
     assert set(["photo_observation", "hero_plot_discussion"]) <= set(profile["semantic_roles"])
     assert len(profile["source_sha256"]) == 64
-

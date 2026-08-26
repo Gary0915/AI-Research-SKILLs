@@ -172,4 +172,3 @@ def semantic_findings(bundle: dict[str, Any]) -> list[Finding]:
         if open_critical and release_stage.get("status") == "pass":
             findings.append(Finding("RELEASE-CRITICAL-FINDING-OPEN", "release", "Release cannot pass with an open critical finding"))
     return findings
-

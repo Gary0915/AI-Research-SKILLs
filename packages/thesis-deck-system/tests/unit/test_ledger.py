@@ -31,4 +31,3 @@ def test_illegal_visibility_value_is_rejected():
         assert "visibility" in str(error)
     else:
         raise AssertionError("illegal visibility transition accepted")
-

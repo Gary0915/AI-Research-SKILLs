@@ -15,4 +15,3 @@ def test_unknown_recipe_rejected():
         assert "recipe" in str(error)
     else:
         raise AssertionError("unknown recipe accepted")
-

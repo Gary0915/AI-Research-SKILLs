@@ -43,4 +43,3 @@ def build_plot(csv_path: Path, output_dir: Path) -> dict:
     }
     (output_dir / "A001.asset.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     return {"means": means, "sample_sd": errors, "svg": svg, "png": png, "manifest": manifest}
-

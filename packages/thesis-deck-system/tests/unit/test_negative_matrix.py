@@ -43,4 +43,3 @@ def test_failed_experiment_must_remain_reachable():
 
 def test_open_critical_finding_blocks_release():
     assert has_rule({"qa_reports": [{"findings": [{"severity": "critical", "status": "open"}], "pipeline": [{"stage": "release", "status": "pass"}]}]}, "RELEASE-CRITICAL-FINDING-OPEN")
-

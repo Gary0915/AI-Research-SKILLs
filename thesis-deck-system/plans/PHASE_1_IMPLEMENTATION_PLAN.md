@@ -106,4 +106,3 @@
 - [ ] Run the complete test suite, inventory guard, `git diff --check`, schema/footer validation, and scope checks.
 - [ ] Write the Phase 1 implementation report with exact paths, hashes, commands, matrices, blocked conditions, and `codex_report` footer.
 - [ ] Commit all canonical Phase 1 files, push to `origin/codex/thesis-deck-system`, and verify the remote head/report/key schemas.
-

@@ -11,4 +11,3 @@ def test_meeting_delta_carries_unfinished_commitment_and_parallel_work():
     assert result["included_action_ids"] == ["NS001"]
     assert result["actions"][0]["owner"] == "researcher"
     assert result["actions"][0]["parallelizable"] is True
-

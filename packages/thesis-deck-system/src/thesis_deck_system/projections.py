@@ -25,4 +25,3 @@ def meeting_delta(events: list[dict[str, Any]], since_cursor: int) -> dict[str, 
         "actions": carried,
         "changed_block_ids": changed_blocks,
     }
-

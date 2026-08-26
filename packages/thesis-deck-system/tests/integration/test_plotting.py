@@ -11,4 +11,3 @@ def test_synthetic_plot_has_registered_lineage_and_expected_gradient(tmp_path: P
     assert result["svg"].exists() and result["png"].exists()
     assert len(result["manifest"]["sha256"]) == 64
     assert result["manifest"]["transform_chain"][0]["input_sha256"]
-

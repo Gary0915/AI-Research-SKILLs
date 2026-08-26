@@ -98,4 +98,3 @@ def test_hypothesis_requires_falsification_and_discriminating_evidence():
     bundle["claims"][0] = claim
     findings = semantic_findings(bundle)
     assert ("SCI-HYPOTHESIS-NOT-FALSIFIABLE", "scientific_reasoning") in {(f.rule_id, f.stage) for f in findings}
-
