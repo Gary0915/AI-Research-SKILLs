@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+stage_id: ST-DISC
+block_ref: {block_id: B001, revision: 2}
+stage_type: discussion
+revision: 2
+status: complete
+claim_refs: [C001, C002, C003]
+evidence_refs: [E001, E003]
+data:
+  hypothesis_support: partial_support
+  failed_assumptions: ["uniform spatial exposure", "edge and center are exchangeable"]
+  missing_evidence: ["matched-position control", "independent transport tracer"]
+  limitations: ["synthetic sample only", "no tracer channel"]
+  decision_ref: D002
+  next_step_ref: NS001
+  interpretation: "The trend is reproducible but remains only partial support; run a matched-position tracer control before Go."
+provenance: synthetic_test_fixture
+created_at: "2026-08-03T00:00:00Z"
+updated_at: "2026-08-03T00:00:00Z"

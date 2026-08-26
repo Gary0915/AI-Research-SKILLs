@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "profile_id": "TP-SYNTH-001",
   "version": "1.0.0",
-  "source_path": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/synthetic_native_template.pptx",
-  "source_sha256": "528743c3b76fb87a098d88a690d82428339445014378b71d974bdb633e501afc",
+  "source_path": "thesis-deck-system/artifacts/phase1/synthetic_native_template.pptx",
+  "source_sha256": "740d57030f1c5ecdcc9fc47ecf1e795b69edfa11c283796a3b4be02fdda97cea",
   "slide_size": {
     "width_emu": 12191999,
     "height_emu": 6858000,

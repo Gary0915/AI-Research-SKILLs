@@ -1,0 +1,10 @@
+schema_version: "1.0.0"
+decision_id: D002
+block_ref: {block_id: B001, revision: 2}
+decision_type: experiment_governance
+choice: partial_go
+rationale: "Reproducible trend remains non-discriminating."
+claim_refs: [C001, C003]
+evidence_refs: [E001]
+action_refs: [NS001]
+created_at: "2026-08-03T00:00:00Z"

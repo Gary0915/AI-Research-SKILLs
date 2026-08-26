@@ -1,0 +1,1026 @@
+{
+  "blocks": {
+    "B001": {
+      "block_id": "B001",
+      "revision": 1,
+      "research_question": {
+        "question_id": "RQ-B001",
+        "text": "Does synthetic treatment produce a positional defect-density gradient?",
+        "scope": "Synthetic fixture only; not laboratory evidence"
+      }
+    }
+  },
+  "claims": {
+    "C001": {
+      "schema_version": "1.0.0",
+      "claim_id": "C001",
+      "revision": 1,
+      "claim_type": "hypothesis",
+      "text": "Synthetic treatment produces a positional gradient.",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage": "mechanism",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "fixture",
+        "exclusions": []
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "medium",
+        "rationale": "synthetic test"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [
+        "position is controlled"
+      ],
+      "falsifiable_predictions": [
+        {
+          "prediction_claim_ref": "C003",
+          "observation_that_falsifies": "No positional gradient"
+        }
+      ],
+      "discriminating_evidence_requirements": [
+        {
+          "requirement_id": "REQ001",
+          "description": "controlled position comparison"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "C002": {
+      "schema_version": "1.0.0",
+      "claim_id": "C002",
+      "revision": 1,
+      "claim_type": "mechanism",
+      "text": "Synthetic transport differs by position.",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage": "mechanism",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "fixture",
+        "exclusions": []
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "low",
+        "rationale": "synthetic test"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [
+        "transport proxy is valid"
+      ],
+      "falsifiable_predictions": [
+        {
+          "prediction_claim_ref": "C003",
+          "observation_that_falsifies": "No positional gradient"
+        }
+      ],
+      "discriminating_evidence_requirements": [
+        {
+          "requirement_id": "REQ001",
+          "description": "controlled position comparison"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "C003": {
+      "schema_version": "1.0.0",
+      "claim_id": "C003",
+      "revision": 1,
+      "claim_type": "prediction",
+      "text": "Edge mean exceeds center mean.",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage": "experiment",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "fixture",
+        "exclusions": []
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "medium",
+        "rationale": "synthetic test"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "actions": {
+    "NS001": {
+      "schema_version": "1.0.0",
+      "action_item_id": "NS001",
+      "revision": 1,
+      "action_type": "experiment",
+      "title": "Run synthetic position comparison",
+      "action": "Measure center, mid-radius, and edge replicates.",
+      "rationale": "Discriminate the synthetic positional hypothesis.",
+      "source_decision_ref": "D001",
+      "linked_block_refs": [
+        {
+          "block_id": "B001",
+          "revision": 1
+        }
+      ],
+      "linked_claim_refs": [
+        "C001",
+        "C003"
+      ],
+      "prior_commitment": {
+        "meeting_id": "MEETING-001",
+        "committed_at": "2026-08-27T00:00:00Z"
+      },
+      "owner": {
+        "actor_id": "researcher",
+        "display_name": "Synthetic researcher"
+      },
+      "target_window": {
+        "start": "2026-08-27T00:00:00Z",
+        "due": "2026-09-02T09:00:00Z",
+        "timezone": "Asia/Taipei"
+      },
+      "actual_completion": {
+        "completed_at": null,
+        "closure_evidence_refs": []
+      },
+      "success_failure_criteria": {
+        "success": "All positions have three valid replicates.",
+        "failure": "Any position is missing a valid replicate."
+      },
+      "required_evidence": [
+        "REQ001"
+      ],
+      "dependency_refs": [],
+      "blocker_refs": [],
+      "parallelizable": true,
+      "workstream": "synthetic-microscopy",
+      "status": "planned",
+      "result_summary": null,
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "decisions": {
+    "D001": {
+      "schema_version": "1.0.0",
+      "decision_id": "D001",
+      "timestamp": "2026-08-01T00:00:00Z",
+      "actor": {
+        "type": "person",
+        "id": "researcher"
+      },
+      "decision_type": "research_gate",
+      "subject_refs": [
+        "B001"
+      ],
+      "choice": "partial_go",
+      "alternatives": [],
+      "rationale": "Trend supports the mechanism but a control is missing.",
+      "evidence_refs": [
+        "E001"
+      ],
+      "provenance": "synthetic_fixture"
+    }
+  },
+  "stages": {
+    "ST-DISC": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-DISC",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage_type": "discussion",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C001",
+        "C002",
+        "C003"
+      ],
+      "evidence_refs": [
+        "E001",
+        "E003"
+      ],
+      "data": {
+        "hypothesis_support": "supported",
+        "failed_assumptions": [
+          "uniform spatial exposure"
+        ],
+        "missing_evidence": [
+          "matched-position control"
+        ],
+        "limitations": [
+          "synthetic sample only"
+        ],
+        "decision_ref": "D001",
+        "next_step_ref": "NS001",
+        "interpretation": "The gradient supports the transport hypothesis, but does not discriminate boundary effects."
+      },
+      "provenance": "synthetic_test_fixture",
+      "created_at": "2026-08-01T00:00:00Z",
+      "updated_at": "2026-08-01T00:00:00Z"
+    },
+    "ST-EXP": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-EXP",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage_type": "experiment",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C001",
+        "C003"
+      ],
+      "evidence_refs": [
+        "E001"
+      ],
+      "hypothesis_claim_refs": [
+        "C001"
+      ],
+      "prediction_claim_refs": [
+        "C003"
+      ],
+      "data": {
+        "independent_variables": [
+          {
+            "name": "position",
+            "levels": [
+              "edge",
+              "middle",
+              "center"
+            ],
+            "units": "label"
+          }
+        ],
+        "controlled_variables": [
+          {
+            "name": "exposure_time",
+            "value": 10,
+            "units": "min"
+          }
+        ],
+        "controls_baselines": [
+          "matched blank baseline"
+        ],
+        "sample_plan": {
+          "replicates": 3,
+          "samples": 9
+        },
+        "measured_outputs": [
+          {
+            "name": "defect_density",
+            "units": "count/mm2"
+          }
+        ],
+        "instrumentation_method_refs": [
+          "synthetic-counting-method-v1"
+        ],
+        "predicted_outcomes": [
+          "center > middle > edge"
+        ],
+        "decision_rules": {
+          "go": "effect >= 1.0 count/mm2",
+          "partial_go": "0 < effect < 1.0 count/mm2",
+          "no_go": "effect <= 0"
+        },
+        "required_evidence": [
+          "E001"
+        ]
+      },
+      "provenance": "synthetic_test_fixture",
+      "created_at": "2026-08-01T00:00:00Z",
+      "updated_at": "2026-08-01T00:00:00Z"
+    },
+    "ST-LIT": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-LIT",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage_type": "literature",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C001",
+        "C002"
+      ],
+      "evidence_refs": [
+        "E003"
+      ],
+      "data": {
+        "consensus": "Synthetic test literature agrees that local transport can create gradients.",
+        "disagreements_or_alternatives": [
+          "Boundary effects versus source-rate variation remain alternatives."
+        ],
+        "known_mechanisms": [
+          "local transport",
+          "boundary accumulation"
+        ],
+        "research_gap": "No controlled synthetic comparison isolates the mechanism in this fixture.",
+        "relevance_to_observation": "Both mechanisms predict a position effect.",
+        "implication_for_hypothesis_or_strategy": "Compare matched positions while controlling exposure.",
+        "supporting_literature_evidence_refs": [
+          "E003"
+        ],
+        "contradicting_literature_evidence_refs": []
+      },
+      "provenance": "synthetic_test_fixture",
+      "created_at": "2026-08-01T00:00:00Z",
+      "updated_at": "2026-08-01T00:00:00Z"
+    },
+    "ST-MECH": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-MECH",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage_type": "mechanism",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C002",
+        "C003"
+      ],
+      "evidence_refs": [
+        "E003"
+      ],
+      "data": {
+        "mechanism": "A local transport gradient produces the observed position effect.",
+        "falsification": "A matched-position experiment with no gradient would falsify this mechanism."
+      },
+      "provenance": "synthetic_test_fixture",
+      "created_at": "2026-08-01T00:00:00Z",
+      "updated_at": "2026-08-01T00:00:00Z"
+    },
+    "ST-OBS": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-OBS",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage_type": "observation",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C001"
+      ],
+      "evidence_refs": [
+        "E002"
+      ],
+      "data": {
+        "observation": "Synthetic microscopy shows position-dependent defect density.",
+        "problem": "The spatial trend is not explained by the current process model."
+      },
+      "provenance": "synthetic_test_fixture",
+      "created_at": "2026-08-01T00:00:00Z",
+      "updated_at": "2026-08-01T00:00:00Z"
+    },
+    "ST-RES": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-RES",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage_type": "result",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C003"
+      ],
+      "evidence_refs": [
+        "E001"
+      ],
+      "data": {
+        "summary": "Defect density increases toward the center.",
+        "metrics": [
+          {
+            "name": "defect_density",
+            "value": 2.0,
+            "uncertainty": 0.3,
+            "units": "count/mm2"
+          }
+        ],
+        "decision_ref": "D001"
+      },
+      "provenance": "synthetic_test_fixture",
+      "created_at": "2026-08-01T00:00:00Z",
+      "updated_at": "2026-08-01T00:00:00Z"
+    },
+    "ST-SOL": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-SOL",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "stage_type": "solution",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C002"
+      ],
+      "evidence_refs": [
+        "E003"
+      ],
+      "data": {
+        "strategy": "Use controlled exposure and matched-position sampling to discriminate mechanisms.",
+        "success_criterion": "Position effect remains above the pre-registered threshold."
+      },
+      "provenance": "synthetic_test_fixture",
+      "created_at": "2026-08-01T00:00:00Z",
+      "updated_at": "2026-08-01T00:00:00Z"
+    }
+  },
+  "events": [
+    {
+      "cursor": 1,
+      "event_type": "block_created",
+      "payload": {
+        "block_id": "B001",
+        "revision": 1,
+        "research_question": {
+          "question_id": "RQ-B001",
+          "text": "Does synthetic treatment produce a positional defect-density gradient?",
+          "scope": "Synthetic fixture only; not laboratory evidence"
+        }
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": null,
+      "event_hash": "ecea22b2634cb097cc4a71496f048a25ce22c2106892f4586df78bcbd52c0b7b"
+    },
+    {
+      "cursor": 2,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C001",
+        "revision": 1,
+        "claim_type": "hypothesis",
+        "text": "Synthetic treatment produces a positional gradient.",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage": "mechanism",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "fixture",
+          "exclusions": []
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "medium",
+          "rationale": "synthetic test"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [
+          "position is controlled"
+        ],
+        "falsifiable_predictions": [
+          {
+            "prediction_claim_ref": "C003",
+            "observation_that_falsifies": "No positional gradient"
+          }
+        ],
+        "discriminating_evidence_requirements": [
+          {
+            "requirement_id": "REQ001",
+            "description": "controlled position comparison"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "ecea22b2634cb097cc4a71496f048a25ce22c2106892f4586df78bcbd52c0b7b",
+      "event_hash": "f332e75bb4fbcc1f9727a59db9cca62ca9f058bd3951593bcb19f3f4f43b8efd"
+    },
+    {
+      "cursor": 3,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C002",
+        "revision": 1,
+        "claim_type": "mechanism",
+        "text": "Synthetic transport differs by position.",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage": "mechanism",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "fixture",
+          "exclusions": []
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "low",
+          "rationale": "synthetic test"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [
+          "transport proxy is valid"
+        ],
+        "falsifiable_predictions": [
+          {
+            "prediction_claim_ref": "C003",
+            "observation_that_falsifies": "No positional gradient"
+          }
+        ],
+        "discriminating_evidence_requirements": [
+          {
+            "requirement_id": "REQ001",
+            "description": "controlled position comparison"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "f332e75bb4fbcc1f9727a59db9cca62ca9f058bd3951593bcb19f3f4f43b8efd",
+      "event_hash": "92731d0861c76439c074bc714f4a5fb4db88c506754fa197b069d1e32ba231ba"
+    },
+    {
+      "cursor": 4,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C003",
+        "revision": 1,
+        "claim_type": "prediction",
+        "text": "Edge mean exceeds center mean.",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage": "experiment",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "fixture",
+          "exclusions": []
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "medium",
+          "rationale": "synthetic test"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "92731d0861c76439c074bc714f4a5fb4db88c506754fa197b069d1e32ba231ba",
+      "event_hash": "e581b711bfc39e848aa2da5d299044421d788ef69a5cdbfa0ca57b106310a4d9"
+    },
+    {
+      "cursor": 5,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-DISC",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage_type": "discussion",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C001",
+          "C002",
+          "C003"
+        ],
+        "evidence_refs": [
+          "E001",
+          "E003"
+        ],
+        "data": {
+          "hypothesis_support": "supported",
+          "failed_assumptions": [
+            "uniform spatial exposure"
+          ],
+          "missing_evidence": [
+            "matched-position control"
+          ],
+          "limitations": [
+            "synthetic sample only"
+          ],
+          "decision_ref": "D001",
+          "next_step_ref": "NS001",
+          "interpretation": "The gradient supports the transport hypothesis, but does not discriminate boundary effects."
+        },
+        "provenance": "synthetic_test_fixture",
+        "created_at": "2026-08-01T00:00:00Z",
+        "updated_at": "2026-08-01T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "e581b711bfc39e848aa2da5d299044421d788ef69a5cdbfa0ca57b106310a4d9",
+      "event_hash": "66122c9f52c941ed149215dd9c554ca983323d0e50401b9155c60822e4b04f42"
+    },
+    {
+      "cursor": 6,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-EXP",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage_type": "experiment",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C001",
+          "C003"
+        ],
+        "evidence_refs": [
+          "E001"
+        ],
+        "hypothesis_claim_refs": [
+          "C001"
+        ],
+        "prediction_claim_refs": [
+          "C003"
+        ],
+        "data": {
+          "independent_variables": [
+            {
+              "name": "position",
+              "levels": [
+                "edge",
+                "middle",
+                "center"
+              ],
+              "units": "label"
+            }
+          ],
+          "controlled_variables": [
+            {
+              "name": "exposure_time",
+              "value": 10,
+              "units": "min"
+            }
+          ],
+          "controls_baselines": [
+            "matched blank baseline"
+          ],
+          "sample_plan": {
+            "replicates": 3,
+            "samples": 9
+          },
+          "measured_outputs": [
+            {
+              "name": "defect_density",
+              "units": "count/mm2"
+            }
+          ],
+          "instrumentation_method_refs": [
+            "synthetic-counting-method-v1"
+          ],
+          "predicted_outcomes": [
+            "center > middle > edge"
+          ],
+          "decision_rules": {
+            "go": "effect >= 1.0 count/mm2",
+            "partial_go": "0 < effect < 1.0 count/mm2",
+            "no_go": "effect <= 0"
+          },
+          "required_evidence": [
+            "E001"
+          ]
+        },
+        "provenance": "synthetic_test_fixture",
+        "created_at": "2026-08-01T00:00:00Z",
+        "updated_at": "2026-08-01T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "66122c9f52c941ed149215dd9c554ca983323d0e50401b9155c60822e4b04f42",
+      "event_hash": "19699afd8d747664c446d4bb155b316864ac7a35bccda06bb8b43691e97cfffa"
+    },
+    {
+      "cursor": 7,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-LIT",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage_type": "literature",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C001",
+          "C002"
+        ],
+        "evidence_refs": [
+          "E003"
+        ],
+        "data": {
+          "consensus": "Synthetic test literature agrees that local transport can create gradients.",
+          "disagreements_or_alternatives": [
+            "Boundary effects versus source-rate variation remain alternatives."
+          ],
+          "known_mechanisms": [
+            "local transport",
+            "boundary accumulation"
+          ],
+          "research_gap": "No controlled synthetic comparison isolates the mechanism in this fixture.",
+          "relevance_to_observation": "Both mechanisms predict a position effect.",
+          "implication_for_hypothesis_or_strategy": "Compare matched positions while controlling exposure.",
+          "supporting_literature_evidence_refs": [
+            "E003"
+          ],
+          "contradicting_literature_evidence_refs": []
+        },
+        "provenance": "synthetic_test_fixture",
+        "created_at": "2026-08-01T00:00:00Z",
+        "updated_at": "2026-08-01T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "19699afd8d747664c446d4bb155b316864ac7a35bccda06bb8b43691e97cfffa",
+      "event_hash": "a002f391f3731213bc94cb0c801100150b34c4a591437f9b0b431d65f0f08a07"
+    },
+    {
+      "cursor": 8,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-MECH",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage_type": "mechanism",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C002",
+          "C003"
+        ],
+        "evidence_refs": [
+          "E003"
+        ],
+        "data": {
+          "mechanism": "A local transport gradient produces the observed position effect.",
+          "falsification": "A matched-position experiment with no gradient would falsify this mechanism."
+        },
+        "provenance": "synthetic_test_fixture",
+        "created_at": "2026-08-01T00:00:00Z",
+        "updated_at": "2026-08-01T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "a002f391f3731213bc94cb0c801100150b34c4a591437f9b0b431d65f0f08a07",
+      "event_hash": "6b9f833a8456ef2a90ba38be25a0474afe8ba97664bea16bf07349829190670e"
+    },
+    {
+      "cursor": 9,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-OBS",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage_type": "observation",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C001"
+        ],
+        "evidence_refs": [
+          "E002"
+        ],
+        "data": {
+          "observation": "Synthetic microscopy shows position-dependent defect density.",
+          "problem": "The spatial trend is not explained by the current process model."
+        },
+        "provenance": "synthetic_test_fixture",
+        "created_at": "2026-08-01T00:00:00Z",
+        "updated_at": "2026-08-01T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "6b9f833a8456ef2a90ba38be25a0474afe8ba97664bea16bf07349829190670e",
+      "event_hash": "84fb2e460e2c024f308bd414af6d68b6eb76ab5ddd8791120b8fc2864ecf56e9"
+    },
+    {
+      "cursor": 10,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-RES",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage_type": "result",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C003"
+        ],
+        "evidence_refs": [
+          "E001"
+        ],
+        "data": {
+          "summary": "Defect density increases toward the center.",
+          "metrics": [
+            {
+              "name": "defect_density",
+              "value": 2.0,
+              "uncertainty": 0.3,
+              "units": "count/mm2"
+            }
+          ],
+          "decision_ref": "D001"
+        },
+        "provenance": "synthetic_test_fixture",
+        "created_at": "2026-08-01T00:00:00Z",
+        "updated_at": "2026-08-01T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "84fb2e460e2c024f308bd414af6d68b6eb76ab5ddd8791120b8fc2864ecf56e9",
+      "event_hash": "1f72c76df4fe7258d7c818e14222a730a87d448d91e05c7f0696125586af1ce0"
+    },
+    {
+      "cursor": 11,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-SOL",
+        "block_ref": {
+          "block_id": "B001",
+          "revision": 1
+        },
+        "stage_type": "solution",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C002"
+        ],
+        "evidence_refs": [
+          "E003"
+        ],
+        "data": {
+          "strategy": "Use controlled exposure and matched-position sampling to discriminate mechanisms.",
+          "success_criterion": "Position effect remains above the pre-registered threshold."
+        },
+        "provenance": "synthetic_test_fixture",
+        "created_at": "2026-08-01T00:00:00Z",
+        "updated_at": "2026-08-01T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "1f72c76df4fe7258d7c818e14222a730a87d448d91e05c7f0696125586af1ce0",
+      "event_hash": "1c2f645c63687d2f7d4658d590368a8b531a67c1dd1e31ba729a41d5219369c5"
+    },
+    {
+      "cursor": 12,
+      "event_type": "decision_recorded",
+      "payload": {
+        "schema_version": "1.0.0",
+        "decision_id": "D001",
+        "timestamp": "2026-08-01T00:00:00Z",
+        "actor": {
+          "type": "person",
+          "id": "researcher"
+        },
+        "decision_type": "research_gate",
+        "subject_refs": [
+          "B001"
+        ],
+        "choice": "partial_go",
+        "alternatives": [],
+        "rationale": "Trend supports the mechanism but a control is missing.",
+        "evidence_refs": [
+          "E001"
+        ],
+        "provenance": "synthetic_fixture"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "1c2f645c63687d2f7d4658d590368a8b531a67c1dd1e31ba729a41d5219369c5",
+      "event_hash": "a0d39f37174cc750d66895cfdb8ed44a8a3914fa5e906b0e308ebf43d2ce2b18"
+    },
+    {
+      "cursor": 13,
+      "event_type": "action_committed",
+      "payload": {
+        "schema_version": "1.0.0",
+        "action_item_id": "NS001",
+        "revision": 1,
+        "action_type": "experiment",
+        "title": "Run synthetic position comparison",
+        "action": "Measure center, mid-radius, and edge replicates.",
+        "rationale": "Discriminate the synthetic positional hypothesis.",
+        "source_decision_ref": "D001",
+        "linked_block_refs": [
+          {
+            "block_id": "B001",
+            "revision": 1
+          }
+        ],
+        "linked_claim_refs": [
+          "C001",
+          "C003"
+        ],
+        "prior_commitment": {
+          "meeting_id": "MEETING-001",
+          "committed_at": "2026-08-27T00:00:00Z"
+        },
+        "owner": {
+          "actor_id": "researcher",
+          "display_name": "Synthetic researcher"
+        },
+        "target_window": {
+          "start": "2026-08-27T00:00:00Z",
+          "due": "2026-09-02T09:00:00Z",
+          "timezone": "Asia/Taipei"
+        },
+        "actual_completion": {
+          "completed_at": null,
+          "closure_evidence_refs": []
+        },
+        "success_failure_criteria": {
+          "success": "All positions have three valid replicates.",
+          "failure": "Any position is missing a valid replicate."
+        },
+        "required_evidence": [
+          "REQ001"
+        ],
+        "dependency_refs": [],
+        "blocker_refs": [],
+        "parallelizable": true,
+        "workstream": "synthetic-microscopy",
+        "status": "planned",
+        "result_summary": null,
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "a0d39f37174cc750d66895cfdb8ed44a8a3914fa5e906b0e308ebf43d2ce2b18",
+      "event_hash": "e2a916b553c4745d5183a744a03109991b835580cd8794f468d9dbe9e984f8dc"
+    },
+    {
+      "cursor": 14,
+      "event_type": "slide_spec_compiled",
+      "payload": {
+        "block_id": "B001",
+        "revision": 1
+      },
+      "timestamp": "2026-08-26T17:43:08Z",
+      "previous_hash": "e2a916b553c4745d5183a744a03109991b835580cd8794f468d9dbe9e984f8dc",
+      "event_hash": "b3cf8b4f8c86cb2ab1157d6e4f975a50043c819282f67f10929ba314b9aa3c0e"
+    }
+  ]
+}

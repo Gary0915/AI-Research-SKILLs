@@ -53,6 +53,23 @@ class Ledger:
             previous = event.event_hash
         return list(self._events)
 
+    def serialize(self, path) -> None:
+        import pathlib
+        pathlib.Path(path).write_text(json.dumps([asdict(e) for e in self.replay()], indent=2, ensure_ascii=False), encoding="utf-8")
+
+    @classmethod
+    def load(cls, path) -> "Ledger":
+        ledger = cls()
+        records = json.loads(__import__("pathlib").Path(path).read_text(encoding="utf-8"))
+        for record in records:
+            unsigned = {k: record[k] for k in ("cursor", "event_type", "payload", "timestamp", "previous_hash")}
+            expected = hashlib.sha256(cls._canonical(unsigned).encode("utf-8")).hexdigest()
+            if expected != record.get("event_hash"):
+                raise ValueError("persisted event hash invalid")
+            ledger._events.append(Event(**record))
+        ledger.replay()
+        return ledger
+
     def materialize(self) -> dict[str, Any]:
         state = {"blocks": {}, "claims": {}, "actions": {}, "decisions": {}, "stages": {}, "events": []}
         for event in self.replay():

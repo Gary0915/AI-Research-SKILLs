@@ -7,21 +7,32 @@
   "source_evidence": [
     "E001"
   ],
-  "path": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
-  "preview_path": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
+  "path": "D:/Gary/碩論/簡報製作/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
+  "preview_path": "D:/Gary/碩論/簡報製作/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
   "mime_type": "image/svg+xml",
-  "sha256": "67259b8a286c07939f07560b09fe1aae644e99c1d9c7372b14a41af658ee3f97",
+  "sha256": "704ab2e961e5925298fb21e62578abbb6cbd97efdd3abbba2e5475baf2854000",
   "editable": true,
   "generator": {
     "kind": "matplotlib",
-    "script": "plot.py",
-    "version": "3.10.9"
+    "script": "thesis-deck-system/examples/synthetic-project/plot.py",
+    "version": "3.10.9",
+    "script_sha256": "b8c35668c252fb1c46ce1f1dcb8366b4d79919d12e12f07bd623dd142b301706"
+  },
+  "input": {
+    "path": "thesis-deck-system/examples/synthetic-project/measurements.csv",
+    "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
+  },
+  "output": {
+    "svg_path": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
+    "svg_sha256": "704ab2e961e5925298fb21e62578abbb6cbd97efdd3abbba2e5475baf2854000",
+    "png_path": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
+    "png_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
   },
   "transform_chain": [
     {
       "input_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
       "operation": "mean and sample SD by position",
-      "output_sha256": "67259b8a286c07939f07560b09fe1aae644e99c1d9c7372b14a41af658ee3f97"
+      "output_sha256": "704ab2e961e5925298fb21e62578abbb6cbd97efdd3abbba2e5475baf2854000"
     }
   ],
   "provenance": "synthetic_fixture",

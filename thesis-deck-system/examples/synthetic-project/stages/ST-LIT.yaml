@@ -1,0 +1,20 @@
+schema_version: "1.0.0"
+stage_id: ST-LIT
+block_ref: {block_id: B001, revision: 1}
+stage_type: literature
+revision: 1
+status: complete
+claim_refs: [C001, C002]
+evidence_refs: [E003]
+data:
+  consensus: "Synthetic test literature agrees that local transport can create gradients."
+  disagreements_or_alternatives: ["Boundary effects versus source-rate variation remain alternatives."]
+  known_mechanisms: ["local transport", "boundary accumulation"]
+  research_gap: "No controlled synthetic comparison isolates the mechanism in this fixture."
+  relevance_to_observation: "Both mechanisms predict a position effect."
+  implication_for_hypothesis_or_strategy: "Compare matched positions while controlling exposure."
+  supporting_literature_evidence_refs: [E003]
+  contradicting_literature_evidence_refs: []
+provenance: synthetic_test_fixture
+created_at: "2026-08-01T00:00:00Z"
+updated_at: "2026-08-01T00:00:00Z"

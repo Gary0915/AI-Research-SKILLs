@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+stage_id: ST-SOL
+block_ref: {block_id: B001, revision: 1}
+stage_type: solution
+revision: 1
+status: complete
+claim_refs: [C002]
+evidence_refs: [E003]
+data:
+  strategy: "Use controlled exposure and matched-position sampling to discriminate mechanisms."
+  success_criterion: "Position effect remains above the pre-registered threshold."
+provenance: synthetic_test_fixture
+created_at: "2026-08-01T00:00:00Z"
+updated_at: "2026-08-01T00:00:00Z"

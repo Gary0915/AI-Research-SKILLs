@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from typing import Any, Iterable
 
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator, FormatChecker
 
 
 REQUIRED_SCHEMA_NAMES = (
@@ -65,7 +65,7 @@ class SchemaRegistry:
         return tuple(self._schemas)
 
     def errors(self, name: str, value: Any) -> list[str]:
-        validator = Draft202012Validator(self._schemas[name])
+        validator = Draft202012Validator(self._schemas[name], format_checker=FormatChecker())
         return [
             f"{'/'.join(map(str, error.absolute_path)) or '$'}: {error.message}"
             for error in sorted(validator.iter_errors(value), key=lambda item: list(item.absolute_path))

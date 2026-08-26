@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+stage_id: ST-OBS
+block_ref: {block_id: B001, revision: 1}
+stage_type: observation
+revision: 1
+status: complete
+claim_refs: [C001]
+evidence_refs: [E002]
+data:
+  observation: "Synthetic microscopy shows position-dependent defect density."
+  problem: "The spatial trend is not explained by the current process model."
+provenance: synthetic_test_fixture
+created_at: "2026-08-01T00:00:00Z"
+updated_at: "2026-08-01T00:00:00Z"

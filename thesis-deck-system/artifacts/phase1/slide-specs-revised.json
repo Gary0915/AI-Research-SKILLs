@@ -1,0 +1,157 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "slide_id": "S-B001-OBSERVATION-01",
+    "revision": 2,
+    "deck_role": "research_block",
+    "block_refs": [
+      {
+        "block_id": "B001",
+        "revision": 2
+      }
+    ],
+    "stage": "observation",
+    "native_layout_role": "photo_observation",
+    "recipe": "photo_observation",
+    "title": {
+      "text": "Synthetic observation",
+      "assertion_claim_refs": [
+        "C001"
+      ]
+    },
+    "placements": [
+      {
+        "slot": "hero_visual",
+        "asset_id": "A001",
+        "asset_path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg"
+      }
+    ],
+    "citations": [],
+    "speaker_notes": {
+      "source_refs": [
+        "E002"
+      ],
+      "text": "Synthetic fixture — verify evidence provenance."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "main",
+      "defense": "appendix"
+    },
+    "source_cursor": 17,
+    "bindings": {
+      "claim_refs": [
+        "C001"
+      ],
+      "evidence_refs": [
+        "E002"
+      ],
+      "asset_refs": [
+        "A001"
+      ],
+      "action_refs": [
+        "NS001"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-001",
+        "version": "1.0.0"
+      }
+    },
+    "content": {
+      "observation": "Synthetic microscopy: defect density varies by position.",
+      "problem": "Test transport versus boundary accumulation.",
+      "observation_visual_path": "D:\\Gary\\碩論\\簡報製作\\thesis-deck-system\\examples\\synthetic-project\\assets\\observation_visual.svg",
+      "claim_refs": [
+        "C001"
+      ],
+      "evidence_refs": [
+        "E002"
+      ]
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "slide_id": "S-B001-RESULT-01",
+    "revision": 2,
+    "deck_role": "research_block",
+    "block_refs": [
+      {
+        "block_id": "B001",
+        "revision": 2
+      }
+    ],
+    "stage": "result",
+    "native_layout_role": "hero_plot_discussion",
+    "recipe": "hero_plot_discussion",
+    "title": {
+      "text": "Synthetic results",
+      "assertion_claim_refs": [
+        "C001"
+      ]
+    },
+    "placements": [
+      {
+        "slot": "hero_visual",
+        "asset_id": "A001",
+        "asset_path": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg"
+      }
+    ],
+    "citations": [],
+    "speaker_notes": {
+      "source_refs": [
+        "E001",
+        "E003"
+      ],
+      "text": "Synthetic fixture — verify evidence provenance."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "main",
+      "defense": "appendix"
+    },
+    "source_cursor": 17,
+    "bindings": {
+      "claim_refs": [
+        "C001",
+        "C002",
+        "C003"
+      ],
+      "evidence_refs": [
+        "E001",
+        "E003"
+      ],
+      "asset_refs": [
+        "A001"
+      ],
+      "action_refs": [
+        "NS001"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-001",
+        "version": "1.0.0"
+      }
+    },
+    "content": {
+      "discussion": "Updated: trend is partial support; tracer control is required before Go.",
+      "decision": "Partial-Go: defer causal claim",
+      "next_step": "Tracer control; researcher; due 2026-09-10",
+      "claim_refs": [
+        "C001",
+        "C002",
+        "C003"
+      ],
+      "evidence_refs": [
+        "E001",
+        "E003"
+      ]
+    }
+  }
+]

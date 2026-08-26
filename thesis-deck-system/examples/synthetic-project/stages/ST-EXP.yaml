@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+stage_id: ST-EXP
+block_ref: {block_id: B001, revision: 1}
+stage_type: experiment
+revision: 1
+status: complete
+claim_refs: [C001, C003]
+evidence_refs: [E001]
+hypothesis_claim_refs: [C001]
+prediction_claim_refs: [C003]
+data:
+  independent_variables: [{name: position, levels: [edge, middle, center], units: label}]
+  controlled_variables: [{name: exposure_time, value: 10, units: min}]
+  controls_baselines: ["matched blank baseline"]
+  sample_plan: {replicates: 3, samples: 9}
+  measured_outputs: [{name: defect_density, units: count/mm2}]
+  instrumentation_method_refs: ["synthetic-counting-method-v1"]
+  predicted_outcomes: ["center > middle > edge"]
+  decision_rules: {go: "effect >= 1.0 count/mm2", partial_go: "0 < effect < 1.0 count/mm2", no_go: "effect <= 0"}
+  required_evidence: [E001]
+provenance: synthetic_test_fixture
+created_at: "2026-08-01T00:00:00Z"
+updated_at: "2026-08-01T00:00:00Z"

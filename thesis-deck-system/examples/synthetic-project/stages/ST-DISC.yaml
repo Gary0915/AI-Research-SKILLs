@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+stage_id: ST-DISC
+block_ref: {block_id: B001, revision: 1}
+stage_type: discussion
+revision: 1
+status: complete
+claim_refs: [C001, C002, C003]
+evidence_refs: [E001, E003]
+data:
+  hypothesis_support: supported
+  failed_assumptions: ["uniform spatial exposure"]
+  missing_evidence: ["matched-position control"]
+  limitations: ["synthetic sample only"]
+  decision_ref: D001
+  next_step_ref: NS001
+  interpretation: "The gradient supports the transport hypothesis, but does not discriminate boundary effects."
+provenance: synthetic_test_fixture
+created_at: "2026-08-01T00:00:00Z"
+updated_at: "2026-08-01T00:00:00Z"

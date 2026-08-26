@@ -3,7 +3,7 @@
   "qa_report_id": "QA-MASTER-PHASE1-REVISED",
   "build_id": "BUILD-MASTER-PHASE1-REVISED",
   "deck_id": "MASTER-PHASE1-REVISED",
-  "created_at": "2026-08-26T17:08:36Z",
+  "created_at": "2026-08-26T17:43:09.159032Z",
   "overall_status": "blocked",
   "professor_profile_ref": {
     "profile_id": "PROF-SYNTH-001",
@@ -13,64 +13,96 @@
     {
       "order": 1,
       "stage": "schema_ledger_integrity",
-      "status": "pass"
+      "status": "pass",
+      "evidence": {
+        "ok": true,
+        "evidence": "fixture and persisted ledger loaded"
+      }
     },
     {
       "order": 2,
       "stage": "scientific_reasoning",
-      "status": "pass"
+      "status": "pass",
+      "evidence": {
+        "ok": true,
+        "evidence": "scientific validators"
+      }
     },
     {
       "order": 3,
       "stage": "citation_evidence_provenance",
-      "status": "pass"
+      "status": "pass",
+      "evidence": {
+        "ok": true,
+        "evidence": "provenance validators"
+      }
     },
     {
       "order": 4,
       "stage": "professor_style_logic",
-      "status": "pass"
+      "status": "pass",
+      "evidence": {
+        "ok": true,
+        "evidence": "professor profile rules"
+      }
     },
     {
       "order": 5,
       "stage": "compile_assemble_pptx",
-      "status": "pass"
+      "status": "pass",
+      "evidence": {
+        "ok": true,
+        "evidence": "slide specs assembled"
+      }
     },
     {
       "order": 6,
       "stage": "structural_pptx_engineering",
-      "status": "pass"
+      "status": "pass",
+      "evidence": {
+        "ok": true,
+        "evidence": "structural audit"
+      }
     },
     {
       "order": 7,
       "stage": "render_montage_visual",
-      "status": "pass"
+      "status": "pass",
+      "evidence": {
+        "ok": true,
+        "evidence": "render/montage evidence"
+      }
     },
     {
       "order": 8,
       "stage": "native_powerpoint_round_trip",
-      "status": "blocked_environment"
+      "status": "blocked_environment",
+      "evidence": {}
     },
     {
       "order": 9,
       "stage": "final_deck_version_audit",
-      "status": "not_run"
+      "status": "not_run",
+      "evidence": {}
     },
     {
       "order": 10,
       "stage": "release",
-      "status": "blocked"
+      "status": "blocked",
+      "evidence": {}
     }
   ],
   "findings": [],
   "artifacts": {
-    "pptx": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/master_revised_build.pptx",
-    "template_profile": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/template-profile.json",
-    "plot_svg": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
-    "plot_png": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
-    "meeting_delta": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/meeting-delta.json"
+    "pptx": "thesis-deck-system/artifacts/phase1/master_revised_build.pptx",
+    "template_profile": "thesis-deck-system/artifacts/phase1/template-profile.json",
+    "plot_svg": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
+    "plot_png": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
+    "meeting_delta": "thesis-deck-system/artifacts/phase1/meeting-delta.json"
   },
   "tool_versions": {
-    "control_plane": "0.1.0"
+    "control_plane": "0.2.0",
+    "gate_execution": "real"
   },
   "structural_audit": {
     "slide_count": 4,
@@ -79,7 +111,30 @@
     "orphan_parts": [],
     "xml_parts": 28,
     "masters": 1,
-    "layouts": 11
+    "layouts": 11,
+    "content_types_present": true,
+    "unique_slide_ids": true,
+    "slide_order": [
+      256,
+      257,
+      258,
+      259
+    ],
+    "media_parts": [
+      "ppt/media/image1.png",
+      "ppt/media/image2.png",
+      "ppt/media/plot-canonical.svg"
+    ],
+    "notes_parts": [
+      "ppt/notesSlides/_rels/notesSlide1.xml.rels",
+      "ppt/notesSlides/_rels/notesSlide2.xml.rels",
+      "ppt/notesSlides/notesSlide1.xml",
+      "ppt/notesSlides/notesSlide2.xml"
+    ],
+    "full_slide_raster_substitution": false,
+    "vector_media_used": true,
+    "relationship_targets_checked": 51,
+    "source_template_hash": "d35cb14f6e713e07778a7bc45e0644f924b5b609badc717c819675b9d12a186b"
   },
   "native_status": "blocked_environment"
 }

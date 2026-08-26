@@ -1,0 +1,15 @@
+schema_version: "1.0.0"
+stage_id: ST-RES
+block_ref: {block_id: B001, revision: 1}
+stage_type: result
+revision: 1
+status: complete
+claim_refs: [C003]
+evidence_refs: [E001]
+data:
+  summary: "Defect density increases toward the center."
+  metrics: [{name: defect_density, value: 2.0, uncertainty: 0.3, units: count/mm2}]
+  decision_ref: D001
+provenance: synthetic_test_fixture
+created_at: "2026-08-01T00:00:00Z"
+updated_at: "2026-08-01T00:00:00Z"

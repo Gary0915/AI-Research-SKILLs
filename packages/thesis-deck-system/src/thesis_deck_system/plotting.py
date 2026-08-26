@@ -38,6 +38,8 @@ def build_plot(csv_path: Path, output_dir: Path) -> dict:
         "source_evidence": ["E001"], "path": svg.as_posix(), "preview_path": png.as_posix(),
         "mime_type": "image/svg+xml", "sha256": sha256(svg), "editable": True,
         "generator": {"kind": "matplotlib", "script": "plot.py", "version": plt.matplotlib.__version__},
+        "input": {"path": csv_path.as_posix(), "sha256": sha256(csv_path)},
+        "output": {"svg_path": svg.as_posix(), "svg_sha256": sha256(svg), "png_path": png.as_posix(), "png_sha256": sha256(png)},
         "transform_chain": [{"input_sha256": sha256(csv_path), "operation": "mean and sample SD by position", "output_sha256": sha256(svg)}],
         "provenance": "synthetic_fixture", "license_or_usage": "synthetic_test_only", "accessibility": {"alt_text": "Synthetic edge mean exceeds center mean with sample standard deviation error bars."}, "status": "approved",
     }

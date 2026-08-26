@@ -1,0 +1,11 @@
+schema_version: "1.0.0"
+evidence_id: E003
+kind: synthetic_literature
+title: "Synthetic literature synthesis record"
+provenance: "Synthetic/local test metadata; not a published citation"
+source: {source_id: local-synthetic-literature, uri: thesis-deck-system/examples/synthetic-project/evidence/E003.yaml, sha256: 0000000000000000000000000000000000000000000000000000000000000000}
+claim_support_refs: [C001, C002]
+claim_contradict_refs: []
+scope: {block_id: B001}
+license_or_usage: synthetic_test_only
+verification: {status: synthetic_test_only}

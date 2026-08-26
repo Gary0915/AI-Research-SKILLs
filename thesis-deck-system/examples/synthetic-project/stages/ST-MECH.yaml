@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+stage_id: ST-MECH
+block_ref: {block_id: B001, revision: 1}
+stage_type: mechanism
+revision: 1
+status: complete
+claim_refs: [C002, C003]
+evidence_refs: [E003]
+data:
+  mechanism: "A local transport gradient produces the observed position effect."
+  falsification: "A matched-position experiment with no gradient would falsify this mechanism."
+provenance: synthetic_test_fixture
+created_at: "2026-08-01T00:00:00Z"
+updated_at: "2026-08-01T00:00:00Z"
