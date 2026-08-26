@@ -3,7 +3,7 @@
   "qa_report_id": "QA-MASTER-PHASE1-REVISED",
   "build_id": "BUILD-MASTER-PHASE1-REVISED",
   "deck_id": "MASTER-PHASE1-REVISED",
-  "created_at": "2026-08-26T17:45:29.263296Z",
+  "created_at": "2026-08-26T17:47:11.271207Z",
   "overall_status": "blocked",
   "professor_profile_ref": {
     "profile_id": "PROF-SYNTH-001",
@@ -134,7 +134,7 @@
     "full_slide_raster_substitution": false,
     "vector_media_used": true,
     "relationship_targets_checked": 51,
-    "source_template_hash": "e5a40dc3c359804ce06a6fab4a109007dcb840106dd2f67916b4cfc622848bf9"
+    "source_template_hash": "434d29fb209adf32a832674b9deb2919225d15f4f3c859042c53fa8c65447335"
   },
   "native_status": "blocked_environment"
 }
