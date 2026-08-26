@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "decision-event.schema.json", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "decision_id", "timestamp", "actor", "decision_type", "subject_refs", "choice", "alternatives", "rationale", "evidence_refs", "provenance"],
+  "properties": {"schema_version": {"const": "1.0.0"}, "decision_id": {"pattern": "^D[0-9]{3,}$"}, "timestamp": {"format": "date-time"}, "actor": {"type": "object", "required": ["type", "id"]}, "decision_type": {"enum": ["research_gate", "action_selection", "release", "profile_revision"]}, "subject_refs": {"type": "array", "minItems": 1}, "choice": {"type": "string"}, "alternatives": {"type": "array"}, "rationale": {"type": "string"}, "evidence_refs": {"type": "array"}, "triggered_by": {"type": "array"}, "supersedes": {"type": ["string", "null"]}, "provenance": {"type": "string"}}
+}

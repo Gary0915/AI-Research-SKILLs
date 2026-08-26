@@ -1,0 +1,10 @@
+condition,position,replicate_id,defect_density_count_per_mm2
+synthetic,center,R1,1.0
+synthetic,center,R2,1.2
+synthetic,center,R3,0.8
+synthetic,mid_radius,R1,2.0
+synthetic,mid_radius,R2,2.1
+synthetic,mid_radius,R3,1.9
+synthetic,edge,R1,3.1
+synthetic,edge,R2,3.0
+synthetic,edge,R3,3.2

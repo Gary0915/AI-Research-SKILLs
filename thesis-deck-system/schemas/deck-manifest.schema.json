@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "deck-manifest.schema.json", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "deck_id", "deck_kind", "title", "template_profile_ref", "professor_profile_ref", "source_event_cursor", "build_id", "build_tool_version", "created_at", "projection", "slides", "outputs", "qa_report_refs"],
+  "properties": {"schema_version": {"const": "1.0.0"}, "deck_id": {"type": "string"}, "deck_kind": {"enum": ["master", "meeting", "defense"]}, "title": {"type": "string"}, "template_profile_ref": {"type": "object", "required": ["profile_id", "version"]}, "professor_profile_ref": {"type": "object", "required": ["profile_id", "version"]}, "source_event_cursor": {"type": "integer", "minimum": 1}, "build_id": {"type": "string"}, "build_tool_version": {"type": "string"}, "created_at": {"format": "date-time"}, "projection": {"type": "object"}, "slides": {"type": "array", "minItems": 2}, "outputs": {"type": "object", "required": ["pptx", "pptx_sha256"]}, "qa_report_refs": {"type": "array"}}
+}

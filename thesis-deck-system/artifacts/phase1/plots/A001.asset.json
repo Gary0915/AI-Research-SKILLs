@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "A001",
+  "asset_type": "data_plot",
+  "title": "Synthetic positional defect density",
+  "evidence_role": "synthetic_test_evidence",
+  "source_evidence": [
+    "E001"
+  ],
+  "path": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
+  "preview_path": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
+  "mime_type": "image/svg+xml",
+  "sha256": "67259b8a286c07939f07560b09fe1aae644e99c1d9c7372b14a41af658ee3f97",
+  "editable": true,
+  "generator": {
+    "kind": "matplotlib",
+    "script": "plot.py",
+    "version": "3.10.9"
+  },
+  "transform_chain": [
+    {
+      "input_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
+      "operation": "mean and sample SD by position",
+      "output_sha256": "67259b8a286c07939f07560b09fe1aae644e99c1d9c7372b14a41af658ee3f97"
+    }
+  ],
+  "provenance": "synthetic_fixture",
+  "license_or_usage": "synthetic_test_only",
+  "accessibility": {
+    "alt_text": "Synthetic edge mean exceeds center mean with sample standard deviation error bars."
+  },
+  "status": "approved"
+}

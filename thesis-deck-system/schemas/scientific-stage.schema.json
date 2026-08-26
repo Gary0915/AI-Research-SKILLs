@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "scientific-stage.schema.json", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "stage_id", "block_ref", "stage_type", "revision", "status", "claim_refs", "evidence_refs", "data", "provenance", "created_at", "updated_at"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"}, "stage_id": {"pattern": "^ST-"}, "block_ref": {"type": "object", "required": ["block_id", "revision"], "properties": {"block_id": {"pattern": "^B[0-9]{3,}$"}, "revision": {"type": "integer", "minimum": 1}}},
+    "stage_type": {"enum": ["observation", "literature", "mechanism", "solution", "experiment", "result", "discussion"]}, "revision": {"type": "integer", "minimum": 1}, "status": {"enum": ["pending", "blocked_missing_evidence", "ready", "complete"]},
+    "claim_refs": {"type": "array", "items": {"pattern": "^C[0-9]{3,}$"}}, "evidence_refs": {"type": "array", "items": {"pattern": "^E[0-9]{3,}$"}}, "hypothesis_claim_refs": {"type": "array", "items": {"pattern": "^C[0-9]{3,}$"}}, "prediction_claim_refs": {"type": "array", "items": {"pattern": "^C[0-9]{3,}$"}}, "narrative_ref": {"type": "string"},
+    "data": {"type": "object", "minProperties": 1}, "provenance": {"type": "string"}, "created_at": {"format": "date-time"}, "updated_at": {"format": "date-time"}
+  },
+  "allOf": [
+    {"if": {"properties": {"stage_type": {"const": "literature"}}, "required": ["stage_type"]}, "then": {"properties": {"data": {"required": ["consensus", "disagreements_or_alternatives", "known_mechanisms", "research_gap", "relevance_to_observation", "implication_for_hypothesis_or_strategy", "supporting_literature_evidence_refs", "contradicting_literature_evidence_refs"]}}}},
+    {"if": {"properties": {"stage_type": {"const": "experiment"}}, "required": ["stage_type"]}, "then": {"required": ["hypothesis_claim_refs", "prediction_claim_refs"], "properties": {"data": {"required": ["independent_variables", "controlled_variables", "controls_baselines", "sample_plan", "measured_outputs", "instrumentation_method_refs", "predicted_outcomes", "decision_rules", "required_evidence"]}}}},
+    {"if": {"properties": {"stage_type": {"const": "discussion"}}, "required": ["stage_type"]}, "then": {"properties": {"data": {"required": ["hypothesis_support", "failed_assumptions", "missing_evidence", "limitations", "decision_ref", "next_step_ref"]}}}}
+  ]
+}

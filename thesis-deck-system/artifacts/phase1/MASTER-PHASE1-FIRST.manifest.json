@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "deck_id": "MASTER-PHASE1-FIRST",
+  "deck_kind": "master",
+  "title": "Synthetic Thesis Research",
+  "template_profile_ref": {
+    "profile_id": "TP-SYNTH-001",
+    "version": "1.0.0"
+  },
+  "professor_profile_ref": {
+    "profile_id": "PROF-SYNTH-001",
+    "version": "1.0.0"
+  },
+  "source_event_cursor": 4,
+  "build_id": "BUILD-MASTER-PHASE1-FIRST",
+  "build_tool_version": "0.1.0",
+  "created_at": "2026-08-26T17:08:36Z",
+  "projection": {
+    "query": "master(all_blocks, preserve_history=true)"
+  },
+  "slides": [
+    {
+      "ordinal": 1,
+      "slide_id": "S-B001-OBSERVATION-01",
+      "spec_revision": 1,
+      "story_visibility": "main"
+    },
+    {
+      "ordinal": 1,
+      "slide_id": "S-B001-RESULT-01",
+      "spec_revision": 1,
+      "story_visibility": "main"
+    }
+  ],
+  "outputs": {
+    "pptx": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/master_first_build.pptx",
+    "pptx_sha256": "fd9cc3299fd1935d665839fcf3d03e41109bd9691ce6bb761b678bcb16de0ebf"
+  },
+  "qa_report_refs": [
+    "QA-MASTER-PHASE1-FIRST"
+  ]
+}

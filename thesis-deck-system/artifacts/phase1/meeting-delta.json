@@ -1,0 +1,23 @@
+{
+  "since_cursor": 4,
+  "prior_commitment_ids": [
+    "NS001"
+  ],
+  "included_action_ids": [
+    "NS001"
+  ],
+  "actions": [
+    {
+      "action_item_id": "NS001",
+      "status": "in_progress",
+      "owner": "researcher",
+      "target_window": "2026-09-02",
+      "source_decision_ref": "D001",
+      "parallelizable": true,
+      "workstream": "synthetic-microscopy"
+    }
+  ],
+  "changed_block_ids": [
+    "B001"
+  ]
+}

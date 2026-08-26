@@ -1,0 +1,55 @@
+[
+  {
+    "cursor": 1,
+    "event_type": "block_created",
+    "payload": {
+      "block_id": "B001",
+      "revision": 1
+    }
+  },
+  {
+    "cursor": 2,
+    "event_type": "action_committed",
+    "payload": {
+      "action_item_id": "NS001",
+      "status": "planned",
+      "owner": "researcher",
+      "target_window": "2026-09-02",
+      "source_decision_ref": "D001",
+      "parallelizable": true,
+      "workstream": "synthetic-microscopy"
+    }
+  },
+  {
+    "cursor": 3,
+    "event_type": "decision_recorded",
+    "payload": {
+      "decision_id": "D001",
+      "choice": "partial_go"
+    }
+  },
+  {
+    "cursor": 4,
+    "event_type": "slide_spec_compiled",
+    "payload": {
+      "block_id": "B001",
+      "revision": 1
+    }
+  },
+  {
+    "cursor": 5,
+    "event_type": "stage_revised",
+    "payload": {
+      "block_id": "B001",
+      "revision": 2
+    }
+  },
+  {
+    "cursor": 6,
+    "event_type": "action_status_changed",
+    "payload": {
+      "action_item_id": "NS001",
+      "status": "in_progress"
+    }
+  }
+]

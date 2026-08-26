@@ -1,0 +1,24 @@
+schema_version: "1.0.0"
+block_id: B001
+revision: 2
+title: Synthetic positional defect study
+research_question:
+  question_id: RQ-B001
+  text: Does synthetic treatment produce a positional defect-density gradient?
+  scope: Synthetic fixture only; not laboratory evidence
+problem_statement: A synthetic gradient is used to exercise controlled reasoning.
+research_status: active
+story_visibility: {master: main, meeting: main, defense: appendix}
+hypothesis_claim_refs: [C001]
+mechanism_claim_refs: [C002]
+prediction_claim_refs: [C003]
+stage_refs: {observation: ST-OBS, literature: ST-LIT, mechanism: ST-MECH, solution: ST-SOL, experiment: ST-EXP, result: ST-RES, discussion: ST-DISC, next_step: NS001}
+claim_refs: [C001, C002, C003]
+evidence_refs: [E001, E002]
+asset_refs: [A001]
+action_item_refs: [NS001]
+decision_refs: [D001]
+decision_criteria_ref: ST-EXP#/data/decision_rules
+provenance: synthetic_fixture
+created_at: "2026-08-27T00:00:00Z"
+updated_at: "2026-08-27T00:00:00Z"

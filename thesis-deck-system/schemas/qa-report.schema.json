@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qa-report.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "qa_report_id", "build_id", "deck_id", "created_at", "overall_status", "professor_profile_ref", "pipeline", "findings", "artifacts", "tool_versions"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "qa_report_id": {"type": "string"},
+    "build_id": {"type": "string"},
+    "deck_id": {"type": "string"},
+    "created_at": {"format": "date-time"},
+    "overall_status": {"enum": ["pass", "fail", "blocked", "candidate"]},
+    "professor_profile_ref": {"type": "object"},
+    "pipeline": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["order", "stage", "status"],
+        "properties": {
+          "order": {"type": "integer", "minimum": 1, "maximum": 10},
+          "stage": {"type": "string"},
+          "status": {"enum": ["pass", "fail", "not_run", "blocked", "blocked_environment", "pending_private_fixture"]}
+        }
+      }
+    },
+    "findings": {"type": "array"},
+    "artifacts": {"type": "object"},
+    "tool_versions": {"type": "object"}
+  }
+}

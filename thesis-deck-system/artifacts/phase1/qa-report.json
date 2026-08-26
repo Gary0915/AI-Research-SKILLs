@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "qa_report_id": "QA-MASTER-PHASE1-REVISED",
+  "build_id": "BUILD-MASTER-PHASE1-REVISED",
+  "deck_id": "MASTER-PHASE1-REVISED",
+  "created_at": "2026-08-26T17:08:36Z",
+  "overall_status": "blocked",
+  "professor_profile_ref": {
+    "profile_id": "PROF-SYNTH-001",
+    "version": "1.0.0"
+  },
+  "pipeline": [
+    {
+      "order": 1,
+      "stage": "schema_ledger_integrity",
+      "status": "pass"
+    },
+    {
+      "order": 2,
+      "stage": "scientific_reasoning",
+      "status": "pass"
+    },
+    {
+      "order": 3,
+      "stage": "citation_evidence_provenance",
+      "status": "pass"
+    },
+    {
+      "order": 4,
+      "stage": "professor_style_logic",
+      "status": "pass"
+    },
+    {
+      "order": 5,
+      "stage": "compile_assemble_pptx",
+      "status": "pass"
+    },
+    {
+      "order": 6,
+      "stage": "structural_pptx_engineering",
+      "status": "pass"
+    },
+    {
+      "order": 7,
+      "stage": "render_montage_visual",
+      "status": "pass"
+    },
+    {
+      "order": 8,
+      "stage": "native_powerpoint_round_trip",
+      "status": "blocked_environment"
+    },
+    {
+      "order": 9,
+      "stage": "final_deck_version_audit",
+      "status": "not_run"
+    },
+    {
+      "order": 10,
+      "stage": "release",
+      "status": "blocked"
+    }
+  ],
+  "findings": [],
+  "artifacts": {
+    "pptx": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/master_revised_build.pptx",
+    "template_profile": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/template-profile.json",
+    "plot_svg": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
+    "plot_png": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
+    "meeting_delta": "D:/Gary/\u78a9\u8ad6/\u7c21\u5831\u88fd\u4f5c/thesis-deck-system/artifacts/phase1/meeting-delta.json"
+  },
+  "tool_versions": {
+    "control_plane": "0.1.0"
+  },
+  "structural_audit": {
+    "slide_count": 4,
+    "slide_xml_count": 4,
+    "has_editable_text": true,
+    "orphan_parts": [],
+    "xml_parts": 28,
+    "masters": 1,
+    "layouts": 11
+  },
+  "native_status": "blocked_environment"
+}
