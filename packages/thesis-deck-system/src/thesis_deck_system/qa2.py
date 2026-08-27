@@ -88,7 +88,7 @@ def run_professor_qa_v2(profile: dict, projection: dict) -> dict:
         if layer_id == "H001":
             transition = state.get("hypothesis_transitions", {}).get("TR-H001-H002")
             transition_slide = any(slide.get("semantic_role") == "hypothesis_transition" for slide in slides)
-            transition_ok = bool(transition and transition_slide and transition.get("previous_hypothesis_claim_ref") and transition.get("new_hypothesis_claim_ref") and transition.get("key_result_refs"))
+            transition_ok = bool(transition and transition_slide and transition.get("previous_hypothesis_claim_ref") in state.get("claims", {}) and transition.get("new_hypothesis_claim_ref") in state.get("claims", {}) and transition.get("key_result_refs") and all((ref in state.get("stages", {}) or f"ST-{ref}" in state.get("stages", {})) for ref in transition.get("key_result_refs", [])) and transition.get("decision_refs") and all(ref in state.get("decisions", {}) for ref in transition.get("decision_refs", [])) and transition.get("observation_or_uncertainty_refs") and all(ref in state.get("evidence", {}) for ref in transition.get("observation_or_uncertainty_refs", [])))
             check("PROF-TRANSITION-PROVENANCE", transition_ok, layer_id, "Resolve transition provenance to results, decision, observation, and new hypothesis", transition)
     historical_ok = bool(layers) and all(layer.get("hypothesis_layer_id") in {"H001", "H002"} for layer in layers)
     check("PROF-HISTORY-REACHABLE", historical_ok, "layers", "Keep failed/partial/superseded layers historically reachable", [layer.get("hypothesis_layer_id") for layer in layers], rule="narrative_rules.preserve_failed_and_changed_hypotheses")

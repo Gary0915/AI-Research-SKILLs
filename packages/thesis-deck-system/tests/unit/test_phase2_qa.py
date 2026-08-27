@@ -59,6 +59,18 @@ def test_professor_qa_gates_checks_from_persisted_profile_rules():
     assert report["evidence"]["PROF-QUESTION-BEFORE-RESULT"]["profile_rule"] == "narrative_rules.require_question_before_data"
 
 
+def test_professor_qa_rejects_incomplete_transition_provenance():
+    qa2 = _module("qa2")
+    projection = {
+        "layers": [{"hypothesis_layer_id": "H001", "fishbone_snapshot_ref": {"revision": 1}, "research_block_refs": ["B101"], "result_refs": ["RES101"]}],
+        "slides": [{"semantic_role": "hypothesis_title", "hypothesis_layer_ref": "H001"}, {"semantic_role": "hypothesis_transition", "hypothesis_layer_ref": "H001"}],
+        "state": {"claims": {"C101": {}, "C201": {}}, "stages": {"ST-RES101": {}}, "decisions": {}, "evidence": {}, "hypothesis_transitions": {"TR-H001-H002": {"previous_hypothesis_claim_ref": "C101", "new_hypothesis_claim_ref": "C201", "key_result_refs": ["RES101"], "decision_refs": [], "observation_or_uncertainty_refs": []}}},
+        "previous_commitments": [],
+    }
+    report = qa2.run_professor_qa_v2({"profile_id": "PROF-SYNTH-001", "version": "1.0.0"}, projection)
+    assert "PROF-TRANSITION-PROVENANCE" in {finding["rule_id"] for finding in report["findings"]}
+
+
 def test_visual_qa_rejects_nonhierarchical_title_and_unsplit_budget(tmp_path: Path):
     qa2 = _module("qa2")
     image = Image.new("RGB", (1280, 720), "white")

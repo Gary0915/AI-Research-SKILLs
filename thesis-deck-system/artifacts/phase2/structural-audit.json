@@ -1703,8 +1703,8 @@
     }
   ],
   "relationship_targets_checked": 141,
-  "source_template_sha256_before": "2d13f11ce5e80c637e59562606c9f2620594a4e6b42f35e24430da628894094c",
-  "source_template_sha256_after": "2d13f11ce5e80c637e59562606c9f2620594a4e6b42f35e24430da628894094c",
-  "generated_pptx_sha256": "d209f881a8a29124b2053829662f793e17c68fd43491b65a5f74a329a21f9ab2",
+  "source_template_sha256_before": "b922d461d292788fd70f72addf0e23dc892eebb8ba22783a8a092addcccee32b",
+  "source_template_sha256_after": "b922d461d292788fd70f72addf0e23dc892eebb8ba22783a8a092addcccee32b",
+  "generated_pptx_sha256": "5867ffa5a13e6621b0358665795a2f1751ddd419cc922c1c58e281ecc5fc47ac",
   "source_template_unchanged": true
 }
