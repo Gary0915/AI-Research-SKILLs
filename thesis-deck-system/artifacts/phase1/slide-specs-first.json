@@ -38,7 +38,7 @@
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 19,
     "bindings": {
       "claim_refs": [
         "C001"
@@ -51,6 +51,9 @@
       ],
       "action_refs": [
         "NS001"
+      ],
+      "decision_refs": [
+        "D001"
       ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
@@ -113,7 +116,7 @@
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 19,
     "bindings": {
       "claim_refs": [
         "C001",
@@ -129,6 +132,9 @@
       ],
       "action_refs": [
         "NS001"
+      ],
+      "decision_refs": [
+        "D001"
       ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",

@@ -71,7 +71,7 @@ class Ledger:
         return ledger
 
     def materialize(self, until_cursor: int | None = None) -> dict[str, Any]:
-        state = {"blocks": {}, "claims": {}, "actions": {}, "decisions": {}, "stages": {}, "events": []}
+        state = {"blocks": {}, "claims": {}, "evidence": {}, "assets": {}, "actions": {}, "decisions": {}, "stages": {}, "events": []}
         events = self.replay()
         for event in events[:until_cursor] if until_cursor is not None else events:
             state["events"].append(asdict(event))
@@ -80,7 +80,9 @@ class Ledger:
                 state["blocks"][payload["block_id"]] = dict(payload)
             elif event.event_type in {"block_revised", "research_status_changed", "story_visibility_changed"}:
                 block = state["blocks"].setdefault(payload["block_id"], {})
-                if event.event_type == "story_visibility_changed":
+                if event.event_type == "block_revised":
+                    state["blocks"][payload["block_id"]] = dict(payload)
+                elif event.event_type == "story_visibility_changed":
                     block.setdefault("story_visibility", {})[payload["deck"]] = payload["story_visibility"]
                 else:
                     block.update({k: v for k, v in payload.items() if k != "block_id"})
@@ -92,4 +94,8 @@ class Ledger:
                 state["decisions"][payload["decision_id"]] = dict(payload)
             elif event.event_type == "stage_revised":
                 state["stages"][payload["stage_id"]] = dict(payload)
+            elif event.event_type == "evidence_linked":
+                state["evidence"][payload["evidence_id"]] = dict(payload)
+            elif event.event_type == "asset_registered":
+                state["assets"][payload["asset_id"]] = dict(payload)
         return state

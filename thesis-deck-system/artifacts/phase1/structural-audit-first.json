@@ -267,6 +267,6 @@
   "relationship_targets_checked": 52,
   "source_template_sha256_before": "ed1523b702282756a3ec5fb072af775a0dfa1a1bd4aa6795117ea6997946142e",
   "source_template_sha256_after": "ed1523b702282756a3ec5fb072af775a0dfa1a1bd4aa6795117ea6997946142e",
-  "generated_pptx_sha256": "7aa384c831856d1ef14ce05ad7d152014b9779b91b473ecd1a7dc31572f0aa36",
+  "generated_pptx_sha256": "e868a712136ca3d14b6dd10ab92ce3a9a8fdec52371d9e19defa6d88e479116b",
   "source_template_unchanged": true
 }

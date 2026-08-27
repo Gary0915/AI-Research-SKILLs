@@ -11,7 +11,7 @@
     "profile_id": "PROF-SYNTH-001",
     "version": "1.0.0"
   },
-  "source_event_cursor": 17,
+  "source_event_cursor": 24,
   "build_id": "BUILD-MASTER-PHASE1-REVISED",
   "build_tool_version": "0.2.0",
   "created_at": "2026-08-27T00:00:00Z",
@@ -23,7 +23,7 @@
       "ordinal": 1,
       "slide_id": "S-B001-OBSERVATION-01",
       "slide_spec_path": "thesis-deck-system/artifacts/phase1/slide-specs-revised.json",
-      "slide_spec_sha256": "eb0793f43b72612cd9788b7df321b992bb72897d149f08c2797ad53f62f22302",
+      "slide_spec_sha256": "d784e894304a92be90cea02ee67515d88e5d84ea1379d0038342a54b30498bd6",
       "block_ref": {
         "block_id": "B001",
         "revision": 2
@@ -40,6 +40,9 @@
       "action_refs": [
         "NS001"
       ],
+      "decision_refs": [
+        "D002"
+      ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
         "version": "1.0.0"
@@ -48,14 +51,14 @@
         "profile_id": "TP-SYNTH-001",
         "version": "1.0.0"
       },
-      "source_event_cursor": 17,
+      "source_event_cursor": 24,
       "story_visibility": "main"
     },
     {
       "ordinal": 2,
       "slide_id": "S-B001-RESULT-01",
       "slide_spec_path": "thesis-deck-system/artifacts/phase1/slide-specs-revised.json",
-      "slide_spec_sha256": "eb0793f43b72612cd9788b7df321b992bb72897d149f08c2797ad53f62f22302",
+      "slide_spec_sha256": "d784e894304a92be90cea02ee67515d88e5d84ea1379d0038342a54b30498bd6",
       "block_ref": {
         "block_id": "B001",
         "revision": 2
@@ -75,6 +78,9 @@
       "action_refs": [
         "NS001"
       ],
+      "decision_refs": [
+        "D002"
+      ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
         "version": "1.0.0"
@@ -83,13 +89,13 @@
         "profile_id": "TP-SYNTH-001",
         "version": "1.0.0"
       },
-      "source_event_cursor": 17,
+      "source_event_cursor": 24,
       "story_visibility": "main"
     }
   ],
   "outputs": {
     "pptx": "thesis-deck-system/artifacts/phase1/master_revised_build.pptx",
-    "pptx_sha256": "8aeea93a776382902e401b1ff1de1f6f7951ca9dbc30e5c2c06f9611b25b5e55"
+    "pptx_sha256": "7aa384c831856d1ef14ce05ad7d152014b9779b91b473ecd1a7dc31572f0aa36"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE1-REVISED"

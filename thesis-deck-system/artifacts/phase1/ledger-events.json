@@ -5,7 +5,7 @@
     "payload": {
       "schema_version": "1.0.0",
       "block_id": "B001",
-      "revision": 2,
+      "revision": 1,
       "title": "Synthetic positional defect study",
       "research_question": {
         "question_id": "RQ-B001",
@@ -45,10 +45,12 @@
       ],
       "evidence_refs": [
         "E001",
-        "E002"
+        "E002",
+        "E003"
       ],
       "asset_refs": [
-        "A001"
+        "A001",
+        "A002"
       ],
       "action_item_refs": [
         "NS001"
@@ -61,9 +63,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
+    "timestamp": "2026-08-27T06:15:31Z",
     "previous_hash": null,
-    "event_hash": "335ac56371a0fd23e9d9db7dc2066c961489399d430b2b7759c7bb6a3c2169e7"
+    "event_hash": "ce0835eb4ee57140959cee2cc26dbec9dfe53123e71cfffa1e3983455b1b2ca8"
   },
   {
     "cursor": 2,
@@ -112,9 +114,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "335ac56371a0fd23e9d9db7dc2066c961489399d430b2b7759c7bb6a3c2169e7",
-    "event_hash": "d9dcc46157c0205e46f0d36fb1410bea0e13f97d52fde2aa6efb7fa9a6fa01b3"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "ce0835eb4ee57140959cee2cc26dbec9dfe53123e71cfffa1e3983455b1b2ca8",
+    "event_hash": "3136038f5b4e60fbf8f98de741a767c22492d1addf00af95751dff9cc70fbe71"
   },
   {
     "cursor": 3,
@@ -163,9 +165,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "d9dcc46157c0205e46f0d36fb1410bea0e13f97d52fde2aa6efb7fa9a6fa01b3",
-    "event_hash": "58992369efb506820e42e353528498a50b4e1a4abccf233ff77962b6806c4047"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "3136038f5b4e60fbf8f98de741a767c22492d1addf00af95751dff9cc70fbe71",
+    "event_hash": "18e151388854f1771a3fa9c1c2e47d8f1cd23134a37410c373ddca2a906789f4"
   },
   {
     "cursor": 4,
@@ -200,12 +202,182 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "58992369efb506820e42e353528498a50b4e1a4abccf233ff77962b6806c4047",
-    "event_hash": "5da5d3128c45bdf915d995cf1d13ef7d6f503245e876b6cc4866e7293e1ae424"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "18e151388854f1771a3fa9c1c2e47d8f1cd23134a37410c373ddca2a906789f4",
+    "event_hash": "b020200911b048b8cb8b162d1d6a54e31fc951d7fc920ae33180d0de0961e70c"
   },
   {
     "cursor": 5,
+    "event_type": "evidence_linked",
+    "payload": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E001",
+      "kind": "synthetic_measurement",
+      "title": "Synthetic B001 measurement CSV",
+      "provenance": "Generated from committed synthetic measurements.csv",
+      "source": {
+        "source_id": "measurements",
+        "uri": "thesis-deck-system/examples/synthetic-project/measurements.csv",
+        "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
+      },
+      "claim_support_refs": [
+        "C003"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B001",
+        "units": "count/mm2"
+      },
+      "measurement": {
+        "replicates": 3
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "b020200911b048b8cb8b162d1d6a54e31fc951d7fc920ae33180d0de0961e70c",
+    "event_hash": "9d008df282051a267b53a6881d63febe6df039ae18c3bc43dc7c5dd47496e375"
+  },
+  {
+    "cursor": 6,
+    "event_type": "evidence_linked",
+    "payload": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E002",
+      "kind": "synthetic_observation",
+      "title": "Synthetic microscopy observation",
+      "provenance": "Committed synthetic observation visual",
+      "source": {
+        "source_id": "synthetic-observation",
+        "uri": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
+        "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd"
+      },
+      "claim_support_refs": [
+        "C001"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B001"
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "9d008df282051a267b53a6881d63febe6df039ae18c3bc43dc7c5dd47496e375",
+    "event_hash": "4465d2cc5b1e29b9f3d7a703ed3681f1396b1d9eebb68731310bef1d0ddc5494"
+  },
+  {
+    "cursor": 7,
+    "event_type": "evidence_linked",
+    "payload": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E003",
+      "kind": "synthetic_literature",
+      "title": "Synthetic literature synthesis record",
+      "provenance": "Synthetic/local test metadata; not a published citation",
+      "source": {
+        "source_id": "local-synthetic-literature",
+        "uri": "thesis-deck-system/examples/synthetic-project/evidence/literature-note.txt",
+        "sha256": "5b510e5b31d6714228a03c31a544b12a0991ab0dc797166167cfe8d8447f7fee"
+      },
+      "claim_support_refs": [
+        "C001",
+        "C002"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B001"
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "4465d2cc5b1e29b9f3d7a703ed3681f1396b1d9eebb68731310bef1d0ddc5494",
+    "event_hash": "ad2be5276edb925084b041406cdc6c76333c4b17048387398e20fa2c3b5e41e5"
+  },
+  {
+    "cursor": 8,
+    "event_type": "asset_registered",
+    "payload": {
+      "schema_version": "1.0.0",
+      "asset_id": "A001",
+      "asset_type": "data_plot",
+      "title": "Synthetic positional defect density",
+      "evidence_role": "synthetic_test_evidence",
+      "source_evidence": [
+        "E001"
+      ],
+      "path": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
+      "preview_path": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
+      "mime_type": "image/svg+xml",
+      "sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+      "editable": true,
+      "generator": {
+        "kind": "matplotlib",
+        "script": "thesis-deck-system/examples/synthetic-project/plot.py",
+        "version": "3.10.9",
+        "script_sha256": "b8c35668c252fb1c46ce1f1dcb8366b4d79919d12e12f07bd623dd142b301706"
+      },
+      "input": {
+        "path": "thesis-deck-system/examples/synthetic-project/measurements.csv",
+        "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
+      },
+      "output": {
+        "svg_path": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
+        "svg_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+        "png_path": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
+        "png_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
+      },
+      "transform_chain": [
+        {
+          "input_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
+          "operation": "mean and sample SD by position",
+          "output_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "license_or_usage": "synthetic_test_only",
+      "accessibility": {
+        "alt_text": "Synthetic edge mean exceeds center mean with sample standard deviation error bars."
+      },
+      "status": "approved"
+    },
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "ad2be5276edb925084b041406cdc6c76333c4b17048387398e20fa2c3b5e41e5",
+    "event_hash": "11173b5ea8d200460d2fe6ef742b81d58a25966d947043fa0c15e9b5a2abc14f"
+  },
+  {
+    "cursor": 9,
+    "event_type": "asset_registered",
+    "payload": {
+      "schema_version": "1.0.0",
+      "asset_id": "A002",
+      "asset_type": "observation_photo",
+      "title": "Synthetic observation",
+      "evidence_role": "synthetic_test_evidence",
+      "source_evidence": [
+        "E002"
+      ],
+      "path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
+      "preview_path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.png",
+      "mime_type": "image/svg+xml",
+      "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+      "editable": true,
+      "provenance": "synthetic_fixture",
+      "status": "approved"
+    },
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "11173b5ea8d200460d2fe6ef742b81d58a25966d947043fa0c15e9b5a2abc14f",
+    "event_hash": "d167e709b92b46ec4f505652cace2d2ff74e8590cac7b437aee54d4e8f405149"
+  },
+  {
+    "cursor": 10,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -245,12 +417,12 @@
       "created_at": "2026-08-01T00:00:00Z",
       "updated_at": "2026-08-01T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "5da5d3128c45bdf915d995cf1d13ef7d6f503245e876b6cc4866e7293e1ae424",
-    "event_hash": "28ce7ecaf3d6a83043a37a930ad52c432e606ca0df3c610eae18097c7797d4d4"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "d167e709b92b46ec4f505652cace2d2ff74e8590cac7b437aee54d4e8f405149",
+    "event_hash": "5e57d33410dc0d1b06bd780e8905e7cca3c383bb91415c25cbc160e3ba8df704"
   },
   {
-    "cursor": 6,
+    "cursor": 11,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -326,12 +498,12 @@
       "created_at": "2026-08-01T00:00:00Z",
       "updated_at": "2026-08-01T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "28ce7ecaf3d6a83043a37a930ad52c432e606ca0df3c610eae18097c7797d4d4",
-    "event_hash": "ef9fb4db88681255c47c2b836f30d809932a16b4338999937107b0f9b07d478f"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "5e57d33410dc0d1b06bd780e8905e7cca3c383bb91415c25cbc160e3ba8df704",
+    "event_hash": "fc30cfabe11817bba1abe45a190ec8a88ea3565259f3e2b570d69fba1a8abaa3"
   },
   {
-    "cursor": 7,
+    "cursor": 12,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -371,12 +543,12 @@
       "created_at": "2026-08-01T00:00:00Z",
       "updated_at": "2026-08-01T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "ef9fb4db88681255c47c2b836f30d809932a16b4338999937107b0f9b07d478f",
-    "event_hash": "6109e123aec203c173ebf48e6cfdb6e6f289739ad4cb03f046736c335b00538f"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "fc30cfabe11817bba1abe45a190ec8a88ea3565259f3e2b570d69fba1a8abaa3",
+    "event_hash": "1b38c73fad4674dd7cc2baed2bfc91d4a8ef7ebb0320457e112cbe484bc50c87"
   },
   {
-    "cursor": 8,
+    "cursor": 13,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -403,12 +575,12 @@
       "created_at": "2026-08-01T00:00:00Z",
       "updated_at": "2026-08-01T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "6109e123aec203c173ebf48e6cfdb6e6f289739ad4cb03f046736c335b00538f",
-    "event_hash": "07c8875b98c56b52dcce6798c23b8bb89c9b9ec4dd08f4079d6fcfb252334cbc"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "1b38c73fad4674dd7cc2baed2bfc91d4a8ef7ebb0320457e112cbe484bc50c87",
+    "event_hash": "a39f997cb79d641f6ac2e0b15d62f24de6159d3e75e5057d6cad4c62de332017"
   },
   {
-    "cursor": 9,
+    "cursor": 14,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -434,12 +606,12 @@
       "created_at": "2026-08-01T00:00:00Z",
       "updated_at": "2026-08-01T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "07c8875b98c56b52dcce6798c23b8bb89c9b9ec4dd08f4079d6fcfb252334cbc",
-    "event_hash": "49567f6f84f5a6b323299eb8c94a9904c84d2d200e4a6e3301b9caca4fc6454f"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "a39f997cb79d641f6ac2e0b15d62f24de6159d3e75e5057d6cad4c62de332017",
+    "event_hash": "bcb239ae4ac5891867efb4265861ea32b06da5e759e46e5fdc5fb5ab71a33f4f"
   },
   {
-    "cursor": 10,
+    "cursor": 15,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -473,12 +645,12 @@
       "created_at": "2026-08-01T00:00:00Z",
       "updated_at": "2026-08-01T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "49567f6f84f5a6b323299eb8c94a9904c84d2d200e4a6e3301b9caca4fc6454f",
-    "event_hash": "1a55f8865545010e48d1141de160ca618dea61406a07fd847d261c55f634b512"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "bcb239ae4ac5891867efb4265861ea32b06da5e759e46e5fdc5fb5ab71a33f4f",
+    "event_hash": "9511cf98dc83ba1f0716c82d98e8cbf0869223425b5541eccf6b10b411fdd7ff"
   },
   {
-    "cursor": 11,
+    "cursor": 16,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -504,16 +676,20 @@
       "created_at": "2026-08-01T00:00:00Z",
       "updated_at": "2026-08-01T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "1a55f8865545010e48d1141de160ca618dea61406a07fd847d261c55f634b512",
-    "event_hash": "5af81f78dc110749acb4c0ef3f11d135d74ec0d05a06e0b98513d04cbcc81541"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "9511cf98dc83ba1f0716c82d98e8cbf0869223425b5541eccf6b10b411fdd7ff",
+    "event_hash": "b6852d218bcc86fdf5edf4f32f19daecde9cdfd81b5a15a202896393fbd963b9"
   },
   {
-    "cursor": 12,
+    "cursor": 17,
     "event_type": "decision_recorded",
     "payload": {
       "schema_version": "1.0.0",
       "decision_id": "D001",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 1
+      },
       "timestamp": "2026-08-01T00:00:00Z",
       "actor": {
         "type": "person",
@@ -531,12 +707,12 @@
       ],
       "provenance": "synthetic_fixture"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "5af81f78dc110749acb4c0ef3f11d135d74ec0d05a06e0b98513d04cbcc81541",
-    "event_hash": "8d2d5865592fe73f84ecea1d39460e39cac49e82664590d284da1c180a5e4945"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "b6852d218bcc86fdf5edf4f32f19daecde9cdfd81b5a15a202896393fbd963b9",
+    "event_hash": "bd8793409326b4729b5a7b040fc4af1d5cc8b2fafb5b2eaa651c971709e098de"
   },
   {
-    "cursor": 13,
+    "cursor": 18,
     "event_type": "action_committed",
     "payload": {
       "schema_version": "1.0.0",
@@ -591,23 +767,23 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "8d2d5865592fe73f84ecea1d39460e39cac49e82664590d284da1c180a5e4945",
-    "event_hash": "09c29deb4a82963def69b059b83f3e7d8af503189d51ef9d82486a31baa283bd"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "bd8793409326b4729b5a7b040fc4af1d5cc8b2fafb5b2eaa651c971709e098de",
+    "event_hash": "c710d3bcba53b2541e221fdff8a595c264fdd1d36721ee8037d86d7dddfcfe9a"
   },
   {
-    "cursor": 14,
+    "cursor": 19,
     "event_type": "slide_spec_compiled",
     "payload": {
       "block_id": "B001",
       "revision": 1
     },
-    "timestamp": "2026-08-27T04:57:47Z",
-    "previous_hash": "09c29deb4a82963def69b059b83f3e7d8af503189d51ef9d82486a31baa283bd",
-    "event_hash": "051be3abdf7d61b53d61f24812ffe83e78175b5eded31fc437b99df497039427"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "c710d3bcba53b2541e221fdff8a595c264fdd1d36721ee8037d86d7dddfcfe9a",
+    "event_hash": "3fd9a7686471b8bf6ae4950e2758f493e889b9da9769e8734457ed54fa2eaeb4"
   },
   {
-    "cursor": 15,
+    "cursor": 20,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -650,16 +826,20 @@
       "created_at": "2026-08-03T00:00:00Z",
       "updated_at": "2026-08-03T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:48Z",
-    "previous_hash": "051be3abdf7d61b53d61f24812ffe83e78175b5eded31fc437b99df497039427",
-    "event_hash": "4a0c282ff6b497e62bbfc1ce44c481ffff1e18f31b5242c2648c9c85041234b3"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "3fd9a7686471b8bf6ae4950e2758f493e889b9da9769e8734457ed54fa2eaeb4",
+    "event_hash": "9c7a811edeca66c7927fa744b6aef76b588e76e017e0897594a657d9f8e9e308"
   },
   {
-    "cursor": 16,
+    "cursor": 21,
     "event_type": "decision_recorded",
     "payload": {
       "schema_version": "1.0.0",
       "decision_id": "D002",
+      "block_ref": {
+        "block_id": "B001",
+        "revision": 2
+      },
       "timestamp": "2026-08-03T00:00:00Z",
       "actor": {
         "type": "person",
@@ -677,32 +857,152 @@
       ],
       "provenance": "synthetic_fixture"
     },
-    "timestamp": "2026-08-27T04:57:48Z",
-    "previous_hash": "4a0c282ff6b497e62bbfc1ce44c481ffff1e18f31b5242c2648c9c85041234b3",
-    "event_hash": "d3c61e980dbe5eb24198cb18ce49b3c80ae5cfcfb4bfce2e3b963a1b16b028ac"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "9c7a811edeca66c7927fa744b6aef76b588e76e017e0897594a657d9f8e9e308",
+    "event_hash": "c86ae6fd3a80cddf1f8f214999500d8e93f88070df6a9c6b39d9786cab5204ee"
   },
   {
-    "cursor": 17,
+    "cursor": 22,
     "event_type": "action_status_changed",
     "payload": {
+      "schema_version": "1.0.0",
       "action_item_id": "NS001",
       "revision": 2,
-      "status": "in_progress",
+      "action_type": "experiment",
+      "title": "Run matched-position tracer control",
+      "action": "Measure center, mid-radius, and edge replicates with an independent transport tracer.",
+      "rationale": "Resolve the remaining non-discriminating transport-versus-boundary explanation.",
       "source_decision_ref": "D002",
+      "linked_block_refs": [
+        {
+          "block_id": "B001",
+          "revision": 2
+        }
+      ],
+      "linked_claim_refs": [
+        "C001",
+        "C003"
+      ],
+      "prior_commitment": {
+        "meeting_id": "MEETING-001",
+        "committed_at": "2026-08-27T00:00:00Z"
+      },
+      "owner": {
+        "actor_id": "researcher",
+        "display_name": "Synthetic researcher"
+      },
       "target_window": {
         "start": "2026-09-03T00:00:00Z",
         "due": "2026-09-10T09:00:00Z",
         "timezone": "Asia/Taipei"
       },
-      "owner": {
-        "actor_id": "researcher"
+      "actual_completion": {
+        "completed_at": null,
+        "closure_evidence_refs": []
       },
+      "success_failure_criteria": {
+        "success": "Tracer discriminates transport from boundary accumulation.",
+        "failure": "Tracer remains non-discriminating."
+      },
+      "required_evidence": [
+        "REQ001"
+      ],
+      "dependency_refs": [],
       "blocker_refs": [
         "matched-position-control"
-      ]
+      ],
+      "parallelizable": true,
+      "workstream": "synthetic-microscopy",
+      "status": "in_progress",
+      "result_summary": null,
+      "supersedes": [],
+      "superseded_by": [],
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
     },
-    "timestamp": "2026-08-27T04:57:48Z",
-    "previous_hash": "d3c61e980dbe5eb24198cb18ce49b3c80ae5cfcfb4bfce2e3b963a1b16b028ac",
-    "event_hash": "6eb7bb21ac2e2a8e15b534172d0ad0d6d4fb5fead21d1ac53106b673d6838666"
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "c86ae6fd3a80cddf1f8f214999500d8e93f88070df6a9c6b39d9786cab5204ee",
+    "event_hash": "0d41e3c16c96fa7b91bcef33f49559fc8564e91a0fe5cdea48897a9924aa14cb"
+  },
+  {
+    "cursor": 23,
+    "event_type": "block_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "block_id": "B001",
+      "revision": 2,
+      "title": "Synthetic positional defect study",
+      "research_question": {
+        "question_id": "RQ-B001",
+        "text": "Does synthetic treatment produce a positional defect-density gradient?",
+        "scope": "Synthetic fixture only; not laboratory evidence"
+      },
+      "problem_statement": "A synthetic gradient is used to exercise controlled reasoning.",
+      "research_status": "active",
+      "story_visibility": {
+        "master": "main",
+        "meeting": "main",
+        "defense": "appendix"
+      },
+      "hypothesis_claim_refs": [
+        "C001"
+      ],
+      "mechanism_claim_refs": [
+        "C002"
+      ],
+      "prediction_claim_refs": [
+        "C003"
+      ],
+      "stage_refs": {
+        "observation": "ST-OBS",
+        "literature": "ST-LIT",
+        "mechanism": "ST-MECH",
+        "solution": "ST-SOL",
+        "experiment": "ST-EXP",
+        "result": "ST-RES",
+        "discussion": "ST-DISC",
+        "next_step": "NS001"
+      },
+      "claim_refs": [
+        "C001",
+        "C002",
+        "C003"
+      ],
+      "evidence_refs": [
+        "E001",
+        "E002",
+        "E003"
+      ],
+      "asset_refs": [
+        "A001",
+        "A002"
+      ],
+      "action_item_refs": [
+        "NS001"
+      ],
+      "decision_refs": [
+        "D001",
+        "D002"
+      ],
+      "decision_criteria_ref": "ST-EXP#/data/decision_rules",
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "0d41e3c16c96fa7b91bcef33f49559fc8564e91a0fe5cdea48897a9924aa14cb",
+    "event_hash": "fa1095545921a4359e6463a94a26053d44bf2ff882eddb35e06c63b9b3d784b6"
+  },
+  {
+    "cursor": 24,
+    "event_type": "slide_spec_compiled",
+    "payload": {
+      "block_id": "B001",
+      "revision": 2
+    },
+    "timestamp": "2026-08-27T06:15:31Z",
+    "previous_hash": "fa1095545921a4359e6463a94a26053d44bf2ff882eddb35e06c63b9b3d784b6",
+    "event_hash": "a1195c00474994b4bd4f10146a64504bbeaa79aaa4837e9afc99695f71c62708"
   }
 ]

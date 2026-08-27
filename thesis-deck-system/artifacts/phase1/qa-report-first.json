@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "qa_report_id": "QA-MASTER-PHASE1-REVISED",
-  "build_id": "BUILD-MASTER-PHASE1-REVISED",
-  "deck_id": "MASTER-PHASE1-REVISED",
-  "created_at": "2026-08-27T06:16:26.272535Z",
+  "qa_report_id": "QA-MASTER-PHASE1-FIRST",
+  "build_id": "BUILD-MASTER-PHASE1-FIRST",
+  "deck_id": "MASTER-PHASE1-FIRST",
+  "created_at": "2026-08-27T06:16:26.044997Z",
   "overall_status": "blocked",
   "professor_profile_ref": {
     "profile_id": "PROF-SYNTH-001",
@@ -208,7 +208,7 @@
             "MONTAGES",
             "HUMAN-INSPECTION"
           ],
-          "record": "thesis-deck-system/artifacts/phase1/visual-inspection-revised.json",
+          "record": "thesis-deck-system/artifacts/phase1/visual-inspection-first.json",
           "errors": []
         }
       }
@@ -234,11 +234,11 @@
   ],
   "findings": [],
   "artifacts": {
-    "pptx": "thesis-deck-system/artifacts/phase1/master_revised_build.pptx",
-    "structural_audit": "thesis-deck-system/artifacts/phase1/structural-audit-revised.json",
-    "source_cursor": 24,
-    "materialized_state": "thesis-deck-system/artifacts/phase1/materialized-revised.json",
-    "visual_inspection": "thesis-deck-system/artifacts/phase1/visual-inspection-revised.json"
+    "pptx": "thesis-deck-system/artifacts/phase1/master_first_build.pptx",
+    "structural_audit": "thesis-deck-system/artifacts/phase1/structural-audit-first.json",
+    "source_cursor": 19,
+    "materialized_state": "thesis-deck-system/artifacts/phase1/materialized-first.json",
+    "visual_inspection": "thesis-deck-system/artifacts/phase1/visual-inspection-first.json"
   },
   "tool_versions": {
     "control_plane": "0.2.0",
@@ -513,7 +513,7 @@
     "relationship_targets_checked": 52,
     "source_template_sha256_before": "ed1523b702282756a3ec5fb072af775a0dfa1a1bd4aa6795117ea6997946142e",
     "source_template_sha256_after": "ed1523b702282756a3ec5fb072af775a0dfa1a1bd4aa6795117ea6997946142e",
-    "generated_pptx_sha256": "7aa384c831856d1ef14ce05ad7d152014b9779b91b473ecd1a7dc31572f0aa36",
+    "generated_pptx_sha256": "e868a712136ca3d14b6dd10ab92ce3a9a8fdec52371d9e19defa6d88e479116b",
     "source_template_unchanged": true
   },
   "native_status": "blocked_environment"

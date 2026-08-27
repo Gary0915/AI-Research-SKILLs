@@ -4,7 +4,7 @@ from pathlib import Path
 import hashlib
 import json
 from PIL import Image, ImageStat
-from .contracts import semantic_findings, SchemaRegistry
+from .contracts import semantic_findings, SchemaRegistry, validate_temporal_bindings
 
 CANONICAL_PIPELINE=["schema_ledger_integrity","scientific_reasoning","citation_evidence_provenance","professor_style_logic","compile_assemble_pptx","structural_pptx_engineering","render_montage_visual","native_powerpoint_round_trip","final_deck_version_audit","release"]
 
@@ -67,10 +67,10 @@ def visual_evidence_errors(render_evidence, repo_root, specs):
     if len(render_evidence.get("montage_paths",[])) < 2: errors.append("montage_count")
     return errors
 
-def run_pipeline(*, bundle=None, ledger=None, specs=None, structural_audit=None, native_available=False, professor_profile=None, render_evidence=None, critical_findings=None):
+def run_pipeline(*, bundle=None, ledger=None, specs=None, structural_audit=None, native_available=False, professor_profile=None, render_evidence=None, critical_findings=None, qa_report_id="QA-MASTER-PHASE1-REVISED", build_id="BUILD-MASTER-PHASE1-REVISED", deck_id="MASTER-PHASE1-REVISED"):
     if critical_findings is not None:
-        statuses=["pass"]*4 + (["not_run"]*5) + ["blocked"] if critical_findings else ["pass"]*10
-        return {"schema_version":"1.0.0","qa_report_id":"QA-PHASE1","build_id":"BUILD-PHASE1","deck_id":"MASTER-PHASE1","created_at":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),"overall_status":"pass" if not critical_findings and native_available else "blocked","professor_profile_ref":{"profile_id":"PROF-SYNTH-001","version":"1.0.0"},"pipeline":[{"order":i+1,"stage":n,"status":s} for i,(n,s) in enumerate(zip(CANONICAL_PIPELINE,statuses))],"findings":critical_findings,"artifacts":{},"tool_versions":{}}
+        statuses=["not_run"]*9 + ["blocked"]
+        return {"schema_version":"1.0.0","qa_report_id":qa_report_id,"build_id":build_id,"deck_id":deck_id,"created_at":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),"overall_status":"blocked","professor_profile_ref":{"profile_id":"PROF-SYNTH-001","version":"1.0.0"},"pipeline":[{"order":i+1,"stage":n,"status":s,"evidence":{"reason":"owning checks not executed"}} for i,(n,s) in enumerate(zip(CANONICAL_PIPELINE,statuses))],"findings":critical_findings,"artifacts":{},"tool_versions":{"gate_execution":"not_executed"}}
     bundle=bundle or {}; specs=specs or []; structural_audit=structural_audit or {}; professor_profile=professor_profile or {}; render_evidence=render_evidence or {}
     repo_root=Path(bundle.get("_repo_root",".")); schema_dir=Path(bundle.get("_schema_dir",repo_root/"thesis-deck-system/schemas")); registry=SchemaRegistry(schema_dir)
     schema_errors=registry.validate_bundle(bundle)
@@ -83,6 +83,16 @@ def run_pipeline(*, bundle=None, ledger=None, specs=None, structural_audit=None,
             first_path=Path(materialized["first"]); revised_path=Path(materialized["revised"])
             if not first_path.exists() or json.loads(first_path.read_text(encoding="utf-8")) != ledger.materialize(materialized["first_cursor"]): ledger_errors.append("materialized_first_mismatch")
             if not revised_path.exists() or json.loads(revised_path.read_text(encoding="utf-8")) != revised_state: ledger_errors.append("materialized_revised_mismatch")
+        ledger_errors.extend(
+            finding.rule_id
+            for finding in validate_temporal_bindings(
+                bundle,
+                ledger,
+                specs,
+                bundle.get("deck_manifests", []),
+                bundle.get("qa_reports", bundle.get("_qa_scope_records", [])),
+            )
+        )
     provenance_failures=provenance_errors(bundle,repo_root)
     professor_findings=professor_qa(professor_profile,bundle,specs)
     generated=structural_audit.get("generated_slides",[])
@@ -90,9 +100,9 @@ def run_pipeline(*, bundle=None, ledger=None, specs=None, structural_audit=None,
     structural_ok=bool(generated) and len(generated)==len(specs) and all(item.get("layout_master_role_match") and item.get("notes_source_match") and item.get("editable_text") for item in generated)
     visual_failures=visual_evidence_errors(render_evidence,repo_root,specs)
     findings=[]; statuses=[]; evidence=[]
-    gates=[(not schema_errors and not ledger_errors,{"check_ids":["SCHEMA-ALL","LEDGER-REPLAY","MATERIALIZED-FIRST","MATERIALIZED-REVISED"],"objects":sum(len(bundle.get(k,[])) for k in ("research_blocks","stages","claims","evidence_cards","assets","slide_specs","deck_manifests","template_profiles")),"errors":[getattr(e,"rule_id",str(e)) for e in schema_errors]+ledger_errors}),(not any(f.rule_id.startswith("SCI-") for f in semantic_findings(bundle)),{"check_ids":["SCI-METHOD","SCI-DISCUSSION-NEXT"]}),(not provenance_failures,{"check_ids":["PROV-EVIDENCE-HASH","PROV-ASSET-CHAIN"],"verified":len(bundle.get("evidence_cards",[]))+len(bundle.get("assets",[])),"errors":provenance_failures}),(not professor_findings,{"check_ids":["PROF-QUESTION","PROF-MEETING-PROJECTION","PROF-RECIPES"],"errors":[f["rule_id"] for f in professor_findings]}),(bool(specs) and assembled_ids==expected_ids and structural_audit.get("slide_count",0)>=len(specs),{"check_ids":["COMPILE-SPECS","ASSEMBLE-DECK"],"spec_count":len(specs),"generated_slide_ids":assembled_ids}),(structural_ok and not structural_audit.get("orphan_parts") and structural_audit.get("content_types_present") and structural_audit.get("result_slide_svg_relationship") and structural_audit.get("source_template_unchanged") and not structural_audit.get("full_slide_raster_substitution"),{"check_ids":["PPTX-REL","PPTX-LAYOUT-MASTER-ROLE","PPTX-NOTES","PPTX-SVG","PPTX-TEMPLATE-IMMUTABLE"],"svg":structural_audit.get("result_slide_svg_relationship"),"generated_slides":generated}), (not visual_failures,{"check_ids":["RENDER-FILES","RENDER-DIMENSIONS","RENDER-NONBLANK","MONTAGES","HUMAN-INSPECTION"],"record":render_evidence.get("inspection_record"),"errors":visual_failures})]
+    gates=[(not schema_errors and not ledger_errors,{"check_ids":["SCHEMA-ALL","LEDGER-REPLAY","MATERIALIZED-FIRST","MATERIALIZED-REVISED","TEMPORAL-BINDINGS","QA-SCOPE"],"objects":sum(len(bundle.get(k,[])) for k in ("research_blocks","stages","claims","evidence_cards","assets","slide_specs","deck_manifests","template_profiles")),"errors":[getattr(e,"rule_id",str(e)) for e in schema_errors]+ledger_errors}),(not any(f.rule_id.startswith("SCI-") for f in semantic_findings(bundle)),{"check_ids":["SCI-METHOD","SCI-DISCUSSION-NEXT"]}),(not provenance_failures,{"check_ids":["PROV-EVIDENCE-HASH","PROV-ASSET-CHAIN"],"verified":len(bundle.get("evidence_cards",[]))+len(bundle.get("assets",[])),"errors":provenance_failures}),(not professor_findings,{"check_ids":["PROF-QUESTION","PROF-MEETING-PROJECTION","PROF-RECIPES"],"errors":[f["rule_id"] for f in professor_findings]}),(bool(specs) and assembled_ids==expected_ids and structural_audit.get("slide_count",0)>=len(specs),{"check_ids":["COMPILE-SPECS","ASSEMBLE-DECK"],"spec_count":len(specs),"generated_slide_ids":assembled_ids}),(structural_ok and not structural_audit.get("orphan_parts") and structural_audit.get("content_types_present") and structural_audit.get("result_slide_svg_relationship") and structural_audit.get("source_template_unchanged") and not structural_audit.get("full_slide_raster_substitution"),{"check_ids":["PPTX-REL","PPTX-LAYOUT-MASTER-ROLE","PPTX-NOTES","PPTX-SVG","PPTX-TEMPLATE-IMMUTABLE"],"svg":structural_audit.get("result_slide_svg_relationship"),"generated_slides":generated}), (not visual_failures,{"check_ids":["RENDER-FILES","RENDER-DIMENSIONS","RENDER-NONBLANK","MONTAGES","HUMAN-INSPECTION"],"record":render_evidence.get("inspection_record"),"errors":visual_failures})]
     for i,(ok,ev) in enumerate(gates):
         statuses.append("pass" if ok else "fail"); evidence.append({"ok":ok,"evidence":ev})
         if not ok: findings.append({"rule_id":"QA-GATE-"+str(i+1),"severity":"critical","status":"open","path":CANONICAL_PIPELINE[i],"evidence":ev,"repair_action":"repair gate input"})
     statuses.append("pass" if native_available else "blocked_environment"); statuses += ["pass","pass"] if native_available and not findings else ["not_run","blocked"]
-    return {"schema_version":"1.0.0","qa_report_id":"QA-MASTER-PHASE1-REVISED","build_id":"BUILD-MASTER-PHASE1-REVISED","deck_id":"MASTER-PHASE1-REVISED","created_at":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),"overall_status":"pass" if all(s=="pass" for s in statuses) else "blocked","professor_profile_ref":{"profile_id":professor_profile.get("profile_id"),"version":professor_profile.get("version")},"pipeline":[{"order":i+1,"stage":name,"status":statuses[i],"evidence":evidence[i] if i<7 else {}} for i,name in enumerate(CANONICAL_PIPELINE)],"findings":findings,"artifacts":{},"tool_versions":{"control_plane":"0.2.0","gate_execution":"real"}}
+    return {"schema_version":"1.0.0","qa_report_id":qa_report_id,"build_id":build_id,"deck_id":deck_id,"created_at":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),"overall_status":"pass" if all(s=="pass" for s in statuses) else "blocked","professor_profile_ref":{"profile_id":professor_profile.get("profile_id"),"version":professor_profile.get("version")},"pipeline":[{"order":i+1,"stage":name,"status":statuses[i],"evidence":evidence[i] if i<7 else {}} for i,name in enumerate(CANONICAL_PIPELINE)],"findings":findings,"artifacts":{},"tool_versions":{"control_plane":"0.2.0","gate_execution":"real"}}

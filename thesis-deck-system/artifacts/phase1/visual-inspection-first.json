@@ -1,10 +1,10 @@
 {
   "checked_by": "Codex visual inspection",
-  "build": "revised",
+  "build": "first",
   "slides": [
     {
       "slide_id": "TEMPLATE-SLIDE-01",
-      "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-1.png",
+      "render_path": "thesis-deck-system/artifacts/phase1/render_first/slide-1.png",
       "checks": [
         "nonblank",
         "legible",
@@ -15,7 +15,7 @@
     },
     {
       "slide_id": "TEMPLATE-SLIDE-02",
-      "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-2.png",
+      "render_path": "thesis-deck-system/artifacts/phase1/render_first/slide-2.png",
       "checks": [
         "nonblank",
         "legible",
@@ -26,7 +26,7 @@
     },
     {
       "slide_id": "S-B001-OBSERVATION-01",
-      "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-3.png",
+      "render_path": "thesis-deck-system/artifacts/phase1/render_first/slide-3.png",
       "checks": [
         "nonblank",
         "legible",
@@ -38,14 +38,14 @@
     },
     {
       "slide_id": "S-B001-RESULT-01",
-      "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-4.png",
+      "render_path": "thesis-deck-system/artifacts/phase1/render_first/slide-4.png",
       "checks": [
         "nonblank",
         "legible",
         "plot and next step present",
         "no overlap"
       ],
-      "observations": "Plot, D002 rationale, revised Discussion, in-progress NS001, and revised due time are visible without collision.",
+      "observations": "Plot, D001 rationale, first Discussion, planned NS001, and first due time are visible without collision.",
       "status": "pass"
     }
   ]

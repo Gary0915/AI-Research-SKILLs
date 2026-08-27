@@ -9,7 +9,7 @@ RECIPES = {
 }
 
 
-def compile_slide(block_id: str, stage: str, recipe: str, source_cursor: int, *, revision: int = 1, content: dict | None = None, asset_path: str | None = None, asset_id: str = "A001") -> dict:
+def compile_slide(block_id: str, stage: str, recipe: str, source_cursor: int, *, revision: int = 1, content: dict | None = None, asset_path: str | None = None, asset_id: str = "A001", decision_refs: list[str] | None = None) -> dict:
     if recipe not in RECIPES:
         raise ValueError(f"unknown recipe: {recipe}")
     if stage not in {"observation", "result", "discussion"}:
@@ -26,6 +26,6 @@ def compile_slide(block_id: str, stage: str, recipe: str, source_cursor: int, *,
         "placements": [placement], "citations": [],
         "speaker_notes": {"source_refs": content.get("evidence_refs", ["E001"]), "text": "Synthetic fixture — verify evidence provenance."},
         "story_visibility": {"master": "main", "meeting": "main", "defense": "appendix"}, "source_cursor": source_cursor,
-        "bindings": {"claim_refs": content.get("claim_refs", ["C001"]), "evidence_refs": content.get("evidence_refs", ["E001"]), "asset_refs": [asset_id], "action_refs": ["NS001"], "professor_profile_ref": {"profile_id": "PROF-SYNTH-001", "version": "1.0.0"}, "template_profile_ref": {"profile_id": "TP-SYNTH-001", "version": "1.0.0"}},
+        "bindings": {"claim_refs": content.get("claim_refs", ["C001"]), "evidence_refs": content.get("evidence_refs", ["E001"]), "asset_refs": [asset_id], "action_refs": ["NS001"], "decision_refs": decision_refs or (["D001"] if revision == 1 else ["D002"]), "professor_profile_ref": {"profile_id": "PROF-SYNTH-001", "version": "1.0.0"}, "template_profile_ref": {"profile_id": "TP-SYNTH-001", "version": "1.0.0"}},
         "content": content,
     }

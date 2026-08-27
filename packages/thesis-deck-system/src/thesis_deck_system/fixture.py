@@ -8,7 +8,10 @@ def load_fixture(root: Path) -> dict:
     root = Path(root)
     def many(folder, suffix=".yaml"):
         return [yaml.safe_load(p.read_text(encoding="utf-8")) for p in sorted((root / folder).glob(f"*{suffix}"))]
-    blocks = [yaml.safe_load((root / "block.yaml").read_text(encoding="utf-8"))]
+    blocks = sorted(
+        [yaml.safe_load(path.read_text(encoding="utf-8")) for path in root.glob("block*.yaml")],
+        key=lambda block: block["revision"],
+    )
     claims = yaml.safe_load((root / "claims.yaml").read_text(encoding="utf-8"))
     if not isinstance(claims, list): claims = [claims]
     actions = yaml.safe_load((root / "actions.yaml").read_text(encoding="utf-8"))
@@ -17,7 +20,7 @@ def load_fixture(root: Path) -> dict:
     stages = many("stages")
     evidence = many("evidence")
     decisions = many("decisions")
-    decisions = [{"schema_version":"1.0.0","decision_id":d["decision_id"],"timestamp":d["created_at"],"actor":{"type":"person","id":"researcher"},"decision_type":"research_gate","subject_refs":["B001"],"choice":d["choice"],"alternatives":[],"rationale":d["rationale"],"evidence_refs":d["evidence_refs"],"provenance":"synthetic_fixture"} for d in decisions]
+    decisions = [{"schema_version":"1.0.0","decision_id":d["decision_id"],"block_ref":d["block_ref"],"timestamp":d["created_at"],"actor":{"type":"person","id":"researcher"},"decision_type":"research_gate","subject_refs":["B001"],"choice":d["choice"],"alternatives":[],"rationale":d["rationale"],"evidence_refs":d["evidence_refs"],"provenance":"synthetic_fixture"} for d in decisions]
     assets = []
     bundle = {"research_blocks": blocks, "claims": claims, "actions": actions, "stages": stages, "evidence_cards": evidence, "decisions": decisions, "professor_profiles": [profile], "assets": assets, "meeting_projection": {"prior_commitment_ids": ["NS001"], "included_action_ids": ["NS001"]}, "history_reachable_block_ids": ["B001"]}
     registry = SchemaRegistry(root.parents[1] / "schemas")

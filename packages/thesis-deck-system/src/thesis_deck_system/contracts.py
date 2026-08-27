@@ -182,3 +182,121 @@ def semantic_findings(bundle: dict[str, Any]) -> list[Finding]:
             if not layout or layout.get("layout_path") != role.get("layout_path") or layout.get("master_path") != role.get("master_path"):
                 findings.append(Finding("TEMPLATE-ROLE-IDENTITY-MISMATCH", "schema_ledger_integrity", f"Semantic role {role_name} does not match its indexed layout", role_name))
     return findings
+
+
+def validate_temporal_bindings(
+    bundle: dict[str, Any],
+    ledger: Any,
+    specs: list[dict[str, Any]],
+    manifests: list[dict[str, Any]],
+    qa_reports: list[dict[str, Any]] | None = None,
+) -> list[Finding]:
+    """Validate immutable build bindings against the materialized state at each cursor.
+
+    Research Block direct ref arrays are the graph boundary for that revision. Objects
+    may originate in an earlier block revision, but never a later one, and every object
+    used by a Slide Spec or Deck Manifest must be both materialized and reachable from
+    the block revision active at that build cursor.
+    """
+    findings: list[Finding] = []
+    qa_by_id = {report.get("qa_report_id"): report for report in qa_reports or []}
+    assets_by_id = {asset.get("asset_id"): asset for asset in bundle.get("assets", [])}
+    evidence_by_id = {card.get("evidence_id"): card for card in bundle.get("evidence_cards", [])}
+    state_cache: dict[int, dict[str, Any]] = {}
+
+    def add(rule_id: str, message: str, path: str) -> None:
+        findings.append(Finding(rule_id, "schema_ledger_integrity", message, path))
+
+    def state_at(cursor: Any, path: str) -> dict[str, Any] | None:
+        if not isinstance(cursor, int) or cursor < 1 or cursor > len(ledger.replay()):
+            add("TEMPORAL-CURSOR-INVALID", f"Cursor {cursor!r} is not present in the ledger", path)
+            return None
+        if cursor not in state_cache:
+            state_cache[cursor] = ledger.materialize(cursor)
+        return state_cache[cursor]
+
+    def validate_binding(record: dict[str, Any], cursor: Any, block_ref: dict[str, Any], path: str) -> None:
+        state = state_at(cursor, path)
+        if state is None:
+            return
+        block_id = block_ref.get("block_id")
+        block = state["blocks"].get(block_id)
+        if block is None:
+            add("TEMPORAL-BLOCK-MISSING", f"{block_id} is not materialized at cursor {cursor}", path)
+            return
+        block_revision = block.get("revision")
+        if block_ref.get("revision") != block_revision:
+            add("TEMPORAL-BLOCK-REVISION-MISMATCH", f"{block_id} revision {block_ref.get('revision')} does not equal materialized revision {block_revision} at cursor {cursor}", path)
+
+        bindings = record.get("bindings", record)
+        ref_contracts = (
+            ("claim_refs", "claim_refs", "claims", "TEMPORAL-CLAIM-UNREACHABLE"),
+            ("evidence_refs", "evidence_refs", "evidence", "TEMPORAL-EVIDENCE-UNREACHABLE"),
+            ("asset_refs", "asset_refs", "assets", "TEMPORAL-ASSET-UNREACHABLE"),
+            ("action_refs", "action_item_refs", "actions", "TEMPORAL-ACTION-UNREACHABLE"),
+            ("decision_refs", "decision_refs", "decisions", "TEMPORAL-DECISION-UNREACHABLE"),
+        )
+        for binding_field, block_field, state_field, rule_id in ref_contracts:
+            for ref in bindings.get(binding_field, []):
+                if ref not in block.get(block_field, []) or ref not in state[state_field]:
+                    add(rule_id, f"{ref} is not reachable from {block_id} revision {block_revision} at cursor {cursor}", f"{path}/{binding_field}/{ref}")
+
+        for stage_name, stage_id in block.get("stage_refs", {}).items():
+            if stage_name == "next_step":
+                if stage_id not in state["actions"]:
+                    add("TEMPORAL-STAGE-UNREACHABLE", f"Next Step {stage_id} is not materialized", path)
+                continue
+            stage = state["stages"].get(stage_id)
+            if not stage:
+                add("TEMPORAL-STAGE-UNREACHABLE", f"Stage {stage_id} is not materialized", path)
+            elif stage.get("block_ref", {}).get("block_id") != block_id or stage.get("block_ref", {}).get("revision", 0) > block_revision:
+                add("TEMPORAL-STAGE-BLOCK-REVISION", f"Stage {stage_id} has an impossible block revision", path)
+
+        for ref in block.get("claim_refs", []):
+            claim = state["claims"].get(ref)
+            if not claim or claim.get("block_ref", {}).get("revision", 0) > block_revision:
+                add("TEMPORAL-CLAIM-BLOCK-REVISION", f"Claim {ref} has an impossible block revision", path)
+        for ref in block.get("action_item_refs", []):
+            action = state["actions"].get(ref)
+            linked = action.get("linked_block_refs", []) if action else []
+            if not action or not any(item.get("block_id") == block_id and item.get("revision", 0) <= block_revision for item in linked):
+                add("TEMPORAL-ACTION-BLOCK-REVISION", f"Action {ref} has an impossible block revision", path)
+        for ref in block.get("decision_refs", []):
+            decision = state["decisions"].get(ref)
+            if not decision or decision.get("block_ref", {}).get("revision", 0) > block_revision:
+                add("TEMPORAL-DECISION-BLOCK-REVISION", f"Decision {ref} has an impossible block revision", path)
+        for ref in block.get("evidence_refs", []):
+            card = evidence_by_id.get(ref)
+            if ref not in state["evidence"] or not card or card.get("scope", {}).get("block_id") != block_id:
+                add("TEMPORAL-EVIDENCE-BLOCK-SCOPE", f"Evidence {ref} is outside the materialized block graph", path)
+        for ref in block.get("asset_refs", []):
+            asset = assets_by_id.get(ref)
+            if ref not in state["assets"] or not asset or not set(asset.get("source_evidence", [])) <= set(block.get("evidence_refs", [])):
+                add("TEMPORAL-ASSET-BLOCK-SCOPE", f"Asset {ref} is outside the materialized block graph", path)
+
+    for index, spec in enumerate(specs):
+        for block_ref in spec.get("block_refs", []):
+            validate_binding(spec, spec.get("source_cursor"), block_ref, f"slide_specs/{index}")
+
+    for manifest_index, manifest in enumerate(manifests):
+        manifest_cursor = manifest.get("source_event_cursor")
+        for slide_index, slide in enumerate(manifest.get("slides", [])):
+            path = f"deck_manifests/{manifest_index}/slides/{slide_index}"
+            if slide.get("source_event_cursor") != manifest_cursor:
+                add("TEMPORAL-MANIFEST-CURSOR-MISMATCH", "Slide cursor differs from manifest cursor", path)
+            validate_binding(slide, slide.get("source_event_cursor"), slide.get("block_ref", {}), path)
+            candidates = [spec for spec in specs if spec.get("slide_id") == slide.get("slide_id") and spec.get("source_cursor") == slide.get("source_event_cursor")]
+            if not candidates:
+                add("TEMPORAL-SLIDE-SPEC-MISSING", "Manifest slide has no matching Slide Spec at its cursor", path)
+            else:
+                spec = candidates[0]
+                if spec.get("block_refs", [None])[0] != slide.get("block_ref"):
+                    add("TEMPORAL-MANIFEST-SPEC-BLOCK-MISMATCH", "Manifest and Slide Spec block refs differ", path)
+                for field in ("claim_refs", "evidence_refs", "asset_refs", "action_refs", "decision_refs"):
+                    if set(spec.get("bindings", {}).get(field, [])) != set(slide.get(field, [])):
+                        add("TEMPORAL-MANIFEST-SPEC-BINDING-MISMATCH", f"Manifest and Slide Spec {field} differ", path)
+        for qa_ref in manifest.get("qa_report_refs", []):
+            report = qa_by_id.get(qa_ref)
+            if not report or report.get("deck_id") != manifest.get("deck_id") or report.get("build_id") != manifest.get("build_id"):
+                add("QA-SCOPE-MISMATCH", f"QA report {qa_ref} does not match manifest deck/build scope", f"deck_manifests/{manifest_index}/qa_report_refs")
+    return findings

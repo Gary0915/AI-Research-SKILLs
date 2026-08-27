@@ -9,7 +9,7 @@
     "qa_report_id": {"type": "string"},
     "build_id": {"type": "string"},
     "deck_id": {"type": "string"},
-    "created_at": {"format": "date-time"},
+    "created_at": {"type": "string", "format": "date-time"},
     "overall_status": {"enum": ["pass", "fail", "blocked", "candidate"]},
     "professor_profile_ref": {"type": "object"},
     "pipeline": {
@@ -28,6 +28,8 @@
     },
     "findings": {"type": "array"},
     "artifacts": {"type": "object"},
-    "tool_versions": {"type": "object"}
+    "tool_versions": {"type": "object"},
+    "structural_audit": {"type": "object"},
+    "native_status": {"type": "string", "enum": ["pass", "blocked_environment", "not_run"]}
   }
 }

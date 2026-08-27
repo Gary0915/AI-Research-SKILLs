@@ -1,5 +1,5 @@
 {
-  "since_cursor": 19,
+  "since_cursor": 0,
   "prior_commitment_ids": [
     "NS001"
   ],
@@ -7,68 +7,6 @@
     "NS001"
   ],
   "actions": [
-    {
-      "schema_version": "1.0.0",
-      "action_item_id": "NS001",
-      "revision": 2,
-      "action_type": "experiment",
-      "title": "Run matched-position tracer control",
-      "action": "Measure center, mid-radius, and edge replicates with an independent transport tracer.",
-      "rationale": "Resolve the remaining non-discriminating transport-versus-boundary explanation.",
-      "source_decision_ref": "D002",
-      "linked_block_refs": [
-        {
-          "block_id": "B001",
-          "revision": 2
-        }
-      ],
-      "linked_claim_refs": [
-        "C001",
-        "C003"
-      ],
-      "prior_commitment": {
-        "meeting_id": "MEETING-001",
-        "committed_at": "2026-08-27T00:00:00Z"
-      },
-      "owner": {
-        "actor_id": "researcher",
-        "display_name": "Synthetic researcher"
-      },
-      "target_window": {
-        "start": "2026-09-03T00:00:00Z",
-        "due": "2026-09-10T09:00:00Z",
-        "timezone": "Asia/Taipei"
-      },
-      "actual_completion": {
-        "completed_at": null,
-        "closure_evidence_refs": []
-      },
-      "success_failure_criteria": {
-        "success": "Tracer discriminates transport from boundary accumulation.",
-        "failure": "Tracer remains non-discriminating."
-      },
-      "required_evidence": [
-        "REQ001"
-      ],
-      "dependency_refs": [],
-      "blocker_refs": [
-        "matched-position-control"
-      ],
-      "parallelizable": true,
-      "workstream": "synthetic-microscopy",
-      "status": "in_progress",
-      "result_summary": null,
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-09-03T00:00:00Z",
-      "supersedes": [],
-      "superseded_by": []
-    }
-  ],
-  "changed_block_ids": [
-    "B001"
-  ],
-  "previous_actions": [
     {
       "schema_version": "1.0.0",
       "action_item_id": "NS001",
@@ -123,20 +61,24 @@
       "updated_at": "2026-08-27T00:00:00Z"
     }
   ],
+  "changed_block_ids": [
+    "B001"
+  ],
+  "previous_actions": [],
   "current_actions": [
     {
       "schema_version": "1.0.0",
       "action_item_id": "NS001",
-      "revision": 2,
+      "revision": 1,
       "action_type": "experiment",
-      "title": "Run matched-position tracer control",
-      "action": "Measure center, mid-radius, and edge replicates with an independent transport tracer.",
-      "rationale": "Resolve the remaining non-discriminating transport-versus-boundary explanation.",
-      "source_decision_ref": "D002",
+      "title": "Run synthetic position comparison",
+      "action": "Measure center, mid-radius, and edge replicates.",
+      "rationale": "Discriminate the synthetic positional hypothesis.",
+      "source_decision_ref": "D001",
       "linked_block_refs": [
         {
           "block_id": "B001",
-          "revision": 2
+          "revision": 1
         }
       ],
       "linked_claim_refs": [
@@ -152,8 +94,8 @@
         "display_name": "Synthetic researcher"
       },
       "target_window": {
-        "start": "2026-09-03T00:00:00Z",
-        "due": "2026-09-10T09:00:00Z",
+        "start": "2026-08-27T00:00:00Z",
+        "due": "2026-09-02T09:00:00Z",
         "timezone": "Asia/Taipei"
       },
       "actual_completion": {
@@ -161,25 +103,21 @@
         "closure_evidence_refs": []
       },
       "success_failure_criteria": {
-        "success": "Tracer discriminates transport from boundary accumulation.",
-        "failure": "Tracer remains non-discriminating."
+        "success": "All positions have three valid replicates.",
+        "failure": "Any position is missing a valid replicate."
       },
       "required_evidence": [
         "REQ001"
       ],
       "dependency_refs": [],
-      "blocker_refs": [
-        "matched-position-control"
-      ],
+      "blocker_refs": [],
       "parallelizable": true,
       "workstream": "synthetic-microscopy",
-      "status": "in_progress",
+      "status": "planned",
       "result_summary": null,
       "provenance": "synthetic_fixture",
       "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-09-03T00:00:00Z",
-      "supersedes": [],
-      "superseded_by": []
+      "updated_at": "2026-08-27T00:00:00Z"
     }
   ]
 }

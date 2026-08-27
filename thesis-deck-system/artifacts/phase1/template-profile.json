@@ -3,7 +3,7 @@
   "profile_id": "TP-SYNTH-001",
   "version": "1.0.0",
   "source_path": "thesis-deck-system/artifacts/phase1/synthetic_native_template.pptx",
-  "source_sha256": "5bc28b1824220a5c2be86285ff82098d51e00a0c4c4ad138a94983e0894759f6",
+  "source_sha256": "ed1523b702282756a3ec5fb072af775a0dfa1a1bd4aa6795117ea6997946142e",
   "slide_size": {
     "width_emu": 12191999,
     "height_emu": 6858000,
