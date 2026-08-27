@@ -52,9 +52,9 @@
       "source_event_cursor": 1,
       "created_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
+    "timestamp": "2026-08-27T16:34:24Z",
     "previous_hash": null,
-    "event_hash": "f2c655de5d49eda09f104eda70dffb643f3274494c841991aa2244b82834b791"
+    "event_hash": "e1d11f176ef3d844286c872fcf57443f11c4bc04bfd5d101c3ff21d4e3acec0d"
   },
   {
     "cursor": 2,
@@ -105,9 +105,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "f2c655de5d49eda09f104eda70dffb643f3274494c841991aa2244b82834b791",
-    "event_hash": "2c808bdf0eb12f2fb711921fa2557ce9c5a3cff83ea1c3099158761f5f99f1bc"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "e1d11f176ef3d844286c872fcf57443f11c4bc04bfd5d101c3ff21d4e3acec0d",
+    "event_hash": "196ee78baa7a27c86614a2a0cff24a8a902c61225c3e271d12ee5d29aae1c822"
   },
   {
     "cursor": 3,
@@ -158,9 +158,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "2c808bdf0eb12f2fb711921fa2557ce9c5a3cff83ea1c3099158761f5f99f1bc",
-    "event_hash": "89dceacd27729d658b833578be2a37504f77fc4df3b436b6229cd2317261f64f"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "196ee78baa7a27c86614a2a0cff24a8a902c61225c3e271d12ee5d29aae1c822",
+    "event_hash": "c59804a107f7e85fbaa31feb04a6ea7784694613b691dba96b12a648b31ce82d"
   },
   {
     "cursor": 4,
@@ -211,9 +211,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "89dceacd27729d658b833578be2a37504f77fc4df3b436b6229cd2317261f64f",
-    "event_hash": "8b7447c0e14a53e47e33a3e950635e6a2bac0846a4024db115370bd4862a27e6"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "c59804a107f7e85fbaa31feb04a6ea7784694613b691dba96b12a648b31ce82d",
+    "event_hash": "92a4e858d5e286882fc029f38d9fb4eed68d0477afb956cfaf41919a89420df2"
   },
   {
     "cursor": 5,
@@ -249,9 +249,9 @@
         "status": "synthetic_test_only"
       }
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "8b7447c0e14a53e47e33a3e950635e6a2bac0846a4024db115370bd4862a27e6",
-    "event_hash": "61245014520e89580c8df48f8770b2055960a0307535503f5eb8af19e0472eba"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "92a4e858d5e286882fc029f38d9fb4eed68d0477afb956cfaf41919a89420df2",
+    "event_hash": "7a093369a0fc1b4d02675fb0c932d713535f7b0036de6b0f4e0df49f97ddfcc7"
   },
   {
     "cursor": 6,
@@ -287,9 +287,9 @@
         "status": "synthetic_test_only"
       }
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "61245014520e89580c8df48f8770b2055960a0307535503f5eb8af19e0472eba",
-    "event_hash": "6b7184743374a70cb7deb7d1da834d0fda13db5bbc526ebe21b83f8e396d3d34"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "7a093369a0fc1b4d02675fb0c932d713535f7b0036de6b0f4e0df49f97ddfcc7",
+    "event_hash": "930a2d360e96b0c2083e8cad5018e6ea3c76f2f9f73967727d416f04c5254a31"
   },
   {
     "cursor": 7,
@@ -326,9 +326,9 @@
         "status": "synthetic_test_only"
       }
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "6b7184743374a70cb7deb7d1da834d0fda13db5bbc526ebe21b83f8e396d3d34",
-    "event_hash": "8fb941a3320935e6ee40f4f6328910b302f7a0cacc54cf2677f41baf0ca92f58"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "930a2d360e96b0c2083e8cad5018e6ea3c76f2f9f73967727d416f04c5254a31",
+    "event_hash": "a0c490904ef52e1a4bd0c6775032e703df7b18d2d494e7d82e370982e364490d"
   },
   {
     "cursor": 8,
@@ -350,9 +350,9 @@
       "provenance": "synthetic_fixture",
       "status": "approved"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "8fb941a3320935e6ee40f4f6328910b302f7a0cacc54cf2677f41baf0ca92f58",
-    "event_hash": "02b0e2172f72278ec1c6b938063dd8a20002001da8a28b81990fd3facaff0e02"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "a0c490904ef52e1a4bd0c6775032e703df7b18d2d494e7d82e370982e364490d",
+    "event_hash": "ece42a028c5aca18be8d821762ceff50b2293019509af31429a83d3a993043c3"
   },
   {
     "cursor": 9,
@@ -374,9 +374,9 @@
       "provenance": "synthetic_fixture",
       "status": "approved"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "02b0e2172f72278ec1c6b938063dd8a20002001da8a28b81990fd3facaff0e02",
-    "event_hash": "e4b0c1ec223110fc16f98977b52d0426a76e4c31b41b4297659f626f6ea17ba6"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "ece42a028c5aca18be8d821762ceff50b2293019509af31429a83d3a993043c3",
+    "event_hash": "aa6e177a2fd5e4897092c7c7b1c1770f12a742cf52d3a230378513148682f110"
   },
   {
     "cursor": 10,
@@ -399,9 +399,9 @@
       "source_event_cursor": 3,
       "created_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "e4b0c1ec223110fc16f98977b52d0426a76e4c31b41b4297659f626f6ea17ba6",
-    "event_hash": "5c043b44885128321220b141c4aebac01ec1773664b5b6cd4d0789a55731ea0b"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "aa6e177a2fd5e4897092c7c7b1c1770f12a742cf52d3a230378513148682f110",
+    "event_hash": "83c3359acf5f7f5cf67be84e1ef271f8dc9294d3b3dadb8bb665d3db36a95b4c"
   },
   {
     "cursor": 11,
@@ -433,9 +433,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "5c043b44885128321220b141c4aebac01ec1773664b5b6cd4d0789a55731ea0b",
-    "event_hash": "e41b19d14a2075ca1f6eee8b79742560575a88b35c57eed7b517ff6b075fef96"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "83c3359acf5f7f5cf67be84e1ef271f8dc9294d3b3dadb8bb665d3db36a95b4c",
+    "event_hash": "1aa63e4f0484f1177420b9757695b14fb76c586cd3802bdfdd77b9bea2d7e50e"
   },
   {
     "cursor": 12,
@@ -480,9 +480,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "e41b19d14a2075ca1f6eee8b79742560575a88b35c57eed7b517ff6b075fef96",
-    "event_hash": "40b74dcdadf5a5ff93aa16a0ba34f4e5d7a82830f889ce1e5afaa829215406d1"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "1aa63e4f0484f1177420b9757695b14fb76c586cd3802bdfdd77b9bea2d7e50e",
+    "event_hash": "2753d88d31fd1ee2d6bbea029bf76cd40e715aac04d8757f8c0f7edbd9ff6e8a"
   },
   {
     "cursor": 13,
@@ -514,9 +514,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "40b74dcdadf5a5ff93aa16a0ba34f4e5d7a82830f889ce1e5afaa829215406d1",
-    "event_hash": "def7536996ffe05d13bff6d071cd7fefc98ef7d9454dce915ab36dd1e7baeb8d"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "2753d88d31fd1ee2d6bbea029bf76cd40e715aac04d8757f8c0f7edbd9ff6e8a",
+    "event_hash": "e04d06d3d010fa712c7084e921a2c478689d7593f8f15549d6f3b9dfa57a5ebc"
   },
   {
     "cursor": 14,
@@ -547,9 +547,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "def7536996ffe05d13bff6d071cd7fefc98ef7d9454dce915ab36dd1e7baeb8d",
-    "event_hash": "57c3a35b78cf31c248383f33d83a39c6e726739a8b969af4c0e28b7977ccd2cb"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "e04d06d3d010fa712c7084e921a2c478689d7593f8f15549d6f3b9dfa57a5ebc",
+    "event_hash": "d68983c867658ee58924e6e37f3c1828d8dfc9bd168102cb02e6c3108f4590ad"
   },
   {
     "cursor": 15,
@@ -614,9 +614,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "57c3a35b78cf31c248383f33d83a39c6e726739a8b969af4c0e28b7977ccd2cb",
-    "event_hash": "5fcd38565edc4018e9f6baf00f3eeefe782b9c42bc845010616b95e248bbb85c"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "d68983c867658ee58924e6e37f3c1828d8dfc9bd168102cb02e6c3108f4590ad",
+    "event_hash": "92ca3008075120bce3ee93132f19debf4a851fe309f483e8cf50436af7aaf43d"
   },
   {
     "cursor": 16,
@@ -684,9 +684,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "5fcd38565edc4018e9f6baf00f3eeefe782b9c42bc845010616b95e248bbb85c",
-    "event_hash": "f15ea5bc1d17973e40c4d0390e119f9150b1d61a90213e787ef2a17bc972ba38"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "92ca3008075120bce3ee93132f19debf4a851fe309f483e8cf50436af7aaf43d",
+    "event_hash": "77e7e42539637afdde370e5684aa9c6fd5a7c07fbf2e98344149bffdd37e45b5"
   },
   {
     "cursor": 17,
@@ -714,9 +714,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "f15ea5bc1d17973e40c4d0390e119f9150b1d61a90213e787ef2a17bc972ba38",
-    "event_hash": "466ede1cd7a6ef741c4168d3c3aab2a6fc726882792d7f12ea6dbbb0278557bf"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "77e7e42539637afdde370e5684aa9c6fd5a7c07fbf2e98344149bffdd37e45b5",
+    "event_hash": "a91bbe78f29765f4c2abcadacceea3cd38746ffa3db9fe1f6f329a148fd62346"
   },
   {
     "cursor": 18,
@@ -744,9 +744,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "466ede1cd7a6ef741c4168d3c3aab2a6fc726882792d7f12ea6dbbb0278557bf",
-    "event_hash": "49fbb778b1c52bb05bc4697564b63852e66adc7942de485390432e74cd13807f"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "a91bbe78f29765f4c2abcadacceea3cd38746ffa3db9fe1f6f329a148fd62346",
+    "event_hash": "579a829d0cc39a6d8933b9fb8b12b9b3780ceb21ccfc2b71dc57343107bbf306"
   },
   {
     "cursor": 19,
@@ -785,9 +785,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "49fbb778b1c52bb05bc4697564b63852e66adc7942de485390432e74cd13807f",
-    "event_hash": "764f71aa40c8f0400989e32e8ae54a6aff65c0d7140f53095e85356a42a88228"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "579a829d0cc39a6d8933b9fb8b12b9b3780ceb21ccfc2b71dc57343107bbf306",
+    "event_hash": "d8e805f15bca06477dbe656109799d5cc1a608ac41fba138b970002ba114f2f4"
   },
   {
     "cursor": 20,
@@ -818,9 +818,9 @@
       ],
       "provenance": "synthetic_fixture"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "764f71aa40c8f0400989e32e8ae54a6aff65c0d7140f53095e85356a42a88228",
-    "event_hash": "5a6bf3c77d8469209f12071897ad9f32c7ac5d33be9cf605e76a06572cbbe5b9"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "d8e805f15bca06477dbe656109799d5cc1a608ac41fba138b970002ba114f2f4",
+    "event_hash": "52931e54985b44bb01ed079b14987e300cbc082054c73dc6b3704e908b637d07"
   },
   {
     "cursor": 21,
@@ -882,9 +882,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "5a6bf3c77d8469209f12071897ad9f32c7ac5d33be9cf605e76a06572cbbe5b9",
-    "event_hash": "17378ee9a96a16198cc3a54cc4f18273482c7423db9af7e4fd525f1e7372fe62"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "52931e54985b44bb01ed079b14987e300cbc082054c73dc6b3704e908b637d07",
+    "event_hash": "e6ecbe2f149345de38641715bcdad6c0f3b45e714d361419bf02ee7a50d6057c"
   },
   {
     "cursor": 22,
@@ -958,9 +958,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "17378ee9a96a16198cc3a54cc4f18273482c7423db9af7e4fd525f1e7372fe62",
-    "event_hash": "9e5fcd479b3dcea6371414858e117dc89296ab4764e482d3aa2b12e7016fa152"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "e6ecbe2f149345de38641715bcdad6c0f3b45e714d361419bf02ee7a50d6057c",
+    "event_hash": "fd5b7ef8288ebd7771ec30d23c4f73d832fb067c25c65f0a8ef25482a1ac65a0"
   },
   {
     "cursor": 23,
@@ -1014,9 +1014,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "9e5fcd479b3dcea6371414858e117dc89296ab4764e482d3aa2b12e7016fa152",
-    "event_hash": "d41f6d2357763c1673e2466a78d2213fff992a49c04fba93479681e29a1ecafb"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "fd5b7ef8288ebd7771ec30d23c4f73d832fb067c25c65f0a8ef25482a1ac65a0",
+    "event_hash": "243af0f9bd3ad13039a5cc8456dcc1246260d5dc7e45ac9d7de381d93069695c"
   },
   {
     "cursor": 24,
@@ -1052,9 +1052,9 @@
         "status": "synthetic_test_only"
       }
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "d41f6d2357763c1673e2466a78d2213fff992a49c04fba93479681e29a1ecafb",
-    "event_hash": "8fd158d4ec29f3553ee358defff992e08a0bb7adb5b6eb57eb55d9e096a0284f"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "243af0f9bd3ad13039a5cc8456dcc1246260d5dc7e45ac9d7de381d93069695c",
+    "event_hash": "63aaf571c17a875c86d9dde0d6dc0a5611ba1522df9340195ab81ae32aafabdb"
   },
   {
     "cursor": 25,
@@ -1093,9 +1093,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "8fd158d4ec29f3553ee358defff992e08a0bb7adb5b6eb57eb55d9e096a0284f",
-    "event_hash": "e07c4def1653d46f649a656b844a0d68e11be0772afbf5d4e446724b583080b1"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "63aaf571c17a875c86d9dde0d6dc0a5611ba1522df9340195ab81ae32aafabdb",
+    "event_hash": "1c39827ccdb7f41ce203fd10a3d1e213fdf9cc6218318e91cfbbaa9faad2e437"
   },
   {
     "cursor": 26,
@@ -1134,9 +1134,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "e07c4def1653d46f649a656b844a0d68e11be0772afbf5d4e446724b583080b1",
-    "event_hash": "0fb24f6a2e2cfeec736ed0e0e52a9d97b8850392855b1b65fac7477b1d9ba2ee"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "1c39827ccdb7f41ce203fd10a3d1e213fdf9cc6218318e91cfbbaa9faad2e437",
+    "event_hash": "dfc297d878d248d92c1047cf8a591c9d9a443cfead414f6e5ea16ea7497380d9"
   },
   {
     "cursor": 27,
@@ -1153,7 +1153,7 @@
       "path": "plots/B001_defect_density.svg",
       "preview_path": "plots/B001_defect_density.png",
       "mime_type": "image/svg+xml",
-      "sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+      "sha256": "cb1a3b896644978bb65b1d1337886d16d2e76e27fb4199ac5e2e4694126e1696",
       "editable": true,
       "generator": {
         "kind": "matplotlib",
@@ -1167,7 +1167,7 @@
       },
       "output": {
         "svg_path": "plots/B001_defect_density.svg",
-        "svg_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+        "svg_sha256": "cb1a3b896644978bb65b1d1337886d16d2e76e27fb4199ac5e2e4694126e1696",
         "png_path": "plots/B001_defect_density.png",
         "png_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
       },
@@ -1175,7 +1175,7 @@
         {
           "input_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
           "operation": "plot",
-          "output_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
+          "output_sha256": "cb1a3b896644978bb65b1d1337886d16d2e76e27fb4199ac5e2e4694126e1696"
         }
       ],
       "provenance": "synthetic_fixture",
@@ -1184,9 +1184,9 @@
       },
       "status": "approved"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "0fb24f6a2e2cfeec736ed0e0e52a9d97b8850392855b1b65fac7477b1d9ba2ee",
-    "event_hash": "54b4041fa575e62bfa17e4e7384868f6114788281c2bb08d53dcd93ffc9eff32"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "dfc297d878d248d92c1047cf8a591c9d9a443cfead414f6e5ea16ea7497380d9",
+    "event_hash": "912e1b9bab9dfec76b10104276e826948bfe5f38f5785da336f1077077786a5c"
   },
   {
     "cursor": 28,
@@ -1262,9 +1262,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "54b4041fa575e62bfa17e4e7384868f6114788281c2bb08d53dcd93ffc9eff32",
-    "event_hash": "522a77300b13979561121f92dc23f2eb327bb5118342861cff38aed6951001a1"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "912e1b9bab9dfec76b10104276e826948bfe5f38f5785da336f1077077786a5c",
+    "event_hash": "1831345ea8be20d77775f7a6745af5bdc04ce7558032ae4aba891346b0a5fb3c"
   },
   {
     "cursor": 29,
@@ -1309,9 +1309,9 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "522a77300b13979561121f92dc23f2eb327bb5118342861cff38aed6951001a1",
-    "event_hash": "389c6e7b090b9d355e91aefc62a662e351b51bf9e334237282f4faf4a01e0586"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "1831345ea8be20d77775f7a6745af5bdc04ce7558032ae4aba891346b0a5fb3c",
+    "event_hash": "eac1c40cf187da186918c43c8b21499c7841356217d8f2989f2e09149f675a29"
   },
   {
     "cursor": 30,
@@ -1343,9 +1343,9 @@
       "source_event_cursor": 30,
       "created_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "389c6e7b090b9d355e91aefc62a662e351b51bf9e334237282f4faf4a01e0586",
-    "event_hash": "e18e3792e2a1d9960732b7d0b67c5584f1d8a8a837568119fda6004f30f002a7"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "eac1c40cf187da186918c43c8b21499c7841356217d8f2989f2e09149f675a29",
+    "event_hash": "e37b079eda534d0494611c06e0299f965b55b319519f326f671164a6d3dd61cf"
   },
   {
     "cursor": 31,
@@ -1378,9 +1378,9 @@
       ],
       "provenance": "synthetic_fixture"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "e18e3792e2a1d9960732b7d0b67c5584f1d8a8a837568119fda6004f30f002a7",
-    "event_hash": "7a9c0e37c071b7c347b7de8b7f9f9a05f5984ca472caa06672fd0e6ab2d2455b"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "e37b079eda534d0494611c06e0299f965b55b319519f326f671164a6d3dd61cf",
+    "event_hash": "fbac129be2697c621817a0e9aace8dfe13700fa53ed5f7885cc03055138b9f44"
   },
   {
     "cursor": 32,
@@ -1405,9 +1405,9 @@
       "source_event_cursor": 32,
       "created_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "7a9c0e37c071b7c347b7de8b7f9f9a05f5984ca472caa06672fd0e6ab2d2455b",
-    "event_hash": "3b1545ede38503886cabfe4d73822c6ba568f2db60a48d70c4773d2a438ad0cb"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "fbac129be2697c621817a0e9aace8dfe13700fa53ed5f7885cc03055138b9f44",
+    "event_hash": "2e4fd5df737253a5966c7837898ad3b9907a33691832e211294f2963428e01fa"
   },
   {
     "cursor": 33,
@@ -1461,75 +1461,12 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "3b1545ede38503886cabfe4d73822c6ba568f2db60a48d70c4773d2a438ad0cb",
-    "event_hash": "476ae603ebc80a31a8f57fc96d71ae060eaa9f715a818bb8de728ac2dbb8511d"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "2e4fd5df737253a5966c7837898ad3b9907a33691832e211294f2963428e01fa",
+    "event_hash": "2cf97bb6d44dd26a7de9b25751e9f049ebfd6a7026ee39484841141329581758"
   },
   {
     "cursor": 34,
-    "event_type": "fishbone_revised",
-    "payload": {
-      "schema_version": "2.0.0",
-      "fishbone_id": "FB001",
-      "revision": 2,
-      "supersedes_revision": 1,
-      "branches": [
-        {
-          "branch_id": "FB-MATERIAL",
-          "label": "材料",
-          "parent_ref": null,
-          "status": "completed"
-        },
-        {
-          "branch_id": "FB-MATERIAL-HYDRATION",
-          "label": "含水量",
-          "parent_ref": "FB-MATERIAL",
-          "status": "partial"
-        },
-        {
-          "branch_id": "FB-ELECTRODE",
-          "label": "電極",
-          "parent_ref": null,
-          "status": "current"
-        },
-        {
-          "branch_id": "FB-ELECTRODE-GEOMETRY",
-          "label": "幾何",
-          "parent_ref": "FB-ELECTRODE",
-          "status": "future"
-        },
-        {
-          "branch_id": "FB-ELECTRODE-CONTACT",
-          "label": "接觸電阻",
-          "parent_ref": "FB-ELECTRODE",
-          "status": "current"
-        },
-        {
-          "branch_id": "FB-MEASUREMENT",
-          "label": "量測",
-          "parent_ref": null,
-          "status": "future"
-        },
-        {
-          "branch_id": "FB-SYSTEM",
-          "label": "系統",
-          "parent_ref": null,
-          "status": "future"
-        }
-      ],
-      "linked_hypothesis_layers": [
-        "H002"
-      ],
-      "rationale": "H01 改善導電度但未改善重複性，因此加入穩定 branch ID 的 electrode-contact 分支。",
-      "source_event_cursor": 15,
-      "created_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "476ae603ebc80a31a8f57fc96d71ae060eaa9f715a818bb8de728ac2dbb8511d",
-    "event_hash": "5beb1b9a6c06559acd07e8af618090817a2bc68db0ebfdaccbea64c5929aa9a4"
-  },
-  {
-    "cursor": 35,
     "event_type": "claim_created",
     "payload": {
       "schema_version": "1.0.0",
@@ -1577,12 +1514,12 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "5beb1b9a6c06559acd07e8af618090817a2bc68db0ebfdaccbea64c5929aa9a4",
-    "event_hash": "5a43407b650020d2e151462001061372054261d0c4dc7b16df982f5c3bd6294d"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "2cf97bb6d44dd26a7de9b25751e9f049ebfd6a7026ee39484841141329581758",
+    "event_hash": "cf16f635e25c8f08cfc89f43f5980a8d9ba7d05dbc07c723e50480693efc47dc"
   },
   {
-    "cursor": 36,
+    "cursor": 35,
     "event_type": "claim_created",
     "payload": {
       "schema_version": "1.0.0",
@@ -1630,12 +1567,12 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "5a43407b650020d2e151462001061372054261d0c4dc7b16df982f5c3bd6294d",
-    "event_hash": "6def38beb2e5de3904b24d375d6e1b8a2859802b1b1e178135e46f2f3746ee57"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "cf16f635e25c8f08cfc89f43f5980a8d9ba7d05dbc07c723e50480693efc47dc",
+    "event_hash": "678f283a6bd3e255eacadadb87f2326af8a1580088f6d311221005dde2707016"
   },
   {
-    "cursor": 37,
+    "cursor": 36,
     "event_type": "claim_created",
     "payload": {
       "schema_version": "1.0.0",
@@ -1683,598 +1620,12 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "6def38beb2e5de3904b24d375d6e1b8a2859802b1b1e178135e46f2f3746ee57",
-    "event_hash": "797ae3ad71d57e149dda2fbf6cc2d713649b1cd98075812848395ebdeb211184"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "678f283a6bd3e255eacadadb87f2326af8a1580088f6d311221005dde2707016",
+    "event_hash": "108d2a992c8475bad825597f7180fa944809f175d1c46d1b32d18ada8b94a759"
   },
   {
-    "cursor": 38,
-    "event_type": "evidence_linked",
-    "payload": {
-      "schema_version": "1.0.0",
-      "evidence_id": "E202",
-      "kind": "synthetic_literature",
-      "title": "Synthetic E202 evidence",
-      "provenance": "committed synthetic fixture",
-      "source": {
-        "source_id": "E202",
-        "uri": "thesis-deck-system/examples/synthetic-project/evidence/literature-note.txt",
-        "sha256": "5b510e5b31d6714228a03c31a544b12a0991ab0dc797166167cfe8d8447f7fee"
-      },
-      "claim_support_refs": [
-        "C201",
-        "C202"
-      ],
-      "claim_contradict_refs": [],
-      "scope": {
-        "block_id": "B201"
-      },
-      "measurement": {
-        "synthetic": true
-      },
-      "causal_role": "supporting_observation",
-      "origin": {
-        "layer_ref": "H002",
-        "source_dataset_role": "preexisting_observation"
-      },
-      "license_or_usage": "synthetic_test_only",
-      "verification": {
-        "status": "synthetic_test_only"
-      }
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "797ae3ad71d57e149dda2fbf6cc2d713649b1cd98075812848395ebdeb211184",
-    "event_hash": "98029a06dde54a0421aa22fa20b5cf626a79e57a029ef2a4bd72039475b1ab5c"
-  },
-  {
-    "cursor": 39,
-    "event_type": "evidence_linked",
-    "payload": {
-      "schema_version": "1.0.0",
-      "evidence_id": "E204",
-      "kind": "synthetic_observation",
-      "title": "Synthetic E204 evidence",
-      "provenance": "committed synthetic fixture",
-      "source": {
-        "source_id": "E204",
-        "uri": "thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt",
-        "sha256": "28326c007fc6eda9d8301598da822e02b0ae6c87f6da4d8eb08f64bcc479aa4e"
-      },
-      "claim_support_refs": [
-        "C201",
-        "C202"
-      ],
-      "claim_contradict_refs": [],
-      "scope": {
-        "block_id": "B201"
-      },
-      "measurement": {
-        "synthetic": true
-      },
-      "causal_role": "supporting_observation",
-      "origin": {
-        "layer_ref": "H001",
-        "stage_ref": "ST-H001-DISC",
-        "source_dataset_role": "pre_h02_uncertainty"
-      },
-      "license_or_usage": "synthetic_test_only",
-      "verification": {
-        "status": "synthetic_test_only"
-      }
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "98029a06dde54a0421aa22fa20b5cf626a79e57a029ef2a4bd72039475b1ab5c",
-    "event_hash": "0e85cbd391d129b079d99535f9935936f47d73cad7b0b77bad812544edb25b25"
-  },
-  {
-    "cursor": 40,
-    "event_type": "problem_created",
-    "payload": {
-      "schema_version": "2.0.0",
-      "problem_id": "P201",
-      "hypothesis_layer_ref": "H002",
-      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
-      "previous_findings": [
-        "H01 支持導電度梯度存在",
-        "H01 未支持導電度單獨主導重複性"
-      ],
-      "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
-      "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
-      "evidence_refs": [
-        "E204"
-      ],
-      "derived_from_decision_refs": [
-        "D101"
-      ],
-      "scope": "匹配 bulk conductivity，改變 contact pressure 的對照實驗。",
-      "source_event_cursor": 17,
-      "created_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "0e85cbd391d129b079d99535f9935936f47d73cad7b0b77bad812544edb25b25",
-    "event_hash": "8476e611a37f200ed64127107afcf1448e56b31f23890062bcaec87242f41ebb"
-  },
-  {
-    "cursor": 41,
-    "event_type": "stage_revised",
-    "payload": {
-      "schema_version": "1.0.0",
-      "stage_id": "ST-H002-OBS",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "stage_type": "observation",
-      "revision": 1,
-      "status": "complete",
-      "claim_refs": [
-        "C201"
-      ],
-      "evidence_refs": [
-        "E204"
-      ],
-      "hypothesis_claim_refs": [],
-      "prediction_claim_refs": [],
-      "data": {
-        "observation": "位置依賴缺陷與訊號變異已觀察到。",
-        "problem": "現有模型無法解釋此變異。"
-      },
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "8476e611a37f200ed64127107afcf1448e56b31f23890062bcaec87242f41ebb",
-    "event_hash": "edd1a5b5d255d78cf71d04621a09a6c3953e754eecefccee7819d11c00854ae8"
-  },
-  {
-    "cursor": 42,
-    "event_type": "stage_revised",
-    "payload": {
-      "schema_version": "1.0.0",
-      "stage_id": "ST-H002-LIT",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "stage_type": "literature",
-      "revision": 1,
-      "status": "complete",
-      "claim_refs": [
-        "C201",
-        "C202"
-      ],
-      "evidence_refs": [
-        "E202"
-      ],
-      "hypothesis_claim_refs": [],
-      "prediction_claim_refs": [],
-      "data": {
-        "consensus": "transport gradient 可產生位置效應。",
-        "disagreements_or_alternatives": [
-          "interface contact remains alternative"
-        ],
-        "known_mechanisms": [
-          "bulk transport",
-          "boundary accumulation"
-        ],
-        "research_gap": "缺少控制比較隔離機制。",
-        "relevance_to_observation": "兩種機制都預測位置效應。",
-        "implication_for_hypothesis_or_strategy": "需匹配條件後比較。",
-        "supporting_literature_evidence_refs": [
-          "E202"
-        ],
-        "contradicting_literature_evidence_refs": []
-      },
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "edd1a5b5d255d78cf71d04621a09a6c3953e754eecefccee7819d11c00854ae8",
-    "event_hash": "dbbb3a4c5948dc54f3d523b5e9db51a3473fb5987322afed7912112aebdda04a"
-  },
-  {
-    "cursor": 43,
-    "event_type": "stage_revised",
-    "payload": {
-      "schema_version": "1.0.0",
-      "stage_id": "ST-H002-MECH",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "stage_type": "mechanism",
-      "revision": 1,
-      "status": "complete",
-      "claim_refs": [
-        "C202",
-        "C203"
-      ],
-      "evidence_refs": [
-        "E202"
-      ],
-      "hypothesis_claim_refs": [],
-      "prediction_claim_refs": [],
-      "data": {
-        "mechanism": "contact resistance",
-        "falsification": "控制比較不出現預測差異。"
-      },
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "dbbb3a4c5948dc54f3d523b5e9db51a3473fb5987322afed7912112aebdda04a",
-    "event_hash": "2bae8c6c93c5a225694fcf6846543074ed47d8fc6e064dc6764c9fdf39faf082"
-  },
-  {
-    "cursor": 44,
-    "event_type": "stage_revised",
-    "payload": {
-      "schema_version": "1.0.0",
-      "stage_id": "ST-H002-SOL",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "stage_type": "solution",
-      "revision": 1,
-      "status": "complete",
-      "claim_refs": [
-        "C202"
-      ],
-      "evidence_refs": [
-        "E202"
-      ],
-      "hypothesis_claim_refs": [],
-      "prediction_claim_refs": [],
-      "data": {
-        "strategy": "匹配導電度並改變接觸壓力",
-        "success_criterion": "預測指標跨過 decision threshold"
-      },
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "2bae8c6c93c5a225694fcf6846543074ed47d8fc6e064dc6764c9fdf39faf082",
-    "event_hash": "ce83271fa230cddb044fe91dd0b93be32bdd7556183371be51f1be0dec490516"
-  },
-  {
-    "cursor": 45,
-    "event_type": "stage_revised",
-    "payload": {
-      "schema_version": "1.0.0",
-      "stage_id": "ST-EXP201",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "stage_type": "experiment",
-      "revision": 1,
-      "status": "complete",
-      "claim_refs": [
-        "C201",
-        "C203"
-      ],
-      "evidence_refs": [
-        "E204"
-      ],
-      "hypothesis_claim_refs": [
-        "C201"
-      ],
-      "prediction_claim_refs": [
-        "C203"
-      ],
-      "data": {
-        "independent_variables": [
-          "contact pressure"
-        ],
-        "controlled_variables": [
-          "bulk conductivity",
-          "電極幾何"
-        ],
-        "controls_baselines": [
-          "low-pressure control"
-        ],
-        "sample_plan": {
-          "replicates": 5,
-          "samples": 15
-        },
-        "measured_outputs": [
-          "訊號 CV (%)",
-          "contact resistance (ohm)"
-        ],
-        "instrumentation_method_refs": [
-          "synthetic-pressure-fixture"
-        ],
-        "predicted_outcomes": [
-          "CV and resistance decrease"
-        ],
-        "decision_rules": {
-          "go": "both metrics improve",
-          "partial_go": "one metric improves",
-          "no_go": "neither improves"
-        },
-        "required_evidence": [
-          "E204"
-        ]
-      },
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "ce83271fa230cddb044fe91dd0b93be32bdd7556183371be51f1be0dec490516",
-    "event_hash": "600fc70dc372b8ebddd81dcbee8f00e16b08ef7d3a7c6283774a54f713211241"
-  },
-  {
-    "cursor": 46,
-    "event_type": "stage_revised",
-    "payload": {
-      "schema_version": "1.0.0",
-      "stage_id": "ST-RES201",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "stage_type": "result",
-      "revision": 1,
-      "status": "pending",
-      "claim_refs": [
-        "C203"
-      ],
-      "evidence_refs": [],
-      "hypothesis_claim_refs": [],
-      "prediction_claim_refs": [],
-      "data": {
-        "planned_result": "高壓條件 CV 下降 38% ± 7% SD"
-      },
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "600fc70dc372b8ebddd81dcbee8f00e16b08ef7d3a7c6283774a54f713211241",
-    "event_hash": "204546f32e653918c26815d92706ee87715da1ec4d9280635b7061e792558c52"
-  },
-  {
-    "cursor": 47,
-    "event_type": "stage_revised",
-    "payload": {
-      "schema_version": "1.0.0",
-      "stage_id": "ST-H002-DISC",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "stage_type": "discussion",
-      "revision": 1,
-      "status": "complete",
-      "claim_refs": [
-        "C201",
-        "C202"
-      ],
-      "evidence_refs": [],
-      "hypothesis_claim_refs": [],
-      "prediction_claim_refs": [],
-      "data": {
-        "hypothesis_support": "inconclusive",
-        "failed_assumptions": [],
-        "missing_evidence": [
-          "results"
-        ],
-        "limitations": [
-          "pending"
-        ],
-        "decision_ref": "D201",
-        "next_step_ref": "NS201",
-        "interpretation": "Pending result interpretation."
-      },
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "204546f32e653918c26815d92706ee87715da1ec4d9280635b7061e792558c52",
-    "event_hash": "7199311b39681dac0708aca888b5c97e2b42ec101735dfd0c29f80a115cebb6c"
-  },
-  {
-    "cursor": 48,
-    "event_type": "decision_recorded",
-    "payload": {
-      "schema_version": "1.0.0",
-      "decision_id": "D201",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "timestamp": "2026-08-27T00:00:00Z",
-      "actor": {
-        "type": "person",
-        "id": "gary"
-      },
-      "decision_type": "research_gate",
-      "subject_refs": [
-        "B201"
-      ],
-      "choice": "pending",
-      "alternatives": [
-        "No-Go"
-      ],
-      "rationale": "Awaiting contact-pressure result.",
-      "evidence_refs": [
-        "E204"
-      ],
-      "provenance": "synthetic_fixture"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "7199311b39681dac0708aca888b5c97e2b42ec101735dfd0c29f80a115cebb6c",
-    "event_hash": "a5568742734bb1cfe14986569d83485477eef5b572bd7a45f81d8786bebcddb8"
-  },
-  {
-    "cursor": 49,
-    "event_type": "action_committed",
-    "payload": {
-      "schema_version": "1.0.0",
-      "action_item_id": "NS201",
-      "revision": 1,
-      "action_type": "experiment",
-      "title": "High-pressure cycling durability",
-      "action": "Run controlled pressure comparison.",
-      "rationale": "Resolve bulk versus interface mechanism.",
-      "source_decision_ref": "D201",
-      "linked_block_refs": [
-        {
-          "block_id": "B201",
-          "revision": 1
-        }
-      ],
-      "linked_claim_refs": [
-        "C201",
-        "C203"
-      ],
-      "prior_commitment": {
-        "meeting_id": "MEETING-001",
-        "committed_at": "2026-08-27T00:00:00Z"
-      },
-      "owner": {
-        "actor_id": "gary",
-        "display_name": "Gary"
-      },
-      "target_window": {
-        "start": "2026-09-11T00:00:00Z",
-        "due": "2026-09-24T00:00:00Z",
-        "timezone": "Asia/Taipei"
-      },
-      "actual_completion": {
-        "completed_at": null,
-        "closure_evidence_refs": []
-      },
-      "success_failure_criteria": {
-        "success": "effect exceeds uncertainty",
-        "failure": "no discriminating effect"
-      },
-      "required_evidence": [
-        "E201"
-      ],
-      "dependency_refs": [
-        "pressure fixture"
-      ],
-      "blocker_refs": [],
-      "parallelizable": true,
-      "workstream": "interface-mechanism",
-      "status": "planned",
-      "result_summary": "Awaiting controlled comparison",
-      "supersedes": [],
-      "superseded_by": [],
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "a5568742734bb1cfe14986569d83485477eef5b572bd7a45f81d8786bebcddb8",
-    "event_hash": "bd9ea81dde556765e5fb8f0f02acad5b37658d71acc126064ac5e456a7f6e783"
-  },
-  {
-    "cursor": 50,
-    "event_type": "asset_registered",
-    "payload": {
-      "schema_version": "1.0.0",
-      "asset_id": "A102",
-      "asset_type": "mechanism_diagram",
-      "title": "Synthetic A102",
-      "evidence_role": "synthetic_test_evidence",
-      "source_evidence": [
-        "E204"
-      ],
-      "path": "fishbone/FB001-rev2.svg",
-      "preview_path": "fishbone/FB001-rev2.png",
-      "mime_type": "image/svg+xml",
-      "sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
-      "editable": true,
-      "provenance": "synthetic_fixture",
-      "status": "approved"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "bd9ea81dde556765e5fb8f0f02acad5b37658d71acc126064ac5e456a7f6e783",
-    "event_hash": "cb9740d7aeee7db3963270b77f86f53f1df29eb2bd3c9c29cc3e8a6b91b408a5"
-  },
-  {
-    "cursor": 51,
-    "event_type": "block_created",
-    "payload": {
-      "schema_version": "1.0.0",
-      "block_id": "B201",
-      "revision": 1,
-      "title": "H02 Contact resistance mechanism",
-      "research_question": {
-        "question_id": "RQ-B201",
-        "text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
-        "scope": "synthetic fixture only"
-      },
-      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
-      "research_status": "active",
-      "story_visibility": {
-        "master": "main",
-        "meeting": "main",
-        "defense": "appendix"
-      },
-      "hypothesis_claim_refs": [
-        "C201"
-      ],
-      "mechanism_claim_refs": [
-        "C202"
-      ],
-      "prediction_claim_refs": [
-        "C203"
-      ],
-      "stage_refs": {
-        "observation": "ST-H002-OBS",
-        "literature": "ST-H002-LIT",
-        "mechanism": "ST-H002-MECH",
-        "solution": "ST-H002-SOL",
-        "experiment": "ST-EXP201",
-        "result": "ST-RES201",
-        "discussion": "ST-H002-DISC",
-        "next_step": "NS201"
-      },
-      "experiment_stage_refs": [
-        "ST-EXP201"
-      ],
-      "result_stage_refs": [
-        "ST-RES201"
-      ],
-      "claim_refs": [
-        "C201",
-        "C202",
-        "C203"
-      ],
-      "evidence_refs": [
-        "E202",
-        "E204"
-      ],
-      "asset_refs": [
-        "A102"
-      ],
-      "action_item_refs": [
-        "NS201"
-      ],
-      "decision_refs": [
-        "D201"
-      ],
-      "decision_criteria_ref": "ST-EXP201#/data/decision_rules",
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "cb9740d7aeee7db3963270b77f86f53f1df29eb2bd3c9c29cc3e8a6b91b408a5",
-    "event_hash": "ce81a40213227452fdb6422f49f52de530bcec17e6ec489711ee52a02b266c6f"
-  },
-  {
-    "cursor": 52,
+    "cursor": 37,
     "event_type": "evidence_linked",
     "payload": {
       "schema_version": "1.0.0",
@@ -2309,12 +1660,12 @@
         "status": "synthetic_test_only"
       }
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "ce81a40213227452fdb6422f49f52de530bcec17e6ec489711ee52a02b266c6f",
-    "event_hash": "020e072fec8d8ca551c0321fcb40edffc4a06302b1c75fd0d22b26369b545803"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "108d2a992c8475bad825597f7180fa944809f175d1c46d1b32d18ada8b94a759",
+    "event_hash": "e6d8eccbd0580937cc1233ecc462546bd932f228d41d6be2d85f3e702cde45ff"
   },
   {
-    "cursor": 53,
+    "cursor": 38,
     "event_type": "block_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -2388,12 +1739,12 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "020e072fec8d8ca551c0321fcb40edffc4a06302b1c75fd0d22b26369b545803",
-    "event_hash": "c75513c12fbf643753df4c3cea6823891468de368aa268fdcde50d78da6dd221"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "e6d8eccbd0580937cc1233ecc462546bd932f228d41d6be2d85f3e702cde45ff",
+    "event_hash": "f69bb62b1fe15839eae1e6b56e9dc795674e2ba50f57173eb60ea0e24b42a4ab"
   },
   {
-    "cursor": 54,
+    "cursor": 39,
     "event_type": "hypothesis_transition_recorded",
     "payload": {
       "schema_version": "2.0.0",
@@ -2414,15 +1765,15 @@
       "decision_refs": [
         "D101"
       ],
-      "source_event_cursor": 52,
+      "source_event_cursor": 37,
       "created_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "c75513c12fbf643753df4c3cea6823891468de368aa268fdcde50d78da6dd221",
-    "event_hash": "e5b02ad42d5a59111c3117dcb23c79a7243216161e833e9c5cb9ccdef54de168"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "f69bb62b1fe15839eae1e6b56e9dc795674e2ba50f57173eb60ea0e24b42a4ab",
+    "event_hash": "97f02c71e430c63be61a450b29aa0cc69710a1f8fe5a966cbb6333a9d8fb2117"
   },
   {
-    "cursor": 55,
+    "cursor": 40,
     "event_type": "hypothesis_layer_revised",
     "payload": {
       "schema_version": "2.0.0",
@@ -2469,16 +1820,16 @@
       "transition_ref": "TR-H001-H002",
       "story_visibility": "main",
       "research_status": "partial_support",
-      "source_event_cursor": 55,
+      "source_event_cursor": 40,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "e5b02ad42d5a59111c3117dcb23c79a7243216161e833e9c5cb9ccdef54de168",
-    "event_hash": "2c631d9efb1815e62673a3097f4dd29acb5cb4b80c9cebbfc555a49835198591"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "97f02c71e430c63be61a450b29aa0cc69710a1f8fe5a966cbb6333a9d8fb2117",
+    "event_hash": "10b38cf89273cc7f69fabdaa058e302e840f0801a9d7994b4850009df6ff628d"
   },
   {
-    "cursor": 56,
+    "cursor": 41,
     "event_type": "hypothesis_layer_created",
     "payload": {
       "schema_version": "2.0.0",
@@ -2532,16 +1883,417 @@
       "transition_ref": null,
       "story_visibility": "main",
       "research_status": "supported",
-      "source_event_cursor": 56,
+      "source_event_cursor": 41,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "2c631d9efb1815e62673a3097f4dd29acb5cb4b80c9cebbfc555a49835198591",
-    "event_hash": "2c12e0bfcabb68c729799fdd1dec1a98d7b65d49f11144099af4bf2d57b9d3cc"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "10b38cf89273cc7f69fabdaa058e302e840f0801a9d7994b4850009df6ff628d",
+    "event_hash": "67126d68782a1cb43ecc5a79df7ff5b7e230a4eb5dfdfed6bc2d8904c001c6b6"
   },
   {
-    "cursor": 57,
+    "cursor": 42,
+    "event_type": "fishbone_revised",
+    "payload": {
+      "schema_version": "2.0.0",
+      "fishbone_id": "FB001",
+      "revision": 2,
+      "supersedes_revision": 1,
+      "branches": [
+        {
+          "branch_id": "FB-MATERIAL",
+          "label": "材料",
+          "parent_ref": null,
+          "status": "completed"
+        },
+        {
+          "branch_id": "FB-MATERIAL-HYDRATION",
+          "label": "含水量",
+          "parent_ref": "FB-MATERIAL",
+          "status": "partial"
+        },
+        {
+          "branch_id": "FB-ELECTRODE",
+          "label": "電極",
+          "parent_ref": null,
+          "status": "current"
+        },
+        {
+          "branch_id": "FB-ELECTRODE-GEOMETRY",
+          "label": "幾何",
+          "parent_ref": "FB-ELECTRODE",
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-ELECTRODE-CONTACT",
+          "label": "接觸電阻",
+          "parent_ref": "FB-ELECTRODE",
+          "status": "current"
+        },
+        {
+          "branch_id": "FB-MEASUREMENT",
+          "label": "量測",
+          "parent_ref": null,
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-SYSTEM",
+          "label": "系統",
+          "parent_ref": null,
+          "status": "future"
+        }
+      ],
+      "linked_hypothesis_layers": [
+        "H002"
+      ],
+      "rationale": "H01 改善導電度但未改善重複性，因此加入穩定 branch ID 的 electrode-contact 分支。",
+      "source_event_cursor": 15,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "67126d68782a1cb43ecc5a79df7ff5b7e230a4eb5dfdfed6bc2d8904c001c6b6",
+    "event_hash": "d899ace3dcdef32712dbfeebcba8e82aecddb466a1663440deb5b3a7e1d6b045"
+  },
+  {
+    "cursor": 43,
+    "event_type": "evidence_linked",
+    "payload": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E202",
+      "kind": "synthetic_literature",
+      "title": "Synthetic E202 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E202",
+        "uri": "thesis-deck-system/examples/synthetic-project/evidence/literature-note.txt",
+        "sha256": "5b510e5b31d6714228a03c31a544b12a0991ab0dc797166167cfe8d8447f7fee"
+      },
+      "claim_support_refs": [
+        "C201",
+        "C202"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B201"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "causal_role": "supporting_observation",
+      "origin": {
+        "layer_ref": "H002",
+        "source_dataset_role": "preexisting_observation"
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "d899ace3dcdef32712dbfeebcba8e82aecddb466a1663440deb5b3a7e1d6b045",
+    "event_hash": "b983e31b8f03fb4c1a7e288768383e9477d219d08fb7471aae44e6a5d81e6d25"
+  },
+  {
+    "cursor": 44,
+    "event_type": "evidence_linked",
+    "payload": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E204",
+      "kind": "synthetic_observation",
+      "title": "Synthetic E204 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E204",
+        "uri": "thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt",
+        "sha256": "28326c007fc6eda9d8301598da822e02b0ae6c87f6da4d8eb08f64bcc479aa4e"
+      },
+      "claim_support_refs": [
+        "C201",
+        "C202"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B201"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "causal_role": "supporting_observation",
+      "origin": {
+        "layer_ref": "H001",
+        "stage_ref": "ST-H001-DISC",
+        "source_dataset_role": "pre_h02_uncertainty"
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "b983e31b8f03fb4c1a7e288768383e9477d219d08fb7471aae44e6a5d81e6d25",
+    "event_hash": "50c831b6cba15e5dfc92ced16e8640495b0be2917d3576fc73c98d3f11825a9e"
+  },
+  {
+    "cursor": 45,
+    "event_type": "problem_created",
+    "payload": {
+      "schema_version": "2.0.0",
+      "problem_id": "P201",
+      "hypothesis_layer_ref": "H002",
+      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
+      "previous_findings": [
+        "H01 支持導電度梯度存在",
+        "H01 未支持導電度單獨主導重複性"
+      ],
+      "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
+      "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+      "evidence_refs": [
+        "E204"
+      ],
+      "derived_from_decision_refs": [
+        "D101"
+      ],
+      "scope": "匹配 bulk conductivity，改變 contact pressure 的對照實驗。",
+      "source_event_cursor": 17,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "50c831b6cba15e5dfc92ced16e8640495b0be2917d3576fc73c98d3f11825a9e",
+    "event_hash": "9c350af3bdd66a11135526e00e05c789f028e905bf2567dd8909faa1da8efe81"
+  },
+  {
+    "cursor": 46,
+    "event_type": "stage_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H002-OBS",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage_type": "observation",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "observation": "位置依賴缺陷與訊號變異已觀察到。",
+        "problem": "現有模型無法解釋此變異。"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "9c350af3bdd66a11135526e00e05c789f028e905bf2567dd8909faa1da8efe81",
+    "event_hash": "6cf19971ba98bc5aa228c7673f4587e4b0f8b96bc7ad7d97876106dfa265ea90"
+  },
+  {
+    "cursor": 47,
+    "event_type": "stage_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H002-LIT",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage_type": "literature",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C201",
+        "C202"
+      ],
+      "evidence_refs": [
+        "E202"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "consensus": "transport gradient 可產生位置效應。",
+        "disagreements_or_alternatives": [
+          "interface contact remains alternative"
+        ],
+        "known_mechanisms": [
+          "bulk transport",
+          "boundary accumulation"
+        ],
+        "research_gap": "缺少控制比較隔離機制。",
+        "relevance_to_observation": "兩種機制都預測位置效應。",
+        "implication_for_hypothesis_or_strategy": "需匹配條件後比較。",
+        "supporting_literature_evidence_refs": [
+          "E202"
+        ],
+        "contradicting_literature_evidence_refs": []
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "6cf19971ba98bc5aa228c7673f4587e4b0f8b96bc7ad7d97876106dfa265ea90",
+    "event_hash": "d5ceb3737eaf6d934109c576c8182f171331127f8d89175e5db08c63185a54f2"
+  },
+  {
+    "cursor": 48,
+    "event_type": "stage_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H002-MECH",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage_type": "mechanism",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C202",
+        "C203"
+      ],
+      "evidence_refs": [
+        "E202"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "mechanism": "contact resistance",
+        "falsification": "控制比較不出現預測差異。"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "d5ceb3737eaf6d934109c576c8182f171331127f8d89175e5db08c63185a54f2",
+    "event_hash": "c30c8818da92c5859c86c38196cff24d0047321dd32da90083b7a05eb3a22b42"
+  },
+  {
+    "cursor": 49,
+    "event_type": "stage_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H002-SOL",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage_type": "solution",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C202"
+      ],
+      "evidence_refs": [
+        "E202"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "strategy": "匹配導電度並改變接觸壓力",
+        "success_criterion": "預測指標跨過 decision threshold"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "c30c8818da92c5859c86c38196cff24d0047321dd32da90083b7a05eb3a22b42",
+    "event_hash": "9394f49c95bd96ca0af61d4653d31d17bb7e54d4fc486230c9f655e00275c94a"
+  },
+  {
+    "cursor": 50,
+    "event_type": "asset_registered",
+    "payload": {
+      "schema_version": "1.0.0",
+      "asset_id": "A102",
+      "asset_type": "mechanism_diagram",
+      "title": "Synthetic A102",
+      "evidence_role": "synthetic_test_evidence",
+      "source_evidence": [
+        "E204"
+      ],
+      "path": "fishbone/FB001-rev2.svg",
+      "preview_path": "fishbone/FB001-rev2.png",
+      "mime_type": "image/svg+xml",
+      "sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+      "editable": true,
+      "provenance": "synthetic_fixture",
+      "status": "approved"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "9394f49c95bd96ca0af61d4653d31d17bb7e54d4fc486230c9f655e00275c94a",
+    "event_hash": "0598aa566411f3d43917ea31d8d7812e6976b1c55dec15ca5b8cf97af008ec9e"
+  },
+  {
+    "cursor": 51,
+    "event_type": "block_created",
+    "payload": {
+      "schema_version": "1.0.0",
+      "block_id": "B201",
+      "revision": 1,
+      "title": "H02 Contact resistance mechanism",
+      "research_question": {
+        "question_id": "RQ-B201",
+        "text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+        "scope": "synthetic fixture only"
+      },
+      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
+      "research_status": "active",
+      "story_visibility": {
+        "master": "main",
+        "meeting": "main",
+        "defense": "appendix"
+      },
+      "hypothesis_claim_refs": [
+        "C201"
+      ],
+      "mechanism_claim_refs": [
+        "C202"
+      ],
+      "prediction_claim_refs": [
+        "C203"
+      ],
+      "stage_refs": {
+        "observation": "ST-H002-OBS",
+        "literature": "ST-H002-LIT",
+        "mechanism": "ST-H002-MECH",
+        "solution": "ST-H002-SOL"
+      },
+      "experiment_stage_refs": [],
+      "result_stage_refs": [],
+      "claim_refs": [
+        "C201",
+        "C202",
+        "C203"
+      ],
+      "evidence_refs": [
+        "E202",
+        "E204"
+      ],
+      "asset_refs": [
+        "A102"
+      ],
+      "action_item_refs": [],
+      "decision_refs": [],
+      "decision_criteria_ref": null,
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "0598aa566411f3d43917ea31d8d7812e6976b1c55dec15ca5b8cf97af008ec9e",
+    "event_hash": "9d9f68beae6a06ed1be7760023c14c9b01f6225902ef856cd784e8139d4e7ec2"
+  },
+  {
+    "cursor": 52,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -2604,12 +2356,75 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "2c12e0bfcabb68c729799fdd1dec1a98d7b65d49f11144099af4bf2d57b9d3cc",
-    "event_hash": "01165f157db8ef6792214091c1f6b1549f80058703af200482dd7ef9e18139d3"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "9d9f68beae6a06ed1be7760023c14c9b01f6225902ef856cd784e8139d4e7ec2",
+    "event_hash": "52ecef625f5ddd838fc578280121ce8b730fa65bb7afa3fe2f406a106f47f7a4"
   },
   {
-    "cursor": 58,
+    "cursor": 53,
+    "event_type": "block_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "block_id": "B201",
+      "revision": 2,
+      "title": "H02 Contact resistance mechanism",
+      "research_question": {
+        "question_id": "RQ-B201",
+        "text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+        "scope": "synthetic fixture only"
+      },
+      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
+      "research_status": "active",
+      "story_visibility": {
+        "master": "main",
+        "meeting": "main",
+        "defense": "appendix"
+      },
+      "hypothesis_claim_refs": [
+        "C201"
+      ],
+      "mechanism_claim_refs": [
+        "C202"
+      ],
+      "prediction_claim_refs": [
+        "C203"
+      ],
+      "stage_refs": {
+        "observation": "ST-H002-OBS",
+        "literature": "ST-H002-LIT",
+        "mechanism": "ST-H002-MECH",
+        "solution": "ST-H002-SOL",
+        "experiment": "ST-EXP201"
+      },
+      "experiment_stage_refs": [
+        "ST-EXP201"
+      ],
+      "result_stage_refs": [],
+      "claim_refs": [
+        "C201",
+        "C202",
+        "C203"
+      ],
+      "evidence_refs": [
+        "E202",
+        "E204"
+      ],
+      "asset_refs": [
+        "A102"
+      ],
+      "action_item_refs": [],
+      "decision_refs": [],
+      "decision_criteria_ref": "ST-EXP201#/data/decision_rules",
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "52ecef625f5ddd838fc578280121ce8b730fa65bb7afa3fe2f406a106f47f7a4",
+    "event_hash": "639b713a38dfd806f95c819cc1a0a5831dfb519fa5cff9c8e74ce55ac895995d"
+  },
+  {
+    "cursor": 54,
     "event_type": "evidence_linked",
     "payload": {
       "schema_version": "1.0.0",
@@ -2643,12 +2458,12 @@
         "status": "synthetic_test_only"
       }
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "01165f157db8ef6792214091c1f6b1549f80058703af200482dd7ef9e18139d3",
-    "event_hash": "e3ec1a7535e52afa67ac7a86c51fa9ad4c1cd2026c3dd8f22b8b575b0929fb9d"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "639b713a38dfd806f95c819cc1a0a5831dfb519fa5cff9c8e74ce55ac895995d",
+    "event_hash": "88a2f79913a4f598ac1b3e5e1acc6366b8a3fea1a7db3a7835c9a8a0c3a96abe"
   },
   {
-    "cursor": 59,
+    "cursor": 55,
     "event_type": "asset_registered",
     "payload": {
       "schema_version": "1.0.0",
@@ -2662,7 +2477,7 @@
       "path": "plots/H02_contact_pressure.svg",
       "preview_path": "plots/H02_contact_pressure.png",
       "mime_type": "image/svg+xml",
-      "sha256": "e9ee8858b422aa712811fce99e26eca23b947be8d3bf84ce64d3a6cff127c81b",
+      "sha256": "d6e043dd08b8f8657957f0add9a999a9b0d0c034ed624bc2550dcf6f4595cd85",
       "editable": true,
       "provenance": "synthetic_fixture",
       "status": "approved",
@@ -2678,7 +2493,7 @@
       },
       "output": {
         "svg_path": "plots/H02_contact_pressure.svg",
-        "svg_sha256": "e9ee8858b422aa712811fce99e26eca23b947be8d3bf84ce64d3a6cff127c81b",
+        "svg_sha256": "d6e043dd08b8f8657957f0add9a999a9b0d0c034ed624bc2550dcf6f4595cd85",
         "png_path": "plots/H02_contact_pressure.png",
         "png_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787"
       },
@@ -2686,19 +2501,19 @@
         {
           "input_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
           "operation": "plot",
-          "output_sha256": "e9ee8858b422aa712811fce99e26eca23b947be8d3bf84ce64d3a6cff127c81b"
+          "output_sha256": "d6e043dd08b8f8657957f0add9a999a9b0d0c034ed624bc2550dcf6f4595cd85"
         }
       ],
       "accessibility": {
         "alt_text": "contact pressure result plot"
       }
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "e3ec1a7535e52afa67ac7a86c51fa9ad4c1cd2026c3dd8f22b8b575b0929fb9d",
-    "event_hash": "5b2e9005958d0f279b1a6b763697a0ccab2f65bf58193eda6ca019d1b110e5b4"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "88a2f79913a4f598ac1b3e5e1acc6366b8a3fea1a7db3a7835c9a8a0c3a96abe",
+    "event_hash": "e1eb33b49dcecbb11dc6ffb24248a3e44d08befc6f7fbb9a371bbc396e570d14"
   },
   {
-    "cursor": 60,
+    "cursor": 56,
     "event_type": "stage_revised",
     "payload": {
       "schema_version": "1.0.0",
@@ -2734,17 +2549,325 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "5b2e9005958d0f279b1a6b763697a0ccab2f65bf58193eda6ca019d1b110e5b4",
-    "event_hash": "1e917b90a1ee01d641bd4cce78be2ce52c63e10ab70722ad52058e6be782c864"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "e1eb33b49dcecbb11dc6ffb24248a3e44d08befc6f7fbb9a371bbc396e570d14",
+    "event_hash": "fb98c6659b0770f2a73283e18d760ab8696cff8f6c075f93d6a082c37c6a097e"
   },
   {
-    "cursor": 61,
+    "cursor": 57,
     "event_type": "block_revised",
     "payload": {
       "schema_version": "1.0.0",
       "block_id": "B201",
-      "revision": 2,
+      "revision": 3,
+      "title": "H02 Contact resistance mechanism",
+      "research_question": {
+        "question_id": "RQ-B201",
+        "text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+        "scope": "synthetic fixture only"
+      },
+      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
+      "research_status": "active",
+      "story_visibility": {
+        "master": "main",
+        "meeting": "main",
+        "defense": "appendix"
+      },
+      "hypothesis_claim_refs": [
+        "C201"
+      ],
+      "mechanism_claim_refs": [
+        "C202"
+      ],
+      "prediction_claim_refs": [
+        "C203"
+      ],
+      "stage_refs": {
+        "observation": "ST-H002-OBS",
+        "literature": "ST-H002-LIT",
+        "mechanism": "ST-H002-MECH",
+        "solution": "ST-H002-SOL",
+        "experiment": "ST-EXP201",
+        "result": "ST-RES201"
+      },
+      "experiment_stage_refs": [
+        "ST-EXP201"
+      ],
+      "result_stage_refs": [
+        "ST-RES201"
+      ],
+      "claim_refs": [
+        "C201",
+        "C202",
+        "C203"
+      ],
+      "evidence_refs": [
+        "E202",
+        "E204",
+        "E201"
+      ],
+      "asset_refs": [
+        "A102",
+        "A201"
+      ],
+      "action_item_refs": [],
+      "decision_refs": [],
+      "decision_criteria_ref": "ST-EXP201#/data/decision_rules",
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "fb98c6659b0770f2a73283e18d760ab8696cff8f6c075f93d6a082c37c6a097e",
+    "event_hash": "eb3b53bee4e33ad8e1457e556a92db48b72823bb05dfeedf637b7681744193dd"
+  },
+  {
+    "cursor": 58,
+    "event_type": "stage_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H002-DISC",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage_type": "discussion",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C201",
+        "C202"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "hypothesis_support": "supported",
+        "failed_assumptions": [],
+        "missing_evidence": [
+          "durability"
+        ],
+        "limitations": [
+          "synthetic only"
+        ],
+        "decision_ref": "D201",
+        "next_step_ref": "NS201",
+        "interpretation": "Pressure effect supports the interface mechanism."
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "eb3b53bee4e33ad8e1457e556a92db48b72823bb05dfeedf637b7681744193dd",
+    "event_hash": "abdc72d3d7bc53082a01e78f427dbcc37e4d67040393d6b484fc49a025fe1591"
+  },
+  {
+    "cursor": 59,
+    "event_type": "block_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "block_id": "B201",
+      "revision": 4,
+      "title": "H02 Contact resistance mechanism",
+      "research_question": {
+        "question_id": "RQ-B201",
+        "text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+        "scope": "synthetic fixture only"
+      },
+      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
+      "research_status": "active",
+      "story_visibility": {
+        "master": "main",
+        "meeting": "main",
+        "defense": "appendix"
+      },
+      "hypothesis_claim_refs": [
+        "C201"
+      ],
+      "mechanism_claim_refs": [
+        "C202"
+      ],
+      "prediction_claim_refs": [
+        "C203"
+      ],
+      "stage_refs": {
+        "observation": "ST-H002-OBS",
+        "literature": "ST-H002-LIT",
+        "mechanism": "ST-H002-MECH",
+        "solution": "ST-H002-SOL",
+        "experiment": "ST-EXP201",
+        "result": "ST-RES201",
+        "discussion": "ST-H002-DISC"
+      },
+      "experiment_stage_refs": [
+        "ST-EXP201"
+      ],
+      "result_stage_refs": [
+        "ST-RES201"
+      ],
+      "claim_refs": [
+        "C201",
+        "C202",
+        "C203"
+      ],
+      "evidence_refs": [
+        "E202",
+        "E204",
+        "E201"
+      ],
+      "asset_refs": [
+        "A102",
+        "A201"
+      ],
+      "action_item_refs": [],
+      "decision_refs": [],
+      "decision_criteria_ref": "ST-EXP201#/data/decision_rules",
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "abdc72d3d7bc53082a01e78f427dbcc37e4d67040393d6b484fc49a025fe1591",
+    "event_hash": "6e15cc6db974d37d2ca43f0f3d274e159bee9d33d0c9fa256d89a36873f531f1"
+  },
+  {
+    "cursor": 60,
+    "event_type": "layer_discussion_recorded",
+    "payload": {
+      "schema_version": "2.0.0",
+      "discussion_id": "DISC-H002",
+      "hypothesis_layer_ref": "H002",
+      "supporting_results": [
+        "RES201"
+      ],
+      "contradicting_results": [],
+      "non_discriminating_results": [],
+      "cross_experiment_pattern": "匹配導電度後，提高接觸壓力明顯降低變異。",
+      "mechanism_assessment": "contact resistance 在低壓條件下主導不穩定。",
+      "alternative_explanations": [
+        "電極幾何仍可能調節壓力分布"
+      ],
+      "remaining_uncertainty": "高壓長期循環是否造成新的 wear mechanism 尚未知。",
+      "hypothesis_status": "supported",
+      "decision_ref": "D201",
+      "next_step_refs": [
+        "NS201"
+      ],
+      "source_event_cursor": 60,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "6e15cc6db974d37d2ca43f0f3d274e159bee9d33d0c9fa256d89a36873f531f1",
+    "event_hash": "0b763159b4b62752f71a0f303799d40ae3ca7d0b61920c1d73af9815b7eec359"
+  },
+  {
+    "cursor": 61,
+    "event_type": "decision_recorded",
+    "payload": {
+      "schema_version": "1.0.0",
+      "decision_id": "D201",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 4
+      },
+      "timestamp": "2026-08-27T00:00:00Z",
+      "actor": {
+        "type": "person",
+        "id": "gary"
+      },
+      "decision_type": "research_gate",
+      "subject_refs": [
+        "B201",
+        "ST-H002-DISC"
+      ],
+      "choice": "Go",
+      "alternatives": [
+        "No-Go"
+      ],
+      "rationale": "Contact-pressure control discriminates the interface mechanism.",
+      "evidence_refs": [
+        "E201"
+      ],
+      "provenance": "synthetic_fixture"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "0b763159b4b62752f71a0f303799d40ae3ca7d0b61920c1d73af9815b7eec359",
+    "event_hash": "de783bf8e24e58f8a9e62b0a902b0dcd8a4f258cef6aaaaa959a001bc418afc2"
+  },
+  {
+    "cursor": 62,
+    "event_type": "action_committed",
+    "payload": {
+      "schema_version": "1.0.0",
+      "action_item_id": "NS201",
+      "revision": 1,
+      "action_type": "experiment",
+      "title": "High-pressure cycling durability",
+      "action": "Run controlled pressure comparison.",
+      "rationale": "Resolve bulk versus interface mechanism.",
+      "source_decision_ref": "D201",
+      "linked_block_refs": [
+        {
+          "block_id": "B201",
+          "revision": 4
+        }
+      ],
+      "linked_claim_refs": [
+        "C201",
+        "C203"
+      ],
+      "prior_commitment": {
+        "meeting_id": "MEETING-001",
+        "committed_at": "2026-08-27T00:00:00Z"
+      },
+      "owner": {
+        "actor_id": "gary",
+        "display_name": "Gary"
+      },
+      "target_window": {
+        "start": "2026-09-11T00:00:00Z",
+        "due": "2026-09-24T00:00:00Z",
+        "timezone": "Asia/Taipei"
+      },
+      "actual_completion": {
+        "completed_at": null,
+        "closure_evidence_refs": []
+      },
+      "success_failure_criteria": {
+        "success": "effect exceeds uncertainty",
+        "failure": "no discriminating effect"
+      },
+      "required_evidence": [
+        "E201"
+      ],
+      "dependency_refs": [
+        "pressure fixture"
+      ],
+      "blocker_refs": [],
+      "parallelizable": true,
+      "workstream": "interface-mechanism",
+      "status": "planned",
+      "result_summary": "Awaiting controlled comparison",
+      "supersedes": [],
+      "superseded_by": [],
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "de783bf8e24e58f8a9e62b0a902b0dcd8a4f258cef6aaaaa959a001bc418afc2",
+    "event_hash": "196e600ad161e98a01b09fe0fff7ce773a20e612e58ee7688215090ac5f6c665"
+  },
+  {
+    "cursor": 63,
+    "event_type": "block_revised",
+    "payload": {
+      "schema_version": "1.0.0",
+      "block_id": "B201",
+      "revision": 5,
       "title": "H02 Contact resistance mechanism",
       "research_question": {
         "question_id": "RQ-B201",
@@ -2808,55 +2931,12 @@
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "1e917b90a1ee01d641bd4cce78be2ce52c63e10ab70722ad52058e6be782c864",
-    "event_hash": "242075687f8a5f2b8552d846861d2939dfcd9fa9e995c309e2601e3c8daaace6"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "196e600ad161e98a01b09fe0fff7ce773a20e612e58ee7688215090ac5f6c665",
+    "event_hash": "4bcdf647bab4e310c8c66407b6acb2293221a33d9a68aebd1b52fd5c517e370d"
   },
   {
-    "cursor": 62,
-    "event_type": "stage_revised",
-    "payload": {
-      "schema_version": "1.0.0",
-      "stage_id": "ST-H002-DISC",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "stage_type": "discussion",
-      "revision": 1,
-      "status": "complete",
-      "claim_refs": [
-        "C201",
-        "C202"
-      ],
-      "evidence_refs": [
-        "E201"
-      ],
-      "hypothesis_claim_refs": [],
-      "prediction_claim_refs": [],
-      "data": {
-        "hypothesis_support": "supported",
-        "failed_assumptions": [],
-        "missing_evidence": [
-          "durability"
-        ],
-        "limitations": [
-          "synthetic only"
-        ],
-        "decision_ref": "D201",
-        "next_step_ref": "NS201",
-        "interpretation": "Pressure effect supports the interface mechanism."
-      },
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "242075687f8a5f2b8552d846861d2939dfcd9fa9e995c309e2601e3c8daaace6",
-    "event_hash": "ef5736aea8d8064b8986c9d6659b4d85b72dcb28a5a5de7a79e95280c0a76f52"
-  },
-  {
-    "cursor": 63,
+    "cursor": 64,
     "event_type": "action_status_changed",
     "payload": {
       "action_item_id": "NS101",
@@ -2869,76 +2949,12 @@
       },
       "result_summary": "Completed synthetic control"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "ef5736aea8d8064b8986c9d6659b4d85b72dcb28a5a5de7a79e95280c0a76f52",
-    "event_hash": "16ee30b55d06a056bd85893253d5072cf0b2fda0b78f801d6a111493cb6903d6"
-  },
-  {
-    "cursor": 64,
-    "event_type": "layer_discussion_recorded",
-    "payload": {
-      "schema_version": "2.0.0",
-      "discussion_id": "DISC-H002",
-      "hypothesis_layer_ref": "H002",
-      "supporting_results": [
-        "RES201"
-      ],
-      "contradicting_results": [],
-      "non_discriminating_results": [],
-      "cross_experiment_pattern": "匹配導電度後，提高接觸壓力明顯降低變異。",
-      "mechanism_assessment": "contact resistance 在低壓條件下主導不穩定。",
-      "alternative_explanations": [
-        "電極幾何仍可能調節壓力分布"
-      ],
-      "remaining_uncertainty": "高壓長期循環是否造成新的 wear mechanism 尚未知。",
-      "hypothesis_status": "supported",
-      "decision_ref": "D201",
-      "next_step_refs": [
-        "NS201"
-      ],
-      "source_event_cursor": 64,
-      "created_at": "2026-08-27T00:00:00Z"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "16ee30b55d06a056bd85893253d5072cf0b2fda0b78f801d6a111493cb6903d6",
-    "event_hash": "896efb2e804ca4625968e960597b142b18c1d5ba19d62eb581955c00336b4b64"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "4bcdf647bab4e310c8c66407b6acb2293221a33d9a68aebd1b52fd5c517e370d",
+    "event_hash": "f49a0d4f54cc9a0004c736a6054a84dccaf358374f3ca695e53f8673b193eb33"
   },
   {
     "cursor": 65,
-    "event_type": "decision_recorded",
-    "payload": {
-      "schema_version": "1.0.0",
-      "decision_id": "D201",
-      "block_ref": {
-        "block_id": "B201",
-        "revision": 1
-      },
-      "timestamp": "2026-08-27T00:00:00Z",
-      "actor": {
-        "type": "person",
-        "id": "gary"
-      },
-      "decision_type": "research_gate",
-      "subject_refs": [
-        "B201",
-        "ST-H002-DISC"
-      ],
-      "choice": "Go",
-      "alternatives": [
-        "No-Go"
-      ],
-      "rationale": "Contact-pressure control discriminates the interface mechanism.",
-      "evidence_refs": [
-        "E201"
-      ],
-      "provenance": "synthetic_fixture"
-    },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "896efb2e804ca4625968e960597b142b18c1d5ba19d62eb581955c00336b4b64",
-    "event_hash": "afa57878845a52a66aec6c7382c026888881f5b8febae2d57f2d8416096b8b6a"
-  },
-  {
-    "cursor": 66,
     "event_type": "layer_summary_recorded",
     "payload": {
       "schema_version": "2.0.0",
@@ -2956,15 +2972,15 @@
       "next_step_refs": [
         "NS201"
       ],
-      "source_event_cursor": 66,
+      "source_event_cursor": 65,
       "created_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "afa57878845a52a66aec6c7382c026888881f5b8febae2d57f2d8416096b8b6a",
-    "event_hash": "846c1aca00d00fb17c28f1617015c8df2524f9c3288649565d6d7c352b3068d9"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "f49a0d4f54cc9a0004c736a6054a84dccaf358374f3ca695e53f8673b193eb33",
+    "event_hash": "e9d8e13e82ab1e49949758f54259b7c70c83994b793ded2ecb27daf20ef4269e"
   },
   {
-    "cursor": 67,
+    "cursor": 66,
     "event_type": "hypothesis_layer_revised",
     "payload": {
       "schema_version": "2.0.0",
@@ -3018,12 +3034,12 @@
       "transition_ref": null,
       "story_visibility": "main",
       "research_status": "supported",
-      "source_event_cursor": 67,
+      "source_event_cursor": 66,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
-    "timestamp": "2026-08-27T15:22:39Z",
-    "previous_hash": "846c1aca00d00fb17c28f1617015c8df2524f9c3288649565d6d7c352b3068d9",
-    "event_hash": "818d235e80c171895d77cf54a0f5f580f55a73dc02bc100a7f42971d212bdc01"
+    "timestamp": "2026-08-27T16:34:24Z",
+    "previous_hash": "e9d8e13e82ab1e49949758f54259b7c70c83994b793ded2ecb27daf20ef4269e",
+    "event_hash": "739db7585dec65f6ecdbaf899a438cfb9d960d7f6150ecade531e4b7a48a34ee"
   }
 ]

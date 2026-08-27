@@ -16,8 +16,8 @@
   "findings": [],
   "evidence": {
     "h01_cursor": 23,
-    "transition_cursor": 54,
-    "h02_cursor": 67,
+    "transition_cursor": 39,
+    "h02_cursor": 66,
     "causal_temporal_status": "pass",
     "evidence_causal_role_status": "pass",
     "precursor_evidence_id": "E104",
@@ -27,6 +27,6 @@
     "h02_fishbone_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
     "contact_csv_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
     "contact_script_sha256": "3aeb7e22710c80af2bb316ce066de3397d9edd0520f8464c387ed59021eee1c6",
-    "contact_svg_sha256": "e9ee8858b422aa712811fce99e26eca23b947be8d3bf84ce64d3a6cff127c81b"
+    "contact_svg_sha256": "d6e043dd08b8f8657957f0add9a999a9b0d0c034ed624bc2550dcf6f4595cd85"
   }
 }

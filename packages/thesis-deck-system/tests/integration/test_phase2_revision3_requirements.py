@@ -60,7 +60,7 @@ def test_result_text_and_asset_composition_are_preserved(tmp_path: Path):
 
 def test_presentation_semantic_fidelity_is_an_executed_gate(tmp_path: Path):
     build_phase2(output_root=tmp_path)
-    assert _load(tmp_path, "presentation-semantic-fidelity-qa.json")["status"] == "pass"
+    assert _load(tmp_path, "presentation-semantic-fidelity-qa.json")["status"] == "blocked_render_evidence"
     consistency = _load(tmp_path, "report-evidence-consistency.json")
     assert consistency["status"] == "pass"
     assert consistency["transition_cursor"] == _load(tmp_path, "materialized-transition.json")["events"][-1]["cursor"]

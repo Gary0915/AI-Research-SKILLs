@@ -5,43 +5,43 @@
     {
       "result_ref": "RES101",
       "slide_id": "S-H001-RESULT-SINGLE-08",
-      "expected_text": "RES101｜平均導電度增加 24% ± 5% SD",
-      "extracted_text": "RES101｜平均導電度增加 24% ± 5% SD\nRES101｜平均導電度增加 24% ± 5% SD",
+      "expected_text": "Figure｜RES101｜平均導電度增加 24% ± 5% SD\nID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+      "extracted_text": "Figure｜RES101｜平均導電度增加 24% ± 5% SD\nID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
       "expected_asset_ids": [
         "A001"
       ],
       "asset_ids": [
         "A001"
       ],
-      "render_sha256": "1cf196016ba008c441aac6e7696a4a5f16a58b1cf6bb6b36a1820f1ff90092bb",
+      "render_sha256": "1e064066dcde182328b1df0c21bc2dff3088ecdc1b0ccf34b2cece4a9b76a010",
       "status": "pass"
     },
     {
       "result_ref": "RES102",
       "slide_id": "S-H001-RESULT-SINGLE-09",
-      "expected_text": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
-      "extracted_text": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nRES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+      "expected_text": "Figure｜RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+      "extracted_text": "Figure｜RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
       "expected_asset_ids": [
         "A001"
       ],
       "asset_ids": [
         "A001"
       ],
-      "render_sha256": "3d32163df155b962be6ccf115270d5d8e819093480331d1ae7b0ba45a545ddb8",
+      "render_sha256": "7ca351dd7d8dca10f466f2c88979978558be80a0e4cdd7016a13ea5de4064ac6",
       "status": "pass"
     },
     {
       "result_ref": "RES201",
       "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
-      "expected_text": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
-      "extracted_text": "IV: contact pressure\nControls: bulk conductivity; 電極幾何\nBaselines: low-pressure control\nN/replicates: replicates: 5; samples: 15\nMetrics/units: 訊號 CV (%); contact resistance (ohm)\nMethod: synthetic-pressure-fixture\nPrediction: CV and resistance decrease\ngo: both metrics improve; partial_go: one metric improves; no_go: neither improves\n高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\n高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+      "expected_text": "Figure｜RES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+      "extracted_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture\nPrediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves\nFigure｜RES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
       "expected_asset_ids": [
         "A201"
       ],
       "asset_ids": [
         "A201"
       ],
-      "render_sha256": "b7c2a197ee4963e7c61e3254eebea46978237781f651acb95529bbb3c8c6d319",
+      "render_sha256": "d9a7e458a4fe74c2e666ecc9491fb797c9da780a9c060f7ab1117eac0d148f5b",
       "status": "pass"
     }
   ],

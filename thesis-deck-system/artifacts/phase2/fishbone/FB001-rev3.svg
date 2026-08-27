@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<rect width="1200" height="650" fill="white"/>
+<style>text{font-family:sans-serif}.label{font-size:22px}.small{font-size:15px}</style>
+<line x1="180" y1="325" x2="1040" y2="325" stroke="#344054" stroke-width="8"/>
+<polygon points="1040,305 1100,325 1040,345" fill="#344054"/>
+<text x="920" y="382" class="small" fill="#344054">THESIS OUTCOME</text>
+<line x1="320.0" y1="325.0" x2="270.0" y2="154.0" stroke="#2f6b4f" stroke-width="3" data-parent-ref="spine"/>
+<g id="FB-MATERIAL" data-branch-id="FB-MATERIAL" data-parent-ref="spine" data-status="completed" data-position="270.0,120.0"><rect x="205.0" y="86.0" width="210" height="68" rx="10" fill="#eef7f1" stroke="#2f6b4f" stroke-width="2"/><text x="310.0" y="127.0" text-anchor="middle" class="label" fill="#2f6b4f">材料</text></g>
+<text x="390.0" y="98.0" class="small" fill="#2f6b4f">✓</text>
+<line x1="320.0" y1="120.0" x2="365.0" y2="94.0" stroke="#7a4e00" stroke-width="3" data-parent-ref="FB-MATERIAL"/>
+<g id="FB-MATERIAL-HYDRATION" data-branch-id="FB-MATERIAL-HYDRATION" data-parent-ref="FB-MATERIAL" data-status="partial" data-position="365.0,60.0"><rect x="300.0" y="26.0" width="210" height="68" rx="10" fill="#fff5d6" stroke="#7a4e00" stroke-width="2"/><text x="405.0" y="67.0" text-anchor="middle" class="label" fill="#7a4e00">含水量</text></g>
+<text x="405.0" y="112.0" text-anchor="middle" class="small" fill="#7a4e00">INFORMATIVE / PARTIAL</text>
+<line x1="540.0" y1="325.0" x2="490.0" y2="466.0" stroke="#b42318" stroke-width="5" data-parent-ref="spine"/>
+<g id="FB-ELECTRODE" data-branch-id="FB-ELECTRODE" data-parent-ref="spine" data-status="current" data-position="490.0,500.0"><rect x="425.0" y="466.0" width="210" height="68" rx="10" fill="#fff1f0" stroke="#b42318" stroke-width="5"/><text x="530.0" y="507.0" text-anchor="middle" class="label" fill="#b42318">電極</text></g>
+<text x="530.0" y="452.0" text-anchor="middle" class="small" fill="#b42318">CURRENT / H02</text>
+<line x1="540.0" y1="500.0" x2="585.0" y2="526.0" stroke="#7a8592" stroke-width="3" data-parent-ref="FB-ELECTRODE"/>
+<g id="FB-ELECTRODE-GEOMETRY" data-branch-id="FB-ELECTRODE-GEOMETRY" data-parent-ref="FB-ELECTRODE" data-status="future" data-position="585.0,560.0"><rect x="520.0" y="526.0" width="210" height="68" rx="10" fill="#f2f4f6" stroke="#7a8592" stroke-width="2"/><text x="625.0" y="567.0" text-anchor="middle" class="label" fill="#7a8592">幾何</text></g>
+<line x1="540.0" y1="500.0" x2="585.0" y2="576.0" stroke="#b42318" stroke-width="5" data-parent-ref="FB-ELECTRODE"/>
+<g id="FB-ELECTRODE-CONTACT" data-branch-id="FB-ELECTRODE-CONTACT" data-parent-ref="FB-ELECTRODE" data-status="current" data-position="585.0,610.0"><rect x="520.0" y="576.0" width="210" height="68" rx="10" fill="#fff1f0" stroke="#b42318" stroke-width="5"/><text x="625.0" y="617.0" text-anchor="middle" class="label" fill="#b42318">接觸電阻</text></g>
+<text x="625.0" y="562.0" text-anchor="middle" class="small" fill="#b42318">CURRENT / H02</text>
+<line x1="760.0" y1="325.0" x2="710.0" y2="154.0" stroke="#7a8592" stroke-width="3" data-parent-ref="spine"/>
+<g id="FB-MEASUREMENT" data-branch-id="FB-MEASUREMENT" data-parent-ref="spine" data-status="future" data-position="710.0,120.0"><rect x="645.0" y="86.0" width="210" height="68" rx="10" fill="#f2f4f6" stroke="#7a8592" stroke-width="2"/><text x="750.0" y="127.0" text-anchor="middle" class="label" fill="#7a8592">量測</text></g>
+<line x1="980.0" y1="325.0" x2="930.0" y2="466.0" stroke="#7a8592" stroke-width="3" data-parent-ref="spine"/>
+<g id="FB-SYSTEM" data-branch-id="FB-SYSTEM" data-parent-ref="spine" data-status="future" data-position="930.0,500.0"><rect x="865.0" y="466.0" width="210" height="68" rx="10" fill="#f2f4f6" stroke="#7a8592" stroke-width="2"/><text x="970.0" y="507.0" text-anchor="middle" class="label" fill="#7a8592">系統</text></g>
+</svg>

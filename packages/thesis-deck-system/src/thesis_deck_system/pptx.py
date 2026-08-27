@@ -15,6 +15,7 @@ import json
 import re
 
 from pptx import Presentation
+from pptx.dml.color import RGBColor
 from pptx.util import Inches, Pt
 
 from .context import ProjectContext
@@ -156,7 +157,9 @@ class PythonPptxAssembler(PptxAssembler):
                         asset_path = placement["asset_path"]
                         resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
                         preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
-                        shape = slide.shapes.add_picture(str(preview), Inches(governed_slot["left"]), Inches(governed_slot["top"]), width=Inches(governed_slot["width"]), height=Inches(governed_slot["height"]))
+                        annotation_height = min(0.48, governed_slot["height"] * 0.14) if composition in {"asset_with_caption", "asset_with_annotation", "nested_group"} and slot_content.get(slot_name) else 0
+                        figure_height = governed_slot["height"] - annotation_height
+                        shape = slide.shapes.add_picture(str(preview), Inches(governed_slot["left"]), Inches(governed_slot["top"]), width=Inches(governed_slot["width"]), height=Inches(figure_height))
                         shape.name = f"tds-slot:{slot_name}" if composition in {"asset_only", "text_only"} else f"tds-slot:{slot_name}/figure"
                         if str(asset_path).lower().endswith(".svg"):
                             svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": placement["asset_id"], "svg_path": resolved, "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
@@ -165,13 +168,14 @@ class PythonPptxAssembler(PptxAssembler):
                         # a real editable shape rather than hiding it behind a
                         # figure.
                         if composition in {"asset_with_caption", "asset_with_annotation", "nested_group"} and slot_content.get(slot_name):
-                            annotation_height = governed_slot["height"] * 0.32
-                            annotation = slide.shapes.add_textbox(Inches(governed_slot["left"]), Inches(governed_slot["top"] + governed_slot["height"] - annotation_height), Inches(governed_slot["width"]), Inches(annotation_height))
+                            annotation = slide.shapes.add_textbox(Inches(governed_slot["left"]), Inches(governed_slot["top"] + figure_height), Inches(governed_slot["width"]), Inches(annotation_height))
                             annotation.text = str(slot_content[slot_name])
                             annotation.name = f"tds-slot:{slot_name}/annotation"
+                            annotation.fill.solid()
+                            annotation.fill.fore_color.rgb = RGBColor(255, 255, 255)
                             for paragraph in annotation.text_frame.paragraphs:
                                 for run in paragraph.runs:
-                                    run.font.size = Pt(max(12, governed_slot.get("font_size_pt", 16) - 1))
+                                    run.font.size = Pt(max(10, governed_slot.get("font_size_pt", 16) - 4))
                     else:
                         text = slot_content.get(slot_name)
                         if text is None:
@@ -354,12 +358,20 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
                 expected_content = spec.get("content", {}).get("slots", {}).get(slot_name)
                 composition = spec.get("slot_compositions", {}).get(slot_name, "asset_only" if asset else "text_only")
                 physical_shape = shape or (nested[0] if nested else None)
-                actual_geometry = None if physical_shape is None else {"left": physical_shape.left / 914400, "top": physical_shape.top / 914400, "width": physical_shape.width / 914400, "height": physical_shape.height / 914400}
+                geometry_shapes = ([shape] if shape is not None else []) + nested
+                if not geometry_shapes:
+                    actual_geometry = None
+                else:
+                    left = min(item.left for item in geometry_shapes) / 914400
+                    top = min(item.top for item in geometry_shapes) / 914400
+                    right = max(item.left + item.width for item in geometry_shapes) / 914400
+                    bottom = max(item.top + item.height for item in geometry_shapes) / 914400
+                    actual_geometry = {"left": left, "top": top, "width": right - left, "height": bottom - top}
                 geometry_match = bool(physical_shape and abs(actual_geometry["left"] - plan_slot["left"]) < .08 and abs(actual_geometry["top"] - plan_slot["top"]) < .08 and abs(actual_geometry["width"] - plan_slot["width"]) < .08 and abs(actual_geometry["height"] - plan_slot["height"]) < .08)
                 text_shapes = [candidate for candidate in ([shape] if shape is not None else []) + nested if candidate.has_text_frame]
                 actual_text = "\n".join(candidate.text for candidate in text_shapes if candidate.text)
                 asset_relationship = bool(asset and any(item.get("asset_id") == asset.get("asset_id") for item in svg_asset_relationships))
-                picture_shape = physical_shape is not None and not physical_shape.has_text_frame
+                picture_shape = any(not candidate.has_text_frame for candidate in geometry_shapes)
                 if composition == "text_only":
                     content_binding = bool(physical_shape and expected_content is not None and str(expected_content) in actual_text)
                 elif composition == "asset_only":

@@ -21,10 +21,11 @@ from .ledger import Ledger
 from .phase2_projections import master_projection, meeting_projection
 from .pptx import PythonPptxAssembler, audit_pptx
 from .private_fixtures import PrivateFixtureLocator
-from .qa2 import (run_combined_role_content_qa, run_phase2_pipeline,
+from .qa2 import (PRESENTATION_ROLE_CONTRACTS, run_combined_role_content_qa, run_phase2_pipeline,
                   run_physical_content_fidelity_qa, run_presentation_semantic_fidelity_qa,
-                  run_presentation_temporal_snapshot_qa, run_professor_qa_v2)
-from .story import compile_hypothesis_layer_from_state, content_from_materialized_state, content_slots_from_materialized_state
+                  run_presentation_temporal_snapshot_qa, run_professor_qa_v2,
+                  run_report_evidence_consistency)
+from .story import compile_hypothesis_layer_from_state, compile_master_story_from_ledger, content_from_materialized_state, content_slots_from_materialized_state, semantic_fields_from_materialized_state
 from .template import create_synthetic_template, profile_template
 
 
@@ -157,9 +158,9 @@ def _append_phase2_history(fixture: dict, assets: dict[str, Path]) -> tuple[Ledg
     b1 = _canonical_block("B101", "H01 Bulk conductivity mechanism", h1["research_question"], p101["problem_statement"], h1, stages=h1_stages, claim_refs=["C101", "C102", "C103"], evidence_refs=["E002", "E101", "E102", "E103"], assets=["A001", "A002", "A101"], action="NS101", decision="D101")
     b2 = _canonical_block("B201", "H02 Contact resistance mechanism", h2["research_question"], p201["problem_statement"], h2, stages=h2_stages, claim_refs=["C201", "C202", "C203"], evidence_refs=["E202", "E204", "E201"], assets=["A102", "A201"], action="NS201", decision="D201")
     action1 = {"schema_version": "1.0.0", "action_item_id": "NS101", "revision": 1, "action_type": "experiment", "title": "Matched-conductivity contact-pressure test", "action": "Run controlled pressure comparison.", "rationale": "Resolve bulk versus interface mechanism.", "source_decision_ref": "D101", "linked_block_refs": [{"block_id": "B101", "revision": 1}], "linked_claim_refs": ["C101", "C103"], "prior_commitment": {"meeting_id": "MEETING-001", "committed_at": CREATED_AT}, "owner": {"actor_id": "gary", "display_name": "Gary"}, "target_window": {"start": "2026-09-01T00:00:00Z", "due": "2026-09-10T09:00:00Z", "timezone": "Asia/Taipei"}, "actual_completion": {"completed_at": None, "closure_evidence_refs": []}, "success_failure_criteria": {"success": "effect exceeds uncertainty", "failure": "no discriminating effect"}, "required_evidence": ["E101"], "dependency_refs": ["pressure fixture"], "blocker_refs": [], "parallelizable": True, "workstream": "interface-mechanism", "status": "planned", "result_summary": "Awaiting controlled comparison", "supersedes": [], "superseded_by": [], "provenance": "synthetic_fixture", "created_at": CREATED_AT, "updated_at": CREATED_AT}
-    action2 = copy.deepcopy(action1); action2.update({"action_item_id": "NS201", "revision": 1, "title": "High-pressure cycling durability", "source_decision_ref": "D201", "linked_block_refs": [{"block_id": "B201", "revision": 1}], "linked_claim_refs": ["C201", "C203"], "required_evidence": ["E201"], "status": "planned", "actual_completion": {"completed_at": None, "closure_evidence_refs": []}, "target_window": {"start": "2026-09-11T00:00:00Z", "due": "2026-09-24T00:00:00Z", "timezone": "Asia/Taipei"}})
+    action2 = copy.deepcopy(action1); action2.update({"action_item_id": "NS201", "revision": 1, "title": "High-pressure cycling durability", "source_decision_ref": "D201", "linked_block_refs": [{"block_id": "B201", "revision": 4}], "linked_claim_refs": ["C201", "C203"], "required_evidence": ["E201"], "status": "planned", "actual_completion": {"completed_at": None, "closure_evidence_refs": []}, "target_window": {"start": "2026-09-11T00:00:00Z", "due": "2026-09-24T00:00:00Z", "timezone": "Asia/Taipei"}})
     decision1 = {"schema_version": "1.0.0", "decision_id": "D101", "block_ref": {"block_id": "B101", "revision": 1}, "timestamp": CREATED_AT, "actor": {"type": "person", "id": "gary"}, "decision_type": "research_gate", "subject_refs": ["B101", "ST-H001-DISC"], "choice": "Partial-Go", "alternatives": ["No-Go"], "rationale": "Bulk conductivity is contributory but insufficient.", "evidence_refs": ["E101", "E102"], "provenance": "synthetic_fixture"}
-    decision2 = copy.deepcopy(decision1); decision2.update({"decision_id": "D201", "block_ref": {"block_id": "B201", "revision": 1}, "subject_refs": ["B201", "ST-H002-DISC"], "choice": "Go", "rationale": "Contact-pressure control discriminates the interface mechanism.", "evidence_refs": ["E201"]})
+    decision2 = copy.deepcopy(decision1); decision2.update({"decision_id": "D201", "block_ref": {"block_id": "B201", "revision": 4}, "subject_refs": ["B201", "ST-H002-DISC"], "choice": "Go", "rationale": "Contact-pressure control discriminates the interface mechanism.", "evidence_refs": ["E201"]})
     def append(event_type: str, payload: dict) -> int:
         return ledger.append(event_type, payload).cursor
 
@@ -203,23 +204,11 @@ def _append_phase2_history(fixture: dict, assets: dict[str, Path]) -> tuple[Ledg
     s1["source_event_cursor"] = len(ledger.replay()) + 1; append("layer_summary_recorded", s1)
     h1_revision2 = copy.deepcopy(h1_open); h1_revision2.update({"revision": 2, "source_event_cursor": len(ledger.replay()) + 1, "updated_at": CREATED_AT}); append("hypothesis_layer_revised", h1_revision2)
 
-    # H02 opening knowledge and the true transition are available before its
-    # discriminating experiment/result evidence.
-    append("fishbone_revised", fishbone2)
-    for claim in h2_claims: append("claim_created", claim)
-    for evidence in (e6, e7): append("evidence_linked", evidence)
-    p201 = copy.deepcopy(p201); p201["evidence_refs"] = ["E204"]
-    append("problem_created", p201)
-    for sid in ("ST-H002-OBS", "ST-H002-LIT", "ST-H002-MECH", "ST-H002-SOL"): append("stage_revised", st[sid])
-    exp3_open = copy.deepcopy(st["ST-EXP201"]); exp3_open["evidence_refs"] = ["E204"]; exp3_open["data"]["required_evidence"] = ["E204"]
-    append("stage_revised", exp3_open)
-    pending201 = copy.deepcopy(st["ST-RES201"]); pending201.update({"status": "pending", "evidence_refs": [], "data": {"planned_result": "高壓條件 CV 下降 38% ± 7% SD"}}); append("stage_revised", pending201)
-    discussion2_pending = _canonical_stage("ST-H002-DISC", "B201", "discussion", ["C201", "C202"], [], {"hypothesis_support": "inconclusive", "failed_assumptions": [], "missing_evidence": ["results"], "limitations": ["pending"], "decision_ref": "D201", "next_step_ref": "NS201", "interpretation": "Pending result interpretation."}); append("stage_revised", discussion2_pending)
-    decision2_open = copy.deepcopy(decision2); decision2_open.update({"subject_refs": ["B201"], "evidence_refs": ["E204"], "choice": "pending", "rationale": "Awaiting contact-pressure result."}); append("decision_recorded", decision2_open)
-    append("action_committed", action2)
-    append("asset_registered", a102)
-    b2_open = copy.deepcopy(b2); b2_open.update({"evidence_refs": ["E202", "E204"], "asset_refs": ["A102"], "decision_refs": ["D201"]})
-    append("block_created", b2_open)
+    # Only the new Claim and true precursor may precede the Transition. The
+    # successor layer's problem, method, experiment, result, discussion,
+    # decision, and action lifecycle begins after the Transition and opening.
+    for claim in h2_claims:
+        append("claim_created", claim)
     transition = copy.deepcopy(fixture["hypothesis_transition"]); transition["observation_or_uncertainty_refs"] = ["E104"]; transition["source_event_cursor"] = len(ledger.replay()) + 1
     # E104 is appended immediately before the transition and is not derived
     # from the later H02 discriminating CSV.
@@ -233,18 +222,34 @@ def _append_phase2_history(fixture: dict, assets: dict[str, Path]) -> tuple[Ledg
     h2_open = copy.deepcopy(h2); h2_open.update({"transition_ref": None, "source_event_cursor": len(ledger.replay()) + 1, "derived_from": {"previous_layer_ref": "H001", "discussion_refs": ["DISC-H001"], "decision_refs": ["D101"], "observation_refs": ["E104"]}})
     append("hypothesis_layer_created", h2_open)
 
-    # H02 experiment/result and the final discussion/decision/summary are a
-    # later revision of the same canonical objects.
+    # Successor scientific work starts only after the layer-open event.
+    append("fishbone_revised", fishbone2)
+    for evidence in (e6, e7):
+        append("evidence_linked", evidence)
+    p201 = copy.deepcopy(p201); p201["evidence_refs"] = ["E204"]
+    append("problem_created", p201)
+    for sid in ("ST-H002-OBS", "ST-H002-LIT", "ST-H002-MECH", "ST-H002-SOL"):
+        append("stage_revised", st[sid])
+    append("asset_registered", a102)
+    b2_open = copy.deepcopy(b2); b2_open.update({"stage_refs": {key: value for key, value in h2_stages.items() if key in {"observation", "literature", "mechanism", "solution"}}, "experiment_stage_refs": [], "result_stage_refs": [], "evidence_refs": ["E202", "E204"], "asset_refs": ["A102"], "action_item_refs": [], "decision_refs": [], "decision_criteria_ref": None})
+    append("block_created", b2_open)
     append("stage_revised", st["ST-EXP201"])
+    b2_revision2 = copy.deepcopy(b2_open); b2_revision2.update({"revision": 2, "stage_refs": {**b2_open["stage_refs"], "experiment": "ST-EXP201"}, "experiment_stage_refs": ["ST-EXP201"], "decision_criteria_ref": "ST-EXP201#/data/decision_rules", "updated_at": CREATED_AT})
+    append("block_revised", b2_revision2)
     append("evidence_linked", e4)
     append("asset_registered", a201)
     append("stage_revised", st["ST-RES201"])
-    b2_revision2 = copy.deepcopy(b2); b2_revision2.update({"revision": 2, "evidence_refs": ["E202", "E204", "E201"], "asset_refs": ["A102", "A201"], "decision_refs": ["D201"], "updated_at": CREATED_AT})
-    append("block_revised", b2_revision2)
+    b2_revision3 = copy.deepcopy(b2_revision2); b2_revision3.update({"revision": 3, "stage_refs": {**b2_revision2["stage_refs"], "result": "ST-RES201"}, "result_stage_refs": ["ST-RES201"], "evidence_refs": ["E202", "E204", "E201"], "asset_refs": ["A102", "A201"], "updated_at": CREATED_AT})
+    append("block_revised", b2_revision3)
     dstage2 = _canonical_stage("ST-H002-DISC", "B201", "discussion", ["C201", "C202"], ["E201"], {"hypothesis_support": "supported", "failed_assumptions": [], "missing_evidence": ["durability"], "limitations": ["synthetic only"], "decision_ref": "D201", "next_step_ref": "NS201", "interpretation": "Pressure effect supports the interface mechanism."}); append("stage_revised", dstage2)
-    append("action_status_changed", {"action_item_id": "NS101", "status": "done", "actual_completion": {"completed_at": "2026-09-10T09:00:00Z", "closure_evidence_refs": ["E201"]}, "result_summary": "Completed synthetic control"})
+    b2_revision4 = copy.deepcopy(b2_revision3); b2_revision4.update({"revision": 4, "stage_refs": {**b2_revision3["stage_refs"], "discussion": "ST-H002-DISC"}, "updated_at": CREATED_AT})
+    append("block_revised", b2_revision4)
     d2["source_event_cursor"] = len(ledger.replay()) + 1; append("layer_discussion_recorded", d2)
     append("decision_recorded", decision2)
+    append("action_committed", action2)
+    b2_revision5 = copy.deepcopy(b2_revision4); b2_revision5.update({"revision": 5, "stage_refs": {**b2_revision4["stage_refs"], "next_step": "NS201"}, "action_item_refs": ["NS201"], "decision_refs": ["D201"], "updated_at": CREATED_AT})
+    append("block_revised", b2_revision5)
+    append("action_status_changed", {"action_item_id": "NS101", "status": "done", "actual_completion": {"completed_at": "2026-09-10T09:00:00Z", "closure_evidence_refs": ["E201"]}, "result_summary": "Completed synthetic control"})
     s2["source_event_cursor"] = len(ledger.replay()) + 1; append("layer_summary_recorded", s2)
     h2_final = copy.deepcopy(h2_open); h2_final.update({"revision": 2, "source_event_cursor": len(ledger.replay()) + 1, "updated_at": CREATED_AT}); append("hypothesis_layer_revised", h2_final); h2_cursor = len(ledger.replay())
     return ledger, h1_cursor, transition_cursor, h2_cursor
@@ -283,6 +288,46 @@ def _compact_h02(logical: list[dict]) -> list[dict]:
     summary["compaction_rationale"] = "Integrated Discussion and Summary/Decision are co-present with complete synthesis, decision, uncertainty, and Next Step slots."
     output.append(summary)
     return output
+
+
+def _compact_complete_layer(logical: list[dict]) -> list[dict]:
+    """Compact any one-experiment layer without dropping presentation roles."""
+    experiments = [item for item in logical if item.get("semantic_role") == "experiment_design"]
+    results = [item for item in logical if item.get("semantic_role") == "result_single"]
+    if len(experiments) != 1 or len(results) != 1:
+        return [copy.deepcopy(item) for item in logical]
+    by_role = {item["semantic_role"]: item for item in logical}
+    science = copy.deepcopy(by_role["observation_problem"])
+    science.update({
+        "combined_roles": ["observation_problem", "literature_mechanism", "mechanism_solution"],
+        "source_cursor": max(by_role["observation_problem"]["source_cursor"], by_role["literature_mechanism"]["source_cursor"]),
+        "stage_source_cursors": {
+            "observation_problem": by_role["observation_problem"]["source_cursor"],
+            "literature_mechanism": by_role["literature_mechanism"]["source_cursor"],
+            "mechanism_solution": by_role["literature_mechanism"]["source_cursor"],
+        },
+        "compaction_rationale": "Observation, Literature, Mechanism, and Strategy remain audience-visible through unioned field/slot contracts.",
+    })
+    experiment = copy.deepcopy(experiments[0])
+    experiment.update({
+        "semantic_role": "result_comparison", "combined_roles": ["experiment_design", "result_single"],
+        "object_ref": [experiments[0]["object_ref"], results[0]["object_ref"]], "source_cursor": results[0]["source_cursor"],
+        "stage_source_cursors": {"experiment_design": experiments[0]["source_cursor"], "result_single": results[0]["source_cursor"]},
+        "compaction_rationale": "Experiment metadata and Result remain in separate governed regions on the same slide.",
+    })
+    summary = copy.deepcopy(by_role["layer_summary_decision"])
+    summary.update({
+        "combined_roles": ["layer_integrated_discussion", "layer_summary_decision"],
+        "stage_source_cursors": {"layer_integrated_discussion": by_role["layer_integrated_discussion"]["source_cursor"], "layer_summary_decision": by_role["layer_summary_decision"]["source_cursor"]},
+        "compaction_rationale": "Discussion synthesis and Summary/Decision retain independent field-level evidence in unioned slots.",
+    })
+    replacements = {
+        "observation_problem": science,
+        "experiment_design": experiment,
+        "layer_summary_decision": summary,
+    }
+    skipped = {"literature_mechanism", "result_single", "layer_integrated_discussion"}
+    return [copy.deepcopy(replacements.get(item["semantic_role"], item)) for item in logical if item["semantic_role"] not in skipped]
 
 
 def _asset_for(state: dict, block: dict, *, asset_type: str | None = None, path_fragment: str | None = None) -> dict | None:
@@ -407,12 +452,46 @@ def _hydrate_from_state(raw: dict, state: dict, output_root: Path, *, overview: 
             placements.append({"slot": "primary_figure", "asset_id": asset["asset_id"], "asset_path": asset["path"]})
     title = {"progress_todo": "Progress / Previous Commitments", "hypothesis_title": f"{layer_id}｜Hypothesis", "problem_definition": f"{layer_id}｜Problem", "fishbone_locator": f"{layer_id}｜Total Fishbone / Research Map", "observation_problem": f"{layer_id}｜Observation → Literature → Mechanism", "literature_mechanism": f"{layer_id}｜Literature → Mechanism → Strategy", "experiment_design": f"{layer_id}｜Experiment Design", "result_comparison": f"{layer_id}｜Results", "result_single": f"{layer_id}｜Result", "layer_integrated_discussion": f"{layer_id}｜Integrated Discussion", "layer_summary_decision": f"{layer_id}｜Layer Summary / Decision", "hypothesis_transition": f"{layer_id}｜Hypothesis Transition"}.get(role, role)
     slots = content_slots_from_materialized_state(state, layer_id, role, object_ref, meeting_projection=meeting, combined_roles=combined_roles)
+    semantic_fields = semantic_fields_from_materialized_state(state, layer_id, role, object_ref, meeting_projection=meeting, combined_roles=combined_roles)
+    visible_fields: dict[str, list[str]] = {}
+    concise_labels = {
+        "hypothesis_statement": "Hypothesis", "falsifiable_prediction": "Falsifier", "research_question": "Question",
+        "previous_finding": "Prior", "unresolved_conflict": "Conflict", "historical_snapshot": "History", "current_focus": "Focus",
+        "observation": "Observation", "consensus": "Consensus", "disagreement_alternatives": "Alternatives", "research_gap": "Gap", "implication": "Implication",
+        "mechanism": "Mechanism", "evidence_claim_link": "Evidence", "strategy": "Strategy", "success_criterion": "Criterion",
+        "independent_variables": "IV", "controlled_variables": "Controls", "control_baseline": "Baseline", "sample_plan": "Sample",
+        "replicates": "N", "measured_outputs": "Outputs", "units": "Units", "instrumentation_method": "Method", "predicted_outcomes": "Prediction", "decision_rule": "Rule",
+        "result_identity": "ID", "result_statement": "Result", "metric_value_uncertainty": "Metric",
+        "supporting_results": "Support", "contradicting_results": "Conflict", "non_discriminating_results": "Non-disc.", "cross_experiment_pattern": "Pattern",
+        "mechanism_assessment": "Mechanism", "alternative_explanations": "Alternatives", "remaining_uncertainty": "Uncertainty",
+        "answered_question": "Answer", "hypothesis_status": "Status", "decision": "Decision", "unresolved_items": "Unresolved", "next_question": "Next question", "next_step": "Next step",
+        "prior_hypothesis": "Prior H", "key_prior_results": "Key results", "unresolved_point": "Unresolved", "precursor_observation": "Precursor", "derivation_rationale": "Rationale", "new_hypothesis": "New H",
+        "prior_commitment": "Commitment", "current_position": "Current", "parallel_work": "Parallel",
+    }
+    for presentation_role, fields in semantic_fields.items():
+        field_slots = PRESENTATION_ROLE_CONTRACTS.get(presentation_role, {}).get("required_fields", {})
+        for field_name, value in fields.items():
+            slot_name = field_slots.get(field_name)
+            if not slot_name or not str(value).strip():
+                continue
+            label = concise_labels.get(field_name, field_name.replace("_", " ").title())
+            visible_fields.setdefault(slot_name, []).append(f"{label}｜{value}")
+    # The machine-addressable semantic fields own their physical regions.  Do
+    # not duplicate the earlier aggregate prose in the same textbox: repeated
+    # content caused genuine clipping in render-pixel QA.
+    for slot_name, lines in visible_fields.items():
+        slots[slot_name] = "\n".join(dict.fromkeys(lines))
+    if "result_plot" in slots:
+        result_fields = semantic_fields.get("result_single") or semantic_fields.get("result_comparison") or {}
+        result_id = result_fields.get("result_identity", object_ref or "Result")
+        result_statement = result_fields.get("result_statement", "")
+        slots["result_plot"] = f"Figure｜{result_id}｜{result_statement}".strip("｜")
     body = content_from_materialized_state(state, layer_id, role, object_ref, meeting_projection=meeting)
     summary = state.get("layer_summaries", {}).get(layer.get("layer_summary_ref"), {})
     discussion = state.get("layer_discussions", {}).get(layer.get("layer_discussion_ref"), {})
     drefs = []
-    if role in {"layer_integrated_discussion", "layer_summary_decision"}:
-        drefs = [value for value in [discussion.get("decision_ref"), summary.get("decision_ref")] if value]
+    if role == "layer_summary_decision":
+        drefs = [value for value in [summary.get("decision_ref")] if value]
     elif role == "hypothesis_transition":
         drefs = list(state.get("hypothesis_transitions", {}).get(object_ref, {}).get("decision_refs", []))
     elif role == "progress_todo":
@@ -423,7 +502,7 @@ def _hydrate_from_state(raw: dict, state: dict, output_root: Path, *, overview: 
     compositions = {slot: ("asset_only" if any(item.get("slot") == slot for item in placements) else "text_only") for slot in slots}
     if any(item in combined_roles for item in ("result_single", "result_comparison")) and "result_plot" in compositions:
         compositions["result_plot"] = "asset_with_annotation"
-    return {"schema_version": "2.0.0", "slide_id": raw.get("slide_id", f"S-{layer_id}-{role.upper()}"), "revision": 1, "deck_role": "meeting_delta" if overview else "hypothesis_layer", "block_refs": block_refs, "stage": role, "native_layout_role": "content_academic", "recipe": role, "object_ref": object_ref, "title": {"text": title, "assertion_claim_refs": [claim_ref]}, "placements": placements, "citations": evidence_refs, "speaker_notes": {"source_refs": evidence_refs, "text": "Compiled from persisted ledger materialization."}, "story_visibility": {"master": "main", "meeting": "main" if overview or layer.get("research_status") == "active" else "history", "defense": "appendix"}, "source_cursor": cursor, "stage_source_cursors": copy.deepcopy(raw.get("stage_source_cursors", {})), "bindings": {"claim_refs": [claim_ref], "evidence_refs": evidence_refs, "asset_refs": [p["asset_id"] for p in placements], "action_refs": actions, "decision_refs": list(dict.fromkeys(drefs)), "professor_profile_ref": copy.deepcopy(PROFESSOR_PROFILE_REF), "template_profile_ref": {"profile_id": "TP-SYNTH-PHASE2", "version": "2.0.0"}}, "content": {"slots": slots, "body": body}, "slot_compositions": compositions, "hypothesis_layer_ref": None if overview else layer_id, "hypothesis_layer_revision": layer.get("revision", 1), "current_hypothesis_layer_ref": layer_id if overview else None, "semantic_role": role, "combined_roles": combined_roles, "fishbone_snapshot_ref": raw.get("fishbone_snapshot_ref"), "fishbone_focus_refs": raw.get("fishbone_focus_refs", []), "compaction_rationale": raw.get("compaction_rationale")}
+    return {"schema_version": "2.0.0", "slide_id": raw.get("slide_id", f"S-{layer_id}-{role.upper()}"), "revision": 1, "deck_role": "meeting_delta" if overview else "hypothesis_layer", "block_refs": block_refs, "stage": role, "native_layout_role": "content_academic", "recipe": role, "object_ref": object_ref, "title": {"text": title, "assertion_claim_refs": [claim_ref]}, "placements": placements, "citations": evidence_refs, "speaker_notes": {"source_refs": evidence_refs, "text": "Compiled from persisted ledger materialization."}, "story_visibility": {"master": "main", "meeting": "main" if overview or layer.get("research_status") == "active" else "history", "defense": "appendix"}, "source_cursor": cursor, "stage_source_cursors": copy.deepcopy(raw.get("stage_source_cursors", {})), "bindings": {"claim_refs": [claim_ref], "evidence_refs": evidence_refs, "asset_refs": [p["asset_id"] for p in placements], "action_refs": actions, "decision_refs": list(dict.fromkeys(drefs)), "professor_profile_ref": copy.deepcopy(PROFESSOR_PROFILE_REF), "template_profile_ref": {"profile_id": "TP-SYNTH-PHASE2", "version": "2.0.0"}}, "content": {"slots": slots, "semantic_fields": semantic_fields, "body": body}, "slot_compositions": compositions, "hypothesis_layer_ref": None if overview else layer_id, "hypothesis_layer_revision": layer.get("revision", 1), "current_hypothesis_layer_ref": layer_id if overview else None, "semantic_role": role, "combined_roles": combined_roles, "fishbone_snapshot_ref": raw.get("fishbone_snapshot_ref"), "fishbone_focus_refs": raw.get("fishbone_focus_refs", []), "compaction_rationale": raw.get("compaction_rationale")}
 def _manifest(specs: list[dict], output_root: Path, profile: dict, pptx_path: Path, final_cursor: int) -> dict:
     slides = []
     spec_path = output_root / "slide-specs.json"
@@ -437,77 +516,25 @@ def _layer_creation_cursors(ledger: Ledger) -> dict[str, int]:
 
 
 def _story_specs_from_ledger(ledger: Ledger, output_root: Path) -> tuple[list[dict], dict, dict[str, int]]:
-    """Compile acceptance story only from persisted/reloaded ledger materializations."""
+    """Hydrate the generic all-layer Master story from replayed materializations."""
     creation_cursors = _layer_creation_cursors(ledger)
     ordered = sorted(creation_cursors, key=lambda layer_id: creation_cursors[layer_id])
-    if len(ordered) < 2:
-        raise ValueError("Phase 2 acceptance story needs at least two materialized hypothesis layers")
-    first_layer_id, current_layer_id = ordered[0], ordered[-1]
-    first_state = ledger.materialize(creation_cursors[first_layer_id])
-    current_state = ledger.materialize(creation_cursors[current_layer_id])
-    meeting = meeting_projection(current_state, source_cursor=creation_cursors[current_layer_id], current_layer_id=current_layer_id)
+    if not ordered:
+        raise ValueError("Phase 2 acceptance story needs a materialized hypothesis layer")
+    current_layer_id = ordered[-1]
+    final_cursor = len(ledger.replay())
+    current_state = ledger.materialize(final_cursor)
+    meeting = meeting_projection(current_state, source_cursor=final_cursor, current_layer_id=current_layer_id)
     specs = [_hydrate_from_state({"slide_id": "S-PHASE2-PROGRESS-01"}, current_state, output_root, overview=True, meeting=meeting)]
-    logical_first = compile_hypothesis_layer_from_state(first_state, first_layer_id, source_cursor=creation_cursors[first_layer_id])
-    # Each role is hydrated from the earliest cursor that can reproduce the
-    # presented content.  Opening pages use the layer-open snapshot; result,
-    # discussion, and summary pages use their own later event cursors.
-    events = ledger.replay()
-    def first_cursor(predicate, default: int) -> int:
-        return next((event.cursor for event in events if predicate(event)), default)
-    def last_cursor(predicate, default: int) -> int:
-        values = [event.cursor for event in events if predicate(event)]
-        return values[-1] if values else default
-    h1_open_cursor = creation_cursors[first_layer_id]
-    h1_result_cursor = max(
-        last_cursor(lambda e: e.event_type == "stage_revised" and e.payload.get("stage_id") in {"ST-RES101", "ST-RES102"}, h1_open_cursor),
-        first_cursor(lambda e: e.event_type == "block_revised" and e.payload.get("block_id") == "B101" and e.payload.get("revision") == 2, h1_open_cursor),
-    )
-    h1_discussion_cursor = first_cursor(lambda e: e.event_type == "layer_discussion_recorded" and e.payload.get("discussion_id") == "DISC-H001", h1_result_cursor)
-    h1_summary_cursor = first_cursor(lambda e: e.event_type == "layer_summary_recorded" and e.payload.get("summary_id") == "SUM-H001", h1_discussion_cursor)
-    h1_specs = []
-    for item in _compact_h01(logical_first):
-        role = item["semantic_role"]
-        cursor = h1_open_cursor if role in {"hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem", "literature_mechanism", "experiment_design"} else h1_result_cursor if role in {"result_single", "result_comparison"} else h1_discussion_cursor if role == "layer_integrated_discussion" else h1_summary_cursor
-        hydrated = _hydrate_from_state({**item, "source_cursor": cursor}, ledger.materialize(cursor), output_root)
-        h1_specs.append(hydrated)
-    specs.extend(h1_specs)
-    for event in ledger.replay():
-        if event.event_type != "hypothesis_transition_recorded":
-            continue
-        transition = event.payload
-        if transition.get("from_layer_ref") != first_layer_id:
-            continue
-        state = ledger.materialize(event.cursor)
-        raw = {"slide_id": f"S-{first_layer_id}-HYPOTHESIS-TRANSITION-12", "semantic_role": "hypothesis_transition", "hypothesis_layer_ref": first_layer_id, "combined_roles": ["hypothesis_transition"], "source_cursor": event.cursor, "object_ref": transition["transition_id"], "fishbone_snapshot_ref": None, "fishbone_focus_refs": []}
-        specs.append(_hydrate_from_state(raw, state, output_root))
-    logical_current = compile_hypothesis_layer_from_state(current_state, current_layer_id, source_cursor=creation_cursors[current_layer_id])
-    h2_open_cursor = creation_cursors[current_layer_id]
-    h2_result_cursor = max(
-        last_cursor(lambda e: e.event_type == "stage_revised" and e.payload.get("stage_id") == "ST-RES201", h2_open_cursor),
-        first_cursor(lambda e: e.event_type == "block_revised" and e.payload.get("block_id") == "B201" and e.payload.get("revision") == 2, h2_open_cursor),
-    )
-    h2_experiment_definition_cursor = last_cursor(lambda e: e.event_type == "stage_revised" and e.payload.get("stage_id") == "ST-EXP201" and e.payload.get("status") == "complete", h2_open_cursor)
-    h2_discussion_cursor = first_cursor(lambda e: e.event_type == "layer_discussion_recorded" and e.payload.get("discussion_id") == "DISC-H002", h2_result_cursor)
-    h2_summary_cursor = first_cursor(lambda e: e.event_type == "layer_summary_recorded" and e.payload.get("summary_id") == "SUM-H002", h2_discussion_cursor)
-    for item in _compact_h02(logical_current):
-        role = item["semantic_role"]
-        cursor = (
-            h2_open_cursor
-            if role in {"hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem", "literature_mechanism", "mechanism_solution", "experiment_design"}
-            else h2_result_cursor
-            if role in {"result_single", "result_comparison"}
-            else h2_discussion_cursor
-            if role == "layer_integrated_discussion"
-            else h2_summary_cursor
-        )
-        hydrated = _hydrate_from_state({**item, "source_cursor": cursor}, ledger.materialize(cursor), output_root)
-        if set(item.get("combined_roles", [])) >= {"experiment_design", "result_single"}:
-            hydrated["stage_source_cursors"] = {"experiment_design": h2_experiment_definition_cursor, "result_single": h2_result_cursor}
-        elif set(item.get("combined_roles", [])) >= {"layer_integrated_discussion", "layer_summary_decision"}:
-            hydrated["stage_source_cursors"] = {"layer_integrated_discussion": h2_discussion_cursor, "layer_summary_decision": h2_summary_cursor}
-        elif set(item.get("combined_roles", [])) >= {"observation_problem", "literature_mechanism", "mechanism_solution"}:
-            hydrated["stage_source_cursors"] = {"observation_problem": h2_open_cursor, "literature_mechanism": h2_open_cursor, "mechanism_solution": h2_open_cursor}
-        specs.append(hydrated)
+    raw_master = compile_master_story_from_ledger(ledger)
+    compacted: list[dict] = []
+    for layer_id in ordered:
+        layer_specs = [item for item in raw_master if item.get("hypothesis_layer_ref") == layer_id and item.get("semantic_role") != "hypothesis_transition"]
+        compacted.extend(_compact_complete_layer(layer_specs))
+        compacted.extend(item for item in raw_master if item.get("hypothesis_layer_ref") == layer_id and item.get("semantic_role") == "hypothesis_transition")
+    for raw in compacted:
+        cursor = int(raw["source_cursor"])
+        specs.append(_hydrate_from_state(raw, ledger.materialize(cursor), output_root))
     return specs, meeting, creation_cursors
 
 
@@ -564,6 +591,189 @@ def _h003_professor_qa_fixture(state: dict, slides: list[dict], meeting: dict) -
     h3_slides = [{"semantic_role": role, "hypothesis_layer_ref": "H003", "fishbone_snapshot_ref": h3["fishbone_snapshot_ref"], "fishbone_focus_refs": h3["fishbone_focus_refs"]} for role in ("hypothesis_title", "problem_definition", "fishbone_locator", "result_single", "layer_integrated_discussion", "layer_summary_decision")]
     transition_slide = {"semantic_role": "hypothesis_transition", "hypothesis_layer_ref": "H002", "object_ref": "TR-H002-H003"}
     return {**meeting, "layers": list(extended["hypothesis_layers"].values()), "slides": [*slides, *h3_slides, transition_slide], "state": extended, "source_cursor": 100, "presentation_semantic_fidelity": {"status": "pass", "fixture": "H003 generic traversal"}}
+
+
+def _append_third_layer_projection_fixture(source: Ledger, output_root: Path) -> Ledger:
+    """Fixture-only third layer used to exercise the production N-layer driver."""
+    ledger = copy.deepcopy(source)
+    state = ledger.materialize()
+
+    def clone(collection: str, source_id: str) -> dict:
+        return copy.deepcopy(state[collection][source_id])
+
+    claim = clone("claims", "C201"); claim.update({"claim_id": "C301", "block_ref": {"block_id": "B301", "revision": 1}, "text": "Cycling history controls the remaining interface instability."})
+    precursor = clone("evidence", "E204"); precursor.update({"evidence_id": "E304", "scope": {"block_id": "B201"}, "causal_role": "transition_precursor", "origin": {"layer_ref": "H002", "stage_ref": "ST-H002-DISC", "source_dataset_role": "pre_h03_uncertainty"}})
+    ledger.append("claim_created", claim)
+    ledger.append("evidence_linked", precursor)
+    transition = {
+        "transition_id": "TR-H002-H003", "from_layer_ref": "H002", "to_layer_ref": "H003",
+        "previous_hypothesis_claim_ref": "C201", "new_hypothesis_claim_ref": "C301",
+        "key_result_refs": ["RES201"], "decision_refs": ["D201"],
+        "observation_or_uncertainty_refs": ["E304"], "unexplained": "Cycling durability remains unknown.",
+        "rationale": "The pressure result resolves the static interface mechanism but not cyclic stability.",
+        "source_event_cursor": len(ledger.replay()) + 1,
+    }
+    ledger.append("hypothesis_transition_recorded", transition)
+    h2 = clone("hypothesis_layers", "H002")
+    h3 = copy.deepcopy(h2)
+    h3.update({
+        "hypothesis_layer_id": "H003", "revision": 1, "hypothesis_claim_ref": "C301", "problem_ref": "P301",
+        "research_block_refs": ["B301"], "research_question": "Does cyclic loading explain the remaining instability?",
+        "experiment_refs": ["EXP301"], "experiment_order": ["EXP301"], "result_refs": ["RES301"], "result_order": ["RES301"],
+        "layer_discussion_ref": "DISC-H003", "layer_summary_ref": "SUM-H003", "layer_decision_ref": "D301", "next_step_refs": ["NS301"],
+        "fishbone_snapshot_ref": {"fishbone_id": "FB001", "revision": 3}, "fishbone_focus_refs": ["FB-ELECTRODE-CONTACT"],
+        "derived_from": {"previous_layer_ref": "H002", "discussion_refs": ["DISC-H002"], "decision_refs": ["D201"], "observation_refs": ["E304"]},
+        "transition_ref": None, "source_event_cursor": len(ledger.replay()) + 1,
+    })
+    ledger.append("hypothesis_layer_created", h3)
+    fishbone = clone("fishbone_revisions", "FB001@2"); fishbone.update({"revision": 3, "supersedes_revision": 2, "linked_hypothesis_layers": ["H003"], "source_event_cursor": len(ledger.replay()) + 1})
+    ledger.append("fishbone_revised", fishbone)
+    problem = clone("problems", "P201"); problem.update({"problem_id": "P301", "hypothesis_layer_ref": "H003", "research_question": h3["research_question"], "problem_statement": "Static pressure control does not establish cyclic durability."})
+    ledger.append("problem_created", problem)
+    literature = clone("evidence", "E202"); literature.update({"evidence_id": "E302", "scope": {"block_id": "B301"}, "claim_support_refs": ["C301"], "origin": {"layer_ref": "H003", "source_dataset_role": "preexisting_observation"}})
+    ledger.append("evidence_linked", literature)
+    stage_map = {}
+    for stage_type, old_id, new_id in (
+        ("observation", "ST-H002-OBS", "ST-H003-OBS"), ("literature", "ST-H002-LIT", "ST-H003-LIT"),
+        ("mechanism", "ST-H002-MECH", "ST-H003-MECH"), ("solution", "ST-H002-SOL", "ST-H003-SOL"),
+    ):
+        stage = clone("stages", old_id); stage.update({"stage_id": new_id, "block_ref": {"block_id": "B301", "revision": 1}, "claim_refs": ["C301"], "evidence_refs": ["E302"]})
+        ledger.append("stage_revised", stage); stage_map[stage_type] = new_id
+    fishbone_asset = clone("assets", "A102"); fishbone_asset.update({"asset_id": "A302", "path": "fishbone/FB001-rev3.svg", "preview_path": "fishbone/FB001-rev3.png", "source_evidence": ["E302"]})
+    ledger.append("asset_registered", fishbone_asset)
+    block = clone("blocks", "B201")
+    block.update({
+        "block_id": "B301", "revision": 1, "title": "H03 Cycling durability mechanism", "hypothesis_claim_refs": ["C301"],
+        "mechanism_claim_refs": ["C301"], "prediction_claim_refs": ["C301"], "claim_refs": ["C301"], "evidence_refs": ["E302"],
+        "asset_refs": ["A302"], "action_item_refs": ["NS301"], "decision_refs": [],
+        "stage_refs": {**stage_map, "experiment": "ST-EXP301", "result": "ST-RES301", "discussion": "ST-H003-DISC", "next_step": "NS301"},
+        "experiment_stage_refs": ["ST-EXP301"], "result_stage_refs": ["ST-RES301"],
+    })
+    ledger.append("block_created", block)
+    experiment = clone("stages", "ST-EXP201"); experiment.update({"stage_id": "ST-EXP301", "block_ref": {"block_id": "B301", "revision": 1}, "claim_refs": ["C301"], "evidence_refs": ["E302"]})
+    ledger.append("stage_revised", experiment)
+    result_evidence = clone("evidence", "E201"); result_evidence.update({"evidence_id": "E301", "scope": {"block_id": "B301"}, "claim_support_refs": ["C301"], "origin": {"layer_ref": "H003", "experiment_stage_ref": "ST-EXP301", "source_dataset_role": "discriminating_result"}})
+    ledger.append("evidence_linked", result_evidence)
+    plot_asset = clone("assets", "A201"); plot_asset.update({"asset_id": "A301", "path": "plots/H03_cycling.svg", "preview_path": "plots/H03_cycling.png", "source_evidence": ["E301"]})
+    ledger.append("asset_registered", plot_asset)
+    result = clone("stages", "ST-RES201"); result.update({"stage_id": "ST-RES301", "block_ref": {"block_id": "B301", "revision": 1}, "claim_refs": ["C301"], "evidence_refs": ["E301"]}); result["data"]["summary"] = "Cycling test retains 91% response after 100 cycles."
+    ledger.append("stage_revised", result)
+    block2 = copy.deepcopy(block); block2.update({"revision": 2, "evidence_refs": ["E302", "E301"], "asset_refs": ["A302", "A301"], "decision_refs": ["D301"]})
+    ledger.append("block_revised", block2)
+    discussion_stage = clone("stages", "ST-H002-DISC"); discussion_stage.update({"stage_id": "ST-H003-DISC", "block_ref": {"block_id": "B301", "revision": 1}, "claim_refs": ["C301"], "evidence_refs": ["E301"]})
+    ledger.append("stage_revised", discussion_stage)
+    discussion = clone("layer_discussions", "DISC-H002"); discussion.update({"discussion_id": "DISC-H003", "hypothesis_layer_ref": "H003", "supporting_results": ["RES301"], "contradicting_results": [], "non_discriminating_results": [], "decision_ref": "D301", "next_step_refs": ["NS301"], "source_event_cursor": len(ledger.replay()) + 1})
+    ledger.append("layer_discussion_recorded", discussion)
+    decision = clone("decisions", "D201"); decision.update({"decision_id": "D301", "block_ref": {"block_id": "B301", "revision": 2}, "subject_refs": ["B301", "ST-H003-DISC"], "evidence_refs": ["E301"]})
+    ledger.append("decision_recorded", decision)
+    action = clone("actions", "NS201"); action.update({"action_item_id": "NS301", "source_decision_ref": "D301", "linked_block_refs": [{"block_id": "B301", "revision": 2}], "linked_claim_refs": ["C301"], "required_evidence": ["E301"]})
+    ledger.append("action_committed", action)
+    summary = clone("layer_summaries", "SUM-H002"); summary.update({"summary_id": "SUM-H003", "hypothesis_layer_ref": "H003", "supporting_evidence_refs": ["E301"], "decision_ref": "D301", "next_step_refs": ["NS301"], "source_event_cursor": len(ledger.replay()) + 1})
+    ledger.append("layer_summary_recorded", summary)
+    h3_final = copy.deepcopy(h3); h3_final.update({"revision": 2, "source_event_cursor": len(ledger.replay()) + 1})
+    ledger.append("hypothesis_layer_revised", h3_final)
+    shutil.copy2(output_root / "fishbone/FB001-rev2.svg", output_root / "fishbone/FB001-rev3.svg")
+    shutil.copy2(output_root / "fishbone/FB001-rev2.png", output_root / "fishbone/FB001-rev3.png")
+    shutil.copy2(output_root / "plots/H02_contact_pressure.svg", output_root / "plots/H03_cycling.svg")
+    shutil.copy2(output_root / "plots/H02_contact_pressure.png", output_root / "plots/H03_cycling.png")
+    return ledger
+
+
+def _layer_lifecycle_report(ledger: Ledger) -> dict:
+    events = ledger.replay()
+    state = ledger.materialize()
+    ordered = sorted(
+        (event for event in events if event.event_type == "hypothesis_layer_created"),
+        key=lambda event: event.cursor,
+    )
+    transition_to = {event.payload.get("to_layer_ref"): event for event in events if event.event_type == "hypothesis_transition_recorded"}
+    rows = []
+    findings = []
+    for index, opened in enumerate(ordered):
+        layer_id = opened.payload["hypothesis_layer_id"]
+        block_id = state["hypothesis_layers"][layer_id]["research_block_refs"][0]
+        scientific = [event.cursor for event in events if event.cursor > opened.cursor and event.event_type == "stage_revised" and event.payload.get("block_ref", {}).get("block_id") == block_id and event.payload.get("stage_type") in {"observation", "literature", "mechanism", "solution"}]
+        experiments = [event.cursor for event in events if event.event_type == "stage_revised" and event.payload.get("block_ref", {}).get("block_id") == block_id and event.payload.get("stage_type") == "experiment" and event.payload.get("status") != "pending"]
+        result_evidence = [event.cursor for event in events if event.event_type == "evidence_linked" and event.payload.get("causal_role") == "experiment_result" and event.payload.get("origin", {}).get("layer_ref") == layer_id]
+        discussions = [event.cursor for event in events if event.event_type == "layer_discussion_recorded" and event.payload.get("hypothesis_layer_ref") == layer_id]
+        summaries = [event.cursor for event in events if event.event_type == "layer_summary_recorded" and event.payload.get("hypothesis_layer_ref") == layer_id]
+        transition_cursor = transition_to.get(layer_id).cursor if layer_id in transition_to else None
+        row = {
+            "layer_id": layer_id, "transition_cursor": transition_cursor, "layer_open_cursor": opened.cursor,
+            "first_scientific_stage_cursor": min(scientific, default=None), "experiment_cursor": min(experiments, default=None),
+            "result_evidence_cursor": min(result_evidence, default=None), "discussion_cursor": min(discussions, default=None),
+            "summary_cursor": min(summaries, default=None),
+        }
+        if index:
+            values = [row[key] for key in ("transition_cursor", "layer_open_cursor", "first_scientific_stage_cursor", "experiment_cursor", "result_evidence_cursor", "discussion_cursor", "summary_cursor")]
+            if any(value is None for value in values) or values != sorted(values) or not (values[0] < values[1] < values[2] <= values[3] < values[4] < values[5] < values[6]):
+                findings.append({"layer_id": layer_id, "rule": "successor_lifecycle_order", "cursors": values})
+        row["status"] = "fail" if any(item["layer_id"] == layer_id for item in findings) else "pass"
+        rows.append(row)
+    return {"schema_version": "1.0.0", "status": "fail" if findings else "pass", "layers": rows, "findings": findings}
+
+
+def _n_layer_projection_report(ledger: Ledger, specs: list[dict], literal_scan: dict[str, list[str]], build_proof: dict | None = None) -> dict:
+    """Prove ordered layer retention without knowing any fixture identifiers."""
+    ordered = [event.payload["hypothesis_layer_id"] for event in ledger.replay() if event.event_type == "hypothesis_layer_created"]
+    emitted = list(dict.fromkeys(spec.get("hypothesis_layer_ref") for spec in specs if spec.get("hypothesis_layer_ref")))
+    transitions = [spec.get("object_ref") for spec in specs if spec.get("semantic_role") == "hypothesis_transition"]
+    report = {
+        "schema_version": "1.0.0",
+        "ordered_layer_ids": ordered,
+        "emitted_layer_ids": emitted,
+        "emitted_transition_ids": transitions,
+        "per_layer": {layer_id: {"slide_count": sum(spec.get("hypothesis_layer_ref") == layer_id for spec in specs), "roles": [spec.get("semantic_role") for spec in specs if spec.get("hypothesis_layer_ref") == layer_id]} for layer_id in ordered},
+        "skipped_layers": [layer_id for layer_id in ordered if layer_id not in emitted],
+        "literal_id_dependency_scan": literal_scan,
+        "build_proof": build_proof or {},
+    }
+    required_opening_roles = {"hypothesis_title", "problem_definition", "fishbone_locator"}
+    opening_complete = all(required_opening_roles <= set(report["per_layer"][layer_id]["roles"]) for layer_id in ordered)
+    transition_complete = len(transitions) == max(0, len(ordered) - 1)
+    build_ok = not build_proof or build_proof.get("structural_status") == "pass"
+    report["status"] = "pass" if emitted == ordered and not report["skipped_layers"] and not literal_scan and opening_complete and transition_complete and build_ok else "fail"
+    return report
+
+
+def _canonical_report_facts(specs: list[dict], audit: dict, ledger: Ledger, qa_report: dict, private_status: dict) -> dict:
+    events = ledger.replay()
+    creation = sorted((event for event in events if event.event_type == "hypothesis_layer_created"), key=lambda event: event.cursor)
+    layer_ids = [event.payload["hypothesis_layer_id"] for event in creation]
+    first_id, second_id = layer_ids[:2]
+    by_layer = {layer_id: [spec for spec in specs if spec.get("hypothesis_layer_ref") == layer_id] for layer_id in layer_ids}
+    transitions = [event for event in events if event.event_type == "hypothesis_transition_recorded" and event.payload.get("from_layer_ref") == first_id and event.payload.get("to_layer_ref") == second_id]
+    transition = transitions[0]
+    precursor_id = transition.payload.get("observation_or_uncertainty_refs", [None])[0]
+    evidence_cursor = {event.payload.get("evidence_id"): event.cursor for event in events if event.event_type == "evidence_linked"}
+    result_evidence = [event for event in events if event.event_type == "evidence_linked" and event.payload.get("causal_role") == "experiment_result" and event.payload.get("origin", {}).get("layer_ref") == second_id]
+    first_specs, second_specs = by_layer[first_id], by_layer[second_id]
+    generated = audit.get("generated_slides", [])
+    governed_slots = [slot for item in generated for slot in item.get("physical_slot_conformance", [])]
+    required_slots = len(governed_slots)
+    missing_slots = sum(1 for slot in governed_slots if not (slot.get("geometry_tolerance_result") and slot.get("content_or_asset_binding_result")))
+    intentionally_empty = sum(len(spec.get("intentionally_empty_slots", [])) for spec in specs)
+    role_specs = lambda records, role: [spec for spec in records if role in spec.get("combined_roles", [spec.get("semantic_role")])]
+    return {
+        "h01_opening_cursor": role_specs(first_specs, "hypothesis_title")[0]["source_cursor"],
+        "h01_experiment_cursors": [event.cursor for event in events if event.event_type == "stage_revised" and event.payload.get("stage_type") == "experiment" and event.payload.get("block_ref", {}).get("block_id") in {ref for spec in first_specs for ref in [spec.get("block_refs", [{}])[0].get("block_id")]} and event.payload.get("status") == "complete"],
+        "h01_result_cursors": [event.cursor for event in events if event.event_type == "stage_revised" and event.payload.get("stage_type") == "result" and event.payload.get("block_ref", {}).get("block_id") in {ref for spec in first_specs for ref in [spec.get("block_refs", [{}])[0].get("block_id")]} and event.payload.get("status") == "complete"],
+        "h01_discussion_cursor": role_specs(first_specs, "layer_integrated_discussion")[0]["source_cursor"],
+        "h01_summary_cursor": role_specs(first_specs, "layer_summary_decision")[0]["source_cursor"],
+        "precursor_evidence_id": precursor_id, "precursor_evidence_cursor": evidence_cursor.get(precursor_id), "transition_cursor": transition.cursor,
+        "h02_opening_cursor": role_specs(second_specs, "hypothesis_title")[0]["source_cursor"],
+        "h02_experiment_cursor": role_specs(second_specs, "experiment_design")[0].get("stage_source_cursors", {}).get("experiment_design", role_specs(second_specs, "experiment_design")[0]["source_cursor"]),
+        "h02_result_evidence_cursor": result_evidence[0].cursor,
+        "h02_result_slide_cursors": [spec["source_cursor"] for spec in second_specs if set(spec.get("combined_roles", [spec.get("semantic_role")])) & {"result_single", "result_comparison"}],
+        "h02_discussion_cursor": role_specs(second_specs, "layer_integrated_discussion")[0]["source_cursor"],
+        "h02_summary_cursor": role_specs(second_specs, "layer_summary_decision")[0]["source_cursor"],
+        "generated_slide_spec_count": len(specs), "physical_pptx_page_count": audit.get("slide_count"),
+        "required_governed_slot_count": required_slots, "instantiated_governed_slot_count": required_slots - missing_slots,
+        "intentionally_empty_slot_count": intentionally_empty, "missing_governed_slot_count": missing_slots,
+        "qa_report_id": qa_report.get("qa_report_id", "QA-MASTER-PHASE2-ACCEPTANCE"),
+        "native_powerpoint_status": qa_report.get("native_powerpoint_status", "blocked_environment"),
+        "private_fixture_status": private_status.get("mode", "blocked_fixture"),
+    }
 
 
 def build_phase2(*, output_root: Path | None = None) -> dict:
@@ -623,6 +833,47 @@ def build_phase2(*, output_root: Path | None = None) -> dict:
     ledger, h01_cursor, transition_cursor, h02_cursor = _append_phase2_history(fixture, asset_files)
     ledger.serialize(output_root / "ledger-events.json")
     persisted = Ledger.load(output_root / "ledger-events.json")
+    lifecycle = _layer_lifecycle_report(persisted)
+    _write(output_root / "layer-lifecycle-qa.json", lifecycle)
+    if lifecycle["status"] != "pass":
+        raise ValueError("Phase 2 layer lifecycle validation failed")
+    n_layer_ledger = _append_third_layer_projection_fixture(persisted, output_root)
+    n_layer_specs = compile_master_story_from_ledger(n_layer_ledger)
+    n_layer_physical, _, _ = _story_specs_from_ledger(n_layer_ledger, output_root)
+    n_layer_plans = _layout_specs_from_ledger(n_layer_ledger, n_layer_physical, output_root, profile)
+    n_layer_deck = output_root / "n-layer-acceptance-deck.pptx"
+    PythonPptxAssembler().assemble(template, n_layer_physical, n_layer_deck, project_context=context)
+    n_layer_audit = audit_pptx(n_layer_deck, template, profile, n_layer_physical)
+    n_layer_structural_ok = (
+        n_layer_audit.get("slide_count") == len(n_layer_physical) + 2
+        and n_layer_audit.get("unique_slide_ids")
+        and n_layer_audit.get("has_editable_text")
+        and not n_layer_audit.get("orphan_parts")
+        and all(item.get("layout_master_role_match") and item.get("governed_geometry_match") and item.get("notes_source_match") for item in n_layer_audit.get("generated_slides", []))
+        and all(slot.get("geometry_tolerance_result") and slot.get("content_or_asset_binding_result") for item in n_layer_audit.get("generated_slides", []) for slot in item.get("physical_slot_conformance", []))
+    )
+    _write(output_root / "n-layer-slide-specs.json", n_layer_physical)
+    _write(output_root / "n-layer-layout-plans.json", n_layer_plans)
+    _write(output_root / "n-layer-structural-audit.json", n_layer_audit)
+    reusable_sources = [ROOT / "packages/thesis-deck-system/src/thesis_deck_system/story.py", ROOT / "packages/thesis-deck-system/src/thesis_deck_system/qa2.py"]
+    fixture_literals = ["H001", "H002", "B101", "B201", "ST-RES101", "ST-RES102", "ST-RES201", "E101", "E201"]
+    literal_scan = {literal: [path.relative_to(ROOT).as_posix() for path in reusable_sources if literal in path.read_text(encoding="utf-8")] for literal in fixture_literals}
+    literal_scan = {key: value for key, value in literal_scan.items() if value}
+    n_layer_artifact = _n_layer_projection_report(
+        n_layer_ledger,
+        n_layer_specs,
+        literal_scan,
+        {
+            "slide_spec_count": len(n_layer_physical),
+            "layout_plan_count": len(n_layer_plans),
+            "pptx_path": n_layer_deck.relative_to(output_root).as_posix(),
+            "physical_pptx_page_count": n_layer_audit.get("slide_count"),
+            "structural_status": "pass" if n_layer_structural_ok else "fail",
+        },
+    )
+    _write(output_root / "n-layer-projection-qa.json", n_layer_artifact)
+    if n_layer_artifact["status"] != "pass":
+        raise ValueError("Phase 2 N-layer projection validation failed")
     causal_findings = validate_causal_history(persisted)
     evidence_role_findings = validate_evidence_causal_roles(persisted)
     all_causal_findings = causal_findings + evidence_role_findings
@@ -647,20 +898,13 @@ def build_phase2(*, output_root: Path | None = None) -> dict:
     _write(output_root / "asset-provenance-qa.json", {"status": "pass" if all(item["verified"] for item in provenance_checks) else "fail", "checks": provenance_checks})
     h01_state = persisted.materialize(h01_cursor); transition_state = persisted.materialize(transition_cursor); h02_state = persisted.materialize(h02_cursor)
     _write(output_root / "materialized-h01.json", h01_state); _write(output_root / "materialized-transition.json", transition_state); _write(output_root / "materialized-h02.json", h02_state)
-    _write(output_root / "report-evidence-consistency.json", {
-        "schema_version": "1.0.0",
-        "status": "pass",
-        "h01_cursor": h01_cursor,
-        "transition_cursor": transition_cursor,
-        "h02_cursor": h02_cursor,
-        "materialized_h01_last_cursor": h01_state.get("events", [{}])[-1].get("cursor"),
-        "materialized_transition_last_cursor": transition_state.get("events", [{}])[-1].get("cursor"),
-        "materialized_h02_last_cursor": h02_state.get("events", [{}])[-1].get("cursor"),
-        "source": "Ledger.load() replay/materialization"
-    })
-
     physical, meeting, creation_cursors = _story_specs_from_ledger(persisted, output_root)
-    expected_story_count = 1 + len(_compact_h01(compile_hypothesis_layer_from_state(persisted.materialize(h01_cursor), "H001", source_cursor=h01_cursor))) + 1 + len(_compact_h02(compile_hypothesis_layer_from_state(persisted.materialize(h02_cursor), "H002", source_cursor=h02_cursor)))
+    raw_story = compile_master_story_from_ledger(persisted)
+    expected_story_count = 1 + sum(
+        len(_compact_complete_layer([item for item in raw_story if item.get("hypothesis_layer_ref") == layer_id and item.get("semantic_role") != "hypothesis_transition"]))
+        + sum(item.get("hypothesis_layer_ref") == layer_id and item.get("semantic_role") == "hypothesis_transition" for item in raw_story)
+        for layer_id in creation_cursors
+    )
     if len(physical) != expected_story_count:
         raise ValueError(f"acceptance story count mismatch: expected {expected_story_count}, got {len(physical)}")
     _write(output_root / "slide-specs.json", physical)
@@ -681,7 +925,7 @@ def build_phase2(*, output_root: Path | None = None) -> dict:
     _write(output_root / "combined-role-content-qa.json", combined_content)
     physical_fidelity = run_physical_content_fidelity_qa(physical, audit)
     _write(output_root / "physical-content-fidelity-qa.json", physical_fidelity)
-    semantic_fidelity = run_presentation_semantic_fidelity_qa(physical, audit, temporal_snapshot, combined_content, physical_fidelity)
+    semantic_fidelity = run_presentation_semantic_fidelity_qa(physical, audit, temporal_snapshot, combined_content, physical_fidelity, ledger=persisted)
     _write(output_root / "presentation-semantic-fidelity-qa.json", semantic_fidelity)
     manifest = _manifest(physical, output_root, profile, deck, h02_cursor); _write(output_root / "MASTER-PHASE2.manifest.json", manifest)
     master = master_projection(h02_state, source_cursor=h02_cursor)
@@ -701,29 +945,11 @@ def build_phase2(*, output_root: Path | None = None) -> dict:
     scientific = {"status": "pass" if not scientific_findings else "fail", "executed_checks": ["phase2_schema_validation", "ledger_hash_replay", "cursor_isolation", "causal_temporal_order", "evidence_causal_role_integrity", "hypothesis_derivation", "fishbone_revision_immutability", "experiment_metadata", "synthetic_evidence_labeling", "plot_source_hashes", "asset_provenance_chain"], "findings": [finding.__dict__ for finding in scientific_findings], "evidence": {"h01_cursor": h01_cursor, "transition_cursor": transition_cursor, "h02_cursor": h02_cursor, "causal_temporal_status": "pass", "evidence_causal_role_status": "pass" if not evidence_role_findings else "fail", "precursor_evidence_id": "E104", "downstream_result_evidence_id": "E201", "h01_fishbone_sha256": fb1_hash, "h01_replay_sha256": _sha(rerender), "h02_fishbone_sha256": _sha(fb2), "contact_csv_sha256": _sha(FIXTURE_ROOT / "contact-pressure.csv"), "contact_script_sha256": _sha(FIXTURE_ROOT / "plot_contact_pressure.py"), "contact_svg_sha256": _sha(plot_dir / "H02_contact_pressure.svg")}}
     _write(output_root / "scientific-provenance-qa.json", scientific)
     private_status = PrivateFixtureLocator(explicit={}).status(); _write(output_root / "private-fixture-status.json", private_status)
-    event_cursor = {event.payload.get("evidence_id"): event.cursor for event in persisted.replay() if event.event_type == "evidence_linked"}
-    h1_specs = [spec for spec in physical if spec.get("hypothesis_layer_ref") == "H001"]
-    h2_specs = [spec for spec in physical if spec.get("hypothesis_layer_ref") == "H002"]
-    h1_result_specs = [spec for spec in h1_specs if spec.get("semantic_role") in {"result_single", "result_comparison"}]
-    h2_result_specs = [spec for spec in h2_specs if spec.get("semantic_role") in {"result_single", "result_comparison"} or "result_single" in spec.get("combined_roles", [])]
     audit = json.loads((output_root / "structural-audit.json").read_text(encoding="utf-8"))
-    _write(output_root / "report-evidence-consistency.json", {
-        "schema_version": "1.0.0", "status": "pass",
-        "h01_opening_cursor": min((spec.get("source_cursor") for spec in h1_specs if spec.get("semantic_role") == "hypothesis_title"), default=None),
-        "h01_result_cursors": [spec.get("source_cursor") for spec in h1_result_specs],
-        "h01_discussion_cursor": next((spec.get("source_cursor") for spec in h1_specs if spec.get("semantic_role") == "layer_integrated_discussion"), None),
-        "h01_summary_cursor": next((spec.get("source_cursor") for spec in h1_specs if spec.get("semantic_role") == "layer_summary_decision"), None),
-        "transition_cursor": transition_cursor,
-        "h02_opening_cursor": min((spec.get("source_cursor") for spec in h2_specs if spec.get("semantic_role") == "hypothesis_title"), default=None),
-        "h02_experiment_cursor": next((spec.get("stage_source_cursors", {}).get("experiment_design", spec.get("source_cursor")) for spec in h2_specs if spec.get("semantic_role") == "experiment_design" or "experiment_design" in spec.get("combined_roles", [])), None),
-        "h02_result_evidence_cursor": event_cursor.get("E201"),
-        "h02_result_slide_cursors": [spec.get("source_cursor") for spec in h2_result_specs],
-        "h02_discussion_cursor": next((event.cursor for event in persisted.replay() if event.event_type == "layer_discussion_recorded" and event.payload.get("discussion_id") == "DISC-H002"), None),
-        "h02_summary_cursor": next((spec.get("source_cursor") for spec in h2_specs if spec.get("semantic_role") == "layer_summary_decision"), None),
-        "slide_count": len(physical), "generated_slot_count": sum(len(item.get("physical_slot_conformance", [])) for item in audit.get("generated_slides", [])),
-        "materialized_transition_last_cursor": transition_state.get("events", [{}])[-1].get("cursor"),
-        "source": "canonical Slide Specs, structural audit, persisted Ledger, and executed QA inputs"
-    })
+    preliminary_qa = {"qa_report_id": "QA-MASTER-PHASE2-ACCEPTANCE", "native_powerpoint_status": "blocked_environment"}
+    report_facts = _canonical_report_facts(physical, audit, persisted, preliminary_qa, private_status)
+    _write(output_root / "report-facts.json", report_facts)
+    _write(output_root / "report-evidence-consistency.json", run_report_evidence_consistency(report_facts, copy.deepcopy(report_facts)))
     return {"output_root": output_root, "h01_cursor": h01_cursor, "h02_cursor": h02_cursor, "slide_count": len(physical), "private_fixture_acceptance": private_status["mode"]}
 
 
@@ -751,7 +977,7 @@ def finalize_phase2_qa(output_root: Path, render_evidence: dict) -> dict:
     render_hashes = {item.get("slide_id"): item.get("render_sha256") for item in render_evidence.get("visual", {}).get("render_pixel_qa", {}).get("slides", [])}
     physical_fidelity = run_physical_content_fidelity_qa(specs, audit, render_hashes)
     _write(output_root / "physical-content-fidelity-qa.json", physical_fidelity)
-    semantic_fidelity = run_presentation_semantic_fidelity_qa(specs, audit, temporal_snapshot, combined_content, physical_fidelity)
+    semantic_fidelity = run_presentation_semantic_fidelity_qa(specs, audit, temporal_snapshot, combined_content, physical_fidelity, ledger=ledger)
     _write(output_root / "presentation-semantic-fidelity-qa.json", semantic_fidelity)
     # Professor QA is the consumer of the post-assembly semantic gate. Reload
     # the persisted projection and rerun it after render-grounded fidelity is
@@ -768,31 +994,34 @@ def finalize_phase2_qa(output_root: Path, render_evidence: dict) -> dict:
     errors += [f"{finding.rule_id}: {finding.message}" for finding in binding_findings]
     report = run_phase2_pipeline(schema_errors=errors, ledger_replayed=replayed, scientific=scientific, professor=professor, audit=audit, specs=specs, visual=render_evidence["visual"], render_evidence=render_evidence, presentation_semantic=semantic_fidelity)
     _write(output_root / "qa-report.json", report)
-    event_cursor = {event.payload.get("evidence_id"): event.cursor for event in ledger.replay() if event.event_type == "evidence_linked"}
-    h01_specs = [spec for spec in specs if spec.get("hypothesis_layer_ref") == "H001"]
-    h02_specs = [spec for spec in specs if spec.get("hypothesis_layer_ref") == "H002"]
-    h01_results = [spec for spec in h01_specs if spec.get("semantic_role") in {"result_single", "result_comparison"}]
-    h02_results = [spec for spec in h02_specs if spec.get("semantic_role") in {"result_single", "result_comparison"} or "result_single" in spec.get("combined_roles", [])]
-    generated_slot_count = sum(len(item.get("physical_slot_conformance", [])) for item in audit.get("generated_slides", []))
-    consistency = {
-        "schema_version": "1.0.0",
-        "status": "pass" if report.get("overall_status") != "fail" and transition_cursor == transition_state.get("events", [{}])[-1].get("cursor") else "fail",
-        "h01_opening_cursor": min((spec.get("source_cursor") for spec in h01_specs if spec.get("semantic_role") == "hypothesis_title"), default=None),
-        "h01_result_cursors": [spec.get("source_cursor") for spec in h01_results],
-        "h01_discussion_cursor": next((spec.get("source_cursor") for spec in h01_specs if spec.get("semantic_role") == "layer_integrated_discussion"), None),
-        "h01_summary_cursor": next((spec.get("source_cursor") for spec in h01_specs if spec.get("semantic_role") == "layer_summary_decision"), None),
-        "transition_cursor": transition_cursor,
-        "h02_opening_cursor": min((spec.get("source_cursor") for spec in h02_specs if spec.get("semantic_role") == "hypothesis_title"), default=None),
-        "h02_experiment_cursor": next((spec.get("stage_source_cursors", {}).get("experiment_design", spec.get("source_cursor")) for spec in h02_specs if spec.get("semantic_role") == "experiment_design" or "experiment_design" in spec.get("combined_roles", [])), None),
-        "h02_result_evidence_cursor": event_cursor.get("E201"),
-        "h02_result_slide_cursors": [spec.get("source_cursor") for spec in h02_results],
-        "h02_discussion_cursor": next((event.cursor for event in ledger.replay() if event.event_type == "layer_discussion_recorded" and event.payload.get("discussion_id") == "DISC-H002"), None),
-        "h02_summary_cursor": next((spec.get("source_cursor") for spec in h02_specs if spec.get("semantic_role") == "layer_summary_decision"), None),
-        "slide_count": len(specs),
-        "generated_slot_count": generated_slot_count,
-        "materialized_transition_last_cursor": transition_state.get("events", [{}])[-1].get("cursor"),
-        "qa_report_id": report.get("qa_report_id"),
-        "source": "canonical Slide Specs, structural audit, persisted Ledger, and executed QA report"
-    }
+    private_status = json.loads((output_root / "private-fixture-status.json").read_text(encoding="utf-8"))
+    canonical_facts = _canonical_report_facts(specs, audit, ledger, report, private_status)
+    reported_facts = json.loads((output_root / "report-facts.json").read_text(encoding="utf-8"))
+    consistency = run_report_evidence_consistency(canonical_facts, reported_facts)
+    if consistency["status"] == "pass":
+        _write(output_root / "report-facts.json", canonical_facts)
     _write(output_root / "report-evidence-consistency.json", consistency)
     return report
+
+
+def verify_implementation_report_facts(output_root: Path, report_path: Path) -> dict:
+    """Verify the committed report footer against the generated canonical facts."""
+    output_root = Path(output_root)
+    report_path = Path(report_path)
+    text = report_path.read_text(encoding="utf-8")
+    marker = "### codex_report"
+    if marker not in text:
+        raise ValueError("implementation report is missing the codex_report footer")
+    footer = text.split(marker, 1)[1]
+    if "```yaml" not in footer or "```" not in footer.split("```yaml", 1)[1]:
+        raise ValueError("codex_report footer is not a fenced YAML document")
+    document = yaml.safe_load(footer.split("```yaml", 1)[1].split("```", 1)[0]) or {}
+    reported = document.get("codex_report", {}).get("report_facts")
+    if not isinstance(reported, dict):
+        raise ValueError("codex_report.report_facts is missing")
+    canonical = json.loads((output_root / "report-facts.json").read_text(encoding="utf-8"))
+    result = run_report_evidence_consistency(canonical, reported)
+    result["report_path"] = report_path.resolve().relative_to(ROOT).as_posix()
+    result["report_sha256"] = _sha(report_path)
+    _write(output_root / "report-evidence-consistency.json", result)
+    return result

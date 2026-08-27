@@ -3,85 +3,114 @@
   "status": "pass",
   "presentation_role_contracts": {
     "hypothesis_title": {
-      "required_fields": [
-        "hypothesis_statement"
-      ]
+      "required_fields": {
+        "hypothesis_statement": "hypothesis_statement",
+        "falsifiable_prediction": "hypothesis_statement",
+        "research_question": "hypothesis_statement"
+      }
     },
     "problem_definition": {
-      "required_fields": [
-        "previous_finding",
-        "unresolved_conflict",
-        "research_question"
-      ]
+      "required_fields": {
+        "previous_finding": "previous_finding",
+        "unresolved_conflict": "unresolved_conflict",
+        "research_question": "research_question"
+      }
     },
     "fishbone_locator": {
-      "required_fields": [
-        "primary_figure",
-        "fishbone_focus"
-      ]
+      "required_fields": {
+        "historical_snapshot": "fishbone_focus",
+        "current_focus": "fishbone_focus"
+      }
     },
     "observation_problem": {
-      "required_fields": [
-        "observation_text",
-        "research_question"
-      ]
+      "required_fields": {
+        "observation": "observation_text",
+        "research_question": "research_question"
+      }
     },
     "literature_mechanism": {
-      "required_fields": [
-        "literature_evidence",
-        "mechanism_diagram"
-      ]
+      "required_fields": {
+        "consensus": "literature_evidence",
+        "disagreement_alternatives": "literature_evidence",
+        "research_gap": "literature_evidence",
+        "implication": "literature_evidence",
+        "mechanism": "mechanism_diagram",
+        "evidence_claim_link": "mechanism_diagram"
+      }
     },
     "mechanism_solution": {
-      "required_fields": [
-        "mechanism_diagram",
-        "strategy"
-      ]
+      "required_fields": {
+        "mechanism": "mechanism_diagram",
+        "evidence_claim_link": "mechanism_diagram",
+        "strategy": "strategy",
+        "success_criterion": "strategy"
+      }
     },
     "experiment_design": {
-      "required_fields": [
-        "experiment_matrix",
-        "decision_rule"
-      ]
+      "required_fields": {
+        "independent_variables": "experiment_matrix",
+        "controlled_variables": "experiment_matrix",
+        "control_baseline": "experiment_matrix",
+        "sample_plan": "experiment_matrix",
+        "replicates": "experiment_matrix",
+        "measured_outputs": "experiment_matrix",
+        "units": "experiment_matrix",
+        "instrumentation_method": "experiment_matrix",
+        "predicted_outcomes": "decision_rule",
+        "decision_rule": "decision_rule"
+      }
     },
     "result_single": {
-      "required_fields": [
-        "result_plot"
-      ]
+      "required_fields": {
+        "result_identity": "result_annotation",
+        "result_statement": "result_annotation",
+        "metric_value_uncertainty": "result_annotation"
+      }
     },
     "result_comparison": {
-      "required_fields": [
-        "control_panel",
-        "proposed_panel",
-        "result_plot"
-      ]
+      "required_fields": {
+        "result_identity": "result_annotation",
+        "result_statement": "result_annotation",
+        "metric_value_uncertainty": "result_annotation"
+      }
     },
     "layer_integrated_discussion": {
-      "required_fields": [
-        "supporting_results",
-        "contradicting_results",
-        "uncertainty"
-      ]
+      "required_fields": {
+        "supporting_results": "supporting_results",
+        "contradicting_results": "contradicting_results",
+        "non_discriminating_results": "contradicting_results",
+        "cross_experiment_pattern": "uncertainty",
+        "mechanism_assessment": "uncertainty",
+        "alternative_explanations": "uncertainty",
+        "remaining_uncertainty": "uncertainty"
+      }
     },
     "layer_summary_decision": {
-      "required_fields": [
-        "decision_status",
-        "uncertainty",
-        "next_step"
-      ]
+      "required_fields": {
+        "answered_question": "decision_status",
+        "hypothesis_status": "decision_status",
+        "decision": "decision_status",
+        "unresolved_items": "uncertainty",
+        "next_question": "next_step",
+        "next_step": "next_step"
+      }
     },
     "hypothesis_transition": {
-      "required_fields": [
-        "transition_nodes",
-        "derivation_strip"
-      ]
+      "required_fields": {
+        "prior_hypothesis": "transition_nodes",
+        "key_prior_results": "transition_nodes",
+        "unresolved_point": "derivation_strip",
+        "precursor_observation": "transition_nodes",
+        "derivation_rationale": "derivation_strip",
+        "new_hypothesis": "transition_nodes"
+      }
     },
     "progress_todo": {
-      "required_fields": [
-        "commitment_table",
-        "current_position",
-        "parallel_work"
-      ]
+      "required_fields": {
+        "prior_commitment": "commitment_table",
+        "current_position": "current_position",
+        "parallel_work": "parallel_work"
+      }
     }
   },
   "slides": [
@@ -91,40 +120,61 @@
         "progress_todo"
       ],
       "required_fields": [
-        "commitment_table",
-        "current_position",
-        "parallel_work"
+        "progress_todo.prior_commitment",
+        "progress_todo.current_position",
+        "progress_todo.parallel_work"
       ],
       "coverage": {
-        "commitment_table": {
+        "progress_todo.prior_commitment": {
+          "slot": "commitment_table",
+          "value": "NS101; NS201",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Commitment｜NS101; NS201",
           "status": "pass"
         },
-        "current_position": {
+        "progress_todo.current_position": {
+          "slot": "current_position",
+          "value": "H002",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Current｜H002",
           "status": "pass"
         },
-        "parallel_work": {
+        "progress_todo.parallel_work": {
+          "slot": "parallel_work",
+          "value": "interface-mechanism; interface-mechanism",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Parallel｜interface-mechanism; interface-mechanism",
           "status": "pass"
         }
       },
       "role_coverage": {
         "progress_todo": {
-          "commitment_table": {
+          "prior_commitment": {
+            "slot": "commitment_table",
+            "value": "NS101; NS201",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Commitment｜NS101; NS201",
+            "status": "pass"
           },
           "current_position": {
+            "slot": "current_position",
+            "value": "H002",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Current｜H002",
+            "status": "pass"
           },
           "parallel_work": {
+            "slot": "parallel_work",
+            "value": "interface-mechanism; interface-mechanism",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Parallel｜interface-mechanism; interface-mechanism",
+            "status": "pass"
           }
         }
       },
@@ -137,20 +187,61 @@
         "hypothesis_title"
       ],
       "required_fields": [
-        "hypothesis_statement"
+        "hypothesis_title.hypothesis_statement",
+        "hypothesis_title.falsifiable_prediction",
+        "hypothesis_title.research_question"
       ],
       "coverage": {
-        "hypothesis_statement": {
+        "hypothesis_title.hypothesis_statement": {
+          "slot": "hypothesis_statement",
+          "value": "Bulk conductivity drives the positional signal gradient.",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "status": "pass"
+        },
+        "hypothesis_title.falsifiable_prediction": {
+          "slot": "hypothesis_statement",
+          "value": "Matched conditions do not change the predicted CV or resistance.",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "status": "pass"
+        },
+        "hypothesis_title.research_question": {
+          "slot": "hypothesis_statement",
+          "value": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
           "status": "pass"
         }
       },
       "role_coverage": {
         "hypothesis_title": {
           "hypothesis_statement": {
+            "slot": "hypothesis_statement",
+            "value": "Bulk conductivity drives the positional signal gradient.",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+            "status": "pass"
+          },
+          "falsifiable_prediction": {
+            "slot": "hypothesis_statement",
+            "value": "Matched conditions do not change the predicted CV or resistance.",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+            "status": "pass"
+          },
+          "research_question": {
+            "slot": "hypothesis_statement",
+            "value": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+            "status": "pass"
           }
         }
       },
@@ -163,40 +254,61 @@
         "problem_definition"
       ],
       "required_fields": [
-        "previous_finding",
-        "unresolved_conflict",
-        "research_question"
+        "problem_definition.previous_finding",
+        "problem_definition.unresolved_conflict",
+        "problem_definition.research_question"
       ],
       "coverage": {
-        "previous_finding": {
+        "problem_definition.previous_finding": {
+          "slot": "previous_finding",
+          "value": "含水量與導電度存在位置梯度",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Prior｜含水量與導電度存在位置梯度",
           "status": "pass"
         },
-        "unresolved_conflict": {
+        "problem_definition.unresolved_conflict": {
+          "slot": "unresolved_conflict",
+          "value": "導電度提高是否足以修復重複性仍未知。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Conflict｜導電度提高是否足以修復重複性仍未知。",
           "status": "pass"
         },
-        "research_question": {
+        "problem_definition.research_question": {
+          "slot": "research_question",
+          "value": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
           "status": "pass"
         }
       },
       "role_coverage": {
         "problem_definition": {
           "previous_finding": {
+            "slot": "previous_finding",
+            "value": "含水量與導電度存在位置梯度",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Prior｜含水量與導電度存在位置梯度",
+            "status": "pass"
           },
           "unresolved_conflict": {
+            "slot": "unresolved_conflict",
+            "value": "導電度提高是否足以修復重複性仍未知。",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Conflict｜導電度提高是否足以修復重複性仍未知。",
+            "status": "pass"
           },
           "research_question": {
+            "slot": "research_question",
+            "value": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+            "status": "pass"
           }
         }
       },
@@ -209,30 +321,44 @@
         "fishbone_locator"
       ],
       "required_fields": [
-        "primary_figure",
-        "fishbone_focus"
+        "fishbone_locator.historical_snapshot",
+        "fishbone_locator.current_focus"
       ],
       "coverage": {
-        "primary_figure": {
+        "fishbone_locator.historical_snapshot": {
+          "slot": "fishbone_focus",
+          "value": "FB001 rev1",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "History｜FB001 rev1\nFocus｜FB-MATERIAL-HYDRATION",
           "status": "pass"
         },
-        "fishbone_focus": {
+        "fishbone_locator.current_focus": {
+          "slot": "fishbone_focus",
+          "value": "FB-MATERIAL-HYDRATION",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "History｜FB001 rev1\nFocus｜FB-MATERIAL-HYDRATION",
           "status": "pass"
         }
       },
       "role_coverage": {
         "fishbone_locator": {
-          "primary_figure": {
+          "historical_snapshot": {
+            "slot": "fishbone_focus",
+            "value": "FB001 rev1",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "History｜FB001 rev1\nFocus｜FB-MATERIAL-HYDRATION",
+            "status": "pass"
           },
-          "fishbone_focus": {
+          "current_focus": {
+            "slot": "fishbone_focus",
+            "value": "FB-MATERIAL-HYDRATION",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "History｜FB001 rev1\nFocus｜FB-MATERIAL-HYDRATION",
+            "status": "pass"
           }
         }
       },
@@ -245,30 +371,44 @@
         "observation_problem"
       ],
       "required_fields": [
-        "observation_text",
-        "research_question"
+        "observation_problem.observation",
+        "observation_problem.research_question"
       ],
       "coverage": {
-        "observation_text": {
+        "observation_problem.observation": {
+          "slot": "observation_text",
+          "value": "位置依賴缺陷與訊號變異已觀察到。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。",
           "status": "pass"
         },
-        "research_question": {
+        "observation_problem.research_question": {
+          "slot": "research_question",
+          "value": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
           "status": "pass"
         }
       },
       "role_coverage": {
         "observation_problem": {
-          "observation_text": {
+          "observation": {
+            "slot": "observation_text",
+            "value": "位置依賴缺陷與訊號變異已觀察到。",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。",
+            "status": "pass"
           },
           "research_question": {
+            "slot": "research_question",
+            "value": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+            "status": "pass"
           }
         }
       },
@@ -281,30 +421,112 @@
         "literature_mechanism"
       ],
       "required_fields": [
-        "literature_evidence",
-        "mechanism_diagram"
+        "literature_mechanism.consensus",
+        "literature_mechanism.disagreement_alternatives",
+        "literature_mechanism.research_gap",
+        "literature_mechanism.implication",
+        "literature_mechanism.mechanism",
+        "literature_mechanism.evidence_claim_link"
       ],
       "coverage": {
-        "literature_evidence": {
+        "literature_mechanism.consensus": {
+          "slot": "literature_evidence",
+          "value": "transport gradient 可產生位置效應。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
           "status": "pass"
         },
-        "mechanism_diagram": {
+        "literature_mechanism.disagreement_alternatives": {
+          "slot": "literature_evidence",
+          "value": "interface contact remains alternative",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "status": "pass"
+        },
+        "literature_mechanism.research_gap": {
+          "slot": "literature_evidence",
+          "value": "缺少控制比較隔離機制。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "status": "pass"
+        },
+        "literature_mechanism.implication": {
+          "slot": "literature_evidence",
+          "value": "需匹配條件後比較。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "status": "pass"
+        },
+        "literature_mechanism.mechanism": {
+          "slot": "mechanism_diagram",
+          "value": "bulk transport",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Mechanism｜bulk transport\nEvidence｜C102; C103; E103",
+          "status": "pass"
+        },
+        "literature_mechanism.evidence_claim_link": {
+          "slot": "mechanism_diagram",
+          "value": "C102; C103; E103",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Mechanism｜bulk transport\nEvidence｜C102; C103; E103",
           "status": "pass"
         }
       },
       "role_coverage": {
         "literature_mechanism": {
-          "literature_evidence": {
+          "consensus": {
+            "slot": "literature_evidence",
+            "value": "transport gradient 可產生位置效應。",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+            "status": "pass"
           },
-          "mechanism_diagram": {
+          "disagreement_alternatives": {
+            "slot": "literature_evidence",
+            "value": "interface contact remains alternative",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+            "status": "pass"
+          },
+          "research_gap": {
+            "slot": "literature_evidence",
+            "value": "缺少控制比較隔離機制。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+            "status": "pass"
+          },
+          "implication": {
+            "slot": "literature_evidence",
+            "value": "需匹配條件後比較。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+            "status": "pass"
+          },
+          "mechanism": {
+            "slot": "mechanism_diagram",
+            "value": "bulk transport",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Mechanism｜bulk transport\nEvidence｜C102; C103; E103",
+            "status": "pass"
+          },
+          "evidence_claim_link": {
+            "slot": "mechanism_diagram",
+            "value": "C102; C103; E103",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Mechanism｜bulk transport\nEvidence｜C102; C103; E103",
+            "status": "pass"
           }
         }
       },
@@ -317,30 +539,180 @@
         "experiment_design"
       ],
       "required_fields": [
-        "experiment_matrix",
-        "decision_rule"
+        "experiment_design.independent_variables",
+        "experiment_design.controlled_variables",
+        "experiment_design.control_baseline",
+        "experiment_design.sample_plan",
+        "experiment_design.replicates",
+        "experiment_design.measured_outputs",
+        "experiment_design.units",
+        "experiment_design.instrumentation_method",
+        "experiment_design.predicted_outcomes",
+        "experiment_design.decision_rule"
       ],
       "coverage": {
-        "experiment_matrix": {
+        "experiment_design.independent_variables": {
+          "slot": "experiment_matrix",
+          "value": "含水量",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
           "status": "pass"
         },
-        "decision_rule": {
+        "experiment_design.controlled_variables": {
+          "slot": "experiment_matrix",
+          "value": "電極幾何; 接觸壓力",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+          "status": "pass"
+        },
+        "experiment_design.control_baseline": {
+          "slot": "experiment_matrix",
+          "value": "原始配方",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+          "status": "pass"
+        },
+        "experiment_design.sample_plan": {
+          "slot": "experiment_matrix",
+          "value": "replicates: 3; samples: 15",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+          "status": "pass"
+        },
+        "experiment_design.replicates": {
+          "slot": "experiment_matrix",
+          "value": "3",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+          "status": "pass"
+        },
+        "experiment_design.measured_outputs": {
+          "slot": "experiment_matrix",
+          "value": "導電度 (mS/cm)",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+          "status": "pass"
+        },
+        "experiment_design.units": {
+          "slot": "experiment_matrix",
+          "value": "導電度 (mS/cm)",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+          "status": "pass"
+        },
+        "experiment_design.instrumentation_method": {
+          "slot": "experiment_matrix",
+          "value": "synthetic-four-probe",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+          "status": "pass"
+        },
+        "experiment_design.predicted_outcomes": {
+          "slot": "decision_rule",
+          "value": "導電度提升",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Prediction｜導電度提升\nRule｜go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%",
+          "status": "pass"
+        },
+        "experiment_design.decision_rule": {
+          "slot": "decision_rule",
+          "value": "go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Prediction｜導電度提升\nRule｜go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%",
           "status": "pass"
         }
       },
       "role_coverage": {
         "experiment_design": {
-          "experiment_matrix": {
+          "independent_variables": {
+            "slot": "experiment_matrix",
+            "value": "含水量",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+            "status": "pass"
+          },
+          "controlled_variables": {
+            "slot": "experiment_matrix",
+            "value": "電極幾何; 接觸壓力",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+            "status": "pass"
+          },
+          "control_baseline": {
+            "slot": "experiment_matrix",
+            "value": "原始配方",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+            "status": "pass"
+          },
+          "sample_plan": {
+            "slot": "experiment_matrix",
+            "value": "replicates: 3; samples: 15",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+            "status": "pass"
+          },
+          "replicates": {
+            "slot": "experiment_matrix",
+            "value": "3",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+            "status": "pass"
+          },
+          "measured_outputs": {
+            "slot": "experiment_matrix",
+            "value": "導電度 (mS/cm)",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+            "status": "pass"
+          },
+          "units": {
+            "slot": "experiment_matrix",
+            "value": "導電度 (mS/cm)",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+            "status": "pass"
+          },
+          "instrumentation_method": {
+            "slot": "experiment_matrix",
+            "value": "synthetic-four-probe",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+            "status": "pass"
+          },
+          "predicted_outcomes": {
+            "slot": "decision_rule",
+            "value": "導電度提升",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Prediction｜導電度提升\nRule｜go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%",
+            "status": "pass"
           },
           "decision_rule": {
+            "slot": "decision_rule",
+            "value": "go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Prediction｜導電度提升\nRule｜go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%",
+            "status": "pass"
           }
         }
       },
@@ -353,30 +725,180 @@
         "experiment_design"
       ],
       "required_fields": [
-        "experiment_matrix",
-        "decision_rule"
+        "experiment_design.independent_variables",
+        "experiment_design.controlled_variables",
+        "experiment_design.control_baseline",
+        "experiment_design.sample_plan",
+        "experiment_design.replicates",
+        "experiment_design.measured_outputs",
+        "experiment_design.units",
+        "experiment_design.instrumentation_method",
+        "experiment_design.predicted_outcomes",
+        "experiment_design.decision_rule"
       ],
       "coverage": {
-        "experiment_matrix": {
+        "experiment_design.independent_variables": {
+          "slot": "experiment_matrix",
+          "value": "位置",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
           "status": "pass"
         },
-        "decision_rule": {
+        "experiment_design.controlled_variables": {
+          "slot": "experiment_matrix",
+          "value": "配方; 電極; 接觸壓力",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+          "status": "pass"
+        },
+        "experiment_design.control_baseline": {
+          "slot": "experiment_matrix",
+          "value": "原始位置分布",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+          "status": "pass"
+        },
+        "experiment_design.sample_plan": {
+          "slot": "experiment_matrix",
+          "value": "replicates: 3; samples: 15",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+          "status": "pass"
+        },
+        "experiment_design.replicates": {
+          "slot": "experiment_matrix",
+          "value": "3",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+          "status": "pass"
+        },
+        "experiment_design.measured_outputs": {
+          "slot": "experiment_matrix",
+          "value": "訊號 CV (%)",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+          "status": "pass"
+        },
+        "experiment_design.units": {
+          "slot": "experiment_matrix",
+          "value": "訊號 CV (%)",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+          "status": "pass"
+        },
+        "experiment_design.instrumentation_method": {
+          "slot": "experiment_matrix",
+          "value": "synthetic-signal-test",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+          "status": "pass"
+        },
+        "experiment_design.predicted_outcomes": {
+          "slot": "decision_rule",
+          "value": "CV 下降",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Prediction｜CV 下降\nRule｜go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%",
+          "status": "pass"
+        },
+        "experiment_design.decision_rule": {
+          "slot": "decision_rule",
+          "value": "go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Prediction｜CV 下降\nRule｜go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%",
           "status": "pass"
         }
       },
       "role_coverage": {
         "experiment_design": {
-          "experiment_matrix": {
+          "independent_variables": {
+            "slot": "experiment_matrix",
+            "value": "位置",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+            "status": "pass"
+          },
+          "controlled_variables": {
+            "slot": "experiment_matrix",
+            "value": "配方; 電極; 接觸壓力",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+            "status": "pass"
+          },
+          "control_baseline": {
+            "slot": "experiment_matrix",
+            "value": "原始位置分布",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+            "status": "pass"
+          },
+          "sample_plan": {
+            "slot": "experiment_matrix",
+            "value": "replicates: 3; samples: 15",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+            "status": "pass"
+          },
+          "replicates": {
+            "slot": "experiment_matrix",
+            "value": "3",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+            "status": "pass"
+          },
+          "measured_outputs": {
+            "slot": "experiment_matrix",
+            "value": "訊號 CV (%)",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+            "status": "pass"
+          },
+          "units": {
+            "slot": "experiment_matrix",
+            "value": "訊號 CV (%)",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+            "status": "pass"
+          },
+          "instrumentation_method": {
+            "slot": "experiment_matrix",
+            "value": "synthetic-signal-test",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+            "status": "pass"
+          },
+          "predicted_outcomes": {
+            "slot": "decision_rule",
+            "value": "CV 下降",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Prediction｜CV 下降\nRule｜go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%",
+            "status": "pass"
           },
           "decision_rule": {
+            "slot": "decision_rule",
+            "value": "go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Prediction｜CV 下降\nRule｜go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%",
+            "status": "pass"
           }
         }
       },
@@ -389,20 +911,61 @@
         "result_single"
       ],
       "required_fields": [
-        "result_plot"
+        "result_single.result_identity",
+        "result_single.result_statement",
+        "result_single.metric_value_uncertainty"
       ],
       "coverage": {
-        "result_plot": {
+        "result_single.result_identity": {
+          "slot": "result_annotation",
+          "value": "RES101",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "status": "pass"
+        },
+        "result_single.result_statement": {
+          "slot": "result_annotation",
+          "value": "平均導電度增加 24% ± 5% SD",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "status": "pass"
+        },
+        "result_single.metric_value_uncertainty": {
+          "slot": "result_annotation",
+          "value": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
           "status": "pass"
         }
       },
       "role_coverage": {
         "result_single": {
-          "result_plot": {
+          "result_identity": {
+            "slot": "result_annotation",
+            "value": "RES101",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
+          },
+          "result_statement": {
+            "slot": "result_annotation",
+            "value": "平均導電度增加 24% ± 5% SD",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
+          },
+          "metric_value_uncertainty": {
+            "slot": "result_annotation",
+            "value": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
           }
         }
       },
@@ -415,20 +978,61 @@
         "result_single"
       ],
       "required_fields": [
-        "result_plot"
+        "result_single.result_identity",
+        "result_single.result_statement",
+        "result_single.metric_value_uncertainty"
       ],
       "coverage": {
-        "result_plot": {
+        "result_single.result_identity": {
+          "slot": "result_annotation",
+          "value": "RES102",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+          "status": "pass"
+        },
+        "result_single.result_statement": {
+          "slot": "result_annotation",
+          "value": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+          "status": "pass"
+        },
+        "result_single.metric_value_uncertainty": {
+          "slot": "result_annotation",
+          "value": "{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
           "status": "pass"
         }
       },
       "role_coverage": {
         "result_single": {
-          "result_plot": {
+          "result_identity": {
+            "slot": "result_annotation",
+            "value": "RES102",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
+          },
+          "result_statement": {
+            "slot": "result_annotation",
+            "value": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
+          },
+          "metric_value_uncertainty": {
+            "slot": "result_annotation",
+            "value": "{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
           }
         }
       },
@@ -441,40 +1045,129 @@
         "layer_integrated_discussion"
       ],
       "required_fields": [
-        "supporting_results",
-        "contradicting_results",
-        "uncertainty"
+        "layer_integrated_discussion.supporting_results",
+        "layer_integrated_discussion.contradicting_results",
+        "layer_integrated_discussion.non_discriminating_results",
+        "layer_integrated_discussion.cross_experiment_pattern",
+        "layer_integrated_discussion.mechanism_assessment",
+        "layer_integrated_discussion.alternative_explanations",
+        "layer_integrated_discussion.remaining_uncertainty"
       ],
       "coverage": {
-        "supporting_results": {
+        "layer_integrated_discussion.supporting_results": {
+          "slot": "supporting_results",
+          "value": "RES101",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Support｜RES101",
           "status": "pass"
         },
-        "contradicting_results": {
+        "layer_integrated_discussion.contradicting_results": {
+          "slot": "contradicting_results",
+          "value": "RES102",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Conflict｜RES102\nNon-disc.｜none",
           "status": "pass"
         },
-        "uncertainty": {
+        "layer_integrated_discussion.non_discriminating_results": {
+          "slot": "contradicting_results",
+          "value": "none",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Conflict｜RES102\nNon-disc.｜none",
+          "status": "pass"
+        },
+        "layer_integrated_discussion.cross_experiment_pattern": {
+          "slot": "uncertainty",
+          "value": "導電度提升成立，但重複性沒有同步改善。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+          "status": "pass"
+        },
+        "layer_integrated_discussion.mechanism_assessment": {
+          "slot": "uncertainty",
+          "value": "bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+          "status": "pass"
+        },
+        "layer_integrated_discussion.alternative_explanations": {
+          "slot": "uncertainty",
+          "value": "接觸電阻; 局部壓力差; 電極幾何",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+          "status": "pass"
+        },
+        "layer_integrated_discussion.remaining_uncertainty": {
+          "slot": "uncertainty",
+          "value": "contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
           "status": "pass"
         }
       },
       "role_coverage": {
         "layer_integrated_discussion": {
           "supporting_results": {
+            "slot": "supporting_results",
+            "value": "RES101",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Support｜RES101",
+            "status": "pass"
           },
           "contradicting_results": {
+            "slot": "contradicting_results",
+            "value": "RES102",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Conflict｜RES102\nNon-disc.｜none",
+            "status": "pass"
           },
-          "uncertainty": {
+          "non_discriminating_results": {
+            "slot": "contradicting_results",
+            "value": "none",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Conflict｜RES102\nNon-disc.｜none",
+            "status": "pass"
+          },
+          "cross_experiment_pattern": {
+            "slot": "uncertainty",
+            "value": "導電度提升成立，但重複性沒有同步改善。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+            "status": "pass"
+          },
+          "mechanism_assessment": {
+            "slot": "uncertainty",
+            "value": "bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+            "status": "pass"
+          },
+          "alternative_explanations": {
+            "slot": "uncertainty",
+            "value": "接觸電阻; 局部壓力差; 電極幾何",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+            "status": "pass"
+          },
+          "remaining_uncertainty": {
+            "slot": "uncertainty",
+            "value": "contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+            "status": "pass"
           }
         }
       },
@@ -487,40 +1180,112 @@
         "layer_summary_decision"
       ],
       "required_fields": [
-        "decision_status",
-        "uncertainty",
-        "next_step"
+        "layer_summary_decision.answered_question",
+        "layer_summary_decision.hypothesis_status",
+        "layer_summary_decision.decision",
+        "layer_summary_decision.unresolved_items",
+        "layer_summary_decision.next_question",
+        "layer_summary_decision.next_step"
       ],
       "coverage": {
-        "decision_status": {
+        "layer_summary_decision.answered_question": {
+          "slot": "decision_status",
+          "value": "bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Answer｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nStatus｜partial_support\nDecision｜Partial-Go; Bulk conductivity is contributory but insufficient.",
           "status": "pass"
         },
-        "uncertainty": {
+        "layer_summary_decision.hypothesis_status": {
+          "slot": "decision_status",
+          "value": "partial_support",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Answer｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nStatus｜partial_support\nDecision｜Partial-Go; Bulk conductivity is contributory but insufficient.",
           "status": "pass"
         },
-        "next_step": {
+        "layer_summary_decision.decision": {
+          "slot": "decision_status",
+          "value": "Partial-Go; Bulk conductivity is contributory but insufficient.",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Answer｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nStatus｜partial_support\nDecision｜Partial-Go; Bulk conductivity is contributory but insufficient.",
+          "status": "pass"
+        },
+        "layer_summary_decision.unresolved_items": {
+          "slot": "uncertainty",
+          "value": "interface contact 的貢獻尚未量化。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Unresolved｜interface contact 的貢獻尚未量化。",
+          "status": "pass"
+        },
+        "layer_summary_decision.next_question": {
+          "slot": "next_step",
+          "value": "匹配 bulk conductivity 後，contact resistance 是否主導變異？",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext step｜NS101",
+          "status": "pass"
+        },
+        "layer_summary_decision.next_step": {
+          "slot": "next_step",
+          "value": "NS101",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext step｜NS101",
           "status": "pass"
         }
       },
       "role_coverage": {
         "layer_summary_decision": {
-          "decision_status": {
+          "answered_question": {
+            "slot": "decision_status",
+            "value": "bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Answer｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nStatus｜partial_support\nDecision｜Partial-Go; Bulk conductivity is contributory but insufficient.",
+            "status": "pass"
           },
-          "uncertainty": {
+          "hypothesis_status": {
+            "slot": "decision_status",
+            "value": "partial_support",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Answer｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nStatus｜partial_support\nDecision｜Partial-Go; Bulk conductivity is contributory but insufficient.",
+            "status": "pass"
+          },
+          "decision": {
+            "slot": "decision_status",
+            "value": "Partial-Go; Bulk conductivity is contributory but insufficient.",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Answer｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nStatus｜partial_support\nDecision｜Partial-Go; Bulk conductivity is contributory but insufficient.",
+            "status": "pass"
+          },
+          "unresolved_items": {
+            "slot": "uncertainty",
+            "value": "interface contact 的貢獻尚未量化。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Unresolved｜interface contact 的貢獻尚未量化。",
+            "status": "pass"
+          },
+          "next_question": {
+            "slot": "next_step",
+            "value": "匹配 bulk conductivity 後，contact resistance 是否主導變異？",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext step｜NS101",
+            "status": "pass"
           },
           "next_step": {
+            "slot": "next_step",
+            "value": "NS101",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext step｜NS101",
+            "status": "pass"
           }
         }
       },
@@ -533,30 +1298,112 @@
         "hypothesis_transition"
       ],
       "required_fields": [
-        "transition_nodes",
-        "derivation_strip"
+        "hypothesis_transition.prior_hypothesis",
+        "hypothesis_transition.key_prior_results",
+        "hypothesis_transition.unresolved_point",
+        "hypothesis_transition.precursor_observation",
+        "hypothesis_transition.derivation_rationale",
+        "hypothesis_transition.new_hypothesis"
       ],
       "coverage": {
-        "transition_nodes": {
+        "hypothesis_transition.prior_hypothesis": {
+          "slot": "transition_nodes",
+          "value": "C101",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
           "status": "pass"
         },
-        "derivation_strip": {
+        "hypothesis_transition.key_prior_results": {
+          "slot": "transition_nodes",
+          "value": "RES101; RES102",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
+          "status": "pass"
+        },
+        "hypothesis_transition.unresolved_point": {
+          "slot": "derivation_strip",
+          "value": "導電度增加後訊號重複性沒有改善。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Unresolved｜導電度增加後訊號重複性沒有改善。\nRationale｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+          "status": "pass"
+        },
+        "hypothesis_transition.precursor_observation": {
+          "slot": "transition_nodes",
+          "value": "E104",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
+          "status": "pass"
+        },
+        "hypothesis_transition.derivation_rationale": {
+          "slot": "derivation_strip",
+          "value": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Unresolved｜導電度增加後訊號重複性沒有改善。\nRationale｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+          "status": "pass"
+        },
+        "hypothesis_transition.new_hypothesis": {
+          "slot": "transition_nodes",
+          "value": "C201",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
           "status": "pass"
         }
       },
       "role_coverage": {
         "hypothesis_transition": {
-          "transition_nodes": {
+          "prior_hypothesis": {
+            "slot": "transition_nodes",
+            "value": "C101",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
+            "status": "pass"
           },
-          "derivation_strip": {
+          "key_prior_results": {
+            "slot": "transition_nodes",
+            "value": "RES101; RES102",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
+            "status": "pass"
+          },
+          "unresolved_point": {
+            "slot": "derivation_strip",
+            "value": "導電度增加後訊號重複性沒有改善。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Unresolved｜導電度增加後訊號重複性沒有改善。\nRationale｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+            "status": "pass"
+          },
+          "precursor_observation": {
+            "slot": "transition_nodes",
+            "value": "E104",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
+            "status": "pass"
+          },
+          "derivation_rationale": {
+            "slot": "derivation_strip",
+            "value": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Unresolved｜導電度增加後訊號重複性沒有改善。\nRationale｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+            "status": "pass"
+          },
+          "new_hypothesis": {
+            "slot": "transition_nodes",
+            "value": "C201",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
+            "status": "pass"
           }
         }
       },
@@ -569,20 +1416,61 @@
         "hypothesis_title"
       ],
       "required_fields": [
-        "hypothesis_statement"
+        "hypothesis_title.hypothesis_statement",
+        "hypothesis_title.falsifiable_prediction",
+        "hypothesis_title.research_question"
       ],
       "coverage": {
-        "hypothesis_statement": {
+        "hypothesis_title.hypothesis_statement": {
+          "slot": "hypothesis_statement",
+          "value": "Contact resistance drives instability at low pressure.",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "status": "pass"
+        },
+        "hypothesis_title.falsifiable_prediction": {
+          "slot": "hypothesis_statement",
+          "value": "Matched conditions do not change the predicted CV or resistance.",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "status": "pass"
+        },
+        "hypothesis_title.research_question": {
+          "slot": "hypothesis_statement",
+          "value": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
           "status": "pass"
         }
       },
       "role_coverage": {
         "hypothesis_title": {
           "hypothesis_statement": {
+            "slot": "hypothesis_statement",
+            "value": "Contact resistance drives instability at low pressure.",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+            "status": "pass"
+          },
+          "falsifiable_prediction": {
+            "slot": "hypothesis_statement",
+            "value": "Matched conditions do not change the predicted CV or resistance.",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+            "status": "pass"
+          },
+          "research_question": {
+            "slot": "hypothesis_statement",
+            "value": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+            "status": "pass"
           }
         }
       },
@@ -595,40 +1483,61 @@
         "problem_definition"
       ],
       "required_fields": [
-        "previous_finding",
-        "unresolved_conflict",
-        "research_question"
+        "problem_definition.previous_finding",
+        "problem_definition.unresolved_conflict",
+        "problem_definition.research_question"
       ],
       "coverage": {
-        "previous_finding": {
+        "problem_definition.previous_finding": {
+          "slot": "previous_finding",
+          "value": "H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Prior｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
           "status": "pass"
         },
-        "unresolved_conflict": {
+        "problem_definition.unresolved_conflict": {
+          "slot": "unresolved_conflict",
+          "value": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Conflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。",
           "status": "pass"
         },
-        "research_question": {
+        "problem_definition.research_question": {
+          "slot": "research_question",
+          "value": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
           "status": "pass"
         }
       },
       "role_coverage": {
         "problem_definition": {
           "previous_finding": {
+            "slot": "previous_finding",
+            "value": "H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Prior｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+            "status": "pass"
           },
           "unresolved_conflict": {
+            "slot": "unresolved_conflict",
+            "value": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Conflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。",
+            "status": "pass"
           },
           "research_question": {
+            "slot": "research_question",
+            "value": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+            "status": "pass"
           }
         }
       },
@@ -641,30 +1550,44 @@
         "fishbone_locator"
       ],
       "required_fields": [
-        "primary_figure",
-        "fishbone_focus"
+        "fishbone_locator.historical_snapshot",
+        "fishbone_locator.current_focus"
       ],
       "coverage": {
-        "primary_figure": {
+        "fishbone_locator.historical_snapshot": {
+          "slot": "fishbone_focus",
+          "value": "FB001 rev2",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "History｜FB001 rev2\nFocus｜FB-ELECTRODE-CONTACT",
           "status": "pass"
         },
-        "fishbone_focus": {
+        "fishbone_locator.current_focus": {
+          "slot": "fishbone_focus",
+          "value": "FB-ELECTRODE-CONTACT",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "History｜FB001 rev2\nFocus｜FB-ELECTRODE-CONTACT",
           "status": "pass"
         }
       },
       "role_coverage": {
         "fishbone_locator": {
-          "primary_figure": {
+          "historical_snapshot": {
+            "slot": "fishbone_focus",
+            "value": "FB001 rev2",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "History｜FB001 rev2\nFocus｜FB-ELECTRODE-CONTACT",
+            "status": "pass"
           },
-          "fishbone_focus": {
+          "current_focus": {
+            "slot": "fishbone_focus",
+            "value": "FB-ELECTRODE-CONTACT",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "History｜FB001 rev2\nFocus｜FB-ELECTRODE-CONTACT",
+            "status": "pass"
           }
         }
       },
@@ -679,68 +1602,218 @@
         "mechanism_solution"
       ],
       "required_fields": [
-        "observation_text",
-        "research_question",
-        "literature_evidence",
-        "mechanism_diagram",
-        "strategy"
+        "observation_problem.observation",
+        "observation_problem.research_question",
+        "literature_mechanism.consensus",
+        "literature_mechanism.disagreement_alternatives",
+        "literature_mechanism.research_gap",
+        "literature_mechanism.implication",
+        "literature_mechanism.mechanism",
+        "literature_mechanism.evidence_claim_link",
+        "mechanism_solution.mechanism",
+        "mechanism_solution.evidence_claim_link",
+        "mechanism_solution.strategy",
+        "mechanism_solution.success_criterion"
       ],
       "coverage": {
-        "observation_text": {
+        "observation_problem.observation": {
+          "slot": "observation_text",
+          "value": "位置依賴缺陷與訊號變異已觀察到。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。",
           "status": "pass"
         },
-        "research_question": {
+        "observation_problem.research_question": {
+          "slot": "research_question",
+          "value": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
           "status": "pass"
         },
-        "literature_evidence": {
+        "literature_mechanism.consensus": {
+          "slot": "literature_evidence",
+          "value": "transport gradient 可產生位置效應。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
           "status": "pass"
         },
-        "mechanism_diagram": {
+        "literature_mechanism.disagreement_alternatives": {
+          "slot": "literature_evidence",
+          "value": "interface contact remains alternative",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
           "status": "pass"
         },
-        "strategy": {
+        "literature_mechanism.research_gap": {
+          "slot": "literature_evidence",
+          "value": "缺少控制比較隔離機制。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "status": "pass"
+        },
+        "literature_mechanism.implication": {
+          "slot": "literature_evidence",
+          "value": "需匹配條件後比較。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "status": "pass"
+        },
+        "literature_mechanism.mechanism": {
+          "slot": "mechanism_diagram",
+          "value": "contact resistance",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+          "status": "pass"
+        },
+        "literature_mechanism.evidence_claim_link": {
+          "slot": "mechanism_diagram",
+          "value": "C202; C203; E202",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+          "status": "pass"
+        },
+        "mechanism_solution.mechanism": {
+          "slot": "mechanism_diagram",
+          "value": "contact resistance",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+          "status": "pass"
+        },
+        "mechanism_solution.evidence_claim_link": {
+          "slot": "mechanism_diagram",
+          "value": "C202; C203; E202",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+          "status": "pass"
+        },
+        "mechanism_solution.strategy": {
+          "slot": "strategy",
+          "value": "匹配導電度並改變接觸壓力",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Strategy｜匹配導電度並改變接觸壓力\nCriterion｜預測指標跨過 decision threshold",
+          "status": "pass"
+        },
+        "mechanism_solution.success_criterion": {
+          "slot": "strategy",
+          "value": "預測指標跨過 decision threshold",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Strategy｜匹配導電度並改變接觸壓力\nCriterion｜預測指標跨過 decision threshold",
           "status": "pass"
         }
       },
       "role_coverage": {
         "observation_problem": {
-          "observation_text": {
+          "observation": {
+            "slot": "observation_text",
+            "value": "位置依賴缺陷與訊號變異已觀察到。",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。",
+            "status": "pass"
           },
           "research_question": {
+            "slot": "research_question",
+            "value": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+            "status": "pass"
           }
         },
         "literature_mechanism": {
-          "literature_evidence": {
+          "consensus": {
+            "slot": "literature_evidence",
+            "value": "transport gradient 可產生位置效應。",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+            "status": "pass"
           },
-          "mechanism_diagram": {
+          "disagreement_alternatives": {
+            "slot": "literature_evidence",
+            "value": "interface contact remains alternative",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+            "status": "pass"
+          },
+          "research_gap": {
+            "slot": "literature_evidence",
+            "value": "缺少控制比較隔離機制。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+            "status": "pass"
+          },
+          "implication": {
+            "slot": "literature_evidence",
+            "value": "需匹配條件後比較。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+            "status": "pass"
+          },
+          "mechanism": {
+            "slot": "mechanism_diagram",
+            "value": "contact resistance",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+            "status": "pass"
+          },
+          "evidence_claim_link": {
+            "slot": "mechanism_diagram",
+            "value": "C202; C203; E202",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+            "status": "pass"
           }
         },
         "mechanism_solution": {
-          "mechanism_diagram": {
+          "mechanism": {
+            "slot": "mechanism_diagram",
+            "value": "contact resistance",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+            "status": "pass"
+          },
+          "evidence_claim_link": {
+            "slot": "mechanism_diagram",
+            "value": "C202; C203; E202",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+            "status": "pass"
           },
           "strategy": {
+            "slot": "strategy",
+            "value": "匹配導電度並改變接觸壓力",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Strategy｜匹配導電度並改變接觸壓力\nCriterion｜預測指標跨過 decision threshold",
+            "status": "pass"
+          },
+          "success_criterion": {
+            "slot": "strategy",
+            "value": "預測指標跨過 decision threshold",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Strategy｜匹配導電度並改變接觸壓力\nCriterion｜預測指標跨過 decision threshold",
+            "status": "pass"
           }
         }
       },
@@ -754,42 +1827,233 @@
         "result_single"
       ],
       "required_fields": [
-        "experiment_matrix",
-        "decision_rule",
-        "result_plot"
+        "experiment_design.independent_variables",
+        "experiment_design.controlled_variables",
+        "experiment_design.control_baseline",
+        "experiment_design.sample_plan",
+        "experiment_design.replicates",
+        "experiment_design.measured_outputs",
+        "experiment_design.units",
+        "experiment_design.instrumentation_method",
+        "experiment_design.predicted_outcomes",
+        "experiment_design.decision_rule",
+        "result_single.result_identity",
+        "result_single.result_statement",
+        "result_single.metric_value_uncertainty"
       ],
       "coverage": {
-        "experiment_matrix": {
+        "experiment_design.independent_variables": {
+          "slot": "experiment_matrix",
+          "value": "contact pressure",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
           "status": "pass"
         },
-        "decision_rule": {
+        "experiment_design.controlled_variables": {
+          "slot": "experiment_matrix",
+          "value": "bulk conductivity; 電極幾何",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
           "status": "pass"
         },
-        "result_plot": {
+        "experiment_design.control_baseline": {
+          "slot": "experiment_matrix",
+          "value": "low-pressure control",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+          "status": "pass"
+        },
+        "experiment_design.sample_plan": {
+          "slot": "experiment_matrix",
+          "value": "replicates: 5; samples: 15",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+          "status": "pass"
+        },
+        "experiment_design.replicates": {
+          "slot": "experiment_matrix",
+          "value": "5",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+          "status": "pass"
+        },
+        "experiment_design.measured_outputs": {
+          "slot": "experiment_matrix",
+          "value": "訊號 CV (%); contact resistance (ohm)",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+          "status": "pass"
+        },
+        "experiment_design.units": {
+          "slot": "experiment_matrix",
+          "value": "訊號 CV (%); contact resistance (ohm)",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+          "status": "pass"
+        },
+        "experiment_design.instrumentation_method": {
+          "slot": "experiment_matrix",
+          "value": "synthetic-pressure-fixture",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+          "status": "pass"
+        },
+        "experiment_design.predicted_outcomes": {
+          "slot": "decision_rule",
+          "value": "CV and resistance decrease",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+          "status": "pass"
+        },
+        "experiment_design.decision_rule": {
+          "slot": "decision_rule",
+          "value": "go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+          "status": "pass"
+        },
+        "result_single.result_identity": {
+          "slot": "result_annotation",
+          "value": "RES201",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "status": "pass"
+        },
+        "result_single.result_statement": {
+          "slot": "result_annotation",
+          "value": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "status": "pass"
+        },
+        "result_single.metric_value_uncertainty": {
+          "slot": "result_annotation",
+          "value": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
           "status": "pass"
         }
       },
       "role_coverage": {
         "experiment_design": {
-          "experiment_matrix": {
+          "independent_variables": {
+            "slot": "experiment_matrix",
+            "value": "contact pressure",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+            "status": "pass"
+          },
+          "controlled_variables": {
+            "slot": "experiment_matrix",
+            "value": "bulk conductivity; 電極幾何",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+            "status": "pass"
+          },
+          "control_baseline": {
+            "slot": "experiment_matrix",
+            "value": "low-pressure control",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+            "status": "pass"
+          },
+          "sample_plan": {
+            "slot": "experiment_matrix",
+            "value": "replicates: 5; samples: 15",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+            "status": "pass"
+          },
+          "replicates": {
+            "slot": "experiment_matrix",
+            "value": "5",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+            "status": "pass"
+          },
+          "measured_outputs": {
+            "slot": "experiment_matrix",
+            "value": "訊號 CV (%); contact resistance (ohm)",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+            "status": "pass"
+          },
+          "units": {
+            "slot": "experiment_matrix",
+            "value": "訊號 CV (%); contact resistance (ohm)",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+            "status": "pass"
+          },
+          "instrumentation_method": {
+            "slot": "experiment_matrix",
+            "value": "synthetic-pressure-fixture",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+            "status": "pass"
+          },
+          "predicted_outcomes": {
+            "slot": "decision_rule",
+            "value": "CV and resistance decrease",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+            "status": "pass"
           },
           "decision_rule": {
+            "slot": "decision_rule",
+            "value": "go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+            "status": "pass"
           }
         },
         "result_single": {
-          "result_plot": {
+          "result_identity": {
+            "slot": "result_annotation",
+            "value": "RES201",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
+          },
+          "result_statement": {
+            "slot": "result_annotation",
+            "value": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
+          },
+          "metric_value_uncertainty": {
+            "slot": "result_annotation",
+            "value": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+            "status": "pass"
           }
         }
       },
@@ -803,76 +2067,233 @@
         "layer_summary_decision"
       ],
       "required_fields": [
-        "supporting_results",
-        "contradicting_results",
-        "uncertainty",
-        "decision_status",
-        "next_step",
-        "discussion_synthesis"
+        "layer_integrated_discussion.supporting_results",
+        "layer_integrated_discussion.contradicting_results",
+        "layer_integrated_discussion.non_discriminating_results",
+        "layer_integrated_discussion.cross_experiment_pattern",
+        "layer_integrated_discussion.mechanism_assessment",
+        "layer_integrated_discussion.alternative_explanations",
+        "layer_integrated_discussion.remaining_uncertainty",
+        "layer_summary_decision.answered_question",
+        "layer_summary_decision.hypothesis_status",
+        "layer_summary_decision.decision",
+        "layer_summary_decision.unresolved_items",
+        "layer_summary_decision.next_question",
+        "layer_summary_decision.next_step"
       ],
       "coverage": {
-        "supporting_results": {
+        "layer_integrated_discussion.supporting_results": {
+          "slot": "supporting_results",
+          "value": "RES201",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Support｜RES201",
           "status": "pass"
         },
-        "contradicting_results": {
+        "layer_integrated_discussion.contradicting_results": {
+          "slot": "contradicting_results",
+          "value": "none",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Conflict｜none\nNon-disc.｜none",
           "status": "pass"
         },
-        "uncertainty": {
+        "layer_integrated_discussion.non_discriminating_results": {
+          "slot": "contradicting_results",
+          "value": "none",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Conflict｜none\nNon-disc.｜none",
           "status": "pass"
         },
-        "decision_status": {
+        "layer_integrated_discussion.cross_experiment_pattern": {
+          "slot": "uncertainty",
+          "value": "匹配導電度後，提高接觸壓力明顯降低變異。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
           "status": "pass"
         },
-        "next_step": {
+        "layer_integrated_discussion.mechanism_assessment": {
+          "slot": "uncertainty",
+          "value": "contact resistance 在低壓條件下主導不穩定。",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
           "status": "pass"
         },
-        "discussion_synthesis": {
+        "layer_integrated_discussion.alternative_explanations": {
+          "slot": "uncertainty",
+          "value": "電極幾何仍可能調節壓力分布",
           "content_present": true,
           "physical_present": true,
+          "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+          "status": "pass"
+        },
+        "layer_integrated_discussion.remaining_uncertainty": {
+          "slot": "uncertainty",
+          "value": "高壓長期循環是否造成新的 wear mechanism 尚未知。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+          "status": "pass"
+        },
+        "layer_summary_decision.answered_question": {
+          "slot": "decision_status",
+          "value": "低接觸壓力下 contact resistance 是主導不穩定來源。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+          "status": "pass"
+        },
+        "layer_summary_decision.hypothesis_status": {
+          "slot": "decision_status",
+          "value": "supported",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+          "status": "pass"
+        },
+        "layer_summary_decision.decision": {
+          "slot": "decision_status",
+          "value": "Go; Contact-pressure control discriminates the interface mechanism.",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+          "status": "pass"
+        },
+        "layer_summary_decision.unresolved_items": {
+          "slot": "uncertainty",
+          "value": "高壓循環的耐久性與 wear 尚未測試。",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+          "status": "pass"
+        },
+        "layer_summary_decision.next_question": {
+          "slot": "next_step",
+          "value": "接觸壓力改善能否在長期循環下維持？",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext step｜NS201",
+          "status": "pass"
+        },
+        "layer_summary_decision.next_step": {
+          "slot": "next_step",
+          "value": "NS201",
+          "content_present": true,
+          "physical_present": true,
+          "actual_text": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext step｜NS201",
           "status": "pass"
         }
       },
       "role_coverage": {
         "layer_integrated_discussion": {
           "supporting_results": {
+            "slot": "supporting_results",
+            "value": "RES201",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Support｜RES201",
+            "status": "pass"
           },
           "contradicting_results": {
+            "slot": "contradicting_results",
+            "value": "none",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Conflict｜none\nNon-disc.｜none",
+            "status": "pass"
           },
-          "uncertainty": {
+          "non_discriminating_results": {
+            "slot": "contradicting_results",
+            "value": "none",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Conflict｜none\nNon-disc.｜none",
+            "status": "pass"
+          },
+          "cross_experiment_pattern": {
+            "slot": "uncertainty",
+            "value": "匹配導電度後，提高接觸壓力明顯降低變異。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+            "status": "pass"
+          },
+          "mechanism_assessment": {
+            "slot": "uncertainty",
+            "value": "contact resistance 在低壓條件下主導不穩定。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+            "status": "pass"
+          },
+          "alternative_explanations": {
+            "slot": "uncertainty",
+            "value": "電極幾何仍可能調節壓力分布",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+            "status": "pass"
+          },
+          "remaining_uncertainty": {
+            "slot": "uncertainty",
+            "value": "高壓長期循環是否造成新的 wear mechanism 尚未知。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+            "status": "pass"
           }
         },
         "layer_summary_decision": {
-          "decision_status": {
+          "answered_question": {
+            "slot": "decision_status",
+            "value": "低接觸壓力下 contact resistance 是主導不穩定來源。",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+            "status": "pass"
           },
-          "uncertainty": {
+          "hypothesis_status": {
+            "slot": "decision_status",
+            "value": "supported",
             "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+            "status": "pass"
+          },
+          "decision": {
+            "slot": "decision_status",
+            "value": "Go; Contact-pressure control discriminates the interface mechanism.",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+            "status": "pass"
+          },
+          "unresolved_items": {
+            "slot": "uncertainty",
+            "value": "高壓循環的耐久性與 wear 尚未測試。",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+            "status": "pass"
+          },
+          "next_question": {
+            "slot": "next_step",
+            "value": "接觸壓力改善能否在長期循環下維持？",
+            "content_present": true,
+            "physical_present": true,
+            "actual_text": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext step｜NS201",
+            "status": "pass"
           },
           "next_step": {
+            "slot": "next_step",
+            "value": "NS201",
             "content_present": true,
-            "physical_present": true
-          },
-          "discussion_synthesis": {
-            "content_present": true,
-            "physical_present": true
+            "physical_present": true,
+            "actual_text": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext step｜NS201",
+            "status": "pass"
           }
         }
       },

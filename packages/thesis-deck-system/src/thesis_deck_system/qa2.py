@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 import hashlib
+import itertools
+import re
 from PIL import Image, ImageChops, ImageStat
 from datetime import datetime, timezone
 
@@ -15,68 +17,128 @@ PHASE2_PIPELINE = [
 ]
 
 PRESENTATION_ROLE_CONTRACTS = {
-    "hypothesis_title": {"required_fields": ["hypothesis_statement"]},
-    "problem_definition": {"required_fields": ["previous_finding", "unresolved_conflict", "research_question"]},
-    "fishbone_locator": {"required_fields": ["primary_figure", "fishbone_focus"]},
-    "observation_problem": {"required_fields": ["observation_text", "research_question"]},
-    "literature_mechanism": {"required_fields": ["literature_evidence", "mechanism_diagram"]},
-    "mechanism_solution": {"required_fields": ["mechanism_diagram", "strategy"]},
-    "experiment_design": {"required_fields": ["experiment_matrix", "decision_rule"]},
-    "result_single": {"required_fields": ["result_plot"]},
-    "result_comparison": {"required_fields": ["control_panel", "proposed_panel", "result_plot"]},
-    "layer_integrated_discussion": {"required_fields": ["supporting_results", "contradicting_results", "uncertainty"]},
-    "layer_summary_decision": {"required_fields": ["decision_status", "uncertainty", "next_step"]},
-    "hypothesis_transition": {"required_fields": ["transition_nodes", "derivation_strip"]},
-    "progress_todo": {"required_fields": ["commitment_table", "current_position", "parallel_work"]},
+    "hypothesis_title": {"required_fields": {"hypothesis_statement": "hypothesis_statement", "falsifiable_prediction": "hypothesis_statement", "research_question": "hypothesis_statement"}},
+    "problem_definition": {"required_fields": {"previous_finding": "previous_finding", "unresolved_conflict": "unresolved_conflict", "research_question": "research_question"}},
+    "fishbone_locator": {"required_fields": {"historical_snapshot": "fishbone_focus", "current_focus": "fishbone_focus"}},
+    "observation_problem": {"required_fields": {"observation": "observation_text", "research_question": "research_question"}},
+    "literature_mechanism": {"required_fields": {"consensus": "literature_evidence", "disagreement_alternatives": "literature_evidence", "research_gap": "literature_evidence", "implication": "literature_evidence", "mechanism": "mechanism_diagram", "evidence_claim_link": "mechanism_diagram"}},
+    "mechanism_solution": {"required_fields": {"mechanism": "mechanism_diagram", "evidence_claim_link": "mechanism_diagram", "strategy": "strategy", "success_criterion": "strategy"}},
+    "experiment_design": {"required_fields": {"independent_variables": "experiment_matrix", "controlled_variables": "experiment_matrix", "control_baseline": "experiment_matrix", "sample_plan": "experiment_matrix", "replicates": "experiment_matrix", "measured_outputs": "experiment_matrix", "units": "experiment_matrix", "instrumentation_method": "experiment_matrix", "predicted_outcomes": "decision_rule", "decision_rule": "decision_rule"}},
+    "result_single": {"required_fields": {"result_identity": "result_annotation", "result_statement": "result_annotation", "metric_value_uncertainty": "result_annotation"}},
+    "result_comparison": {"required_fields": {"result_identity": "result_annotation", "result_statement": "result_annotation", "metric_value_uncertainty": "result_annotation"}},
+    "layer_integrated_discussion": {"required_fields": {"supporting_results": "supporting_results", "contradicting_results": "contradicting_results", "non_discriminating_results": "contradicting_results", "cross_experiment_pattern": "uncertainty", "mechanism_assessment": "uncertainty", "alternative_explanations": "uncertainty", "remaining_uncertainty": "uncertainty"}},
+    "layer_summary_decision": {"required_fields": {"answered_question": "decision_status", "hypothesis_status": "decision_status", "decision": "decision_status", "unresolved_items": "uncertainty", "next_question": "next_step", "next_step": "next_step"}},
+    "hypothesis_transition": {"required_fields": {"prior_hypothesis": "transition_nodes", "key_prior_results": "transition_nodes", "unresolved_point": "derivation_strip", "precursor_observation": "transition_nodes", "derivation_rationale": "derivation_strip", "new_hypothesis": "transition_nodes"}},
+    "progress_todo": {"required_fields": {"prior_commitment": "commitment_table", "current_position": "current_position", "parallel_work": "parallel_work"}},
 }
 
 
 def _contract_fields(spec: dict, role: str) -> list[str]:
     fields: list[str] = []
     for name in spec.get("combined_roles", [role]):
-        fields.extend(PRESENTATION_ROLE_CONTRACTS.get(name, {}).get("required_fields", []))
-    if set(("layer_integrated_discussion", "layer_summary_decision")) <= set(spec.get("combined_roles", [])):
-        fields.append("discussion_synthesis")
-    if set(("experiment_design", "result_single")) <= set(spec.get("combined_roles", [])):
-        fields.append("result_plot")
+        fields.extend(PRESENTATION_ROLE_CONTRACTS.get(name, {}).get("required_fields", {}))
     return list(dict.fromkeys(fields))
+
+
+def _event_identity(event) -> list[tuple[str, str]]:
+    payload = event.payload
+    identities: list[tuple[str, str]] = []
+    for key, kind in (
+        ("hypothesis_layer_id", "hypothesis_layer"), ("claim_id", "claim"), ("problem_id", "problem"),
+        ("block_id", "block"), ("stage_id", "stage"), ("evidence_id", "evidence"), ("asset_id", "asset"),
+        ("action_item_id", "action"), ("decision_id", "decision"), ("discussion_id", "discussion"),
+        ("summary_id", "summary"), ("transition_id", "transition"),
+    ):
+        if payload.get(key):
+            identities.append((kind, str(payload[key])))
+    if payload.get("fishbone_id") and payload.get("revision") is not None:
+        identities.append(("fishbone", f"{payload['fishbone_id']}@{payload['revision']}"))
+    return identities
+
+
+def _dependency_cursor(events, kind: str, identifier: str, source_cursor: int) -> int | None:
+    candidates = [event.cursor for event in events[:source_cursor] if (kind, identifier) in _event_identity(event)]
+    return candidates[-1] if candidates else None
+
+
+def _resolve_stage_id(state: dict, ref: str | None) -> str | None:
+    if not ref:
+        return None
+    if ref in state.get("stages", {}):
+        return ref
+    candidate = f"ST-{ref}"
+    return candidate if candidate in state.get("stages", {}) else ref
+
+
+def _slide_dependency_refs(spec: dict, state: dict) -> list[tuple[str, str]]:
+    layer_id = spec.get("hypothesis_layer_ref")
+    layer = state.get("hypothesis_layers", {}).get(layer_id, {})
+    role = spec.get("semantic_role")
+    refs: list[tuple[str, str]] = []
+    if layer_id:
+        refs.append(("hypothesis_layer", str(layer_id)))
+    for field, kind in (("claim_refs", "claim"), ("evidence_refs", "evidence"), ("asset_refs", "asset"), ("action_refs", "action"), ("decision_refs", "decision")):
+        refs.extend((kind, str(ref)) for ref in spec.get("bindings", {}).get(field, []))
+    refs.extend(("block", str(item["block_id"])) for item in spec.get("block_refs", []) if item.get("block_id"))
+    block = state.get("blocks", {}).get((layer.get("research_block_refs") or [None])[0], {})
+    stage_refs = block.get("stage_refs", {})
+    object_refs = spec.get("object_ref") if isinstance(spec.get("object_ref"), list) else [spec.get("object_ref")]
+    if role == "problem_definition" and layer.get("problem_ref"):
+        refs.append(("problem", str(layer["problem_ref"])))
+    elif role == "fishbone_locator":
+        fishbone = spec.get("fishbone_snapshot_ref") or layer.get("fishbone_snapshot_ref", {})
+        refs.append(("fishbone", f"{fishbone.get('fishbone_id')}@{fishbone.get('revision')}"))
+    elif role in {"observation_problem", "literature_mechanism", "mechanism_solution"}:
+        names = {"observation_problem": ["observation"], "literature_mechanism": ["literature", "mechanism"], "mechanism_solution": ["mechanism", "solution"]}[role]
+        refs.extend(("stage", str(stage_refs[name])) for name in names if stage_refs.get(name))
+    elif role in {"experiment_design", "result_single", "result_comparison"}:
+        refs.extend(("stage", str(_resolve_stage_id(state, ref))) for ref in object_refs if ref)
+    elif role == "layer_integrated_discussion" and spec.get("object_ref"):
+        refs.append(("discussion", str(spec["object_ref"])))
+    elif role == "layer_summary_decision" and spec.get("object_ref"):
+        refs.append(("summary", str(spec["object_ref"])))
+    elif role == "hypothesis_transition" and spec.get("object_ref"):
+        transition = state.get("hypothesis_transitions", {}).get(spec["object_ref"], {})
+        refs.append(("transition", str(spec["object_ref"])))
+        refs.extend(("claim", str(ref)) for ref in [transition.get("previous_hypothesis_claim_ref"), transition.get("new_hypothesis_claim_ref")] if ref)
+        refs.extend(("stage", str(_resolve_stage_id(state, ref))) for ref in transition.get("key_result_refs", []))
+        refs.extend(("decision", str(ref)) for ref in transition.get("decision_refs", []))
+        refs.extend(("evidence", str(ref)) for ref in transition.get("observation_or_uncertainty_refs", []))
+    return list(dict.fromkeys(refs))
 
 
 def run_presentation_temporal_snapshot_qa(specs: list[dict], ledger) -> dict:
     """Validate per-slide cursors and stage-scoped bindings against replayed state."""
     events = ledger.replay()
-    event_by_id: dict[tuple[str, str], list[int]] = {}
-    for event in events:
-        payload = event.payload
-        for key in ("stage_id", "evidence_id", "asset_id", "action_item_id", "decision_id", "discussion_id", "summary_id", "hypothesis_layer_id", "block_id"):
-            if payload.get(key):
-                event_by_id.setdefault((key, str(payload[key])), []).append(event.cursor)
     findings: list[dict] = []
     rows: list[dict] = []
-    # Compute result-evidence boundaries per hypothesis layer.  A global
-    # minimum (for example H001's E101 cursor) would incorrectly report that
-    # H002's opening snapshot is beyond its allowed boundary even though E101
-    # belongs to the predecessor layer.
+    # Compute result-evidence boundaries per hypothesis layer. A global
+    # minimum would incorrectly apply a predecessor result to a successor.
     final_state = ledger.materialize(len(events))
     layer_by_block = {
         block_ref: layer_id
         for layer_id, layer in final_state.get("hypothesis_layers", {}).items()
         for block_ref in layer.get("research_block_refs", [])
     }
-    result_evidence_cursors_by_layer: dict[str, list[int]] = {}
+    result_evidence_by_layer: dict[str, set[str]] = {}
     for event in events:
-        if event.event_type != "stage_revised" or event.payload.get("stage_type") != "result" or event.payload.get("status") == "pending":
-            continue
-        block_id = event.payload.get("block_ref", {}).get("block_id")
-        layer_id = layer_by_block.get(block_id)
-        if not layer_id:
-            continue
-        for evidence_ref in event.payload.get("evidence_refs", []):
-            result_evidence_cursors_by_layer.setdefault(layer_id, []).extend(event_by_id.get(("evidence_id", evidence_ref), []))
-    # E102 is the pre-result observation used by the opening hypothesis
-    # snapshot. Only evidence cards explicitly produced by result stages are
-    # forbidden from historical Hypothesis/Problem/Fishbone bindings.
-    result_evidence = {"E101", "E201"}
+        payload = event.payload
+        if event.event_type == "evidence_linked" and payload.get("causal_role") == "experiment_result":
+            layer_id = payload.get("origin", {}).get("layer_ref")
+            if layer_id:
+                result_evidence_by_layer.setdefault(str(layer_id), set()).add(str(payload["evidence_id"]))
+        if event.event_type == "stage_revised" and payload.get("stage_type") == "result" and payload.get("status") != "pending":
+            layer_id = layer_by_block.get(payload.get("block_ref", {}).get("block_id"))
+            if layer_id:
+                result_evidence_by_layer.setdefault(layer_id, set()).update(str(ref) for ref in payload.get("evidence_refs", []))
+    evidence_cursor = {
+        str(event.payload["evidence_id"]): event.cursor
+        for event in events if event.event_type == "evidence_linked" and event.payload.get("evidence_id")
+    }
+    result_evidence_cursors_by_layer = {
+        layer_id: sorted(evidence_cursor[ref] for ref in refs if ref in evidence_cursor)
+        for layer_id, refs in result_evidence_by_layer.items()
+    }
     for spec in specs:
         cursor = spec.get("source_cursor")
         state = ledger.materialize(cursor) if isinstance(cursor, int) and 1 <= cursor <= len(events) else {}
@@ -88,38 +150,43 @@ def run_presentation_temporal_snapshot_qa(specs: list[dict], ledger) -> dict:
             for ref in refs.get(field, []):
                 if ref not in state.get(state_key, {}):
                     future.append(f"{field}:{ref}")
-        if role in {"hypothesis_title", "problem_definition", "fishbone_locator"} and set(refs.get("evidence_refs", [])) & result_evidence:
+        layer_result_evidence = result_evidence_by_layer.get(str(layer_id), set())
+        if role in {"hypothesis_title", "problem_definition", "fishbone_locator"} and set(refs.get("evidence_refs", [])) & layer_result_evidence:
             future.append("early_role_binds_result_evidence")
-        if role == "hypothesis_transition":
-            transition_refs = spec.get("object_ref", [])
-            if not isinstance(transition_refs, list):
-                transition_refs = [transition_refs]
-            required_result_cursors = []
-            for ref in transition_refs:
-                if not isinstance(ref, str):
-                    continue
-                transition_event = next((event.payload for event in events if event.event_type == "hypothesis_transition_recorded" and event.payload.get("transition_id") == ref), {})
-                for result_ref in transition_event.get("key_result_refs", []):
-                    required_result_cursors.extend(event_by_id.get(("stage_id", f"ST-{result_ref}"), []))
-            if required_result_cursors and spec.get("source_cursor", 0) < max(required_result_cursors):
-                future.append("transition_before_result")
         stage_cursors = spec.get("stage_source_cursors", {})
         if "experiment_design" in stage_cursors:
             experiment_cursor = int(stage_cursors["experiment_design"])
-            bound_result_evidence = [event_by_id.get(("evidence_id", ref), [10**9])[0] for ref in refs.get("evidence_refs", []) if ref in result_evidence]
+            bound_result_evidence = [evidence_cursor[ref] for ref in refs.get("evidence_refs", []) if ref in layer_result_evidence and ref in evidence_cursor]
             if bound_result_evidence and experiment_cursor >= min(bound_result_evidence):
                 future.append("experiment_stage_after_result_evidence")
         if "result_single" in stage_cursors:
             result_cursor = int(stage_cursors["result_single"])
-            bound_result_cursors = [event_by_id.get(("evidence_id", ref), [0])[0] for ref in refs.get("evidence_refs", []) if ref in result_evidence]
+            bound_result_cursors = [evidence_cursor[ref] for ref in refs.get("evidence_refs", []) if ref in layer_result_evidence and ref in evidence_cursor]
             if bound_result_cursors and result_cursor < max(bound_result_cursors):
                 future.append("result_stage_before_result_evidence")
-        layer = state.get("hypothesis_layers", {}).get(layer_id, {}) if layer_id else {}
-        earliest = min((event_by_id.get(("hypothesis_layer_id", layer_id), [cursor or 0]) or [cursor or 0])) if layer_id else cursor
+        dependencies = []
+        for dependency_type, dependency_ref in _slide_dependency_refs(spec, state):
+            dependency_cursor = _dependency_cursor(events, dependency_type, dependency_ref, int(cursor or 0))
+            dependencies.append({"dependency_type": dependency_type, "dependency_ref": dependency_ref, "cursor": dependency_cursor})
+            if dependency_cursor is None:
+                future.append(f"missing_dependency:{dependency_type}:{dependency_ref}")
+        earliest = max((item["cursor"] for item in dependencies if item["cursor"] is not None), default=cursor)
+        if isinstance(cursor, int) and earliest is not None and cursor < earliest:
+            future.append("source_cursor_before_earliest_required")
         latest_allowed = None
         if role in {"hypothesis_title", "problem_definition", "fishbone_locator"}:
-            latest_allowed = min(result_evidence_cursors_by_layer.get(layer_id, []), default=None)
-        row = {"slide_id": spec.get("slide_id"), "semantic_role": role, "source_cursor": cursor, "stage_source_cursors": stage_cursors, "bound_claim_refs": refs.get("claim_refs", []), "bound_evidence_refs": refs.get("evidence_refs", []), "bound_asset_refs": refs.get("asset_refs", []), "bound_action_refs": refs.get("action_refs", []), "bound_decision_refs": refs.get("decision_refs", []), "earliest_required_cursor": earliest, "latest_allowed_cursor": latest_allowed, "future_ref_findings": future, "status": "fail" if future else "pass"}
+            boundary = min(result_evidence_cursors_by_layer.get(str(layer_id), []), default=None)
+            latest_allowed = boundary - 1 if boundary is not None else None
+            if boundary is not None and isinstance(cursor, int) and cursor >= boundary:
+                future.append("opening_not_strictly_before_result_evidence")
+        if role == "hypothesis_transition":
+            transition = state.get("hypothesis_transitions", {}).get(spec.get("object_ref"), {})
+            successor = transition.get("to_layer_ref")
+            boundary = min(result_evidence_cursors_by_layer.get(str(successor), []), default=None)
+            latest_allowed = boundary - 1 if boundary is not None else None
+            if boundary is not None and isinstance(cursor, int) and cursor >= boundary:
+                future.append("transition_not_before_successor_result_evidence")
+        row = {"slide_id": spec.get("slide_id"), "layer_id": layer_id, "semantic_role": role, "source_cursor": cursor, "stage_source_cursors": stage_cursors, "dependency_refs": dependencies, "bound_claim_refs": refs.get("claim_refs", []), "bound_evidence_refs": refs.get("evidence_refs", []), "bound_asset_refs": refs.get("asset_refs", []), "bound_action_refs": refs.get("action_refs", []), "bound_decision_refs": refs.get("decision_refs", []), "earliest_required_cursor": earliest, "latest_allowed_cursor": latest_allowed, "strict_result_boundary_cursor": None if latest_allowed is None else latest_allowed + 1, "future_ref_findings": list(dict.fromkeys(future)), "status": "fail" if future else "pass"}
         rows.append(row)
         if future:
             findings.append({"slide_id": spec.get("slide_id"), "findings": future})
@@ -134,8 +201,8 @@ def run_combined_role_content_qa(specs: list[dict], structural_audit: dict) -> d
     for spec in specs:
         roles = spec.get("combined_roles", [spec.get("semantic_role")])
         unknown_roles = [role for role in roles if role not in PRESENTATION_ROLE_CONTRACTS]
-        fields = _contract_fields(spec, spec.get("semantic_role", ""))
         slots = spec.get("content", {}).get("slots", {})
+        semantic_fields = spec.get("content", {}).get("semantic_fields", {})
         audit_slots = {item.get("slot"): item for item in generated.get(spec.get("slide_id"), {}).get("physical_slot_conformance", [])}
         coverage = {}
         role_coverage = {}
@@ -143,22 +210,21 @@ def run_combined_role_content_qa(specs: list[dict], structural_audit: dict) -> d
         if unknown_roles:
             missing.extend(f"unknown_role:{role}" for role in unknown_roles)
         for role_name in roles:
-            role_fields = list(PRESENTATION_ROLE_CONTRACTS.get(role_name, {}).get("required_fields", []))
-            if role_name == "layer_summary_decision" and "layer_integrated_discussion" in roles:
-                role_fields.extend(["discussion_synthesis"])
-            if role_name == "result_single" and "experiment_design" in roles:
-                role_fields.extend(["result_plot"])
-            role_coverage[role_name] = {
-                field: {"content_present": bool(str(slots.get(field, "")).strip()), "physical_present": bool(audit_slots.get(field, {}).get("content_or_asset_binding_result", False))}
-                for field in dict.fromkeys(role_fields)
-            }
-        for field in fields:
-            value_present = bool(str(slots.get(field, "")).strip())
-            physical = audit_slots.get(field, {}).get("content_or_asset_binding_result", False)
-            coverage[field] = {"content_present": value_present, "physical_present": physical, "status": "pass" if value_present and physical else "fail"}
-            if not value_present or not physical:
-                missing.append(field)
-        row = {"slide_id": spec.get("slide_id"), "roles": roles, "required_fields": fields, "coverage": coverage, "role_coverage": role_coverage, "missing": missing, "status": "fail" if missing else "pass"}
+            field_slots = PRESENTATION_ROLE_CONTRACTS.get(role_name, {}).get("required_fields", {})
+            role_values = semantic_fields.get(role_name, {})
+            role_coverage[role_name] = {}
+            for field, slot_name in field_slots.items():
+                value = str(role_values.get(field, "")).strip()
+                audit_slot = audit_slots.get(slot_name, {})
+                actual_text = str(audit_slot.get("actual_text", ""))
+                tokens = [token.casefold() for token in re.findall(r"[A-Za-z0-9%/]+|[\u3400-\u9fff]+", value) if token]
+                physical = bool(audit_slot.get("content_or_asset_binding_result", False)) and bool(actual_text.strip()) and all(token in actual_text.casefold() for token in tokens)
+                detail = {"slot": slot_name, "value": value, "content_present": bool(value), "physical_present": physical, "actual_text": actual_text, "status": "pass" if value and physical else "fail"}
+                role_coverage[role_name][field] = detail
+                coverage[f"{role_name}.{field}"] = detail
+                if not value or not physical:
+                    missing.append(f"{role_name}.{field}")
+        row = {"slide_id": spec.get("slide_id"), "roles": roles, "required_fields": list(coverage), "coverage": coverage, "role_coverage": role_coverage, "missing": missing, "status": "fail" if missing else "pass"}
         rows.append(row)
         if missing:
             findings.append({"slide_id": spec.get("slide_id"), "missing": missing})
@@ -198,12 +264,21 @@ def run_physical_content_fidelity_qa(specs: list[dict], structural_audit: dict, 
     return {"schema_version": "1.0.0", "status": "fail" if findings else "pass", "results": results, "findings": findings, "missing": findings}
 
 
-def run_presentation_semantic_fidelity_qa(specs: list[dict], structural_audit: dict, temporal: dict, combined: dict, fidelity: dict) -> dict:
+def run_presentation_semantic_fidelity_qa(specs: list[dict], structural_audit: dict, temporal: dict, combined: dict, fidelity: dict, *, ledger=None) -> dict:
     """Own the post-assembly semantic gate consumed by Professor QA."""
     findings: list[dict] = []
-    if temporal.get("status") != "pass": findings.append({"rule": "temporal_snapshots", "status": "fail"})
-    if combined.get("status") != "pass": findings.append({"rule": "combined_role_content", "status": "fail"})
-    if fidelity.get("status") != "pass": findings.append({"rule": "physical_content_fidelity", "status": "fail"})
+    evidence: dict[str, object] = {}
+    executed_checks: list[str] = []
+
+    def own(check_id: str, passed: bool, detail) -> None:
+        executed_checks.append(check_id)
+        evidence[check_id] = {"status": "pass" if passed else "fail", "detail": detail}
+        if not passed:
+            findings.append({"rule": check_id, "status": "fail", "evidence": detail})
+
+    own("temporal_snapshot_correctness", temporal.get("status") == "pass", temporal.get("findings", []))
+    own("combined_role_field_completeness", combined.get("status") == "pass", combined.get("findings", []))
+    own("physical_text_asset_fidelity", fidelity.get("status") == "pass", fidelity.get("findings", []))
     generated = {item.get("slide_spec_id"): item for item in structural_audit.get("generated_slides", [])}
     for spec in specs:
         audit = generated.get(spec.get("slide_id"), {})
@@ -219,13 +294,74 @@ def run_presentation_semantic_fidelity_qa(specs: list[dict], structural_audit: d
         if layer:
             by_layer.setdefault(layer, set()).update(spec.get("combined_roles", [spec.get("semantic_role")]))
     required = {"hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem", "literature_mechanism", "experiment_design", "layer_integrated_discussion", "layer_summary_decision"}
-    for layer, roles in by_layer.items():
-        if not required <= roles:
-            findings.append({"rule": "layer_scientific_method_visibility", "layer": layer, "missing": sorted(required - roles)})
+    own("hypothesis_problem_separation", all("hypothesis_title" in roles and "problem_definition" in roles and not any({"hypothesis_title", "problem_definition"} <= set(spec.get("combined_roles", [])) for spec in specs if spec.get("hypothesis_layer_ref") == layer) for layer, roles in by_layer.items()), {layer: sorted(roles) for layer, roles in by_layer.items()})
+    own("scientific_method_audience_visibility", all(required <= roles for roles in by_layer.values()), {layer: sorted(required - roles) for layer, roles in by_layer.items()})
+    ordered_by_layer = {layer: [spec for spec in specs if spec.get("hypothesis_layer_ref") == layer] for layer in by_layer}
+    result_order = {}
+    discussion_order = {}
+    summary_order = {}
+    for layer, layer_specs in ordered_by_layer.items():
+        result_positions = [specs.index(spec) for spec in layer_specs if set(spec.get("combined_roles", [spec.get("semantic_role")])) & {"result_single", "result_comparison"}]
+        discussion_positions = [specs.index(spec) for spec in layer_specs if "layer_integrated_discussion" in spec.get("combined_roles", [spec.get("semantic_role")])]
+        summary_positions = [specs.index(spec) for spec in layer_specs if "layer_summary_decision" in spec.get("combined_roles", [spec.get("semantic_role")])]
+        result_order[layer] = result_positions
+        discussion_order[layer] = discussion_positions
+        summary_order[layer] = summary_positions
+    own("result_before_integrated_discussion", all(results and discussions and max(results) <= min(discussions) for layer in by_layer for results, discussions in [(result_order[layer], discussion_order[layer])]), {"results": result_order, "discussions": discussion_order})
+    own("all_required_results_before_discussion", all(len(result_order[layer]) == len({str(ref) for spec in ordered_by_layer[layer] for ref in (spec.get("object_ref") if isinstance(spec.get("object_ref"), list) else [spec.get("object_ref")]) if str(ref).startswith("RES")}) and max(result_order[layer]) <= min(discussion_order[layer]) for layer in by_layer), {"results": result_order, "discussions": discussion_order})
+    own("discussion_before_summary", all(discussion_order[layer] and summary_order[layer] and max(discussion_order[layer]) <= min(summary_order[layer]) for layer in by_layer), {"discussions": discussion_order, "summaries": summary_order})
+    fishbone_evidence = []
+    fishbone_ok = True
+    if ledger is None:
+        fishbone_ok = False
+        fishbone_evidence.append("ledger unavailable")
+    else:
+        for spec in [item for item in specs if item.get("semantic_role") == "fishbone_locator"]:
+            state = ledger.materialize(spec["source_cursor"])
+            layer = state.get("hypothesis_layers", {}).get(spec.get("hypothesis_layer_ref"), {})
+            ok = spec.get("fishbone_snapshot_ref") == layer.get("fishbone_snapshot_ref") and spec.get("fishbone_focus_refs") == layer.get("fishbone_focus_refs")
+            fishbone_ok &= ok
+            fishbone_evidence.append({"slide_id": spec.get("slide_id"), "expected": layer.get("fishbone_snapshot_ref"), "actual": spec.get("fishbone_snapshot_ref"), "focus": spec.get("fishbone_focus_refs"), "status": "pass" if ok else "fail"})
+    own("historical_fishbone_binding", fishbone_ok, fishbone_evidence)
     results = [item for item in fidelity.get("results", []) if item.get("result_ref")]
-    if len(results) >= 2 and results[0].get("extracted_text") == results[1].get("extracted_text"):
-        findings.append({"rule": "result_distinction", "status": "fail"})
-    return {"schema_version": "1.0.0", "status": "fail" if findings else "pass", "executed_checks": ["temporal_snapshot", "combined_role_contract", "physical_content_fidelity", "hypothesis_problem_separation", "scientific_method_visibility", "result_distinction", "discussion_after_results", "summary_after_discussion", "historical_fishbone"], "findings": findings, "temporal_snapshot_status": temporal.get("status"), "combined_role_status": combined.get("status"), "physical_fidelity_status": fidelity.get("status")}
+    distinction_evidence = []
+    render_missing = False
+    distinction_ok = True
+    for left, right in itertools.combinations(results, 2):
+        if left.get("expected_text") == right.get("expected_text"):
+            continue
+        render_missing |= not left.get("render_sha256") or not right.get("render_sha256")
+        pair_ok = bool(left.get("extracted_text") != right.get("extracted_text") and left.get("render_sha256") and right.get("render_sha256") and left.get("render_sha256") != right.get("render_sha256"))
+        distinction_ok &= pair_ok
+        distinction_evidence.append({"left": left.get("result_ref"), "right": right.get("result_ref"), "left_render_sha256": left.get("render_sha256"), "right_render_sha256": right.get("render_sha256"), "status": "pass" if pair_ok else "fail"})
+    own("visible_result_distinction", distinction_ok and bool(distinction_evidence) and not render_missing, distinction_evidence)
+    transition_evidence = []
+    transition_ok = True
+    transitions = [spec for spec in specs if spec.get("semantic_role") == "hypothesis_transition"]
+    for transition_spec in transitions:
+        index = specs.index(transition_spec)
+        from_layer = transition_spec.get("hypothesis_layer_ref")
+        next_layer = next((spec.get("hypothesis_layer_ref") for spec in specs[index + 1 :] if spec.get("hypothesis_layer_ref") != from_layer), None)
+        prior_summary = any("layer_summary_decision" in spec.get("combined_roles", [spec.get("semantic_role")]) and spec.get("hypothesis_layer_ref") == from_layer for spec in specs[:index])
+        state = ledger.materialize(transition_spec["source_cursor"]) if ledger is not None else {}
+        transition = state.get("hypothesis_transitions", {}).get(transition_spec.get("object_ref"), {})
+        ok = prior_summary and transition.get("from_layer_ref") == from_layer and transition.get("to_layer_ref") == next_layer
+        transition_ok &= ok
+        transition_evidence.append({"transition_id": transition_spec.get("object_ref"), "from_layer": from_layer, "to_layer": next_layer, "prior_summary": prior_summary, "status": "pass" if ok else "fail"})
+    own("transition_location_provenance", transition_ok and bool(transitions), transition_evidence)
+    status = "blocked_render_evidence" if render_missing and not [item for item in findings if item.get("rule") != "visible_result_distinction"] else "fail" if findings else "pass"
+    return {"schema_version": "1.0.0", "status": status, "executed_checks": executed_checks, "check_evidence": evidence, "result_objects_checked": [item.get("result_ref") for item in results], "findings": findings, "temporal_snapshot_status": temporal.get("status"), "combined_role_status": combined.get("status"), "physical_fidelity_status": fidelity.get("status")}
+
+
+def run_report_evidence_consistency(canonical_facts: dict, reported_facts: dict) -> dict:
+    """Compare every canonical report fact; omission is a mismatch, not PASS."""
+    required = sorted(canonical_facts)
+    mismatches = {
+        key: {"canonical": canonical_facts.get(key), "reported": reported_facts.get(key, "<omitted>")}
+        for key in required
+        if key not in reported_facts or reported_facts.get(key) != canonical_facts.get(key)
+    }
+    return {"schema_version": "1.0.0", "status": "fail" if mismatches else "pass", **canonical_facts, "required_fields": required, "canonical_facts": canonical_facts, "reported_facts": reported_facts, "mismatches": mismatches}
 
 
 def run_professor_qa_v2(profile: dict, projection: dict) -> dict:

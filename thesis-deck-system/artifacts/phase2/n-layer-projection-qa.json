@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "ordered_layer_ids": [
+    "H001",
+    "H002",
+    "H003"
+  ],
+  "emitted_layer_ids": [
+    "H001",
+    "H002",
+    "H003"
+  ],
+  "emitted_transition_ids": [
+    "TR-H001-H002",
+    "TR-H002-H003"
+  ],
+  "per_layer": {
+    "H001": {
+      "slide_count": 12,
+      "roles": [
+        "hypothesis_title",
+        "problem_definition",
+        "fishbone_locator",
+        "observation_problem",
+        "literature_mechanism",
+        "experiment_design",
+        "experiment_design",
+        "result_single",
+        "result_single",
+        "layer_integrated_discussion",
+        "layer_summary_decision",
+        "hypothesis_transition"
+      ]
+    },
+    "H002": {
+      "slide_count": 10,
+      "roles": [
+        "hypothesis_title",
+        "problem_definition",
+        "fishbone_locator",
+        "observation_problem",
+        "literature_mechanism",
+        "experiment_design",
+        "result_single",
+        "layer_integrated_discussion",
+        "layer_summary_decision",
+        "hypothesis_transition"
+      ]
+    },
+    "H003": {
+      "slide_count": 9,
+      "roles": [
+        "hypothesis_title",
+        "problem_definition",
+        "fishbone_locator",
+        "observation_problem",
+        "literature_mechanism",
+        "experiment_design",
+        "result_single",
+        "layer_integrated_discussion",
+        "layer_summary_decision"
+      ]
+    }
+  },
+  "skipped_layers": [],
+  "literal_id_dependency_scan": {},
+  "build_proof": {
+    "slide_spec_count": 26,
+    "layout_plan_count": 26,
+    "pptx_path": "n-layer-acceptance-deck.pptx",
+    "physical_pptx_page_count": 28,
+    "structural_status": "pass"
+  },
+  "status": "pass"
+}

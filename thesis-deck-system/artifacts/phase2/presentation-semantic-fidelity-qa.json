@@ -2,15 +2,210 @@
   "schema_version": "1.0.0",
   "status": "pass",
   "executed_checks": [
-    "temporal_snapshot",
-    "combined_role_contract",
-    "physical_content_fidelity",
+    "temporal_snapshot_correctness",
+    "combined_role_field_completeness",
+    "physical_text_asset_fidelity",
     "hypothesis_problem_separation",
-    "scientific_method_visibility",
-    "result_distinction",
-    "discussion_after_results",
-    "summary_after_discussion",
-    "historical_fishbone"
+    "scientific_method_audience_visibility",
+    "result_before_integrated_discussion",
+    "all_required_results_before_discussion",
+    "discussion_before_summary",
+    "historical_fishbone_binding",
+    "visible_result_distinction",
+    "transition_location_provenance"
+  ],
+  "check_evidence": {
+    "temporal_snapshot_correctness": {
+      "status": "pass",
+      "detail": []
+    },
+    "combined_role_field_completeness": {
+      "status": "pass",
+      "detail": []
+    },
+    "physical_text_asset_fidelity": {
+      "status": "pass",
+      "detail": []
+    },
+    "hypothesis_problem_separation": {
+      "status": "pass",
+      "detail": {
+        "H001": [
+          "experiment_design",
+          "fishbone_locator",
+          "hypothesis_title",
+          "hypothesis_transition",
+          "layer_integrated_discussion",
+          "layer_summary_decision",
+          "literature_mechanism",
+          "observation_problem",
+          "problem_definition",
+          "result_single"
+        ],
+        "H002": [
+          "experiment_design",
+          "fishbone_locator",
+          "hypothesis_title",
+          "layer_integrated_discussion",
+          "layer_summary_decision",
+          "literature_mechanism",
+          "mechanism_solution",
+          "observation_problem",
+          "problem_definition",
+          "result_single"
+        ]
+      }
+    },
+    "scientific_method_audience_visibility": {
+      "status": "pass",
+      "detail": {
+        "H001": [],
+        "H002": []
+      }
+    },
+    "result_before_integrated_discussion": {
+      "status": "pass",
+      "detail": {
+        "results": {
+          "H001": [
+            8,
+            9
+          ],
+          "H002": [
+            17
+          ]
+        },
+        "discussions": {
+          "H001": [
+            10
+          ],
+          "H002": [
+            18
+          ]
+        }
+      }
+    },
+    "all_required_results_before_discussion": {
+      "status": "pass",
+      "detail": {
+        "results": {
+          "H001": [
+            8,
+            9
+          ],
+          "H002": [
+            17
+          ]
+        },
+        "discussions": {
+          "H001": [
+            10
+          ],
+          "H002": [
+            18
+          ]
+        }
+      }
+    },
+    "discussion_before_summary": {
+      "status": "pass",
+      "detail": {
+        "discussions": {
+          "H001": [
+            10
+          ],
+          "H002": [
+            18
+          ]
+        },
+        "summaries": {
+          "H001": [
+            11
+          ],
+          "H002": [
+            18
+          ]
+        }
+      }
+    },
+    "historical_fishbone_binding": {
+      "status": "pass",
+      "detail": [
+        {
+          "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+          "expected": {
+            "fishbone_id": "FB001",
+            "revision": 1
+          },
+          "actual": {
+            "fishbone_id": "FB001",
+            "revision": 1
+          },
+          "focus": [
+            "FB-MATERIAL-HYDRATION"
+          ],
+          "status": "pass"
+        },
+        {
+          "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+          "expected": {
+            "fishbone_id": "FB001",
+            "revision": 2
+          },
+          "actual": {
+            "fishbone_id": "FB001",
+            "revision": 2
+          },
+          "focus": [
+            "FB-ELECTRODE-CONTACT"
+          ],
+          "status": "pass"
+        }
+      ]
+    },
+    "visible_result_distinction": {
+      "status": "pass",
+      "detail": [
+        {
+          "left": "RES101",
+          "right": "RES102",
+          "left_render_sha256": "1e064066dcde182328b1df0c21bc2dff3088ecdc1b0ccf34b2cece4a9b76a010",
+          "right_render_sha256": "7ca351dd7d8dca10f466f2c88979978558be80a0e4cdd7016a13ea5de4064ac6",
+          "status": "pass"
+        },
+        {
+          "left": "RES101",
+          "right": "RES201",
+          "left_render_sha256": "1e064066dcde182328b1df0c21bc2dff3088ecdc1b0ccf34b2cece4a9b76a010",
+          "right_render_sha256": "d9a7e458a4fe74c2e666ecc9491fb797c9da780a9c060f7ab1117eac0d148f5b",
+          "status": "pass"
+        },
+        {
+          "left": "RES102",
+          "right": "RES201",
+          "left_render_sha256": "7ca351dd7d8dca10f466f2c88979978558be80a0e4cdd7016a13ea5de4064ac6",
+          "right_render_sha256": "d9a7e458a4fe74c2e666ecc9491fb797c9da780a9c060f7ab1117eac0d148f5b",
+          "status": "pass"
+        }
+      ]
+    },
+    "transition_location_provenance": {
+      "status": "pass",
+      "detail": [
+        {
+          "transition_id": "TR-H001-H002",
+          "from_layer": "H001",
+          "to_layer": "H002",
+          "prior_summary": true,
+          "status": "pass"
+        }
+      ]
+    }
+  },
+  "result_objects_checked": [
+    "RES101",
+    "RES102",
+    "RES201"
   ],
   "findings": [],
   "temporal_snapshot_status": "pass",

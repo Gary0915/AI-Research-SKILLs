@@ -1,8 +1,15 @@
 {
-  "slide_count": 21,
-  "slide_xml_count": 21,
+  "slide_count": 28,
+  "slide_xml_count": 28,
   "has_editable_text": true,
   "editable_text_per_slide": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
     true,
     true,
     true,
@@ -26,7 +33,7 @@
     true
   ],
   "orphan_parts": [],
-  "xml_parts": 62,
+  "xml_parts": 76,
   "masters": 1,
   "layouts": 11,
   "content_types_present": true,
@@ -52,13 +59,22 @@
     273,
     274,
     275,
-    276
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283
   ],
   "media_parts": [
     "ppt/media/A002.svg",
     "ppt/media/A101.svg",
     "ppt/media/A102.svg",
     "ppt/media/A201.svg",
+    "ppt/media/A301.svg",
+    "ppt/media/A302.svg",
     "ppt/media/image1.png",
     "ppt/media/image2.png",
     "ppt/media/image3.png",
@@ -79,6 +95,13 @@
     "ppt/notesSlides/_rels/notesSlide18.xml.rels",
     "ppt/notesSlides/_rels/notesSlide19.xml.rels",
     "ppt/notesSlides/_rels/notesSlide2.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide20.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide21.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide22.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide23.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide24.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide25.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide26.xml.rels",
     "ppt/notesSlides/_rels/notesSlide3.xml.rels",
     "ppt/notesSlides/_rels/notesSlide4.xml.rels",
     "ppt/notesSlides/_rels/notesSlide5.xml.rels",
@@ -98,6 +121,13 @@
     "ppt/notesSlides/notesSlide18.xml",
     "ppt/notesSlides/notesSlide19.xml",
     "ppt/notesSlides/notesSlide2.xml",
+    "ppt/notesSlides/notesSlide20.xml",
+    "ppt/notesSlides/notesSlide21.xml",
+    "ppt/notesSlides/notesSlide22.xml",
+    "ppt/notesSlides/notesSlide23.xml",
+    "ppt/notesSlides/notesSlide24.xml",
+    "ppt/notesSlides/notesSlide25.xml",
+    "ppt/notesSlides/notesSlide26.xml",
     "ppt/notesSlides/notesSlide3.xml",
     "ppt/notesSlides/notesSlide4.xml",
     "ppt/notesSlides/notesSlide5.xml",
@@ -150,6 +180,20 @@
       "content_type": "image/svg+xml",
       "referenced_in_slide": true,
       "asset_id": "A201"
+    },
+    {
+      "relationship_id": "rId99",
+      "target": "ppt/media/A302.svg",
+      "content_type": "image/svg+xml",
+      "referenced_in_slide": true,
+      "asset_id": "A302"
+    },
+    {
+      "relationship_id": "rId99",
+      "target": "ppt/media/A301.svg",
+      "content_type": "image/svg+xml",
+      "referenced_in_slide": true,
+      "asset_id": "A301"
     }
   ],
   "slide_relationships": [
@@ -712,6 +756,296 @@
       "svg_relationships": []
     },
     {
+      "slide_part": "ppt/slides/slide22.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/notesSlides/notesSlide20.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId2",
+        "target": "ppt/notesSlides/notesSlide20.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": []
+    },
+    {
+      "slide_part": "ppt/slides/slide23.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/notesSlides/notesSlide21.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId2",
+        "target": "ppt/notesSlides/notesSlide21.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": []
+    },
+    {
+      "slide_part": "ppt/slides/slide24.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/notesSlides/notesSlide22.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId2",
+        "target": "ppt/notesSlides/notesSlide22.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": []
+    },
+    {
+      "slide_part": "ppt/slides/slide25.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/media/image4.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId3",
+          "target": "ppt/notesSlides/notesSlide23.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A302.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId3",
+        "target": "ppt/notesSlides/notesSlide23.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": [
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A302.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ]
+    },
+    {
+      "slide_part": "ppt/slides/slide26.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/notesSlides/notesSlide24.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId2",
+        "target": "ppt/notesSlides/notesSlide24.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": []
+    },
+    {
+      "slide_part": "ppt/slides/slide27.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/media/image5.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId3",
+          "target": "ppt/notesSlides/notesSlide25.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A301.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId3",
+        "target": "ppt/notesSlides/notesSlide25.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": [
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A301.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ]
+    },
+    {
+      "slide_part": "ppt/slides/slide28.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/notesSlides/notesSlide26.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId2",
+        "target": "ppt/notesSlides/notesSlide26.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": []
+    },
+    {
       "slide_part": "ppt/slides/slide3.xml",
       "relationships": [
         {
@@ -1041,8 +1375,8 @@
             "width": 7.0,
             "height": 3.75
           },
-          "actual_text": "Commitment｜NS101; NS201",
-          "expected_text": "Commitment｜NS101; NS201",
+          "actual_text": "Commitment｜NS101; NS201; NS301",
+          "expected_text": "Commitment｜NS101; NS201; NS301",
           "expected_asset_id": null,
           "asset_relationship": false,
           "geometry_tolerance_result": true,
@@ -1066,8 +1400,8 @@
             "width": 4.4,
             "height": 1.7
           },
-          "actual_text": "Current｜H002",
-          "expected_text": "Current｜H002",
+          "actual_text": "Current｜H003",
+          "expected_text": "Current｜H003",
           "expected_asset_id": null,
           "asset_relationship": false,
           "geometry_tolerance_result": true,
@@ -1091,8 +1425,8 @@
             "width": 4.4,
             "height": 1.75
           },
-          "actual_text": "Parallel｜interface-mechanism; interface-mechanism",
-          "expected_text": "Parallel｜interface-mechanism; interface-mechanism",
+          "actual_text": "Parallel｜interface-mechanism; interface-mechanism; interface-mechanism",
+          "expected_text": "Parallel｜interface-mechanism; interface-mechanism; interface-mechanism",
           "expected_asset_id": null,
           "asset_relationship": false,
           "geometry_tolerance_result": true,
@@ -1103,11 +1437,13 @@
       "notes_relationship_target": "ppt/notesSlides/notesSlide1.xml",
       "note_source_refs": [
         "E101",
-        "E201"
+        "E201",
+        "E301"
       ],
       "expected_note_source_refs": [
         "E101",
-        "E201"
+        "E201",
+        "E301"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -3096,11 +3432,901 @@
       "media_refs": [],
       "svg_asset_relationships": [],
       "editable_text": true
+    },
+    {
+      "slide_spec_id": "S-H002-HYPOTHESIS-TRANSITION-10",
+      "generated_slide_id": 277,
+      "slide_part": "ppt/slides/slide22.xml",
+      "layout_relationship_id": "rId1",
+      "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "actual_layout_index": 1,
+      "master_relationship_id": "rId1",
+      "actual_master_part": "ppt/slideMasters/slideMaster1.xml",
+      "expected_semantic_role": "content_academic",
+      "expected_layout_index": 1,
+      "expected_layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "expected_master_path": "ppt/slideMasters/slideMaster1.xml",
+      "layout_master_role_match": true,
+      "governed_geometry_match": true,
+      "governed_slot_matches": {
+        "transition_nodes": true,
+        "derivation_strip": true
+      },
+      "physical_slot_conformance": [
+        {
+          "slot": "transition_nodes",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.55,
+            "width": 11.75,
+            "height": 2.7
+          },
+          "actual_shape_identity": "tds-slot:transition_nodes",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.55,
+            "width": 11.75,
+            "height": 2.7
+          },
+          "actual_text": "Prior H｜C201\nKey results｜RES201\nPrecursor｜E304\nNew H｜C301",
+          "expected_text": "Prior H｜C201\nKey results｜RES201\nPrecursor｜E304\nNew H｜C301",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "derivation_strip",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 4.55,
+            "width": 11.75,
+            "height": 0.8
+          },
+          "actual_shape_identity": "tds-slot:derivation_strip",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 4.55,
+            "width": 11.75,
+            "height": 0.7999999999999998
+          },
+          "actual_text": "Unresolved｜Cycling durability remains unknown.\nRationale｜The pressure result resolves the static interface mechanism but not cyclic stability.",
+          "expected_text": "Unresolved｜Cycling durability remains unknown.\nRationale｜The pressure result resolves the static interface mechanism but not cyclic stability.",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide20.xml",
+      "note_source_refs": [
+        "E201",
+        "E304"
+      ],
+      "expected_note_source_refs": [
+        "E201",
+        "E304"
+      ],
+      "notes_source_match": true,
+      "media_refs": [],
+      "svg_asset_relationships": [],
+      "editable_text": true
+    },
+    {
+      "slide_spec_id": "S-H003-HYPOTHESIS-TITLE-01",
+      "generated_slide_id": 278,
+      "slide_part": "ppt/slides/slide23.xml",
+      "layout_relationship_id": "rId1",
+      "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "actual_layout_index": 1,
+      "master_relationship_id": "rId1",
+      "actual_master_part": "ppt/slideMasters/slideMaster1.xml",
+      "expected_semantic_role": "content_academic",
+      "expected_layout_index": 1,
+      "expected_layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "expected_master_path": "ppt/slideMasters/slideMaster1.xml",
+      "layout_master_role_match": true,
+      "governed_geometry_match": true,
+      "governed_slot_matches": {
+        "hypothesis_statement": true
+      },
+      "physical_slot_conformance": [
+        {
+          "slot": "hypothesis_statement",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 11.7,
+            "height": 2.35
+          },
+          "actual_shape_identity": "tds-slot:hypothesis_statement",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 11.7,
+            "height": 2.35
+          },
+          "actual_text": "Hypothesis｜Cycling history controls the remaining interface instability.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜Does cyclic loading explain the remaining instability?",
+          "expected_text": "Hypothesis｜Cycling history controls the remaining interface instability.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜Does cyclic loading explain the remaining instability?",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide21.xml",
+      "note_source_refs": [
+        "E302"
+      ],
+      "expected_note_source_refs": [
+        "E302"
+      ],
+      "notes_source_match": true,
+      "media_refs": [],
+      "svg_asset_relationships": [],
+      "editable_text": true
+    },
+    {
+      "slide_spec_id": "S-H003-PROBLEM-DEFINITION-02",
+      "generated_slide_id": 279,
+      "slide_part": "ppt/slides/slide24.xml",
+      "layout_relationship_id": "rId1",
+      "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "actual_layout_index": 1,
+      "master_relationship_id": "rId1",
+      "actual_master_part": "ppt/slideMasters/slideMaster1.xml",
+      "expected_semantic_role": "content_academic",
+      "expected_layout_index": 1,
+      "expected_layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "expected_master_path": "ppt/slideMasters/slideMaster1.xml",
+      "layout_master_role_match": true,
+      "governed_geometry_match": true,
+      "governed_slot_matches": {
+        "previous_finding": true,
+        "unresolved_conflict": true,
+        "research_question": true
+      },
+      "physical_slot_conformance": [
+        {
+          "slot": "previous_finding",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:previous_finding",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.7500000000000002
+          },
+          "actual_text": "Prior｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+          "expected_text": "Prior｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "unresolved_conflict",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 4.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:unresolved_conflict",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 4.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.7500000000000002
+          },
+          "actual_text": "Conflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。",
+          "expected_text": "Conflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "research_question",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 8.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:research_question",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 8.8,
+            "top": 1.45,
+            "width": 3.6999999999999993,
+            "height": 1.7500000000000002
+          },
+          "actual_text": "Question｜Does cyclic loading explain the remaining instability?",
+          "expected_text": "Question｜Does cyclic loading explain the remaining instability?",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide22.xml",
+      "note_source_refs": [
+        "E204"
+      ],
+      "expected_note_source_refs": [
+        "E204"
+      ],
+      "notes_source_match": true,
+      "media_refs": [],
+      "svg_asset_relationships": [],
+      "editable_text": true
+    },
+    {
+      "slide_spec_id": "S-H003-FISHBONE-LOCATOR-03",
+      "generated_slide_id": 280,
+      "slide_part": "ppt/slides/slide25.xml",
+      "layout_relationship_id": "rId1",
+      "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "actual_layout_index": 1,
+      "master_relationship_id": "rId1",
+      "actual_master_part": "ppt/slideMasters/slideMaster1.xml",
+      "expected_semantic_role": "content_academic",
+      "expected_layout_index": 1,
+      "expected_layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "expected_master_path": "ppt/slideMasters/slideMaster1.xml",
+      "layout_master_role_match": true,
+      "governed_geometry_match": true,
+      "governed_slot_matches": {
+        "primary_figure": true,
+        "fishbone_focus": true
+      },
+      "physical_slot_conformance": [
+        {
+          "slot": "primary_figure",
+          "composition": "asset_only",
+          "planned_geometry": {
+            "left": 4.25,
+            "top": 1.35,
+            "width": 8.35,
+            "height": 4.9
+          },
+          "actual_shape_identity": "tds-slot:primary_figure",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 4.25,
+            "top": 1.35,
+            "width": 8.35,
+            "height": 4.9
+          },
+          "actual_text": "",
+          "expected_text": "Historical fishbone SVG bound by Asset Manifest.",
+          "expected_asset_id": "A302",
+          "asset_relationship": true,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "fishbone_focus",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 3.0,
+            "height": 1.4
+          },
+          "actual_shape_identity": "tds-slot:fishbone_focus",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 3.0,
+            "height": 1.4
+          },
+          "actual_text": "History｜FB001 rev3\nFocus｜FB-ELECTRODE-CONTACT",
+          "expected_text": "History｜FB001 rev3\nFocus｜FB-ELECTRODE-CONTACT",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide23.xml",
+      "note_source_refs": [
+        "E302"
+      ],
+      "expected_note_source_refs": [
+        "E302"
+      ],
+      "notes_source_match": true,
+      "media_refs": [
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/media/image4.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A302.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ],
+      "svg_asset_relationships": [
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A302.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true,
+          "asset_id": "A302"
+        }
+      ],
+      "editable_text": true
+    },
+    {
+      "slide_spec_id": "S-H003-OBSERVATION-PROBLEM-04",
+      "generated_slide_id": 281,
+      "slide_part": "ppt/slides/slide26.xml",
+      "layout_relationship_id": "rId1",
+      "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "actual_layout_index": 1,
+      "master_relationship_id": "rId1",
+      "actual_master_part": "ppt/slideMasters/slideMaster1.xml",
+      "expected_semantic_role": "content_academic",
+      "expected_layout_index": 1,
+      "expected_layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "expected_master_path": "ppt/slideMasters/slideMaster1.xml",
+      "layout_master_role_match": true,
+      "governed_geometry_match": true,
+      "governed_slot_matches": {
+        "observation_text": true,
+        "research_question": true,
+        "literature_evidence": true,
+        "mechanism_diagram": true,
+        "strategy": true,
+        "primary_figure": true
+      },
+      "physical_slot_conformance": [
+        {
+          "slot": "observation_text",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 3.0,
+            "height": 2.1
+          },
+          "actual_shape_identity": "tds-slot:observation_text",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 3.0,
+            "height": 2.1
+          },
+          "actual_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。",
+          "expected_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "research_question",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 3.75,
+            "width": 3.0,
+            "height": 1.55
+          },
+          "actual_shape_identity": "tds-slot:research_question",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 3.75,
+            "width": 3.0,
+            "height": 1.5499999999999998
+          },
+          "actual_text": "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "expected_text": "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "literature_evidence",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 4.1,
+            "top": 1.4,
+            "width": 4.1,
+            "height": 3.9
+          },
+          "actual_shape_identity": "tds-slot:literature_evidence",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 4.099998906386702,
+            "top": 1.4,
+            "width": 4.099998906386702,
+            "height": 3.9
+          },
+          "actual_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "expected_text": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "mechanism_diagram",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 8.5,
+            "top": 1.4,
+            "width": 2.1,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:mechanism_diagram",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 8.5,
+            "top": 1.4,
+            "width": 2.0999999999999996,
+            "height": 2.3000000000000003
+          },
+          "actual_text": "Mechanism｜contact resistance\nEvidence｜C301; E302",
+          "expected_text": "Mechanism｜contact resistance\nEvidence｜C301; E302",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "strategy",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 10.8,
+            "top": 1.4,
+            "width": 1.7,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:strategy",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 10.8,
+            "top": 1.4,
+            "width": 1.6999999999999993,
+            "height": 2.3000000000000003
+          },
+          "actual_text": "Strategy｜匹配導電度並改變接觸壓力\nCriterion｜預測指標跨過 decision threshold",
+          "expected_text": "Strategy｜匹配導電度並改變接觸壓力\nCriterion｜預測指標跨過 decision threshold",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "primary_figure",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 8.5,
+            "top": 3.95,
+            "width": 4.0,
+            "height": 1.35
+          },
+          "actual_shape_identity": "tds-slot:primary_figure",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 8.5,
+            "top": 3.95,
+            "width": 4.0,
+            "height": 1.3499999999999996
+          },
+          "actual_text": "Registered observation visual.",
+          "expected_text": "Registered observation visual.",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide24.xml",
+      "note_source_refs": [
+        "E302"
+      ],
+      "expected_note_source_refs": [
+        "E302"
+      ],
+      "notes_source_match": true,
+      "media_refs": [],
+      "svg_asset_relationships": [],
+      "editable_text": true
+    },
+    {
+      "slide_spec_id": "S-H003-EXPERIMENT-DESIGN-06",
+      "generated_slide_id": 282,
+      "slide_part": "ppt/slides/slide27.xml",
+      "layout_relationship_id": "rId1",
+      "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "actual_layout_index": 1,
+      "master_relationship_id": "rId1",
+      "actual_master_part": "ppt/slideMasters/slideMaster1.xml",
+      "expected_semantic_role": "content_academic",
+      "expected_layout_index": 1,
+      "expected_layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "expected_master_path": "ppt/slideMasters/slideMaster1.xml",
+      "layout_master_role_match": true,
+      "governed_geometry_match": true,
+      "governed_slot_matches": {
+        "experiment_matrix": true,
+        "decision_rule": true,
+        "result_plot": true,
+        "result_annotation": true
+      },
+      "physical_slot_conformance": [
+        {
+          "slot": "experiment_matrix",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 5.8,
+            "height": 4.3
+          },
+          "actual_shape_identity": "tds-slot:experiment_matrix",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 5.8,
+            "height": 4.300000000000001
+          },
+          "actual_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+          "expected_text": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "decision_rule",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 1.4,
+            "width": 2.0,
+            "height": 2.0
+          },
+          "actual_shape_identity": "tds-slot:decision_rule",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 1.4,
+            "width": 2.000000000000001,
+            "height": 2.0
+          },
+          "actual_text": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+          "expected_text": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "result_plot",
+          "composition": "asset_with_annotation",
+          "planned_geometry": {
+            "left": 9.05,
+            "top": 1.4,
+            "width": 3.5,
+            "height": 2.4
+          },
+          "actual_shape_identity": "tds-slot:result_plot/figure",
+          "nested_shape_identities": [
+            "tds-slot:result_plot/figure",
+            "tds-slot:result_plot/annotation"
+          ],
+          "actual_geometry": {
+            "left": 9.05,
+            "top": 1.4,
+            "width": 3.5,
+            "height": 2.3999989063867018
+          },
+          "actual_text": "Figure｜RES301｜Cycling test retains 91% response after 100 cycles.",
+          "expected_text": "Figure｜RES301｜Cycling test retains 91% response after 100 cycles.",
+          "expected_asset_id": "A301",
+          "asset_relationship": true,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "result_annotation",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 3.95,
+            "width": 5.75,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:result_annotation",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 3.95,
+            "width": 5.750000000000001,
+            "height": 1.75
+          },
+          "actual_text": "ID｜RES301\nResult｜Cycling test retains 91% response after 100 cycles.\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "expected_text": "ID｜RES301\nResult｜Cycling test retains 91% response after 100 cycles.\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide25.xml",
+      "note_source_refs": [
+        "E301",
+        "E302"
+      ],
+      "expected_note_source_refs": [
+        "E301",
+        "E302"
+      ],
+      "notes_source_match": true,
+      "media_refs": [
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/media/image5.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A301.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ],
+      "svg_asset_relationships": [
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A301.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true,
+          "asset_id": "A301"
+        }
+      ],
+      "editable_text": true
+    },
+    {
+      "slide_spec_id": "S-H003-LAYER-SUMMARY-DECISION-09",
+      "generated_slide_id": 283,
+      "slide_part": "ppt/slides/slide28.xml",
+      "layout_relationship_id": "rId1",
+      "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "actual_layout_index": 1,
+      "master_relationship_id": "rId1",
+      "actual_master_part": "ppt/slideMasters/slideMaster1.xml",
+      "expected_semantic_role": "content_academic",
+      "expected_layout_index": 1,
+      "expected_layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "expected_master_path": "ppt/slideMasters/slideMaster1.xml",
+      "layout_master_role_match": true,
+      "governed_geometry_match": true,
+      "governed_slot_matches": {
+        "supporting_results": true,
+        "contradicting_results": true,
+        "discussion_synthesis": true,
+        "uncertainty": true,
+        "decision_status": true,
+        "next_step": true
+      },
+      "physical_slot_conformance": [
+        {
+          "slot": "supporting_results",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 3.0,
+            "height": 2.1
+          },
+          "actual_shape_identity": "tds-slot:supporting_results",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 3.0,
+            "height": 2.1
+          },
+          "actual_text": "Support｜RES301",
+          "expected_text": "Support｜RES301",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "contradicting_results",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 4.05,
+            "top": 1.4,
+            "width": 3.0,
+            "height": 2.1
+          },
+          "actual_shape_identity": "tds-slot:contradicting_results",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 4.05,
+            "top": 1.4,
+            "width": 3.0,
+            "height": 2.1
+          },
+          "actual_text": "Conflict｜none\nNon-disc.｜none",
+          "expected_text": "Conflict｜none\nNon-disc.｜none",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "discussion_synthesis",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 7.3,
+            "top": 1.4,
+            "width": 5.25,
+            "height": 2.1
+          },
+          "actual_shape_identity": "tds-slot:discussion_synthesis",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 7.3,
+            "top": 1.4,
+            "width": 5.250000000000001,
+            "height": 2.1
+          },
+          "actual_text": "Cross-experiment pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism assessment｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布",
+          "expected_text": "Cross-experiment pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism assessment｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "uncertainty",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 3.8,
+            "width": 5.75,
+            "height": 1.7
+          },
+          "actual_shape_identity": "tds-slot:uncertainty",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 3.8,
+            "width": 5.75,
+            "height": 1.7000000000000002
+          },
+          "actual_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+          "expected_text": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "decision_status",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 3.8,
+            "width": 2.75,
+            "height": 1.7
+          },
+          "actual_shape_identity": "tds-slot:decision_status",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 3.8,
+            "width": 2.750000000000001,
+            "height": 1.7000000000000002
+          },
+          "actual_text": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+          "expected_text": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "next_step",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 9.8,
+            "top": 3.8,
+            "width": 2.75,
+            "height": 1.7
+          },
+          "actual_shape_identity": "tds-slot:next_step",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 9.8,
+            "top": 3.8,
+            "width": 2.75,
+            "height": 1.7000000000000002
+          },
+          "actual_text": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext step｜NS301",
+          "expected_text": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext step｜NS301",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide26.xml",
+      "note_source_refs": [
+        "E301"
+      ],
+      "expected_note_source_refs": [
+        "E301"
+      ],
+      "notes_source_match": true,
+      "media_refs": [],
+      "svg_asset_relationships": [],
+      "editable_text": true
     }
   ],
-  "relationship_targets_checked": 146,
+  "relationship_targets_checked": 185,
   "source_template_sha256_before": "a0644756b13d5ccf6badf484c1788a6d1eca85177ad7dfa4914d719f54cf5608",
   "source_template_sha256_after": "a0644756b13d5ccf6badf484c1788a6d1eca85177ad7dfa4914d719f54cf5608",
-  "generated_pptx_sha256": "d2614a0771bd0175e54282ac115ff8503ad112101b4c9d1f3fab97e405be9519",
+  "generated_pptx_sha256": "2b12a49697b40f2d098d71d49e9010e017844c5e761086daefd9de658a9657f4",
   "source_template_unchanged": true
 }

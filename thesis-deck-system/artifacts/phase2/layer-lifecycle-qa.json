@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "layers": [
+    {
+      "layer_id": "H001",
+      "transition_cursor": null,
+      "layer_open_cursor": 23,
+      "first_scientific_stage_cursor": null,
+      "experiment_cursor": 15,
+      "result_evidence_cursor": null,
+      "discussion_cursor": 30,
+      "summary_cursor": 32,
+      "status": "pass"
+    },
+    {
+      "layer_id": "H002",
+      "transition_cursor": 39,
+      "layer_open_cursor": 41,
+      "first_scientific_stage_cursor": 46,
+      "experiment_cursor": 52,
+      "result_evidence_cursor": 54,
+      "discussion_cursor": 60,
+      "summary_cursor": 65,
+      "status": "pass"
+    }
+  ],
+  "findings": []
+}

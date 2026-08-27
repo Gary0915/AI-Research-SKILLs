@@ -1,6 +1,6 @@
 {
   "projection_kind": "meeting",
-  "source_event_cursor": 56,
+  "source_event_cursor": 66,
   "current_layer_id": "H002",
   "historical_layer_refs": [
     "H001"
@@ -8,7 +8,7 @@
   "current_layer": {
     "schema_version": "2.0.0",
     "hypothesis_layer_id": "H002",
-    "revision": 1,
+    "revision": 2,
     "title": "H02｜Contact resistance 主導假說",
     "hypothesis_claim_ref": "C201",
     "problem_ref": "P201",
@@ -57,7 +57,7 @@
     "transition_ref": null,
     "story_visibility": "main",
     "research_status": "supported",
-    "source_event_cursor": 56,
+    "source_event_cursor": 66,
     "created_at": "2026-08-27T00:00:00Z",
     "updated_at": "2026-08-27T00:00:00Z"
   },
@@ -99,8 +99,10 @@
         "timezone": "Asia/Taipei"
       },
       "actual_completion": {
-        "completed_at": null,
-        "closure_evidence_refs": []
+        "completed_at": "2026-09-10T09:00:00Z",
+        "closure_evidence_refs": [
+          "E201"
+        ]
       },
       "success_failure_criteria": {
         "success": "effect exceeds uncertainty",
@@ -115,8 +117,8 @@
       "blocker_refs": [],
       "parallelizable": true,
       "workstream": "interface-mechanism",
-      "status": "planned",
-      "result_summary": "Awaiting controlled comparison",
+      "status": "done",
+      "result_summary": "Completed synthetic control",
       "supersedes": [],
       "superseded_by": [],
       "provenance": "synthetic_fixture",
@@ -135,7 +137,7 @@
       "linked_block_refs": [
         {
           "block_id": "B201",
-          "revision": 1
+          "revision": 4
         }
       ],
       "linked_claim_refs": [
@@ -184,63 +186,6 @@
   "open_commitments": [
     {
       "schema_version": "1.0.0",
-      "action_item_id": "NS101",
-      "revision": 1,
-      "action_type": "experiment",
-      "title": "Matched-conductivity contact-pressure test",
-      "action": "Run controlled pressure comparison.",
-      "rationale": "Resolve bulk versus interface mechanism.",
-      "source_decision_ref": "D101",
-      "linked_block_refs": [
-        {
-          "block_id": "B101",
-          "revision": 1
-        }
-      ],
-      "linked_claim_refs": [
-        "C101",
-        "C103"
-      ],
-      "prior_commitment": {
-        "meeting_id": "MEETING-001",
-        "committed_at": "2026-08-27T00:00:00Z"
-      },
-      "owner": {
-        "actor_id": "gary",
-        "display_name": "Gary"
-      },
-      "target_window": {
-        "start": "2026-09-01T00:00:00Z",
-        "due": "2026-09-10T09:00:00Z",
-        "timezone": "Asia/Taipei"
-      },
-      "actual_completion": {
-        "completed_at": null,
-        "closure_evidence_refs": []
-      },
-      "success_failure_criteria": {
-        "success": "effect exceeds uncertainty",
-        "failure": "no discriminating effect"
-      },
-      "required_evidence": [
-        "E101"
-      ],
-      "dependency_refs": [
-        "pressure fixture"
-      ],
-      "blocker_refs": [],
-      "parallelizable": true,
-      "workstream": "interface-mechanism",
-      "status": "planned",
-      "result_summary": "Awaiting controlled comparison",
-      "supersedes": [],
-      "superseded_by": [],
-      "provenance": "synthetic_fixture",
-      "created_at": "2026-08-27T00:00:00Z",
-      "updated_at": "2026-08-27T00:00:00Z"
-    },
-    {
-      "schema_version": "1.0.0",
       "action_item_id": "NS201",
       "revision": 1,
       "action_type": "experiment",
@@ -251,7 +196,7 @@
       "linked_block_refs": [
         {
           "block_id": "B201",
-          "revision": 1
+          "revision": 4
         }
       ],
       "linked_claim_refs": [

@@ -5,7 +5,7 @@
     "evidence_id": "E104",
     "causal_role": "transition_precursor",
     "source": "thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt",
-    "cursor": 52,
+    "cursor": 37,
     "origin": {
       "layer_ref": "H001",
       "stage_ref": "ST-H001-DISC"
@@ -15,9 +15,9 @@
     "evidence_id": "E201",
     "causal_role": "experiment_result",
     "source": "thesis-deck-system/examples/synthetic-project/phase2/contact-pressure.csv",
-    "cursor": 58,
+    "cursor": 54,
     "experiment_binding": "ST-EXP201",
-    "experiment_cursor": 57
+    "experiment_cursor": 52
   },
   "findings": []
 }

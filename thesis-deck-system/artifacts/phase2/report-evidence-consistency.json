@@ -2,24 +2,128 @@
   "schema_version": "1.0.0",
   "status": "pass",
   "h01_opening_cursor": 23,
+  "h01_experiment_cursors": [
+    15,
+    16
+  ],
   "h01_result_cursors": [
-    28,
-    28
+    25,
+    26
   ],
   "h01_discussion_cursor": 30,
   "h01_summary_cursor": 32,
-  "transition_cursor": 54,
-  "h02_opening_cursor": 56,
-  "h02_experiment_cursor": 57,
-  "h02_result_evidence_cursor": 58,
+  "precursor_evidence_id": "E104",
+  "precursor_evidence_cursor": 37,
+  "transition_cursor": 39,
+  "h02_opening_cursor": 51,
+  "h02_experiment_cursor": 52,
+  "h02_result_evidence_cursor": 54,
   "h02_result_slide_cursors": [
-    61
+    57
   ],
-  "h02_discussion_cursor": 64,
-  "h02_summary_cursor": 66,
-  "slide_count": 19,
-  "generated_slot_count": 52,
-  "materialized_transition_last_cursor": 54,
+  "h02_discussion_cursor": 65,
+  "h02_summary_cursor": 65,
+  "generated_slide_spec_count": 19,
+  "physical_pptx_page_count": 21,
+  "required_governed_slot_count": 52,
+  "instantiated_governed_slot_count": 52,
+  "intentionally_empty_slot_count": 0,
+  "missing_governed_slot_count": 0,
   "qa_report_id": "QA-MASTER-PHASE2-ACCEPTANCE",
-  "source": "canonical Slide Specs, structural audit, persisted Ledger, and executed QA report"
+  "native_powerpoint_status": "blocked_environment",
+  "private_fixture_status": "blocked_fixture",
+  "required_fields": [
+    "generated_slide_spec_count",
+    "h01_discussion_cursor",
+    "h01_experiment_cursors",
+    "h01_opening_cursor",
+    "h01_result_cursors",
+    "h01_summary_cursor",
+    "h02_discussion_cursor",
+    "h02_experiment_cursor",
+    "h02_opening_cursor",
+    "h02_result_evidence_cursor",
+    "h02_result_slide_cursors",
+    "h02_summary_cursor",
+    "instantiated_governed_slot_count",
+    "intentionally_empty_slot_count",
+    "missing_governed_slot_count",
+    "native_powerpoint_status",
+    "physical_pptx_page_count",
+    "precursor_evidence_cursor",
+    "precursor_evidence_id",
+    "private_fixture_status",
+    "qa_report_id",
+    "required_governed_slot_count",
+    "transition_cursor"
+  ],
+  "canonical_facts": {
+    "h01_opening_cursor": 23,
+    "h01_experiment_cursors": [
+      15,
+      16
+    ],
+    "h01_result_cursors": [
+      25,
+      26
+    ],
+    "h01_discussion_cursor": 30,
+    "h01_summary_cursor": 32,
+    "precursor_evidence_id": "E104",
+    "precursor_evidence_cursor": 37,
+    "transition_cursor": 39,
+    "h02_opening_cursor": 51,
+    "h02_experiment_cursor": 52,
+    "h02_result_evidence_cursor": 54,
+    "h02_result_slide_cursors": [
+      57
+    ],
+    "h02_discussion_cursor": 65,
+    "h02_summary_cursor": 65,
+    "generated_slide_spec_count": 19,
+    "physical_pptx_page_count": 21,
+    "required_governed_slot_count": 52,
+    "instantiated_governed_slot_count": 52,
+    "intentionally_empty_slot_count": 0,
+    "missing_governed_slot_count": 0,
+    "qa_report_id": "QA-MASTER-PHASE2-ACCEPTANCE",
+    "native_powerpoint_status": "blocked_environment",
+    "private_fixture_status": "blocked_fixture"
+  },
+  "reported_facts": {
+    "h01_opening_cursor": 23,
+    "h01_experiment_cursors": [
+      15,
+      16
+    ],
+    "h01_result_cursors": [
+      25,
+      26
+    ],
+    "h01_discussion_cursor": 30,
+    "h01_summary_cursor": 32,
+    "precursor_evidence_id": "E104",
+    "precursor_evidence_cursor": 37,
+    "transition_cursor": 39,
+    "h02_opening_cursor": 51,
+    "h02_experiment_cursor": 52,
+    "h02_result_evidence_cursor": 54,
+    "h02_result_slide_cursors": [
+      57
+    ],
+    "h02_discussion_cursor": 65,
+    "h02_summary_cursor": 65,
+    "generated_slide_spec_count": 19,
+    "physical_pptx_page_count": 21,
+    "required_governed_slot_count": 52,
+    "instantiated_governed_slot_count": 52,
+    "intentionally_empty_slot_count": 0,
+    "missing_governed_slot_count": 0,
+    "qa_report_id": "QA-MASTER-PHASE2-ACCEPTANCE",
+    "native_powerpoint_status": "blocked_environment",
+    "private_fixture_status": "blocked_fixture"
+  },
+  "mismatches": {},
+  "report_path": "thesis-deck-system/reports/PHASE_2_IMPLEMENTATION_REPORT.md",
+  "report_sha256": "1f52e3f60140ef2a4b434d713703cc49be36488cd82ee5ffa625d8b01ff4cbe7"
 }

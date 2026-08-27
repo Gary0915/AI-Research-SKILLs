@@ -1,0 +1,33 @@
+{
+  "h01_opening_cursor": 23,
+  "h01_experiment_cursors": [
+    15,
+    16
+  ],
+  "h01_result_cursors": [
+    25,
+    26
+  ],
+  "h01_discussion_cursor": 30,
+  "h01_summary_cursor": 32,
+  "precursor_evidence_id": "E104",
+  "precursor_evidence_cursor": 37,
+  "transition_cursor": 39,
+  "h02_opening_cursor": 51,
+  "h02_experiment_cursor": 52,
+  "h02_result_evidence_cursor": 54,
+  "h02_result_slide_cursors": [
+    57
+  ],
+  "h02_discussion_cursor": 65,
+  "h02_summary_cursor": 65,
+  "generated_slide_spec_count": 19,
+  "physical_pptx_page_count": 21,
+  "required_governed_slot_count": 52,
+  "instantiated_governed_slot_count": 52,
+  "intentionally_empty_slot_count": 0,
+  "missing_governed_slot_count": 0,
+  "qa_report_id": "QA-MASTER-PHASE2-ACCEPTANCE",
+  "native_powerpoint_status": "blocked_environment",
+  "private_fixture_status": "blocked_fixture"
+}

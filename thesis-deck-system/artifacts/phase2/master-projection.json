@@ -1,6 +1,6 @@
 {
   "projection_kind": "master",
-  "source_event_cursor": 67,
+  "source_event_cursor": 66,
   "append_only": true,
   "layers": [
     {
@@ -48,7 +48,7 @@
       "transition_ref": "TR-H001-H002",
       "story_visibility": "main",
       "research_status": "partial_support",
-      "source_event_cursor": 55,
+      "source_event_cursor": 40,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
@@ -104,7 +104,7 @@
       "transition_ref": null,
       "story_visibility": "main",
       "research_status": "supported",
-      "source_event_cursor": 67,
+      "source_event_cursor": 66,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     }
