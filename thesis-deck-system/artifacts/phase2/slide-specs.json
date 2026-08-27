@@ -13,6 +13,7 @@
     "stage": "progress_todo",
     "native_layout_role": "content_academic",
     "recipe": "progress_todo",
+    "object_ref": "NS201",
     "title": {
       "text": "Progress / Previous Commitments",
       "assertion_claim_refs": [
@@ -119,6 +120,7 @@
     "stage": "hypothesis_title",
     "native_layout_role": "content_academic",
     "recipe": "hypothesis_title",
+    "object_ref": "C101",
     "title": {
       "text": "H001｜Hypothesis",
       "assertion_claim_refs": [
@@ -210,6 +212,7 @@
     "stage": "problem_definition",
     "native_layout_role": "content_academic",
     "recipe": "problem_definition",
+    "object_ref": "P101",
     "title": {
       "text": "H001｜Problem",
       "assertion_claim_refs": [
@@ -321,6 +324,7 @@
     "stage": "fishbone_locator",
     "native_layout_role": "content_academic",
     "recipe": "fishbone_locator",
+    "object_ref": null,
     "title": {
       "text": "H001｜Total Fishbone / Research Map",
       "assertion_claim_refs": [
@@ -435,6 +439,7 @@
     "stage": "observation_problem",
     "native_layout_role": "content_academic",
     "recipe": "observation_problem",
+    "object_ref": "B101",
     "title": {
       "text": "H001｜Observation → Literature → Mechanism",
       "assertion_claim_refs": [
@@ -554,6 +559,7 @@
     "stage": "literature_mechanism",
     "native_layout_role": "content_academic",
     "recipe": "literature_mechanism",
+    "object_ref": "B101",
     "title": {
       "text": "H001｜Literature → Mechanism → Strategy",
       "assertion_claim_refs": [
@@ -655,6 +661,10 @@
     "stage": "experiment_design",
     "native_layout_role": "content_academic",
     "recipe": "experiment_design",
+    "object_ref": [
+      "EXP101",
+      "EXP102"
+    ],
     "title": {
       "text": "H001｜Experiment Design",
       "assertion_claim_refs": [
@@ -756,6 +766,7 @@
     "stage": "result_comparison",
     "native_layout_role": "content_academic",
     "recipe": "result_comparison",
+    "object_ref": "RES101",
     "title": {
       "text": "H001｜Results",
       "assertion_claim_refs": [
@@ -865,6 +876,7 @@
     "stage": "result_comparison",
     "native_layout_role": "content_academic",
     "recipe": "result_comparison",
+    "object_ref": "RES102",
     "title": {
       "text": "H001｜Results",
       "assertion_claim_refs": [
@@ -974,6 +986,7 @@
     "stage": "layer_integrated_discussion",
     "native_layout_role": "content_academic",
     "recipe": "layer_integrated_discussion",
+    "object_ref": "DISC-H001",
     "title": {
       "text": "H001｜Integrated Discussion",
       "assertion_claim_refs": [
@@ -1087,6 +1100,7 @@
     "stage": "layer_summary_decision",
     "native_layout_role": "content_academic",
     "recipe": "layer_summary_decision",
+    "object_ref": "SUM-H001",
     "title": {
       "text": "H001｜Layer Summary / Decision",
       "assertion_claim_refs": [
@@ -1202,6 +1216,7 @@
     "stage": "hypothesis_transition",
     "native_layout_role": "content_academic",
     "recipe": "hypothesis_transition",
+    "object_ref": "TR-H001-H002",
     "title": {
       "text": "H01 → H02｜Hypothesis Transition",
       "assertion_claim_refs": [
@@ -1307,6 +1322,7 @@
     "stage": "hypothesis_title",
     "native_layout_role": "content_academic",
     "recipe": "hypothesis_title",
+    "object_ref": "C201",
     "title": {
       "text": "H002｜Hypothesis",
       "assertion_claim_refs": [
@@ -1389,6 +1405,7 @@
     "stage": "problem_definition",
     "native_layout_role": "content_academic",
     "recipe": "problem_definition",
+    "object_ref": "P201",
     "title": {
       "text": "H002｜Problem",
       "assertion_claim_refs": [
@@ -1491,6 +1508,7 @@
     "stage": "fishbone_locator",
     "native_layout_role": "content_academic",
     "recipe": "fishbone_locator",
+    "object_ref": null,
     "title": {
       "text": "H002｜Total Fishbone / Research Map",
       "assertion_claim_refs": [
@@ -1596,6 +1614,7 @@
     "stage": "observation_problem",
     "native_layout_role": "content_academic",
     "recipe": "observation_problem",
+    "object_ref": "B201",
     "title": {
       "text": "H002｜Observation → Literature → Mechanism",
       "assertion_claim_refs": [
@@ -1700,6 +1719,10 @@
     "stage": "result_comparison",
     "native_layout_role": "content_academic",
     "recipe": "result_comparison",
+    "object_ref": [
+      "EXP201",
+      "RES201"
+    ],
     "title": {
       "text": "H002｜Results",
       "assertion_claim_refs": [
@@ -1801,6 +1824,7 @@
     "stage": "layer_summary_decision",
     "native_layout_role": "content_academic",
     "recipe": "layer_summary_decision",
+    "object_ref": "SUM-H002",
     "title": {
       "text": "H002｜Layer Summary / Decision",
       "assertion_claim_refs": [

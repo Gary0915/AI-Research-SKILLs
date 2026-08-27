@@ -13,6 +13,7 @@
     "stage": {"type": "string", "enum": ["observation", "literature", "mechanism", "solution", "experiment", "result", "discussion", "summary", "decision", "transition", "progress", "orientation", "hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem", "literature_mechanism", "experiment_design", "result_single", "result_comparison", "layer_integrated_discussion", "layer_summary_decision", "hypothesis_transition", "progress_todo"]},
     "native_layout_role": {"type": "string", "enum": ["photo_observation", "hero_plot_discussion", "content_academic"]},
     "recipe": {"type": "string", "enum": ["photo_observation", "hero_plot_discussion", "hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem", "literature_mechanism", "mechanism_solution", "experiment_design", "result_single", "result_comparison", "image_matrix", "hero_plot_discussion", "layer_integrated_discussion", "layer_summary_decision", "hypothesis_transition", "progress_todo", "schedule_next_step"]},
+    "object_ref": {"oneOf": [{"type": "null"}, {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"}, {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"}}]},
     "title": {"type": "object", "additionalProperties": false, "required": ["text", "assertion_claim_refs"], "properties": {"text": {"type": "string", "minLength": 1}, "assertion_claim_refs": {"$ref": "#/$defs/claim_refs"}}},
     "placements": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["slot", "asset_id", "asset_path"], "properties": {"slot": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"}, "asset_id": {"$ref": "#/$defs/asset_id"}, "asset_path": {"$ref": "#/$defs/repo_path"}}}},
     "citations": {"type": "array", "items": {"type": "string"}},
@@ -36,7 +37,7 @@
     {"if": {"properties": {"schema_version": {"const": "1.0.0"}}, "required": ["schema_version"]}, "then": {"properties": {"bindings": {"properties": {"asset_refs": {"minItems": 1}, "action_refs": {"minItems": 1}, "decision_refs": {"minItems": 1}}}, "placements": {"minItems": 1}}}},
     {"if": {"properties": {"recipe": {"const": "photo_observation"}}, "required": ["recipe"]}, "then": {"properties": {"content": {"$ref": "#/$defs/observation_content"}}}},
     {"if": {"properties": {"recipe": {"const": "hero_plot_discussion"}}, "required": ["recipe"]}, "then": {"properties": {"content": {"$ref": "#/$defs/result_content"}}}},
-    {"if": {"properties": {"schema_version": {"const": "2.0.0"}}, "required": ["schema_version"]}, "then": {"required": ["hypothesis_layer_ref", "hypothesis_layer_revision", "semantic_role", "combined_roles", "fishbone_snapshot_ref", "fishbone_focus_refs", "layout_plan_ref", "placement_plan", "compaction_rationale"]}}
+    {"if": {"properties": {"schema_version": {"const": "2.0.0"}}, "required": ["schema_version"]}, "then": {"required": ["hypothesis_layer_ref", "hypothesis_layer_revision", "semantic_role", "combined_roles", "fishbone_snapshot_ref", "fishbone_focus_refs", "layout_plan_ref", "placement_plan", "compaction_rationale", "object_ref"]}}
   ],
   "$defs": {
     "repo_path": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?![A-Za-z]:)(?!\\\\)(?!.*\\\\).+"},

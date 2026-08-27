@@ -130,3 +130,38 @@ def test_summary_compiler_resolves_its_explicit_decision_reference():
     state = {"hypothesis_layers": {"H002": {"hypothesis_claim_ref": "C201", "problem_ref": "P201"}}, "claims": {"C201": {"falsifiable_predictions": [{"observation_that_falsifies": "falsifier"}], "text": "H02"}}, "problems": {"P201": {}}, "layer_summaries": {"SUM-H002": {"answered": "answered", "hypothesis_status": "supported", "decision_ref": "D002", "remaining_unresolved": "none", "next_question": "next", "next_step_refs": ["NS201"]}}, "decisions": {"D001": {"choice": "No-Go", "rationale": "old"}, "D002": {"choice": "Go", "rationale": "revised"}}}
     body = story.content_from_materialized_state(state, "H002", "layer_summary_decision", "SUM-H002")
     assert "Go: revised" in body and "No-Go" not in body
+
+
+def test_persisted_state_content_is_immune_to_fixture_mutation(tmp_path: Path):
+    from thesis_deck_system.phase2_build import build_phase2, _hydrate_from_state
+    from thesis_deck_system.ledger import Ledger
+    import json
+    import shutil
+    import yaml
+
+    build_root = tmp_path / "build"
+    result = build_phase2(output_root=build_root)
+    source_fixture = ROOT / "thesis-deck-system" / "examples" / "synthetic-project" / "phase2" / "fixture.yaml"
+    mutated_fixture_path = tmp_path / "mutated-fixture.yaml"
+    shutil.copy2(source_fixture, mutated_fixture_path)
+    mutated = yaml.safe_load(mutated_fixture_path.read_text(encoding="utf-8"))
+    mutated["hypothesis_layers"][0]["title"] = "MUTATED UNCOMMITTED SOURCE"
+    mutated["hypothesis_layers"][0]["research_question"] = "MUTATED QUESTION"
+    mutated_fixture_path.write_text(yaml.safe_dump(mutated, allow_unicode=True, sort_keys=False), encoding="utf-8")
+
+    # Rebuild every spec from the persisted, hash-verified ledger.  The
+    # mutated seed copy is intentionally not read by this replay path.
+    ledger = Ledger.load(build_root / "ledger-events.json")
+    persisted_specs = json.loads((build_root / "slide-specs.json").read_text(encoding="utf-8"))
+    meeting = json.loads((build_root / "meeting-projection.json").read_text(encoding="utf-8"))
+    rebuilt_specs = []
+    for spec in persisted_specs:
+        state = ledger.materialize(spec["source_cursor"])
+        rebuilt_specs.append(_hydrate_from_state(spec, state, build_root, overview=spec["deck_role"] == "meeting_delta", meeting=meeting))
+
+    derived_keys = {"layout_plan_ref", "placement_plan"}
+    canonical = lambda spec: {key: value for key, value in spec.items() if key not in derived_keys}
+    assert json.dumps([canonical(spec) for spec in rebuilt_specs], sort_keys=True, ensure_ascii=False) == json.dumps([canonical(spec) for spec in persisted_specs], sort_keys=True, ensure_ascii=False)
+    assert "MUTATED UNCOMMITTED SOURCE" not in json.dumps(rebuilt_specs, ensure_ascii=False)
+    assert "MUTATED QUESTION" not in json.dumps(rebuilt_specs, ensure_ascii=False)
+    assert result["h01_cursor"] < result["h02_cursor"]

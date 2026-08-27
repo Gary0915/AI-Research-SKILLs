@@ -23,7 +23,7 @@
       "ordinal": 1,
       "slide_id": "S-PHASE2-PROGRESS-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -58,7 +58,7 @@
       "ordinal": 2,
       "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -92,7 +92,7 @@
       "ordinal": 3,
       "slide_id": "S-H001-PROBLEM-DEFINITION-02",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -126,7 +126,7 @@
       "ordinal": 4,
       "slide_id": "S-H001-FISHBONE-LOCATOR-03",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -162,7 +162,7 @@
       "ordinal": 5,
       "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -198,7 +198,7 @@
       "ordinal": 6,
       "slide_id": "S-H001-LITERATURE-MECHANISM-05",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -232,7 +232,7 @@
       "ordinal": 7,
       "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -266,7 +266,7 @@
       "ordinal": 8,
       "slide_id": "S-H001-RESULT-COMPARISON-08",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -302,7 +302,7 @@
       "ordinal": 9,
       "slide_id": "S-H001-RESULT-COMPARISON-09",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -338,7 +338,7 @@
       "ordinal": 10,
       "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -374,7 +374,7 @@
       "ordinal": 11,
       "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -412,7 +412,7 @@
       "ordinal": 12,
       "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -450,7 +450,7 @@
       "ordinal": 13,
       "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -481,7 +481,7 @@
       "ordinal": 14,
       "slide_id": "S-H002-PROBLEM-DEFINITION-02",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -512,7 +512,7 @@
       "ordinal": 15,
       "slide_id": "S-H002-FISHBONE-LOCATOR-03",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -545,7 +545,7 @@
       "ordinal": 16,
       "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -576,7 +576,7 @@
       "ordinal": 17,
       "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -609,7 +609,7 @@
       "ordinal": 18,
       "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "10682eff34d6e5829b83dbdf9afeb08ecc87892ca5b6b532946082780fc5b882",
+      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -643,7 +643,7 @@
   ],
   "outputs": {
     "pptx": "acceptance-deck.pptx",
-    "pptx_sha256": "e097942a0da9f32dcc5ce1ab708e22bf1c67bd47c3b1374f9febab67e2a2db17"
+    "pptx_sha256": "ae12a314a9a3926e59b23090229353e0e3af3827438c5faee3f1377ff9ea4659"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE2-ACCEPTANCE"

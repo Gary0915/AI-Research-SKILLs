@@ -6,7 +6,7 @@ Completed the bounded Phase 2 hypothesis-layer slice only. The chain is canonica
 
 ## 2 Architecture decisions
 
-The committed synthetic fixture is seed input only. `Ledger.append()` creates the persisted event history; `Ledger.load()` verifies hashes and replay; all generated Slide Specs call `content_from_materialized_state()` against a cursor state. H01 first materializes at cursor 27 with revision 1 and no future transition. The transition is event cursor 35, followed by an append-only H001 revision 2 at cursor 36. H02 materializes at cursor 51. H01 binds FB001 rev1 and H02 binds FB001 rev2. Master and Meeting projections are derived from cursor 51, and Meeting retains both completed NS101 and planned NS201 commitments.
+The committed synthetic fixture is seed input only. `Ledger.append()` creates the persisted event history; `Ledger.load()` verifies hashes and replay; all generated Slide Specs call `content_from_materialized_state()` against a cursor state and persist their explicit `object_ref` for deterministic replay. H01 first materializes at cursor 27 with revision 1 and no future transition. The transition is event cursor 35, followed by an append-only H001 revision 2 at cursor 36. H02 materializes at cursor 51. H01 binds FB001 rev1 and H02 binds FB001 rev2. Master and Meeting projections are derived from cursor 51, and Meeting retains both completed NS101 and planned NS201 commitments.
 
 ## 3 Files changed
 
@@ -26,7 +26,7 @@ The acceptance deck is `thesis-deck-system/artifacts/phase2/acceptance-deck.pptx
 
 ## 7 Data/provenance and history evidence
 
-`ledger-events.json` contains 51 append-only, hash-linked events. `materialized-h01.json`, `materialized-transition.json`, and `materialized-h02.json` are reloaded/replayed from disk and match their source cursors. B101 and B201 are graph-closed at their materialization cursors. `phase2-binding-validation.json` reports zero unresolved Slide Spec/Manifest references. `causal-temporal-qa.json` reports result → Discussion → Decision/Summary and transition chronology pass. `asset-provenance-qa.json` verifies source CSV/script/output hashes and transform chains for A001/A201. The result slides contain actual SVG-to-owning-slide OpenXML relationships; a detached media SVG is not treated as sufficient.
+`ledger-events.json` contains 51 append-only, hash-linked events. `materialized-h01.json`, `materialized-transition.json`, and `materialized-h02.json` are reloaded/replayed from disk and match their source cursors. B101 and B201 are graph-closed at their materialization cursors. `phase2-binding-validation.json` reports zero unresolved Slide Spec/Manifest references. Each Slide Spec now persists its scientific `object_ref`, allowing the replay test to reconstruct canonical content and binding fields from the persisted cursor without a fixture read. `causal-temporal-qa.json` reports result → Discussion → Decision/Summary and transition chronology pass. `asset-provenance-qa.json` verifies source CSV/script/output hashes and transform chains for A001/A201. The result slides contain actual SVG-to-owning-slide OpenXML relationships; a detached media SVG is not treated as sufficient.
 
 ## 8 QA gates
 
@@ -36,9 +36,9 @@ The canonical order is schema/ledger → scientific reasoning → citation/evide
 
 Executed:
 
-- full Phase 1 + Phase 2 pytest suite: **62 passed, 0 failed**;
+- full Phase 1 + Phase 2 pytest suite: **63 passed, 0 failed**;
 - clean Phase 2 rebuild, persisted Ledger reload/replay/materialization, causal-temporal validation, exact validation of all canonical objects and generated Slide Specs/Manifest/Layout Plans/Profile/QA Report;
-- state-derived content and explicit decision-reference regression tests;
+- state-derived content, explicit decision-reference, and persisted-ledger fixture-mutation regression tests (canonical content/binding hash equality after rebuilding every Slide Spec from its cursor);
 - hierarchical fishbone duplicate/orphan/cycle and parent-connector tests;
 - required Skill routing test;
 - relationship-aware OpenXML audit and SVG relationship audit;
@@ -60,7 +60,7 @@ No Phase 1 or Phase 3 implementation is started by this correction. The repo-loc
 | --- | --- | --- | --- |
 | P2-B1 provenance / Phase 1 contract preservation | `phase2_build.py` canonical B101/B201 graph; `contracts.validate_temporal_bindings`; `phase2-binding-validation.json`; `materialized-h01.json`, `materialized-h02.json` | canonical object validation; per-slide cursor binding; unresolved refs = **0** | PASS |
 | P2-B2 causal chronology | `hypothesis.validate_causal_history`; ledger cursors 17/18→19/20→21/22→23/25 and 35 transition; `causal-temporal-qa.json` | future transition/result/discussion/summary negative tests; causal status **pass** | PASS |
-| P2-B3 state-derived story/content | `story.content_from_materialized_state`; `_hydrate_from_state`; no production `_content_text`/fixture prose path; progress from `meeting_projection` | explicit D201 decision test; persisted fixture/state mutation contract; notes/source refs audited | PASS |
+| P2-B3 state-derived story/content | `story.content_from_materialized_state`; `_hydrate_from_state`; persisted Slide Spec `object_ref`; no production `_content_text`/fixture prose path; progress from `meeting_projection` | explicit D201 decision test; `test_persisted_state_content_is_immune_to_fixture_mutation` reloads `Ledger.load()` and rebuilds all specs; canonical source fields hash-identical; notes/source refs audited | PASS |
 | P2-B4 governed geometry / assembler conformance | `layout.ROLE_GEOMETRY`; `layout-plans.json`; `layout-director-decisions.json`; `layout-overrides.json`; `pptx.audit_pptx` governed-slot evidence | 11 distinct signatures; geometry conformance = 18/18; final unresolved split count = **0** | PASS |
 | P2-B5 executed Professor QA | persisted `professor-profile.json`; `qa2.run_professor_qa_v2`; `professor-qa.json` | 29 executed checks, 0 findings; negative structural/focus/commitment tests retained | PASS |
 | P2-B6 truthful Visual QA | `qa2.run_visual_qa_v2`; `phase2_render.py`; `visual-inspection.json` | 14 automated checks × 18 slides; 18 slide-specific observations; persisted inspection record validates; 0 findings | PASS |
@@ -144,7 +144,7 @@ codex_report:
     - causal-temporal, cursor-binding, OpenXML, geometry, montage, routing, and absolute-path checks
     - git diff --check
   tests_passed:
-    - 62 passed
+    - 63 passed
     - Phase 2 QA Stages 1-7 pass
     - structural geometry/layout/master/notes/SVG audit pass
     - visual inspection record pass
