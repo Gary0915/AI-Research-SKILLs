@@ -39,6 +39,8 @@
   "evidence": {
     "PROF-HYPOTHESIS-EXISTS": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": [
         "hypothesis_title",
@@ -51,6 +53,8 @@
     },
     "PROF-HYPOTHESIS-PROBLEM-SEPARATE": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": [
         "hypothesis_title",
@@ -63,11 +67,15 @@
     },
     "PROF-FISHBONE-EXISTS": {
       "passed": true,
+      "profile_rule": "narrative_rules.persistent_orientation_view",
+      "configured_value": "fishbone/research-map",
       "path": "H002",
       "detail": true
     },
     "PROF-FISHBONE-FOCUS": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": [
         "FB-ELECTRODE-CONTACT"
@@ -75,6 +83,8 @@
     },
     "PROF-FISHBONE-REVISION": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": {
         "fishbone_id": "FB001",
@@ -83,6 +93,8 @@
     },
     "PROF-QUESTION-BEFORE-RESULT": {
       "passed": true,
+      "profile_rule": "narrative_rules.require_question_before_data",
+      "configured_value": true,
       "path": "H002",
       "detail": [
         4
@@ -90,6 +102,8 @@
     },
     "PROF-LITERATURE-SYNTHESIS": {
       "passed": true,
+      "profile_rule": "narrative_rules.literature_must_synthesize_to_hypothesis_or_strategy",
+      "configured_value": true,
       "path": "H002",
       "detail": {
         "consensus": "transport gradient 可產生位置效應。",
@@ -111,6 +125,8 @@
     },
     "PROF-MECHANISM-EVIDENCE": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": {
         "schema_version": "1.0.0",
@@ -142,6 +158,8 @@
     },
     "PROF-STRATEGY-DERIVED": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": {
         "strategy": "匹配導電度並改變接觸壓力",
@@ -150,6 +168,8 @@
     },
     "PROF-EXPERIMENT-METADATA": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": [
         {
@@ -193,6 +213,8 @@
     },
     "PROF-RESULTS-COMPLETE": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": [
         "ST-RES201"
@@ -200,6 +222,8 @@
     },
     "PROF-INTEGRATED-DISCUSSION": {
       "passed": true,
+      "profile_rule": "narrative_rules.discussion_must_update_decision",
+      "configured_value": true,
       "path": "H002",
       "detail": {
         "schema_version": "2.0.0",
@@ -227,6 +251,8 @@
     },
     "PROF-LAYER-SUMMARY": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H002",
       "detail": {
         "schema_version": "2.0.0",
@@ -250,6 +276,8 @@
     },
     "PROF-TRANSITION-PROVENANCE": {
       "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
       "path": "H001",
       "detail": {
         "schema_version": "2.0.0",
@@ -276,6 +304,8 @@
     },
     "PROF-HISTORY-REACHABLE": {
       "passed": true,
+      "profile_rule": "narrative_rules.preserve_failed_and_changed_hypotheses",
+      "configured_value": true,
       "path": "layers",
       "detail": [
         "H001",
@@ -284,6 +314,8 @@
     },
     "PROF-NEXT-STEP-OWNER-TIMING": {
       "passed": true,
+      "profile_rule": "meeting_rules.require_next_steps_and_timing",
+      "configured_value": true,
       "path": "meeting",
       "detail": [
         {

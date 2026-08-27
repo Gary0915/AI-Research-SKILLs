@@ -21,9 +21,20 @@ def run_professor_qa_v2(profile: dict, projection: dict) -> dict:
     evidence = {}
     executed_checks = []
 
-    def check(check_id: str, ok: bool, path: str, repair: str, detail: object) -> None:
+    def profile_rule(rule_path: str | None, default: bool = True) -> tuple[bool, object]:
+        if not rule_path:
+            return True, None
+        section, key = rule_path.split(".", 1)
+        value = profile.get(section, {}).get(key, default)
+        return bool(value), value
+
+    def check(check_id: str, ok: bool, path: str, repair: str, detail: object, *, rule: str | None = None) -> None:
+        enabled, configured = profile_rule(rule)
+        if not enabled:
+            evidence[check_id] = {"passed": True, "skipped": True, "profile_rule": rule, "configured_value": configured, "path": path}
+            return
         executed_checks.append(check_id)
-        evidence[check_id] = {"passed": bool(ok), "path": path, "detail": detail}
+        evidence[check_id] = {"passed": bool(ok), "profile_rule": rule, "configured_value": configured, "path": path, "detail": detail}
         if not ok:
             findings.append(_finding(check_id, path, repair))
 
@@ -38,7 +49,7 @@ def run_professor_qa_v2(profile: dict, projection: dict) -> dict:
         separate = has("hypothesis_title") and has("problem_definition") and not any({"hypothesis_title", "problem_definition"} <= value for value in combined)
         check("PROF-HYPOTHESIS-PROBLEM-SEPARATE", separate, layer_id, "Create separate Hypothesis and Problem pages", roles)
         locator = next((slide for slide in layer_slides if slide.get("semantic_role") == "fishbone_locator"), None)
-        check("PROF-FISHBONE-EXISTS", locator is not None, layer_id, "Add the layer's historical fishbone locator", bool(locator))
+        check("PROF-FISHBONE-EXISTS", locator is not None, layer_id, "Add the layer's historical fishbone locator", bool(locator), rule="narrative_rules.persistent_orientation_view")
         focus_ok = bool(locator and locator.get("fishbone_focus_refs"))
         check("PROF-FISHBONE-FOCUS", focus_ok, layer_id, "Highlight the current stable branch ID", locator.get("fishbone_focus_refs", []) if locator else [])
         revision_ok = bool(locator and locator.get("fishbone_snapshot_ref", {}).get("revision") == layer.get("fishbone_snapshot_ref", {}).get("revision"))
@@ -46,13 +57,13 @@ def run_professor_qa_v2(profile: dict, projection: dict) -> dict:
         result_positions = [index for index, slide in enumerate(layer_slides) if slide.get("semantic_role") in {"result_single", "result_comparison"} or {"result_single", "result_comparison"} & set(slide.get("combined_roles", []))]
         discussion_positions = [index for index, slide in enumerate(layer_slides) if slide.get("semantic_role") == "layer_integrated_discussion" or "layer_integrated_discussion" in slide.get("combined_roles", [])]
         question_ok = bool(has("problem_definition") and result_positions and min(result_positions) > 0)
-        check("PROF-QUESTION-BEFORE-RESULT", question_ok, layer_id, "Place the research question/problem before result interpretation", result_positions)
+        check("PROF-QUESTION-BEFORE-RESULT", question_ok, layer_id, "Place the research question/problem before result interpretation", result_positions, rule="narrative_rules.require_question_before_data")
         block = state.get("blocks", {}).get((layer.get("research_block_refs") or [None])[0], {})
         stages = state.get("stages", {})
         stage_refs = block.get("stage_refs", {})
         literature = stages.get(stage_refs.get("literature"), {}).get("data", {})
         lit_fields = ["consensus", "disagreements_or_alternatives", "known_mechanisms", "research_gap", "relevance_to_observation", "implication_for_hypothesis_or_strategy"]
-        check("PROF-LITERATURE-SYNTHESIS", all(literature.get(field) for field in lit_fields), layer_id, "Provide structured literature synthesis", literature)
+        check("PROF-LITERATURE-SYNTHESIS", all(literature.get(field) for field in lit_fields), layer_id, "Provide structured literature synthesis", literature, rule="narrative_rules.literature_must_synthesize_to_hypothesis_or_strategy")
         mechanism = stages.get(stage_refs.get("mechanism"), {})
         check("PROF-MECHANISM-EVIDENCE", bool(mechanism.get("evidence_refs") and mechanism.get("claim_refs")), layer_id, "Link the mechanism to evidence and claims", mechanism)
         solution = stages.get(stage_refs.get("solution"), {}).get("data", {})
@@ -70,7 +81,7 @@ def run_professor_qa_v2(profile: dict, projection: dict) -> dict:
         check("PROF-RESULTS-COMPLETE", result_ok, layer_id, "Materialize every required result", result_stage_ids)
         discussion = state.get("layer_discussions", {}).get(layer.get("layer_discussion_ref"), {})
         discussion_ok = bool(discussion) and set(discussion.get("supporting_results", []) + discussion.get("contradicting_results", []) + discussion.get("non_discriminating_results", [])) >= set(result_ids) and bool(discussion.get("alternative_explanations")) and bool(discussion.get("remaining_uncertainty"))
-        check("PROF-INTEGRATED-DISCUSSION", discussion_ok and bool(discussion_positions) and all(index > max([0] + result_positions) for index in discussion_positions), layer_id, "Integrate the complete result set after results", discussion)
+        check("PROF-INTEGRATED-DISCUSSION", discussion_ok and bool(discussion_positions) and all(index > max([0] + result_positions) for index in discussion_positions), layer_id, "Integrate the complete result set after results", discussion, rule="narrative_rules.discussion_must_update_decision")
         summary = state.get("layer_summaries", {}).get(layer.get("layer_summary_ref"), {})
         summary_ok = bool(summary.get("answered") and summary.get("hypothesis_status") and summary.get("decision_ref") and summary.get("remaining_unresolved") and summary.get("next_question") and summary.get("next_step_refs"))
         check("PROF-LAYER-SUMMARY", summary_ok and has("layer_summary_decision"), layer_id, "Add hypothesis status, decision, uncertainty, and next question", summary)
@@ -80,10 +91,10 @@ def run_professor_qa_v2(profile: dict, projection: dict) -> dict:
             transition_ok = bool(transition and transition_slide and transition.get("previous_hypothesis_claim_ref") and transition.get("new_hypothesis_claim_ref") and transition.get("key_result_refs"))
             check("PROF-TRANSITION-PROVENANCE", transition_ok, layer_id, "Resolve transition provenance to results, decision, observation, and new hypothesis", transition)
     historical_ok = bool(layers) and all(layer.get("hypothesis_layer_id") in {"H001", "H002"} for layer in layers)
-    check("PROF-HISTORY-REACHABLE", historical_ok, "layers", "Keep failed/partial/superseded layers historically reachable", [layer.get("hypothesis_layer_id") for layer in layers])
+    check("PROF-HISTORY-REACHABLE", historical_ok, "layers", "Keep failed/partial/superseded layers historically reachable", [layer.get("hypothesis_layer_id") for layer in layers], rule="narrative_rules.preserve_failed_and_changed_hypotheses")
     commitments = projection.get("previous_commitments", [])
     commitment_ok = bool(commitments) and all(item.get("owner") and item.get("target_window") and item.get("dependency_refs") is not None and item.get("parallelizable") is not None and item.get("status") for item in commitments)
-    check("PROF-NEXT-STEP-OWNER-TIMING", commitment_ok, "meeting", "Carry forward owner, timing, dependencies, status, and parallel work", commitments)
+    check("PROF-NEXT-STEP-OWNER-TIMING", commitment_ok, "meeting", "Carry forward owner, timing, dependencies, status, and parallel work", commitments, rule="meeting_rules.require_next_steps_and_timing")
     return {"profile_ref": {"profile_id": profile.get("profile_id"), "version": profile.get("version")}, "status": "fail" if findings else "pass", "executed_checks": executed_checks, "check_count": len(executed_checks), "evidence": evidence, "findings": findings}
 
 
@@ -138,9 +149,14 @@ def run_visual_qa_v2(specs: list[dict], render_paths: dict[str, Path], *, expect
         body = str(spec.get("content", {}).get("body", ""))
         if not title or len(title) > 48:
             findings.append(_finding("VISUAL-TITLE-HIERARCHY", slide_id, "Use a concise dominant title"))
+        title_indices = {index for index, item in enumerate(placements) if item.get("slot") in {"hypothesis_statement", "title"} or item.get("element_role") in {"assertion", "title"}}
+        title_fonts = [float(placements[index].get("font_size_pt", 0)) for index in title_indices]
+        body_fonts = [float(item.get("font_size_pt", 0)) for index, item in enumerate(placements) if index not in title_indices]
+        if title_fonts and body_fonts and min(title_fonts) <= max(body_fonts):
+            findings.append(_finding("VISUAL-TITLE-HIERARCHY", slide_id, "Make the title font larger than body text"))
         if any(line.startswith(("，", "。", "？", "！", "）")) for line in body.splitlines()[1:]):
             findings.append(_finding("VISUAL-ZH-WRAPPING", slide_id, "Repair Traditional Chinese punctuation wrapping"))
-        if len(body) > 1200 and not spec.get("layout_plan_ref"):
+        if (len(body) > 1200 and not spec.get("layout_plan_ref")) or (spec.get("split_recommendation") is True and not spec.get("reviewed_split_override")):
             findings.append(_finding("VISUAL-DENSITY-BUDGET", slide_id, "Resolve over-budget content through a reviewed layout plan"))
         if role == "result_comparison":
             controls = next((item for item in placements if item.get("slot") == "control_panel"), None)

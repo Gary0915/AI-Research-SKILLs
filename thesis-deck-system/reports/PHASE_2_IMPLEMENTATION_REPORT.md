@@ -2,7 +2,7 @@
 
 ## 1 Objective completed
 
-Completed the bounded Phase 2 hypothesis-layer slice only. The chain is canonical scientific objects → append-only hashed ledger → cursor materialization → Master/Meeting projections → state-derived story → governed A01–A18 geometry → the single Phase 1 Python-PPTX backend → relationship-aware structural QA → executed Professor QA → LibreOffice render/montage Visual QA. No Phase 3 work, public Skill registration, or production Group Meeting claim was made.
+Completed the bounded Phase 2 hypothesis-layer slice only. The chain is canonical scientific objects → append-only hashed ledger → cursor materialization → Master/Meeting projections → state-derived story → governed A01–A18 geometry → the single Phase 1 Python-PPTX backend → relationship-aware structural QA → executed Professor QA → LibreOffice render/montage Visual QA. Professor QA loads the persisted versioned profile and gates profile-controlled checks from its project rules. No Phase 3 work, public Skill registration, or production Group Meeting claim was made.
 
 ## 2 Architecture decisions
 
@@ -36,9 +36,10 @@ The canonical order is schema/ledger → scientific reasoning → citation/evide
 
 Executed:
 
-- full Phase 1 + Phase 2 pytest suite: **63 passed, 0 failed**;
+- full Phase 1 + Phase 2 pytest suite: **65 passed, 0 failed**;
 - clean Phase 2 rebuild, persisted Ledger reload/replay/materialization, causal-temporal validation, exact validation of all canonical objects and generated Slide Specs/Manifest/Layout Plans/Profile/QA Report;
 - state-derived content, explicit decision-reference, and persisted-ledger fixture-mutation regression tests (canonical content/binding hash equality after rebuilding every Slide Spec from its cursor);
+- Professor profile-rule gating and Visual QA negative tests for title/body hierarchy and unresolved split budgets;
 - hierarchical fishbone duplicate/orphan/cycle and parent-connector tests;
 - required Skill routing test;
 - relationship-aware OpenXML audit and SVG relationship audit;
@@ -62,8 +63,8 @@ No Phase 1 or Phase 3 implementation is started by this correction. The repo-loc
 | P2-B2 causal chronology | `hypothesis.validate_causal_history`; ledger cursors 17/18→19/20→21/22→23/25 and 35 transition; `causal-temporal-qa.json` | future transition/result/discussion/summary negative tests; causal status **pass** | PASS |
 | P2-B3 state-derived story/content | `story.content_from_materialized_state`; `_hydrate_from_state`; persisted Slide Spec `object_ref`; no production `_content_text`/fixture prose path; progress from `meeting_projection` | explicit D201 decision test; `test_persisted_state_content_is_immune_to_fixture_mutation` reloads `Ledger.load()` and rebuilds all specs; canonical source fields hash-identical; notes/source refs audited | PASS |
 | P2-B4 governed geometry / assembler conformance | `layout.ROLE_GEOMETRY`; `layout-plans.json`; `layout-director-decisions.json`; `layout-overrides.json`; `pptx.audit_pptx` governed-slot evidence | 11 distinct signatures; geometry conformance = 18/18; final unresolved split count = **0** | PASS |
-| P2-B5 executed Professor QA | persisted `professor-profile.json`; `qa2.run_professor_qa_v2`; `professor-qa.json` | 29 executed checks, 0 findings; negative structural/focus/commitment tests retained | PASS |
-| P2-B6 truthful Visual QA | `qa2.run_visual_qa_v2`; `phase2_render.py`; `visual-inspection.json` | 14 automated checks × 18 slides; 18 slide-specific observations; persisted inspection record validates; 0 findings | PASS |
+| P2-B5 executed Professor QA | persisted `professor-profile.json`; `qa2.run_professor_qa_v2` consumes `narrative_rules` / `meeting_rules`; `professor-qa.json` | 29 executed checks, 0 findings; profile-rule gating test plus structural/focus/commitment negative tests | PASS |
+| P2-B6 truthful Visual QA | `qa2.run_visual_qa_v2`; `phase2_render.py`; `visual-inspection.json` | 14 automated checks × 18 slides; 18 slide-specific observations; persisted inspection record validates; overlap, font, title-hierarchy, bounds, split, comparison, fishbone-focus, and required-slot negative tests | PASS |
 | P2-B7 Skill orchestration | seven `thesis-deck-system/skills/*/SKILL.md`; `skill-routing.yaml` | deterministic routing/handoff test passes; no global registration | PASS |
 | P2-B8 hierarchical stable fishbone | `fishbone.validate_fishbone_revision`; parent-aware `_positions`; FB001 rev1/rev2 SVGs | duplicate/orphan/cycle/parent connector tests; side-by-side montage; H01 rev1 hash replay unchanged; hierarchy status **pass** | PASS |
 
@@ -117,6 +118,7 @@ codex_report:
     - thesis-deck-system/schemas/slide-spec.schema.json
     - thesis-deck-system/reports/PHASE_2_IMPLEMENTATION_REPORT.md
     - packages/thesis-deck-system/tests/integration/test_phase2_acceptance_build.py
+    - packages/thesis-deck-system/tests/unit/test_phase2_qa.py
     - packages/thesis-deck-system/tests/unit/test_phase2_story.py
     - packages/thesis-deck-system/tests/unit/test_phase2_skill_routing.py
   files_deleted: []
@@ -144,7 +146,7 @@ codex_report:
     - causal-temporal, cursor-binding, OpenXML, geometry, montage, routing, and absolute-path checks
     - git diff --check
   tests_passed:
-    - 63 passed
+    - 65 passed
     - Phase 2 QA Stages 1-7 pass
     - structural geometry/layout/master/notes/SVG audit pass
     - visual inspection record pass
