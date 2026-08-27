@@ -767,7 +767,7 @@
   ],
   "outputs": {
     "pptx": "acceptance-deck.pptx",
-    "pptx_sha256": "473da5b3fab50e3f23e0ae257899a03d2cc2f5ce68acc39dba317dedd1b963c8"
+    "pptx_sha256": "51f610e742f5a66af3ceca244f6fabfda4c44d3aee0ebfbe17799ede937b3518"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE2-ACCEPTANCE"

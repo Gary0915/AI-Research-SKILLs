@@ -53,6 +53,26 @@ def run_presentation_temporal_snapshot_qa(specs: list[dict], ledger) -> dict:
                 event_by_id.setdefault((key, str(payload[key])), []).append(event.cursor)
     findings: list[dict] = []
     rows: list[dict] = []
+    # Compute result-evidence boundaries per hypothesis layer.  A global
+    # minimum (for example H001's E101 cursor) would incorrectly report that
+    # H002's opening snapshot is beyond its allowed boundary even though E101
+    # belongs to the predecessor layer.
+    final_state = ledger.materialize(len(events))
+    layer_by_block = {
+        block_ref: layer_id
+        for layer_id, layer in final_state.get("hypothesis_layers", {}).items()
+        for block_ref in layer.get("research_block_refs", [])
+    }
+    result_evidence_cursors_by_layer: dict[str, list[int]] = {}
+    for event in events:
+        if event.event_type != "stage_revised" or event.payload.get("stage_type") != "result" or event.payload.get("status") == "pending":
+            continue
+        block_id = event.payload.get("block_ref", {}).get("block_id")
+        layer_id = layer_by_block.get(block_id)
+        if not layer_id:
+            continue
+        for evidence_ref in event.payload.get("evidence_refs", []):
+            result_evidence_cursors_by_layer.setdefault(layer_id, []).extend(event_by_id.get(("evidence_id", evidence_ref), []))
     # E102 is the pre-result observation used by the opening hypothesis
     # snapshot. Only evidence cards explicitly produced by result stages are
     # forbidden from historical Hypothesis/Problem/Fishbone bindings.
@@ -98,7 +118,7 @@ def run_presentation_temporal_snapshot_qa(specs: list[dict], ledger) -> dict:
         earliest = min((event_by_id.get(("hypothesis_layer_id", layer_id), [cursor or 0]) or [cursor or 0])) if layer_id else cursor
         latest_allowed = None
         if role in {"hypothesis_title", "problem_definition", "fishbone_locator"}:
-            latest_allowed = min((event_by_id.get(("evidence_id", ref), [cursor or 0])[0] for ref in result_evidence), default=None)
+            latest_allowed = min(result_evidence_cursors_by_layer.get(layer_id, []), default=None)
         row = {"slide_id": spec.get("slide_id"), "semantic_role": role, "source_cursor": cursor, "stage_source_cursors": stage_cursors, "bound_claim_refs": refs.get("claim_refs", []), "bound_evidence_refs": refs.get("evidence_refs", []), "bound_asset_refs": refs.get("asset_refs", []), "bound_action_refs": refs.get("action_refs", []), "bound_decision_refs": refs.get("decision_refs", []), "earliest_required_cursor": earliest, "latest_allowed_cursor": latest_allowed, "future_ref_findings": future, "status": "fail" if future else "pass"}
         rows.append(row)
         if future:

@@ -25,6 +25,9 @@ def test_presentation_temporal_snapshots_are_stage_aware_and_future_safe(tmp_pat
     h02_opening = next(s for s in specs if s["slide_id"] == "S-H002-HYPOTHESIS-TITLE-01")
     assert "E201" not in h02_opening["bindings"]["evidence_refs"]
     assert result["h01_cursor"] < result["h02_cursor"]
+    for row in qa["slides"]:
+        if row["semantic_role"] in {"hypothesis_title", "problem_definition", "fishbone_locator"} and row["latest_allowed_cursor"] is not None:
+            assert row["source_cursor"] <= row["latest_allowed_cursor"]
 
 
 def test_combined_roles_have_physical_content_contract_coverage(tmp_path: Path):
