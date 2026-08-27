@@ -69,7 +69,7 @@
     {
       "archetype_ref": "A11",
       "dominant_content_region": "safe_content_bounds",
-      "information_density": "medium"
+      "information_density": "high"
     },
     {
       "archetype_ref": "A12",

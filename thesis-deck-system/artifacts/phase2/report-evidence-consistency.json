@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "h01_opening_cursor": 23,
+  "h01_result_cursors": [
+    28,
+    28
+  ],
+  "h01_discussion_cursor": 30,
+  "h01_summary_cursor": 32,
+  "transition_cursor": 54,
+  "h02_opening_cursor": 56,
+  "h02_experiment_cursor": 57,
+  "h02_result_evidence_cursor": 58,
+  "h02_result_slide_cursors": [
+    61
+  ],
+  "h02_discussion_cursor": 64,
+  "h02_summary_cursor": 66,
+  "slide_count": 19,
+  "generated_slot_count": 52,
+  "materialized_transition_last_cursor": 54,
+  "qa_report_id": "QA-MASTER-PHASE2-ACCEPTANCE",
+  "source": "canonical Slide Specs, structural audit, persisted Ledger, and executed QA report"
+}

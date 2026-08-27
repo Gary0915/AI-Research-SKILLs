@@ -1,12 +1,12 @@
 {
   "projection_kind": "master",
-  "source_event_cursor": 55,
+  "source_event_cursor": 67,
   "append_only": true,
   "layers": [
     {
       "schema_version": "2.0.0",
       "hypothesis_layer_id": "H001",
-      "revision": 2,
+      "revision": 3,
       "title": "H01｜Bulk conductivity 主導假說",
       "hypothesis_claim_ref": "C101",
       "problem_ref": "P101",
@@ -48,14 +48,14 @@
       "transition_ref": "TR-H001-H002",
       "story_visibility": "main",
       "research_status": "partial_support",
-      "source_event_cursor": 42,
+      "source_event_cursor": 55,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
     {
       "schema_version": "2.0.0",
       "hypothesis_layer_id": "H002",
-      "revision": 1,
+      "revision": 2,
       "title": "H02｜Contact resistance 主導假說",
       "hypothesis_claim_ref": "C201",
       "problem_ref": "P201",
@@ -104,7 +104,7 @@
       "transition_ref": null,
       "story_visibility": "main",
       "research_status": "supported",
-      "source_event_cursor": 55,
+      "source_event_cursor": 67,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     }

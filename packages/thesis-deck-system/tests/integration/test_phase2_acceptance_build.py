@@ -39,8 +39,9 @@ def test_phase2_acceptance_build_is_cursor_aware_and_reviewable(tmp_path: Path):
     assert h02["hypothesis_layers"]["H002"]["fishbone_snapshot_ref"]["revision"] == 2
 
     specs = json.loads((tmp_path / "slide-specs.json").read_text(encoding="utf-8"))
-    # H01's two experiment matrices are now a real governed split rather
-    # than a self-approved one-page override.
+    # H01's two experiment matrices are a real governed split rather than a
+    # self-approved one-page override. Stage-aware specs now retain the
+    # earliest cursor for opening pages and later cursors for result synthesis.
     assert len(specs) == 19
     h01_specs = [spec for spec in specs if spec.get("hypothesis_layer_ref") == "H001"]
     h02_specs = [spec for spec in specs if spec.get("hypothesis_layer_ref") == "H002"]
@@ -52,8 +53,22 @@ def test_phase2_acceptance_build_is_cursor_aware_and_reviewable(tmp_path: Path):
     assert h02_specs[2]["semantic_role"] == "fishbone_locator"
     transition_spec = next(spec for spec in h01_specs if spec["semantic_role"] == "hypothesis_transition")
     assert transition_spec["source_cursor"] > result["h01_cursor"]
-    assert all(spec["source_cursor"] == result["h01_cursor"] for spec in h01_specs if spec is not transition_spec)
-    assert all(spec["source_cursor"] == result["h02_cursor"] for spec in h02_specs)
+    opening_roles = {"hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem", "literature_mechanism", "experiment_design"}
+    assert all(spec["source_cursor"] == result["h01_cursor"] for spec in h01_specs if spec["semantic_role"] in opening_roles)
+    result_specs = [spec for spec in h01_specs if spec["semantic_role"] == "result_single"]
+    discussion_spec = next(spec for spec in h01_specs if spec["semantic_role"] == "layer_integrated_discussion")
+    summary_spec = next(spec for spec in h01_specs if spec["semantic_role"] == "layer_summary_decision")
+    assert result_specs and all(spec["source_cursor"] > result["h01_cursor"] for spec in result_specs)
+    assert discussion_spec["source_cursor"] > max(spec["source_cursor"] for spec in result_specs)
+    assert summary_spec["source_cursor"] > discussion_spec["source_cursor"]
+    h2_opening_roles = opening_roles
+    h2_open_cursor = min(spec["source_cursor"] for spec in h02_specs)
+    assert all(spec["source_cursor"] == h2_open_cursor for spec in h02_specs if spec["semantic_role"] in h2_opening_roles)
+    h2_results = [spec for spec in h02_specs if spec["semantic_role"] in {"result_single", "result_comparison"}]
+    assert h2_results and all(spec["source_cursor"] > h2_open_cursor for spec in h2_results)
+    h2_summary = next(spec for spec in h02_specs if spec["semantic_role"] == "layer_summary_decision")
+    assert h2_summary["source_cursor"] > max(spec["source_cursor"] for spec in h2_results)
+    assert h2_summary["source_cursor"] <= result["h02_cursor"]
 
     audit = json.loads((tmp_path / "structural-audit.json").read_text(encoding="utf-8"))
     generated = {item["slide_spec_id"]: item for item in audit["generated_slides"]}

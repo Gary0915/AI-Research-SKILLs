@@ -1,0 +1,416 @@
+{
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "slides": [
+    {
+      "slide_id": "S-PHASE2-PROGRESS-01",
+      "semantic_role": "progress_todo",
+      "source_cursor": 56,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C201"
+      ],
+      "bound_evidence_refs": [
+        "E101"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [
+        "NS101",
+        "NS201"
+      ],
+      "bound_decision_refs": [
+        "D101",
+        "D201"
+      ],
+      "earliest_required_cursor": 56,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "semantic_role": "hypothesis_title",
+      "source_cursor": 23,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": 24,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "semantic_role": "problem_definition",
+      "source_cursor": 23,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E002"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": 24,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "semantic_role": "fishbone_locator",
+      "source_cursor": 23,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E103"
+      ],
+      "bound_asset_refs": [
+        "A101"
+      ],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": 24,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "semantic_role": "observation_problem",
+      "source_cursor": 23,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "bound_asset_refs": [
+        "A002"
+      ],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "semantic_role": "literature_mechanism",
+      "source_cursor": 23,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E103"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "semantic_role": "experiment_design",
+      "source_cursor": 23,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E002"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "semantic_role": "experiment_design",
+      "source_cursor": 23,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "semantic_role": "result_single",
+      "source_cursor": 28,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E101"
+      ],
+      "bound_asset_refs": [
+        "A001"
+      ],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "semantic_role": "result_single",
+      "source_cursor": 28,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E101"
+      ],
+      "bound_asset_refs": [
+        "A001"
+      ],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "semantic_role": "layer_integrated_discussion",
+      "source_cursor": 30,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [
+        "D101"
+      ],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "semantic_role": "layer_summary_decision",
+      "source_cursor": 32,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E101"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [
+        "NS101"
+      ],
+      "bound_decision_refs": [
+        "D101"
+      ],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "semantic_role": "hypothesis_transition",
+      "source_cursor": 54,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C101"
+      ],
+      "bound_evidence_refs": [
+        "E104",
+        "E101"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [
+        "D101"
+      ],
+      "earliest_required_cursor": 23,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "semantic_role": "hypothesis_title",
+      "source_cursor": 56,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C201"
+      ],
+      "bound_evidence_refs": [
+        "E204"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 56,
+      "latest_allowed_cursor": 24,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "semantic_role": "problem_definition",
+      "source_cursor": 56,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C201"
+      ],
+      "bound_evidence_refs": [
+        "E204"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 56,
+      "latest_allowed_cursor": 24,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "semantic_role": "fishbone_locator",
+      "source_cursor": 56,
+      "stage_source_cursors": {},
+      "bound_claim_refs": [
+        "C201"
+      ],
+      "bound_evidence_refs": [
+        "E204"
+      ],
+      "bound_asset_refs": [
+        "A102"
+      ],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 56,
+      "latest_allowed_cursor": 24,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "semantic_role": "observation_problem",
+      "source_cursor": 56,
+      "stage_source_cursors": {
+        "observation_problem": 56,
+        "literature_mechanism": 56,
+        "mechanism_solution": 56
+      },
+      "bound_claim_refs": [
+        "C201"
+      ],
+      "bound_evidence_refs": [
+        "E204",
+        "E202"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 56,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "semantic_role": "result_comparison",
+      "source_cursor": 61,
+      "stage_source_cursors": {
+        "experiment_design": 57,
+        "result_single": 61
+      },
+      "bound_claim_refs": [
+        "C201"
+      ],
+      "bound_evidence_refs": [
+        "E204",
+        "E201"
+      ],
+      "bound_asset_refs": [
+        "A201"
+      ],
+      "bound_action_refs": [],
+      "bound_decision_refs": [],
+      "earliest_required_cursor": 56,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "semantic_role": "layer_summary_decision",
+      "source_cursor": 66,
+      "stage_source_cursors": {
+        "layer_integrated_discussion": 64,
+        "layer_summary_decision": 66
+      },
+      "bound_claim_refs": [
+        "C201"
+      ],
+      "bound_evidence_refs": [
+        "E201"
+      ],
+      "bound_asset_refs": [],
+      "bound_action_refs": [
+        "NS201"
+      ],
+      "bound_decision_refs": [
+        "D201"
+      ],
+      "earliest_required_cursor": 56,
+      "latest_allowed_cursor": null,
+      "future_ref_findings": [],
+      "status": "pass"
+    }
+  ],
+  "findings": []
+}

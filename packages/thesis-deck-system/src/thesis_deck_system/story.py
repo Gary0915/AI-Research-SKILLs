@@ -30,7 +30,11 @@ def compile_hypothesis_layer(layer: dict, *, source_cursor: int) -> list[dict]:
     ]
     sequence.extend(("experiment_design", ref) for ref in layer.get("experiment_order", layer.get("experiment_refs", [])))
     result_refs = layer.get("result_order", layer.get("result_refs", []))
-    sequence.extend((("result_comparison" if len(result_refs) > 1 else "result_single"), ref) for ref in result_refs)
+    # Each persisted result receives its own governed result page.  A
+    # comparison archetype remains available for an explicit comparison spec,
+    # but never collapses distinct RESxxx statements into duplicate or
+    # metadata-only pages.
+    sequence.extend(("result_single", ref) for ref in result_refs)
     sequence.extend([
         ("layer_integrated_discussion", layer.get("layer_discussion_ref")),
         ("layer_summary_decision", layer.get("layer_summary_ref")),
@@ -135,13 +139,14 @@ def content_from_materialized_state(state: dict, layer_id: str, role: str, objec
     return f"Previous hypothesis｜{transition.get('previous_hypothesis_claim_ref')}\nKey results｜{', '.join(transition.get('key_result_refs', []))}\nNot explained｜{transition.get('unexplained', '')}\nNew observation｜{', '.join(transition.get('observation_or_uncertainty_refs', []))}\nTherefore｜{transition.get('rationale', '')}\nNew hypothesis｜{transition.get('new_hypothesis_claim_ref')}"
 
 
-def content_slots_from_materialized_state(state: dict, layer_id: str, role: str, object_ref=None, *, meeting_projection: dict | None = None) -> dict[str, str]:
+def content_slots_from_materialized_state(state: dict, layer_id: str, role: str, object_ref=None, *, meeting_projection: dict | None = None, combined_roles: list[str] | None = None) -> dict[str, str]:
     """Compile slot-bound scientific content from one materialized cursor.
 
     `content.body` remains a human-readable compatibility concatenation; it
     is never the authoritative source used for placement.  Each governed slot
     receives a separately persisted string generated from the same state.
     """
+    combined_roles = list(combined_roles or [role])
     body = content_from_materialized_state(state, layer_id, role, object_ref, meeting_projection=meeting_projection)
     line_map = {}
     for line in body.splitlines():
@@ -158,6 +163,15 @@ def content_slots_from_materialized_state(state: dict, layer_id: str, role: str,
         return {"previous_finding": line_map.get("Previous finding", ""), "unresolved_conflict": line_map.get("Conflict", ""), "research_question": line_map.get("Research question", "")}
     if role == "fishbone_locator":
         return {"primary_figure": "Historical fishbone SVG bound by Asset Manifest.", "fishbone_focus": line_map.get("Focus branch", "")}
+    if set(("observation_problem", "literature_mechanism", "mechanism_solution")) <= set(combined_roles):
+        return {
+            "primary_figure": "Registered observation visual.",
+            "research_question": line_map.get("Research question", ""),
+            "observation_text": "\n".join(line for line in body.splitlines() if line.startswith(("Observation｜", "Problem｜"))),
+            "literature_evidence": "\n".join(line for line in body.splitlines() if line.startswith(("Literature consensus｜", "Alternatives｜", "Gap｜", "Implication｜"))),
+            "mechanism_diagram": "\n".join(line for line in body.splitlines() if line.startswith("Mechanism｜")),
+            "strategy": line_map.get("Strategy", ""),
+        }
     if role == "observation_problem":
         return {"primary_figure": "Registered observation visual.", "research_question": line_map.get("Research question", ""), "observation_text": "\n".join(line for line in body.splitlines() if line.startswith(("Observation｜", "Problem｜")))}
     if role == "literature_mechanism":
@@ -167,15 +181,47 @@ def content_slots_from_materialized_state(state: dict, layer_id: str, role: str,
     if role == "experiment_design":
         return {"experiment_matrix": "\n".join(line for line in body.splitlines() if any(key in line for key in ("IV:", "Controls:", "N/replicates:", "Metrics/units:", "Method:"))), "decision_rule": "\n".join(line for line in body.splitlines() if "Decision rule:" in line or "Prediction:" in line)}
     if role == "result_single":
-        return {"result_plot": "Registered quantitative SVG.", "result_annotation": body}
+        # The plot slot carries the scientific result statement as its
+        # annotation; the asset itself is never allowed to replace that text.
+        return {"result_plot": body, "result_annotation": body}
+    if role == "result_comparison" and set(("experiment_design", "result_single")) <= set(combined_roles):
+        refs = object_ref if isinstance(object_ref, list) else [object_ref]
+        experiment_ref = refs[0] if refs else None
+        result_ref = refs[-1] if refs else None
+        experiment = stages.get(_stage_id(state, experiment_ref), {}).get("data", {})
+        result = stages.get(_stage_id(state, result_ref), {}).get("data", {}).get("summary", "")
+        def compact(value):
+            if isinstance(value, list):
+                return "; ".join(str(item) for item in value)
+            if isinstance(value, dict):
+                return "; ".join(f"{key}: {item}" for key, item in value.items())
+            return str(value)
+        return {
+            "experiment_matrix": "\n".join([f"IV: {compact(experiment.get('independent_variables', ''))}", f"Controls: {compact(experiment.get('controlled_variables', ''))}", f"Baselines: {compact(experiment.get('controls_baselines', ''))}", f"N/replicates: {compact(experiment.get('sample_plan', ''))}", f"Metrics/units: {compact(experiment.get('measured_outputs', ''))}", f"Method: {compact(experiment.get('instrumentation_method_refs', ''))}", f"Prediction: {compact(experiment.get('predicted_outcomes', ''))}"]),
+            "decision_rule": compact(experiment.get("decision_rules", "")),
+            "result_plot": result,
+            "result_annotation": result,
+        }
     if role == "result_comparison":
         result_ref = object_ref[-1] if isinstance(object_ref, list) else object_ref
         result = stages.get(_stage_id(state, result_ref), {}).get("data", {}).get("summary", body)
         experiment_ref = (object_ref[0] if isinstance(object_ref, list) and object_ref else None)
         experiment = stages.get(_stage_id(state, experiment_ref), {}).get("data", {})
-        return {"control_panel": f"Control｜{'; '.join(experiment.get('controls_baselines', []))}", "proposed_panel": f"Result｜{result}"}
+        return {"control_panel": f"Control｜{'; '.join(experiment.get('controls_baselines', []))}", "proposed_panel": f"Result｜{result}", "result_plot": result, "result_annotation": result}
     if role == "layer_integrated_discussion":
         return {"supporting_results": line_map.get("Supporting", ""), "contradicting_results": line_map.get("Contradicting", ""), "uncertainty": "\n".join(line for line in body.splitlines() if line.startswith(("Alternatives｜", "Remaining uncertainty｜", "Mechanism assessment｜")))}
+    if role == "layer_summary_decision" and "layer_integrated_discussion" in combined_roles:
+        summary = state.get("layer_summaries", {}).get(object_ref, {})
+        discussion = state.get("layer_discussions", {}).get(summary.get("discussion_ref") or layer.get("layer_discussion_ref"), {})
+        decision = state.get("decisions", {}).get(summary.get("decision_ref"), {})
+        return {
+            "supporting_results": "; ".join(discussion.get("supporting_results", [])) or "None identified",
+            "contradicting_results": "; ".join(discussion.get("contradicting_results", [])) or "None identified",
+            "discussion_synthesis": "\n".join([f"Cross-experiment pattern｜{discussion.get('cross_experiment_pattern', '')}", f"Mechanism assessment｜{discussion.get('mechanism_assessment', '')}", f"Alternatives｜{'; '.join(discussion.get('alternative_explanations', []))}"]),
+            "uncertainty": f"Discussion uncertainty｜{discussion.get('remaining_uncertainty', '')}\nSummary unresolved｜{summary.get('remaining_unresolved', '')}",
+            "decision_status": f"Hypothesis status｜{summary.get('hypothesis_status', '')}\nDecision｜{decision.get('choice', '')}: {decision.get('rationale', '')}",
+            "next_step": f"Next question｜{summary.get('next_question', '')}\nNext Step｜{', '.join(summary.get('next_step_refs', []))}",
+        }
     if role == "layer_summary_decision":
         return {"decision_status": "\n".join(line for line in body.splitlines() if line.startswith(("Hypothesis status｜", "Decision｜", "Answered｜"))), "uncertainty": line_map.get("Unresolved", ""), "next_step": "\n".join(line for line in body.splitlines() if line.startswith(("Next question｜", "Next Step｜")))}
     if role == "hypothesis_transition":

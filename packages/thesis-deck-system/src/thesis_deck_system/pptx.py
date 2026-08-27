@@ -98,9 +98,13 @@ class PythonPptxAssembler(PptxAssembler):
                 plot_path = spec["placements"][0]["asset_path"]; plot_path = str(context.resolve_repo_path(plot_path)) if not Path(plot_path).is_absolute() else plot_path
                 try:
                     left, top, width, height = box("result_plot", (5.3, 1.7, 7.2, 4.0)); slide.shapes.add_picture(plot_path, Inches(left), Inches(top), width=Inches(width), height=Inches(height))
+                    if str(plot_path).lower().endswith(".svg"):
+                        svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": spec["placements"][0]["asset_id"], "svg_path": Path(plot_path), "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
                 except Exception:
                     # python-pptx cannot decode SVG; retain the registered SVG in the package and use PNG only as compatibility preview.
                     left, top, width, height = box("result_plot", (5.3, 1.7, 7.2, 4.0)); slide.shapes.add_picture(str(Path(plot_path).with_suffix('.png')), Inches(left), Inches(top), width=Inches(width), height=Inches(height))
+                    if str(plot_path).lower().endswith(".svg"):
+                        svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": spec["placements"][0]["asset_id"], "svg_path": Path(plot_path), "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
             elif spec["recipe"] == "photo_observation":
                 left, top, width, height = box("observation_text", (.7, 1.7, 5.6, 3.8)); body = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
                 body.text = content.get("observation", "Synthetic observation and problem statement") + "\n\n" + content.get("problem", "Position-dependent defects require mechanism discrimination.")
@@ -110,6 +114,8 @@ class PythonPptxAssembler(PptxAssembler):
                 if visual:
                     try:
                         left, top, width, height = box("primary_figure", (6.6, 1.6, 5.8, 3.3)); slide.shapes.add_picture(visual, Inches(left), Inches(top), width=Inches(width), height=Inches(height))
+                        if str(visual).lower().endswith(".svg"):
+                            svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": next((item.get("asset_id") for item in spec.get("placements", []) if item.get("slot") == "primary_figure"), "A002"), "svg_path": Path(visual), "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
                     except Exception:
                         # observation visual is vector source; use a deterministic preview when decoder lacks SVG support.
                         from PIL import Image, ImageDraw
@@ -117,6 +123,8 @@ class PythonPptxAssembler(PptxAssembler):
                         if not preview.exists():
                             im=Image.new('RGB',(640,360),'#d9e5e8'); ImageDraw.Draw(im).text((30,160),'SYNTHETIC OBSERVATION',fill='#234'); im.save(preview)
                         left, top, width, height = box("primary_figure", (6.6, 1.6, 5.8, 3.3)); slide.shapes.add_picture(str(preview), Inches(left), Inches(top), width=Inches(width), height=Inches(height))
+                        if str(visual).lower().endswith(".svg"):
+                            svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": next((item.get("asset_id") for item in spec.get("placements", []) if item.get("slot") == "primary_figure"), "A002"), "svg_path": Path(visual), "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
             else:
                 slot_content = content.get("slots", {})
                 asset_by_slot = {placement.get("slot"): placement for placement in spec.get("placements", []) if placement.get("asset_path")}
@@ -138,14 +146,32 @@ class PythonPptxAssembler(PptxAssembler):
                         preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
                         shape = slide.shapes.add_picture(str(preview), Inches(5.7), Inches(1.55), width=Inches(6.0), height=Inches(4.5))
                         shape.name = f"tds-slot:{placement.get('slot', 'asset')}"
+                        if str(asset_path).lower().endswith(".svg"):
+                            svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": placement["asset_id"], "svg_path": resolved, "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
                 for governed_slot in sorted(governed, key=lambda item: item.get("z_order", 0)):
                     slot_name = governed_slot["slot"]
                     placement = asset_by_slot.get(slot_name)
+                    composition = content.get("slot_compositions", {}).get(slot_name, spec.get("slot_compositions", {}).get(slot_name, "asset_only" if placement else "text_only"))
                     if placement:
                         asset_path = placement["asset_path"]
                         resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
                         preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
                         shape = slide.shapes.add_picture(str(preview), Inches(governed_slot["left"]), Inches(governed_slot["top"]), width=Inches(governed_slot["width"]), height=Inches(governed_slot["height"]))
+                        shape.name = f"tds-slot:{slot_name}" if composition in {"asset_only", "text_only"} else f"tds-slot:{slot_name}/figure"
+                        if str(asset_path).lower().endswith(".svg"):
+                            svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": placement["asset_id"], "svg_path": resolved, "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
+                        # asset_with_caption/annotation is an explicit
+                        # composition contract: retain the scientific text as
+                        # a real editable shape rather than hiding it behind a
+                        # figure.
+                        if composition in {"asset_with_caption", "asset_with_annotation", "nested_group"} and slot_content.get(slot_name):
+                            annotation_height = governed_slot["height"] * 0.32
+                            annotation = slide.shapes.add_textbox(Inches(governed_slot["left"]), Inches(governed_slot["top"] + governed_slot["height"] - annotation_height), Inches(governed_slot["width"]), Inches(annotation_height))
+                            annotation.text = str(slot_content[slot_name])
+                            annotation.name = f"tds-slot:{slot_name}/annotation"
+                            for paragraph in annotation.text_frame.paragraphs:
+                                for run in paragraph.runs:
+                                    run.font.size = Pt(max(12, governed_slot.get("font_size_pt", 16) - 1))
                     else:
                         text = slot_content.get(slot_name)
                         if text is None:
@@ -155,23 +181,14 @@ class PythonPptxAssembler(PptxAssembler):
                         for paragraph in shape.text_frame.paragraphs:
                             for run in paragraph.runs:
                                 run.font.size = __import__('pptx').util.Pt(governed_slot.get("font_size_pt", 16))
-                    # Shape names are persisted in p:cNvPr@name and survive a
-                    # save/reload.  They form the stable physical-slot bridge.
-                    shape.name = f"tds-slot:{slot_name}"
+                        # Shape names are persisted in p:cNvPr@name and survive
+                        # a save/reload.  They form the stable physical-slot
+                        # bridge.
+                        shape.name = f"tds-slot:{slot_name}"
             notes = slide.notes_slide.notes_text_frame
             source_refs = spec.get("speaker_notes", {}).get("source_refs", [])
             note_text = spec.get("speaker_notes", {}).get("text", "")
             notes.text = "[Sources]\n" + "\n".join(source_refs) + "\n[/Sources]\n" + note_text
-            picture_count = len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic'))
-            for placement in spec.get("placements", []):
-                asset_path = placement.get("asset_path", "")
-                if str(asset_path).lower().endswith(".svg"):
-                    svg_placements.append({
-                        "slide_part": slide.part.partname.lstrip("/"),
-                        "asset_id": placement["asset_id"],
-                        "svg_path": context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path),
-                        "picture_index": max(0, picture_count - 1),
-                    })
         prs.save(output_path)
         if svg_placements and attach_svg:
             _attach_svg_relationships(output_path, svg_placements)
@@ -331,14 +348,28 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
             for plan_slot in governed:
                 slot_name = plan_slot["slot"]
                 shape = shape_by_slot.get(slot_name)
+                nested = [candidate for key, candidate in shape_by_slot.items() if key.startswith(slot_name + "/")]
                 empty = intentionally_empty.get(slot_name)
                 asset = next((item for item in spec.get("placements", []) if item.get("slot") == slot_name), None)
                 expected_content = spec.get("content", {}).get("slots", {}).get(slot_name)
-                actual_geometry = None if shape is None else {"left": shape.left / 914400, "top": shape.top / 914400, "width": shape.width / 914400, "height": shape.height / 914400}
-                geometry_match = bool(shape and abs(actual_geometry["left"] - plan_slot["left"]) < .08 and abs(actual_geometry["top"] - plan_slot["top"]) < .08 and abs(actual_geometry["width"] - plan_slot["width"]) < .08 and abs(actual_geometry["height"] - plan_slot["height"]) < .08)
-                content_binding = bool(asset and shape) or bool(shape and expected_content is not None and shape.has_text_frame and str(expected_content) in shape.text)
-                slot_matches[slot_name] = bool(empty or (shape and geometry_match and content_binding))
-                physical_slots.append({"slot": slot_name, "planned_geometry": {key: plan_slot[key] for key in ("left", "top", "width", "height")}, "actual_shape_identity": None if shape is None else shape.name, "actual_geometry": actual_geometry, "geometry_tolerance_result": geometry_match, "content_or_asset_binding_result": content_binding, "intentionally_empty": empty})
+                composition = spec.get("slot_compositions", {}).get(slot_name, "asset_only" if asset else "text_only")
+                physical_shape = shape or (nested[0] if nested else None)
+                actual_geometry = None if physical_shape is None else {"left": physical_shape.left / 914400, "top": physical_shape.top / 914400, "width": physical_shape.width / 914400, "height": physical_shape.height / 914400}
+                geometry_match = bool(physical_shape and abs(actual_geometry["left"] - plan_slot["left"]) < .08 and abs(actual_geometry["top"] - plan_slot["top"]) < .08 and abs(actual_geometry["width"] - plan_slot["width"]) < .08 and abs(actual_geometry["height"] - plan_slot["height"]) < .08)
+                text_shapes = [candidate for candidate in ([shape] if shape is not None else []) + nested if candidate.has_text_frame]
+                actual_text = "\n".join(candidate.text for candidate in text_shapes if candidate.text)
+                asset_relationship = bool(asset and any(item.get("asset_id") == asset.get("asset_id") for item in svg_asset_relationships))
+                picture_shape = physical_shape is not None and not physical_shape.has_text_frame
+                if composition == "text_only":
+                    content_binding = bool(physical_shape and expected_content is not None and str(expected_content) in actual_text)
+                elif composition == "asset_only":
+                    content_binding = bool(asset and physical_shape and picture_shape)
+                else:
+                    content_binding = bool(asset and picture_shape and (not expected_content or str(expected_content) in actual_text))
+                if asset and str(asset.get("asset_path", "")).lower().endswith(".svg"):
+                    content_binding = content_binding and asset_relationship
+                slot_matches[slot_name] = bool(empty or (physical_shape and geometry_match and content_binding))
+                physical_slots.append({"slot": slot_name, "composition": composition, "planned_geometry": {key: plan_slot[key] for key in ("left", "top", "width", "height")}, "actual_shape_identity": None if physical_shape is None else physical_shape.name, "nested_shape_identities": [candidate.name for candidate in nested], "actual_geometry": actual_geometry, "actual_text": actual_text, "expected_text": expected_content, "expected_asset_id": None if asset is None else asset.get("asset_id"), "asset_relationship": asset_relationship, "geometry_tolerance_result": geometry_match, "content_or_asset_binding_result": content_binding, "intentionally_empty": empty})
             generated_slides.append({
                 "slide_spec_id": spec["slide_id"],
                 "generated_slide_id": slide.slide_id,

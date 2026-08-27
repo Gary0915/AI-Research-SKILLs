@@ -5,8 +5,17 @@
   },
   "status": "pass",
   "executed_checks": [
+    "PROF-PRESENTATION-SEMANTIC-FIDELITY",
     "PROF-HYPOTHESIS-EXISTS",
     "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+    "PROF-PRESENTATION-ROLE-EXPERIMENT_DESIGN",
+    "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR",
+    "PROF-PRESENTATION-ROLE-HYPOTHESIS_TRANSITION",
+    "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION",
+    "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION",
+    "PROF-PRESENTATION-ROLE-LITERATURE_MECHANISM",
+    "PROF-PRESENTATION-ROLE-OBSERVATION_PROBLEM",
+    "PROF-PRESENTATION-ROLE-RESULT_SINGLE",
     "PROF-FISHBONE-EXISTS",
     "PROF-FISHBONE-FOCUS",
     "PROF-FISHBONE-REVISION",
@@ -21,6 +30,14 @@
     "PROF-TRANSITION-PROVENANCE",
     "PROF-HYPOTHESIS-EXISTS",
     "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+    "PROF-PRESENTATION-ROLE-EXPERIMENT_DESIGN",
+    "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR",
+    "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION",
+    "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION",
+    "PROF-PRESENTATION-ROLE-LITERATURE_MECHANISM",
+    "PROF-PRESENTATION-ROLE-MECHANISM_SOLUTION",
+    "PROF-PRESENTATION-ROLE-OBSERVATION_PROBLEM",
+    "PROF-PRESENTATION-ROLE-RESULT_SINGLE",
     "PROF-FISHBONE-EXISTS",
     "PROF-FISHBONE-FOCUS",
     "PROF-FISHBONE-REVISION",
@@ -35,8 +52,33 @@
     "PROF-HISTORY-REACHABLE",
     "PROF-NEXT-STEP-OWNER-TIMING"
   ],
-  "check_count": 29,
+  "check_count": 46,
   "evidence": {
+    "PROF-PRESENTATION-SEMANTIC-FIDELITY": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "presentation_semantic_fidelity",
+      "detail": {
+        "schema_version": "1.0.0",
+        "status": "pass",
+        "executed_checks": [
+          "temporal_snapshot",
+          "combined_role_contract",
+          "physical_content_fidelity",
+          "hypothesis_problem_separation",
+          "scientific_method_visibility",
+          "result_distinction",
+          "discussion_after_results",
+          "summary_after_discussion",
+          "historical_fishbone"
+        ],
+        "findings": [],
+        "temporal_snapshot_status": "pass",
+        "combined_role_status": "pass",
+        "physical_fidelity_status": "pass"
+      }
+    },
     "PROF-HYPOTHESIS-EXISTS": {
       "passed": true,
       "profile_rule": null,
@@ -63,6 +105,78 @@
         "observation_problem",
         "result_comparison",
         "layer_summary_decision"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-EXPERIMENT_DESIGN": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-EXPERIMENT-DESIGN-06"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-FISHBONE-LOCATOR-03"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-HYPOTHESIS_TRANSITION": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H001",
+      "detail": [
+        "S-H001-HYPOTHESIS-TRANSITION-12"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-LAYER-SUMMARY-DECISION-09"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-LAYER-SUMMARY-DECISION-09"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-LITERATURE_MECHANISM": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-OBSERVATION-PROBLEM-04"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-OBSERVATION_PROBLEM": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-OBSERVATION-PROBLEM-04"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-RESULT_SINGLE": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-EXPERIMENT-DESIGN-06"
       ]
     },
     "PROF-FISHBONE-EXISTS": {
@@ -245,7 +359,7 @@
         "next_step_refs": [
           "NS201"
         ],
-        "source_event_cursor": 50,
+        "source_event_cursor": 64,
         "created_at": "2026-08-27T00:00:00Z"
       }
     },
@@ -270,7 +384,7 @@
         "next_step_refs": [
           "NS201"
         ],
-        "source_event_cursor": 53,
+        "source_event_cursor": 66,
         "created_at": "2026-08-27T00:00:00Z"
       }
     },
@@ -298,9 +412,18 @@
         "decision_refs": [
           "D101"
         ],
-        "source_event_cursor": 41,
+        "source_event_cursor": 52,
         "created_at": "2026-08-27T00:00:00Z"
       }
+    },
+    "PROF-PRESENTATION-ROLE-MECHANISM_SOLUTION": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-OBSERVATION-PROBLEM-04"
+      ]
     },
     "PROF-HISTORY-REACHABLE": {
       "passed": true,
@@ -351,10 +474,8 @@
             "timezone": "Asia/Taipei"
           },
           "actual_completion": {
-            "completed_at": "2026-09-10T09:00:00Z",
-            "closure_evidence_refs": [
-              "E201"
-            ]
+            "completed_at": null,
+            "closure_evidence_refs": []
           },
           "success_failure_criteria": {
             "success": "effect exceeds uncertainty",
@@ -369,8 +490,8 @@
           "blocker_refs": [],
           "parallelizable": true,
           "workstream": "interface-mechanism",
-          "status": "done",
-          "result_summary": "Completed synthetic control",
+          "status": "planned",
+          "result_summary": "Awaiting controlled comparison",
           "supersedes": [],
           "superseded_by": [],
           "provenance": "synthetic_fixture",

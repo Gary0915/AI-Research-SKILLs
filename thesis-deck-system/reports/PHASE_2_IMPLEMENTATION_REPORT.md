@@ -1,116 +1,144 @@
-# Phase 2 Implementation Report — Revision 2
+# Phase 2 Implementation Report — Revision 3
 
 ## 1 Objective completed
 
-Corrected the Phase 2 bounded vertical slice for blockers P2-C1–P2-C6. The implemented chain is:
+Phase 2 Revision 3 corrects the P2-D1–P2-D4 presentation-history defects while
+preserving the accepted P2-C1–P2-C6 contracts. The bounded chain is:
 
-`canonical scientific objects → causal append-only Ledger → Ledger.load/replay/materialize → master/meeting projections → state-derived Hypothesis Layer story → governed A01–A18 geometry → Slide Specs → one Python-PPTX adapter → OpenXML structural QA → LibreOffice render/pixel QA → image-capable qualitative review → Professor QA`.
+`canonical scientific objects → append-only Ledger → Ledger.load/replay/materialize → stage-aware projections → state-derived Slide Specs → governed Layout Plans → one PPTX adapter → OpenXML structural audit → render-pixel/qualitative visual QA → presentation semantic fidelity → Professor QA`.
 
-No Phase 3 work, public/global Skill registration, or production Group Meeting readiness claim is made. Private fixture and native PowerPoint gates remain honestly blocked where the environment cannot provide them.
+No Phase 3 work, public/global Skill registration, or production Group Meeting
+readiness is claimed. Private laboratory fixtures and native PowerPoint remain
+honestly blocked where the environment cannot provide them.
 
 ## 2 Architecture decisions
 
-- The seed fixture is read only to create canonical objects. After `Ledger.serialize()` and `Ledger.load()`, story, content, layout requests, plans, manifests, PPTX bindings, and QA inputs are derived from persisted cursor materializations.
-- A real pre-H02 uncertainty observation (`E104`) is separate from the H02 discriminating experiment result (`E201`). Evidence role and origin are validated in addition to cursor ordering.
-- B101 revision 1 remains the first H01 state. A later B101 revision 2 records the transition precursor without changing the first-build cursor. B201 has a graph-closed revision with its own scoped pre-existing evidence (`E202`, `E204`) and downstream result (`E201`).
-- Every governed slot is a physical PPTX shape named `tds-slot:<slot>` and is audited after save/reload for identity, geometry, and content/asset binding.
-- The existing Python-PPTX backend is retained behind its adapter boundary; no second PPTX stack was introduced. SVG ownership is added through actual slide-to-media OpenXML relationships, while PNG files are compatibility previews only.
-- Visual QA is split into `spec_geometry_qa`, render-derived `render_pixel_qa`, and image-capable `qualitative_visual_review`.
+- The seed fixture is used only to create canonical objects. After
+  `Ledger.serialize()` and `Ledger.load()`, story, slot content, layout,
+  manifests, PPTX bindings, and QA inputs are derived from cursor materialized
+  state.
+- Every scientific Slide Spec has the earliest valid stage cursor. Opening
+  Hypothesis/Problem/Fishbone pages are frozen before result evidence;
+  Experiment pages precede result evidence; Result, Discussion, Summary, and
+  Transition pages use later causal cursors.
+- H002 uses an explicit Option-B merged presentation contract. Its merged
+  Observation/Literature/Mechanism slide, Experiment/Result slide, and
+  Discussion/Summary slide contain the union of each role's required fields and
+  physical slots.
+- Asset-bearing slots use explicit composition (`asset_only` or
+  `asset_with_annotation`). SVG relationships, stable nested shape identities,
+  and editable scientific annotations are all audited after PPTX save/reload.
+- `presentation_semantic_fidelity_qa` is executed after assembly and consumed
+  by Professor QA. Metadata-only role names cannot certify a presentation
+  stage.
+- The existing Python-PPTX implementation remains the sole backend behind its
+  adapter boundary; no second PPTX stack was introduced.
 
 ## 3 Files changed
 
 ### Added
 
-- `thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt`
-- `packages/thesis-deck-system/tests/integration/test_phase2_revision2_requirements.py`
-- `thesis-deck-system/artifacts/phase2/evidence-causal-role-qa.json`
-- `thesis-deck-system/artifacts/phase2/h003-generic-professor-qa-fixture.json`
-- `thesis-deck-system/artifacts/phase2/qualitative-visual-review.json`
-- `thesis-deck-system/artifacts/phase2/split-fit-exceptions.json`
-- `thesis-deck-system/artifacts/phase2/render/slide-21.png`
+- `packages/thesis-deck-system/tests/integration/test_phase2_revision3_requirements.py`
+- `thesis-deck-system/artifacts/phase2/combined-role-content-qa.json`
+- `thesis-deck-system/artifacts/phase2/physical-content-fidelity-qa.json`
+- `thesis-deck-system/artifacts/phase2/presentation-semantic-fidelity-qa.json`
+- `thesis-deck-system/artifacts/phase2/presentation-temporal-snapshot-qa.json`
+- `thesis-deck-system/artifacts/phase2/report-evidence-consistency.json`
 
 ### Modified
 
-- `packages/thesis-deck-system/src/thesis_deck_system/contracts.py`
 - `packages/thesis-deck-system/src/thesis_deck_system/hypothesis.py`
 - `packages/thesis-deck-system/src/thesis_deck_system/layout.py`
 - `packages/thesis-deck-system/src/thesis_deck_system/phase2_build.py`
-- `packages/thesis-deck-system/src/thesis_deck_system/phase2_render.py`
 - `packages/thesis-deck-system/src/thesis_deck_system/pptx.py`
 - `packages/thesis-deck-system/src/thesis_deck_system/qa2.py`
 - `packages/thesis-deck-system/src/thesis_deck_system/story.py`
 - `packages/thesis-deck-system/tests/integration/test_phase2_acceptance_build.py`
-- `thesis-deck-system/schemas/deck-manifest.schema.json`
-- `thesis-deck-system/schemas/evidence-card.schema.json`
+- `thesis-deck-system/layout-archetypes.json`
 - `thesis-deck-system/schemas/layout-plan.schema.json`
 - `thesis-deck-system/schemas/slide-spec.schema.json`
 - regenerated files under `thesis-deck-system/artifacts/phase2/`
+- `thesis-deck-system/reports/PHASE_2_IMPLEMENTATION_REPORT.md`
 
 ### Deleted
 
-None intentionally. Phase 1 artifacts were restored unchanged after tests.
+None. Phase 1 artifacts were restored unchanged after the full test run.
 
 ## 4 Behavior implemented
 
-The corrected fixture persists 55 causal ledger events. H01 materializes at cursor 27, the H001→H002 transition at cursor 38, and H02 at cursor 55. `E104` is a committed pre-H02 uncertainty observation at cursor 32. `E201` is an `experiment_result` sourced from the contact-pressure dataset at cursor 45, after `ST-EXP201` at cursor 44. Causal validation rejects using an experiment-result card as an earlier transition precursor.
+The persisted Phase 2 ledger contains 67 events. The first H001 state
+materializes at cursor 23; the true H001→H002 transition is cursor 54; H002's
+opening state is cursor 56 and its final materialized state is cursor 67.
+`E104` is the pre-H02 uncertainty/transition precursor (cursor 32). `E201` is
+the H02 experiment-result evidence (cursor 58), after the complete experiment
+definition at cursor 57; the H02 result Slide Spec uses cursor 61. No opening
+slide binds E101 or E201.
 
-The story contains 19 generated Slide Specs and 21 physical slides including the two native synthetic template pages. H01 and H02 each retain separate Hypothesis, Problem, Fishbone, Observation, and decision/history content. H01 experiment design is a real two-slide split with no synthetic reviewer approval. Meeting commitments and progress content are compiled from the persisted meeting projection, including prior NS101 and current NS201.
-
-The H003 fixture extends the materialized state to prove generic hypothesis history traversal without literal H001/H002 IDs in reusable Professor QA.
+The generated story has 19 Slide Specs and the acceptance PPTX has 21 physical
+slides (two native synthetic exemplar slides plus 19 generated slides). H001
+Result pages keep distinct result statements while reusing A001's SVG. H002
+uses content-complete merged roles with explicit stage cursor maps. Meeting
+progress is compiled from the persisted meeting projection and retains prior
+commitments.
 
 ## 5 Master Deck strategy
 
-`MASTER-PHASE2.manifest.json` describes the state-derived master projection at cursor 55 with sequential ordinals 1–19. Each slide carries its source cursor, block graph, scientific bindings, Slide Spec reference/hash, Template Profile reference, and Professor Profile reference. The acceptance PPTX is `thesis-deck-system/artifacts/phase2/acceptance-deck.pptx`.
-
-Generated scientific content and manifest bindings remain reproducible from a reloaded Ledger; mutating the seed fixture after persistence does not change the rebuilt story, Layout Plans, placement plans, or manifest bindings.
+`MASTER-PHASE2.manifest.json` is generated from the reloaded ledger-derived
+Slide Specs and records sequential ordinals, block/claim/evidence/asset/action/
+decision bindings, source cursors, Slide Spec references/hashes, Template
+Profile, and Professor Profile references. Its source cursor is the final H002
+cursor (67). `report-evidence-consistency.json` is regenerated from the
+committed Slide Specs, structural audit, ledger snapshots, and executed QA
+report; it is not a hand-entered report summary.
 
 ## 6 Slide/template strategy
 
-The Template Profile resolves `content_academic` to the actual runtime layout part and its master part. Structural QA verifies generated slide → actual layout part → actual master part → expected semantic role, and fails on a mismatch. The assembler consumes the Layout Director's physical coordinates and creates stable `tds-slot:<slot>` identities.
+The Template Profile resolves `content_academic` to the actual runtime layout
+part and master part. Structural QA proves generated slide → layout part →
+master part → expected semantic role, plus governed slot geometry and notes.
+All 52 required governed slots are physically instantiated (0 intentionally
+empty, 0 missing). Result, fishbone, and observation SVGs use actual
+slide-to-media OpenXML relationships; PNGs are render compatibility previews.
 
-Across the generated story there are 44 required governed slots; all 44 are instantiated with matching geometry and content/asset bindings. No slot is intentionally empty and no slot is missing. SVG assets used by result and fishbone slides are relationship-linked to their owning slide in the PPTX; `vector_media_used` is true.
+## 7 Commands/tests run
 
-## 7 Data/provenance and history evidence
+- `git fetch origin` and synchronization with
+  `origin/codex/thesis-deck-system` before changes.
+- `python -m pytest -q packages/thesis-deck-system/tests` — **80 passed, 0
+  failed**.
+- Clean `build_phase2(output_root=thesis-deck-system/artifacts/phase2)`;
+  persisted `Ledger.serialize()`, `Ledger.load()`, hash verification,
+  replay/materialization, causal/evidence-role and temporal checks.
+- Canonical schema validation for Slide Specs, Layout Plans, Deck Manifest,
+  Template Profile, Professor Profile, Layout Archetypes, and all materialized
+  canonical collections — 0 validation errors.
+- `render_phase2(...)` using LibreOffice and Poppler; every generated slide
+  rendered at 1921×1080.
+- Hash-bound image-capable qualitative review for all 19 generated renders,
+  followed by `finalize_phase2_qa(...)`.
+- Combined-role, physical-content, presentation-semantic, structural PPTX,
+  SVG relationship, notes provenance, layout/master, editable-text,
+  Professor Profile, generic H003, split governance, and mutation regressions.
+- Full, H002-changed, fishbone-comparison, and transition montages; every
+  revised slide was visually inspected.
+- `anydoc` Office-package conversion/inspection of the acceptance PPTX.
+- Repository-relative path scan and `git diff --check`.
 
-- `ledger-events.json` is serialized by `Ledger.serialize()`, then reloaded by `Ledger.load()` with hash-chain verification and replay/materialization.
-- `materialized-h01.json`, `materialized-transition.json`, and `materialized-h02.json` are persisted cursor snapshots and are checked for exact replay equality.
-- `evidence-causal-role-qa.json` records E104's precursor role/origin and E201's downstream experiment binding.
-- `phase2-binding-validation.json` reports `status: pass` and `unresolved_ref_count: 0` for Slide Specs and the Deck Manifest.
-- `asset-provenance-qa.json` verifies source, plot-script, SVG, PNG, and transform-chain hashes for A001 and A201.
-- All canonical paths in generated JSON are repository-relative; the absolute path scan is clean.
-- Notes are generated from each Slide Spec's `speaker_notes.source_refs`, with E002 on observation content and E001/E003 on H01 result/discussion content.
+## 8 Test results
 
-## 8 QA gates
+The complete repository Phase 1 + Phase 2 test suite passed: **80 passed,
+0 failed**. The dedicated Revision 3 integration module contains 8 passing
+tests covering stage-aware cursors, combined-role physical coverage, result
+text/asset composition, semantic gate execution, future-result rejection and
+immutability, dropped combined content, merged experiment/discussion content,
+and Professor rejection of metadata-only roles.
 
-The canonical QA order is:
+Native Microsoft PowerPoint round-trip is an honest `blocked_environment`; it
+is the only expected release limitation. QA Stages 1–7 are executed and pass;
+Stage 8 is blocked, Stage 9 is not run because it requires native acceptance,
+and release remains blocked for that reason.
 
-`schema/ledger → scientific reasoning → citation/evidence provenance → professor logic → compile/assemble PPTX → structural PPTX engineering → render/montage visual QA → native PowerPoint round-trip → final deck/version audit → release`.
-
-`qa-report.json` contains executed PASS records for Stages 1–7. Stage 8 is `blocked_environment` because native Microsoft PowerPoint is unavailable; Stage 9 is `not_run`, and release is `blocked` for that reason. No runtime path can create Stage 1–7 PASS without the owning checks executing.
-
-## 9 Test plan and results
-
-Commands and checks run:
-
-- `git fetch origin` and branch/remote synchronization checks;
-- `python -m pytest -q packages/thesis-deck-system/tests` — **72 passed, 0 failed**;
-- clean `build_phase2(output_root=...)` — canonical fixture rebuilt;
-- `render_phase2(...)` with LibreOffice — every generated slide rendered;
-- image-capable inspection of every generated slide render, followed by `finalize_qualitative_visual_review(...)`;
-- `finalize_phase2_qa(...)` after reloading the persisted inspection record;
-- schema validation for canonical objects, Slide Specs, Layout Plans, Manifest, Template Profile, and QA Report;
-- Ledger hash/reload/replay/materialization and temporal binding validation;
-- evidence-role causal validation and positive/negative split-resolution tests;
-- physical governed-slot structural audit and negative missing-slot test;
-- SVG relationship, notes provenance, layout/master identity, and editable text OpenXML audit;
-- Professor Profile consumption and generic H003 history fixture;
-- fixture-mutation reproducibility for story and layout/placement/manifest outputs;
-- full, H02-changed, fishbone-comparison, and transition montages;
-- `anydoc` conversion of the acceptance PPTX for Office-package inspection;
-- repository-relative absolute-path scan;
-- `git diff --check`.
-
-## 10 Artifacts produced
+## 9 Artifacts produced
 
 - `thesis-deck-system/artifacts/phase2/acceptance-deck.pptx`
 - `thesis-deck-system/artifacts/phase2/acceptance-deck-render-compat.pptx`
@@ -120,67 +148,135 @@ Commands and checks run:
 - `thesis-deck-system/artifacts/phase2/materialized-h02.json`
 - `thesis-deck-system/artifacts/phase2/slide-specs.json`
 - `thesis-deck-system/artifacts/phase2/layout-plans.json`
-- `thesis-deck-system/artifacts/phase2/layout-director-decisions.json`
 - `thesis-deck-system/artifacts/phase2/MASTER-PHASE2.manifest.json`
 - `thesis-deck-system/artifacts/phase2/structural-audit.json`
+- `thesis-deck-system/artifacts/phase2/presentation-temporal-snapshot-qa.json`
+- `thesis-deck-system/artifacts/phase2/combined-role-content-qa.json`
+- `thesis-deck-system/artifacts/phase2/physical-content-fidelity-qa.json`
+- `thesis-deck-system/artifacts/phase2/presentation-semantic-fidelity-qa.json`
 - `thesis-deck-system/artifacts/phase2/professor-qa.json`
-- `thesis-deck-system/artifacts/phase2/h003-generic-professor-qa-fixture.json`
-- `thesis-deck-system/artifacts/phase2/evidence-causal-role-qa.json`
-- `thesis-deck-system/artifacts/phase2/phase2-binding-validation.json`
 - `thesis-deck-system/artifacts/phase2/qa-report.json`
 - `thesis-deck-system/artifacts/phase2/visual-inspection.json`
 - `thesis-deck-system/artifacts/phase2/qualitative-visual-review.json`
-- `thesis-deck-system/artifacts/phase2/render/slide-03.png` through `slide-21.png`
+- `thesis-deck-system/artifacts/phase2/report-evidence-consistency.json`
+
+## 10 Visual QA evidence
+
+Render-pixel QA passed for all 19 generated slides. Each record contains a
+repository-relative render path, SHA-256, dimensions, variance,
+occupied-region/empty-area measurements, canvas-edge distance, and balance
+proxies. Qualitative review is explicitly image-capable and hash-bound, with
+slide-specific notes for all 19 slides. The montages are:
+
 - `thesis-deck-system/artifacts/phase2/render/full-deck-montage.png`
 - `thesis-deck-system/artifacts/phase2/render/h02-changed-slide-montage.png`
 - `thesis-deck-system/artifacts/phase2/render/fishbone-comparison-montage.png`
 - `thesis-deck-system/artifacts/phase2/render/transition-montage.png`
 
-## 11 Visual QA evidence
+## 11 Scientific/provenance QA evidence
 
-Render-pixel QA passed for all 19 generated slides. Every record contains a repository-relative render path, exact SHA-256, 1921×1080 dimensions, variance, occupied-region bounds/ratio, canvas-edge distance, and left/right ink-balance proxy. The mutation test changes/fails pixel evidence for a blank render.
+`scientific-provenance-qa.json`, `asset-provenance-qa.json`, and
+`evidence-causal-role-qa.json` pass causal chronology, role/origin validation,
+experiment metadata, synthetic labeling, source/script/SVG/PNG hashes,
+transform-chain provenance, fishbone immutability, and hypothesis derivation.
+`phase2-binding-validation.json` reports zero unresolved references. The
+transition precursor is E104, while E201 is downstream of ST-EXP201 and cannot
+be promoted to an earlier historical cursor merely by appending its card.
 
-Qualitative review passed through image-capable inspection of the exact PNGs, not Slide Spec metadata. The 19 records in `qualitative-visual-review.json` are slide-specific and hash-bound; notes cover hierarchy, dominant visual, clipping, balance, fishbone prominence, scientific slot readability, and synthetic-content labeling.
+## 12 P2-D1–P2-D4 traceability
 
-## 12 Scientific/provenance QA evidence
-
-The canonical scientific QA artifact reports pass for causal chronology, evidence roles, experiment metadata, synthetic labeling, plot hashes, asset transform chains, fishbone revision immutability, and hypothesis derivation. H01's first state cannot see the later transition or H02 result. H02's result evidence cannot be promoted earlier by card append order because its origin must bind to `ST-EXP201` and a downstream cursor.
-
-## 13 P2-C1–P2-C6 traceability
-
-| Blocker | Implementation and committed evidence | Verification | Status |
+| Blocker | Implementation files | Committed evidence and exact verification | Status |
 | --- | --- | --- | --- |
-| **P2-C1** causal evidence role | `E104` is a committed pre-H02 uncertainty object from `h01-contact-uncertainty.txt`; `E201` is an `experiment_result` from `contact-pressure.csv` with origin `ST-EXP201`; `validate_evidence_causal_roles()` checks role, origin, and stage order. | `evidence-causal-role-qa.json`; positive/negative causal-role tests; E104 cursor 32, E201 cursor 45, ST-EXP201 cursor 44. | PASS |
-| **P2-C2** physical layout slots | `ROLE_GEOMETRY` defines governed slots; `PythonPptxAssembler` creates stable named shapes; `audit_pptx()` checks each planned slot's identity, geometry, and binding. | 44 required / 44 instantiated / 0 intentionally empty / 0 missing; three-slot Problem with one textbox fails the negative test. | PASS |
-| **P2-C3** split governance | `validate_split_resolution()` rejects self-approved, future-evidence, and unresolved overrides. H01 A09 is emitted as two continuation slides; `layout-overrides.json` is empty. | `split-fit-exceptions.json` contains one actual split and no fabricated reviewer identity; negative split tests pass; unresolved split fails. | PASS |
-| **P2-C4** render-grounded visual QA | `run_visual_qa_v2()` separates spec geometry, pixel evidence, and qualitative review. `finalize_qualitative_visual_review()` requires exact slide set and render hashes. | 19/19 render-pixel PASS, 19/19 image-capable qualitative PASS, persisted inspection record valid; blank/cropped mutation changes/fails evidence. | PASS |
-| **P2-C5** generic hypothesis history | Reusable Professor QA discovers ordered layers, predecessor, transitions, reachability, and fishbone bindings from projection/state; no literal H001/H002/TR-H001-H002 dependency in the validator. | H003 fixture proves H001→H002→H003 provenance, history reachability, separation, fishbone rev3, and summary/decision/next-step checks. | PASS |
-| **P2-C6** persisted source of truth | `_story_specs_from_ledger()` and `_layout_specs_from_ledger()` consume only reloaded Ledger materializations; Layout Plans, placement plans, decisions, and manifest bindings are included in rebuild equality. | Fixture mutation regression passes with identical state-derived story and layout outputs after seed mutation. | PASS |
+| **P2-D1 — stage-aware temporal snapshots** | `phase2_build.py`, `qa2.py`, `slide-spec.schema.json`, `test_phase2_revision3_requirements.py` | `presentation-temporal-snapshot-qa.json` passes every generated slide. H001 opening/problem/fishbone cursor 23; H001 experiment cursor 23; H001 result cursors 28, 28; discussion 30; summary 32; transition 54. H002 opening/problem/fishbone 56; experiment definition 57; result evidence 58; result slide 61; discussion 64; summary 66. Future-result citation and late-result immutability tests pass. | PASS |
+| **P2-D2 — combined-role presentation completeness** | `story.py`, `phase2_build.py`, `qa2.py`, `pptx.py`, `test_phase2_revision3_requirements.py` | `combined-role-content-qa.json` records physical content coverage for H002 Observation+Literature+Mechanism+Strategy, Experiment+Result, and Discussion+Summary unions. All required fields are present; 52/52 governed slots are physically instantiated. Negative dropped-content and metadata-only Professor tests pass. | PASS |
+| **P2-D3 — asset + text composition fidelity** | `story.py`, `layout.py`, `pptx.py`, `qa2.py`, `phase2_render.py`, `test_phase2_revision3_requirements.py` | `physical-content-fidelity-qa.json` verifies expected/actual text and A001/A201 relationships. RES101 and RES102 both retain A001 plus distinct editable annotations. Their render hashes differ: `1cf196016ba008c441aac6e7696a4a5f16a58b1cf6bb6b36a1820f1ff90092bb` vs `3d32163df155b962be6ccf115270d5d8e819093480331d1ae7b0ba45a545ddb8`. Asset-dropped/text-dropped negative checks fail as required. | PASS |
+| **P2-D4 — presentation semantic fidelity and report truth** | `qa2.py`, `phase2_build.py`, `phase2_render.py`, `test_phase2_revision3_requirements.py` | `presentation-semantic-fidelity-qa.json` passes temporal snapshots, role coverage, physical text/assets, method visibility, result distinction, discussion/summary order, and historical fishbone. Professor QA consumes this evidence and passes. `report-evidence-consistency.json` passes against committed artifacts and fixes the stale transition cursor. | PASS |
 
-## 14 Required delivery facts
+## 13 Required delivery facts
 
-- Precursor transition evidence: **E104**; source `thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt`; cursor **32**.
-- H02 downstream result evidence: **E201**; experiment binding **ST-EXP201**; result cursor **45** (experiment cursor **44**).
-- Physical slot conformance: **44 required, 44 instantiated, 0 intentionally empty, 0 missing**.
-- Split resolution: **2 actual H01 experiment slides**; automated fit exceptions **0**; external review overrides **0**; unresolved splits **0**.
-- Render-pixel QA: **pass, 19/19** with exact hash-bound evidence.
-- Qualitative visual review: **pass, 19/19 slide-specific image inspections**.
-- H003 generic Professor QA: **pass**.
-- Fixture-mutation story reproducibility: **pass**.
-- Fixture-mutation layout/placement/manifest reproducibility: **pass**.
-- Acceptance PPTX: `thesis-deck-system/artifacts/phase2/acceptance-deck.pptx`.
-- Render paths: `thesis-deck-system/artifacts/phase2/render/slide-03.png` through `slide-21.png`.
-- Montage paths: `thesis-deck-system/artifacts/phase2/render/full-deck-montage.png`, `h02-changed-slide-montage.png`, `fishbone-comparison-montage.png`, and `transition-montage.png`.
-- Private fixture status: **blocked_fixture**; no private laboratory fixture was committed.
-- Native PowerPoint status: **blocked_environment**; native desktop acceptance is unavailable in this environment.
+### Stage-aware cursor summary
 
-## 15 Risks / unresolved questions
+- H01 hypothesis/problem/fishbone cursor: **23**
+- H01 experiment cursors: **23** (two designs; result evidence is not yet present)
+- H01 result cursors: **28, 28**
+- H01 discussion cursor: **30**
+- H01 summary/decision cursor: **32**
+- transition cursor: **54**
+- H02 hypothesis/problem/fishbone cursor: **56**
+- H02 experiment cursor: **57**
+- H02 result evidence cursor: **58**
+- H02 discussion cursor: **64**
+- H02 summary/decision cursor: **66**
 
-Native PowerPoint round-trip and final release remain blocked until a permitted native environment is available. Private/sanitized real thesis fixtures remain required before production Group Meeting acceptance. Synthetic observations, plots, and measurements are mechanics-only and must not be presented as laboratory evidence. Final font and template fidelity remain subject to the actual permitted template profile.
+### Binding and presentation evidence
 
-## 16 Deviations and next action
+- future-result binding test: **pass**; H002 opening pages do not bind E201.
+- late-result immutability test: **pass**; materialized early state and rebuilt
+  early Slide Specs remain unchanged after a later append.
+- combined-role content QA: **pass**; roles tested are
+  `observation_problem + literature_mechanism + mechanism_solution`,
+  `experiment_design + result_single`, and
+  `layer_integrated_discussion + layer_summary_decision`; all declared fields
+  are physically represented; missing fields: **none**.
+- physical content fidelity: **pass**; expected scientific text and actual
+  extracted PPTX text match, expected SVG asset bindings and actual OpenXML
+  relationships match; missing: **none**.
+- H001 result render hashes: RES101 slide
+  `S-H001-RESULT-SINGLE-08` →
+  `1cf196016ba008c441aac6e7696a4a5f16a58b1cf6bb6b36a1820f1ff90092bb`;
+  RES102 slide `S-H001-RESULT-SINGLE-09` →
+  `3d32163df155b962be6ccf115270d5d8e819093480331d1ae7b0ba45a545ddb8`;
+  distinguishable: **yes**.
+- presentation semantic fidelity QA: **pass**.
+- report-evidence consistency: **pass**.
+- Professor QA: **pass** using the versioned Professor Profile and the
+  ledger-derived meeting projection.
+- render-pixel QA: **pass, 19/19**.
+- qualitative visual review: **pass, 19/19 image-capable, hash-bound notes**.
+- physical slot conformance: **52 required / 52 instantiated / 0 intentionally
+  empty / 0 missing**.
 
-No deviations from `TASK_PHASE_2_REVISION_2.md` are known. The requested bounded Phase 2 correction is complete; do not begin Phase 3 or register Skills publicly. Await reviewer approval.
+### Acceptance outputs
+
+- acceptance PPTX:
+  `thesis-deck-system/artifacts/phase2/acceptance-deck.pptx`
+- render paths: `thesis-deck-system/artifacts/phase2/render/slide-03.png`
+  through `slide-21.png` (all 19 generated slides; full render set also
+  contains template slides 01–02).
+- montage paths: `thesis-deck-system/artifacts/phase2/render/full-deck-montage.png`,
+  `h02-changed-slide-montage.png`, `fishbone-comparison-montage.png`, and
+  `transition-montage.png`.
+- private fixture status: **blocked_fixture**; no private laboratory template
+  or real thesis data was committed.
+- native PowerPoint status: **blocked_environment**; Microsoft PowerPoint
+  desktop is unavailable in this environment.
+
+## 14 Known failures / technical debt
+
+- Native PowerPoint round-trip, final deck/version audit, and release remain
+  blocked until a permitted native PowerPoint environment is available.
+- The committed synthetic fixture proves mechanics only. A permitted,
+  private/sanitized real thesis fixture remains mandatory before production
+  Group Meeting acceptance.
+- Final font/template fidelity must be profiled against the actual permitted
+  laboratory template.
+
+## 15 Deviations from reviewer prompt
+
+No deviations from `TASK_PHASE_2_REVISION_3.md`. The canonical QA pipeline
+retains its ten-stage order; presentation semantic fidelity is an executed
+owning check consumed within the Professor-style gate because the QA schema
+allows ten canonical pipeline stages. It is not represented as a fabricated
+extra pipeline stage. No production code for Phase 3 was added.
+
+## 16 Questions requiring reviewer decision
+
+None for this bounded Phase 2 revision. Reviewer approval is required before
+any Phase 3 work or public Skill registration.
+
+## 17 Recommended next phase
+
+Await reviewer approval. Do not begin Phase 3 until explicitly authorized.
 
 ### codex_report
 
@@ -191,28 +287,25 @@ codex_report:
   branch: codex/thesis-deck-system
   commit_sha: null
   files_added:
-    - thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt
-    - packages/thesis-deck-system/tests/integration/test_phase2_revision2_requirements.py
-    - thesis-deck-system/artifacts/phase2/evidence-causal-role-qa.json
-    - thesis-deck-system/artifacts/phase2/h003-generic-professor-qa-fixture.json
-    - thesis-deck-system/artifacts/phase2/qualitative-visual-review.json
-    - thesis-deck-system/artifacts/phase2/split-fit-exceptions.json
-    - thesis-deck-system/artifacts/phase2/render/slide-21.png
+    - packages/thesis-deck-system/tests/integration/test_phase2_revision3_requirements.py
+    - thesis-deck-system/artifacts/phase2/combined-role-content-qa.json
+    - thesis-deck-system/artifacts/phase2/physical-content-fidelity-qa.json
+    - thesis-deck-system/artifacts/phase2/presentation-semantic-fidelity-qa.json
+    - thesis-deck-system/artifacts/phase2/presentation-temporal-snapshot-qa.json
+    - thesis-deck-system/artifacts/phase2/report-evidence-consistency.json
   files_modified:
-    - packages/thesis-deck-system/src/thesis_deck_system/contracts.py
     - packages/thesis-deck-system/src/thesis_deck_system/hypothesis.py
     - packages/thesis-deck-system/src/thesis_deck_system/layout.py
     - packages/thesis-deck-system/src/thesis_deck_system/phase2_build.py
-    - packages/thesis-deck-system/src/thesis_deck_system/phase2_render.py
     - packages/thesis-deck-system/src/thesis_deck_system/pptx.py
     - packages/thesis-deck-system/src/thesis_deck_system/qa2.py
     - packages/thesis-deck-system/src/thesis_deck_system/story.py
     - packages/thesis-deck-system/tests/integration/test_phase2_acceptance_build.py
-    - thesis-deck-system/schemas/deck-manifest.schema.json
-    - thesis-deck-system/schemas/evidence-card.schema.json
+    - thesis-deck-system/layout-archetypes.json
     - thesis-deck-system/schemas/layout-plan.schema.json
     - thesis-deck-system/schemas/slide-spec.schema.json
     - thesis-deck-system/artifacts/phase2/
+    - thesis-deck-system/reports/PHASE_2_IMPLEMENTATION_REPORT.md
   files_deleted: []
   artifacts:
     - thesis-deck-system/artifacts/phase2/acceptance-deck.pptx
@@ -224,10 +317,15 @@ codex_report:
     - thesis-deck-system/artifacts/phase2/layout-plans.json
     - thesis-deck-system/artifacts/phase2/MASTER-PHASE2.manifest.json
     - thesis-deck-system/artifacts/phase2/structural-audit.json
+    - thesis-deck-system/artifacts/phase2/presentation-temporal-snapshot-qa.json
+    - thesis-deck-system/artifacts/phase2/combined-role-content-qa.json
+    - thesis-deck-system/artifacts/phase2/physical-content-fidelity-qa.json
+    - thesis-deck-system/artifacts/phase2/presentation-semantic-fidelity-qa.json
     - thesis-deck-system/artifacts/phase2/professor-qa.json
     - thesis-deck-system/artifacts/phase2/qa-report.json
     - thesis-deck-system/artifacts/phase2/visual-inspection.json
     - thesis-deck-system/artifacts/phase2/qualitative-visual-review.json
+    - thesis-deck-system/artifacts/phase2/report-evidence-consistency.json
   render_previews:
     - thesis-deck-system/artifacts/phase2/render/full-deck-montage.png
     - thesis-deck-system/artifacts/phase2/render/h02-changed-slide-montage.png
@@ -235,23 +333,22 @@ codex_report:
     - thesis-deck-system/artifacts/phase2/render/transition-montage.png
   tests_run:
     - python -m pytest -q packages/thesis-deck-system/tests
-    - clean Phase 2 build, Ledger reload/replay/materialization, and QA finalization
-    - schema, causal-role, temporal-binding, structural-slot, SVG, notes, and profile checks
-    - H003 Professor QA and persisted-state fixture-mutation regressions
-    - LibreOffice render, pixel QA, qualitative review, montages, anydoc PPTX inspection
-    - absolute-path scan and git diff --check
+    - clean Phase 2 build and Ledger reload/replay/materialization
+    - canonical schema, causal-role, temporal, slot, SVG, notes, profile, and path checks
+    - render-pixel QA, image-capable qualitative review, and all montages
   tests_passed:
-    - 72 passed
-    - QA Stages 1–7 pass
-    - 44/44 governed slots conformed
-    - 19/19 render-pixel and qualitative visual reviews pass
-    - unresolved scientific bindings 0
-  tests_failed: []
+    - 80 pytest tests
+    - 19/19 render-pixel checks
+    - 19/19 qualitative visual inspections
+    - 52/52 physical governed slots
+    - presentation semantic fidelity
+    - report-evidence consistency
+  tests_failed:
+    - native PowerPoint round-trip (blocked_environment; not executable here)
   known_failures:
-    - Native PowerPoint Stage 8 blocked_environment; Stage 9 not_run; release blocked
-    - Private/sanitized fixture acceptance blocked_fixture
+    - native PowerPoint desktop acceptance unavailable
+    - final release blocked on native acceptance and private fixture
   deviations: []
-  reviewer_questions:
-    - Provide permitted private/sanitized thesis fixtures and a native PowerPoint environment before production acceptance.
+  reviewer_questions: []
   next_action_requested: REVIEW
 ```

@@ -51,12 +51,10 @@
       ],
       "evidence_refs": [
         "E002",
-        "E101",
         "E102",
         "E103"
       ],
       "asset_refs": [
-        "A001",
         "A002",
         "A101"
       ],
@@ -244,37 +242,6 @@
         "status": "synthetic_test_only"
       }
     },
-    "E101": {
-      "schema_version": "1.0.0",
-      "evidence_id": "E101",
-      "kind": "synthetic_measurement",
-      "title": "Synthetic E101 evidence",
-      "provenance": "committed synthetic fixture",
-      "source": {
-        "source_id": "E101",
-        "uri": "thesis-deck-system/examples/synthetic-project/measurements.csv",
-        "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
-      },
-      "claim_support_refs": [
-        "C103"
-      ],
-      "claim_contradict_refs": [],
-      "scope": {
-        "block_id": "B101"
-      },
-      "measurement": {
-        "synthetic": true
-      },
-      "causal_role": "supporting_observation",
-      "origin": {
-        "layer_ref": "H001",
-        "source_dataset_role": "preexisting_observation"
-      },
-      "license_or_usage": "synthetic_test_only",
-      "verification": {
-        "status": "synthetic_test_only"
-      }
-    },
     "E102": {
       "schema_version": "1.0.0",
       "evidence_id": "E102",
@@ -340,49 +307,6 @@
     }
   },
   "assets": {
-    "A001": {
-      "schema_version": "1.0.0",
-      "asset_id": "A001",
-      "asset_type": "data_plot",
-      "title": "Synthetic defect density plot",
-      "evidence_role": "quantitative_evidence",
-      "source_evidence": [
-        "E101"
-      ],
-      "path": "plots/B001_defect_density.svg",
-      "preview_path": "plots/B001_defect_density.png",
-      "mime_type": "image/svg+xml",
-      "sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
-      "editable": true,
-      "generator": {
-        "kind": "matplotlib",
-        "version": "3.x",
-        "script": "thesis-deck-system/examples/synthetic-project/plot.py",
-        "script_sha256": "b8c35668c252fb1c46ce1f1dcb8366b4d79919d12e12f07bd623dd142b301706"
-      },
-      "input": {
-        "path": "thesis-deck-system/examples/synthetic-project/measurements.csv",
-        "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
-      },
-      "output": {
-        "svg_path": "plots/B001_defect_density.svg",
-        "svg_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
-        "png_path": "plots/B001_defect_density.png",
-        "png_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
-      },
-      "transform_chain": [
-        {
-          "input_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
-          "operation": "plot",
-          "output_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
-        }
-      ],
-      "provenance": "synthetic_fixture",
-      "accessibility": {
-        "alt_text": "defect density by position"
-      },
-      "status": "approved"
-    },
     "A002": {
       "schema_version": "1.0.0",
       "asset_id": "A002",
@@ -492,17 +416,15 @@
       },
       "decision_type": "research_gate",
       "subject_refs": [
-        "B101",
-        "ST-H001-DISC"
+        "B101"
       ],
-      "choice": "Partial-Go",
+      "choice": "pending",
       "alternatives": [
         "No-Go"
       ],
-      "rationale": "Bulk conductivity is contributory but insufficient.",
+      "rationale": "Awaiting result set.",
       "evidence_refs": [
-        "E101",
-        "E102"
+        "E002"
       ],
       "provenance": "synthetic_fixture"
     }
@@ -643,9 +565,7 @@
         "C103"
       ],
       "evidence_refs": [
-        "E101",
-        "E102",
-        "E103"
+        "E002"
       ],
       "hypothesis_claim_refs": [
         "C101"
@@ -683,7 +603,7 @@
           "no_go": "<10%"
         },
         "required_evidence": [
-          "E101"
+          "E002"
         ]
       },
       "provenance": "synthetic_fixture",
@@ -705,9 +625,8 @@
         "C103"
       ],
       "evidence_refs": [
-        "E101",
-        "E102",
-        "E103"
+        "E002",
+        "E102"
       ],
       "hypothesis_claim_refs": [
         "C101"
@@ -746,7 +665,7 @@
           "no_go": "<10%"
         },
         "required_evidence": [
-          "E101",
+          "E002",
           "E102"
         ]
       },
@@ -763,26 +682,15 @@
       },
       "stage_type": "result",
       "revision": 1,
-      "status": "complete",
+      "status": "pending",
       "claim_refs": [
         "C103"
       ],
-      "evidence_refs": [
-        "E101"
-      ],
+      "evidence_refs": [],
       "hypothesis_claim_refs": [],
       "prediction_claim_refs": [],
       "data": {
-        "summary": "平均導電度增加 24% ± 5% SD",
-        "metrics": [
-          {
-            "name": "CV",
-            "value": 24,
-            "uncertainty": 5,
-            "units": "%"
-          }
-        ],
-        "decision_ref": "D101"
+        "planned_result": "平均導電度增加 24% ± 5% SD"
       },
       "provenance": "synthetic_fixture",
       "created_at": "2026-08-27T00:00:00Z",
@@ -797,26 +705,15 @@
       },
       "stage_type": "result",
       "revision": 1,
-      "status": "complete",
+      "status": "pending",
       "claim_refs": [
         "C103"
       ],
-      "evidence_refs": [
-        "E101"
-      ],
+      "evidence_refs": [],
       "hypothesis_claim_refs": [],
       "prediction_claim_refs": [],
       "data": {
-        "summary": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
-        "metrics": [
-          {
-            "name": "CV",
-            "value": 4,
-            "uncertainty": 5,
-            "units": "%"
-          }
-        ],
-        "decision_ref": "D101"
+        "planned_result": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go"
       },
       "provenance": "synthetic_fixture",
       "created_at": "2026-08-27T00:00:00Z",
@@ -836,27 +733,21 @@
         "C101",
         "C102"
       ],
-      "evidence_refs": [
-        "E101",
-        "E102",
-        "E103"
-      ],
+      "evidence_refs": [],
       "hypothesis_claim_refs": [],
       "prediction_claim_refs": [],
       "data": {
-        "hypothesis_support": "partial_support",
-        "failed_assumptions": [
-          "uniform spatial exposure"
-        ],
+        "hypothesis_support": "inconclusive",
+        "failed_assumptions": [],
         "missing_evidence": [
-          "contact control"
+          "results"
         ],
         "limitations": [
-          "synthetic only"
+          "pending"
         ],
         "decision_ref": "D101",
         "next_step_ref": "NS101",
-        "interpretation": "Results support only part of the bulk hypothesis."
+        "interpretation": "Pending result interpretation."
       },
       "provenance": "synthetic_fixture",
       "created_at": "2026-08-27T00:00:00Z",
@@ -909,7 +800,7 @@
       "transition_ref": null,
       "story_visibility": "main",
       "research_status": "partial_support",
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     }
@@ -960,7 +851,7 @@
       "transition_ref": null,
       "story_visibility": "main",
       "research_status": "partial_support",
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     }
@@ -977,8 +868,7 @@
       "unresolved_conflict": "導電度提高是否足以修復重複性仍未知。",
       "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
       "evidence_refs": [
-        "E101",
-        "E102"
+        "E002"
       ],
       "derived_from_decision_refs": [],
       "scope": "合成五個位置、每個位置三個 replicate 的機制辨識。",
@@ -1038,57 +928,8 @@
       "created_at": "2026-08-27T00:00:00Z"
     }
   },
-  "layer_discussions": {
-    "DISC-H001": {
-      "schema_version": "2.0.0",
-      "discussion_id": "DISC-H001",
-      "hypothesis_layer_ref": "H001",
-      "supporting_results": [
-        "RES101"
-      ],
-      "contradicting_results": [
-        "RES102"
-      ],
-      "non_discriminating_results": [],
-      "cross_experiment_pattern": "導電度提升成立，但重複性沒有同步改善。",
-      "mechanism_assessment": "bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
-      "alternative_explanations": [
-        "接觸電阻",
-        "局部壓力差",
-        "電極幾何"
-      ],
-      "remaining_uncertainty": "contact interface 是否為主導因素仍需匹配導電度後檢驗。",
-      "hypothesis_status": "partial_support",
-      "decision_ref": "D101",
-      "next_step_refs": [
-        "NS101"
-      ],
-      "source_event_cursor": 22,
-      "created_at": "2026-08-27T00:00:00Z"
-    }
-  },
-  "layer_summaries": {
-    "SUM-H001": {
-      "schema_version": "2.0.0",
-      "summary_id": "SUM-H001",
-      "hypothesis_layer_ref": "H001",
-      "answered": "bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
-      "supporting_evidence_refs": [
-        "E101",
-        "RES101",
-        "RES102"
-      ],
-      "remaining_unresolved": "interface contact 的貢獻尚未量化。",
-      "hypothesis_status": "partial_support",
-      "decision_ref": "D101",
-      "next_question": "匹配 bulk conductivity 後，contact resistance 是否主導變異？",
-      "next_step_refs": [
-        "NS101"
-      ],
-      "source_event_cursor": 25,
-      "created_at": "2026-08-27T00:00:00Z"
-    }
-  },
+  "layer_discussions": {},
+  "layer_summaries": {},
   "hypothesis_transitions": {},
   "events": [
     {
@@ -1144,9 +985,9 @@
         "source_event_cursor": 1,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
+      "timestamp": "2026-08-27T15:16:56Z",
       "previous_hash": null,
-      "event_hash": "23eb25f8272c583642d642bfbeb1339b055533b80c9a27778c4a2b53e4810f62"
+      "event_hash": "2d730b11509501710ce628f8cfeac2415e6bbbadcde17d86917012438b13cf77"
     },
     {
       "cursor": 2,
@@ -1197,9 +1038,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "23eb25f8272c583642d642bfbeb1339b055533b80c9a27778c4a2b53e4810f62",
-      "event_hash": "5a1d57faf5fa14bf7ae26ea57c51fa4de4ecf37a33672d4f17dc7e09a8586b20"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "2d730b11509501710ce628f8cfeac2415e6bbbadcde17d86917012438b13cf77",
+      "event_hash": "907ef4ff8891a27d60301c78204c1b15398800ed3bff877b2cb3f42e091a244b"
     },
     {
       "cursor": 3,
@@ -1250,9 +1091,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "5a1d57faf5fa14bf7ae26ea57c51fa4de4ecf37a33672d4f17dc7e09a8586b20",
-      "event_hash": "c2a73e2351dd0f20aaa9c6c03a71916d9565131f0bb18e57affeebf00f85c459"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "907ef4ff8891a27d60301c78204c1b15398800ed3bff877b2cb3f42e091a244b",
+      "event_hash": "bbc6196eb1006200c7b892c91da4ed2c748c0b46d0d3acd43517173b6f9c314e"
     },
     {
       "cursor": 4,
@@ -1303,9 +1144,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "c2a73e2351dd0f20aaa9c6c03a71916d9565131f0bb18e57affeebf00f85c459",
-      "event_hash": "8ff34cd825e062ad495b7a0200cf0068856708d816d38042cb13587e1ef6d660"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "bbc6196eb1006200c7b892c91da4ed2c748c0b46d0d3acd43517173b6f9c314e",
+      "event_hash": "7c4737bfe51402ec0047d961838a8f223d57024faa3fbd99a31af57485c6c2b5"
     },
     {
       "cursor": 5,
@@ -1341,50 +1182,12 @@
           "status": "synthetic_test_only"
         }
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "8ff34cd825e062ad495b7a0200cf0068856708d816d38042cb13587e1ef6d660",
-      "event_hash": "a39b4bfc90c1eba3e972df32b1d439cdb85e06fbdfc4ed170ddd446ab325e856"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "7c4737bfe51402ec0047d961838a8f223d57024faa3fbd99a31af57485c6c2b5",
+      "event_hash": "6ca49381ea2da7ded57134079390d4a7c87290a5e08fda18942f3a5191f8ad9d"
     },
     {
       "cursor": 6,
-      "event_type": "evidence_linked",
-      "payload": {
-        "schema_version": "1.0.0",
-        "evidence_id": "E101",
-        "kind": "synthetic_measurement",
-        "title": "Synthetic E101 evidence",
-        "provenance": "committed synthetic fixture",
-        "source": {
-          "source_id": "E101",
-          "uri": "thesis-deck-system/examples/synthetic-project/measurements.csv",
-          "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
-        },
-        "claim_support_refs": [
-          "C103"
-        ],
-        "claim_contradict_refs": [],
-        "scope": {
-          "block_id": "B101"
-        },
-        "measurement": {
-          "synthetic": true
-        },
-        "causal_role": "supporting_observation",
-        "origin": {
-          "layer_ref": "H001",
-          "source_dataset_role": "preexisting_observation"
-        },
-        "license_or_usage": "synthetic_test_only",
-        "verification": {
-          "status": "synthetic_test_only"
-        }
-      },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "a39b4bfc90c1eba3e972df32b1d439cdb85e06fbdfc4ed170ddd446ab325e856",
-      "event_hash": "027d9695f9f91d78f03b4271f730ca7b56f72d2c415b09c21f0ae42236c51b48"
-    },
-    {
-      "cursor": 7,
       "event_type": "evidence_linked",
       "payload": {
         "schema_version": "1.0.0",
@@ -1417,12 +1220,12 @@
           "status": "synthetic_test_only"
         }
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "027d9695f9f91d78f03b4271f730ca7b56f72d2c415b09c21f0ae42236c51b48",
-      "event_hash": "2b078ea58a52b0240b0689899f4169fca020668d38475a0a40d95ccee4228540"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "6ca49381ea2da7ded57134079390d4a7c87290a5e08fda18942f3a5191f8ad9d",
+      "event_hash": "6ff335a22db6459e47298f48af12a26e90d8b0cf7380039eeb012c91935820c5"
     },
     {
-      "cursor": 8,
+      "cursor": 7,
       "event_type": "evidence_linked",
       "payload": {
         "schema_version": "1.0.0",
@@ -1456,62 +1259,12 @@
           "status": "synthetic_test_only"
         }
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "2b078ea58a52b0240b0689899f4169fca020668d38475a0a40d95ccee4228540",
-      "event_hash": "f5355fb3c88299a2ad904e42c7c9ad432f867360f1858c3ebd7731608fc7b902"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "6ff335a22db6459e47298f48af12a26e90d8b0cf7380039eeb012c91935820c5",
+      "event_hash": "83ff85b046042f4cb30e3053cdffd91101e5a0b451e41455df7357d67384e2e8"
     },
     {
-      "cursor": 9,
-      "event_type": "asset_registered",
-      "payload": {
-        "schema_version": "1.0.0",
-        "asset_id": "A001",
-        "asset_type": "data_plot",
-        "title": "Synthetic defect density plot",
-        "evidence_role": "quantitative_evidence",
-        "source_evidence": [
-          "E101"
-        ],
-        "path": "plots/B001_defect_density.svg",
-        "preview_path": "plots/B001_defect_density.png",
-        "mime_type": "image/svg+xml",
-        "sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
-        "editable": true,
-        "generator": {
-          "kind": "matplotlib",
-          "version": "3.x",
-          "script": "thesis-deck-system/examples/synthetic-project/plot.py",
-          "script_sha256": "b8c35668c252fb1c46ce1f1dcb8366b4d79919d12e12f07bd623dd142b301706"
-        },
-        "input": {
-          "path": "thesis-deck-system/examples/synthetic-project/measurements.csv",
-          "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
-        },
-        "output": {
-          "svg_path": "plots/B001_defect_density.svg",
-          "svg_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
-          "png_path": "plots/B001_defect_density.png",
-          "png_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
-        },
-        "transform_chain": [
-          {
-            "input_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
-            "operation": "plot",
-            "output_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
-          }
-        ],
-        "provenance": "synthetic_fixture",
-        "accessibility": {
-          "alt_text": "defect density by position"
-        },
-        "status": "approved"
-      },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "f5355fb3c88299a2ad904e42c7c9ad432f867360f1858c3ebd7731608fc7b902",
-      "event_hash": "c8cd7ac6748c419b4fb567a5b02677070310f9e7935b2083f114cbdb47fa90ae"
-    },
-    {
-      "cursor": 10,
+      "cursor": 8,
       "event_type": "asset_registered",
       "payload": {
         "schema_version": "1.0.0",
@@ -1530,12 +1283,12 @@
         "provenance": "synthetic_fixture",
         "status": "approved"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "c8cd7ac6748c419b4fb567a5b02677070310f9e7935b2083f114cbdb47fa90ae",
-      "event_hash": "250b3d6850e9b96ba7c2603c2194fd1bfcc5a00d9cdf51e1f1cbb1e54997d524"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "83ff85b046042f4cb30e3053cdffd91101e5a0b451e41455df7357d67384e2e8",
+      "event_hash": "ee8bd49931fb14ed7f18dbf22de5c246352cc2bcf4c6dd741f636e3287815e09"
     },
     {
-      "cursor": 11,
+      "cursor": 9,
       "event_type": "asset_registered",
       "payload": {
         "schema_version": "1.0.0",
@@ -1554,12 +1307,12 @@
         "provenance": "synthetic_fixture",
         "status": "approved"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "250b3d6850e9b96ba7c2603c2194fd1bfcc5a00d9cdf51e1f1cbb1e54997d524",
-      "event_hash": "4ee0f4a5362f77e2bf0c28485cc63278eb9466c3d23b25bcf59e57f45a2c4285"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "ee8bd49931fb14ed7f18dbf22de5c246352cc2bcf4c6dd741f636e3287815e09",
+      "event_hash": "f022158ad237a2cf739429394b7e42fe495a1d7764b12d765a25acee2be18a90"
     },
     {
-      "cursor": 12,
+      "cursor": 10,
       "event_type": "problem_created",
       "payload": {
         "schema_version": "2.0.0",
@@ -1572,20 +1325,19 @@
         "unresolved_conflict": "導電度提高是否足以修復重複性仍未知。",
         "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
         "evidence_refs": [
-          "E101",
-          "E102"
+          "E002"
         ],
         "derived_from_decision_refs": [],
         "scope": "合成五個位置、每個位置三個 replicate 的機制辨識。",
         "source_event_cursor": 3,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "4ee0f4a5362f77e2bf0c28485cc63278eb9466c3d23b25bcf59e57f45a2c4285",
-      "event_hash": "fe42f9b833f603a0712fed89ccd55c5b72fd9742195c137ac9b3041fcd8924a9"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "f022158ad237a2cf739429394b7e42fe495a1d7764b12d765a25acee2be18a90",
+      "event_hash": "cc667fe68facfb87172c0a62c0c33c8c52778f02094d01bdea491dba2d9d52d6"
     },
     {
-      "cursor": 13,
+      "cursor": 11,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1614,12 +1366,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "fe42f9b833f603a0712fed89ccd55c5b72fd9742195c137ac9b3041fcd8924a9",
-      "event_hash": "3c894c0ed2b6bc018940d068f7b32512282c0b06b54df701599406964320381c"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "cc667fe68facfb87172c0a62c0c33c8c52778f02094d01bdea491dba2d9d52d6",
+      "event_hash": "6147471f908a24720f23f8dcbe0aa1d45ed7700c57cd1a173218f79f5a775ade"
     },
     {
-      "cursor": 14,
+      "cursor": 12,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1661,12 +1413,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "3c894c0ed2b6bc018940d068f7b32512282c0b06b54df701599406964320381c",
-      "event_hash": "2630ede3ad97676029eb0ef5896c4bcd3479abc4aa953d19a5a64d7c24202be7"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "6147471f908a24720f23f8dcbe0aa1d45ed7700c57cd1a173218f79f5a775ade",
+      "event_hash": "53fc44c08b6cf4688793e4d21a29cb1244be67e8f217a5a50051647964563f66"
     },
     {
-      "cursor": 15,
+      "cursor": 13,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1695,12 +1447,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "2630ede3ad97676029eb0ef5896c4bcd3479abc4aa953d19a5a64d7c24202be7",
-      "event_hash": "b5ede453f987c4a124f74cfe9644ca680cf6713e4e078fa740727df37ae96641"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "53fc44c08b6cf4688793e4d21a29cb1244be67e8f217a5a50051647964563f66",
+      "event_hash": "a9ed51d7b2c5e63d98e99a9c745f6eeaab98c65eb4cc7cc5614bbbfea0a5cff7"
     },
     {
-      "cursor": 16,
+      "cursor": 14,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1728,12 +1480,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "b5ede453f987c4a124f74cfe9644ca680cf6713e4e078fa740727df37ae96641",
-      "event_hash": "af8f97f15cd9959b140ff6df812d6df56e5f32019ee3a1771021bbc116983ad3"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "a9ed51d7b2c5e63d98e99a9c745f6eeaab98c65eb4cc7cc5614bbbfea0a5cff7",
+      "event_hash": "cd94e3277f86b168047146826ebf86bd832b31d15e2036da2172a1109208fa0e"
     },
     {
-      "cursor": 17,
+      "cursor": 15,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1750,9 +1502,7 @@
           "C103"
         ],
         "evidence_refs": [
-          "E101",
-          "E102",
-          "E103"
+          "E002"
         ],
         "hypothesis_claim_refs": [
           "C101"
@@ -1790,19 +1540,19 @@
             "no_go": "<10%"
           },
           "required_evidence": [
-            "E101"
+            "E002"
           ]
         },
         "provenance": "synthetic_fixture",
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "af8f97f15cd9959b140ff6df812d6df56e5f32019ee3a1771021bbc116983ad3",
-      "event_hash": "091ffcccb2ccd8041b627d65e38ce81bc8562e2ee733f933509d70b7b2b549b4"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "cd94e3277f86b168047146826ebf86bd832b31d15e2036da2172a1109208fa0e",
+      "event_hash": "2f1200cf114602737dea053019c6f88b3e1276d5b69f5d9b6284d5a5f67f4d22"
     },
     {
-      "cursor": 18,
+      "cursor": 16,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1819,9 +1569,8 @@
           "C103"
         ],
         "evidence_refs": [
-          "E101",
-          "E102",
-          "E103"
+          "E002",
+          "E102"
         ],
         "hypothesis_claim_refs": [
           "C101"
@@ -1860,7 +1609,7 @@
             "no_go": "<10%"
           },
           "required_evidence": [
-            "E101",
+            "E002",
             "E102"
           ]
         },
@@ -1868,12 +1617,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "091ffcccb2ccd8041b627d65e38ce81bc8562e2ee733f933509d70b7b2b549b4",
-      "event_hash": "32eb297a415e26d08cc00df88891aa1d23820d9cbb41c52cfe11032b2f5ed051"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "2f1200cf114602737dea053019c6f88b3e1276d5b69f5d9b6284d5a5f67f4d22",
+      "event_hash": "a3ae2d027f2acac243d9e1dc030b7247a957163ffaf0949d6f0ae0350c0d35a8"
     },
     {
-      "cursor": 19,
+      "cursor": 17,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1884,37 +1633,26 @@
         },
         "stage_type": "result",
         "revision": 1,
-        "status": "complete",
+        "status": "pending",
         "claim_refs": [
           "C103"
         ],
-        "evidence_refs": [
-          "E101"
-        ],
+        "evidence_refs": [],
         "hypothesis_claim_refs": [],
         "prediction_claim_refs": [],
         "data": {
-          "summary": "平均導電度增加 24% ± 5% SD",
-          "metrics": [
-            {
-              "name": "CV",
-              "value": 24,
-              "uncertainty": 5,
-              "units": "%"
-            }
-          ],
-          "decision_ref": "D101"
+          "planned_result": "平均導電度增加 24% ± 5% SD"
         },
         "provenance": "synthetic_fixture",
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "32eb297a415e26d08cc00df88891aa1d23820d9cbb41c52cfe11032b2f5ed051",
-      "event_hash": "00b7effc9c89894621aa921a000732b70a1bf419cf2ad3562bb3eb126189e278"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "a3ae2d027f2acac243d9e1dc030b7247a957163ffaf0949d6f0ae0350c0d35a8",
+      "event_hash": "1d94eb701c752813a4156aaea3c64b53e77d318ab8e9cb7f24627d158ca6ad51"
     },
     {
-      "cursor": 20,
+      "cursor": 18,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1925,37 +1663,26 @@
         },
         "stage_type": "result",
         "revision": 1,
-        "status": "complete",
+        "status": "pending",
         "claim_refs": [
           "C103"
         ],
-        "evidence_refs": [
-          "E101"
-        ],
+        "evidence_refs": [],
         "hypothesis_claim_refs": [],
         "prediction_claim_refs": [],
         "data": {
-          "summary": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
-          "metrics": [
-            {
-              "name": "CV",
-              "value": 4,
-              "uncertainty": 5,
-              "units": "%"
-            }
-          ],
-          "decision_ref": "D101"
+          "planned_result": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go"
         },
         "provenance": "synthetic_fixture",
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "00b7effc9c89894621aa921a000732b70a1bf419cf2ad3562bb3eb126189e278",
-      "event_hash": "fbcd9e673d670f1e40719bf6d2ca2391e77b72642457a9af9d8dab7d675ee28a"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "1d94eb701c752813a4156aaea3c64b53e77d318ab8e9cb7f24627d158ca6ad51",
+      "event_hash": "7817b505fcf1c24b8fe71193e098561a9e373b12e5f60a46636b0312ced802d5"
     },
     {
-      "cursor": 21,
+      "cursor": 19,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -1971,72 +1698,32 @@
           "C101",
           "C102"
         ],
-        "evidence_refs": [
-          "E101",
-          "E102",
-          "E103"
-        ],
+        "evidence_refs": [],
         "hypothesis_claim_refs": [],
         "prediction_claim_refs": [],
         "data": {
-          "hypothesis_support": "partial_support",
-          "failed_assumptions": [
-            "uniform spatial exposure"
-          ],
+          "hypothesis_support": "inconclusive",
+          "failed_assumptions": [],
           "missing_evidence": [
-            "contact control"
+            "results"
           ],
           "limitations": [
-            "synthetic only"
+            "pending"
           ],
           "decision_ref": "D101",
           "next_step_ref": "NS101",
-          "interpretation": "Results support only part of the bulk hypothesis."
+          "interpretation": "Pending result interpretation."
         },
         "provenance": "synthetic_fixture",
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "fbcd9e673d670f1e40719bf6d2ca2391e77b72642457a9af9d8dab7d675ee28a",
-      "event_hash": "329ba73a251614740853c5e24ba806d5fe165dab370614ec0a18b51a4c3eb55b"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "7817b505fcf1c24b8fe71193e098561a9e373b12e5f60a46636b0312ced802d5",
+      "event_hash": "8e31a2b5fc3c6b5c4a9677cb6f8b0613f0c80871d7073757f00789f3f4ee3a7a"
     },
     {
-      "cursor": 22,
-      "event_type": "layer_discussion_recorded",
-      "payload": {
-        "schema_version": "2.0.0",
-        "discussion_id": "DISC-H001",
-        "hypothesis_layer_ref": "H001",
-        "supporting_results": [
-          "RES101"
-        ],
-        "contradicting_results": [
-          "RES102"
-        ],
-        "non_discriminating_results": [],
-        "cross_experiment_pattern": "導電度提升成立，但重複性沒有同步改善。",
-        "mechanism_assessment": "bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
-        "alternative_explanations": [
-          "接觸電阻",
-          "局部壓力差",
-          "電極幾何"
-        ],
-        "remaining_uncertainty": "contact interface 是否為主導因素仍需匹配導電度後檢驗。",
-        "hypothesis_status": "partial_support",
-        "decision_ref": "D101",
-        "next_step_refs": [
-          "NS101"
-        ],
-        "source_event_cursor": 22,
-        "created_at": "2026-08-27T00:00:00Z"
-      },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "329ba73a251614740853c5e24ba806d5fe165dab370614ec0a18b51a4c3eb55b",
-      "event_hash": "ef4cb9ddbb2b636fbf55871d18d1850774b75e55051b60457763ffffd0c0f671"
-    },
-    {
-      "cursor": 23,
+      "cursor": 20,
       "event_type": "decision_recorded",
       "payload": {
         "schema_version": "1.0.0",
@@ -2052,26 +1739,24 @@
         },
         "decision_type": "research_gate",
         "subject_refs": [
-          "B101",
-          "ST-H001-DISC"
+          "B101"
         ],
-        "choice": "Partial-Go",
+        "choice": "pending",
         "alternatives": [
           "No-Go"
         ],
-        "rationale": "Bulk conductivity is contributory but insufficient.",
+        "rationale": "Awaiting result set.",
         "evidence_refs": [
-          "E101",
-          "E102"
+          "E002"
         ],
         "provenance": "synthetic_fixture"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "ef4cb9ddbb2b636fbf55871d18d1850774b75e55051b60457763ffffd0c0f671",
-      "event_hash": "7b6f89e3ee63634589c50675e376b1ca04836e4208e3188318562a1b4f63115f"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "8e31a2b5fc3c6b5c4a9677cb6f8b0613f0c80871d7073757f00789f3f4ee3a7a",
+      "event_hash": "54ba7465868ae91c68be124378ac60563e66a2ff668800b5126898af9d3a1efe"
     },
     {
-      "cursor": 24,
+      "cursor": 21,
       "event_type": "action_committed",
       "payload": {
         "schema_version": "1.0.0",
@@ -2130,39 +1815,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "7b6f89e3ee63634589c50675e376b1ca04836e4208e3188318562a1b4f63115f",
-      "event_hash": "2bcdfdf31bd69d3fd06040c352442baf6bf214738be71cf91736c1862ef06557"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "54ba7465868ae91c68be124378ac60563e66a2ff668800b5126898af9d3a1efe",
+      "event_hash": "327e68673abf6e6a84f76de4ae2740c50673eb6a4d99839d5a3d6f5b1b24cc66"
     },
     {
-      "cursor": 25,
-      "event_type": "layer_summary_recorded",
-      "payload": {
-        "schema_version": "2.0.0",
-        "summary_id": "SUM-H001",
-        "hypothesis_layer_ref": "H001",
-        "answered": "bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
-        "supporting_evidence_refs": [
-          "E101",
-          "RES101",
-          "RES102"
-        ],
-        "remaining_unresolved": "interface contact 的貢獻尚未量化。",
-        "hypothesis_status": "partial_support",
-        "decision_ref": "D101",
-        "next_question": "匹配 bulk conductivity 後，contact resistance 是否主導變異？",
-        "next_step_refs": [
-          "NS101"
-        ],
-        "source_event_cursor": 25,
-        "created_at": "2026-08-27T00:00:00Z"
-      },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "2bcdfdf31bd69d3fd06040c352442baf6bf214738be71cf91736c1862ef06557",
-      "event_hash": "a847c419e2376d51098047f1d526aba0dec71b85c2875d28b920dcc3a861ad5b"
-    },
-    {
-      "cursor": 26,
+      "cursor": 22,
       "event_type": "block_created",
       "payload": {
         "schema_version": "1.0.0",
@@ -2215,12 +1873,10 @@
         ],
         "evidence_refs": [
           "E002",
-          "E101",
           "E102",
           "E103"
         ],
         "asset_refs": [
-          "A001",
           "A002",
           "A101"
         ],
@@ -2235,12 +1891,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "a847c419e2376d51098047f1d526aba0dec71b85c2875d28b920dcc3a861ad5b",
-      "event_hash": "579dd5a2109ce773e61ecb20b610df4cf1ac6192923217649d7b9156d0e97e6f"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "327e68673abf6e6a84f76de4ae2740c50673eb6a4d99839d5a3d6f5b1b24cc66",
+      "event_hash": "63995f22f2d7b68bcae5d8265e9610023bcc68c37958ca97ffbb304f39fc2349"
     },
     {
-      "cursor": 27,
+      "cursor": 23,
       "event_type": "hypothesis_layer_created",
       "payload": {
         "schema_version": "2.0.0",
@@ -2287,13 +1943,13 @@
         "transition_ref": null,
         "story_visibility": "main",
         "research_status": "partial_support",
-        "source_event_cursor": 27,
+        "source_event_cursor": 23,
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T11:39:25Z",
-      "previous_hash": "579dd5a2109ce773e61ecb20b610df4cf1ac6192923217649d7b9156d0e97e6f",
-      "event_hash": "d587659aea6caee010f534200caf12b73955a9dfef7edd3dcf0c17ec7d33a338"
+      "timestamp": "2026-08-27T15:16:56Z",
+      "previous_hash": "63995f22f2d7b68bcae5d8265e9610023bcc68c37958ca97ffbb304f39fc2349",
+      "event_hash": "be2c1da3ba98a46a401226d53268347e3df47056bde88f16ae1a851d4c1bbd31"
     }
   ]
 }

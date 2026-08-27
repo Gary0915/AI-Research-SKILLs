@@ -11,7 +11,7 @@
     "profile_id": "PROF-SYNTH-001",
     "version": "1.0.0"
   },
-  "source_event_cursor": 55,
+  "source_event_cursor": 67,
   "build_id": "BUILD-MASTER-PHASE2-ACCEPTANCE",
   "build_tool_version": "0.3.0",
   "created_at": "2026-08-27T00:00:00Z",
@@ -23,15 +23,15 @@
       "ordinal": 1,
       "slide_id": "S-PHASE2-PROGRESS-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
-        "revision": 2
+        "revision": 3
       },
       "block_refs": [
         {
           "block_id": "B101",
-          "revision": 2
+          "revision": 3
         },
         {
           "block_id": "B201",
@@ -42,9 +42,7 @@
         "C201"
       ],
       "evidence_refs": [
-        "E202",
-        "E204",
-        "E201"
+        "E101"
       ],
       "asset_refs": [],
       "action_refs": [
@@ -63,7 +61,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 55,
+      "source_event_cursor": 56,
       "story_visibility": "main",
       "hypothesis_layer_ref": null,
       "semantic_role": "progress_todo"
@@ -72,7 +70,7 @@
       "ordinal": 2,
       "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -88,9 +86,7 @@
       ],
       "evidence_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "asset_refs": [],
       "action_refs": [],
@@ -103,7 +99,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "hypothesis_title"
@@ -112,7 +108,7 @@
       "ordinal": 3,
       "slide_id": "S-H001-PROBLEM-DEFINITION-02",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -127,10 +123,7 @@
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E002"
       ],
       "asset_refs": [],
       "action_refs": [],
@@ -143,7 +136,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "problem_definition"
@@ -152,7 +145,7 @@
       "ordinal": 4,
       "slide_id": "S-H001-FISHBONE-LOCATOR-03",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -167,9 +160,6 @@
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
         "E103"
       ],
       "asset_refs": [
@@ -185,7 +175,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "fishbone_locator"
@@ -194,7 +184,7 @@
       "ordinal": 5,
       "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -210,9 +200,7 @@
       ],
       "evidence_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "asset_refs": [
         "A002"
@@ -227,7 +215,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "observation_problem"
@@ -236,7 +224,7 @@
       "ordinal": 6,
       "slide_id": "S-H001-LITERATURE-MECHANISM-05",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -251,9 +239,6 @@
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
         "E103"
       ],
       "asset_refs": [],
@@ -267,7 +252,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "literature_mechanism"
@@ -276,7 +261,7 @@
       "ordinal": 7,
       "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -291,10 +276,7 @@
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E002"
       ],
       "asset_refs": [],
       "action_refs": [],
@@ -307,7 +289,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "experiment_design"
@@ -316,7 +298,7 @@
       "ordinal": 8,
       "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -332,9 +314,7 @@
       ],
       "evidence_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "asset_refs": [],
       "action_refs": [],
@@ -347,34 +327,31 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 23,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "experiment_design"
     },
     {
       "ordinal": 9,
-      "slide_id": "S-H001-RESULT-COMPARISON-08",
+      "slide_id": "S-H001-RESULT-SINGLE-08",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
-        "revision": 1
+        "revision": 2
       },
       "block_refs": [
         {
           "block_id": "B101",
-          "revision": 1
+          "revision": 2
         }
       ],
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "asset_refs": [
         "A001"
@@ -389,34 +366,31 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 28,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
-      "semantic_role": "result_comparison"
+      "semantic_role": "result_single"
     },
     {
       "ordinal": 10,
-      "slide_id": "S-H001-RESULT-COMPARISON-09",
+      "slide_id": "S-H001-RESULT-SINGLE-09",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
-        "revision": 1
+        "revision": 2
       },
       "block_refs": [
         {
           "block_id": "B101",
-          "revision": 1
+          "revision": 2
         }
       ],
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "asset_refs": [
         "A001"
@@ -431,31 +405,30 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 28,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
-      "semantic_role": "result_comparison"
+      "semantic_role": "result_single"
     },
     {
       "ordinal": 11,
       "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
-        "revision": 1
+        "revision": 2
       },
       "block_refs": [
         {
           "block_id": "B101",
-          "revision": 1
+          "revision": 2
         }
       ],
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
-        "E002",
         "E101",
         "E102",
         "E103"
@@ -473,7 +446,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 30,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "layer_integrated_discussion"
@@ -482,25 +455,22 @@
       "ordinal": 12,
       "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
-        "revision": 1
+        "revision": 2
       },
       "block_refs": [
         {
           "block_id": "B101",
-          "revision": 1
+          "revision": 2
         }
       ],
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "asset_refs": [],
       "action_refs": [
@@ -517,7 +487,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 27,
+      "source_event_cursor": 32,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "layer_summary_decision"
@@ -526,15 +496,15 @@
       "ordinal": 13,
       "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B101",
-        "revision": 2
+        "revision": 3
       },
       "block_refs": [
         {
           "block_id": "B101",
-          "revision": 2
+          "revision": 3
         }
       ],
       "claim_refs": [
@@ -557,7 +527,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 41,
+      "source_event_cursor": 54,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "hypothesis_transition"
@@ -566,7 +536,7 @@
       "ordinal": 14,
       "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -581,9 +551,7 @@
         "C201"
       ],
       "evidence_refs": [
-        "E202",
-        "E204",
-        "E201"
+        "E204"
       ],
       "asset_refs": [],
       "action_refs": [],
@@ -596,7 +564,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 55,
+      "source_event_cursor": 56,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "hypothesis_title"
@@ -605,7 +573,7 @@
       "ordinal": 15,
       "slide_id": "S-H002-PROBLEM-DEFINITION-02",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -620,9 +588,7 @@
         "C201"
       ],
       "evidence_refs": [
-        "E202",
-        "E204",
-        "E201"
+        "E204"
       ],
       "asset_refs": [],
       "action_refs": [],
@@ -635,7 +601,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 55,
+      "source_event_cursor": 56,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "problem_definition"
@@ -644,7 +610,7 @@
       "ordinal": 16,
       "slide_id": "S-H002-FISHBONE-LOCATOR-03",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -659,9 +625,7 @@
         "C201"
       ],
       "evidence_refs": [
-        "E202",
-        "E204",
-        "E201"
+        "E204"
       ],
       "asset_refs": [
         "A102"
@@ -676,7 +640,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 55,
+      "source_event_cursor": 56,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "fishbone_locator"
@@ -685,7 +649,7 @@
       "ordinal": 17,
       "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -700,9 +664,8 @@
         "C201"
       ],
       "evidence_refs": [
-        "E202",
         "E204",
-        "E201"
+        "E202"
       ],
       "asset_refs": [],
       "action_refs": [],
@@ -715,7 +678,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 55,
+      "source_event_cursor": 56,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "observation_problem"
@@ -724,22 +687,21 @@
       "ordinal": 18,
       "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B201",
-        "revision": 1
+        "revision": 2
       },
       "block_refs": [
         {
           "block_id": "B201",
-          "revision": 1
+          "revision": 2
         }
       ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
-        "E202",
         "E204",
         "E201"
       ],
@@ -756,7 +718,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 55,
+      "source_event_cursor": 61,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "result_comparison"
@@ -765,23 +727,21 @@
       "ordinal": 19,
       "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "slide_spec_sha256": "32ab3c86d14b6ac5e7090236c898d9ca9153d07e3d4c87546f30bf9d2be94973",
       "block_ref": {
         "block_id": "B201",
-        "revision": 1
+        "revision": 2
       },
       "block_refs": [
         {
           "block_id": "B201",
-          "revision": 1
+          "revision": 2
         }
       ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
-        "E202",
-        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -799,7 +759,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 55,
+      "source_event_cursor": 66,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "layer_summary_decision"
@@ -807,7 +767,7 @@
   ],
   "outputs": {
     "pptx": "acceptance-deck.pptx",
-    "pptx_sha256": "88bc2b0df1cc89131456c1f8debe8c7ae0b45013e33a265d401d13e16d3ed74f"
+    "pptx_sha256": "473da5b3fab50e3f23e0ae257899a03d2cc2f5ce68acc39dba317dedd1b963c8"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE2-ACCEPTANCE"

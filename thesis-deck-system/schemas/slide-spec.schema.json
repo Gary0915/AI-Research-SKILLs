@@ -20,6 +20,7 @@
     "speaker_notes": {"type": "object", "additionalProperties": false, "required": ["source_refs", "text"], "properties": {"source_refs": {"$ref": "#/$defs/evidence_refs"}, "text": {"type": "string", "minLength": 1}}},
     "story_visibility": {"type": "object", "additionalProperties": false, "required": ["master", "meeting", "defense"], "properties": {"master": {"$ref": "#/$defs/visibility"}, "meeting": {"$ref": "#/$defs/visibility"}, "defense": {"$ref": "#/$defs/visibility"}}},
     "source_cursor": {"type": "integer", "minimum": 1},
+    "stage_source_cursors": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}},
     "bindings": {"type": "object", "additionalProperties": false, "required": ["claim_refs", "evidence_refs", "asset_refs", "action_refs", "decision_refs", "professor_profile_ref", "template_profile_ref"], "properties": {"claim_refs": {"$ref": "#/$defs/claim_refs"}, "evidence_refs": {"$ref": "#/$defs/evidence_refs"}, "asset_refs": {"type": "array", "items": {"$ref": "#/$defs/asset_id"}}, "action_refs": {"type": "array", "items": {"type": "string", "pattern": "^NS[0-9]{3,}$"}}, "decision_refs": {"type": "array", "items": {"type": "string", "pattern": "^D[0-9]{3,}$"}}, "professor_profile_ref": {"$ref": "#/$defs/professor_ref"}, "template_profile_ref": {"$ref": "#/$defs/template_ref"}}},
     "content": {"type": "object", "properties": {"body": {"type": "string"}, "slots": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string"}}}},
     "hypothesis_layer_ref": {"oneOf": [{"type": "null"}, {"type": "string", "pattern": "^H[0-9]{3}$"}]},
@@ -32,13 +33,14 @@
     "layout_plan_ref": {"type": "string", "pattern": "^LP-[A-Z0-9-]+$"},
     "placement_plan": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["slot", "left", "top", "width", "height", "z_order", "element_role", "font_size_pt"], "properties": {"slot": {"type": "string"}, "left": {"type": "number"}, "top": {"type": "number"}, "width": {"type": "number"}, "height": {"type": "number"}, "z_order": {"type": "integer"}, "element_role": {"type": "string"}, "font_size_pt": {"type": "number"}}}},
     "compaction_rationale": {"oneOf": [{"type": "null"}, {"type": "string", "minLength": 1}]},
-    "intentionally_empty_slots": {"type": "array", "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["slot", "reason", "contract_rule"], "properties": {"slot": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"}, "reason": {"type": "string", "minLength": 1}, "contract_rule": {"type": "string", "minLength": 1}}}}
+    "intentionally_empty_slots": {"type": "array", "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["slot", "reason", "contract_rule"], "properties": {"slot": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"}, "reason": {"type": "string", "minLength": 1}, "contract_rule": {"type": "string", "minLength": 1}}}},
+    "slot_compositions": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "enum": ["text_only", "asset_only", "asset_with_caption", "asset_with_annotation", "nested_group"]}}
   },
   "allOf": [
     {"if": {"properties": {"schema_version": {"const": "1.0.0"}}, "required": ["schema_version"]}, "then": {"properties": {"bindings": {"properties": {"asset_refs": {"minItems": 1}, "action_refs": {"minItems": 1}, "decision_refs": {"minItems": 1}}}, "placements": {"minItems": 1}}}},
     {"if": {"properties": {"recipe": {"const": "photo_observation"}}, "required": ["recipe"]}, "then": {"properties": {"content": {"$ref": "#/$defs/observation_content"}}}},
     {"if": {"properties": {"recipe": {"const": "hero_plot_discussion"}}, "required": ["recipe"]}, "then": {"properties": {"content": {"$ref": "#/$defs/result_content"}}}},
-    {"if": {"properties": {"schema_version": {"const": "2.0.0"}}, "required": ["schema_version"]}, "then": {"required": ["hypothesis_layer_ref", "hypothesis_layer_revision", "semantic_role", "combined_roles", "fishbone_snapshot_ref", "fishbone_focus_refs", "layout_plan_ref", "placement_plan", "compaction_rationale", "object_ref"], "properties": {"content": {"required": ["slots"]}}}}
+    {"if": {"properties": {"schema_version": {"const": "2.0.0"}}, "required": ["schema_version"]}, "then": {"required": ["hypothesis_layer_ref", "hypothesis_layer_revision", "semantic_role", "combined_roles", "fishbone_snapshot_ref", "fishbone_focus_refs", "layout_plan_ref", "placement_plan", "compaction_rationale", "object_ref", "slot_compositions"], "properties": {"content": {"required": ["slots"]}}}}
   ],
   "$defs": {
     "repo_path": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?![A-Za-z]:)(?!\\\\)(?!.*\\\\).+"},

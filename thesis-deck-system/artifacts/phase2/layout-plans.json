@@ -4,6 +4,7 @@
     "layout_plan_id": "LP-PHASE2-PROGRESS-01",
     "slide_id": "S-PHASE2-PROGRESS-01",
     "selected_archetype": "A17",
+    "geometry_role": "progress_todo",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -59,7 +60,7 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 122,
+    "text_units": 125,
     "text_budget": 260,
     "required_slots": [
       "commitment_table",
@@ -68,7 +69,7 @@
     ],
     "slot_signature": "commitment_table@0.80,1.45,7.00,3.75|current_position@8.15,1.45,4.40,1.70|parallel_work@8.15,3.45,4.40,1.75",
     "rationale": "Deterministic semantic-role mapping progress_todo → A17; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 55,
+    "source_event_cursor": 56,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -76,6 +77,7 @@
     "layout_plan_id": "LP-H001-HYPOTHESIS-TITLE-01",
     "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
     "selected_archetype": "A01",
+    "geometry_role": "hypothesis_title",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -122,7 +124,7 @@
     ],
     "slot_signature": "hypothesis_statement@0.80,1.65,11.70,2.35",
     "rationale": "Deterministic semantic-role mapping hypothesis_title → A01; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 23,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -130,6 +132,7 @@
     "layout_plan_id": "LP-H001-PROBLEM-DEFINITION-02",
     "slide_id": "S-H001-PROBLEM-DEFINITION-02",
     "selected_archetype": "A02",
+    "geometry_role": "problem_definition",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -194,7 +197,7 @@
     ],
     "slot_signature": "previous_finding@0.80,1.45,3.70,1.75|unresolved_conflict@4.80,1.45,3.70,1.75|research_question@8.80,1.45,3.70,1.75",
     "rationale": "Deterministic semantic-role mapping problem_definition → A02; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 23,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -202,6 +205,7 @@
     "layout_plan_id": "LP-H001-FISHBONE-LOCATOR-03",
     "slide_id": "S-H001-FISHBONE-LOCATOR-03",
     "selected_archetype": "A03",
+    "geometry_role": "fishbone_locator",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -255,7 +259,7 @@
     ],
     "slot_signature": "primary_figure@4.25,1.35,8.35,4.90|fishbone_focus@0.80,1.65,3.00,1.40",
     "rationale": "Deterministic semantic-role mapping fishbone_locator → A03; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 23,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -263,6 +267,7 @@
     "layout_plan_id": "LP-H001-OBSERVATION-PROBLEM-04",
     "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
     "selected_archetype": "A04",
+    "geometry_role": "observation_problem",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -326,7 +331,7 @@
     ],
     "slot_signature": "primary_figure@7.55,1.40,5.00,3.80|research_question@0.80,1.45,6.20,0.90|observation_text@0.80,2.55,6.20,2.65",
     "rationale": "Deterministic semantic-role mapping observation_problem → A04; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 23,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -334,6 +339,7 @@
     "layout_plan_id": "LP-H001-LITERATURE-MECHANISM-05",
     "slide_id": "S-H001-LITERATURE-MECHANISM-05",
     "selected_archetype": "A05",
+    "geometry_role": "literature_mechanism",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -387,7 +393,7 @@
     ],
     "slot_signature": "literature_evidence@0.80,1.45,5.80,3.90|mechanism_diagram@7.00,1.45,5.55,3.90",
     "rationale": "Deterministic semantic-role mapping literature_mechanism → A05; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 23,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -395,6 +401,7 @@
     "layout_plan_id": "LP-H001-EXPERIMENT-DESIGN-06",
     "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
     "selected_archetype": "A09",
+    "geometry_role": "experiment_design",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -447,7 +454,7 @@
     ],
     "slot_signature": "experiment_matrix@0.80,1.40,7.40,4.30|decision_rule@8.55,1.40,4.00,2.00",
     "rationale": "Deterministic semantic-role mapping experiment_design → A09; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 23,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -455,6 +462,7 @@
     "layout_plan_id": "LP-H001-EXPERIMENT-DESIGN-07",
     "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
     "selected_archetype": "A09",
+    "geometry_role": "experiment_design",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -507,14 +515,15 @@
     ],
     "slot_signature": "experiment_matrix@0.80,1.40,7.40,4.30|decision_rule@8.55,1.40,4.00,2.00",
     "rationale": "Deterministic semantic-role mapping experiment_design → A09; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 23,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
     "schema_version": "2.0.0",
-    "layout_plan_id": "LP-H001-RESULT-COMPARISON-08",
-    "slide_id": "S-H001-RESULT-COMPARISON-08",
-    "selected_archetype": "A11",
+    "layout_plan_id": "LP-H001-RESULT-SINGLE-08",
+    "slide_id": "S-H001-RESULT-SINGLE-08",
+    "selected_archetype": "A10",
+    "geometry_role": "result_single",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -523,23 +532,23 @@
     },
     "placement_plan": [
       {
-        "slot": "control_panel",
-        "left": 0.8,
-        "top": 1.45,
-        "width": 5.75,
-        "height": 4.2,
+        "slot": "result_plot",
+        "left": 6.0,
+        "top": 1.35,
+        "width": 6.55,
+        "height": 4.45,
         "z_order": 1,
-        "element_role": "comparison_control",
+        "element_role": "result",
         "font_size_pt": 16
       },
       {
-        "slot": "proposed_panel",
-        "left": 6.8,
-        "top": 1.45,
-        "width": 5.75,
-        "height": 4.2,
+        "slot": "result_annotation",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 4.8,
+        "height": 2.3,
         "z_order": 2,
-        "element_role": "comparison_proposed",
+        "element_role": "annotation",
         "font_size_pt": 16
       }
     ],
@@ -549,7 +558,7 @@
       "provenance"
     ],
     "expected_professor_checks": [
-      "fair_comparison"
+      "result_before_integrated_discussion"
     ],
     "candidate_alternatives": [
       "A04",
@@ -560,21 +569,22 @@
     "density_estimate": "high",
     "split_recommendation": false,
     "text_units": 26,
-    "text_budget": 150,
+    "text_budget": 130,
     "required_slots": [
-      "control_panel",
-      "proposed_panel"
+      "result_plot",
+      "result_annotation"
     ],
-    "slot_signature": "control_panel@0.80,1.45,5.75,4.20|proposed_panel@6.80,1.45,5.75,4.20",
-    "rationale": "Deterministic semantic-role mapping result_comparison → A11; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "slot_signature": "result_plot@6.00,1.35,6.55,4.45|result_annotation@0.80,1.65,4.80,2.30",
+    "rationale": "Deterministic semantic-role mapping result_single → A10; governed slot geometry selected from ROLE_GEOMETRY",
+    "source_event_cursor": 28,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
     "schema_version": "2.0.0",
-    "layout_plan_id": "LP-H001-RESULT-COMPARISON-09",
-    "slide_id": "S-H001-RESULT-COMPARISON-09",
-    "selected_archetype": "A11",
+    "layout_plan_id": "LP-H001-RESULT-SINGLE-09",
+    "slide_id": "S-H001-RESULT-SINGLE-09",
+    "selected_archetype": "A10",
+    "geometry_role": "result_single",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -583,23 +593,23 @@
     },
     "placement_plan": [
       {
-        "slot": "control_panel",
-        "left": 0.8,
-        "top": 1.45,
-        "width": 5.75,
-        "height": 4.2,
+        "slot": "result_plot",
+        "left": 6.0,
+        "top": 1.35,
+        "width": 6.55,
+        "height": 4.45,
         "z_order": 1,
-        "element_role": "comparison_control",
+        "element_role": "result",
         "font_size_pt": 16
       },
       {
-        "slot": "proposed_panel",
-        "left": 6.8,
-        "top": 1.45,
-        "width": 5.75,
-        "height": 4.2,
+        "slot": "result_annotation",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 4.8,
+        "height": 2.3,
         "z_order": 2,
-        "element_role": "comparison_proposed",
+        "element_role": "annotation",
         "font_size_pt": 16
       }
     ],
@@ -609,7 +619,7 @@
       "provenance"
     ],
     "expected_professor_checks": [
-      "fair_comparison"
+      "result_before_integrated_discussion"
     ],
     "candidate_alternatives": [
       "A04",
@@ -620,14 +630,14 @@
     "density_estimate": "high",
     "split_recommendation": false,
     "text_units": 35,
-    "text_budget": 150,
+    "text_budget": 130,
     "required_slots": [
-      "control_panel",
-      "proposed_panel"
+      "result_plot",
+      "result_annotation"
     ],
-    "slot_signature": "control_panel@0.80,1.45,5.75,4.20|proposed_panel@6.80,1.45,5.75,4.20",
-    "rationale": "Deterministic semantic-role mapping result_comparison → A11; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "slot_signature": "result_plot@6.00,1.35,6.55,4.45|result_annotation@0.80,1.65,4.80,2.30",
+    "rationale": "Deterministic semantic-role mapping result_single → A10; governed slot geometry selected from ROLE_GEOMETRY",
+    "source_event_cursor": 28,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -635,6 +645,7 @@
     "layout_plan_id": "LP-H001-LAYER-INTEGRATED-DISCUSSION-10",
     "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
     "selected_archetype": "A14",
+    "geometry_role": "layer_integrated_discussion",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -699,7 +710,7 @@
     ],
     "slot_signature": "supporting_results@0.80,1.40,5.65,2.20|contradicting_results@6.80,1.40,5.75,2.20|uncertainty@0.80,3.90,11.75,1.70",
     "rationale": "Deterministic semantic-role mapping layer_integrated_discussion → A14; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 30,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -707,6 +718,7 @@
     "layout_plan_id": "LP-H001-LAYER-SUMMARY-DECISION-11",
     "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
     "selected_archetype": "A15",
+    "geometry_role": "layer_summary_decision",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -772,7 +784,7 @@
     ],
     "slot_signature": "decision_status@0.80,1.40,3.70,2.30|uncertainty@4.80,1.40,3.70,2.30|next_step@8.80,1.40,3.70,2.30",
     "rationale": "Deterministic semantic-role mapping layer_summary_decision → A15; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 27,
+    "source_event_cursor": 32,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -780,6 +792,7 @@
     "layout_plan_id": "LP-H001-HYPOTHESIS-TRANSITION-12",
     "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
     "selected_archetype": "A16",
+    "geometry_role": "hypothesis_transition",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -832,7 +845,7 @@
     ],
     "slot_signature": "transition_nodes@0.80,1.55,11.75,2.70|derivation_strip@0.80,4.55,11.75,0.80",
     "rationale": "Deterministic semantic-role mapping hypothesis_transition → A16; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 41,
+    "source_event_cursor": 54,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -840,6 +853,7 @@
     "layout_plan_id": "LP-H002-HYPOTHESIS-TITLE-01",
     "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
     "selected_archetype": "A01",
+    "geometry_role": "hypothesis_title",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -886,7 +900,7 @@
     ],
     "slot_signature": "hypothesis_statement@0.80,1.65,11.70,2.35",
     "rationale": "Deterministic semantic-role mapping hypothesis_title → A01; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 55,
+    "source_event_cursor": 56,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -894,6 +908,7 @@
     "layout_plan_id": "LP-H002-PROBLEM-DEFINITION-02",
     "slide_id": "S-H002-PROBLEM-DEFINITION-02",
     "selected_archetype": "A02",
+    "geometry_role": "problem_definition",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -958,7 +973,7 @@
     ],
     "slot_signature": "previous_finding@0.80,1.45,3.70,1.75|unresolved_conflict@4.80,1.45,3.70,1.75|research_question@8.80,1.45,3.70,1.75",
     "rationale": "Deterministic semantic-role mapping problem_definition → A02; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 55,
+    "source_event_cursor": 56,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -966,6 +981,7 @@
     "layout_plan_id": "LP-H002-FISHBONE-LOCATOR-03",
     "slide_id": "S-H002-FISHBONE-LOCATOR-03",
     "selected_archetype": "A03",
+    "geometry_role": "fishbone_locator",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -1019,7 +1035,7 @@
     ],
     "slot_signature": "primary_figure@4.25,1.35,8.35,4.90|fishbone_focus@0.80,1.65,3.00,1.40",
     "rationale": "Deterministic semantic-role mapping fishbone_locator → A03; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 55,
+    "source_event_cursor": 56,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -1027,6 +1043,7 @@
     "layout_plan_id": "LP-H002-OBSERVATION-PROBLEM-04",
     "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
     "selected_archetype": "A04",
+    "geometry_role": "observation_literature_mechanism_strategy",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -1035,33 +1052,63 @@
     },
     "placement_plan": [
       {
-        "slot": "primary_figure",
-        "left": 7.55,
+        "slot": "observation_text",
+        "left": 0.8,
         "top": 1.4,
-        "width": 5.0,
-        "height": 3.8,
+        "width": 3.0,
+        "height": 2.1,
         "z_order": 1,
-        "element_role": "observation_visual",
+        "element_role": "observation",
         "font_size_pt": 16
       },
       {
         "slot": "research_question",
         "left": 0.8,
-        "top": 1.45,
-        "width": 6.2,
-        "height": 0.9,
+        "top": 3.75,
+        "width": 3.0,
+        "height": 1.55,
         "z_order": 2,
         "element_role": "question",
-        "font_size_pt": 20
+        "font_size_pt": 18
       },
       {
-        "slot": "observation_text",
-        "left": 0.8,
-        "top": 2.55,
-        "width": 6.2,
-        "height": 2.65,
+        "slot": "literature_evidence",
+        "left": 4.1,
+        "top": 1.4,
+        "width": 4.1,
+        "height": 3.9,
         "z_order": 3,
-        "element_role": "observation",
+        "element_role": "literature",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "mechanism_diagram",
+        "left": 8.5,
+        "top": 1.4,
+        "width": 2.1,
+        "height": 2.3,
+        "z_order": 4,
+        "element_role": "mechanism",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "strategy",
+        "left": 10.8,
+        "top": 1.4,
+        "width": 1.7,
+        "height": 2.3,
+        "z_order": 5,
+        "element_role": "strategy",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "primary_figure",
+        "left": 8.5,
+        "top": 3.95,
+        "width": 4.0,
+        "height": 1.35,
+        "z_order": 6,
+        "element_role": "observation_visual",
         "font_size_pt": 16
       }
     ],
@@ -1081,16 +1128,19 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 49,
+    "text_units": 137,
     "text_budget": 180,
     "required_slots": [
-      "primary_figure",
+      "observation_text",
       "research_question",
-      "observation_text"
+      "literature_evidence",
+      "mechanism_diagram",
+      "strategy",
+      "primary_figure"
     ],
-    "slot_signature": "primary_figure@7.55,1.40,5.00,3.80|research_question@0.80,1.45,6.20,0.90|observation_text@0.80,2.55,6.20,2.65",
+    "slot_signature": "observation_text@0.80,1.40,3.00,2.10|research_question@0.80,3.75,3.00,1.55|literature_evidence@4.10,1.40,4.10,3.90|mechanism_diagram@8.50,1.40,2.10,2.30|strategy@10.80,1.40,1.70,2.30|primary_figure@8.50,3.95,4.00,1.35",
     "rationale": "Deterministic semantic-role mapping observation_problem → A04; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 55,
+    "source_event_cursor": 56,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -1098,6 +1148,7 @@
     "layout_plan_id": "LP-H002-EXPERIMENT-DESIGN-06",
     "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
     "selected_archetype": "A11",
+    "geometry_role": "experiment_result_combined",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -1106,23 +1157,43 @@
     },
     "placement_plan": [
       {
-        "slot": "control_panel",
+        "slot": "experiment_matrix",
         "left": 0.8,
-        "top": 1.45,
-        "width": 5.75,
-        "height": 4.2,
+        "top": 1.4,
+        "width": 5.8,
+        "height": 4.3,
         "z_order": 1,
-        "element_role": "comparison_control",
+        "element_role": "experiment",
         "font_size_pt": 16
       },
       {
-        "slot": "proposed_panel",
+        "slot": "decision_rule",
         "left": 6.8,
-        "top": 1.45,
-        "width": 5.75,
-        "height": 4.2,
+        "top": 1.4,
+        "width": 2.0,
+        "height": 2.0,
         "z_order": 2,
-        "element_role": "comparison_proposed",
+        "element_role": "decision_rule",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "result_plot",
+        "left": 9.05,
+        "top": 1.4,
+        "width": 3.5,
+        "height": 2.4,
+        "z_order": 3,
+        "element_role": "result",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "result_annotation",
+        "left": 6.8,
+        "top": 3.95,
+        "width": 5.75,
+        "height": 1.75,
+        "z_order": 4,
+        "element_role": "annotation",
         "font_size_pt": 16
       }
     ],
@@ -1142,15 +1213,17 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 53,
-    "text_budget": 150,
+    "text_units": 252,
+    "text_budget": 260,
     "required_slots": [
-      "control_panel",
-      "proposed_panel"
+      "experiment_matrix",
+      "decision_rule",
+      "result_plot",
+      "result_annotation"
     ],
-    "slot_signature": "control_panel@0.80,1.45,5.75,4.20|proposed_panel@6.80,1.45,5.75,4.20",
+    "slot_signature": "experiment_matrix@0.80,1.40,5.80,4.30|decision_rule@6.80,1.40,2.00,2.00|result_plot@9.05,1.40,3.50,2.40|result_annotation@6.80,3.95,5.75,1.75",
     "rationale": "Deterministic semantic-role mapping result_comparison → A11; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 55,
+    "source_event_cursor": 61,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -1158,6 +1231,7 @@
     "layout_plan_id": "LP-H002-LAYER-SUMMARY-DECISION-09",
     "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
     "selected_archetype": "A15",
+    "geometry_role": "discussion_summary_combined",
     "native_template_layout": {
       "semantic_role": "content_academic",
       "layout_index": 1,
@@ -1166,32 +1240,62 @@
     },
     "placement_plan": [
       {
-        "slot": "decision_status",
+        "slot": "supporting_results",
         "left": 0.8,
         "top": 1.4,
-        "width": 3.7,
-        "height": 2.3,
+        "width": 3.0,
+        "height": 2.1,
         "z_order": 1,
-        "element_role": "status",
-        "font_size_pt": 18
+        "element_role": "support",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "contradicting_results",
+        "left": 4.05,
+        "top": 1.4,
+        "width": 3.0,
+        "height": 2.1,
+        "z_order": 2,
+        "element_role": "contradiction",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "discussion_synthesis",
+        "left": 7.3,
+        "top": 1.4,
+        "width": 5.25,
+        "height": 2.1,
+        "z_order": 3,
+        "element_role": "interpretation",
+        "font_size_pt": 16
       },
       {
         "slot": "uncertainty",
-        "left": 4.8,
-        "top": 1.4,
-        "width": 3.7,
-        "height": 2.3,
-        "z_order": 2,
+        "left": 0.8,
+        "top": 3.8,
+        "width": 5.75,
+        "height": 1.7,
+        "z_order": 4,
         "element_role": "uncertainty",
         "font_size_pt": 16
       },
       {
+        "slot": "decision_status",
+        "left": 6.8,
+        "top": 3.8,
+        "width": 2.75,
+        "height": 1.7,
+        "z_order": 5,
+        "element_role": "status",
+        "font_size_pt": 16
+      },
+      {
         "slot": "next_step",
-        "left": 8.8,
-        "top": 1.4,
-        "width": 3.7,
-        "height": 2.3,
-        "z_order": 3,
+        "left": 9.8,
+        "top": 3.8,
+        "width": 2.75,
+        "height": 1.7,
+        "z_order": 6,
         "element_role": "next_step",
         "font_size_pt": 16
       }
@@ -1214,16 +1318,19 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 149,
+    "text_units": 125,
     "text_budget": 240,
     "required_slots": [
-      "decision_status",
+      "supporting_results",
+      "contradicting_results",
+      "discussion_synthesis",
       "uncertainty",
+      "decision_status",
       "next_step"
     ],
-    "slot_signature": "decision_status@0.80,1.40,3.70,2.30|uncertainty@4.80,1.40,3.70,2.30|next_step@8.80,1.40,3.70,2.30",
+    "slot_signature": "supporting_results@0.80,1.40,3.00,2.10|contradicting_results@4.05,1.40,3.00,2.10|discussion_synthesis@7.30,1.40,5.25,2.10|uncertainty@0.80,3.80,5.75,1.70|decision_status@6.80,3.80,2.75,1.70|next_step@9.80,3.80,2.75,1.70",
     "rationale": "Deterministic semantic-role mapping layer_summary_decision → A15; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 55,
+    "source_event_cursor": 66,
     "created_at": "2026-08-27T00:00:00Z"
   }
 ]

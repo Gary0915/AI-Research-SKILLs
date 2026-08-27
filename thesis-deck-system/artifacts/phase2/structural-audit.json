@@ -1026,6 +1026,7 @@
       "physical_slot_conformance": [
         {
           "slot": "commitment_table",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.45,
@@ -1033,18 +1034,24 @@
             "height": 3.75
           },
           "actual_shape_identity": "tds-slot:commitment_table",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.45,
             "width": 7.0,
             "height": 3.75
           },
+          "actual_text": "Commitment｜NS101｜planned｜Owner: Gary｜Due: 2026-09-10T09:00:00Z\nCommitment｜NS201｜planned｜Owner: Gary｜Due: 2026-09-24T00:00:00Z",
+          "expected_text": "Commitment｜NS101｜planned｜Owner: Gary｜Due: 2026-09-10T09:00:00Z\nCommitment｜NS201｜planned｜Owner: Gary｜Due: 2026-09-24T00:00:00Z",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "current_position",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 8.15,
             "top": 1.45,
@@ -1052,18 +1059,24 @@
             "height": 1.7
           },
           "actual_shape_identity": "tds-slot:current_position",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 8.15,
             "top": 1.45,
             "width": 4.4,
             "height": 1.7
           },
+          "actual_text": "H002",
+          "expected_text": "H002",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "parallel_work",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 8.15,
             "top": 3.45,
@@ -1071,12 +1084,17 @@
             "height": 1.75
           },
           "actual_shape_identity": "tds-slot:parallel_work",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 8.15,
             "top": 3.45,
             "width": 4.4,
             "height": 1.75
           },
+          "actual_text": "Dependencies｜pressure fixture｜Parallel: True\nDependencies｜pressure fixture｜Parallel: True",
+          "expected_text": "Dependencies｜pressure fixture｜Parallel: True\nDependencies｜pressure fixture｜Parallel: True",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1084,14 +1102,10 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide1.xml",
       "note_source_refs": [
-        "E201",
-        "E202",
-        "E204"
+        "E101"
       ],
       "expected_note_source_refs": [
-        "E201",
-        "E202",
-        "E204"
+        "E101"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1119,6 +1133,7 @@
       "physical_slot_conformance": [
         {
           "slot": "hypothesis_statement",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.65,
@@ -1126,12 +1141,17 @@
             "height": 2.35
           },
           "actual_shape_identity": "tds-slot:hypothesis_statement",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.65,
             "width": 11.7,
             "height": 2.35
           },
+          "actual_text": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "expected_text": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1140,15 +1160,11 @@
       "notes_relationship_target": "ppt/notesSlides/notesSlide2.xml",
       "note_source_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "expected_note_source_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1178,6 +1194,7 @@
       "physical_slot_conformance": [
         {
           "slot": "previous_finding",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.45,
@@ -1185,18 +1202,24 @@
             "height": 1.75
           },
           "actual_shape_identity": "tds-slot:previous_finding",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.45,
             "width": 3.7,
             "height": 1.75
           },
+          "actual_text": "含水量與導電度存在位置梯度",
+          "expected_text": "含水量與導電度存在位置梯度",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "unresolved_conflict",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 4.8,
             "top": 1.45,
@@ -1204,18 +1227,24 @@
             "height": 1.75
           },
           "actual_shape_identity": "tds-slot:unresolved_conflict",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 4.8,
             "top": 1.45,
             "width": 3.7,
             "height": 1.75
           },
+          "actual_text": "導電度提高是否足以修復重複性仍未知。",
+          "expected_text": "導電度提高是否足以修復重複性仍未知。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "research_question",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 8.8,
             "top": 1.45,
@@ -1223,12 +1252,17 @@
             "height": 1.75
           },
           "actual_shape_identity": "tds-slot:research_question",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 8.8,
             "top": 1.45,
             "width": 3.7,
             "height": 1.75
           },
+          "actual_text": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "expected_text": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1236,16 +1270,10 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide3.xml",
       "note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E002"
       ],
       "expected_note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E002"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1274,6 +1302,7 @@
       "physical_slot_conformance": [
         {
           "slot": "primary_figure",
+          "composition": "asset_only",
           "planned_geometry": {
             "left": 4.25,
             "top": 1.35,
@@ -1281,18 +1310,24 @@
             "height": 4.9
           },
           "actual_shape_identity": "tds-slot:primary_figure",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 4.25,
             "top": 1.35,
             "width": 8.35,
             "height": 4.9
           },
+          "actual_text": "",
+          "expected_text": "Historical fishbone SVG bound by Asset Manifest.",
+          "expected_asset_id": "A101",
+          "asset_relationship": true,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "fishbone_focus",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.65,
@@ -1300,12 +1335,17 @@
             "height": 1.4
           },
           "actual_shape_identity": "tds-slot:fishbone_focus",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.65,
             "width": 3.0,
             "height": 1.4
           },
+          "actual_text": "FB-MATERIAL-HYDRATION",
+          "expected_text": "FB-MATERIAL-HYDRATION",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1313,15 +1353,9 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide4.xml",
       "note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
         "E103"
       ],
       "expected_note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
         "E103"
       ],
       "notes_source_match": true,
@@ -1373,6 +1407,7 @@
       "physical_slot_conformance": [
         {
           "slot": "primary_figure",
+          "composition": "asset_only",
           "planned_geometry": {
             "left": 7.55,
             "top": 1.4,
@@ -1380,18 +1415,24 @@
             "height": 3.8
           },
           "actual_shape_identity": "tds-slot:primary_figure",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 7.55,
             "top": 1.4,
             "width": 5.0,
             "height": 3.8
           },
+          "actual_text": "",
+          "expected_text": "Registered observation visual.",
+          "expected_asset_id": "A002",
+          "asset_relationship": true,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "research_question",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.45,
@@ -1399,18 +1440,24 @@
             "height": 0.9
           },
           "actual_shape_identity": "tds-slot:research_question",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.45,
             "width": 6.2,
             "height": 0.9
           },
+          "actual_text": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "expected_text": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "observation_text",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 2.55,
@@ -1418,12 +1465,17 @@
             "height": 2.65
           },
           "actual_shape_identity": "tds-slot:observation_text",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 2.55,
             "width": 6.2,
             "height": 2.65
           },
+          "actual_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。",
+          "expected_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1432,15 +1484,11 @@
       "notes_relationship_target": "ppt/notesSlides/notesSlide5.xml",
       "note_source_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "expected_note_source_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "notes_source_match": true,
       "media_refs": [
@@ -1490,6 +1538,7 @@
       "physical_slot_conformance": [
         {
           "slot": "literature_evidence",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.45,
@@ -1497,18 +1546,24 @@
             "height": 3.9
           },
           "actual_shape_identity": "tds-slot:literature_evidence",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.45,
             "width": 5.8,
             "height": 3.9
           },
+          "actual_text": "Literature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "expected_text": "Literature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "mechanism_diagram",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 7.0,
             "top": 1.45,
@@ -1516,12 +1571,17 @@
             "height": 3.9
           },
           "actual_shape_identity": "tds-slot:mechanism_diagram",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 7.0,
             "top": 1.45,
             "width": 5.55,
             "height": 3.9
           },
+          "actual_text": "Mechanism｜bulk transport\nStrategy｜均化導電度",
+          "expected_text": "Mechanism｜bulk transport\nStrategy｜均化導電度",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1529,15 +1589,9 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide6.xml",
       "note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
         "E103"
       ],
       "expected_note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
         "E103"
       ],
       "notes_source_match": true,
@@ -1567,6 +1621,7 @@
       "physical_slot_conformance": [
         {
           "slot": "experiment_matrix",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.4,
@@ -1574,18 +1629,24 @@
             "height": 4.3
           },
           "actual_shape_identity": "tds-slot:experiment_matrix",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.4,
             "width": 7.4,
             "height": 4.3
           },
+          "actual_text": "EXP101｜IV: ['含水量']\nControls: ['原始配方']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['導電度 (mS/cm)']\nMethod: ['synthetic-four-probe']",
+          "expected_text": "EXP101｜IV: ['含水量']\nControls: ['原始配方']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['導電度 (mS/cm)']\nMethod: ['synthetic-four-probe']",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "decision_rule",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 8.55,
             "top": 1.4,
@@ -1593,12 +1654,17 @@
             "height": 2.0
           },
           "actual_shape_identity": "tds-slot:decision_rule",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 8.55,
             "top": 1.4,
             "width": 4.0,
             "height": 2.0
           },
+          "actual_text": "Prediction: ['導電度提升']\nDecision rule: {'go': 'mean conductivity increases >=20%', 'partial_go': '10-20%', 'no_go': '<10%'}",
+          "expected_text": "Prediction: ['導電度提升']\nDecision rule: {'go': 'mean conductivity increases >=20%', 'partial_go': '10-20%', 'no_go': '<10%'}",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1606,16 +1672,10 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide7.xml",
       "note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E002"
       ],
       "expected_note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E002"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1644,6 +1704,7 @@
       "physical_slot_conformance": [
         {
           "slot": "experiment_matrix",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.4,
@@ -1651,18 +1712,24 @@
             "height": 4.3
           },
           "actual_shape_identity": "tds-slot:experiment_matrix",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.4,
             "width": 7.4,
             "height": 4.3
           },
+          "actual_text": "EXP102｜IV: ['位置']\nControls: ['原始位置分布']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['訊號 CV (%)']\nMethod: ['synthetic-signal-test']",
+          "expected_text": "EXP102｜IV: ['位置']\nControls: ['原始位置分布']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['訊號 CV (%)']\nMethod: ['synthetic-signal-test']",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "decision_rule",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 8.55,
             "top": 1.4,
@@ -1670,12 +1737,17 @@
             "height": 2.0
           },
           "actual_shape_identity": "tds-slot:decision_rule",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 8.55,
             "top": 1.4,
             "width": 4.0,
             "height": 2.0
           },
+          "actual_text": "Prediction: ['CV 下降']\nDecision rule: {'go': 'CV decreases >=30%', 'partial_go': '10-30%', 'no_go': '<10%'}",
+          "expected_text": "Prediction: ['CV 下降']\nDecision rule: {'go': 'CV decreases >=30%', 'partial_go': '10-30%', 'no_go': '<10%'}",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1684,15 +1756,11 @@
       "notes_relationship_target": "ppt/notesSlides/notesSlide8.xml",
       "note_source_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "expected_note_source_refs": [
         "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E102"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1700,7 +1768,7 @@
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H001-RESULT-COMPARISON-08",
+      "slide_spec_id": "S-H001-RESULT-SINGLE-08",
       "generated_slide_id": 266,
       "slide_part": "ppt/slides/slide11.xml",
       "layout_relationship_id": "rId1",
@@ -1715,44 +1783,59 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "control_panel": true,
-        "proposed_panel": true
+        "result_plot": true,
+        "result_annotation": true
       },
       "physical_slot_conformance": [
         {
-          "slot": "control_panel",
+          "slot": "result_plot",
+          "composition": "asset_with_annotation",
           "planned_geometry": {
-            "left": 0.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "left": 6.0,
+            "top": 1.35,
+            "width": 6.55,
+            "height": 4.45
           },
-          "actual_shape_identity": "tds-slot:control_panel",
+          "actual_shape_identity": "tds-slot:result_plot/figure",
+          "nested_shape_identities": [
+            "tds-slot:result_plot/figure",
+            "tds-slot:result_plot/annotation"
+          ],
           "actual_geometry": {
-            "left": 0.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "left": 6.0,
+            "top": 1.35,
+            "width": 6.55,
+            "height": 4.45
           },
+          "actual_text": "RES101｜平均導電度增加 24% ± 5% SD",
+          "expected_text": "RES101｜平均導電度增加 24% ± 5% SD",
+          "expected_asset_id": "A001",
+          "asset_relationship": true,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
-          "slot": "proposed_panel",
+          "slot": "result_annotation",
+          "composition": "text_only",
           "planned_geometry": {
-            "left": 6.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "left": 0.8,
+            "top": 1.65,
+            "width": 4.8,
+            "height": 2.3
           },
-          "actual_shape_identity": "tds-slot:proposed_panel",
+          "actual_shape_identity": "tds-slot:result_annotation",
+          "nested_shape_identities": [],
           "actual_geometry": {
-            "left": 6.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "left": 0.8,
+            "top": 1.65,
+            "width": 4.8,
+            "height": 2.3
           },
+          "actual_text": "RES101｜平均導電度增加 24% ± 5% SD",
+          "expected_text": "RES101｜平均導電度增加 24% ± 5% SD",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1760,16 +1843,10 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide9.xml",
       "note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "expected_note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "notes_source_match": true,
       "media_refs": [
@@ -1798,7 +1875,7 @@
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H001-RESULT-COMPARISON-09",
+      "slide_spec_id": "S-H001-RESULT-SINGLE-09",
       "generated_slide_id": 267,
       "slide_part": "ppt/slides/slide12.xml",
       "layout_relationship_id": "rId1",
@@ -1813,44 +1890,59 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "control_panel": true,
-        "proposed_panel": true
+        "result_plot": true,
+        "result_annotation": true
       },
       "physical_slot_conformance": [
         {
-          "slot": "control_panel",
+          "slot": "result_plot",
+          "composition": "asset_with_annotation",
           "planned_geometry": {
-            "left": 0.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "left": 6.0,
+            "top": 1.35,
+            "width": 6.55,
+            "height": 4.45
           },
-          "actual_shape_identity": "tds-slot:control_panel",
+          "actual_shape_identity": "tds-slot:result_plot/figure",
+          "nested_shape_identities": [
+            "tds-slot:result_plot/figure",
+            "tds-slot:result_plot/annotation"
+          ],
           "actual_geometry": {
-            "left": 0.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "left": 6.0,
+            "top": 1.35,
+            "width": 6.55,
+            "height": 4.45
           },
+          "actual_text": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+          "expected_text": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+          "expected_asset_id": "A001",
+          "asset_relationship": true,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
-          "slot": "proposed_panel",
+          "slot": "result_annotation",
+          "composition": "text_only",
           "planned_geometry": {
-            "left": 6.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "left": 0.8,
+            "top": 1.65,
+            "width": 4.8,
+            "height": 2.3
           },
-          "actual_shape_identity": "tds-slot:proposed_panel",
+          "actual_shape_identity": "tds-slot:result_annotation",
+          "nested_shape_identities": [],
           "actual_geometry": {
-            "left": 6.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "left": 0.8,
+            "top": 1.65,
+            "width": 4.8,
+            "height": 2.3
           },
+          "actual_text": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+          "expected_text": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1858,16 +1950,10 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide10.xml",
       "note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "expected_note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "notes_source_match": true,
       "media_refs": [
@@ -1918,6 +2004,7 @@
       "physical_slot_conformance": [
         {
           "slot": "supporting_results",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.4,
@@ -1925,18 +2012,24 @@
             "height": 2.2
           },
           "actual_shape_identity": "tds-slot:supporting_results",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.4,
             "width": 5.65,
             "height": 2.2
           },
+          "actual_text": "RES101",
+          "expected_text": "RES101",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "contradicting_results",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 6.8,
             "top": 1.4,
@@ -1944,18 +2037,24 @@
             "height": 2.2
           },
           "actual_shape_identity": "tds-slot:contradicting_results",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 6.8,
             "top": 1.4,
             "width": 5.75,
             "height": 2.2
           },
+          "actual_text": "RES102",
+          "expected_text": "RES102",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "uncertainty",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 3.9,
@@ -1963,12 +2062,17 @@
             "height": 1.7
           },
           "actual_shape_identity": "tds-slot:uncertainty",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 3.9,
             "width": 11.75,
             "height": 1.7
           },
+          "actual_text": "Mechanism assessment｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nRemaining uncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+          "expected_text": "Mechanism assessment｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nRemaining uncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -1976,13 +2080,11 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide11.xml",
       "note_source_refs": [
-        "E002",
         "E101",
         "E102",
         "E103"
       ],
       "expected_note_source_refs": [
-        "E002",
         "E101",
         "E102",
         "E103"
@@ -2015,6 +2117,7 @@
       "physical_slot_conformance": [
         {
           "slot": "decision_status",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.4,
@@ -2022,18 +2125,24 @@
             "height": 2.3
           },
           "actual_shape_identity": "tds-slot:decision_status",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.4,
             "width": 3.7,
             "height": 2.3
           },
+          "actual_text": "Answered｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nHypothesis status｜partial_support\nDecision｜Partial-Go: Bulk conductivity is contributory but insufficient.",
+          "expected_text": "Answered｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nHypothesis status｜partial_support\nDecision｜Partial-Go: Bulk conductivity is contributory but insufficient.",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "uncertainty",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 4.8,
             "top": 1.4,
@@ -2041,18 +2150,24 @@
             "height": 2.3
           },
           "actual_shape_identity": "tds-slot:uncertainty",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 4.8,
             "top": 1.4,
             "width": 3.7,
             "height": 2.3
           },
+          "actual_text": "interface contact 的貢獻尚未量化。",
+          "expected_text": "interface contact 的貢獻尚未量化。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "next_step",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 8.8,
             "top": 1.4,
@@ -2060,12 +2175,17 @@
             "height": 2.3
           },
           "actual_shape_identity": "tds-slot:next_step",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 8.8,
             "top": 1.4,
             "width": 3.7,
             "height": 2.3
           },
+          "actual_text": "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext Step｜NS101",
+          "expected_text": "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext Step｜NS101",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -2073,16 +2193,10 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide12.xml",
       "note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "expected_note_source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E101"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -2111,6 +2225,7 @@
       "physical_slot_conformance": [
         {
           "slot": "transition_nodes",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.55,
@@ -2118,18 +2233,24 @@
             "height": 2.7
           },
           "actual_shape_identity": "tds-slot:transition_nodes",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.55,
             "width": 11.75,
             "height": 2.7
           },
+          "actual_text": "Previous hypothesis｜C101\nKey results｜RES101, RES102\nNew observation｜E104\nNew hypothesis｜C201",
+          "expected_text": "Previous hypothesis｜C101\nKey results｜RES101, RES102\nNew observation｜E104\nNew hypothesis｜C201",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "derivation_strip",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 4.55,
@@ -2137,12 +2258,17 @@
             "height": 0.8
           },
           "actual_shape_identity": "tds-slot:derivation_strip",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 4.55,
             "width": 11.75,
             "height": 0.8
           },
+          "actual_text": "Not explained｜導電度增加後訊號重複性沒有改善。\nTherefore｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+          "expected_text": "Not explained｜導電度增加後訊號重複性沒有改善。\nTherefore｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -2183,6 +2309,7 @@
       "physical_slot_conformance": [
         {
           "slot": "hypothesis_statement",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.65,
@@ -2190,12 +2317,17 @@
             "height": 2.35
           },
           "actual_shape_identity": "tds-slot:hypothesis_statement",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.65,
             "width": 11.7,
             "height": 2.35
           },
+          "actual_text": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "expected_text": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -2203,13 +2335,9 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide14.xml",
       "note_source_refs": [
-        "E201",
-        "E202",
         "E204"
       ],
       "expected_note_source_refs": [
-        "E201",
-        "E202",
         "E204"
       ],
       "notes_source_match": true,
@@ -2240,6 +2368,7 @@
       "physical_slot_conformance": [
         {
           "slot": "previous_finding",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.45,
@@ -2247,18 +2376,24 @@
             "height": 1.75
           },
           "actual_shape_identity": "tds-slot:previous_finding",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.45,
             "width": 3.7,
             "height": 1.75
           },
+          "actual_text": "H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+          "expected_text": "H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "unresolved_conflict",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 4.8,
             "top": 1.45,
@@ -2266,18 +2401,24 @@
             "height": 1.75
           },
           "actual_shape_identity": "tds-slot:unresolved_conflict",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 4.8,
             "top": 1.45,
             "width": 3.7,
             "height": 1.75
           },
+          "actual_text": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
+          "expected_text": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "research_question",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 8.8,
             "top": 1.45,
@@ -2285,12 +2426,17 @@
             "height": 1.75
           },
           "actual_shape_identity": "tds-slot:research_question",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 8.8,
             "top": 1.45,
             "width": 3.7,
             "height": 1.75
           },
+          "actual_text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "expected_text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -2298,13 +2444,9 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide15.xml",
       "note_source_refs": [
-        "E201",
-        "E202",
         "E204"
       ],
       "expected_note_source_refs": [
-        "E201",
-        "E202",
         "E204"
       ],
       "notes_source_match": true,
@@ -2334,6 +2476,7 @@
       "physical_slot_conformance": [
         {
           "slot": "primary_figure",
+          "composition": "asset_only",
           "planned_geometry": {
             "left": 4.25,
             "top": 1.35,
@@ -2341,18 +2484,24 @@
             "height": 4.9
           },
           "actual_shape_identity": "tds-slot:primary_figure",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 4.25,
             "top": 1.35,
             "width": 8.35,
             "height": 4.9
           },
+          "actual_text": "",
+          "expected_text": "Historical fishbone SVG bound by Asset Manifest.",
+          "expected_asset_id": "A102",
+          "asset_relationship": true,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "fishbone_focus",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.65,
@@ -2360,12 +2509,17 @@
             "height": 1.4
           },
           "actual_shape_identity": "tds-slot:fishbone_focus",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.65,
             "width": 3.0,
             "height": 1.4
           },
+          "actual_text": "FB-ELECTRODE-CONTACT",
+          "expected_text": "FB-ELECTRODE-CONTACT",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -2373,13 +2527,9 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide16.xml",
       "note_source_refs": [
-        "E201",
-        "E202",
         "E204"
       ],
       "expected_note_source_refs": [
-        "E201",
-        "E202",
         "E204"
       ],
       "notes_source_match": true,
@@ -2424,64 +2574,160 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "primary_figure": true,
+        "observation_text": true,
         "research_question": true,
-        "observation_text": true
+        "literature_evidence": true,
+        "mechanism_diagram": true,
+        "strategy": true,
+        "primary_figure": true
       },
       "physical_slot_conformance": [
         {
-          "slot": "primary_figure",
+          "slot": "observation_text",
+          "composition": "text_only",
           "planned_geometry": {
-            "left": 7.55,
+            "left": 0.8,
             "top": 1.4,
-            "width": 5.0,
-            "height": 3.8
+            "width": 3.0,
+            "height": 2.1
           },
-          "actual_shape_identity": "tds-slot:primary_figure",
+          "actual_shape_identity": "tds-slot:observation_text",
+          "nested_shape_identities": [],
           "actual_geometry": {
-            "left": 7.55,
+            "left": 0.8,
             "top": 1.4,
-            "width": 5.0,
-            "height": 3.8
+            "width": 3.0,
+            "height": 2.1
           },
+          "actual_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。",
+          "expected_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "research_question",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
-            "top": 1.45,
-            "width": 6.2,
-            "height": 0.9
+            "top": 3.75,
+            "width": 3.0,
+            "height": 1.55
           },
           "actual_shape_identity": "tds-slot:research_question",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
-            "top": 1.45,
-            "width": 6.2,
-            "height": 0.9
+            "top": 3.75,
+            "width": 3.0,
+            "height": 1.55
           },
+          "actual_text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "expected_text": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
-          "slot": "observation_text",
+          "slot": "literature_evidence",
+          "composition": "text_only",
           "planned_geometry": {
-            "left": 0.8,
-            "top": 2.55,
-            "width": 6.2,
-            "height": 2.65
+            "left": 4.1,
+            "top": 1.4,
+            "width": 4.1,
+            "height": 3.9
           },
-          "actual_shape_identity": "tds-slot:observation_text",
+          "actual_shape_identity": "tds-slot:literature_evidence",
+          "nested_shape_identities": [],
           "actual_geometry": {
-            "left": 0.8,
-            "top": 2.55,
-            "width": 6.2,
-            "height": 2.65
+            "left": 4.099998906386702,
+            "top": 1.4,
+            "width": 4.099998906386702,
+            "height": 3.9
           },
+          "actual_text": "Literature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "expected_text": "Literature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "mechanism_diagram",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 8.5,
+            "top": 1.4,
+            "width": 2.1,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:mechanism_diagram",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 8.5,
+            "top": 1.4,
+            "width": 2.1,
+            "height": 2.3
+          },
+          "actual_text": "Mechanism｜contact resistance",
+          "expected_text": "Mechanism｜contact resistance",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "strategy",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 10.8,
+            "top": 1.4,
+            "width": 1.7,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:strategy",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 10.8,
+            "top": 1.4,
+            "width": 1.7,
+            "height": 2.3
+          },
+          "actual_text": "匹配導電度並改變接觸壓力",
+          "expected_text": "匹配導電度並改變接觸壓力",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "primary_figure",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 8.5,
+            "top": 3.95,
+            "width": 4.0,
+            "height": 1.35
+          },
+          "actual_shape_identity": "tds-slot:primary_figure",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 8.5,
+            "top": 3.95,
+            "width": 4.0,
+            "height": 1.35
+          },
+          "actual_text": "Registered observation visual.",
+          "expected_text": "Registered observation visual.",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -2489,12 +2735,10 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide17.xml",
       "note_source_refs": [
-        "E201",
         "E202",
         "E204"
       ],
       "expected_note_source_refs": [
-        "E201",
         "E202",
         "E204"
       ],
@@ -2519,44 +2763,111 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "control_panel": true,
-        "proposed_panel": true
+        "experiment_matrix": true,
+        "decision_rule": true,
+        "result_plot": true,
+        "result_annotation": true
       },
       "physical_slot_conformance": [
         {
-          "slot": "control_panel",
+          "slot": "experiment_matrix",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "top": 1.4,
+            "width": 5.8,
+            "height": 4.3
           },
-          "actual_shape_identity": "tds-slot:control_panel",
+          "actual_shape_identity": "tds-slot:experiment_matrix",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "top": 1.4,
+            "width": 5.8,
+            "height": 4.3
           },
+          "actual_text": "IV: contact pressure\nControls: bulk conductivity; 電極幾何\nBaselines: low-pressure control\nN/replicates: replicates: 5; samples: 15\nMetrics/units: 訊號 CV (%); contact resistance (ohm)\nMethod: synthetic-pressure-fixture\nPrediction: CV and resistance decrease",
+          "expected_text": "IV: contact pressure\nControls: bulk conductivity; 電極幾何\nBaselines: low-pressure control\nN/replicates: replicates: 5; samples: 15\nMetrics/units: 訊號 CV (%); contact resistance (ohm)\nMethod: synthetic-pressure-fixture\nPrediction: CV and resistance decrease",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
-          "slot": "proposed_panel",
+          "slot": "decision_rule",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 6.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "top": 1.4,
+            "width": 2.0,
+            "height": 2.0
           },
-          "actual_shape_identity": "tds-slot:proposed_panel",
+          "actual_shape_identity": "tds-slot:decision_rule",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 6.8,
-            "top": 1.45,
-            "width": 5.75,
-            "height": 4.2
+            "top": 1.4,
+            "width": 2.0,
+            "height": 2.0
           },
+          "actual_text": "go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+          "expected_text": "go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "result_plot",
+          "composition": "asset_with_annotation",
+          "planned_geometry": {
+            "left": 9.05,
+            "top": 1.4,
+            "width": 3.5,
+            "height": 2.4
+          },
+          "actual_shape_identity": "tds-slot:result_plot/figure",
+          "nested_shape_identities": [
+            "tds-slot:result_plot/figure",
+            "tds-slot:result_plot/annotation"
+          ],
+          "actual_geometry": {
+            "left": 9.05,
+            "top": 1.4,
+            "width": 3.5,
+            "height": 2.4
+          },
+          "actual_text": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+          "expected_text": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+          "expected_asset_id": "A201",
+          "asset_relationship": true,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "result_annotation",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 3.95,
+            "width": 5.75,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:result_annotation",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 3.95,
+            "width": 5.75,
+            "height": 1.75
+          },
+          "actual_text": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+          "expected_text": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -2565,12 +2876,10 @@
       "notes_relationship_target": "ppt/notesSlides/notesSlide18.xml",
       "note_source_refs": [
         "E201",
-        "E202",
         "E204"
       ],
       "expected_note_source_refs": [
         "E201",
-        "E202",
         "E204"
       ],
       "notes_source_match": true,
@@ -2615,64 +2924,160 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "decision_status": true,
+        "supporting_results": true,
+        "contradicting_results": true,
+        "discussion_synthesis": true,
         "uncertainty": true,
+        "decision_status": true,
         "next_step": true
       },
       "physical_slot_conformance": [
         {
-          "slot": "decision_status",
+          "slot": "supporting_results",
+          "composition": "text_only",
           "planned_geometry": {
             "left": 0.8,
             "top": 1.4,
-            "width": 3.7,
-            "height": 2.3
+            "width": 3.0,
+            "height": 2.1
           },
-          "actual_shape_identity": "tds-slot:decision_status",
+          "actual_shape_identity": "tds-slot:supporting_results",
+          "nested_shape_identities": [],
           "actual_geometry": {
             "left": 0.8,
             "top": 1.4,
-            "width": 3.7,
-            "height": 2.3
+            "width": 3.0,
+            "height": 2.1
           },
+          "actual_text": "RES201",
+          "expected_text": "RES201",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "contradicting_results",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 4.05,
+            "top": 1.4,
+            "width": 3.0,
+            "height": 2.1
+          },
+          "actual_shape_identity": "tds-slot:contradicting_results",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 4.05,
+            "top": 1.4,
+            "width": 3.0,
+            "height": 2.1
+          },
+          "actual_text": "None identified",
+          "expected_text": "None identified",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "discussion_synthesis",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 7.3,
+            "top": 1.4,
+            "width": 5.25,
+            "height": 2.1
+          },
+          "actual_shape_identity": "tds-slot:discussion_synthesis",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 7.3,
+            "top": 1.4,
+            "width": 5.25,
+            "height": 2.1
+          },
+          "actual_text": "Cross-experiment pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism assessment｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布",
+          "expected_text": "Cross-experiment pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism assessment｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "uncertainty",
+          "composition": "text_only",
           "planned_geometry": {
-            "left": 4.8,
-            "top": 1.4,
-            "width": 3.7,
-            "height": 2.3
+            "left": 0.8,
+            "top": 3.8,
+            "width": 5.75,
+            "height": 1.7
           },
           "actual_shape_identity": "tds-slot:uncertainty",
+          "nested_shape_identities": [],
           "actual_geometry": {
-            "left": 4.8,
-            "top": 1.4,
-            "width": 3.7,
-            "height": 2.3
+            "left": 0.8,
+            "top": 3.8,
+            "width": 5.75,
+            "height": 1.7
           },
+          "actual_text": "Discussion uncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nSummary unresolved｜高壓循環的耐久性與 wear 尚未測試。",
+          "expected_text": "Discussion uncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nSummary unresolved｜高壓循環的耐久性與 wear 尚未測試。",
+          "expected_asset_id": null,
+          "asset_relationship": false,
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "decision_status",
+          "composition": "text_only",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 3.8,
+            "width": 2.75,
+            "height": 1.7
+          },
+          "actual_shape_identity": "tds-slot:decision_status",
+          "nested_shape_identities": [],
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 3.8,
+            "width": 2.75,
+            "height": 1.7
+          },
+          "actual_text": "Hypothesis status｜supported\nDecision｜Go: Contact-pressure control discriminates the interface mechanism.",
+          "expected_text": "Hypothesis status｜supported\nDecision｜Go: Contact-pressure control discriminates the interface mechanism.",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
         },
         {
           "slot": "next_step",
+          "composition": "text_only",
           "planned_geometry": {
-            "left": 8.8,
-            "top": 1.4,
-            "width": 3.7,
-            "height": 2.3
+            "left": 9.8,
+            "top": 3.8,
+            "width": 2.75,
+            "height": 1.7
           },
           "actual_shape_identity": "tds-slot:next_step",
+          "nested_shape_identities": [],
           "actual_geometry": {
-            "left": 8.8,
-            "top": 1.4,
-            "width": 3.7,
-            "height": 2.3
+            "left": 9.8,
+            "top": 3.8,
+            "width": 2.75,
+            "height": 1.7
           },
+          "actual_text": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext Step｜NS201",
+          "expected_text": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext Step｜NS201",
+          "expected_asset_id": null,
+          "asset_relationship": false,
           "geometry_tolerance_result": true,
           "content_or_asset_binding_result": true,
           "intentionally_empty": null
@@ -2680,14 +3085,10 @@
       ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide19.xml",
       "note_source_refs": [
-        "E201",
-        "E202",
-        "E204"
+        "E201"
       ],
       "expected_note_source_refs": [
-        "E201",
-        "E202",
-        "E204"
+        "E201"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -2696,8 +3097,8 @@
     }
   ],
   "relationship_targets_checked": 146,
-  "source_template_sha256_before": "59f32876b93eb7497ce7cd2bb2b2835cbeb6f02c59558e168cccaef0ed94c36b",
-  "source_template_sha256_after": "59f32876b93eb7497ce7cd2bb2b2835cbeb6f02c59558e168cccaef0ed94c36b",
-  "generated_pptx_sha256": "88bc2b0df1cc89131456c1f8debe8c7ae0b45013e33a265d401d13e16d3ed74f",
+  "source_template_sha256_before": "d7194a9019270ec516c92f5dab3e5f4617227fc6a727c51db233981634c14709",
+  "source_template_sha256_after": "d7194a9019270ec516c92f5dab3e5f4617227fc6a727c51db233981634c14709",
+  "generated_pptx_sha256": "473da5b3fab50e3f23e0ae257899a03d2cc2f5ce68acc39dba317dedd1b963c8",
   "source_template_unchanged": true
 }

@@ -115,6 +115,10 @@ def validate_causal_history(ledger_or_events) -> list[Finding]:
     for event in events:
         if event.event_type != "stage_revised" or event.payload.get("stage_type") != "result":
             continue
+        # A pending result stage is a declared lifecycle slot, not a result
+        # claim.  Only its complete revision participates in causal ordering.
+        if event.payload.get("status") == "pending":
+            continue
         block_id = event.payload.get("block_ref", {}).get("block_id")
         experiment_events = [e for e in events if e.event_type == "stage_revised" and e.payload.get("stage_type") == "experiment" and e.payload.get("block_ref", {}).get("block_id") == block_id]
         if not experiment_events or max(e.cursor for e in experiment_events) >= event.cursor:

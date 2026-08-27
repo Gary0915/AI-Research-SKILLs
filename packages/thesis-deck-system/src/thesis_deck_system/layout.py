@@ -30,7 +30,11 @@ ROLE_GEOMETRY = {
     "mechanism_solution": [("mechanism_diagram", .8, 1.55, 5.5, 3.5, "mechanism", 1, 16), ("strategy", 6.75, 1.55, 5.8, 3.5, "strategy", 2, 16)],
     "experiment_design": [("experiment_matrix", .8, 1.4, 7.4, 4.3, "experiment", 1, 16), ("decision_rule", 8.55, 1.4, 4.0, 2.0, "decision_rule", 2, 16)],
     "result_single": [("result_plot", 6.0, 1.35, 6.55, 4.45, "result", 1, 16), ("result_annotation", .8, 1.65, 4.8, 2.3, "annotation", 2, 16)],
-    "result_comparison": [("control_panel", .8, 1.45, 5.75, 4.2, "comparison_control", 1, 16), ("proposed_panel", 6.8, 1.45, 5.75, 4.2, "comparison_proposed", 2, 16)],
+    # Comparison panels remain symmetric while the registered plot and its
+    # annotation occupy a governed third region.  The plot is deliberately
+    # separate from the proposed text panel so an asset cannot displace the
+    # scientific statement.
+    "result_comparison": [("control_panel", .8, 1.45, 3.7, 4.2, "comparison_control", 1, 16), ("proposed_panel", 4.8, 1.45, 3.7, 4.2, "comparison_proposed", 2, 16), ("result_plot", 8.8, 1.45, 3.7, 4.2, "result", 3, 16)],
     "control_vs_proposed": [("control_panel", .8, 1.45, 5.75, 4.2, "comparison_control", 1, 16), ("proposed_panel", 6.8, 1.45, 5.75, 4.2, "comparison_proposed", 2, 16)],
     "image_matrix": [("matrix_grid", .8, 1.45, 11.75, 4.6, "image_matrix", 1, 16), ("matrix_annotation", .8, 6.2, 11.75, .5, "annotation", 2, 16)],
     "hero_plot_discussion": [("result_plot", 6.0, 1.35, 6.55, 4.45, "result", 1, 16), ("discussion_panel", .8, 1.65, 4.8, 3.8, "interpretation", 2, 16)],
@@ -40,6 +44,29 @@ ROLE_GEOMETRY = {
     "progress_todo": [("commitment_table", .8, 1.45, 7.0, 3.75, "commitment", 1, 16), ("current_position", 8.15, 1.45, 4.4, 1.7, "position", 2, 16), ("parallel_work", 8.15, 3.45, 4.4, 1.75, "parallel", 3, 16)],
     "schedule_next_step": [("timeline", .8, 1.6, 8.0, 2.5, "timeline", 1, 16), ("dependencies", 9.05, 1.6, 3.5, 2.5, "dependencies", 2, 16)],
 }
+
+ROLE_GEOMETRY["observation_literature_mechanism_strategy"] = [
+    ("observation_text", .8, 1.4, 3.0, 2.1, "observation", 1, 16),
+    ("research_question", .8, 3.75, 3.0, 1.55, "question", 2, 18),
+    ("literature_evidence", 4.1, 1.4, 4.1, 3.9, "literature", 3, 16),
+    ("mechanism_diagram", 8.5, 1.4, 2.1, 2.3, "mechanism", 4, 16),
+    ("strategy", 10.8, 1.4, 1.7, 2.3, "strategy", 5, 16),
+    ("primary_figure", 8.5, 3.95, 4.0, 1.35, "observation_visual", 6, 14),
+]
+ROLE_GEOMETRY["experiment_result_combined"] = [
+    ("experiment_matrix", .8, 1.4, 5.8, 4.3, "experiment", 1, 16),
+    ("decision_rule", 6.8, 1.4, 2.0, 2.0, "decision_rule", 2, 16),
+    ("result_plot", 9.05, 1.4, 3.5, 2.4, "result", 3, 16),
+    ("result_annotation", 6.8, 3.95, 5.75, 1.75, "annotation", 4, 16),
+]
+ROLE_GEOMETRY["discussion_summary_combined"] = [
+    ("supporting_results", .8, 1.4, 3.0, 2.1, "support", 1, 16),
+    ("contradicting_results", 4.05, 1.4, 3.0, 2.1, "contradiction", 2, 16),
+    ("discussion_synthesis", 7.3, 1.4, 5.25, 2.1, "interpretation", 3, 16),
+    ("uncertainty", .8, 3.8, 5.75, 1.7, "uncertainty", 4, 16),
+    ("decision_status", 6.8, 3.8, 2.75, 1.7, "status", 5, 16),
+    ("next_step", 9.8, 3.8, 2.75, 1.7, "next_step", 6, 16),
+]
 
 
 def load_archetype_registry(path: Path) -> dict:
@@ -85,6 +112,7 @@ class LayoutDirector:
 
     def select(self, request: dict) -> dict:
         role = request.get("semantic_role")
+        combined_roles = set(request.get("combined_roles", []))
         if role == "hypothesis_problem_merged":
             raise ValueError("Hypothesis and Problem must remain separate")
         archetype_id = ROLE_TO_ARCHETYPE.get(role)
@@ -94,14 +122,22 @@ class LayoutDirector:
         text_units = request.get("text_units", 0)
         over_budget = text_units > archetype["text_budget"]
         role_profile = self.template_profile.get("semantic_roles", {}).get(archetype["native_layout_role"], {})
+        geometry_role = role
+        if {"observation_problem", "literature_mechanism", "mechanism_solution"} <= combined_roles:
+            geometry_role = "observation_literature_mechanism_strategy"
+        elif {"experiment_design", "result_single"} <= combined_roles:
+            geometry_role = "experiment_result_combined"
+        elif {"layer_integrated_discussion", "layer_summary_decision"} <= combined_roles:
+            geometry_role = "discussion_summary_combined"
         placement_plan = [
             {"slot": slot, "left": left, "top": top, "width": width, "height": height, "z_order": z, "element_role": element, "font_size_pt": max(16, font)}
-            for slot, left, top, width, height, element, z, font in ROLE_GEOMETRY.get(role, [("content", .7, 1.45, 12.0, 5.25, "scientific_content", 1, 16)])
+            for slot, left, top, width, height, element, z, font in ROLE_GEOMETRY.get(geometry_role, [("content", .7, 1.45, 12.0, 5.25, "scientific_content", 1, 16)])
         ]
         slot_signature = "|".join(f"{item['slot']}@{item['left']:.2f},{item['top']:.2f},{item['width']:.2f},{item['height']:.2f}" for item in placement_plan)
         split = bool(over_budget and archetype["failure_policy"] == "split")
         return {
             "selected_archetype": archetype_id,
+            "geometry_role": geometry_role,
             "native_template_layout": role_profile,
             "placement_plan": placement_plan,
             "figure_text_hierarchy": ["primary_figure", "interpretation", "provenance"],

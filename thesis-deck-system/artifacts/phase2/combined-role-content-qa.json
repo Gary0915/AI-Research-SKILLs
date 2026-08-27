@@ -1,0 +1,884 @@
+{
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "presentation_role_contracts": {
+    "hypothesis_title": {
+      "required_fields": [
+        "hypothesis_statement"
+      ]
+    },
+    "problem_definition": {
+      "required_fields": [
+        "previous_finding",
+        "unresolved_conflict",
+        "research_question"
+      ]
+    },
+    "fishbone_locator": {
+      "required_fields": [
+        "primary_figure",
+        "fishbone_focus"
+      ]
+    },
+    "observation_problem": {
+      "required_fields": [
+        "observation_text",
+        "research_question"
+      ]
+    },
+    "literature_mechanism": {
+      "required_fields": [
+        "literature_evidence",
+        "mechanism_diagram"
+      ]
+    },
+    "mechanism_solution": {
+      "required_fields": [
+        "mechanism_diagram",
+        "strategy"
+      ]
+    },
+    "experiment_design": {
+      "required_fields": [
+        "experiment_matrix",
+        "decision_rule"
+      ]
+    },
+    "result_single": {
+      "required_fields": [
+        "result_plot"
+      ]
+    },
+    "result_comparison": {
+      "required_fields": [
+        "control_panel",
+        "proposed_panel",
+        "result_plot"
+      ]
+    },
+    "layer_integrated_discussion": {
+      "required_fields": [
+        "supporting_results",
+        "contradicting_results",
+        "uncertainty"
+      ]
+    },
+    "layer_summary_decision": {
+      "required_fields": [
+        "decision_status",
+        "uncertainty",
+        "next_step"
+      ]
+    },
+    "hypothesis_transition": {
+      "required_fields": [
+        "transition_nodes",
+        "derivation_strip"
+      ]
+    },
+    "progress_todo": {
+      "required_fields": [
+        "commitment_table",
+        "current_position",
+        "parallel_work"
+      ]
+    }
+  },
+  "slides": [
+    {
+      "slide_id": "S-PHASE2-PROGRESS-01",
+      "roles": [
+        "progress_todo"
+      ],
+      "required_fields": [
+        "commitment_table",
+        "current_position",
+        "parallel_work"
+      ],
+      "coverage": {
+        "commitment_table": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "current_position": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "parallel_work": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "progress_todo": {
+          "commitment_table": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "current_position": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "parallel_work": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "roles": [
+        "hypothesis_title"
+      ],
+      "required_fields": [
+        "hypothesis_statement"
+      ],
+      "coverage": {
+        "hypothesis_statement": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "hypothesis_title": {
+          "hypothesis_statement": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "roles": [
+        "problem_definition"
+      ],
+      "required_fields": [
+        "previous_finding",
+        "unresolved_conflict",
+        "research_question"
+      ],
+      "coverage": {
+        "previous_finding": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "unresolved_conflict": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "research_question": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "problem_definition": {
+          "previous_finding": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "unresolved_conflict": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "research_question": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "roles": [
+        "fishbone_locator"
+      ],
+      "required_fields": [
+        "primary_figure",
+        "fishbone_focus"
+      ],
+      "coverage": {
+        "primary_figure": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "fishbone_focus": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "fishbone_locator": {
+          "primary_figure": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "fishbone_focus": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "roles": [
+        "observation_problem"
+      ],
+      "required_fields": [
+        "observation_text",
+        "research_question"
+      ],
+      "coverage": {
+        "observation_text": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "research_question": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "observation_problem": {
+          "observation_text": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "research_question": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "roles": [
+        "literature_mechanism"
+      ],
+      "required_fields": [
+        "literature_evidence",
+        "mechanism_diagram"
+      ],
+      "coverage": {
+        "literature_evidence": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "mechanism_diagram": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "literature_mechanism": {
+          "literature_evidence": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "mechanism_diagram": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "roles": [
+        "experiment_design"
+      ],
+      "required_fields": [
+        "experiment_matrix",
+        "decision_rule"
+      ],
+      "coverage": {
+        "experiment_matrix": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "decision_rule": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "experiment_design": {
+          "experiment_matrix": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "decision_rule": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "roles": [
+        "experiment_design"
+      ],
+      "required_fields": [
+        "experiment_matrix",
+        "decision_rule"
+      ],
+      "coverage": {
+        "experiment_matrix": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "decision_rule": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "experiment_design": {
+          "experiment_matrix": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "decision_rule": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "roles": [
+        "result_single"
+      ],
+      "required_fields": [
+        "result_plot"
+      ],
+      "coverage": {
+        "result_plot": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "result_single": {
+          "result_plot": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "roles": [
+        "result_single"
+      ],
+      "required_fields": [
+        "result_plot"
+      ],
+      "coverage": {
+        "result_plot": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "result_single": {
+          "result_plot": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "roles": [
+        "layer_integrated_discussion"
+      ],
+      "required_fields": [
+        "supporting_results",
+        "contradicting_results",
+        "uncertainty"
+      ],
+      "coverage": {
+        "supporting_results": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "contradicting_results": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "uncertainty": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "layer_integrated_discussion": {
+          "supporting_results": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "contradicting_results": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "uncertainty": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "roles": [
+        "layer_summary_decision"
+      ],
+      "required_fields": [
+        "decision_status",
+        "uncertainty",
+        "next_step"
+      ],
+      "coverage": {
+        "decision_status": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "uncertainty": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "next_step": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "layer_summary_decision": {
+          "decision_status": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "uncertainty": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "next_step": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "roles": [
+        "hypothesis_transition"
+      ],
+      "required_fields": [
+        "transition_nodes",
+        "derivation_strip"
+      ],
+      "coverage": {
+        "transition_nodes": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "derivation_strip": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "hypothesis_transition": {
+          "transition_nodes": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "derivation_strip": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "roles": [
+        "hypothesis_title"
+      ],
+      "required_fields": [
+        "hypothesis_statement"
+      ],
+      "coverage": {
+        "hypothesis_statement": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "hypothesis_title": {
+          "hypothesis_statement": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "roles": [
+        "problem_definition"
+      ],
+      "required_fields": [
+        "previous_finding",
+        "unresolved_conflict",
+        "research_question"
+      ],
+      "coverage": {
+        "previous_finding": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "unresolved_conflict": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "research_question": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "problem_definition": {
+          "previous_finding": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "unresolved_conflict": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "research_question": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "roles": [
+        "fishbone_locator"
+      ],
+      "required_fields": [
+        "primary_figure",
+        "fishbone_focus"
+      ],
+      "coverage": {
+        "primary_figure": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "fishbone_focus": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "fishbone_locator": {
+          "primary_figure": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "fishbone_focus": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "roles": [
+        "observation_problem",
+        "literature_mechanism",
+        "mechanism_solution"
+      ],
+      "required_fields": [
+        "observation_text",
+        "research_question",
+        "literature_evidence",
+        "mechanism_diagram",
+        "strategy"
+      ],
+      "coverage": {
+        "observation_text": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "research_question": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "literature_evidence": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "mechanism_diagram": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "strategy": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "observation_problem": {
+          "observation_text": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "research_question": {
+            "content_present": true,
+            "physical_present": true
+          }
+        },
+        "literature_mechanism": {
+          "literature_evidence": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "mechanism_diagram": {
+            "content_present": true,
+            "physical_present": true
+          }
+        },
+        "mechanism_solution": {
+          "mechanism_diagram": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "strategy": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "roles": [
+        "experiment_design",
+        "result_single"
+      ],
+      "required_fields": [
+        "experiment_matrix",
+        "decision_rule",
+        "result_plot"
+      ],
+      "coverage": {
+        "experiment_matrix": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "decision_rule": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "result_plot": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "experiment_design": {
+          "experiment_matrix": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "decision_rule": {
+            "content_present": true,
+            "physical_present": true
+          }
+        },
+        "result_single": {
+          "result_plot": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "roles": [
+        "layer_integrated_discussion",
+        "layer_summary_decision"
+      ],
+      "required_fields": [
+        "supporting_results",
+        "contradicting_results",
+        "uncertainty",
+        "decision_status",
+        "next_step",
+        "discussion_synthesis"
+      ],
+      "coverage": {
+        "supporting_results": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "contradicting_results": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "uncertainty": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "decision_status": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "next_step": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        },
+        "discussion_synthesis": {
+          "content_present": true,
+          "physical_present": true,
+          "status": "pass"
+        }
+      },
+      "role_coverage": {
+        "layer_integrated_discussion": {
+          "supporting_results": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "contradicting_results": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "uncertainty": {
+            "content_present": true,
+            "physical_present": true
+          }
+        },
+        "layer_summary_decision": {
+          "decision_status": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "uncertainty": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "next_step": {
+            "content_present": true,
+            "physical_present": true
+          },
+          "discussion_synthesis": {
+            "content_present": true,
+            "physical_present": true
+          }
+        }
+      },
+      "missing": [],
+      "status": "pass"
+    }
+  ],
+  "findings": []
+}

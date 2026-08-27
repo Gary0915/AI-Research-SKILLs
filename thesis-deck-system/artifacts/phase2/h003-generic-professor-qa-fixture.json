@@ -5,8 +5,17 @@
   },
   "status": "pass",
   "executed_checks": [
+    "PROF-PRESENTATION-SEMANTIC-FIDELITY",
     "PROF-HYPOTHESIS-EXISTS",
     "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+    "PROF-PRESENTATION-ROLE-EXPERIMENT_DESIGN",
+    "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR",
+    "PROF-PRESENTATION-ROLE-HYPOTHESIS_TRANSITION",
+    "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION",
+    "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION",
+    "PROF-PRESENTATION-ROLE-LITERATURE_MECHANISM",
+    "PROF-PRESENTATION-ROLE-OBSERVATION_PROBLEM",
+    "PROF-PRESENTATION-ROLE-RESULT_SINGLE",
     "PROF-FISHBONE-EXISTS",
     "PROF-FISHBONE-FOCUS",
     "PROF-FISHBONE-REVISION",
@@ -21,6 +30,15 @@
     "PROF-TRANSITION-PROVENANCE",
     "PROF-HYPOTHESIS-EXISTS",
     "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+    "PROF-PRESENTATION-ROLE-EXPERIMENT_DESIGN",
+    "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR",
+    "PROF-PRESENTATION-ROLE-HYPOTHESIS_TRANSITION",
+    "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION",
+    "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION",
+    "PROF-PRESENTATION-ROLE-LITERATURE_MECHANISM",
+    "PROF-PRESENTATION-ROLE-MECHANISM_SOLUTION",
+    "PROF-PRESENTATION-ROLE-OBSERVATION_PROBLEM",
+    "PROF-PRESENTATION-ROLE-RESULT_SINGLE",
     "PROF-FISHBONE-EXISTS",
     "PROF-FISHBONE-FOCUS",
     "PROF-FISHBONE-REVISION",
@@ -35,6 +53,10 @@
     "PROF-TRANSITION-PROVENANCE",
     "PROF-HYPOTHESIS-EXISTS",
     "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+    "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR",
+    "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION",
+    "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION",
+    "PROF-PRESENTATION-ROLE-RESULT_SINGLE",
     "PROF-FISHBONE-EXISTS",
     "PROF-FISHBONE-FOCUS",
     "PROF-FISHBONE-REVISION",
@@ -49,8 +71,18 @@
     "PROF-HISTORY-REACHABLE",
     "PROF-NEXT-STEP-OWNER-TIMING"
   ],
-  "check_count": 43,
+  "check_count": 65,
   "evidence": {
+    "PROF-PRESENTATION-SEMANTIC-FIDELITY": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "presentation_semantic_fidelity",
+      "detail": {
+        "status": "pass",
+        "fixture": "H003 generic traversal"
+      }
+    },
     "PROF-HYPOTHESIS-EXISTS": {
       "passed": true,
       "profile_rule": null,
@@ -77,6 +109,78 @@
         "result_single",
         "layer_integrated_discussion",
         "layer_summary_decision"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-EXPERIMENT_DESIGN": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-EXPERIMENT-DESIGN-06"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H003",
+      "detail": [
+        null
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-HYPOTHESIS_TRANSITION": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        null
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H003",
+      "detail": [
+        null
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H003",
+      "detail": [
+        null
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-LITERATURE_MECHANISM": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-OBSERVATION-PROBLEM-04"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-OBSERVATION_PROBLEM": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-OBSERVATION-PROBLEM-04"
+      ]
+    },
+    "PROF-PRESENTATION-ROLE-RESULT_SINGLE": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H003",
+      "detail": [
+        null
       ]
     },
     "PROF-FISHBONE-EXISTS": {
@@ -258,7 +362,7 @@
         "next_step_refs": [
           "NS301"
         ],
-        "source_event_cursor": 50,
+        "source_event_cursor": 64,
         "created_at": "2026-08-27T00:00:00Z"
       }
     },
@@ -283,7 +387,7 @@
         "next_step_refs": [
           "NS301"
         ],
-        "source_event_cursor": 53,
+        "source_event_cursor": 66,
         "created_at": "2026-08-27T00:00:00Z"
       }
     },
@@ -308,6 +412,15 @@
           "E104"
         ]
       }
+    },
+    "PROF-PRESENTATION-ROLE-MECHANISM_SOLUTION": {
+      "passed": true,
+      "profile_rule": null,
+      "configured_value": null,
+      "path": "H002",
+      "detail": [
+        "S-H002-OBSERVATION-PROBLEM-04"
+      ]
     },
     "PROF-HISTORY-REACHABLE": {
       "passed": true,
@@ -359,10 +472,8 @@
             "timezone": "Asia/Taipei"
           },
           "actual_completion": {
-            "completed_at": "2026-09-10T09:00:00Z",
-            "closure_evidence_refs": [
-              "E201"
-            ]
+            "completed_at": null,
+            "closure_evidence_refs": []
           },
           "success_failure_criteria": {
             "success": "effect exceeds uncertainty",
@@ -377,8 +488,8 @@
           "blocker_refs": [],
           "parallelizable": true,
           "workstream": "interface-mechanism",
-          "status": "done",
-          "result_summary": "Completed synthetic control",
+          "status": "planned",
+          "result_summary": "Awaiting controlled comparison",
           "supersedes": [],
           "superseded_by": [],
           "provenance": "synthetic_fixture",

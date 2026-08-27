@@ -3,7 +3,7 @@
   "qa_report_id": "QA-MASTER-PHASE2-ACCEPTANCE",
   "build_id": "BUILD-MASTER-PHASE2-ACCEPTANCE",
   "deck_id": "MASTER-PHASE2-ACCEPTANCE",
-  "created_at": "2026-08-27T11:40:11Z",
+  "created_at": "2026-08-27T15:17:33Z",
   "overall_status": "pass_with_native_environment_block",
   "professor_profile_ref": {
     "profile_id": "PROF-SYNTH-001",
@@ -53,9 +53,9 @@
           "P2-SYNTHETIC-LABELS"
         ],
         "evidence": {
-          "h01_cursor": 27,
-          "transition_cursor": 41,
-          "h02_cursor": 55,
+          "h01_cursor": 23,
+          "transition_cursor": 54,
+          "h02_cursor": 67,
           "causal_temporal_status": "pass",
           "evidence_causal_role_status": "pass",
           "precursor_evidence_id": "E104",
@@ -65,7 +65,7 @@
           "h02_fishbone_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
           "contact_csv_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
           "contact_script_sha256": "3aeb7e22710c80af2bb316ce066de3397d9edd0520f8464c387ed59021eee1c6",
-          "contact_svg_sha256": "26764e357753c57c02a262da5ea3923b050a7553b75c0911b1906d9cd2681b40"
+          "contact_svg_sha256": "d40e5757cc75882c77211031e974f7d37b9423837a1fbb98513a00b9f3896d3e"
         }
       }
     },
@@ -75,8 +75,18 @@
       "status": "pass",
       "evidence": {
         "check_ids": [
+          "presentation_semantic_fidelity",
+          "PROF-PRESENTATION-SEMANTIC-FIDELITY",
           "PROF-HYPOTHESIS-EXISTS",
           "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+          "PROF-PRESENTATION-ROLE-EXPERIMENT_DESIGN",
+          "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR",
+          "PROF-PRESENTATION-ROLE-HYPOTHESIS_TRANSITION",
+          "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION",
+          "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION",
+          "PROF-PRESENTATION-ROLE-LITERATURE_MECHANISM",
+          "PROF-PRESENTATION-ROLE-OBSERVATION_PROBLEM",
+          "PROF-PRESENTATION-ROLE-RESULT_SINGLE",
           "PROF-FISHBONE-EXISTS",
           "PROF-FISHBONE-FOCUS",
           "PROF-FISHBONE-REVISION",
@@ -91,6 +101,14 @@
           "PROF-TRANSITION-PROVENANCE",
           "PROF-HYPOTHESIS-EXISTS",
           "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+          "PROF-PRESENTATION-ROLE-EXPERIMENT_DESIGN",
+          "PROF-PRESENTATION-ROLE-FISHBONE_LOCATOR",
+          "PROF-PRESENTATION-ROLE-LAYER_INTEGRATED_DISCUSSION",
+          "PROF-PRESENTATION-ROLE-LAYER_SUMMARY_DECISION",
+          "PROF-PRESENTATION-ROLE-LITERATURE_MECHANISM",
+          "PROF-PRESENTATION-ROLE-MECHANISM_SOLUTION",
+          "PROF-PRESENTATION-ROLE-OBSERVATION_PROBLEM",
+          "PROF-PRESENTATION-ROLE-RESULT_SINGLE",
           "PROF-FISHBONE-EXISTS",
           "PROF-FISHBONE-FOCUS",
           "PROF-FISHBONE-REVISION",
@@ -105,6 +123,25 @@
           "PROF-HISTORY-REACHABLE",
           "PROF-NEXT-STEP-OWNER-TIMING"
         ],
+        "presentation_semantic": {
+          "schema_version": "1.0.0",
+          "status": "pass",
+          "executed_checks": [
+            "temporal_snapshot",
+            "combined_role_contract",
+            "physical_content_fidelity",
+            "hypothesis_problem_separation",
+            "scientific_method_visibility",
+            "result_distinction",
+            "discussion_after_results",
+            "summary_after_discussion",
+            "historical_fishbone"
+          ],
+          "findings": [],
+          "temporal_snapshot_status": "pass",
+          "combined_role_status": "pass",
+          "physical_fidelity_status": "pass"
+        },
         "findings": []
       }
     },
@@ -374,34 +411,34 @@
             "status": "pass"
           },
           {
-            "slide_id": "S-H001-RESULT-COMPARISON-08",
+            "slide_id": "S-H001-RESULT-SINGLE-08",
             "required_slots": [
-              "control_panel",
-              "proposed_panel"
+              "result_annotation",
+              "result_plot"
             ],
             "planned_slots": [
-              "control_panel",
-              "proposed_panel"
+              "result_annotation",
+              "result_plot"
             ],
             "content_slots": [
-              "control_panel",
-              "proposed_panel"
+              "result_annotation",
+              "result_plot"
             ],
             "status": "pass"
           },
           {
-            "slide_id": "S-H001-RESULT-COMPARISON-09",
+            "slide_id": "S-H001-RESULT-SINGLE-09",
             "required_slots": [
-              "control_panel",
-              "proposed_panel"
+              "result_annotation",
+              "result_plot"
             ],
             "planned_slots": [
-              "control_panel",
-              "proposed_panel"
+              "result_annotation",
+              "result_plot"
             ],
             "content_slots": [
-              "control_panel",
-              "proposed_panel"
+              "result_annotation",
+              "result_plot"
             ],
             "status": "pass"
           },
@@ -510,53 +547,77 @@
           {
             "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
             "required_slots": [
+              "literature_evidence",
+              "mechanism_diagram",
               "observation_text",
               "primary_figure",
-              "research_question"
+              "research_question",
+              "strategy"
             ],
             "planned_slots": [
+              "literature_evidence",
+              "mechanism_diagram",
               "observation_text",
               "primary_figure",
-              "research_question"
+              "research_question",
+              "strategy"
             ],
             "content_slots": [
+              "literature_evidence",
+              "mechanism_diagram",
               "observation_text",
               "primary_figure",
-              "research_question"
+              "research_question",
+              "strategy"
             ],
             "status": "pass"
           },
           {
             "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
             "required_slots": [
-              "control_panel",
-              "proposed_panel"
+              "decision_rule",
+              "experiment_matrix",
+              "result_annotation",
+              "result_plot"
             ],
             "planned_slots": [
-              "control_panel",
-              "proposed_panel"
+              "decision_rule",
+              "experiment_matrix",
+              "result_annotation",
+              "result_plot"
             ],
             "content_slots": [
-              "control_panel",
-              "proposed_panel"
+              "decision_rule",
+              "experiment_matrix",
+              "result_annotation",
+              "result_plot"
             ],
             "status": "pass"
           },
           {
             "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
             "required_slots": [
+              "contradicting_results",
               "decision_status",
+              "discussion_synthesis",
               "next_step",
+              "supporting_results",
               "uncertainty"
             ],
             "planned_slots": [
+              "contradicting_results",
               "decision_status",
+              "discussion_synthesis",
               "next_step",
+              "supporting_results",
               "uncertainty"
             ],
             "content_slots": [
+              "contradicting_results",
               "decision_status",
+              "discussion_synthesis",
               "next_step",
+              "supporting_results",
               "uncertainty"
             ],
             "status": "pass"
@@ -578,13 +639,13 @@
         "slides": [
           {
             "slide_id": "S-PHASE2-PROGRESS-01",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-03.png",
-            "render_sha256": "ef5b71b8efe1b4b47e87bdeceb3771335f05eee7f8d919f143ea1b9f5ba81625",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-03.png",
+            "render_sha256": "b55bb0a3c1e8de479578b8f724b58236dc341dcbde39f06a0895f6da7ebb499c",
             "dimensions": {
               "width": 1921,
               "height": 1080
             },
-            "variance": 645.2531818897739,
+            "variance": 652.2917488667624,
             "occupied_region": {
               "left": 130,
               "top": 91,
@@ -593,11 +654,11 @@
             },
             "occupied_ratio": 0.4437315634218289,
             "canvas_edge_proximity_px": 91,
-            "left_right_ink_ratio": 1.244
+            "left_right_ink_ratio": 1.2158
           },
           {
             "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-04.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-04.png",
             "render_sha256": "28bb8d0bed29c77162c2135793b7fd424e0cf328cac8fca3992bd2e18d534a3f",
             "dimensions": {
               "width": 1921,
@@ -616,7 +677,7 @@
           },
           {
             "slide_id": "S-H001-PROBLEM-DEFINITION-02",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-05.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-05.png",
             "render_sha256": "e937d8bc75a550de2d497cb122f9bed41aa5a3c1c909a43098664cc15987b333",
             "dimensions": {
               "width": 1921,
@@ -635,7 +696,7 @@
           },
           {
             "slide_id": "S-H001-FISHBONE-LOCATOR-03",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-06.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-06.png",
             "render_sha256": "a271d169a8f1ad77309135e58f71d50399fd8cb0cd7fffc584fac361a1ee0265",
             "dimensions": {
               "width": 1921,
@@ -654,7 +715,7 @@
           },
           {
             "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-07.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-07.png",
             "render_sha256": "78cb3f7731f737299fe635602ada3096f70cded445dfe2688b483a9f6e737ad2",
             "dimensions": {
               "width": 1921,
@@ -673,7 +734,7 @@
           },
           {
             "slide_id": "S-H001-LITERATURE-MECHANISM-05",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-08.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-08.png",
             "render_sha256": "0039477aac2f1350ba0846d67f7d2e382af4d11a0354f89d92baeb5dce1c78ae",
             "dimensions": {
               "width": 1921,
@@ -692,7 +753,7 @@
           },
           {
             "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-09.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-09.png",
             "render_sha256": "483fd84e89af97c16a9e9bf28599c82eaf73e6bd528f24813e8e94145722d428",
             "dimensions": {
               "width": 1921,
@@ -711,7 +772,7 @@
           },
           {
             "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-10.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-10.png",
             "render_sha256": "ada6b6ba89312ca9f459bbb747b75d6638cd04c157f2059ca428e5c8aaa2dbf5",
             "dimensions": {
               "width": 1921,
@@ -729,46 +790,46 @@
             "left_right_ink_ratio": 1.4573
           },
           {
-            "slide_id": "S-H001-RESULT-COMPARISON-08",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-11.png",
-            "render_sha256": "12fb25b624803bf2af310f871d1404d7aeeaf294e27ea6f6359775823ecd9bd6",
+            "slide_id": "S-H001-RESULT-SINGLE-08",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-11.png",
+            "render_sha256": "1cf196016ba008c441aac6e7696a4a5f16a58b1cf6bb6b36a1820f1ff90092bb",
             "dimensions": {
               "width": 1921,
               "height": 1080
             },
-            "variance": 2040.1056661954708,
+            "variance": 2486.1653183804337,
             "occupied_region": {
-              "left": 130,
+              "left": 132,
               "top": 78,
-              "right": 1804,
-              "bottom": 808
+              "right": 1803,
+              "bottom": 829
             },
-            "occupied_ratio": 0.5890161374284227,
+            "occupied_ratio": 0.6048744866678235,
             "canvas_edge_proximity_px": 78,
-            "left_right_ink_ratio": 0.0147
+            "left_right_ink_ratio": 0.0503
           },
           {
-            "slide_id": "S-H001-RESULT-COMPARISON-09",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-12.png",
-            "render_sha256": "12fb25b624803bf2af310f871d1404d7aeeaf294e27ea6f6359775823ecd9bd6",
+            "slide_id": "S-H001-RESULT-SINGLE-09",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-12.png",
+            "render_sha256": "3d32163df155b962be6ccf115270d5d8e819093480331d1ae7b0ba45a545ddb8",
             "dimensions": {
               "width": 1921,
               "height": 1080
             },
-            "variance": 2040.1056661954708,
+            "variance": 2502.853247111352,
             "occupied_region": {
               "left": 130,
               "top": 78,
-              "right": 1804,
-              "bottom": 808
+              "right": 1803,
+              "bottom": 829
             },
-            "occupied_ratio": 0.5890161374284227,
+            "occupied_ratio": 0.6055984537374438,
             "canvas_edge_proximity_px": 78,
-            "left_right_ink_ratio": 0.0147
+            "left_right_ink_ratio": 0.0522
           },
           {
             "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-13.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-13.png",
             "render_sha256": "cf6129ed5c8c36943ba15590307486980dbc6c7adea55a5c96625633b1f8651a",
             "dimensions": {
               "width": 1921,
@@ -787,7 +848,7 @@
           },
           {
             "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-14.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-14.png",
             "render_sha256": "2367b03357dd288d0744d9d2214171d589cfd9d95e8971246a4c122f262b08a6",
             "dimensions": {
               "width": 1921,
@@ -806,7 +867,7 @@
           },
           {
             "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-15.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-15.png",
             "render_sha256": "3954bc6321f7d345f28eb1ee0d8f986769eccdfdaecf21217723740aaa1a2429",
             "dimensions": {
               "width": 1921,
@@ -825,7 +886,7 @@
           },
           {
             "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-16.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-16.png",
             "render_sha256": "480db036f9f2c1b4adabab078c6f2fd71b4739feb4f94d8394a7ca749c1470b4",
             "dimensions": {
               "width": 1921,
@@ -844,7 +905,7 @@
           },
           {
             "slide_id": "S-H002-PROBLEM-DEFINITION-02",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-17.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-17.png",
             "render_sha256": "dc52f8e8fad851584584ff21e1bfaed7ee03f293425f40c7f67c013d8661cb96",
             "dimensions": {
               "width": 1921,
@@ -863,7 +924,7 @@
           },
           {
             "slide_id": "S-H002-FISHBONE-LOCATOR-03",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-18.png",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-18.png",
             "render_sha256": "e2e206f8252e2567f97f7a7254aa43e2042825e18277638d69f1a4e9fd27d706",
             "dimensions": {
               "width": 1921,
@@ -882,60 +943,60 @@
           },
           {
             "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-19.png",
-            "render_sha256": "55e67730869aaf6f69755d3f3eb6f13a1cd74235a35f157fe64e9d4a52dacf6d",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-19.png",
+            "render_sha256": "272c88768cd9f417b950b1170eeab17dc218313dad62c979f42ae21f60bf8b83",
             "dimensions": {
               "width": 1921,
               "height": 1080
             },
-            "variance": 830.776937947356,
+            "variance": 1368.2808013470465,
             "occupied_region": {
               "left": 130,
               "top": 84,
-              "right": 1485,
-              "bottom": 448
+              "right": 1760,
+              "bottom": 673
             },
-            "occupied_ratio": 0.23773304798812347,
+            "occupied_ratio": 0.4627557020841768,
             "canvas_edge_proximity_px": 84,
-            "left_right_ink_ratio": 3.9658
+            "left_right_ink_ratio": 2.1342
           },
           {
             "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-20.png",
-            "render_sha256": "24d769eb3bced65f6273c4a7e00fc0b9e654ce4e9407fe88fd0b626f83951789",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-20.png",
+            "render_sha256": "b7c2a197ee4963e7c61e3254eebea46978237781f651acb95529bbb3c8c6d319",
             "dimensions": {
               "width": 1921,
               "height": 1080
             },
-            "variance": 543.9278477973342,
+            "variance": 1178.4408605535073,
             "occupied_region": {
               "left": 130,
               "top": 78,
-              "right": 1804,
-              "bottom": 809
+              "right": 1806,
+              "bottom": 649
             },
-            "occupied_ratio": 0.5898230088495575,
+            "occupied_ratio": 0.4612740278018779,
             "canvas_edge_proximity_px": 78,
-            "left_right_ink_ratio": 0.1486
+            "left_right_ink_ratio": 0.7779
           },
           {
             "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
-            "render_path": "thesis-deck-system\\artifacts\\phase2\\render\\slide-21.png",
-            "render_sha256": "a25652120e6ff3a309b6e7ee156ea33d23e3d05a00afd314adef853596f57777",
+            "render_path": "thesis-deck-system/artifacts/phase2/render/slide-21.png",
+            "render_sha256": "e96562bf7966d215e68234ff7c5dca7843d77415ebc8824fcc6548a278f62484",
             "dimensions": {
               "width": 1921,
               "height": 1080
             },
-            "variance": 1061.5370793621207,
+            "variance": 1596.9247014753262,
             "occupied_region": {
               "left": 130,
               "top": 78,
-              "right": 1756,
-              "bottom": 504
+              "right": 1785,
+              "bottom": 779
             },
-            "occupied_ratio": 0.33387124761408987,
+            "occupied_ratio": 0.5591970809956234,
             "canvas_edge_proximity_px": 78,
-            "left_right_ink_ratio": 1.8279
+            "left_right_ink_ratio": 0.4957
           }
         ]
       },
@@ -946,12 +1007,12 @@
           {
             "slide_id": "S-PHASE2-PROGRESS-01",
             "render_path": "render/slide-03.png",
-            "render_sha256": "ef5b71b8efe1b4b47e87bdeceb3771335f05eee7f8d919f143ea1b9f5ba81625",
+            "render_sha256": "b55bb0a3c1e8de479578b8f724b58236dc341dcbde39f06a0895f6da7ebb499c",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "commitment status fields",
-            "hierarchy": "title followed by commitment/current-work regions",
-            "qualitative_note": "Readable NS101 and NS201 rows; no clipping, with deliberate whitespace below the progress view."
+            "dominant_visual": "commitment table, current position, and parallel workstream [S-PHASE2-PROGRESS-01]",
+            "hierarchy": "The three progress regions read as separate panels; the previous commitment remains legible beside the current position and parallel work.",
+            "qualitative_note": "The three progress regions read as separate panels; the previous commitment remains legible beside the current position and parallel work. This note is bound to the inspected render render/slide-03.png."
           },
           {
             "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
@@ -959,9 +1020,9 @@
             "render_sha256": "28bb8d0bed29c77162c2135793b7fd424e0cf328cac8fca3992bd2e18d534a3f",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "H001 scientific assertion",
-            "hierarchy": "title then hypothesis, falsifier, and question",
-            "qualitative_note": "The three H001 statements are readable and the bilingual question is not clipped."
+            "dominant_visual": "hypothesis assertion, falsifier, and exact research question [S-H001-HYPOTHESIS-TITLE-01]",
+            "hierarchy": "The assertion is visually dominant while falsifier and research question remain visibly paired and readable.",
+            "qualitative_note": "The assertion is visually dominant while falsifier and research question remain visibly paired and readable. This note is bound to the inspected render render/slide-04.png."
           },
           {
             "slide_id": "S-H001-PROBLEM-DEFINITION-02",
@@ -969,9 +1030,9 @@
             "render_sha256": "e937d8bc75a550de2d497cb122f9bed41aa5a3c1c909a43098664cc15987b333",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "three-column H001 problem",
-            "hierarchy": "title then finding, conflict, and question",
-            "qualitative_note": "All three physical problem slots are visible and horizontally separated."
+            "dominant_visual": "previous finding, unresolved conflict, and research question [S-H001-PROBLEM-DEFINITION-02]",
+            "hierarchy": "The three problem fields are physically separated, making the open conflict and question visible rather than buried in prose.",
+            "qualitative_note": "The three problem fields are physically separated, making the open conflict and question visible rather than buried in prose. This note is bound to the inspected render render/slide-05.png."
           },
           {
             "slide_id": "S-H001-FISHBONE-LOCATOR-03",
@@ -979,9 +1040,9 @@
             "render_sha256": "a271d169a8f1ad77309135e58f71d50399fd8cb0cd7fffc584fac361a1ee0265",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "H001 fishbone",
-            "hierarchy": "title/focus followed by highlighted branch",
-            "qualitative_note": "The red hydration branch is distinct from the gray hierarchy and stays within canvas bounds."
+            "dominant_visual": "historical fishbone and highlighted focus branch [S-H001-FISHBONE-LOCATOR-03]",
+            "hierarchy": "The fishbone occupies the primary figure region and the highlighted branch is visually distinct from stable branches.",
+            "qualitative_note": "The fishbone occupies the primary figure region and the highlighted branch is visually distinct from stable branches. This note is bound to the inspected render render/slide-06.png."
           },
           {
             "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
@@ -989,9 +1050,9 @@
             "render_sha256": "78cb3f7731f737299fe635602ada3096f70cded445dfe2688b483a9f6e737ad2",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "synthetic observation panel",
-            "hierarchy": "question and observation text beside visual",
-            "qualitative_note": "The scientific question and explicitly synthetic visual region are legible side by side."
+            "dominant_visual": "observation/literature/mechanism content and observation visual [S-H001-OBSERVATION-PROBLEM-04]",
+            "hierarchy": "Text and the observation visual coexist in separate governed regions, preserving the evidence-to-question reading path.",
+            "qualitative_note": "Text and the observation visual coexist in separate governed regions, preserving the evidence-to-question reading path. This note is bound to the inspected render render/slide-07.png."
           },
           {
             "slide_id": "S-H001-LITERATURE-MECHANISM-05",
@@ -999,9 +1060,9 @@
             "render_sha256": "0039477aac2f1350ba0846d67f7d2e382af4d11a0354f89d92baeb5dce1c78ae",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "literature/mechanism synthesis",
-            "hierarchy": "title then left synthesis and right strategy",
-            "qualitative_note": "Both structured regions remain readable; the sparse lower field reflects synthetic fixture density."
+            "dominant_visual": "literature synthesis and mechanism/strategy interpretation [S-H001-LITERATURE-MECHANISM-05]",
+            "hierarchy": "Consensus, alternatives, gap, and mechanism implication occupy distinct text regions instead of a source list.",
+            "qualitative_note": "Consensus, alternatives, gap, and mechanism implication occupy distinct text regions instead of a source list. This note is bound to the inspected render render/slide-08.png."
           },
           {
             "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
@@ -1009,9 +1070,9 @@
             "render_sha256": "483fd84e89af97c16a9e9bf28599c82eaf73e6bd528f24813e8e94145722d428",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "EXP101 experiment matrix",
-            "hierarchy": "matrix left and decision rule right",
-            "qualitative_note": "Variables, controls, replicates, metric, prediction, and rule are readable without clipping."
+            "dominant_visual": "experiment matrix and decision rule [S-H001-EXPERIMENT-DESIGN-06]",
+            "hierarchy": "Variables, controls, replicates, metrics, prediction, and decision rule are visibly separated into governed regions.",
+            "qualitative_note": "Variables, controls, replicates, metrics, prediction, and decision rule are visibly separated into governed regions. This note is bound to the inspected render render/slide-09.png."
           },
           {
             "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
@@ -1019,29 +1080,29 @@
             "render_sha256": "ada6b6ba89312ca9f459bbb747b75d6638cd04c157f2059ca428e5c8aaa2dbf5",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "EXP102 experiment matrix",
-            "hierarchy": "matrix left and decision rule right",
-            "qualitative_note": "The second matrix is visually identifiable by EXP102 and its CV decision rule."
+            "dominant_visual": "experiment matrix and decision rule [S-H001-EXPERIMENT-DESIGN-07]",
+            "hierarchy": "Variables, controls, replicates, metrics, prediction, and decision rule are visibly separated into governed regions.",
+            "qualitative_note": "Variables, controls, replicates, metrics, prediction, and decision rule are visibly separated into governed regions. This note is bound to the inspected render render/slide-10.png."
           },
           {
-            "slide_id": "S-H001-RESULT-COMPARISON-08",
+            "slide_id": "S-H001-RESULT-SINGLE-08",
             "render_path": "render/slide-11.png",
-            "render_sha256": "12fb25b624803bf2af310f871d1404d7aeeaf294e27ea6f6359775823ecd9bd6",
+            "render_sha256": "1cf196016ba008c441aac6e7696a4a5f16a58b1cf6bb6b36a1820f1ff90092bb",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "synthetic defect plot",
-            "hierarchy": "title/control slot then chart",
-            "qualitative_note": "Axes, bars, and error bars are readable; the left control slot is physically present."
+            "dominant_visual": "result plot and result annotation [S-H001-RESULT-SINGLE-08]",
+            "hierarchy": "The plot and its result-specific annotation coexist; the annotation identifies the measured outcome for this result slide.",
+            "qualitative_note": "The plot and its result-specific annotation coexist; the annotation identifies the measured outcome for this result slide. This note is bound to the inspected render render/slide-11.png."
           },
           {
-            "slide_id": "S-H001-RESULT-COMPARISON-09",
+            "slide_id": "S-H001-RESULT-SINGLE-09",
             "render_path": "render/slide-12.png",
-            "render_sha256": "12fb25b624803bf2af310f871d1404d7aeeaf294e27ea6f6359775823ecd9bd6",
+            "render_sha256": "3d32163df155b962be6ccf115270d5d8e819093480331d1ae7b0ba45a545ddb8",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "repeated synthetic defect plot",
-            "hierarchy": "title/control slot then chart",
-            "qualitative_note": "The exact PNG is nonblank and legible; this is the deliberate second result binding to the synthetic plot."
+            "dominant_visual": "result plot and result annotation [S-H001-RESULT-SINGLE-09]",
+            "hierarchy": "The plot and its result-specific annotation coexist; the annotation identifies the measured outcome for this result slide.",
+            "qualitative_note": "The plot and its result-specific annotation coexist; the annotation identifies the measured outcome for this result slide. This note is bound to the inspected render render/slide-12.png."
           },
           {
             "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
@@ -1049,9 +1110,9 @@
             "render_sha256": "cf6129ed5c8c36943ba15590307486980dbc6c7adea55a5c96625633b1f8651a",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "result labels and uncertainty",
-            "hierarchy": "title then result labels and integrated uncertainty",
-            "qualitative_note": "Supporting, contradicting, and uncertainty areas are visible without overlap or edge clipping."
+            "dominant_visual": "supporting/contradicting results and uncertainty [S-H001-LAYER-INTEGRATED-DISCUSSION-10]",
+            "hierarchy": "Discussion evidence is distributed across distinct support, contradiction, and uncertainty regions.",
+            "qualitative_note": "Discussion evidence is distributed across distinct support, contradiction, and uncertainty regions. This note is bound to the inspected render render/slide-13.png."
           },
           {
             "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
@@ -1059,9 +1120,9 @@
             "render_sha256": "2367b03357dd288d0744d9d2214171d589cfd9d95e8971246a4c122f262b08a6",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "H001 three-part decision",
-            "hierarchy": "title then decision, uncertainty, next step",
-            "qualitative_note": "Each decision region is readable and horizontally ordered; multiline decision text stays inside its slot."
+            "dominant_visual": "discussion synthesis, decision status, uncertainty, and next step [S-H001-LAYER-SUMMARY-DECISION-11]",
+            "hierarchy": "The decision and next step remain visible as separate lower regions while synthesis and uncertainty retain context.",
+            "qualitative_note": "The decision and next step remain visible as separate lower regions while synthesis and uncertainty retain context. This note is bound to the inspected render render/slide-14.png."
           },
           {
             "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
@@ -1069,9 +1130,9 @@
             "render_sha256": "3954bc6321f7d345f28eb1ee0d8f986769eccdfdaecf21217723740aaa1a2429",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "H001-to-H002 provenance",
-            "hierarchy": "title then transition nodes and derivation",
-            "qualitative_note": "The predecessor, results, precursor observation, successor, and derivation statement are readable."
+            "dominant_visual": "previous hypothesis, key results, and successor derivation [S-H001-HYPOTHESIS-TRANSITION-12]",
+            "hierarchy": "The transition nodes and derivation strip establish a visible causal handoff rather than a title-only change.",
+            "qualitative_note": "The transition nodes and derivation strip establish a visible causal handoff rather than a title-only change. This note is bound to the inspected render render/slide-15.png."
           },
           {
             "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
@@ -1079,9 +1140,9 @@
             "render_sha256": "480db036f9f2c1b4adabab078c6f2fd71b4739feb4f94d8394a7ca749c1470b4",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "H002 scientific assertion",
-            "hierarchy": "title then hypothesis, falsifier, and question",
-            "qualitative_note": "H002 statement, falsifier, and bilingual research question are legible with no clipped title."
+            "dominant_visual": "hypothesis assertion, falsifier, and exact research question [S-H002-HYPOTHESIS-TITLE-01]",
+            "hierarchy": "The assertion is visually dominant while falsifier and research question remain visibly paired and readable.",
+            "qualitative_note": "The assertion is visually dominant while falsifier and research question remain visibly paired and readable. This note is bound to the inspected render render/slide-16.png."
           },
           {
             "slide_id": "S-H002-PROBLEM-DEFINITION-02",
@@ -1089,9 +1150,9 @@
             "render_sha256": "dc52f8e8fad851584584ff21e1bfaed7ee03f293425f40c7f67c013d8661cb96",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "three-column H002 problem",
-            "hierarchy": "title then prior result, mechanism gap, question",
-            "qualitative_note": "All three H002 problem regions are visible and separated across the slide."
+            "dominant_visual": "previous finding, unresolved conflict, and research question [S-H002-PROBLEM-DEFINITION-02]",
+            "hierarchy": "The three problem fields are physically separated, making the open conflict and question visible rather than buried in prose.",
+            "qualitative_note": "The three problem fields are physically separated, making the open conflict and question visible rather than buried in prose. This note is bound to the inspected render render/slide-17.png."
           },
           {
             "slide_id": "S-H002-FISHBONE-LOCATOR-03",
@@ -1099,39 +1160,39 @@
             "render_sha256": "e2e206f8252e2567f97f7a7254aa43e2042825e18277638d69f1a4e9fd27d706",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "H002 fishbone revision",
-            "hierarchy": "title/focus followed by highlighted contact branch",
-            "qualitative_note": "The red contact branch is prominent against the gray hierarchy and distinct from H001 focus."
+            "dominant_visual": "historical fishbone and highlighted focus branch [S-H002-FISHBONE-LOCATOR-03]",
+            "hierarchy": "The fishbone occupies the primary figure region and the highlighted branch is visually distinct from stable branches.",
+            "qualitative_note": "The fishbone occupies the primary figure region and the highlighted branch is visually distinct from stable branches. This note is bound to the inspected render render/slide-18.png."
           },
           {
             "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
             "render_path": "render/slide-19.png",
-            "render_sha256": "55e67730869aaf6f69755d3f3eb6f13a1cd74235a35f157fe64e9d4a52dacf6d",
+            "render_sha256": "272c88768cd9f417b950b1170eeab17dc218313dad62c979f42ae21f60bf8b83",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "H002 observation region",
-            "hierarchy": "title, question, observation, visual label",
-            "qualitative_note": "The question and observation content are readable; the right region truthfully names the registered synthetic visual."
+            "dominant_visual": "observation/literature/mechanism content and observation visual [S-H002-OBSERVATION-PROBLEM-04]",
+            "hierarchy": "Text and the observation visual coexist in separate governed regions, preserving the evidence-to-question reading path.",
+            "qualitative_note": "Text and the observation visual coexist in separate governed regions, preserving the evidence-to-question reading path. This note is bound to the inspected render render/slide-19.png."
           },
           {
             "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
             "render_path": "render/slide-20.png",
-            "render_sha256": "24d769eb3bced65f6273c4a7e00fc0b9e654ce4e9407fe88fd0b626f83951789",
+            "render_sha256": "b7c2a197ee4963e7c61e3254eebea46978237781f651acb95529bbb3c8c6d319",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "paired contact-pressure plots",
-            "hierarchy": "title/control label then CV and resistance panels",
-            "qualitative_note": "Both panels are readable and balanced, with an explicit synthetic-data title and axes."
+            "dominant_visual": "experiment matrix, result plot, and result annotation [S-H002-EXPERIMENT-DESIGN-06]",
+            "hierarchy": "The merged experiment/result view keeps complete design text beside the plot and the result-specific annotation.",
+            "qualitative_note": "The merged experiment/result view keeps complete design text beside the plot and the result-specific annotation. This note is bound to the inspected render render/slide-20.png."
           },
           {
             "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
             "render_path": "render/slide-21.png",
-            "render_sha256": "a25652120e6ff3a309b6e7ee156ea33d23e3d05a00afd314adef853596f57777",
+            "render_sha256": "e96562bf7966d215e68234ff7c5dca7843d77415ebc8824fcc6548a278f62484",
             "reviewer": "image-capable Codex inspection",
             "status": "pass",
-            "dominant_visual": "H002 decision and NS201",
-            "hierarchy": "title then status, uncertainty, and next step",
-            "qualitative_note": "Supported status, uncertainty, and NS201 are readable and spatially separated without clipping."
+            "dominant_visual": "discussion synthesis, decision status, uncertainty, and next step [S-H002-LAYER-SUMMARY-DECISION-09]",
+            "hierarchy": "The decision and next step remain visible as separate lower regions while synthesis and uncertainty retain context.",
+            "qualitative_note": "The decision and next step remain visible as separate lower regions while synthesis and uncertainty retain context. This note is bound to the inspected render render/slide-21.png."
           }
         ]
       },
