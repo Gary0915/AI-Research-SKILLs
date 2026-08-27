@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "executed_checks": [
+    "phase2_schema_validation",
+    "ledger_hash_replay",
+    "cursor_isolation",
+    "hypothesis_derivation",
+    "fishbone_revision_immutability",
+    "experiment_metadata",
+    "synthetic_evidence_labeling",
+    "plot_source_hashes"
+  ],
+  "findings": [],
+  "evidence": {
+    "h01_cursor": 14,
+    "h02_cursor": 26,
+    "h01_fishbone_sha256": "24f08f4dcbc89894f8abadffd12d8dc2d560508f610684ef4de81e156f9de11d",
+    "h01_replay_sha256": "24f08f4dcbc89894f8abadffd12d8dc2d560508f610684ef4de81e156f9de11d",
+    "h02_fishbone_sha256": "e9f7318f0c0bd5fa1c2fd52f4eeb3aca85aa8bfb4e9b96a6877d9e9df0a1e1f5",
+    "contact_csv_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
+    "contact_script_sha256": "3aeb7e22710c80af2bb316ce066de3397d9edd0520f8464c387ed59021eee1c6",
+    "contact_svg_sha256": "a4934027e79c89c04167e88498c5c02463a0f5bd25f5df48a811b061428b33d5"
+  }
+}

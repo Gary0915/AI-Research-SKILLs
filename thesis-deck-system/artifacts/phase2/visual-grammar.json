@@ -1,0 +1,110 @@
+{
+  "schema_version": "2.0.0",
+  "grammar_id": "VG-SYNTH-PHASE2",
+  "version": "2.0.0",
+  "mode": "synthetic",
+  "source_alias": "synthetic://layout-exemplar",
+  "private_content_copied": false,
+  "composition_rules": {
+    "template_shell": [
+      "EXEMPLAR-1",
+      "EXEMPLAR-3"
+    ],
+    "body_primary": "EXEMPLAR-2",
+    "white_background": true,
+    "figure_first": true,
+    "structured_high_density": true
+  },
+  "descriptors": [
+    {
+      "archetype_ref": "A01",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A02",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A03",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A04",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A05",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "high"
+    },
+    {
+      "archetype_ref": "A06",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A07",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A08",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A09",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "high"
+    },
+    {
+      "archetype_ref": "A10",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A11",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A12",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A13",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A14",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "high"
+    },
+    {
+      "archetype_ref": "A15",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "high"
+    },
+    {
+      "archetype_ref": "A16",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    },
+    {
+      "archetype_ref": "A17",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "high"
+    },
+    {
+      "archetype_ref": "A18",
+      "dominant_content_region": "safe_content_bounds",
+      "information_density": "medium"
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "checked_by": "Codex Phase 2 render QA",
+  "slides": [
+    {
+      "slide_id": "S-PHASE2-PROGRESS-01",
+      "render_path": "render/slide-03.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "render_path": "render/slide-04.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "render_path": "render/slide-05.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "render_path": "render/slide-06.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "render_path": "render/slide-07.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "render_path": "render/slide-08.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "render_path": "render/slide-09.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-RESULT-COMPARISON-08",
+      "render_path": "render/slide-10.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-RESULT-COMPARISON-09",
+      "render_path": "render/slide-11.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "render_path": "render/slide-12.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "render_path": "render/slide-13.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "render_path": "render/slide-14.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "render_path": "render/slide-15.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "render_path": "render/slide-16.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "render_path": "render/slide-17.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "render_path": "render/slide-18.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "render_path": "render/slide-19.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "render_path": "render/slide-20.png",
+      "checks": [
+        "render_exists",
+        "dimensions",
+        "nonblank",
+        "canvas_bounds",
+        "overlap",
+        "minimum_font",
+        "title_hierarchy",
+        "zh_tw_readability",
+        "density",
+        "archetype_geometry"
+      ],
+      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "status": "pass"
+    }
+  ],
+  "visual_qa": {
+    "status": "pass",
+    "executed_checks": [
+      "render_exists",
+      "dimensions",
+      "nonblank",
+      "canvas_bounds",
+      "overlap",
+      "minimum_font",
+      "title_hierarchy",
+      "zh_tw_readability",
+      "density",
+      "archetype_geometry"
+    ],
+    "findings": []
+  }
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<rect width="1200" height="650" fill="white"/>
+<style>text{font-family:sans-serif}.label{font-size:22px}.small{font-size:15px}</style>
+<line x1="180" y1="325" x2="1040" y2="325" stroke="#344054" stroke-width="8"/>
+<polygon points="1040,305 1100,325 1040,345" fill="#344054"/>
+<text x="920" y="382" class="small" fill="#344054">THESIS OUTCOME</text>
+<line x1="310" y1="325" x2="260" y2="175" stroke="#2f6b4f" stroke-width="4"/>
+<g id="FB-MATERIAL" data-branch-id="FB-MATERIAL" data-status="completed"><rect x="195" y="86" width="210" height="68" rx="10" fill="#eef7f1" stroke="#2f6b4f" stroke-width="2"/><text x="300" y="127" text-anchor="middle" class="label" fill="#2f6b4f">材料</text></g>
+<text x="380" y="98" class="small" fill="#2f6b4f">✓</text>
+<line x1="310" y1="325" x2="260" y2="445" stroke="#7a8592" stroke-width="4"/>
+<g id="FB-ELECTRODE" data-branch-id="FB-ELECTRODE" data-status="future"><rect x="195" y="466" width="210" height="68" rx="10" fill="#f2f4f6" stroke="#7a8592" stroke-width="2"/><text x="300" y="507" text-anchor="middle" class="label" fill="#7a8592">電極</text></g>
+<line x1="460" y1="325" x2="410" y2="175" stroke="#7a8592" stroke-width="4"/>
+<g id="FB-MEASUREMENT" data-branch-id="FB-MEASUREMENT" data-status="future"><rect x="345" y="86" width="210" height="68" rx="10" fill="#f2f4f6" stroke="#7a8592" stroke-width="2"/><text x="450" y="127" text-anchor="middle" class="label" fill="#7a8592">量測</text></g>
+<line x1="460" y1="325" x2="410" y2="445" stroke="#7a8592" stroke-width="4"/>
+<g id="FB-SYSTEM" data-branch-id="FB-SYSTEM" data-status="future"><rect x="345" y="466" width="210" height="68" rx="10" fill="#f2f4f6" stroke="#7a8592" stroke-width="2"/><text x="450" y="507" text-anchor="middle" class="label" fill="#7a8592">系統</text></g>
+<line x1="610" y1="325" x2="560" y2="175" stroke="#b42318" stroke-width="4"/>
+<g id="FB-MATERIAL-HYDRATION" data-branch-id="FB-MATERIAL-HYDRATION" data-status="current"><rect x="495" y="86" width="210" height="68" rx="10" fill="#fff1f0" stroke="#b42318" stroke-width="5"/><text x="600" y="127" text-anchor="middle" class="label" fill="#b42318">含水量</text></g>
+<text x="600" y="72" text-anchor="middle" class="small" fill="#b42318">CURRENT / H01</text>
+<line x1="610" y1="325" x2="560" y2="445" stroke="#7a8592" stroke-width="4"/>
+<g id="FB-ELECTRODE-GEOMETRY" data-branch-id="FB-ELECTRODE-GEOMETRY" data-status="future"><rect x="495" y="466" width="210" height="68" rx="10" fill="#f2f4f6" stroke="#7a8592" stroke-width="2"/><text x="600" y="507" text-anchor="middle" class="label" fill="#7a8592">幾何</text></g>
+</svg>

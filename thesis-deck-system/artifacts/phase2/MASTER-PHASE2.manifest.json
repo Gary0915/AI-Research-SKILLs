@@ -1,0 +1,627 @@
+{
+  "schema_version": "2.0.0",
+  "deck_id": "MASTER-PHASE2-ACCEPTANCE",
+  "deck_kind": "master",
+  "title": "Synthetic Hypothesis-Layered Thesis History",
+  "template_profile_ref": {
+    "profile_id": "TP-SYNTH-PHASE2",
+    "version": "2.0.0"
+  },
+  "professor_profile_ref": {
+    "profile_id": "PROF-SYNTH-001",
+    "version": "2.0.0"
+  },
+  "source_event_cursor": 26,
+  "build_id": "BUILD-MASTER-PHASE2-ACCEPTANCE",
+  "build_tool_version": "0.3.0",
+  "created_at": "2026-08-27T00:00:00Z",
+  "projection": {
+    "query": "master(hypothesis_layers=all,preserve_history=true)"
+  },
+  "slides": [
+    {
+      "ordinal": 1,
+      "slide_id": "S-PHASE2-PROGRESS-01",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "asset_refs": [],
+      "action_refs": [
+        "NS201"
+      ],
+      "decision_refs": [
+        "D201"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 26,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": null,
+      "semantic_role": "progress_todo"
+    },
+    {
+      "ordinal": 2,
+      "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "hypothesis_title"
+    },
+    {
+      "ordinal": 3,
+      "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "problem_definition"
+    },
+    {
+      "ordinal": 4,
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [
+        "A101"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "fishbone_locator"
+    },
+    {
+      "ordinal": 5,
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "observation_problem"
+    },
+    {
+      "ordinal": 6,
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "literature_mechanism"
+    },
+    {
+      "ordinal": 7,
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "experiment_design"
+    },
+    {
+      "ordinal": 8,
+      "slide_id": "S-H001-RESULT-COMPARISON-08",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [
+        "A001"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "result_comparison"
+    },
+    {
+      "ordinal": 9,
+      "slide_id": "S-H001-RESULT-COMPARISON-09",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [
+        "A001"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "result_comparison"
+    },
+    {
+      "ordinal": 10,
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [
+        "D101"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "layer_integrated_discussion"
+    },
+    {
+      "ordinal": 11,
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [
+        "NS101"
+      ],
+      "decision_refs": [
+        "D101"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "layer_summary_decision"
+    },
+    {
+      "ordinal": 12,
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [
+        "NS101"
+      ],
+      "decision_refs": [
+        "D101"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 14,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "hypothesis_transition"
+    },
+    {
+      "ordinal": 13,
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 26,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H002",
+      "semantic_role": "hypothesis_title"
+    },
+    {
+      "ordinal": 14,
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 26,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H002",
+      "semantic_role": "problem_definition"
+    },
+    {
+      "ordinal": 15,
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "asset_refs": [
+        "A102"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 26,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H002",
+      "semantic_role": "fishbone_locator"
+    },
+    {
+      "ordinal": 16,
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 26,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H002",
+      "semantic_role": "observation_problem"
+    },
+    {
+      "ordinal": 17,
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "asset_refs": [
+        "A201"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 26,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H002",
+      "semantic_role": "result_comparison"
+    },
+    {
+      "ordinal": 18,
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "4e0925b378783aa4f60b3fb0a7d1c81410abba263f200a31011a626cf38ddf42",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "asset_refs": [],
+      "action_refs": [
+        "NS201"
+      ],
+      "decision_refs": [
+        "D201"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "2.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 26,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H002",
+      "semantic_role": "layer_summary_decision"
+    }
+  ],
+  "outputs": {
+    "pptx": "acceptance-deck.pptx",
+    "pptx_sha256": "9ea83c395be994d8f568cb09bfb76f66f4e0ac3099fc3a6159eb0ca3e7530787"
+  },
+  "qa_report_refs": [
+    "QA-MASTER-PHASE2-ACCEPTANCE"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "projection_kind": "master",
+  "source_event_cursor": 26,
+  "append_only": true,
+  "layers": [
+    {
+      "schema_version": "2.0.0",
+      "hypothesis_layer_id": "H001",
+      "revision": 1,
+      "title": "H01｜Bulk conductivity 主導假說",
+      "hypothesis_claim_ref": "C101",
+      "problem_ref": "P101",
+      "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+      "mechanism_key": "bulk_conductivity",
+      "derived_from": null,
+      "fishbone_snapshot_ref": {
+        "fishbone_id": "FB001",
+        "revision": 1
+      },
+      "fishbone_focus_refs": [
+        "FB-MATERIAL-HYDRATION"
+      ],
+      "research_block_refs": [
+        "B101"
+      ],
+      "experiment_refs": [
+        "EXP101",
+        "EXP102"
+      ],
+      "result_refs": [
+        "RES101",
+        "RES102"
+      ],
+      "experiment_order": [
+        "EXP101",
+        "EXP102"
+      ],
+      "result_order": [
+        "RES101",
+        "RES102"
+      ],
+      "layer_discussion_ref": "DISC-H001",
+      "layer_summary_ref": "SUM-H001",
+      "layer_decision_ref": "D101",
+      "next_step_refs": [
+        "NS101"
+      ],
+      "transition_ref": "TR-H001-H002",
+      "story_visibility": "main",
+      "research_status": "partial_support",
+      "source_event_cursor": 14,
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    {
+      "schema_version": "2.0.0",
+      "hypothesis_layer_id": "H002",
+      "revision": 1,
+      "title": "H02｜Contact resistance 主導假說",
+      "hypothesis_claim_ref": "C201",
+      "problem_ref": "P201",
+      "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+      "mechanism_key": "contact_resistance",
+      "derived_from": {
+        "previous_layer_ref": "H001",
+        "discussion_refs": [
+          "DISC-H001"
+        ],
+        "decision_refs": [
+          "D101"
+        ],
+        "observation_refs": [
+          "E201"
+        ]
+      },
+      "fishbone_snapshot_ref": {
+        "fishbone_id": "FB001",
+        "revision": 2
+      },
+      "fishbone_focus_refs": [
+        "FB-ELECTRODE-CONTACT"
+      ],
+      "research_block_refs": [
+        "B201"
+      ],
+      "experiment_refs": [
+        "EXP201"
+      ],
+      "result_refs": [
+        "RES201"
+      ],
+      "experiment_order": [
+        "EXP201"
+      ],
+      "result_order": [
+        "RES201"
+      ],
+      "layer_discussion_ref": "DISC-H002",
+      "layer_summary_ref": "SUM-H002",
+      "layer_decision_ref": "D201",
+      "next_step_refs": [
+        "NS201"
+      ],
+      "transition_ref": null,
+      "story_visibility": "main",
+      "research_status": "supported",
+      "source_event_cursor": 26,
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  ],
+  "history_reachable_layer_refs": [
+    "H001",
+    "H002"
+  ]
+}

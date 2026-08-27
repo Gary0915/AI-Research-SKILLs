@@ -25,6 +25,18 @@ REQUIRED_SCHEMA_NAMES = (
     "template-profile",
 )
 
+PHASE2_SCHEMA_NAMES = (
+    "hypothesis-layer",
+    "problem",
+    "fishbone-map",
+    "fishbone-revision",
+    "layer-discussion",
+    "layer-summary",
+    "hypothesis-transition",
+    "layout-archetype",
+    "layout-plan",
+)
+
 SCHEMA_BY_COLLECTION = {
     "research_blocks": "research-block",
     "stages": "scientific-stage",
@@ -51,11 +63,12 @@ class Finding:
 
 
 class SchemaRegistry:
-    def __init__(self, schema_dir: Path | str):
+    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False):
         self.schema_dir = Path(schema_dir)
+        schema_names = REQUIRED_SCHEMA_NAMES + (PHASE2_SCHEMA_NAMES if include_phase2 else ())
         self._schemas = {
             name: json.loads((self.schema_dir / f"{name}.schema.json").read_text(encoding="utf-8"))
-            for name in REQUIRED_SCHEMA_NAMES
+            for name in schema_names
         }
         for schema in self._schemas.values():
             Draft202012Validator.check_schema(schema)

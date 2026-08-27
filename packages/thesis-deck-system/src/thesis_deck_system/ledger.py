@@ -71,7 +71,11 @@ class Ledger:
         return ledger
 
     def materialize(self, until_cursor: int | None = None) -> dict[str, Any]:
-        state = {"blocks": {}, "claims": {}, "evidence": {}, "assets": {}, "actions": {}, "decisions": {}, "stages": {}, "events": []}
+        state = {
+            "blocks": {}, "claims": {}, "evidence": {}, "assets": {}, "actions": {}, "decisions": {}, "stages": {},
+            "hypothesis_layers": {}, "hypothesis_layer_revisions": {}, "problems": {}, "fishbone_revisions": {},
+            "layer_discussions": {}, "layer_summaries": {}, "hypothesis_transitions": {}, "events": [],
+        }
         events = self.replay()
         for event in events[:until_cursor] if until_cursor is not None else events:
             state["events"].append(asdict(event))
@@ -98,4 +102,18 @@ class Ledger:
                 state["evidence"][payload["evidence_id"]] = dict(payload)
             elif event.event_type == "asset_registered":
                 state["assets"][payload["asset_id"]] = dict(payload)
+            elif event.event_type in {"hypothesis_layer_created", "hypothesis_layer_revised"}:
+                layer = dict(payload)
+                state["hypothesis_layers"][payload["hypothesis_layer_id"]] = layer
+                state["hypothesis_layer_revisions"][f"{payload['hypothesis_layer_id']}@{payload['revision']}"] = layer
+            elif event.event_type == "problem_created":
+                state["problems"][payload["problem_id"]] = dict(payload)
+            elif event.event_type in {"fishbone_created", "fishbone_revised"}:
+                state["fishbone_revisions"][f"{payload['fishbone_id']}@{payload['revision']}"] = dict(payload)
+            elif event.event_type == "layer_discussion_recorded":
+                state["layer_discussions"][payload["discussion_id"]] = dict(payload)
+            elif event.event_type == "layer_summary_recorded":
+                state["layer_summaries"][payload["summary_id"]] = dict(payload)
+            elif event.event_type == "hypothesis_transition_recorded":
+                state["hypothesis_transitions"][payload["transition_id"]] = dict(payload)
         return state

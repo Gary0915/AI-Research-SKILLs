@@ -1,0 +1,20 @@
+{
+  "mode": "blocked_fixture",
+  "aliases": [
+    {
+      "alias": "template_primary_1",
+      "alias_uri": "private://template_primary_1",
+      "status": "blocked_fixture"
+    },
+    {
+      "alias": "layout_exemplar_2",
+      "alias_uri": "private://layout_exemplar_2",
+      "status": "blocked_fixture"
+    },
+    {
+      "alias": "template_primary_3",
+      "alias_uri": "private://template_primary_3",
+      "status": "blocked_fixture"
+    }
+  ]
+}

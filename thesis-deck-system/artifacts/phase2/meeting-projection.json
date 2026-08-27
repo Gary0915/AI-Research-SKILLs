@@ -1,0 +1,85 @@
+{
+  "projection_kind": "meeting",
+  "source_event_cursor": 26,
+  "current_layer_id": "H002",
+  "historical_layer_refs": [
+    "H001"
+  ],
+  "current_layer": {
+    "schema_version": "2.0.0",
+    "hypothesis_layer_id": "H002",
+    "revision": 1,
+    "title": "H02｜Contact resistance 主導假說",
+    "hypothesis_claim_ref": "C201",
+    "problem_ref": "P201",
+    "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+    "mechanism_key": "contact_resistance",
+    "derived_from": {
+      "previous_layer_ref": "H001",
+      "discussion_refs": [
+        "DISC-H001"
+      ],
+      "decision_refs": [
+        "D101"
+      ],
+      "observation_refs": [
+        "E201"
+      ]
+    },
+    "fishbone_snapshot_ref": {
+      "fishbone_id": "FB001",
+      "revision": 2
+    },
+    "fishbone_focus_refs": [
+      "FB-ELECTRODE-CONTACT"
+    ],
+    "research_block_refs": [
+      "B201"
+    ],
+    "experiment_refs": [
+      "EXP201"
+    ],
+    "result_refs": [
+      "RES201"
+    ],
+    "experiment_order": [
+      "EXP201"
+    ],
+    "result_order": [
+      "RES201"
+    ],
+    "layer_discussion_ref": "DISC-H002",
+    "layer_summary_ref": "SUM-H002",
+    "layer_decision_ref": "D201",
+    "next_step_refs": [
+      "NS201"
+    ],
+    "transition_ref": null,
+    "story_visibility": "main",
+    "research_status": "supported",
+    "source_event_cursor": 26,
+    "created_at": "2026-08-27T00:00:00Z",
+    "updated_at": "2026-08-27T00:00:00Z"
+  },
+  "latest_fishbone_ref": {
+    "fishbone_id": "FB001",
+    "revision": 2
+  },
+  "previous_commitments": [
+    {
+      "action_item_id": "NS201",
+      "title": "High-pressure cycling durability",
+      "owner": "Gary",
+      "target_window": {
+        "start": "2026-09-11",
+        "due": "2026-09-24"
+      },
+      "dependencies": [
+        "cycling fixture"
+      ],
+      "parallelizable": true,
+      "status": "planned",
+      "source_event_cursor": 22
+    }
+  ]
+}

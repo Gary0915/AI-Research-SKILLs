@@ -1,0 +1,7 @@
+{
+  "aliases": {
+    "template_primary_1": "<local-path-to-template-1.pptx>",
+    "layout_exemplar_2": "<local-path-to-layout-2.pptx>",
+    "template_primary_3": "<local-path-to-template-3.pptx>"
+  }
+}

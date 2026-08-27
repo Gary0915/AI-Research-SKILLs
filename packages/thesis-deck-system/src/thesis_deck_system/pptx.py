@@ -17,6 +17,8 @@ import re
 from pptx import Presentation
 from pptx.util import Inches
 
+from .context import ProjectContext
+
 
 @dataclass(frozen=True)
 class AssemblyResult:
@@ -30,13 +32,20 @@ class PptxAssembler:
 
 
 class PythonPptxAssembler(PptxAssembler):
-    def assemble(self, template_path: Path, slide_specs: list[dict], output_path: Path, *, attach_svg: bool = True) -> AssemblyResult:
+    def assemble(self, template_path: Path, slide_specs: list[dict], output_path: Path, *, attach_svg: bool = True, project_context: ProjectContext | None = None) -> AssemblyResult:
         shutil.copy2(template_path, output_path)
         prs = Presentation(output_path)
         profile_path = template_path.with_name("template-profile.json")
         profile = json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.exists() else {"semantic_roles": {}}
         roles = profile.get("semantic_roles", {})
-        repo_root = template_path.parents[3]
+        if project_context is not None:
+            context = project_context
+        else:
+            try:
+                context = ProjectContext.discover(template_path)
+            except ValueError:
+                context = ProjectContext(Path(template_path).resolve().parent)
+        svg_placements = []
         for spec in slide_specs:
             role = roles.get(spec["native_layout_role"], {})
             if "layout_index" not in role: raise ValueError(f"unresolved semantic layout role: {spec['native_layout_role']}")
@@ -58,18 +67,18 @@ class PythonPptxAssembler(PptxAssembler):
                 body.text = "Result / Discussion\n" + content.get("discussion", "Partial support; control required.") + "\nDecision: " + content.get("decision", "Partial-Go") + "\nNext Step: " + content.get("next_step", "Run matched-position tracer control by 2026-09-02")
                 for paragraph in body.text_frame.paragraphs:
                     for run in paragraph.runs: run.font.size = __import__('pptx').util.Pt(16)
-                plot_path = spec["placements"][0]["asset_path"]; plot_path = str(repo_root / plot_path) if not Path(plot_path).is_absolute() else plot_path
+                plot_path = spec["placements"][0]["asset_path"]; plot_path = str(context.resolve_repo_path(plot_path)) if not Path(plot_path).is_absolute() else plot_path
                 try:
                     slide.shapes.add_picture(plot_path, Inches(5.3), Inches(1.7), width=Inches(7.2), height=Inches(4.0))
                 except Exception:
                     # python-pptx cannot decode SVG; retain the registered SVG in the package and use PNG only as compatibility preview.
                     slide.shapes.add_picture(str(Path(plot_path).with_suffix('.png')), Inches(5.3), Inches(1.7), width=Inches(7.2), height=Inches(4.0))
-            else:
+            elif spec["recipe"] == "photo_observation":
                 body = slide.shapes.add_textbox(Inches(.7), Inches(1.7), Inches(5.6), Inches(3.8))
                 body.text = content.get("observation", "Synthetic observation and problem statement") + "\n\n" + content.get("problem", "Position-dependent defects require mechanism discrimination.")
                 for paragraph in body.text_frame.paragraphs:
                     for run in paragraph.runs: run.font.size = __import__('pptx').util.Pt(18)
-                visual = content.get("observation_visual_path"); visual = str(repo_root / visual) if visual and not Path(visual).is_absolute() else visual
+                visual = content.get("observation_visual_path"); visual = str(context.resolve_repo_path(visual)) if visual and not Path(visual).is_absolute() else visual
                 if visual:
                     try: slide.shapes.add_picture(visual, Inches(6.6), Inches(1.6), width=Inches(5.8), height=Inches(3.3))
                     except Exception:
@@ -79,57 +88,107 @@ class PythonPptxAssembler(PptxAssembler):
                         if not preview.exists():
                             im=Image.new('RGB',(640,360),'#d9e5e8'); ImageDraw.Draw(im).text((30,160),'SYNTHETIC OBSERVATION',fill='#234'); im.save(preview)
                         slide.shapes.add_picture(str(preview), Inches(6.6), Inches(1.6), width=Inches(5.8), height=Inches(3.3))
+            else:
+                body = slide.shapes.add_textbox(Inches(.7), Inches(1.55), Inches(5.0), Inches(4.9))
+                body.text = content.get("body") or "\n".join(str(value) for value in content.values() if isinstance(value, (str, int, float)))
+                for paragraph in body.text_frame.paragraphs:
+                    for run in paragraph.runs:
+                        run.font.size = __import__('pptx').util.Pt(18)
+                for placement_index, placement in enumerate(spec.get("placements", [])):
+                    asset_path = placement.get("asset_path")
+                    if not asset_path:
+                        continue
+                    resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
+                    preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
+                    slide.shapes.add_picture(str(preview), Inches(5.7), Inches(1.55 + placement_index * 0.15), width=Inches(6.8), height=Inches(4.5))
             notes = slide.notes_slide.notes_text_frame
             source_refs = spec.get("speaker_notes", {}).get("source_refs", [])
             note_text = spec.get("speaker_notes", {}).get("text", "")
             notes.text = "[Sources]\n" + "\n".join(source_refs) + "\n[/Sources]\n" + note_text
+            picture_count = len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic'))
+            for placement in spec.get("placements", []):
+                asset_path = placement.get("asset_path", "")
+                if str(asset_path).lower().endswith(".svg"):
+                    svg_placements.append({
+                        "slide_part": slide.part.partname.lstrip("/"),
+                        "asset_id": placement["asset_id"],
+                        "svg_path": context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path),
+                        "picture_index": max(0, picture_count - 1),
+                    })
         prs.save(output_path)
-        # Preserve canonical vector source as an auditable package part.
-        svg_paths = [(repo_root / s["placements"][0]["asset_path"]) for s in slide_specs if s.get("recipe")=="hero_plot_discussion" and str(s["placements"][0].get("asset_path","")).endswith(".svg")]
-        if svg_paths and attach_svg:
-            tmp = output_path.with_suffix('.tmp.pptx'); shutil.copy2(output_path,tmp)
-            with zipfile.ZipFile(tmp,'r') as zin, zipfile.ZipFile(output_path,'w',zipfile.ZIP_DEFLATED) as zout:
-                for item in zin.infolist(): zout.writestr(item, zin.read(item.filename))
-                zout.writestr('ppt/media/plot-canonical.svg', svg_paths[0].read_bytes())
-            tmp.unlink()
-            _attach_svg_relationship(output_path)
+        if svg_placements and attach_svg:
+            _attach_svg_relationships(output_path, svg_placements)
         return AssemblyResult(output_path)
 
 
-def _attach_svg_relationship(path: Path) -> None:
-    """Attach the canonical SVG to the generated result slide XML, not as a detached part."""
+def _svg_media_name(asset_id: str) -> str:
+    return "plot-canonical.svg" if asset_id == "A001" else f"{re.sub(r'[^A-Za-z0-9_-]', '-', asset_id)}.svg"
+
+
+def _attach_svg_relationships(path: Path, placements: list[dict]) -> None:
+    """Attach every SVG to the exact generated slide/picture that owns it."""
     rel_ns="http://schemas.openxmlformats.org/package/2006/relationships"; r_ns="http://schemas.openxmlformats.org/officeDocument/2006/relationships"; p_ns="http://schemas.openxmlformats.org/presentationml/2006/main"; a_ns="http://schemas.openxmlformats.org/drawingml/2006/main"
     ET.register_namespace("r", r_ns); ET.register_namespace("p", p_ns); ET.register_namespace("a", a_ns)
     tmp=path.with_suffix('.svgbridge.pptx')
     with zipfile.ZipFile(path,'r') as zin, zipfile.ZipFile(tmp,'w',zipfile.ZIP_DEFLATED) as zout:
-        names=zin.namelist(); slide_name=sorted(n for n in names if n.startswith('ppt/slides/slide') and n.endswith('.xml'))[-1]; rel_name=slide_name.replace('ppt/slides/','ppt/slides/_rels/')+'.rels'; rid='rId99'
+        by_slide = {}
+        for placement in placements:
+            by_slide.setdefault(placement["slide_part"], []).append(dict(placement))
+        for slide_name, slide_placements in by_slide.items():
+            rel_name=slide_name.replace('ppt/slides/','ppt/slides/_rels/')+'.rels'
+            rel_root=ET.fromstring(zin.read(rel_name)); used={x.attrib.get('Id') for x in rel_root}; next_number=99
+            for placement in slide_placements:
+                rid=f'rId{next_number}'
+                while rid in used:
+                    next_number += 1; rid=f'rId{next_number}'
+                used.add(rid); next_number += 1; placement["relationship_id"] = rid
         for item in zin.infolist():
             data=zin.read(item.filename)
-            if item.filename == rel_name:
-                root=ET.fromstring(data); rid='rId99'; used={x.attrib.get('Id') for x in root}; i=1
-                while rid in used: i+=1; rid=f'rId{99+i}'
-                ET.SubElement(root,'{'+rel_ns+'}Relationship',{'Id':rid,'Type':'http://schemas.openxmlformats.org/officeDocument/2006/relationships/image','Target':'../media/plot-canonical.svg'}); data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
-            if item.filename == slide_name:
-                root=ET.fromstring(data); pics=root.findall('.//{'+p_ns+'}pic')
-                if pics:
-                    blips=pics[-1].findall('.//{'+a_ns+'}blip')
-                    if blips:
-                        extlst=ET.SubElement(blips[0],'{'+a_ns+'}extLst'); ext=ET.SubElement(extlst,'{'+a_ns+'}ext',{'uri':'{96DAC541-7B7A-43D3-8B79-37D633B846F1}'}); ET.SubElement(ext,'{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip',{'{'+r_ns+'}embed':rid}); data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
+            for slide_name, slide_placements in by_slide.items():
+                rel_name=slide_name.replace('ppt/slides/','ppt/slides/_rels/')+'.rels'
+                if item.filename == rel_name:
+                    root=ET.fromstring(data)
+                    for placement in slide_placements:
+                        ET.SubElement(root,'{'+rel_ns+'}Relationship',{'Id':placement['relationship_id'],'Type':'http://schemas.openxmlformats.org/officeDocument/2006/relationships/image','Target':'../media/'+_svg_media_name(placement['asset_id'])})
+                    data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
+                if item.filename == slide_name:
+                    root=ET.fromstring(data); pics=root.findall('.//{'+p_ns+'}pic')
+                    for placement in slide_placements:
+                        if not pics: continue
+                        index=min(placement.get('picture_index',len(pics)-1),len(pics)-1); blips=pics[index].findall('.//{'+a_ns+'}blip')
+                        if blips:
+                            extlst=ET.SubElement(blips[0],'{'+a_ns+'}extLst'); ext=ET.SubElement(extlst,'{'+a_ns+'}ext',{'uri':'{96DAC541-7B7A-43D3-8B79-37D633B846F1}'}); ET.SubElement(ext,'{http://schemas.microsoft.com/office/drawing/2016/SVG/main}svgBlip',{'{'+r_ns+'}embed':placement['relationship_id']})
+                    data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
             if item.filename == '[Content_Types].xml':
                 root=ET.fromstring(data); defaults=[x.attrib.get('Extension') for x in root];
                 if 'svg' not in defaults: root.insert(0,ET.Element('{http://schemas.openxmlformats.org/package/2006/content-types}Default',{'Extension':'svg','ContentType':'image/svg+xml'})); data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
             zout.writestr(item,data)
+        written_media = set()
+        for placement in placements:
+            media_part = 'ppt/media/'+_svg_media_name(placement['asset_id'])
+            if media_part in written_media:
+                continue
+            written_media.add(media_part)
+            zout.writestr(media_part, Path(placement['svg_path']).read_bytes())
     tmp.replace(path)
+
+
+def _attach_svg_relationship(path: Path) -> None:
+    """Backward-compatible helper for the original bounded A001 fixture."""
+    with zipfile.ZipFile(path) as archive:
+        slide_name=sorted(n for n in archive.namelist() if n.startswith('ppt/slides/slide') and n.endswith('.xml'))[-1]
+    _attach_svg_relationships(path,[{"slide_part":slide_name,"asset_id":"A001","svg_path":path.parent/'plots/B001_defect_density.svg',"picture_index":0}])
 
 def make_render_compat_copy(source: Path, output: Path) -> Path:
     """Create renderer-only PNG-fallback copy when LibreOffice cannot parse Office SVG extensions."""
     shutil.copy2(source,output); tmp=output.with_suffix('.tmp.pptx'); r_ns="http://schemas.openxmlformats.org/officeDocument/2006/relationships"; a_ns="http://schemas.openxmlformats.org/drawingml/2006/main"
     with zipfile.ZipFile(output,'r') as zin, zipfile.ZipFile(tmp,'w',zipfile.ZIP_DEFLATED) as zout:
+        svg_media={item.filename.rsplit('/',1)[-1] for item in zin.infolist() if item.filename.startswith('ppt/media/') and item.filename.endswith('.svg')}
         for item in zin.infolist():
-            if item.filename=='ppt/media/plot-canonical.svg': continue
+            if item.filename.startswith('ppt/media/') and item.filename.endswith('.svg'): continue
             data=zin.read(item.filename)
             if item.filename.endswith('.rels'):
-                root=ET.fromstring(data); [root.remove(x) for x in list(root) if x.attrib.get('Target','').endswith('plot-canonical.svg')]; data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
+                root=ET.fromstring(data); [root.remove(x) for x in list(root) if x.attrib.get('Target','').rsplit('/',1)[-1] in svg_media]; data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
             if item.filename=='[Content_Types].xml':
                 root=ET.fromstring(data); [root.remove(x) for x in list(root) if x.attrib.get('Extension')=='svg']; data=ET.tostring(root,encoding='utf-8',xml_declaration=True)
             if item.filename.startswith('ppt/slides/slide') and item.filename.endswith('.xml'):
@@ -198,6 +257,15 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
             actual_layout_path = slide.slide_layout.part.partname.lstrip("/")
             actual_master_path = slide.slide_layout.slide_master.part.partname.lstrip("/")
             actual_layout_index = next(index for index, layout in enumerate(prs.slide_layouts) if layout.part.partname == slide.slide_layout.part.partname)
+            expected_svg_assets = {
+                placement.get("asset_id"): _svg_media_name(placement.get("asset_id", "SVG"))
+                for placement in spec.get("placements", []) if str(placement.get("asset_path", "")).lower().endswith(".svg")
+            }
+            svg_asset_relationships = []
+            for asset_id, media_name in expected_svg_assets.items():
+                for relationship in relation.get("svg_relationships", []):
+                    if relationship.get("target", "").endswith("/" + media_name):
+                        svg_asset_relationships.append({**relationship, "asset_id": asset_id})
             generated_slides.append({
                 "slide_spec_id": spec["slide_id"],
                 "generated_slide_id": slide.slide_id,
@@ -217,6 +285,10 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
                 "expected_note_source_refs": expected_refs,
                 "notes_source_match": note_source_refs == expected_refs,
                 "media_refs": [item for item in relation["relationships"] if item["target"].startswith("ppt/media/")],
+                "svg_asset_relationships": svg_asset_relationships,
                 "editable_text": any(shape.has_text_frame and shape.text for shape in slide.shapes),
             })
-    return {"slide_count": len(prs.slides), "slide_xml_count": len(slide_names), "has_editable_text": any(shape.has_text_frame and shape.text for slide in prs.slides for shape in slide.shapes), "editable_text_per_slide":[any(shape.has_text_frame and shape.text for shape in slide.shapes) for slide in prs.slides], "orphan_parts": orphan_parts, "xml_parts": len(xml_names), "masters": len(prs.slide_masters), "layouts": len(prs.slide_layouts), "content_types_present": "[Content_Types].xml" in names, "unique_slide_ids": len(slide_ids) == len(set(slide_ids)), "slide_order": slide_ids, "media_parts": media, "notes_parts": sorted(n for n in names if n.startswith("ppt/notesSlides/")), "full_slide_raster_substitution": False, "vector_media_used": any(x["svg_relationships"] for x in slide_relationships), "result_slide_svg_relationship": slide_relationships[-1]["svg_relationships"] if slide_relationships else [], "slide_relationships":slide_relationships, "generated_slides": generated_slides, "relationship_targets_checked": len(relationships), "source_template_sha256_before": source_before, "source_template_sha256_after": source_after, "generated_pptx_sha256": generated_hash, "source_template_unchanged": source_before is not None and source_before == source_after}
+    result_svg = [relationship for generated in generated_slides for relationship in generated.get("svg_asset_relationships", [])]
+    if not specs:
+        result_svg = [relationship for slide in slide_relationships for relationship in slide.get("svg_relationships", [])]
+    return {"slide_count": len(prs.slides), "slide_xml_count": len(slide_names), "has_editable_text": any(shape.has_text_frame and shape.text for slide in prs.slides for shape in slide.shapes), "editable_text_per_slide":[any(shape.has_text_frame and shape.text for shape in slide.shapes) for slide in prs.slides], "orphan_parts": orphan_parts, "xml_parts": len(xml_names), "masters": len(prs.slide_masters), "layouts": len(prs.slide_layouts), "content_types_present": "[Content_Types].xml" in names, "unique_slide_ids": len(slide_ids) == len(set(slide_ids)), "slide_order": slide_ids, "media_parts": media, "notes_parts": sorted(n for n in names if n.startswith("ppt/notesSlides/")), "full_slide_raster_substitution": False, "vector_media_used": any(x["svg_relationships"] for x in slide_relationships), "result_slide_svg_relationship": result_svg, "slide_relationships":slide_relationships, "generated_slides": generated_slides, "relationship_targets_checked": len(relationships), "source_template_sha256_before": source_before, "source_template_sha256_after": source_after, "generated_pptx_sha256": generated_hash, "source_template_unchanged": source_before is not None and source_before == source_after}

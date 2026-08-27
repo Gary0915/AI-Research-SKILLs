@@ -1,0 +1,751 @@
+[
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-PHASE2-PROGRESS-01",
+    "slide_id": "S-PHASE2-PROGRESS-01",
+    "selected_archetype": "A17",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "previous_commitments",
+      "parallel_work"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping progress_todo → A17",
+    "source_event_cursor": 26,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-HYPOTHESIS-TITLE-01",
+    "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+    "selected_archetype": "A01",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 24
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "hypothesis_exists",
+      "question_before_data"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping hypothesis_title → A01",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-PROBLEM-DEFINITION-02",
+    "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+    "selected_archetype": "A02",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 18
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "problem_separate",
+      "research_question_visible"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [
+      "text_over_budget"
+    ],
+    "density_estimate": "over_budget",
+    "split_recommendation": true,
+    "rationale": "Deterministic semantic-role mapping problem_definition → A02",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-FISHBONE-LOCATOR-03",
+    "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+    "selected_archetype": "A03",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "fishbone_required",
+      "historical_revision_exact"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [
+      "text_over_budget"
+    ],
+    "density_estimate": "over_budget",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping fishbone_locator → A03",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-OBSERVATION-PROBLEM-04",
+    "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+    "selected_archetype": "A04",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "observation_before_mechanism"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [
+      "text_over_budget"
+    ],
+    "density_estimate": "over_budget",
+    "split_recommendation": true,
+    "rationale": "Deterministic semantic-role mapping observation_problem → A04",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-LITERATURE-MECHANISM-05",
+    "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+    "selected_archetype": "A05",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "literature_synthesis",
+      "mechanism_follows_evidence"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping literature_mechanism → A05",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-EXPERIMENT-DESIGN-06",
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+    "selected_archetype": "A09",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "experiment_metadata_complete"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [
+      "text_over_budget"
+    ],
+    "density_estimate": "over_budget",
+    "split_recommendation": true,
+    "rationale": "Deterministic semantic-role mapping experiment_design → A09",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-RESULT-COMPARISON-08",
+    "slide_id": "S-H001-RESULT-COMPARISON-08",
+    "selected_archetype": "A11",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "fair_comparison"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping result_comparison → A11",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-RESULT-COMPARISON-09",
+    "slide_id": "S-H001-RESULT-COMPARISON-09",
+    "selected_archetype": "A11",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "fair_comparison"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping result_comparison → A11",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-LAYER-INTEGRATED-DISCUSSION-10",
+    "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+    "selected_archetype": "A14",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "all_results_before_discussion",
+      "cross_experiment_synthesis"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping layer_integrated_discussion → A14",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-LAYER-SUMMARY-DECISION-11",
+    "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+    "selected_archetype": "A15",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "hypothesis_status_required",
+      "decision_required",
+      "remaining_uncertainty_required"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [
+      "text_over_budget"
+    ],
+    "density_estimate": "over_budget",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping layer_summary_decision → A15",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-HYPOTHESIS-TRANSITION-12",
+    "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+    "selected_archetype": "A16",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "transition_provenance"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping hypothesis_transition → A16",
+    "source_event_cursor": 14,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H002-HYPOTHESIS-TITLE-01",
+    "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+    "selected_archetype": "A01",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 24
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "hypothesis_exists",
+      "question_before_data"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping hypothesis_title → A01",
+    "source_event_cursor": 26,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H002-PROBLEM-DEFINITION-02",
+    "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+    "selected_archetype": "A02",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 18
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "problem_separate",
+      "research_question_visible"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [
+      "text_over_budget"
+    ],
+    "density_estimate": "over_budget",
+    "split_recommendation": true,
+    "rationale": "Deterministic semantic-role mapping problem_definition → A02",
+    "source_event_cursor": 26,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H002-FISHBONE-LOCATOR-03",
+    "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+    "selected_archetype": "A03",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "fishbone_required",
+      "historical_revision_exact"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [
+      "text_over_budget"
+    ],
+    "density_estimate": "over_budget",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping fishbone_locator → A03",
+    "source_event_cursor": 26,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H002-OBSERVATION-PROBLEM-04",
+    "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+    "selected_archetype": "A04",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "observation_before_mechanism"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [
+      "text_over_budget"
+    ],
+    "density_estimate": "over_budget",
+    "split_recommendation": true,
+    "rationale": "Deterministic semantic-role mapping observation_problem → A04",
+    "source_event_cursor": 26,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H002-EXPERIMENT-DESIGN-06",
+    "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+    "selected_archetype": "A11",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "fair_comparison"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping result_comparison → A11",
+    "source_event_cursor": 26,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H002-LAYER-SUMMARY-DECISION-09",
+    "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+    "selected_archetype": "A15",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
+    },
+    "placement_plan": [
+      {
+        "slot": "content",
+        "left": 0.7,
+        "top": 1.45,
+        "width": 12.0,
+        "height": 5.25,
+        "z_order": 1,
+        "element_role": "scientific_content",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "hypothesis_status_required",
+      "decision_required",
+      "remaining_uncertainty_required"
+    ],
+    "candidate_alternatives": [],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "rationale": "Deterministic semantic-role mapping layer_summary_decision → A15",
+    "source_event_cursor": 26,
+    "created_at": "2026-08-27T00:00:00Z"
+  }
+]

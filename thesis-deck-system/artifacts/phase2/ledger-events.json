@@ -1,0 +1,758 @@
+[
+  {
+    "cursor": 1,
+    "event_type": "fishbone_created",
+    "payload": {
+      "schema_version": "2.0.0",
+      "fishbone_id": "FB001",
+      "revision": 1,
+      "supersedes_revision": null,
+      "branches": [
+        {
+          "branch_id": "FB-MATERIAL",
+          "label": "材料",
+          "parent_ref": null,
+          "status": "completed"
+        },
+        {
+          "branch_id": "FB-MATERIAL-HYDRATION",
+          "label": "含水量",
+          "parent_ref": "FB-MATERIAL",
+          "status": "current"
+        },
+        {
+          "branch_id": "FB-ELECTRODE",
+          "label": "電極",
+          "parent_ref": null,
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-ELECTRODE-GEOMETRY",
+          "label": "幾何",
+          "parent_ref": "FB-ELECTRODE",
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-MEASUREMENT",
+          "label": "量測",
+          "parent_ref": null,
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-SYSTEM",
+          "label": "系統",
+          "parent_ref": null,
+          "status": "future"
+        }
+      ],
+      "linked_hypothesis_layers": [
+        "H001"
+      ],
+      "rationale": "初始研究地圖先檢驗 bulk conductivity 與含水量分布。",
+      "source_event_cursor": 1,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": null,
+    "event_hash": "0f050c72bca9a08eef406dec348fa753bce8eea49e1e74d3b9e5b1318392d564"
+  },
+  {
+    "cursor": 2,
+    "event_type": "claim_created",
+    "payload": {
+      "claim_id": "C101",
+      "revision": 1,
+      "claim_type": "hypothesis",
+      "text": "Bulk conductivity dominates positional instability.",
+      "source_event_cursor": 2
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "0f050c72bca9a08eef406dec348fa753bce8eea49e1e74d3b9e5b1318392d564",
+    "event_hash": "4c37c60e9bf097c1f3d20327652acaa61265024d6a0a539bdf3240007a9b317d"
+  },
+  {
+    "cursor": 3,
+    "event_type": "problem_created",
+    "payload": {
+      "schema_version": "2.0.0",
+      "problem_id": "P101",
+      "hypothesis_layer_ref": "H001",
+      "problem_statement": "合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。",
+      "previous_findings": [
+        "含水量與導電度存在位置梯度"
+      ],
+      "unresolved_conflict": "導電度提高是否足以修復重複性仍未知。",
+      "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "derived_from_decision_refs": [],
+      "scope": "合成五個位置、每個位置三個 replicate 的機制辨識。",
+      "source_event_cursor": 3,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "4c37c60e9bf097c1f3d20327652acaa61265024d6a0a539bdf3240007a9b317d",
+    "event_hash": "4cf11eda6ab609dfe031fa5f330fc6a20394fff497e9b306e6297741a1c905f7"
+  },
+  {
+    "cursor": 4,
+    "event_type": "evidence_linked",
+    "payload": {
+      "evidence_id": "E101",
+      "kind": "synthetic_measurement",
+      "source_event_cursor": 4
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "4cf11eda6ab609dfe031fa5f330fc6a20394fff497e9b306e6297741a1c905f7",
+    "event_hash": "ef60d24bbfd72b5d236041690fe45536fcea16b1b5ade7da636adb0ac8bc8d47"
+  },
+  {
+    "cursor": 5,
+    "event_type": "evidence_linked",
+    "payload": {
+      "evidence_id": "E102",
+      "kind": "synthetic_measurement",
+      "source_event_cursor": 5
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "ef60d24bbfd72b5d236041690fe45536fcea16b1b5ade7da636adb0ac8bc8d47",
+    "event_hash": "d29fa868455864de1424531d3c0e9a90fbed79af74d312c5fc8d973cd111601f"
+  },
+  {
+    "cursor": 6,
+    "event_type": "layer_discussion_recorded",
+    "payload": {
+      "schema_version": "2.0.0",
+      "discussion_id": "DISC-H001",
+      "hypothesis_layer_ref": "H001",
+      "supporting_results": [
+        "RES101"
+      ],
+      "contradicting_results": [
+        "RES102"
+      ],
+      "non_discriminating_results": [],
+      "cross_experiment_pattern": "導電度提升成立，但重複性沒有同步改善。",
+      "mechanism_assessment": "bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
+      "alternative_explanations": [
+        "接觸電阻",
+        "局部壓力差",
+        "電極幾何"
+      ],
+      "remaining_uncertainty": "contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+      "hypothesis_status": "partial_support",
+      "decision_ref": "D101",
+      "next_step_refs": [
+        "NS101"
+      ],
+      "source_event_cursor": 6,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "d29fa868455864de1424531d3c0e9a90fbed79af74d312c5fc8d973cd111601f",
+    "event_hash": "422a132151f39522a5dfd0fbd10e70aa81bde6a3659cdba7bad0b15344b1e38b"
+  },
+  {
+    "cursor": 7,
+    "event_type": "decision_recorded",
+    "payload": {
+      "decision_id": "D101",
+      "choice": "Partial-Go",
+      "rationale": "Bulk conductivity is contributory but insufficient.",
+      "source_event_cursor": 7
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "422a132151f39522a5dfd0fbd10e70aa81bde6a3659cdba7bad0b15344b1e38b",
+    "event_hash": "73d8a6a211a7e690fcf36e65e638550b81aa1835d31abfed7b9f713712d543be"
+  },
+  {
+    "cursor": 8,
+    "event_type": "action_committed",
+    "payload": {
+      "action_item_id": "NS101",
+      "title": "Matched-conductivity contact-pressure test",
+      "owner": "Gary",
+      "target_window": {
+        "start": "2026-09-01",
+        "due": "2026-09-10"
+      },
+      "dependencies": [
+        "pressure fixture"
+      ],
+      "parallelizable": true,
+      "status": "done",
+      "source_event_cursor": 8
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "73d8a6a211a7e690fcf36e65e638550b81aa1835d31abfed7b9f713712d543be",
+    "event_hash": "64032528fb88adc5050fb2a789db846d334f53882e7eba933d502e9a0dc6fae6"
+  },
+  {
+    "cursor": 9,
+    "event_type": "layer_summary_recorded",
+    "payload": {
+      "schema_version": "2.0.0",
+      "summary_id": "SUM-H001",
+      "hypothesis_layer_ref": "H001",
+      "answered": "bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
+      "supporting_evidence_refs": [
+        "E101",
+        "RES101",
+        "RES102"
+      ],
+      "remaining_unresolved": "interface contact 的貢獻尚未量化。",
+      "hypothesis_status": "partial_support",
+      "decision_ref": "D101",
+      "next_question": "匹配 bulk conductivity 後，contact resistance 是否主導變異？",
+      "next_step_refs": [
+        "NS101"
+      ],
+      "source_event_cursor": 9,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "64032528fb88adc5050fb2a789db846d334f53882e7eba933d502e9a0dc6fae6",
+    "event_hash": "24d115421415029937356d50bb62b7b59026118ca2688ddd81a36d682e6b0cda"
+  },
+  {
+    "cursor": 10,
+    "event_type": "stage_revised",
+    "payload": {
+      "stage_id": "EXP101",
+      "stage_type": "experiment",
+      "data": {
+        "title": "提升含水量以提高 bulk conductivity",
+        "independent_variables": [
+          "含水量"
+        ],
+        "controlled_variables": [
+          "電極幾何",
+          "接觸壓力"
+        ],
+        "controls_baselines": [
+          "原始配方"
+        ],
+        "sample_replicates": "n=3 per position",
+        "measured_outputs_metrics": [
+          "導電度"
+        ],
+        "units": [
+          "mS/cm"
+        ],
+        "instrumentation_method_refs": [
+          "synthetic-four-probe"
+        ],
+        "predicted_outcomes": [
+          "導電度提升"
+        ],
+        "decision_rule": "Go if mean conductivity increases ≥20%"
+      },
+      "source_event_cursor": 10
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "24d115421415029937356d50bb62b7b59026118ca2688ddd81a36d682e6b0cda",
+    "event_hash": "5c23d493dc70e0c8f1064adee6ea371252c2a4f2059233988efefb318e20b36b"
+  },
+  {
+    "cursor": 11,
+    "event_type": "stage_revised",
+    "payload": {
+      "stage_id": "EXP102",
+      "stage_type": "experiment",
+      "data": {
+        "title": "檢查導電度改善是否同步改善重複性",
+        "independent_variables": [
+          "位置"
+        ],
+        "controlled_variables": [
+          "配方",
+          "電極",
+          "接觸壓力"
+        ],
+        "controls_baselines": [
+          "原始位置分布"
+        ],
+        "sample_replicates": "n=3 per position",
+        "measured_outputs_metrics": [
+          "訊號 CV"
+        ],
+        "units": [
+          "percent"
+        ],
+        "instrumentation_method_refs": [
+          "synthetic-signal-test"
+        ],
+        "predicted_outcomes": [
+          "CV 下降"
+        ],
+        "decision_rule": "Go if CV decreases ≥30%; Partial-Go if 10–30%; No-Go otherwise"
+      },
+      "source_event_cursor": 11
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "5c23d493dc70e0c8f1064adee6ea371252c2a4f2059233988efefb318e20b36b",
+    "event_hash": "c2cba9b2e93d83bc4f0ad9ea73c5df9bd131d12b9338aeca39e407646250e997"
+  },
+  {
+    "cursor": 12,
+    "event_type": "stage_revised",
+    "payload": {
+      "stage_id": "RES101",
+      "stage_type": "result",
+      "data": {
+        "title": "導電度提升",
+        "experiment_ref": "EXP101",
+        "finding": "平均導電度增加 24% ± 5% SD",
+        "evidence_refs": [
+          "E101"
+        ],
+        "asset_ref": "A001"
+      },
+      "source_event_cursor": 12
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "c2cba9b2e93d83bc4f0ad9ea73c5df9bd131d12b9338aeca39e407646250e997",
+    "event_hash": "5654ca2e2f47d50a29150eab6cd98e743ff6023097e2e3cb6ecf6d01d19a96b5"
+  },
+  {
+    "cursor": 13,
+    "event_type": "stage_revised",
+    "payload": {
+      "stage_id": "RES102",
+      "stage_type": "result",
+      "data": {
+        "title": "重複性未同步改善",
+        "experiment_ref": "EXP102",
+        "finding": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+        "evidence_refs": [
+          "E102"
+        ],
+        "asset_ref": "A001"
+      },
+      "source_event_cursor": 13
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "5654ca2e2f47d50a29150eab6cd98e743ff6023097e2e3cb6ecf6d01d19a96b5",
+    "event_hash": "fe717e6b6f8acc6dfec38b97c99da2ef4ce9093fc99b4b998df20c6bd0ea399c"
+  },
+  {
+    "cursor": 14,
+    "event_type": "hypothesis_layer_created",
+    "payload": {
+      "schema_version": "2.0.0",
+      "hypothesis_layer_id": "H001",
+      "revision": 1,
+      "title": "H01｜Bulk conductivity 主導假說",
+      "hypothesis_claim_ref": "C101",
+      "problem_ref": "P101",
+      "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+      "mechanism_key": "bulk_conductivity",
+      "derived_from": null,
+      "fishbone_snapshot_ref": {
+        "fishbone_id": "FB001",
+        "revision": 1
+      },
+      "fishbone_focus_refs": [
+        "FB-MATERIAL-HYDRATION"
+      ],
+      "research_block_refs": [
+        "B101"
+      ],
+      "experiment_refs": [
+        "EXP101",
+        "EXP102"
+      ],
+      "result_refs": [
+        "RES101",
+        "RES102"
+      ],
+      "experiment_order": [
+        "EXP101",
+        "EXP102"
+      ],
+      "result_order": [
+        "RES101",
+        "RES102"
+      ],
+      "layer_discussion_ref": "DISC-H001",
+      "layer_summary_ref": "SUM-H001",
+      "layer_decision_ref": "D101",
+      "next_step_refs": [
+        "NS101"
+      ],
+      "transition_ref": "TR-H001-H002",
+      "story_visibility": "main",
+      "research_status": "partial_support",
+      "source_event_cursor": 14,
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "fe717e6b6f8acc6dfec38b97c99da2ef4ce9093fc99b4b998df20c6bd0ea399c",
+    "event_hash": "743c59142d21a410d160d744c87422500e080d0d58a8b29f1e744d0bf56b8476"
+  },
+  {
+    "cursor": 15,
+    "event_type": "fishbone_revised",
+    "payload": {
+      "schema_version": "2.0.0",
+      "fishbone_id": "FB001",
+      "revision": 2,
+      "supersedes_revision": 1,
+      "branches": [
+        {
+          "branch_id": "FB-MATERIAL",
+          "label": "材料",
+          "parent_ref": null,
+          "status": "completed"
+        },
+        {
+          "branch_id": "FB-MATERIAL-HYDRATION",
+          "label": "含水量",
+          "parent_ref": "FB-MATERIAL",
+          "status": "partial"
+        },
+        {
+          "branch_id": "FB-ELECTRODE",
+          "label": "電極",
+          "parent_ref": null,
+          "status": "current"
+        },
+        {
+          "branch_id": "FB-ELECTRODE-GEOMETRY",
+          "label": "幾何",
+          "parent_ref": "FB-ELECTRODE",
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-ELECTRODE-CONTACT",
+          "label": "接觸電阻",
+          "parent_ref": "FB-ELECTRODE",
+          "status": "current"
+        },
+        {
+          "branch_id": "FB-MEASUREMENT",
+          "label": "量測",
+          "parent_ref": null,
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-SYSTEM",
+          "label": "系統",
+          "parent_ref": null,
+          "status": "future"
+        }
+      ],
+      "linked_hypothesis_layers": [
+        "H002"
+      ],
+      "rationale": "H01 改善導電度但未改善重複性，因此加入穩定 branch ID 的 electrode-contact 分支。",
+      "source_event_cursor": 15,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "743c59142d21a410d160d744c87422500e080d0d58a8b29f1e744d0bf56b8476",
+    "event_hash": "2ca1b629149f8d5c0ccd8fa27a1c9e8a1fd2c80713d163d5257154069045b16b"
+  },
+  {
+    "cursor": 16,
+    "event_type": "claim_created",
+    "payload": {
+      "claim_id": "C201",
+      "revision": 1,
+      "claim_type": "hypothesis",
+      "text": "Contact resistance dominates instability under low contact pressure.",
+      "source_event_cursor": 16
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "2ca1b629149f8d5c0ccd8fa27a1c9e8a1fd2c80713d163d5257154069045b16b",
+    "event_hash": "15078fe40eb5fadf5984e88ffdb4bb7d2095343872130b023e98cecfd8793e49"
+  },
+  {
+    "cursor": 17,
+    "event_type": "problem_created",
+    "payload": {
+      "schema_version": "2.0.0",
+      "problem_id": "P201",
+      "hypothesis_layer_ref": "H002",
+      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
+      "previous_findings": [
+        "H01 支持導電度梯度存在",
+        "H01 未支持導電度單獨主導重複性"
+      ],
+      "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
+      "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+      "evidence_refs": [
+        "E201"
+      ],
+      "derived_from_decision_refs": [
+        "D101"
+      ],
+      "scope": "匹配 bulk conductivity，改變 contact pressure 的對照實驗。",
+      "source_event_cursor": 17,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "15078fe40eb5fadf5984e88ffdb4bb7d2095343872130b023e98cecfd8793e49",
+    "event_hash": "09432a4f8834df057c7635603b1a25e95fd583f687988617b0dd31b37353aa55"
+  },
+  {
+    "cursor": 18,
+    "event_type": "evidence_linked",
+    "payload": {
+      "evidence_id": "E201",
+      "kind": "synthetic_measurement",
+      "source_event_cursor": 18
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "09432a4f8834df057c7635603b1a25e95fd583f687988617b0dd31b37353aa55",
+    "event_hash": "d90afb64fdbc97862a7a9b04d66f31fc7385c2ab0f08cc73ca9ecb8ba0773bc2"
+  },
+  {
+    "cursor": 19,
+    "event_type": "hypothesis_transition_recorded",
+    "payload": {
+      "schema_version": "2.0.0",
+      "transition_id": "TR-H001-H002",
+      "from_layer_ref": "H001",
+      "to_layer_ref": "H002",
+      "previous_hypothesis_claim_ref": "C101",
+      "key_result_refs": [
+        "RES101",
+        "RES102"
+      ],
+      "unexplained": "導電度增加後訊號重複性沒有改善。",
+      "observation_or_uncertainty_refs": [
+        "E201"
+      ],
+      "rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+      "new_hypothesis_claim_ref": "C201",
+      "decision_refs": [
+        "D101"
+      ],
+      "source_event_cursor": 19,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "d90afb64fdbc97862a7a9b04d66f31fc7385c2ab0f08cc73ca9ecb8ba0773bc2",
+    "event_hash": "e7b3b0bf2d2f35b67bf736611e6478a7a0e49b4564f205f479f59fd31aa14668"
+  },
+  {
+    "cursor": 20,
+    "event_type": "layer_discussion_recorded",
+    "payload": {
+      "schema_version": "2.0.0",
+      "discussion_id": "DISC-H002",
+      "hypothesis_layer_ref": "H002",
+      "supporting_results": [
+        "RES201"
+      ],
+      "contradicting_results": [],
+      "non_discriminating_results": [],
+      "cross_experiment_pattern": "匹配導電度後，提高接觸壓力明顯降低變異。",
+      "mechanism_assessment": "contact resistance 在低壓條件下主導不穩定。",
+      "alternative_explanations": [
+        "電極幾何仍可能調節壓力分布"
+      ],
+      "remaining_uncertainty": "高壓長期循環是否造成新的 wear mechanism 尚未知。",
+      "hypothesis_status": "supported",
+      "decision_ref": "D201",
+      "next_step_refs": [
+        "NS201"
+      ],
+      "source_event_cursor": 20,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "e7b3b0bf2d2f35b67bf736611e6478a7a0e49b4564f205f479f59fd31aa14668",
+    "event_hash": "6404f292b433821b1a0beaf5941e93007f26404efdb026d6b1771b08ec04936d"
+  },
+  {
+    "cursor": 21,
+    "event_type": "decision_recorded",
+    "payload": {
+      "decision_id": "D201",
+      "choice": "Go",
+      "rationale": "Contact-pressure control discriminates the interface mechanism.",
+      "source_event_cursor": 21
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "6404f292b433821b1a0beaf5941e93007f26404efdb026d6b1771b08ec04936d",
+    "event_hash": "f116868190ee1559fa18bd04027ce54eddb573c02347b349aa7958dc6231a7c4"
+  },
+  {
+    "cursor": 22,
+    "event_type": "action_committed",
+    "payload": {
+      "action_item_id": "NS201",
+      "title": "High-pressure cycling durability",
+      "owner": "Gary",
+      "target_window": {
+        "start": "2026-09-11",
+        "due": "2026-09-24"
+      },
+      "dependencies": [
+        "cycling fixture"
+      ],
+      "parallelizable": true,
+      "status": "planned",
+      "source_event_cursor": 22
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "f116868190ee1559fa18bd04027ce54eddb573c02347b349aa7958dc6231a7c4",
+    "event_hash": "4f78d01350980f923130dfd25ca0565a37b37f2394320a7ced7f5d90bc8d4b79"
+  },
+  {
+    "cursor": 23,
+    "event_type": "layer_summary_recorded",
+    "payload": {
+      "schema_version": "2.0.0",
+      "summary_id": "SUM-H002",
+      "hypothesis_layer_ref": "H002",
+      "answered": "低接觸壓力下 contact resistance 是主導不穩定來源。",
+      "supporting_evidence_refs": [
+        "E201",
+        "RES201"
+      ],
+      "remaining_unresolved": "高壓循環的耐久性與 wear 尚未測試。",
+      "hypothesis_status": "supported",
+      "decision_ref": "D201",
+      "next_question": "接觸壓力改善能否在長期循環下維持？",
+      "next_step_refs": [
+        "NS201"
+      ],
+      "source_event_cursor": 23,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "4f78d01350980f923130dfd25ca0565a37b37f2394320a7ced7f5d90bc8d4b79",
+    "event_hash": "47e7cd73985cc1eba7f464eeb0341367eb37248c4eb829d04c24beba574f2fa5"
+  },
+  {
+    "cursor": 24,
+    "event_type": "stage_revised",
+    "payload": {
+      "stage_id": "EXP201",
+      "stage_type": "experiment",
+      "data": {
+        "title": "匹配導電度後改變 contact pressure",
+        "independent_variables": [
+          "contact pressure"
+        ],
+        "controlled_variables": [
+          "bulk conductivity",
+          "電極幾何"
+        ],
+        "controls_baselines": [
+          "low-pressure control"
+        ],
+        "sample_replicates": "n=5 per pressure",
+        "measured_outputs_metrics": [
+          "訊號 CV",
+          "contact resistance"
+        ],
+        "units": [
+          "percent",
+          "ohm"
+        ],
+        "instrumentation_method_refs": [
+          "synthetic-pressure-fixture"
+        ],
+        "predicted_outcomes": [
+          "壓力增加時 CV 與 contact resistance 同步下降"
+        ],
+        "decision_rule": "Go if both metrics improve and effect exceeds uncertainty"
+      },
+      "source_event_cursor": 24
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "47e7cd73985cc1eba7f464eeb0341367eb37248c4eb829d04c24beba574f2fa5",
+    "event_hash": "3fded1ec1855aef3e7f0b9d853def2a4f39b050e7152e838dc48299bf8577f0b"
+  },
+  {
+    "cursor": 25,
+    "event_type": "stage_revised",
+    "payload": {
+      "stage_id": "RES201",
+      "stage_type": "result",
+      "data": {
+        "title": "接觸壓力降低變異",
+        "experiment_ref": "EXP201",
+        "finding": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+        "evidence_refs": [
+          "E201"
+        ],
+        "asset_ref": "A001"
+      },
+      "source_event_cursor": 25
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "3fded1ec1855aef3e7f0b9d853def2a4f39b050e7152e838dc48299bf8577f0b",
+    "event_hash": "3463789f13585e4f3cbf0e2055065299320d689acea28a81cef77d75c2b59c41"
+  },
+  {
+    "cursor": 26,
+    "event_type": "hypothesis_layer_created",
+    "payload": {
+      "schema_version": "2.0.0",
+      "hypothesis_layer_id": "H002",
+      "revision": 1,
+      "title": "H02｜Contact resistance 主導假說",
+      "hypothesis_claim_ref": "C201",
+      "problem_ref": "P201",
+      "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+      "mechanism_key": "contact_resistance",
+      "derived_from": {
+        "previous_layer_ref": "H001",
+        "discussion_refs": [
+          "DISC-H001"
+        ],
+        "decision_refs": [
+          "D101"
+        ],
+        "observation_refs": [
+          "E201"
+        ]
+      },
+      "fishbone_snapshot_ref": {
+        "fishbone_id": "FB001",
+        "revision": 2
+      },
+      "fishbone_focus_refs": [
+        "FB-ELECTRODE-CONTACT"
+      ],
+      "research_block_refs": [
+        "B201"
+      ],
+      "experiment_refs": [
+        "EXP201"
+      ],
+      "result_refs": [
+        "RES201"
+      ],
+      "experiment_order": [
+        "EXP201"
+      ],
+      "result_order": [
+        "RES201"
+      ],
+      "layer_discussion_ref": "DISC-H002",
+      "layer_summary_ref": "SUM-H002",
+      "layer_decision_ref": "D201",
+      "next_step_refs": [
+        "NS201"
+      ],
+      "transition_ref": null,
+      "story_visibility": "main",
+      "research_status": "supported",
+      "source_event_cursor": 26,
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "timestamp": "2026-08-27T08:51:32Z",
+    "previous_hash": "3463789f13585e4f3cbf0e2055065299320d689acea28a81cef77d75c2b59c41",
+    "event_hash": "39a1d342aaf27773791857d63cf096576d3060a88c35c4d9951a6b4183036141"
+  }
+]

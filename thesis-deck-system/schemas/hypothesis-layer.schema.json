@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hypothesis-layer.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "hypothesis_layer_id", "revision", "title", "hypothesis_claim_ref", "problem_ref", "research_question", "derived_from", "fishbone_snapshot_ref", "fishbone_focus_refs", "research_block_refs", "experiment_refs", "result_refs", "experiment_order", "result_order", "layer_discussion_ref", "layer_summary_ref", "layer_decision_ref", "next_step_refs", "transition_ref", "story_visibility", "research_status", "source_event_cursor", "created_at", "updated_at"],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "hypothesis_layer_id": {"type": "string", "pattern": "^H[0-9]{3}$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "title": {"type": "string", "minLength": 1},
+    "hypothesis_claim_ref": {"type": "string", "pattern": "^C[0-9]{3,}$"},
+    "problem_ref": {"type": "string", "pattern": "^P[0-9]{3,}$"},
+    "research_question": {"type": "string", "minLength": 1},
+    "mechanism_key": {"type": "string", "minLength": 1},
+    "derived_from": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/derivation"}]},
+    "fishbone_snapshot_ref": {"$ref": "#/$defs/fishbone_ref"},
+    "fishbone_focus_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^FB-[A-Z0-9-]+$"}},
+    "research_block_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^B[0-9]{3,}$"}},
+    "experiment_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^EXP[0-9]{3,}$"}},
+    "result_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^RES[0-9]{3,}$"}},
+    "experiment_order": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^EXP[0-9]{3,}$"}},
+    "result_order": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^RES[0-9]{3,}$"}},
+    "layer_discussion_ref": {"type": "string", "pattern": "^DISC-H[0-9]{3}$"},
+    "layer_summary_ref": {"type": "string", "pattern": "^SUM-H[0-9]{3}$"},
+    "layer_decision_ref": {"type": "string", "pattern": "^D[0-9]{3,}$"},
+    "next_step_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^NS[0-9]{3,}$"}},
+    "transition_ref": {"oneOf": [{"type": "null"}, {"type": "string", "pattern": "^TR-H[0-9]{3}-(H[0-9]{3}|NEXT)$"}]},
+    "story_visibility": {"type": "string", "enum": ["main", "history", "appendix", "hidden_from_default_view"]},
+    "research_status": {"type": "string", "enum": ["active", "supported", "partial_support", "rejected", "inconclusive", "superseded"]},
+    "source_event_cursor": {"type": "integer", "minimum": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "fishbone_ref": {"type": "object", "additionalProperties": false, "required": ["fishbone_id", "revision"], "properties": {"fishbone_id": {"type": "string", "pattern": "^FB[0-9]{3}$"}, "revision": {"type": "integer", "minimum": 1}}},
+    "derivation": {"type": "object", "additionalProperties": false, "required": ["previous_layer_ref", "discussion_refs", "decision_refs", "observation_refs"], "properties": {"previous_layer_ref": {"type": "string", "pattern": "^H[0-9]{3}$"}, "discussion_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^DISC-H[0-9]{3}$"}}, "decision_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^D[0-9]{3,}$"}}, "observation_refs": {"type": "array", "items": {"type": "string", "pattern": "^E[0-9]{3,}$"}}}}
+  }
+}

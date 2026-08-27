@@ -1,0 +1,203 @@
+fixture_status: synthetic_test_only
+language: zh-TW
+fishbone_map:
+  schema_version: "2.0.0"
+  fishbone_id: FB001
+  title: 論文研究地圖
+  thesis_problem: 合成感測器訊號不穩定的主導機制為何？
+  latest_revision: 2
+  revision_refs: [1, 2]
+  created_at: "2026-08-27T00:00:00Z"
+  updated_at: "2026-08-27T00:00:00Z"
+fishbone_revisions:
+  - schema_version: "2.0.0"
+    fishbone_id: FB001
+    revision: 1
+    supersedes_revision: null
+    branches:
+      - {branch_id: FB-MATERIAL, label: 材料, parent_ref: null, status: completed}
+      - {branch_id: FB-MATERIAL-HYDRATION, label: 含水量, parent_ref: FB-MATERIAL, status: current}
+      - {branch_id: FB-ELECTRODE, label: 電極, parent_ref: null, status: future}
+      - {branch_id: FB-ELECTRODE-GEOMETRY, label: 幾何, parent_ref: FB-ELECTRODE, status: future}
+      - {branch_id: FB-MEASUREMENT, label: 量測, parent_ref: null, status: future}
+      - {branch_id: FB-SYSTEM, label: 系統, parent_ref: null, status: future}
+    linked_hypothesis_layers: [H001]
+    rationale: 初始研究地圖先檢驗 bulk conductivity 與含水量分布。
+    source_event_cursor: 1
+    created_at: "2026-08-27T00:00:00Z"
+  - schema_version: "2.0.0"
+    fishbone_id: FB001
+    revision: 2
+    supersedes_revision: 1
+    branches:
+      - {branch_id: FB-MATERIAL, label: 材料, parent_ref: null, status: completed}
+      - {branch_id: FB-MATERIAL-HYDRATION, label: 含水量, parent_ref: FB-MATERIAL, status: partial}
+      - {branch_id: FB-ELECTRODE, label: 電極, parent_ref: null, status: current}
+      - {branch_id: FB-ELECTRODE-GEOMETRY, label: 幾何, parent_ref: FB-ELECTRODE, status: future}
+      - {branch_id: FB-ELECTRODE-CONTACT, label: 接觸電阻, parent_ref: FB-ELECTRODE, status: current}
+      - {branch_id: FB-MEASUREMENT, label: 量測, parent_ref: null, status: future}
+      - {branch_id: FB-SYSTEM, label: 系統, parent_ref: null, status: future}
+    linked_hypothesis_layers: [H002]
+    rationale: H01 改善導電度但未改善重複性，因此加入穩定 branch ID 的 electrode-contact 分支。
+    source_event_cursor: 15
+    created_at: "2026-08-27T00:00:00Z"
+problems:
+  - schema_version: "2.0.0"
+    problem_id: P101
+    hypothesis_layer_ref: H001
+    problem_statement: 合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。
+    previous_findings: [含水量與導電度存在位置梯度]
+    unresolved_conflict: 導電度提高是否足以修復重複性仍未知。
+    research_question: 提升 bulk conductivity 是否足以降低位置依賴的訊號變異？
+    evidence_refs: [E101, E102]
+    derived_from_decision_refs: []
+    scope: 合成五個位置、每個位置三個 replicate 的機制辨識。
+    source_event_cursor: 3
+    created_at: "2026-08-27T00:00:00Z"
+  - schema_version: "2.0.0"
+    problem_id: P201
+    hypothesis_layer_ref: H002
+    problem_statement: 導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。
+    previous_findings: [H01 支持導電度梯度存在, H01 未支持導電度單獨主導重複性]
+    unresolved_conflict: bulk transport 與 interface contact 的相對貢獻尚未區分。
+    research_question: 低接觸壓力下，contact resistance 是否主導訊號不穩定？
+    evidence_refs: [E201]
+    derived_from_decision_refs: [D101]
+    scope: 匹配 bulk conductivity，改變 contact pressure 的對照實驗。
+    source_event_cursor: 17
+    created_at: "2026-08-27T00:00:00Z"
+layer_discussions:
+  - schema_version: "2.0.0"
+    discussion_id: DISC-H001
+    hypothesis_layer_ref: H001
+    supporting_results: [RES101]
+    contradicting_results: [RES102]
+    non_discriminating_results: []
+    cross_experiment_pattern: 導電度提升成立，但重複性沒有同步改善。
+    mechanism_assessment: bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。
+    alternative_explanations: [接觸電阻, 局部壓力差, 電極幾何]
+    remaining_uncertainty: contact interface 是否為主導因素仍需匹配導電度後檢驗。
+    hypothesis_status: partial_support
+    decision_ref: D101
+    next_step_refs: [NS101]
+    source_event_cursor: 6
+    created_at: "2026-08-27T00:00:00Z"
+  - schema_version: "2.0.0"
+    discussion_id: DISC-H002
+    hypothesis_layer_ref: H002
+    supporting_results: [RES201]
+    contradicting_results: []
+    non_discriminating_results: []
+    cross_experiment_pattern: 匹配導電度後，提高接觸壓力明顯降低變異。
+    mechanism_assessment: contact resistance 在低壓條件下主導不穩定。
+    alternative_explanations: [電極幾何仍可能調節壓力分布]
+    remaining_uncertainty: 高壓長期循環是否造成新的 wear mechanism 尚未知。
+    hypothesis_status: supported
+    decision_ref: D201
+    next_step_refs: [NS201]
+    source_event_cursor: 20
+    created_at: "2026-08-27T00:00:00Z"
+layer_summaries:
+  - schema_version: "2.0.0"
+    summary_id: SUM-H001
+    hypothesis_layer_ref: H001
+    answered: bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。
+    supporting_evidence_refs: [E101, RES101, RES102]
+    remaining_unresolved: interface contact 的貢獻尚未量化。
+    hypothesis_status: partial_support
+    decision_ref: D101
+    next_question: 匹配 bulk conductivity 後，contact resistance 是否主導變異？
+    next_step_refs: [NS101]
+    source_event_cursor: 9
+    created_at: "2026-08-27T00:00:00Z"
+  - schema_version: "2.0.0"
+    summary_id: SUM-H002
+    hypothesis_layer_ref: H002
+    answered: 低接觸壓力下 contact resistance 是主導不穩定來源。
+    supporting_evidence_refs: [E201, RES201]
+    remaining_unresolved: 高壓循環的耐久性與 wear 尚未測試。
+    hypothesis_status: supported
+    decision_ref: D201
+    next_question: 接觸壓力改善能否在長期循環下維持？
+    next_step_refs: [NS201]
+    source_event_cursor: 23
+    created_at: "2026-08-27T00:00:00Z"
+hypothesis_transition:
+  schema_version: "2.0.0"
+  transition_id: TR-H001-H002
+  from_layer_ref: H001
+  to_layer_ref: H002
+  previous_hypothesis_claim_ref: C101
+  key_result_refs: [RES101, RES102]
+  unexplained: 導電度增加後訊號重複性沒有改善。
+  observation_or_uncertainty_refs: [E201]
+  rationale: 剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。
+  new_hypothesis_claim_ref: C201
+  decision_refs: [D101]
+  source_event_cursor: 19
+  created_at: "2026-08-27T00:00:00Z"
+hypothesis_layers:
+  - schema_version: "2.0.0"
+    hypothesis_layer_id: H001
+    revision: 1
+    title: H01｜Bulk conductivity 主導假說
+    hypothesis_claim_ref: C101
+    problem_ref: P101
+    research_question: 提升 bulk conductivity 是否足以降低位置依賴的訊號變異？
+    mechanism_key: bulk_conductivity
+    derived_from: null
+    fishbone_snapshot_ref: {fishbone_id: FB001, revision: 1}
+    fishbone_focus_refs: [FB-MATERIAL-HYDRATION]
+    research_block_refs: [B101]
+    experiment_refs: [EXP101, EXP102]
+    result_refs: [RES101, RES102]
+    experiment_order: [EXP101, EXP102]
+    result_order: [RES101, RES102]
+    layer_discussion_ref: DISC-H001
+    layer_summary_ref: SUM-H001
+    layer_decision_ref: D101
+    next_step_refs: [NS101]
+    transition_ref: TR-H001-H002
+    story_visibility: main
+    research_status: partial_support
+    source_event_cursor: 14
+    created_at: "2026-08-27T00:00:00Z"
+    updated_at: "2026-08-27T00:00:00Z"
+  - schema_version: "2.0.0"
+    hypothesis_layer_id: H002
+    revision: 1
+    title: H02｜Contact resistance 主導假說
+    hypothesis_claim_ref: C201
+    problem_ref: P201
+    research_question: 低接觸壓力下，contact resistance 是否主導訊號不穩定？
+    mechanism_key: contact_resistance
+    derived_from:
+      previous_layer_ref: H001
+      discussion_refs: [DISC-H001]
+      decision_refs: [D101]
+      observation_refs: [E201]
+    fishbone_snapshot_ref: {fishbone_id: FB001, revision: 2}
+    fishbone_focus_refs: [FB-ELECTRODE-CONTACT]
+    research_block_refs: [B201]
+    experiment_refs: [EXP201]
+    result_refs: [RES201]
+    experiment_order: [EXP201]
+    result_order: [RES201]
+    layer_discussion_ref: DISC-H002
+    layer_summary_ref: SUM-H002
+    layer_decision_ref: D201
+    next_step_refs: [NS201]
+    transition_ref: null
+    story_visibility: main
+    research_status: supported
+    source_event_cursor: 26
+    created_at: "2026-08-27T00:00:00Z"
+    updated_at: "2026-08-27T00:00:00Z"
+experiments:
+  EXP101: {title: 提升含水量以提高 bulk conductivity, independent_variables: [含水量], controlled_variables: [電極幾何, 接觸壓力], controls_baselines: [原始配方], sample_replicates: "n=3 per position", measured_outputs_metrics: [導電度], units: [mS/cm], instrumentation_method_refs: [synthetic-four-probe], predicted_outcomes: [導電度提升], decision_rule: "Go if mean conductivity increases ≥20%"}
+  EXP102: {title: 檢查導電度改善是否同步改善重複性, independent_variables: [位置], controlled_variables: [配方, 電極, 接觸壓力], controls_baselines: [原始位置分布], sample_replicates: "n=3 per position", measured_outputs_metrics: [訊號 CV], units: [percent], instrumentation_method_refs: [synthetic-signal-test], predicted_outcomes: [CV 下降], decision_rule: "Go if CV decreases ≥30%; Partial-Go if 10–30%; No-Go otherwise"}
+  EXP201: {title: 匹配導電度後改變 contact pressure, independent_variables: [contact pressure], controlled_variables: [bulk conductivity, 電極幾何], controls_baselines: [low-pressure control], sample_replicates: "n=5 per pressure", measured_outputs_metrics: [訊號 CV, contact resistance], units: [percent, ohm], instrumentation_method_refs: [synthetic-pressure-fixture], predicted_outcomes: [壓力增加時 CV 與 contact resistance 同步下降], decision_rule: "Go if both metrics improve and effect exceeds uncertainty"}
+results:
+  RES101: {title: 導電度提升, experiment_ref: EXP101, finding: 平均導電度增加 24% ± 5% SD, evidence_refs: [E101], asset_ref: A001}
+  RES102: {title: 重複性未同步改善, experiment_ref: EXP102, finding: 訊號 CV 僅下降 4% ± 6% SD，屬 No-Go, evidence_refs: [E102], asset_ref: A001}
+  RES201: {title: 接觸壓力降低變異, experiment_ref: EXP201, finding: 高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降, evidence_refs: [E201], asset_ref: A001}
