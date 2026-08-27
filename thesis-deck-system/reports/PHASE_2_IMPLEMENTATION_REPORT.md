@@ -378,8 +378,7 @@ codex_report:
     - H001/H002/H003 N-layer structural build proof
     - presentation semantic fidelity
     - report-evidence consistency
-  tests_failed:
-    - native PowerPoint round-trip (blocked_environment; not executable here)
+  tests_failed: []
   known_failures:
     - native PowerPoint desktop acceptance unavailable
     - final release blocked on native acceptance and private fixture
