@@ -1,8 +1,9 @@
 {
-  "slide_count": 20,
-  "slide_xml_count": 20,
+  "slide_count": 21,
+  "slide_xml_count": 21,
   "has_editable_text": true,
   "editable_text_per_slide": [
+    true,
     true,
     true,
     true,
@@ -25,7 +26,7 @@
     true
   ],
   "orphan_parts": [],
-  "xml_parts": 60,
+  "xml_parts": 62,
   "masters": 1,
   "layouts": 11,
   "content_types_present": true,
@@ -50,7 +51,8 @@
     272,
     273,
     274,
-    275
+    275,
+    276
   ],
   "media_parts": [
     "ppt/media/A002.svg",
@@ -75,6 +77,7 @@
     "ppt/notesSlides/_rels/notesSlide16.xml.rels",
     "ppt/notesSlides/_rels/notesSlide17.xml.rels",
     "ppt/notesSlides/_rels/notesSlide18.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide19.xml.rels",
     "ppt/notesSlides/_rels/notesSlide2.xml.rels",
     "ppt/notesSlides/_rels/notesSlide3.xml.rels",
     "ppt/notesSlides/_rels/notesSlide4.xml.rels",
@@ -93,6 +96,7 @@
     "ppt/notesSlides/notesSlide16.xml",
     "ppt/notesSlides/notesSlide17.xml",
     "ppt/notesSlides/notesSlide18.xml",
+    "ppt/notesSlides/notesSlide19.xml",
     "ppt/notesSlides/notesSlide2.xml",
     "ppt/notesSlides/notesSlide3.xml",
     "ppt/notesSlides/notesSlide4.xml",
@@ -185,21 +189,9 @@
         },
         {
           "relationship_id": "rId2",
-          "target": "ppt/media/image3.png",
-          "content_type": "image/png",
-          "referenced_in_slide": true
-        },
-        {
-          "relationship_id": "rId3",
           "target": "ppt/notesSlides/notesSlide8.xml",
           "content_type": "xml",
           "referenced_in_slide": false
-        },
-        {
-          "relationship_id": "rId99",
-          "target": "ppt/media/plot-canonical.svg",
-          "content_type": "image/svg+xml",
-          "referenced_in_slide": true
         }
       ],
       "layout_relationship": {
@@ -215,19 +207,12 @@
       },
       "master_part": "ppt/slideMasters/slideMaster1.xml",
       "notes_relationship": {
-        "relationship_id": "rId3",
+        "relationship_id": "rId2",
         "target": "ppt/notesSlides/notesSlide8.xml",
         "content_type": "xml",
         "referenced_in_slide": false
       },
-      "svg_relationships": [
-        {
-          "relationship_id": "rId99",
-          "target": "ppt/media/plot-canonical.svg",
-          "content_type": "image/svg+xml",
-          "referenced_in_slide": true
-        }
-      ]
+      "svg_relationships": []
     },
     {
       "slide_part": "ppt/slides/slide11.xml",
@@ -295,9 +280,21 @@
         },
         {
           "relationship_id": "rId2",
+          "target": "ppt/media/image3.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId3",
           "target": "ppt/notesSlides/notesSlide10.xml",
           "content_type": "xml",
           "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/plot-canonical.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
         }
       ],
       "layout_relationship": {
@@ -313,12 +310,19 @@
       },
       "master_part": "ppt/slideMasters/slideMaster1.xml",
       "notes_relationship": {
-        "relationship_id": "rId2",
+        "relationship_id": "rId3",
         "target": "ppt/notesSlides/notesSlide10.xml",
         "content_type": "xml",
         "referenced_in_slide": false
       },
-      "svg_relationships": []
+      "svg_relationships": [
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/plot-canonical.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ]
     },
     {
       "slide_part": "ppt/slides/slide13.xml",
@@ -475,62 +479,7 @@
         },
         {
           "relationship_id": "rId2",
-          "target": "ppt/media/image4.png",
-          "content_type": "image/png",
-          "referenced_in_slide": true
-        },
-        {
-          "relationship_id": "rId3",
           "target": "ppt/notesSlides/notesSlide15.xml",
-          "content_type": "xml",
-          "referenced_in_slide": false
-        },
-        {
-          "relationship_id": "rId99",
-          "target": "ppt/media/A102.svg",
-          "content_type": "image/svg+xml",
-          "referenced_in_slide": true
-        }
-      ],
-      "layout_relationship": {
-        "relationship_id": "rId1",
-        "target": "ppt/slideLayouts/slideLayout2.xml",
-        "content_type": "xml",
-        "referenced_in_slide": false
-      },
-      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
-      "master_relationship": {
-        "relationship_id": "rId1",
-        "target": "ppt/slideMasters/slideMaster1.xml"
-      },
-      "master_part": "ppt/slideMasters/slideMaster1.xml",
-      "notes_relationship": {
-        "relationship_id": "rId3",
-        "target": "ppt/notesSlides/notesSlide15.xml",
-        "content_type": "xml",
-        "referenced_in_slide": false
-      },
-      "svg_relationships": [
-        {
-          "relationship_id": "rId99",
-          "target": "ppt/media/A102.svg",
-          "content_type": "image/svg+xml",
-          "referenced_in_slide": true
-        }
-      ]
-    },
-    {
-      "slide_part": "ppt/slides/slide18.xml",
-      "relationships": [
-        {
-          "relationship_id": "rId1",
-          "target": "ppt/slideLayouts/slideLayout2.xml",
-          "content_type": "xml",
-          "referenced_in_slide": false
-        },
-        {
-          "relationship_id": "rId2",
-          "target": "ppt/notesSlides/notesSlide16.xml",
           "content_type": "xml",
           "referenced_in_slide": false
         }
@@ -549,14 +498,14 @@
       "master_part": "ppt/slideMasters/slideMaster1.xml",
       "notes_relationship": {
         "relationship_id": "rId2",
-        "target": "ppt/notesSlides/notesSlide16.xml",
+        "target": "ppt/notesSlides/notesSlide15.xml",
         "content_type": "xml",
         "referenced_in_slide": false
       },
       "svg_relationships": []
     },
     {
-      "slide_part": "ppt/slides/slide19.xml",
+      "slide_part": "ppt/slides/slide18.xml",
       "relationships": [
         {
           "relationship_id": "rId1",
@@ -566,19 +515,19 @@
         },
         {
           "relationship_id": "rId2",
-          "target": "ppt/media/image5.png",
+          "target": "ppt/media/image4.png",
           "content_type": "image/png",
           "referenced_in_slide": true
         },
         {
           "relationship_id": "rId3",
-          "target": "ppt/notesSlides/notesSlide17.xml",
+          "target": "ppt/notesSlides/notesSlide16.xml",
           "content_type": "xml",
           "referenced_in_slide": false
         },
         {
           "relationship_id": "rId99",
-          "target": "ppt/media/A201.svg",
+          "target": "ppt/media/A102.svg",
           "content_type": "image/svg+xml",
           "referenced_in_slide": true
         }
@@ -597,18 +546,54 @@
       "master_part": "ppt/slideMasters/slideMaster1.xml",
       "notes_relationship": {
         "relationship_id": "rId3",
-        "target": "ppt/notesSlides/notesSlide17.xml",
+        "target": "ppt/notesSlides/notesSlide16.xml",
         "content_type": "xml",
         "referenced_in_slide": false
       },
       "svg_relationships": [
         {
           "relationship_id": "rId99",
-          "target": "ppt/media/A201.svg",
+          "target": "ppt/media/A102.svg",
           "content_type": "image/svg+xml",
           "referenced_in_slide": true
         }
       ]
+    },
+    {
+      "slide_part": "ppt/slides/slide19.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/notesSlides/notesSlide17.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId2",
+        "target": "ppt/notesSlides/notesSlide17.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": []
     },
     {
       "slide_part": "ppt/slides/slide2.xml",
@@ -646,7 +631,62 @@
         },
         {
           "relationship_id": "rId2",
+          "target": "ppt/media/image5.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId3",
           "target": "ppt/notesSlides/notesSlide18.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A201.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ],
+      "layout_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideLayouts/slideLayout2.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "master_relationship": {
+        "relationship_id": "rId1",
+        "target": "ppt/slideMasters/slideMaster1.xml"
+      },
+      "master_part": "ppt/slideMasters/slideMaster1.xml",
+      "notes_relationship": {
+        "relationship_id": "rId3",
+        "target": "ppt/notesSlides/notesSlide18.xml",
+        "content_type": "xml",
+        "referenced_in_slide": false
+      },
+      "svg_relationships": [
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/A201.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ]
+    },
+    {
+      "slide_part": "ppt/slides/slide21.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/notesSlides/notesSlide19.xml",
           "content_type": "xml",
           "referenced_in_slide": false
         }
@@ -665,7 +705,7 @@
       "master_part": "ppt/slideMasters/slideMaster1.xml",
       "notes_relationship": {
         "relationship_id": "rId2",
-        "target": "ppt/notesSlides/notesSlide18.xml",
+        "target": "ppt/notesSlides/notesSlide19.xml",
         "content_type": "xml",
         "referenced_in_slide": false
       },
@@ -979,14 +1019,79 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "commitment_table": true
+        "commitment_table": true,
+        "current_position": true,
+        "parallel_work": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "commitment_table",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 7.0,
+            "height": 3.75
+          },
+          "actual_shape_identity": "tds-slot:commitment_table",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 7.0,
+            "height": 3.75
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "current_position",
+          "planned_geometry": {
+            "left": 8.15,
+            "top": 1.45,
+            "width": 4.4,
+            "height": 1.7
+          },
+          "actual_shape_identity": "tds-slot:current_position",
+          "actual_geometry": {
+            "left": 8.15,
+            "top": 1.45,
+            "width": 4.4,
+            "height": 1.7
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "parallel_work",
+          "planned_geometry": {
+            "left": 8.15,
+            "top": 3.45,
+            "width": 4.4,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:parallel_work",
+          "actual_geometry": {
+            "left": 8.15,
+            "top": 3.45,
+            "width": 4.4,
+            "height": 1.75
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide1.xml",
       "note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "expected_note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1011,6 +1116,27 @@
       "governed_slot_matches": {
         "hypothesis_statement": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "hypothesis_statement",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 11.7,
+            "height": 2.35
+          },
+          "actual_shape_identity": "tds-slot:hypothesis_statement",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 11.7,
+            "height": 2.35
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide2.xml",
       "note_source_refs": [
         "E002",
@@ -1045,8 +1171,69 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
+        "previous_finding": true,
+        "unresolved_conflict": true,
         "research_question": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "previous_finding",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:previous_finding",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "unresolved_conflict",
+          "planned_geometry": {
+            "left": 4.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:unresolved_conflict",
+          "actual_geometry": {
+            "left": 4.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "research_question",
+          "planned_geometry": {
+            "left": 8.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:research_question",
+          "actual_geometry": {
+            "left": 8.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide3.xml",
       "note_source_refs": [
         "E002",
@@ -1081,9 +1268,49 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "fishbone_focus": true,
-        "primary_figure": true
+        "primary_figure": true,
+        "fishbone_focus": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "primary_figure",
+          "planned_geometry": {
+            "left": 4.25,
+            "top": 1.35,
+            "width": 8.35,
+            "height": 4.9
+          },
+          "actual_shape_identity": "tds-slot:primary_figure",
+          "actual_geometry": {
+            "left": 4.25,
+            "top": 1.35,
+            "width": 8.35,
+            "height": 4.9
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "fishbone_focus",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 3.0,
+            "height": 1.4
+          },
+          "actual_shape_identity": "tds-slot:fishbone_focus",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 3.0,
+            "height": 1.4
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide4.xml",
       "note_source_refs": [
         "E002",
@@ -1139,9 +1366,69 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "observation_text": true,
-        "primary_figure": true
+        "primary_figure": true,
+        "research_question": true,
+        "observation_text": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "primary_figure",
+          "planned_geometry": {
+            "left": 7.55,
+            "top": 1.4,
+            "width": 5.0,
+            "height": 3.8
+          },
+          "actual_shape_identity": "tds-slot:primary_figure",
+          "actual_geometry": {
+            "left": 7.55,
+            "top": 1.4,
+            "width": 5.0,
+            "height": 3.8
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "research_question",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 6.2,
+            "height": 0.9
+          },
+          "actual_shape_identity": "tds-slot:research_question",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 6.2,
+            "height": 0.9
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "observation_text",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 2.55,
+            "width": 6.2,
+            "height": 2.65
+          },
+          "actual_shape_identity": "tds-slot:observation_text",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 2.55,
+            "width": 6.2,
+            "height": 2.65
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide5.xml",
       "note_source_refs": [
         "E002",
@@ -1197,8 +1484,49 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "literature_evidence": true
+        "literature_evidence": true,
+        "mechanism_diagram": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "literature_evidence",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 5.8,
+            "height": 3.9
+          },
+          "actual_shape_identity": "tds-slot:literature_evidence",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 5.8,
+            "height": 3.9
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "mechanism_diagram",
+          "planned_geometry": {
+            "left": 7.0,
+            "top": 1.45,
+            "width": 5.55,
+            "height": 3.9
+          },
+          "actual_shape_identity": "tds-slot:mechanism_diagram",
+          "actual_geometry": {
+            "left": 7.0,
+            "top": 1.45,
+            "width": 5.55,
+            "height": 3.9
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide6.xml",
       "note_source_refs": [
         "E002",
@@ -1233,8 +1561,49 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "experiment_matrix": true
+        "experiment_matrix": true,
+        "decision_rule": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "experiment_matrix",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 7.4,
+            "height": 4.3
+          },
+          "actual_shape_identity": "tds-slot:experiment_matrix",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 7.4,
+            "height": 4.3
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "decision_rule",
+          "planned_geometry": {
+            "left": 8.55,
+            "top": 1.4,
+            "width": 4.0,
+            "height": 2.0
+          },
+          "actual_shape_identity": "tds-slot:decision_rule",
+          "actual_geometry": {
+            "left": 8.55,
+            "top": 1.4,
+            "width": 4.0,
+            "height": 2.0
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide7.xml",
       "note_source_refs": [
         "E002",
@@ -1254,7 +1623,7 @@
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H001-RESULT-COMPARISON-08",
+      "slide_spec_id": "S-H001-EXPERIMENT-DESIGN-07",
       "generated_slide_id": 265,
       "slide_part": "ppt/slides/slide10.xml",
       "layout_relationship_id": "rId1",
@@ -1269,9 +1638,49 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "control_panel": true,
-        "proposed_panel": true
+        "experiment_matrix": true,
+        "decision_rule": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "experiment_matrix",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 7.4,
+            "height": 4.3
+          },
+          "actual_shape_identity": "tds-slot:experiment_matrix",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 7.4,
+            "height": 4.3
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "decision_rule",
+          "planned_geometry": {
+            "left": 8.55,
+            "top": 1.4,
+            "width": 4.0,
+            "height": 2.0
+          },
+          "actual_shape_identity": "tds-slot:decision_rule",
+          "actual_geometry": {
+            "left": 8.55,
+            "top": 1.4,
+            "width": 4.0,
+            "height": 2.0
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide8.xml",
       "note_source_refs": [
         "E002",
@@ -1286,33 +1695,12 @@
         "E103"
       ],
       "notes_source_match": true,
-      "media_refs": [
-        {
-          "relationship_id": "rId2",
-          "target": "ppt/media/image3.png",
-          "content_type": "image/png",
-          "referenced_in_slide": true
-        },
-        {
-          "relationship_id": "rId99",
-          "target": "ppt/media/plot-canonical.svg",
-          "content_type": "image/svg+xml",
-          "referenced_in_slide": true
-        }
-      ],
-      "svg_asset_relationships": [
-        {
-          "relationship_id": "rId99",
-          "target": "ppt/media/plot-canonical.svg",
-          "content_type": "image/svg+xml",
-          "referenced_in_slide": true,
-          "asset_id": "A001"
-        }
-      ],
+      "media_refs": [],
+      "svg_asset_relationships": [],
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H001-RESULT-COMPARISON-09",
+      "slide_spec_id": "S-H001-RESULT-COMPARISON-08",
       "generated_slide_id": 266,
       "slide_part": "ppt/slides/slide11.xml",
       "layout_relationship_id": "rId1",
@@ -1330,6 +1718,46 @@
         "control_panel": true,
         "proposed_panel": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "control_panel",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "actual_shape_identity": "tds-slot:control_panel",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "proposed_panel",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "actual_shape_identity": "tds-slot:proposed_panel",
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide9.xml",
       "note_source_refs": [
         "E002",
@@ -1370,7 +1798,7 @@
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "slide_spec_id": "S-H001-RESULT-COMPARISON-09",
       "generated_slide_id": 267,
       "slide_part": "ppt/slides/slide12.xml",
       "layout_relationship_id": "rId1",
@@ -1385,8 +1813,49 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "uncertainty": true
+        "control_panel": true,
+        "proposed_panel": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "control_panel",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "actual_shape_identity": "tds-slot:control_panel",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "proposed_panel",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "actual_shape_identity": "tds-slot:proposed_panel",
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide10.xml",
       "note_source_refs": [
         "E002",
@@ -1401,12 +1870,33 @@
         "E103"
       ],
       "notes_source_match": true,
-      "media_refs": [],
-      "svg_asset_relationships": [],
+      "media_refs": [
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/media/image3.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/plot-canonical.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ],
+      "svg_asset_relationships": [
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/plot-canonical.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true,
+          "asset_id": "A001"
+        }
+      ],
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "slide_spec_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
       "generated_slide_id": 268,
       "slide_part": "ppt/slides/slide13.xml",
       "layout_relationship_id": "rId1",
@@ -1421,8 +1911,69 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "decision_status": true
+        "supporting_results": true,
+        "contradicting_results": true,
+        "uncertainty": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "supporting_results",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 5.65,
+            "height": 2.2
+          },
+          "actual_shape_identity": "tds-slot:supporting_results",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 5.65,
+            "height": 2.2
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "contradicting_results",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 1.4,
+            "width": 5.75,
+            "height": 2.2
+          },
+          "actual_shape_identity": "tds-slot:contradicting_results",
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 1.4,
+            "width": 5.75,
+            "height": 2.2
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "uncertainty",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 3.9,
+            "width": 11.75,
+            "height": 1.7
+          },
+          "actual_shape_identity": "tds-slot:uncertainty",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 3.9,
+            "width": 11.75,
+            "height": 1.7
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide11.xml",
       "note_source_refs": [
         "E002",
@@ -1442,7 +1993,7 @@
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "slide_spec_id": "S-H001-LAYER-SUMMARY-DECISION-11",
       "generated_slide_id": 269,
       "slide_part": "ppt/slides/slide14.xml",
       "layout_relationship_id": "rId1",
@@ -1457,8 +2008,69 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "transition_nodes": true
+        "decision_status": true,
+        "uncertainty": true,
+        "next_step": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "decision_status",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:decision_status",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "uncertainty",
+          "planned_geometry": {
+            "left": 4.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:uncertainty",
+          "actual_geometry": {
+            "left": 4.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "next_step",
+          "planned_geometry": {
+            "left": 8.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:next_step",
+          "actual_geometry": {
+            "left": 8.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide12.xml",
       "note_source_refs": [
         "E002",
@@ -1478,7 +2090,7 @@
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "slide_spec_id": "S-H001-HYPOTHESIS-TRANSITION-12",
       "generated_slide_id": 270,
       "slide_part": "ppt/slides/slide15.xml",
       "layout_relationship_id": "rId1",
@@ -1493,14 +2105,57 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "hypothesis_statement": true
+        "transition_nodes": true,
+        "derivation_strip": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "transition_nodes",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.55,
+            "width": 11.75,
+            "height": 2.7
+          },
+          "actual_shape_identity": "tds-slot:transition_nodes",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.55,
+            "width": 11.75,
+            "height": 2.7
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "derivation_strip",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 4.55,
+            "width": 11.75,
+            "height": 0.8
+          },
+          "actual_shape_identity": "tds-slot:derivation_strip",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 4.55,
+            "width": 11.75,
+            "height": 0.8
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide13.xml",
       "note_source_refs": [
-        "E201"
+        "E101",
+        "E104"
       ],
       "expected_note_source_refs": [
-        "E201"
+        "E101",
+        "E104"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1508,7 +2163,7 @@
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H002-PROBLEM-DEFINITION-02",
+      "slide_spec_id": "S-H002-HYPOTHESIS-TITLE-01",
       "generated_slide_id": 271,
       "slide_part": "ppt/slides/slide16.xml",
       "layout_relationship_id": "rId1",
@@ -1523,14 +2178,39 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "research_question": true
+        "hypothesis_statement": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "hypothesis_statement",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 11.7,
+            "height": 2.35
+          },
+          "actual_shape_identity": "tds-slot:hypothesis_statement",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 11.7,
+            "height": 2.35
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide14.xml",
       "note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "expected_note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1538,7 +2218,7 @@
       "editable_text": true
     },
     {
-      "slide_spec_id": "S-H002-FISHBONE-LOCATOR-03",
+      "slide_spec_id": "S-H002-PROBLEM-DEFINITION-02",
       "generated_slide_id": 272,
       "slide_part": "ppt/slides/slide17.xml",
       "layout_relationship_id": "rId1",
@@ -1553,15 +2233,154 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "fishbone_focus": true,
-        "primary_figure": true
+        "previous_finding": true,
+        "unresolved_conflict": true,
+        "research_question": true
       },
+      "physical_slot_conformance": [
+        {
+          "slot": "previous_finding",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:previous_finding",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "unresolved_conflict",
+          "planned_geometry": {
+            "left": 4.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:unresolved_conflict",
+          "actual_geometry": {
+            "left": 4.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "research_question",
+          "planned_geometry": {
+            "left": 8.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "actual_shape_identity": "tds-slot:research_question",
+          "actual_geometry": {
+            "left": 8.8,
+            "top": 1.45,
+            "width": 3.7,
+            "height": 1.75
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
       "notes_relationship_target": "ppt/notesSlides/notesSlide15.xml",
       "note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "expected_note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
+      ],
+      "notes_source_match": true,
+      "media_refs": [],
+      "svg_asset_relationships": [],
+      "editable_text": true
+    },
+    {
+      "slide_spec_id": "S-H002-FISHBONE-LOCATOR-03",
+      "generated_slide_id": 273,
+      "slide_part": "ppt/slides/slide18.xml",
+      "layout_relationship_id": "rId1",
+      "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "actual_layout_index": 1,
+      "master_relationship_id": "rId1",
+      "actual_master_part": "ppt/slideMasters/slideMaster1.xml",
+      "expected_semantic_role": "content_academic",
+      "expected_layout_index": 1,
+      "expected_layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "expected_master_path": "ppt/slideMasters/slideMaster1.xml",
+      "layout_master_role_match": true,
+      "governed_geometry_match": true,
+      "governed_slot_matches": {
+        "primary_figure": true,
+        "fishbone_focus": true
+      },
+      "physical_slot_conformance": [
+        {
+          "slot": "primary_figure",
+          "planned_geometry": {
+            "left": 4.25,
+            "top": 1.35,
+            "width": 8.35,
+            "height": 4.9
+          },
+          "actual_shape_identity": "tds-slot:primary_figure",
+          "actual_geometry": {
+            "left": 4.25,
+            "top": 1.35,
+            "width": 8.35,
+            "height": 4.9
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "fishbone_focus",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 3.0,
+            "height": 1.4
+          },
+          "actual_shape_identity": "tds-slot:fishbone_focus",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.65,
+            "width": 3.0,
+            "height": 1.4
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide16.xml",
+      "note_source_refs": [
+        "E201",
+        "E202",
+        "E204"
+      ],
+      "expected_note_source_refs": [
+        "E201",
+        "E202",
+        "E204"
       ],
       "notes_source_match": true,
       "media_refs": [
@@ -1591,8 +2410,8 @@
     },
     {
       "slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
-      "generated_slide_id": 273,
-      "slide_part": "ppt/slides/slide18.xml",
+      "generated_slide_id": 274,
+      "slide_part": "ppt/slides/slide19.xml",
       "layout_relationship_id": "rId1",
       "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
       "actual_layout_index": 1,
@@ -1605,14 +2424,79 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
+        "primary_figure": true,
+        "research_question": true,
         "observation_text": true
       },
-      "notes_relationship_target": "ppt/notesSlides/notesSlide16.xml",
+      "physical_slot_conformance": [
+        {
+          "slot": "primary_figure",
+          "planned_geometry": {
+            "left": 7.55,
+            "top": 1.4,
+            "width": 5.0,
+            "height": 3.8
+          },
+          "actual_shape_identity": "tds-slot:primary_figure",
+          "actual_geometry": {
+            "left": 7.55,
+            "top": 1.4,
+            "width": 5.0,
+            "height": 3.8
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "research_question",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 6.2,
+            "height": 0.9
+          },
+          "actual_shape_identity": "tds-slot:research_question",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 6.2,
+            "height": 0.9
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "observation_text",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 2.55,
+            "width": 6.2,
+            "height": 2.65
+          },
+          "actual_shape_identity": "tds-slot:observation_text",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 2.55,
+            "width": 6.2,
+            "height": 2.65
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide17.xml",
       "note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "expected_note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1621,8 +2505,8 @@
     },
     {
       "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
-      "generated_slide_id": 274,
-      "slide_part": "ppt/slides/slide19.xml",
+      "generated_slide_id": 275,
+      "slide_part": "ppt/slides/slide20.xml",
       "layout_relationship_id": "rId1",
       "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
       "actual_layout_index": 1,
@@ -1638,12 +2522,56 @@
         "control_panel": true,
         "proposed_panel": true
       },
-      "notes_relationship_target": "ppt/notesSlides/notesSlide17.xml",
+      "physical_slot_conformance": [
+        {
+          "slot": "control_panel",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "actual_shape_identity": "tds-slot:control_panel",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "proposed_panel",
+          "planned_geometry": {
+            "left": 6.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "actual_shape_identity": "tds-slot:proposed_panel",
+          "actual_geometry": {
+            "left": 6.8,
+            "top": 1.45,
+            "width": 5.75,
+            "height": 4.2
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide18.xml",
       "note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "expected_note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "notes_source_match": true,
       "media_refs": [
@@ -1673,8 +2601,8 @@
     },
     {
       "slide_spec_id": "S-H002-LAYER-SUMMARY-DECISION-09",
-      "generated_slide_id": 275,
-      "slide_part": "ppt/slides/slide20.xml",
+      "generated_slide_id": 276,
+      "slide_part": "ppt/slides/slide21.xml",
       "layout_relationship_id": "rId1",
       "actual_layout_part": "ppt/slideLayouts/slideLayout2.xml",
       "actual_layout_index": 1,
@@ -1687,14 +2615,79 @@
       "layout_master_role_match": true,
       "governed_geometry_match": true,
       "governed_slot_matches": {
-        "decision_status": true
+        "decision_status": true,
+        "uncertainty": true,
+        "next_step": true
       },
-      "notes_relationship_target": "ppt/notesSlides/notesSlide18.xml",
+      "physical_slot_conformance": [
+        {
+          "slot": "decision_status",
+          "planned_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:decision_status",
+          "actual_geometry": {
+            "left": 0.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "uncertainty",
+          "planned_geometry": {
+            "left": 4.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:uncertainty",
+          "actual_geometry": {
+            "left": 4.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        },
+        {
+          "slot": "next_step",
+          "planned_geometry": {
+            "left": 8.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "actual_shape_identity": "tds-slot:next_step",
+          "actual_geometry": {
+            "left": 8.8,
+            "top": 1.4,
+            "width": 3.7,
+            "height": 2.3
+          },
+          "geometry_tolerance_result": true,
+          "content_or_asset_binding_result": true,
+          "intentionally_empty": null
+        }
+      ],
+      "notes_relationship_target": "ppt/notesSlides/notesSlide19.xml",
       "note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "expected_note_source_refs": [
-        "E201"
+        "E201",
+        "E202",
+        "E204"
       ],
       "notes_source_match": true,
       "media_refs": [],
@@ -1702,9 +2695,9 @@
       "editable_text": true
     }
   ],
-  "relationship_targets_checked": 141,
-  "source_template_sha256_before": "b922d461d292788fd70f72addf0e23dc892eebb8ba22783a8a092addcccee32b",
-  "source_template_sha256_after": "b922d461d292788fd70f72addf0e23dc892eebb8ba22783a8a092addcccee32b",
-  "generated_pptx_sha256": "5867ffa5a13e6621b0358665795a2f1751ddd419cc922c1c58e281ecc5fc47ac",
+  "relationship_targets_checked": 146,
+  "source_template_sha256_before": "4013e8fc0aa3a6ad244bfbf2bf66e4f0b6f899ee9fd1dc50ed1c0ec830c32a12",
+  "source_template_sha256_after": "4013e8fc0aa3a6ad244bfbf2bf66e4f0b6f899ee9fd1dc50ed1c0ec830c32a12",
+  "generated_pptx_sha256": "328214c8d7782d92cadbff56e4e33df14ba7534f283892eb47e4a15b80bdb677",
   "source_template_unchanged": true
 }

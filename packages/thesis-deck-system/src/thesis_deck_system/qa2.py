@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 from pathlib import Path
-from PIL import Image, ImageStat
+import hashlib
+from PIL import Image, ImageChops, ImageStat
 from datetime import datetime, timezone
 
 
@@ -38,7 +39,13 @@ def run_professor_qa_v2(profile: dict, projection: dict) -> dict:
         if not ok:
             findings.append(_finding(check_id, path, repair))
 
-    layers = projection.get("layers", [])
+    layers = sorted(projection.get("layers", []), key=lambda layer: (layer.get("source_event_cursor", 0), layer.get("hypothesis_layer_id", "")))
+    transitions = state.get("hypothesis_transitions", {})
+    transitions_by_from: dict[str, list[dict]] = {}
+    for transition_id, transition in transitions.items():
+        item = dict(transition)
+        item.setdefault("transition_id", transition_id)
+        transitions_by_from.setdefault(item.get("from_layer_ref", ""), []).append(item)
     for layer in layers:
         layer_id = layer["hypothesis_layer_id"]
         layer_slides = [slide for slide in slides if slide.get("hypothesis_layer_ref") == layer_id]
@@ -85,12 +92,31 @@ def run_professor_qa_v2(profile: dict, projection: dict) -> dict:
         summary = state.get("layer_summaries", {}).get(layer.get("layer_summary_ref"), {})
         summary_ok = bool(summary.get("answered") and summary.get("hypothesis_status") and summary.get("decision_ref") and summary.get("remaining_unresolved") and summary.get("next_question") and summary.get("next_step_refs"))
         check("PROF-LAYER-SUMMARY", summary_ok and has("layer_summary_decision"), layer_id, "Add hypothesis status, decision, uncertainty, and next question", summary)
-        if layer_id == "H001":
-            transition = state.get("hypothesis_transitions", {}).get("TR-H001-H002")
-            transition_slide = any(slide.get("semantic_role") == "hypothesis_transition" for slide in slides)
-            transition_ok = bool(transition and transition_slide and transition.get("previous_hypothesis_claim_ref") in state.get("claims", {}) and transition.get("new_hypothesis_claim_ref") in state.get("claims", {}) and transition.get("key_result_refs") and all((ref in state.get("stages", {}) or f"ST-{ref}" in state.get("stages", {})) for ref in transition.get("key_result_refs", [])) and transition.get("decision_refs") and all(ref in state.get("decisions", {}) for ref in transition.get("decision_refs", [])) and transition.get("observation_or_uncertainty_refs") and all(ref in state.get("evidence", {}) for ref in transition.get("observation_or_uncertainty_refs", [])))
-            check("PROF-TRANSITION-PROVENANCE", transition_ok, layer_id, "Resolve transition provenance to results, decision, observation, and new hypothesis", transition)
-    historical_ok = bool(layers) and all(layer.get("hypothesis_layer_id") in {"H001", "H002"} for layer in layers)
+        layer_transitions = list(transitions_by_from.get(layer_id, []))
+        # Compatibility records from the original Phase 2 fixture omitted
+        # from_layer_ref. They are only associated with a layer when an
+        # explicit transition slide names that layer; normal records always
+        # use the state-derived relation above.
+        layer_transitions.extend(item for item in transitions.values() if not item.get("from_layer_ref") and any(slide.get("semantic_role") == "hypothesis_transition" and slide.get("hypothesis_layer_ref") == layer_id for slide in slides))
+        for transition in layer_transitions:
+            transition_slide = any(slide.get("semantic_role") == "hypothesis_transition" and (slide.get("object_ref") in {None, transition.get("transition_id")} or not slide.get("object_ref")) for slide in slides)
+            destination = next((candidate for candidate in layers if candidate.get("hypothesis_layer_id") == transition.get("to_layer_ref")), None)
+            transition_ok = bool(
+                transition_slide and destination
+                and transition.get("previous_hypothesis_claim_ref") in state.get("claims", {})
+                and transition.get("new_hypothesis_claim_ref") in state.get("claims", {})
+                and transition.get("key_result_refs")
+                and all((ref in state.get("stages", {}) or f"ST-{ref}" in state.get("stages", {})) for ref in transition.get("key_result_refs", []))
+                and transition.get("decision_refs")
+                and all(ref in state.get("decisions", {}) for ref in transition.get("decision_refs", []))
+                and transition.get("observation_or_uncertainty_refs")
+                and all(ref in state.get("evidence", {}) for ref in transition.get("observation_or_uncertainty_refs", []))
+                and destination.get("derived_from", {}).get("previous_layer_ref") == layer_id
+            )
+            check("PROF-TRANSITION-PROVENANCE", transition_ok, transition.get("transition_id", layer_id), "Resolve transition provenance to results, decision, observation, and new hypothesis", transition)
+    state_layer_ids = set(state.get("hypothesis_layers", {}))
+    projection_layer_ids = [layer.get("hypothesis_layer_id") for layer in layers]
+    historical_ok = bool(layers) and set(projection_layer_ids) == state_layer_ids and len(projection_layer_ids) == len(set(projection_layer_ids))
     check("PROF-HISTORY-REACHABLE", historical_ok, "layers", "Keep failed/partial/superseded layers historically reachable", [layer.get("hypothesis_layer_id") for layer in layers], rule="narrative_rules.preserve_failed_and_changed_hypotheses")
     commitments = projection.get("previous_commitments", [])
     commitment_ok = bool(commitments) and all(item.get("owner") and item.get("target_window") and item.get("dependency_refs") is not None and item.get("parallelizable") is not None and item.get("status") for item in commitments)
@@ -103,9 +129,18 @@ def _finding(rule_id: str, path: str, repair: str) -> dict:
 
 
 def run_visual_qa_v2(specs: list[dict], render_paths: dict[str, Path], *, expected_size: tuple[int, int], structural_audit: dict | None = None) -> dict:
+    """Run separate spec, raster-pixel, and qualitative-review contracts.
+
+    The first two classes are deterministic and executable here.  Qualitative
+    conclusions are deliberately blocked until an image-capable reviewer
+    records render-hash-bound notes; they are never inferred from a role name
+    or Slide Spec metadata.
+    """
     findings = []
-    checks = ["render_exists", "dimensions", "nonblank", "canvas_bounds", "overlap", "minimum_font", "title_hierarchy", "zh_tw_wrapping", "density_budget", "archetype_geometry", "required_slots", "comparison_symmetry", "fishbone_focus_prominence", "result_discussion_separation"]
-    observations = []
+    spec_checks = ["canvas_bounds", "overlap", "minimum_font", "title_hierarchy", "zh_tw_wrapping", "density_budget", "archetype_geometry", "required_slots", "comparison_symmetry", "fishbone_focus_prominence", "result_discussion_separation"]
+    pixel_checks = ["render_exists", "dimensions", "nonblank", "occupied_region", "canvas_edge_proximity", "empty_area", "comparison_balance_proxy", "fishbone_prominence_proxy"]
+    geometry_slides = []
+    pixel_slides = []
     role_slots = {
         "hypothesis_title": {"hypothesis_statement"}, "problem_definition": {"previous_finding", "unresolved_conflict", "research_question"},
         "fishbone_locator": {"primary_figure", "fishbone_focus"}, "observation_problem": {"primary_figure", "research_question", "observation_text"},
@@ -119,15 +154,41 @@ def run_visual_qa_v2(specs: list[dict], render_paths: dict[str, Path], *, expect
         slide_id = spec["slide_id"]
         path = Path(render_paths.get(slide_id, ""))
         role = spec.get("semantic_role", "")
+        pixel = {"slide_id": slide_id, "render_path": str(path), "render_sha256": None, "dimensions": None, "variance": None, "occupied_region": None, "occupied_ratio": None, "canvas_edge_proximity_px": None, "left_right_ink_ratio": None}
         if not path.is_file():
             findings.append(_finding("VISUAL-RENDER-MISSING", slide_id, "Render the exact slide"))
+            pixel_slides.append(pixel)
             continue
         with Image.open(path) as image:
+            image = image.convert("RGB")
+            pixel["render_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+            pixel["dimensions"] = {"width": image.width, "height": image.height}
             if image.size != expected_size:
                 findings.append(_finding("VISUAL-DIMENSIONS", slide_id, f"Render at {expected_size}"))
             variance = ImageStat.Stat(image.convert("L")).var[0]
+            pixel["variance"] = variance
             if variance < 1.0:
                 findings.append(_finding("VISUAL-BLANK-RENDER", slide_id, "Repair missing rendered content"))
+            delta = ImageChops.difference(image, Image.new("RGB", image.size, "white")).convert("L")
+            occupied = delta.point(lambda value: 255 if value > 20 else 0).getbbox()
+            if occupied is None:
+                findings.append(_finding("VISUAL-OCCUPIED-REGION", slide_id, "Rendered slide has no occupied pixels"))
+                pixel["occupied_region"] = None
+                pixel["occupied_ratio"] = 0.0
+                pixel["canvas_edge_proximity_px"] = 0
+            else:
+                left, top, right, bottom = occupied
+                pixel["occupied_region"] = {"left": left, "top": top, "right": right, "bottom": bottom}
+                pixel["occupied_ratio"] = ((right - left) * (bottom - top)) / (image.width * image.height)
+                pixel["canvas_edge_proximity_px"] = min(left, top, image.width - right, image.height - bottom)
+                if pixel["occupied_ratio"] < 0.01:
+                    findings.append(_finding("VISUAL-EXCESSIVE-EMPTY-AREA", slide_id, "Populate the rendered canvas with governed content"))
+                if pixel["canvas_edge_proximity_px"] == 0:
+                    findings.append(_finding("VISUAL-CANVAS-EDGE-PIXELS", slide_id, "Check clipping at the rendered canvas edge"))
+            left_ink = sum(1 for value in delta.crop((0, 0, image.width // 2, image.height)).get_flattened_data() if value > 20)
+            right_ink = sum(1 for value in delta.crop((image.width // 2, 0, image.width, image.height)).get_flattened_data() if value > 20)
+            pixel["left_right_ink_ratio"] = round((left_ink + 1) / (right_ink + 1), 4)
+        pixel_slides.append(pixel)
         placements = spec.get("placement_plan", [])
         if not placements:
             findings.append(_finding("VISUAL-ARCHETYPE-GEOMETRY", slide_id, "Persist governed placement geometry"))
@@ -146,7 +207,8 @@ def run_visual_qa_v2(specs: list[dict], render_paths: dict[str, Path], *, expect
                 if intersects:
                     findings.append(_finding("VISUAL-PLACEMENT-OVERLAP", slide_id, "Separate same-layer governed regions"))
         title = str(spec.get("title", {}).get("text", ""))
-        body = str(spec.get("content", {}).get("body", ""))
+        slots = spec.get("content", {}).get("slots", {})
+        body = str(spec.get("content", {}).get("body", "")) or "\n".join(str(value) for value in slots.values())
         if not title or len(title) > 48:
             findings.append(_finding("VISUAL-TITLE-HIERARCHY", slide_id, "Use a concise dominant title"))
         title_indices = {index for index, item in enumerate(placements) if item.get("slot") in {"hypothesis_statement", "title"} or item.get("element_role") in {"assertion", "title"}}
@@ -156,8 +218,8 @@ def run_visual_qa_v2(specs: list[dict], render_paths: dict[str, Path], *, expect
             findings.append(_finding("VISUAL-TITLE-HIERARCHY", slide_id, "Make the title font larger than body text"))
         if any(line.startswith(("，", "。", "？", "！", "）")) for line in body.splitlines()[1:]):
             findings.append(_finding("VISUAL-ZH-WRAPPING", slide_id, "Repair Traditional Chinese punctuation wrapping"))
-        if (len(body) > 1200 and not spec.get("layout_plan_ref")) or (spec.get("split_recommendation") is True and not spec.get("reviewed_split_override")):
-            findings.append(_finding("VISUAL-DENSITY-BUDGET", slide_id, "Resolve over-budget content through a reviewed layout plan"))
+        if (len(body) > 1200 and not spec.get("layout_plan_ref")) or spec.get("split_recommendation") is True:
+            findings.append(_finding("VISUAL-DENSITY-BUDGET", slide_id, "Resolve over-budget content through a real split or fit exception"))
         if role == "result_comparison":
             controls = next((item for item in placements if item.get("slot") == "control_panel"), None)
             proposed = next((item for item in placements if item.get("slot") == "proposed_panel"), None)
@@ -165,12 +227,20 @@ def run_visual_qa_v2(specs: list[dict], render_paths: dict[str, Path], *, expect
                 findings.append(_finding("VISUAL-COMPARISON-ASYMMETRY", slide_id, "Use symmetric control/proposed regions"))
         if role == "fishbone_locator" and (not spec.get("fishbone_focus_refs") or not any(item.get("slot") == "fishbone_focus" for item in placements)):
             findings.append(_finding("VISUAL-FISHBONE-FOCUS-MISSING", slide_id, "Show a prominent current focus marker"))
-        observations.append({"slide_id": slide_id, "dominant_visual": "fishbone map" if role == "fishbone_locator" else "registered figure" if spec.get("placements") else "structured text", "current_focus": spec.get("fishbone_focus_refs", []), "question_visibility": "explicit" if "Research question" in body or "研究問題" in body else "title-led", "comparison_balance": "symmetric" if role == "result_comparison" else "not_applicable", "density": "reviewed" if spec.get("layout_plan_ref") else "unplanned"})
+        geometry_slides.append({"slide_id": slide_id, "required_slots": sorted(required), "planned_slots": sorted(actual_slots), "content_slots": sorted(slots), "status": "pass"})
     if structural_audit:
         for item in structural_audit.get("generated_slides", []):
             if not item.get("layout_master_role_match"):
                 findings.append(_finding("VISUAL-LAYOUT-IDENTITY", item.get("slide_spec_id", ""), "Resolve the template layout/master identity"))
-    return {"status": "fail" if findings else "pass", "executed_checks": checks, "check_count": len(checks), "findings": findings, "slide_observations": observations}
+    return {
+        "status": "fail" if findings else "pass",
+        "executed_checks": spec_checks + pixel_checks,
+        "check_count": len(spec_checks) + len(pixel_checks),
+        "findings": findings,
+        "spec_geometry_qa": {"status": "fail" if any(item["rule_id"].startswith("VISUAL-") and item["rule_id"] not in {"VISUAL-RENDER-MISSING", "VISUAL-DIMENSIONS", "VISUAL-BLANK-RENDER", "VISUAL-OCCUPIED-REGION", "VISUAL-EXCESSIVE-EMPTY-AREA", "VISUAL-CANVAS-EDGE-PIXELS"} for item in findings) else "pass", "checks": spec_checks, "slides": geometry_slides},
+        "render_pixel_qa": {"status": "fail" if any(item["rule_id"] in {"VISUAL-RENDER-MISSING", "VISUAL-DIMENSIONS", "VISUAL-BLANK-RENDER", "VISUAL-OCCUPIED-REGION", "VISUAL-EXCESSIVE-EMPTY-AREA", "VISUAL-CANVAS-EDGE-PIXELS"} for item in findings) else "pass", "checks": pixel_checks, "slides": pixel_slides},
+        "qualitative_visual_review": {"status": "blocked_visual_review", "reason": "requires image-capable reviewer notes bound to the exact rendered image hash", "slides": [{"slide_id": spec["slide_id"], "status": "blocked_visual_review"} for spec in specs]},
+    }
 
 
 def run_phase2_pipeline(*, schema_errors: list[str], ledger_replayed: bool, scientific: dict, professor: dict, audit: dict, specs: list[dict], visual: dict, render_evidence: dict) -> dict:
@@ -193,7 +263,7 @@ def run_phase2_pipeline(*, schema_errors: list[str], ledger_replayed: bool, scie
         (professor.get("status") == "pass", {"check_ids": professor.get("executed_checks", []), "findings": professor.get("findings", [])}),
         (audit.get("slide_count", 0) >= len(specs) and generated_ids == expected_ids, {"check_ids": ["P2-COMPILE-SPECS", "P2-ASSEMBLE-PPTX"], "slide_count": audit.get("slide_count"), "generated_spec_count": len(specs)}),
         (structural_ok, {"check_ids": ["P2-OPENXML-SVG", "P2-LAYOUT-MASTER", "P2-NOTES", "P2-EDITABLE-TEXT"], "audit": "structural-audit.json"}),
-        (visual.get("status") == "pass" and visual.get("inspection_record_valid") and len(render_evidence.get("render_paths", [])) == len(specs) and len(render_evidence.get("montages", [])) >= 4, {"check_ids": visual.get("executed_checks", []), "inspection": render_evidence.get("inspection"), "montages": render_evidence.get("montages", [])}),
+        (visual.get("status") == "pass" and visual.get("inspection_record_valid") and visual.get("qualitative_visual_review", {}).get("status") == "pass" and len(render_evidence.get("render_paths", [])) == len(specs) and len(render_evidence.get("montages", [])) >= 4, {"check_ids": visual.get("executed_checks", []), "inspection": render_evidence.get("inspection"), "qualitative_review": render_evidence.get("qualitative_review"), "montages": render_evidence.get("montages", [])}),
     ]
     pipeline = []
     findings = []

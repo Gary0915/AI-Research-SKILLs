@@ -47,6 +47,37 @@ def load_archetype_registry(path: Path) -> dict:
     return {record["archetype_id"]: record for record in records}
 
 
+def validate_split_resolution(plan: dict, resolution: dict | None) -> list[str]:
+    """Return split-resolution contract violations without inventing approval.
+
+    This validator intentionally accepts only evidence that already exists at
+    the resolution cursor.  A builder cannot create a reviewer identity or
+    point forward to a render that has not been produced yet.
+    """
+    if not plan.get("split_recommendation"):
+        return []
+    if not resolution:
+        return ["unresolved_split"]
+    kind = resolution.get("resolution_type")
+    if kind == "split":
+        return [] if resolution.get("continuation_slide_ids") else ["split_without_continuation"]
+    if kind == "automated_fit_exception":
+        if resolution.get("approved_by"):
+            return ["automated_fit_exception_claims_human_approval"]
+        if not resolution.get("measurement_artifact") or not resolution.get("measurements_pass"):
+            return ["automated_fit_exception_missing_measurements"]
+        if int(resolution.get("measurement_cursor", -1)) > int(resolution.get("available_cursor", -1)):
+            return ["automated_fit_exception_references_future_evidence"]
+        return []
+    if kind == "external_review_override":
+        approval = str(resolution.get("approved_by", ""))
+        artifact = str(resolution.get("approval_artifact", ""))
+        if not approval or approval.lower().startswith("phase 2 synthetic") or not artifact or artifact == "none":
+            return ["fabricated_external_review_override"]
+        return []
+    return ["unknown_split_resolution"]
+
+
 class LayoutDirector:
     def __init__(self, registry: dict, template_profile: dict | None = None):
         self.registry = registry

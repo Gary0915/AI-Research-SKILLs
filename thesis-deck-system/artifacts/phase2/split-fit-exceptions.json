@@ -1,0 +1,12 @@
+[
+  {
+    "resolution_type": "split",
+    "source_role": "experiment_design",
+    "reason": "A09 combined experiment matrix exceeded its governed text budget",
+    "continuation_slide_ids": [
+      "S-H001-EXPERIMENT-DESIGN-06",
+      "S-H001-EXPERIMENT-DESIGN-07"
+    ],
+    "available_cursor": 27
+  }
+]

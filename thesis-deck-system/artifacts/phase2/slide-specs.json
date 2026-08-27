@@ -6,6 +6,10 @@
     "deck_role": "meeting_delta",
     "block_refs": [
       {
+        "block_id": "B101",
+        "revision": 2
+      },
+      {
         "block_id": "B201",
         "revision": 1
       }
@@ -22,10 +26,14 @@
     },
     "placements": [],
     "citations": [
+      "E202",
+      "E204",
       "E201"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "text": "Compiled from persisted ledger materialization."
@@ -35,19 +43,23 @@
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 51,
+    "source_cursor": 55,
     "bindings": {
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
       "action_refs": [
+        "NS101",
         "NS201"
       ],
       "decision_refs": [
+        "D101",
         "D201"
       ],
       "professor_profile_ref": {
@@ -60,6 +72,11 @@
       }
     },
     "content": {
+      "slots": {
+        "commitment_table": "Commitment｜NS101｜done｜Owner: Gary｜Due: 2026-09-10T09:00:00Z\nCommitment｜NS201｜planned｜Owner: Gary｜Due: 2026-09-24T00:00:00Z",
+        "current_position": "H002",
+        "parallel_work": "Dependencies｜pressure fixture｜Parallel: True\nDependencies｜pressure fixture｜Parallel: True"
+      },
       "body": "Current position｜H002\nCommitment｜NS101｜done｜Owner: Gary｜Due: 2026-09-10T09:00:00Z\nDependencies｜pressure fixture｜Parallel: True\nCommitment｜NS201｜planned｜Owner: Gary｜Due: 2026-09-24T00:00:00Z\nDependencies｜pressure fixture｜Parallel: True"
     },
     "hypothesis_layer_ref": null,
@@ -172,6 +189,9 @@
       }
     },
     "content": {
+      "slots": {
+        "hypothesis_statement": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+      },
       "body": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
     },
     "hypothesis_layer_ref": "H001",
@@ -264,6 +284,11 @@
       }
     },
     "content": {
+      "slots": {
+        "previous_finding": "含水量與導電度存在位置梯度",
+        "unresolved_conflict": "導電度提高是否足以修復重複性仍未知。",
+        "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+      },
       "body": "Problem｜合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。\nPrevious finding｜含水量與導電度存在位置梯度\nConflict｜導電度提高是否足以修復重複性仍未知。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nScope｜合成五個位置、每個位置三個 replicate 的機制辨識。"
     },
     "hypothesis_layer_ref": "H001",
@@ -384,6 +409,10 @@
       }
     },
     "content": {
+      "slots": {
+        "primary_figure": "Historical fishbone SVG bound by Asset Manifest.",
+        "fishbone_focus": "FB-MATERIAL-HYDRATION"
+      },
       "body": "Historical snapshot｜FB001 rev1\nFocus branch｜FB-MATERIAL-HYDRATION\nImmutable map; current branch highlighted."
     },
     "hypothesis_layer_ref": "H001",
@@ -499,6 +528,11 @@
       }
     },
     "content": {
+      "slots": {
+        "primary_figure": "Registered observation visual.",
+        "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+        "observation_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。"
+      },
       "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜bulk transport\nStrategy｜均化導電度"
     },
     "hypothesis_layer_ref": "H001",
@@ -611,6 +645,10 @@
       }
     },
     "content": {
+      "slots": {
+        "literature_evidence": "Literature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+        "mechanism_diagram": "Mechanism｜bulk transport\nStrategy｜均化導電度"
+      },
       "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜bulk transport\nStrategy｜均化導電度"
     },
     "hypothesis_layer_ref": "H001",
@@ -661,10 +699,7 @@
     "stage": "experiment_design",
     "native_layout_role": "content_academic",
     "recipe": "experiment_design",
-    "object_ref": [
-      "EXP101",
-      "EXP102"
-    ],
+    "object_ref": "EXP101",
     "title": {
       "text": "H001｜Experiment Design",
       "assertion_claim_refs": [
@@ -716,7 +751,11 @@
       }
     },
     "content": {
-      "body": "EXP101｜IV: ['含水量']\nControls: ['原始配方']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['導電度 (mS/cm)']\nMethod: ['synthetic-four-probe']\nPrediction: ['導電度提升']\nDecision rule: {'go': 'mean conductivity increases >=20%', 'partial_go': '10-20%', 'no_go': '<10%'}\n\nEXP102｜IV: ['位置']\nControls: ['原始位置分布']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['訊號 CV (%)']\nMethod: ['synthetic-signal-test']\nPrediction: ['CV 下降']\nDecision rule: {'go': 'CV decreases >=30%', 'partial_go': '10-30%', 'no_go': '<10%'}"
+      "slots": {
+        "experiment_matrix": "EXP101｜IV: ['含水量']\nControls: ['原始配方']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['導電度 (mS/cm)']\nMethod: ['synthetic-four-probe']",
+        "decision_rule": "Prediction: ['導電度提升']\nDecision rule: {'go': 'mean conductivity increases >=20%', 'partial_go': '10-20%', 'no_go': '<10%'}"
+      },
+      "body": "EXP101｜IV: ['含水量']\nControls: ['原始配方']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['導電度 (mS/cm)']\nMethod: ['synthetic-four-probe']\nPrediction: ['導電度提升']\nDecision rule: {'go': 'mean conductivity increases >=20%', 'partial_go': '10-20%', 'no_go': '<10%'}"
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -727,7 +766,7 @@
     ],
     "fishbone_snapshot_ref": null,
     "fishbone_focus_refs": [],
-    "compaction_rationale": "兩個 Experiment Design 同頁依 experiment_order 呈現；Results 仍在其後分頁。",
+    "compaction_rationale": "Split continuation: each Experiment Design retains its own A09 matrix and decision-rule region.",
     "placement_plan": [
       {
         "slot": "experiment_matrix",
@@ -751,6 +790,112 @@
       }
     ],
     "layout_plan_ref": "LP-H001-EXPERIMENT-DESIGN-06"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 1
+      }
+    ],
+    "stage": "experiment_design",
+    "native_layout_role": "content_academic",
+    "recipe": "experiment_design",
+    "object_ref": "EXP102",
+    "title": {
+      "text": "H001｜Experiment Design",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E002",
+      "E101",
+      "E102",
+      "E103"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E002",
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 27,
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "experiment_matrix": "EXP102｜IV: ['位置']\nControls: ['原始位置分布']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['訊號 CV (%)']\nMethod: ['synthetic-signal-test']",
+        "decision_rule": "Prediction: ['CV 下降']\nDecision rule: {'go': 'CV decreases >=30%', 'partial_go': '10-30%', 'no_go': '<10%'}"
+      },
+      "body": "EXP102｜IV: ['位置']\nControls: ['原始位置分布']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['訊號 CV (%)']\nMethod: ['synthetic-signal-test']\nPrediction: ['CV 下降']\nDecision rule: {'go': 'CV decreases >=30%', 'partial_go': '10-30%', 'no_go': '<10%'}"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "experiment_design",
+    "combined_roles": [
+      "experiment_design"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": "Split continuation: each Experiment Design retains its own A09 matrix and decision-rule region.",
+    "placement_plan": [
+      {
+        "slot": "experiment_matrix",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 7.4,
+        "height": 4.3,
+        "z_order": 1,
+        "element_role": "experiment",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "decision_rule",
+        "left": 8.55,
+        "top": 1.4,
+        "width": 4.0,
+        "height": 2.0,
+        "z_order": 2,
+        "element_role": "decision_rule",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-EXPERIMENT-DESIGN-07"
   },
   {
     "schema_version": "2.0.0",
@@ -826,6 +971,10 @@
       }
     },
     "content": {
+      "slots": {
+        "control_panel": "Control｜",
+        "proposed_panel": "Result｜平均導電度增加 24% ± 5% SD"
+      },
       "body": "RES101｜平均導電度增加 24% ± 5% SD"
     },
     "hypothesis_layer_ref": "H001",
@@ -936,6 +1085,10 @@
       }
     },
     "content": {
+      "slots": {
+        "control_panel": "Control｜",
+        "proposed_panel": "Result｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go"
+      },
       "body": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go"
     },
     "hypothesis_layer_ref": "H001",
@@ -1040,6 +1193,11 @@
       }
     },
     "content": {
+      "slots": {
+        "supporting_results": "RES101",
+        "contradicting_results": "RES102",
+        "uncertainty": "Mechanism assessment｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nRemaining uncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。"
+      },
       "body": "Supporting｜RES101\nContradicting｜RES102\nCross-experiment pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism assessment｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nRemaining uncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。"
     },
     "hypothesis_layer_ref": "H001",
@@ -1156,6 +1314,11 @@
       }
     },
     "content": {
+      "slots": {
+        "decision_status": "Answered｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nHypothesis status｜partial_support\nDecision｜Partial-Go: Bulk conductivity is contributory but insufficient.",
+        "uncertainty": "interface contact 的貢獻尚未量化。",
+        "next_step": "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext Step｜NS101"
+      },
       "body": "Answered｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nHypothesis status｜partial_support\nDecision｜Partial-Go: Bulk conductivity is contributory but insufficient.\nUnresolved｜interface contact 的貢獻尚未量化。\nNext question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext Step｜NS101"
     },
     "hypothesis_layer_ref": "H001",
@@ -1210,7 +1373,7 @@
     "block_refs": [
       {
         "block_id": "B101",
-        "revision": 1
+        "revision": 2
       }
     ],
     "stage": "hypothesis_transition",
@@ -1218,24 +1381,20 @@
     "recipe": "hypothesis_transition",
     "object_ref": "TR-H001-H002",
     "title": {
-      "text": "H01 → H02｜Hypothesis Transition",
+      "text": "H001｜Hypothesis Transition",
       "assertion_claim_refs": [
         "C101"
       ]
     },
     "placements": [],
     "citations": [
-      "E002",
-      "E101",
-      "E102",
-      "E103"
+      "E104",
+      "E101"
     ],
     "speaker_notes": {
       "source_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E104",
+        "E101"
       ],
       "text": "Compiled from persisted ledger materialization."
     },
@@ -1244,21 +1403,17 @@
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 35,
+    "source_cursor": 41,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E104",
+        "E101"
       ],
       "asset_refs": [],
-      "action_refs": [
-        "NS101"
-      ],
+      "action_refs": [],
       "decision_refs": [
         "D101"
       ],
@@ -1272,7 +1427,11 @@
       }
     },
     "content": {
-      "body": "Previous hypothesis｜C101\nKey results｜RES101, RES102\nNot explained｜導電度增加後訊號重複性沒有改善。\nNew observation｜E201\nTherefore｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。\nNew hypothesis｜C201"
+      "slots": {
+        "transition_nodes": "Previous hypothesis｜C101\nKey results｜RES101, RES102\nNew observation｜E104\nNew hypothesis｜C201",
+        "derivation_strip": "Not explained｜導電度增加後訊號重複性沒有改善。\nTherefore｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。"
+      },
+      "body": "Previous hypothesis｜C101\nKey results｜RES101, RES102\nNot explained｜導電度增加後訊號重複性沒有改善。\nNew observation｜E104\nTherefore｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。\nNew hypothesis｜C201"
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -1331,25 +1490,31 @@
     },
     "placements": [],
     "citations": [
+      "E202",
+      "E204",
       "E201"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
-      "meeting": "main",
+      "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 51,
+    "source_cursor": 55,
     "bindings": {
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -1365,6 +1530,9 @@
       }
     },
     "content": {
+      "slots": {
+        "hypothesis_statement": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+      },
       "body": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？"
     },
     "hypothesis_layer_ref": "H002",
@@ -1414,25 +1582,31 @@
     },
     "placements": [],
     "citations": [
+      "E202",
+      "E204",
       "E201"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
-      "meeting": "main",
+      "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 51,
+    "source_cursor": 55,
     "bindings": {
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -1448,6 +1622,11 @@
       }
     },
     "content": {
+      "slots": {
+        "previous_finding": "H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+        "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
+        "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+      },
       "body": "Problem｜導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。\nPrevious finding｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性\nConflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？\nScope｜匹配 bulk conductivity，改變 contact pressure 的對照實驗。"
     },
     "hypothesis_layer_ref": "H002",
@@ -1523,25 +1702,31 @@
       }
     ],
     "citations": [
+      "E202",
+      "E204",
       "E201"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
-      "meeting": "main",
+      "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 51,
+    "source_cursor": 55,
     "bindings": {
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [
@@ -1559,6 +1744,10 @@
       }
     },
     "content": {
+      "slots": {
+        "primary_figure": "Historical fishbone SVG bound by Asset Manifest.",
+        "fishbone_focus": "FB-ELECTRODE-CONTACT"
+      },
       "body": "Historical snapshot｜FB001 rev2\nFocus branch｜FB-ELECTRODE-CONTACT\nImmutable map; current branch highlighted."
     },
     "hypothesis_layer_ref": "H002",
@@ -1623,25 +1812,31 @@
     },
     "placements": [],
     "citations": [
+      "E202",
+      "E204",
       "E201"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
-      "meeting": "main",
+      "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 51,
+    "source_cursor": 55,
     "bindings": {
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -1657,6 +1852,11 @@
       }
     },
     "content": {
+      "slots": {
+        "primary_figure": "Registered observation visual.",
+        "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+        "observation_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。"
+      },
       "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜contact resistance\nStrategy｜匹配導電度並改變接觸壓力"
     },
     "hypothesis_layer_ref": "H002",
@@ -1737,25 +1937,31 @@
       }
     ],
     "citations": [
+      "E202",
+      "E204",
       "E201"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
-      "meeting": "main",
+      "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 51,
+    "source_cursor": 55,
     "bindings": {
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [
@@ -1773,6 +1979,10 @@
       }
     },
     "content": {
+      "slots": {
+        "control_panel": "Control｜low-pressure control",
+        "proposed_panel": "Result｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降"
+      },
       "body": "EXP201｜\nRES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降"
     },
     "hypothesis_layer_ref": "H002",
@@ -1833,25 +2043,31 @@
     },
     "placements": [],
     "citations": [
+      "E202",
+      "E204",
       "E201"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
-      "meeting": "main",
+      "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 51,
+    "source_cursor": 55,
     "bindings": {
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -1871,6 +2087,11 @@
       }
     },
     "content": {
+      "slots": {
+        "decision_status": "Answered｜低接觸壓力下 contact resistance 是主導不穩定來源。\nHypothesis status｜supported\nDecision｜Go: Contact-pressure control discriminates the interface mechanism.",
+        "uncertainty": "高壓循環的耐久性與 wear 尚未測試。",
+        "next_step": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext Step｜NS201"
+      },
       "body": "Answered｜低接觸壓力下 contact resistance 是主導不穩定來源。\nHypothesis status｜supported\nDecision｜Go: Contact-pressure control discriminates the interface mechanism.\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。\nNext question｜接觸壓力改善能否在長期循環下維持？\nNext Step｜NS201"
     },
     "hypothesis_layer_ref": "H002",

@@ -3,7 +3,7 @@
     "B101": {
       "schema_version": "1.0.0",
       "block_id": "B101",
-      "revision": 1,
+      "revision": 2,
       "title": "H01 Bulk conductivity mechanism",
       "research_question": {
         "question_id": "RQ-B101",
@@ -53,7 +53,8 @@
         "E002",
         "E101",
         "E102",
-        "E103"
+        "E103",
+        "E104"
       ],
       "asset_refs": [
         "A001",
@@ -119,6 +120,8 @@
         "C203"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [
@@ -437,6 +440,11 @@
       "measurement": {
         "synthetic": true
       },
+      "causal_role": "supporting_observation",
+      "origin": {
+        "layer_ref": "H001",
+        "source_dataset_role": "preexisting_observation"
+      },
       "license_or_usage": "synthetic_test_only",
       "verification": {
         "status": "synthetic_test_only"
@@ -463,6 +471,11 @@
       "measurement": {
         "synthetic": true
       },
+      "causal_role": "supporting_observation",
+      "origin": {
+        "layer_ref": "H001",
+        "source_dataset_role": "preexisting_observation"
+      },
       "license_or_usage": "synthetic_test_only",
       "verification": {
         "status": "synthetic_test_only"
@@ -488,6 +501,11 @@
       },
       "measurement": {
         "synthetic": true
+      },
+      "causal_role": "supporting_observation",
+      "origin": {
+        "layer_ref": "H001",
+        "source_dataset_role": "preexisting_observation"
       },
       "license_or_usage": "synthetic_test_only",
       "verification": {
@@ -516,6 +534,109 @@
       "measurement": {
         "synthetic": true
       },
+      "causal_role": "supporting_observation",
+      "origin": {
+        "layer_ref": "H001",
+        "source_dataset_role": "preexisting_observation"
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "E104": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E104",
+      "kind": "synthetic_observation",
+      "title": "Synthetic E104 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E104",
+        "uri": "thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt",
+        "sha256": "28326c007fc6eda9d8301598da822e02b0ae6c87f6da4d8eb08f64bcc479aa4e"
+      },
+      "claim_support_refs": [
+        "C101",
+        "C102"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B101"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "causal_role": "transition_precursor",
+      "origin": {
+        "layer_ref": "H001",
+        "stage_ref": "ST-H001-DISC",
+        "source_dataset_role": "pre_h02_uncertainty"
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "E202": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E202",
+      "kind": "synthetic_literature",
+      "title": "Synthetic E202 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E202",
+        "uri": "thesis-deck-system/examples/synthetic-project/evidence/literature-note.txt",
+        "sha256": "5b510e5b31d6714228a03c31a544b12a0991ab0dc797166167cfe8d8447f7fee"
+      },
+      "claim_support_refs": [
+        "C201",
+        "C202"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B201"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "causal_role": "supporting_observation",
+      "origin": {
+        "layer_ref": "H002",
+        "source_dataset_role": "preexisting_observation"
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "E204": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E204",
+      "kind": "synthetic_observation",
+      "title": "Synthetic E204 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E204",
+        "uri": "thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt",
+        "sha256": "28326c007fc6eda9d8301598da822e02b0ae6c87f6da4d8eb08f64bcc479aa4e"
+      },
+      "claim_support_refs": [
+        "C201",
+        "C202"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B201"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "causal_role": "supporting_observation",
+      "origin": {
+        "layer_ref": "H001",
+        "stage_ref": "ST-H001-DISC",
+        "source_dataset_role": "pre_h02_uncertainty"
+      },
       "license_or_usage": "synthetic_test_only",
       "verification": {
         "status": "synthetic_test_only"
@@ -541,6 +662,12 @@
       },
       "measurement": {
         "synthetic": true
+      },
+      "causal_role": "experiment_result",
+      "origin": {
+        "layer_ref": "H002",
+        "experiment_stage_ref": "ST-EXP201",
+        "source_dataset_role": "discriminating_result"
       },
       "license_or_usage": "synthetic_test_only",
       "verification": {
@@ -633,7 +760,7 @@
       "title": "Synthetic A102",
       "evidence_role": "synthetic_test_evidence",
       "source_evidence": [
-        "E201"
+        "E204"
       ],
       "path": "fishbone/FB001-rev2.svg",
       "preview_path": "fishbone/FB001-rev2.png",
@@ -655,7 +782,7 @@
       "path": "plots/H02_contact_pressure.svg",
       "preview_path": "plots/H02_contact_pressure.png",
       "mime_type": "image/svg+xml",
-      "sha256": "367c5a09b8506bd939163177fffe71ed4872cf9499ba4d2525807c3f00870472",
+      "sha256": "14b60b251d0dae71d51423e6d165d81df4382c318aadb0e36ab889f7f6d9b5fc",
       "editable": true,
       "provenance": "synthetic_fixture",
       "status": "approved",
@@ -671,7 +798,7 @@
       },
       "output": {
         "svg_path": "plots/H02_contact_pressure.svg",
-        "svg_sha256": "367c5a09b8506bd939163177fffe71ed4872cf9499ba4d2525807c3f00870472",
+        "svg_sha256": "14b60b251d0dae71d51423e6d165d81df4382c318aadb0e36ab889f7f6d9b5fc",
         "png_path": "plots/H02_contact_pressure.png",
         "png_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787"
       },
@@ -679,7 +806,7 @@
         {
           "input_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
           "operation": "plot",
-          "output_sha256": "367c5a09b8506bd939163177fffe71ed4872cf9499ba4d2525807c3f00870472"
+          "output_sha256": "14b60b251d0dae71d51423e6d165d81df4382c318aadb0e36ab889f7f6d9b5fc"
         }
       ],
       "accessibility": {
@@ -1231,7 +1358,7 @@
         "C201"
       ],
       "evidence_refs": [
-        "E201"
+        "E204"
       ],
       "hypothesis_claim_refs": [],
       "prediction_claim_refs": [],
@@ -1258,7 +1385,7 @@
         "C202"
       ],
       "evidence_refs": [
-        "E201"
+        "E202"
       ],
       "hypothesis_claim_refs": [],
       "prediction_claim_refs": [],
@@ -1275,7 +1402,7 @@
         "relevance_to_observation": "兩種機制都預測位置效應。",
         "implication_for_hypothesis_or_strategy": "需匹配條件後比較。",
         "supporting_literature_evidence_refs": [
-          "E103"
+          "E202"
         ],
         "contradicting_literature_evidence_refs": []
       },
@@ -1298,7 +1425,7 @@
         "C203"
       ],
       "evidence_refs": [
-        "E201"
+        "E202"
       ],
       "hypothesis_claim_refs": [],
       "prediction_claim_refs": [],
@@ -1324,7 +1451,7 @@
         "C202"
       ],
       "evidence_refs": [
-        "E201"
+        "E202"
       ],
       "hypothesis_claim_refs": [],
       "prediction_claim_refs": [],
@@ -1351,7 +1478,7 @@
         "C203"
       ],
       "evidence_refs": [
-        "E201"
+        "E104"
       ],
       "hypothesis_claim_refs": [
         "C201"
@@ -1514,7 +1641,7 @@
       "transition_ref": "TR-H001-H002",
       "story_visibility": "main",
       "research_status": "partial_support",
-      "source_event_cursor": 36,
+      "source_event_cursor": 42,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
@@ -1536,7 +1663,7 @@
           "D101"
         ],
         "observation_refs": [
-          "E201"
+          "E104"
         ]
       },
       "fishbone_snapshot_ref": {
@@ -1570,7 +1697,7 @@
       "transition_ref": null,
       "story_visibility": "main",
       "research_status": "supported",
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     }
@@ -1670,7 +1797,7 @@
       "transition_ref": "TR-H001-H002",
       "story_visibility": "main",
       "research_status": "partial_support",
-      "source_event_cursor": 36,
+      "source_event_cursor": 42,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     },
@@ -1692,7 +1819,7 @@
           "D101"
         ],
         "observation_refs": [
-          "E201"
+          "E104"
         ]
       },
       "fishbone_snapshot_ref": {
@@ -1726,7 +1853,7 @@
       "transition_ref": null,
       "story_visibility": "main",
       "research_status": "supported",
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "created_at": "2026-08-27T00:00:00Z",
       "updated_at": "2026-08-27T00:00:00Z"
     }
@@ -1763,7 +1890,7 @@
       "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
       "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
       "evidence_refs": [
-        "E201"
+        "E204"
       ],
       "derived_from_decision_refs": [
         "D101"
@@ -1929,7 +2056,7 @@
       "next_step_refs": [
         "NS201"
       ],
-      "source_event_cursor": 46,
+      "source_event_cursor": 50,
       "created_at": "2026-08-27T00:00:00Z"
     }
   },
@@ -1970,7 +2097,7 @@
       "next_step_refs": [
         "NS201"
       ],
-      "source_event_cursor": 49,
+      "source_event_cursor": 53,
       "created_at": "2026-08-27T00:00:00Z"
     }
   },
@@ -1987,14 +2114,14 @@
       ],
       "unexplained": "導電度增加後訊號重複性沒有改善。",
       "observation_or_uncertainty_refs": [
-        "E201"
+        "E104"
       ],
       "rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
       "new_hypothesis_claim_ref": "C201",
       "decision_refs": [
         "D101"
       ],
-      "source_event_cursor": 35,
+      "source_event_cursor": 41,
       "created_at": "2026-08-27T00:00:00Z"
     }
   },
@@ -2052,9 +2179,9 @@
         "source_event_cursor": 1,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
+      "timestamp": "2026-08-27T11:24:21Z",
       "previous_hash": null,
-      "event_hash": "a6c6ec926bc1f1cad9e33c1dc17279f21ba222edff3e7b297ab818b0ce3c10b4"
+      "event_hash": "a67fc76ea85dd9674fbba3b52c847bad0cdde523602f8191fb2ac7cae7ab3e57"
     },
     {
       "cursor": 2,
@@ -2105,9 +2232,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "a6c6ec926bc1f1cad9e33c1dc17279f21ba222edff3e7b297ab818b0ce3c10b4",
-      "event_hash": "00099ce8da4b95ff77da4e9950787465fcea5833e0a1db77a9f994dae8f42ae9"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "a67fc76ea85dd9674fbba3b52c847bad0cdde523602f8191fb2ac7cae7ab3e57",
+      "event_hash": "91734b2367494e5ea07a8eb8d9f4e874af3c4d9a545fa3e0a5390b0a288c64c2"
     },
     {
       "cursor": 3,
@@ -2158,9 +2285,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "00099ce8da4b95ff77da4e9950787465fcea5833e0a1db77a9f994dae8f42ae9",
-      "event_hash": "9f7eb613cfd206d8da3bd1392a89e455f855da978b49277eff20df795554f0b5"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "91734b2367494e5ea07a8eb8d9f4e874af3c4d9a545fa3e0a5390b0a288c64c2",
+      "event_hash": "369bb67c22c4aed946666170d2781144bf5ab47b15da63fd69f4b461beb2ed9f"
     },
     {
       "cursor": 4,
@@ -2211,9 +2338,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "9f7eb613cfd206d8da3bd1392a89e455f855da978b49277eff20df795554f0b5",
-      "event_hash": "72d1e8754c28c8b1582a978a65d4015c5b0b50c229a4b08155b9a10fb0eb8beb"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "369bb67c22c4aed946666170d2781144bf5ab47b15da63fd69f4b461beb2ed9f",
+      "event_hash": "d47b5961c1547662dc8eef389c5b25093ef9ac1476be3d2847584f2a4e4598a8"
     },
     {
       "cursor": 5,
@@ -2239,14 +2366,19 @@
         "measurement": {
           "synthetic": true
         },
+        "causal_role": "supporting_observation",
+        "origin": {
+          "layer_ref": "H001",
+          "source_dataset_role": "preexisting_observation"
+        },
         "license_or_usage": "synthetic_test_only",
         "verification": {
           "status": "synthetic_test_only"
         }
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "72d1e8754c28c8b1582a978a65d4015c5b0b50c229a4b08155b9a10fb0eb8beb",
-      "event_hash": "9394df97d357d4e046cd4c15aacefe6fac31b099ba777287835e1caea831bd41"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "d47b5961c1547662dc8eef389c5b25093ef9ac1476be3d2847584f2a4e4598a8",
+      "event_hash": "67045b022ea6efd3d8bcd41d6a643c6fab30ae2bfaf2a8b7fd92e10add195754"
     },
     {
       "cursor": 6,
@@ -2272,14 +2404,19 @@
         "measurement": {
           "synthetic": true
         },
+        "causal_role": "supporting_observation",
+        "origin": {
+          "layer_ref": "H001",
+          "source_dataset_role": "preexisting_observation"
+        },
         "license_or_usage": "synthetic_test_only",
         "verification": {
           "status": "synthetic_test_only"
         }
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "9394df97d357d4e046cd4c15aacefe6fac31b099ba777287835e1caea831bd41",
-      "event_hash": "f4a56fbde16d5ef4ac733119014421438a73fbfad2115a1abe02b33a8802f58b"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "67045b022ea6efd3d8bcd41d6a643c6fab30ae2bfaf2a8b7fd92e10add195754",
+      "event_hash": "76f3e4938218417795a9f10de12654a720b55819d500654d8cf7f423b9041fdf"
     },
     {
       "cursor": 7,
@@ -2305,14 +2442,19 @@
         "measurement": {
           "synthetic": true
         },
+        "causal_role": "supporting_observation",
+        "origin": {
+          "layer_ref": "H001",
+          "source_dataset_role": "preexisting_observation"
+        },
         "license_or_usage": "synthetic_test_only",
         "verification": {
           "status": "synthetic_test_only"
         }
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "f4a56fbde16d5ef4ac733119014421438a73fbfad2115a1abe02b33a8802f58b",
-      "event_hash": "a5b6010b3f65ad35c436c3ab5d6daeda011134f7ca33da39729488028592280c"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "76f3e4938218417795a9f10de12654a720b55819d500654d8cf7f423b9041fdf",
+      "event_hash": "66908493a343bf0f1b93ac35ee778e6edad970f8ebd1bda292d692781b26409f"
     },
     {
       "cursor": 8,
@@ -2339,14 +2481,19 @@
         "measurement": {
           "synthetic": true
         },
+        "causal_role": "supporting_observation",
+        "origin": {
+          "layer_ref": "H001",
+          "source_dataset_role": "preexisting_observation"
+        },
         "license_or_usage": "synthetic_test_only",
         "verification": {
           "status": "synthetic_test_only"
         }
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "a5b6010b3f65ad35c436c3ab5d6daeda011134f7ca33da39729488028592280c",
-      "event_hash": "91fe8a6b7148e3b636078a04af451d4ff58c55afd5fa035cb78367248d34847f"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "66908493a343bf0f1b93ac35ee778e6edad970f8ebd1bda292d692781b26409f",
+      "event_hash": "4440c01d752beca752e19a8374d3f74713352b3efc2bf74504955df5974ebaae"
     },
     {
       "cursor": 9,
@@ -2394,9 +2541,9 @@
         },
         "status": "approved"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "91fe8a6b7148e3b636078a04af451d4ff58c55afd5fa035cb78367248d34847f",
-      "event_hash": "34bbf7befb5734b5496a31828c1ed2c87580d7479def2b43763d97480e85831b"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "4440c01d752beca752e19a8374d3f74713352b3efc2bf74504955df5974ebaae",
+      "event_hash": "38f397e2d6106aa0a6132e2c9203d57a73adc5b9fc33cd793123ff0c334fe45c"
     },
     {
       "cursor": 10,
@@ -2418,9 +2565,9 @@
         "provenance": "synthetic_fixture",
         "status": "approved"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "34bbf7befb5734b5496a31828c1ed2c87580d7479def2b43763d97480e85831b",
-      "event_hash": "bf65725c239a0bd97b621d6d86f1f4229c5ec85cf8d4b73f4c9f7b0e3615648a"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "38f397e2d6106aa0a6132e2c9203d57a73adc5b9fc33cd793123ff0c334fe45c",
+      "event_hash": "b8cc8980f63e79d436f9de867c64d97d615998f7a29192f8923ae6606d851126"
     },
     {
       "cursor": 11,
@@ -2442,9 +2589,9 @@
         "provenance": "synthetic_fixture",
         "status": "approved"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "bf65725c239a0bd97b621d6d86f1f4229c5ec85cf8d4b73f4c9f7b0e3615648a",
-      "event_hash": "4718ea3f33c155360571dc107b1a2f43fab8a9b5fbcb434e91f7022f8558f086"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "b8cc8980f63e79d436f9de867c64d97d615998f7a29192f8923ae6606d851126",
+      "event_hash": "ddaddd19023fe8d42df24c519fffe6b3e0fc445b57a40bc450749ae541835aba"
     },
     {
       "cursor": 12,
@@ -2468,9 +2615,9 @@
         "source_event_cursor": 3,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "4718ea3f33c155360571dc107b1a2f43fab8a9b5fbcb434e91f7022f8558f086",
-      "event_hash": "a71221c8b1772aa957256c81aa4e7c570e5545ed496cd5ddff721846411460d1"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "ddaddd19023fe8d42df24c519fffe6b3e0fc445b57a40bc450749ae541835aba",
+      "event_hash": "277a284489620bd4eb6e55053a7dfbdb9b93f3428940834e174e84e07ed49c1c"
     },
     {
       "cursor": 13,
@@ -2502,9 +2649,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "a71221c8b1772aa957256c81aa4e7c570e5545ed496cd5ddff721846411460d1",
-      "event_hash": "43c3e25c9996ccafaa3bec0d61dcc12bb8d6d2ce8ae3d0271a3db74e1f2f5835"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "277a284489620bd4eb6e55053a7dfbdb9b93f3428940834e174e84e07ed49c1c",
+      "event_hash": "4c8f14dc80699824fa75579c5a3d3ac2c49d23677f9d024a3d37e6f5f0182616"
     },
     {
       "cursor": 14,
@@ -2549,9 +2696,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "43c3e25c9996ccafaa3bec0d61dcc12bb8d6d2ce8ae3d0271a3db74e1f2f5835",
-      "event_hash": "a56fdcc22844622ab0d2032547030d5380eee070467cd5c3366d5e38fb5d304d"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "4c8f14dc80699824fa75579c5a3d3ac2c49d23677f9d024a3d37e6f5f0182616",
+      "event_hash": "08bec83e4795aba9b6be910bc29fa5f6912a2d16cb32178046c3a1d34f1e5f86"
     },
     {
       "cursor": 15,
@@ -2583,9 +2730,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "a56fdcc22844622ab0d2032547030d5380eee070467cd5c3366d5e38fb5d304d",
-      "event_hash": "59980d2c072d697c035f4b2b85a64ba67b931fece0fab2d8e0177fd63c3a562e"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "08bec83e4795aba9b6be910bc29fa5f6912a2d16cb32178046c3a1d34f1e5f86",
+      "event_hash": "ede2bb7f64925dbb6595770f2e6a649314b77083ee1fd83c60328f7e567b82b4"
     },
     {
       "cursor": 16,
@@ -2616,9 +2763,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "59980d2c072d697c035f4b2b85a64ba67b931fece0fab2d8e0177fd63c3a562e",
-      "event_hash": "5eacc5369324f8bccc658e2d1b37a8faec9ae81feabc34122426d0a1b638a59d"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "ede2bb7f64925dbb6595770f2e6a649314b77083ee1fd83c60328f7e567b82b4",
+      "event_hash": "747998b226aec2b7eb2412222c415721f40bf910158b63e5e688d81325f4302d"
     },
     {
       "cursor": 17,
@@ -2685,9 +2832,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "5eacc5369324f8bccc658e2d1b37a8faec9ae81feabc34122426d0a1b638a59d",
-      "event_hash": "524e5c17d3ae388c56d6aa0d0775dcb69814880a8ac8c8afa93c6320eec6cce8"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "747998b226aec2b7eb2412222c415721f40bf910158b63e5e688d81325f4302d",
+      "event_hash": "4925d1fc8a5da04b21a3cb2969e5607316f7bdcf1e2dfaba20d3011ac3dd87f7"
     },
     {
       "cursor": 18,
@@ -2756,9 +2903,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "524e5c17d3ae388c56d6aa0d0775dcb69814880a8ac8c8afa93c6320eec6cce8",
-      "event_hash": "68bbd954c9a31c58e96242d00e10cc2befa0e8973fbb377061128187f5494453"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "4925d1fc8a5da04b21a3cb2969e5607316f7bdcf1e2dfaba20d3011ac3dd87f7",
+      "event_hash": "53cb9fba669375601a7fcf05e3a0dfc2e48b9f56df130ff22ad8715293b63ddc"
     },
     {
       "cursor": 19,
@@ -2797,9 +2944,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "68bbd954c9a31c58e96242d00e10cc2befa0e8973fbb377061128187f5494453",
-      "event_hash": "63f02ea31795c17b92f90469d307aa3f2cf9de4782b45c9ecb8fc2808462de3b"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "53cb9fba669375601a7fcf05e3a0dfc2e48b9f56df130ff22ad8715293b63ddc",
+      "event_hash": "df4a631f43867d135e236a4c8e35da8c5391227e3e99a542510576e6cfef1144"
     },
     {
       "cursor": 20,
@@ -2838,9 +2985,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "63f02ea31795c17b92f90469d307aa3f2cf9de4782b45c9ecb8fc2808462de3b",
-      "event_hash": "c6628d8c5fa1030abcc98d17e08cc1c24cf50773341273e71ad511375605ddff"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "df4a631f43867d135e236a4c8e35da8c5391227e3e99a542510576e6cfef1144",
+      "event_hash": "b9035458c48ddeab5ad9a17ade89d26963662d7551e240519f26d8863807ac22"
     },
     {
       "cursor": 21,
@@ -2885,9 +3032,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "c6628d8c5fa1030abcc98d17e08cc1c24cf50773341273e71ad511375605ddff",
-      "event_hash": "1a5104ad9d12e09ec7384f18da3e08d9b3768c5c05cf7bdd3f455900c46fb21c"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "b9035458c48ddeab5ad9a17ade89d26963662d7551e240519f26d8863807ac22",
+      "event_hash": "bd1891e2d100ae2ac3a194e9ca294facbb56e426e3b67810269fbbda942157d3"
     },
     {
       "cursor": 22,
@@ -2919,9 +3066,9 @@
         "source_event_cursor": 22,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "1a5104ad9d12e09ec7384f18da3e08d9b3768c5c05cf7bdd3f455900c46fb21c",
-      "event_hash": "d3c8e1fb8ea0179672cc779e3581b2af43bbddaadaf44832565c79444be20427"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "bd1891e2d100ae2ac3a194e9ca294facbb56e426e3b67810269fbbda942157d3",
+      "event_hash": "a40d925262d09c98d667db0121e2fc18a59ceed701b59a78280c6b23cbf37ed2"
     },
     {
       "cursor": 23,
@@ -2954,9 +3101,9 @@
         ],
         "provenance": "synthetic_fixture"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "d3c8e1fb8ea0179672cc779e3581b2af43bbddaadaf44832565c79444be20427",
-      "event_hash": "431318c6382034a4759e962a8d7238e1a2e420dc7c50e613dd6737f0d469c5fd"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "a40d925262d09c98d667db0121e2fc18a59ceed701b59a78280c6b23cbf37ed2",
+      "event_hash": "bff2ed1213d0caf77b2462ce43e207c0edc06e73e813b83447a74296836c038e"
     },
     {
       "cursor": 24,
@@ -3018,9 +3165,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "431318c6382034a4759e962a8d7238e1a2e420dc7c50e613dd6737f0d469c5fd",
-      "event_hash": "c3eb6c25420dc2bdda5fea534b88078c57c1a61ac1468759f8b9855a28c8f49b"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "bff2ed1213d0caf77b2462ce43e207c0edc06e73e813b83447a74296836c038e",
+      "event_hash": "f23885a4db9f520bd92681bbccc19375733743e2f823577964f4b280be425522"
     },
     {
       "cursor": 25,
@@ -3045,9 +3192,9 @@
         "source_event_cursor": 25,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "c3eb6c25420dc2bdda5fea534b88078c57c1a61ac1468759f8b9855a28c8f49b",
-      "event_hash": "2e73ce559a8591e881ea8990bd8ac55fb55e59ccc26c575db5238c9ec1501b28"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "f23885a4db9f520bd92681bbccc19375733743e2f823577964f4b280be425522",
+      "event_hash": "fdd207c13a744d583da59169f87356688104b03be68166b6daa24f8baeaa5e9f"
     },
     {
       "cursor": 26,
@@ -3123,9 +3270,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "2e73ce559a8591e881ea8990bd8ac55fb55e59ccc26c575db5238c9ec1501b28",
-      "event_hash": "d2a1565260312290346bd42116294a9f7d8f6e4ca10f5b58b84eee2db7efba1b"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "fdd207c13a744d583da59169f87356688104b03be68166b6daa24f8baeaa5e9f",
+      "event_hash": "ab50bd49aebb884a7db41689d34337f2eead642608c195ec4b4b922de0f7e708"
     },
     {
       "cursor": 27,
@@ -3179,9 +3326,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "d2a1565260312290346bd42116294a9f7d8f6e4ca10f5b58b84eee2db7efba1b",
-      "event_hash": "75778ae2bbbbed54bc4e556196fcad827b042f73938dee86d043581436d6fe59"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "ab50bd49aebb884a7db41689d34337f2eead642608c195ec4b4b922de0f7e708",
+      "event_hash": "460f6b03898be25ad8842c745e2f2e3e6e736b5cb4feb2c83591111eb74a8ecd"
     },
     {
       "cursor": 28,
@@ -3242,9 +3389,9 @@
         "source_event_cursor": 15,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "75778ae2bbbbed54bc4e556196fcad827b042f73938dee86d043581436d6fe59",
-      "event_hash": "788d8f8209ccf1eb3ea364bba39f4b21acd44fdae17019e36501f264f7751f01"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "460f6b03898be25ad8842c745e2f2e3e6e736b5cb4feb2c83591111eb74a8ecd",
+      "event_hash": "c52aed0ec1e2e8c60342723c4f90a4e399165a8caacb59209f5df2d8c59cb371"
     },
     {
       "cursor": 29,
@@ -3295,9 +3442,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "788d8f8209ccf1eb3ea364bba39f4b21acd44fdae17019e36501f264f7751f01",
-      "event_hash": "28aca686ca631f76c29ee54215176f6c0db34132d429c9fbee72b73709b4bdc5"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "c52aed0ec1e2e8c60342723c4f90a4e399165a8caacb59209f5df2d8c59cb371",
+      "event_hash": "20293c6930510dd5727f83bbe5ccdf8dfd968840c651c5086b9673d7298a0bd7"
     },
     {
       "cursor": 30,
@@ -3348,9 +3495,9 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "28aca686ca631f76c29ee54215176f6c0db34132d429c9fbee72b73709b4bdc5",
-      "event_hash": "cb0d1f2722d1300d3e0ed9649d11a6bb96527b11cf4e849031606104918ab2c7"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "20293c6930510dd5727f83bbe5ccdf8dfd968840c651c5086b9673d7298a0bd7",
+      "event_hash": "f423790ad6fe7d2766d875b6cad393a7a76051782e17a6f5b4575baff97006bb"
     },
     {
       "cursor": 31,
@@ -3401,26 +3548,146 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "cb0d1f2722d1300d3e0ed9649d11a6bb96527b11cf4e849031606104918ab2c7",
-      "event_hash": "5d6bb4cd16bf973f7e149309861ab8c7b47a30b89c4ae083c36501dcb41efb2b"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "f423790ad6fe7d2766d875b6cad393a7a76051782e17a6f5b4575baff97006bb",
+      "event_hash": "9aabe3b2a0c0b58d92a4d9c2ae74e125c61a9a83e3d91b74c35c5548c346aba2"
     },
     {
       "cursor": 32,
       "event_type": "evidence_linked",
       "payload": {
         "schema_version": "1.0.0",
-        "evidence_id": "E201",
-        "kind": "synthetic_measurement",
-        "title": "Synthetic E201 evidence",
+        "evidence_id": "E104",
+        "kind": "synthetic_observation",
+        "title": "Synthetic E104 evidence",
         "provenance": "committed synthetic fixture",
         "source": {
-          "source_id": "E201",
-          "uri": "thesis-deck-system/examples/synthetic-project/phase2/contact-pressure.csv",
-          "sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7"
+          "source_id": "E104",
+          "uri": "thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt",
+          "sha256": "28326c007fc6eda9d8301598da822e02b0ae6c87f6da4d8eb08f64bcc479aa4e"
         },
         "claim_support_refs": [
-          "C201"
+          "C101",
+          "C102"
+        ],
+        "claim_contradict_refs": [],
+        "scope": {
+          "block_id": "B101"
+        },
+        "measurement": {
+          "synthetic": true
+        },
+        "causal_role": "transition_precursor",
+        "origin": {
+          "layer_ref": "H001",
+          "stage_ref": "ST-H001-DISC",
+          "source_dataset_role": "pre_h02_uncertainty"
+        },
+        "license_or_usage": "synthetic_test_only",
+        "verification": {
+          "status": "synthetic_test_only"
+        }
+      },
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "9aabe3b2a0c0b58d92a4d9c2ae74e125c61a9a83e3d91b74c35c5548c346aba2",
+      "event_hash": "33bef6cf42ba9235d37c1aeac19c2bee76f715058f04f56d0a9047429acfb8c7"
+    },
+    {
+      "cursor": 33,
+      "event_type": "block_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "block_id": "B101",
+        "revision": 2,
+        "title": "H01 Bulk conductivity mechanism",
+        "research_question": {
+          "question_id": "RQ-B101",
+          "text": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "scope": "synthetic fixture only"
+        },
+        "problem_statement": "合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。",
+        "research_status": "active",
+        "story_visibility": {
+          "master": "main",
+          "meeting": "main",
+          "defense": "appendix"
+        },
+        "hypothesis_claim_refs": [
+          "C101"
+        ],
+        "mechanism_claim_refs": [
+          "C102"
+        ],
+        "prediction_claim_refs": [
+          "C103"
+        ],
+        "stage_refs": {
+          "observation": "ST-H001-OBS",
+          "literature": "ST-H001-LIT",
+          "mechanism": "ST-H001-MECH",
+          "solution": "ST-H001-SOL",
+          "experiment": "ST-EXP101",
+          "result": "ST-RES101",
+          "discussion": "ST-H001-DISC",
+          "next_step": "NS101"
+        },
+        "experiment_stage_refs": [
+          "ST-EXP101",
+          "ST-EXP102"
+        ],
+        "result_stage_refs": [
+          "ST-RES101",
+          "ST-RES102"
+        ],
+        "claim_refs": [
+          "C101",
+          "C102",
+          "C103"
+        ],
+        "evidence_refs": [
+          "E002",
+          "E101",
+          "E102",
+          "E103",
+          "E104"
+        ],
+        "asset_refs": [
+          "A001",
+          "A002",
+          "A101"
+        ],
+        "action_item_refs": [
+          "NS101"
+        ],
+        "decision_refs": [
+          "D101"
+        ],
+        "decision_criteria_ref": "ST-EXP101#/data/decision_rules",
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "33bef6cf42ba9235d37c1aeac19c2bee76f715058f04f56d0a9047429acfb8c7",
+      "event_hash": "78eac7ae1cf523fe3d5d1fe7683ee9af3a9eeaabeacefb83f9cd44b9a6192e0a"
+    },
+    {
+      "cursor": 34,
+      "event_type": "evidence_linked",
+      "payload": {
+        "schema_version": "1.0.0",
+        "evidence_id": "E202",
+        "kind": "synthetic_literature",
+        "title": "Synthetic E202 evidence",
+        "provenance": "committed synthetic fixture",
+        "source": {
+          "source_id": "E202",
+          "uri": "thesis-deck-system/examples/synthetic-project/evidence/literature-note.txt",
+          "sha256": "5b510e5b31d6714228a03c31a544b12a0991ab0dc797166167cfe8d8447f7fee"
+        },
+        "claim_support_refs": [
+          "C201",
+          "C202"
         ],
         "claim_contradict_refs": [],
         "scope": {
@@ -3429,17 +3696,62 @@
         "measurement": {
           "synthetic": true
         },
+        "causal_role": "supporting_observation",
+        "origin": {
+          "layer_ref": "H002",
+          "source_dataset_role": "preexisting_observation"
+        },
         "license_or_usage": "synthetic_test_only",
         "verification": {
           "status": "synthetic_test_only"
         }
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "5d6bb4cd16bf973f7e149309861ab8c7b47a30b89c4ae083c36501dcb41efb2b",
-      "event_hash": "7cb94603caf8dac1f1aa8995097a335ec0deb6ef0151ad591aefc125d0c982cb"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "78eac7ae1cf523fe3d5d1fe7683ee9af3a9eeaabeacefb83f9cd44b9a6192e0a",
+      "event_hash": "82b0303b2474ed1d10e16f044d629e5ee55ff6d9aab2c7c04e49af7fdfb1d9bf"
     },
     {
-      "cursor": 33,
+      "cursor": 35,
+      "event_type": "evidence_linked",
+      "payload": {
+        "schema_version": "1.0.0",
+        "evidence_id": "E204",
+        "kind": "synthetic_observation",
+        "title": "Synthetic E204 evidence",
+        "provenance": "committed synthetic fixture",
+        "source": {
+          "source_id": "E204",
+          "uri": "thesis-deck-system/examples/synthetic-project/phase2/h01-contact-uncertainty.txt",
+          "sha256": "28326c007fc6eda9d8301598da822e02b0ae6c87f6da4d8eb08f64bcc479aa4e"
+        },
+        "claim_support_refs": [
+          "C201",
+          "C202"
+        ],
+        "claim_contradict_refs": [],
+        "scope": {
+          "block_id": "B201"
+        },
+        "measurement": {
+          "synthetic": true
+        },
+        "causal_role": "supporting_observation",
+        "origin": {
+          "layer_ref": "H001",
+          "stage_ref": "ST-H001-DISC",
+          "source_dataset_role": "pre_h02_uncertainty"
+        },
+        "license_or_usage": "synthetic_test_only",
+        "verification": {
+          "status": "synthetic_test_only"
+        }
+      },
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "82b0303b2474ed1d10e16f044d629e5ee55ff6d9aab2c7c04e49af7fdfb1d9bf",
+      "event_hash": "ec6f38b62a6512d8ee38bff59914f96070aefbf7beb96938588cf39b4ee9eb54"
+    },
+    {
+      "cursor": 36,
       "event_type": "problem_created",
       "payload": {
         "schema_version": "2.0.0",
@@ -3453,7 +3765,7 @@
         "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
         "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
         "evidence_refs": [
-          "E201"
+          "E204"
         ],
         "derived_from_decision_refs": [
           "D101"
@@ -3462,12 +3774,12 @@
         "source_event_cursor": 17,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "7cb94603caf8dac1f1aa8995097a335ec0deb6ef0151ad591aefc125d0c982cb",
-      "event_hash": "094aff30e2a9afeeb79adfbce4fad4845cfe9c07d415ccc560becd4fc3635ba2"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "ec6f38b62a6512d8ee38bff59914f96070aefbf7beb96938588cf39b4ee9eb54",
+      "event_hash": "2f21e510d1a0b4b9d45c96b573a78e06eb2c199414d996c267d13d0275657044"
     },
     {
-      "cursor": 34,
+      "cursor": 37,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -3483,7 +3795,7 @@
           "C201"
         ],
         "evidence_refs": [
-          "E201"
+          "E204"
         ],
         "hypothesis_claim_refs": [],
         "prediction_claim_refs": [],
@@ -3495,12 +3807,126 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "094aff30e2a9afeeb79adfbce4fad4845cfe9c07d415ccc560becd4fc3635ba2",
-      "event_hash": "fd74a5ce2aaaae085a7598e501ddf52ccd4ecb03fe8acd2907a263a609b132ad"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "2f21e510d1a0b4b9d45c96b573a78e06eb2c199414d996c267d13d0275657044",
+      "event_hash": "fd114fd284ec32027d960be38e7f56f9028eb6c8dd5dabd66c217362f47b3a14"
     },
     {
-      "cursor": 35,
+      "cursor": 38,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H002-LIT",
+        "block_ref": {
+          "block_id": "B201",
+          "revision": 1
+        },
+        "stage_type": "literature",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C201",
+          "C202"
+        ],
+        "evidence_refs": [
+          "E202"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "consensus": "transport gradient 可產生位置效應。",
+          "disagreements_or_alternatives": [
+            "interface contact remains alternative"
+          ],
+          "known_mechanisms": [
+            "bulk transport",
+            "boundary accumulation"
+          ],
+          "research_gap": "缺少控制比較隔離機制。",
+          "relevance_to_observation": "兩種機制都預測位置效應。",
+          "implication_for_hypothesis_or_strategy": "需匹配條件後比較。",
+          "supporting_literature_evidence_refs": [
+            "E202"
+          ],
+          "contradicting_literature_evidence_refs": []
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "fd114fd284ec32027d960be38e7f56f9028eb6c8dd5dabd66c217362f47b3a14",
+      "event_hash": "df442d9fd527420f341905210df6e089f43dc15c884e3359e810362ebaa035e1"
+    },
+    {
+      "cursor": 39,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H002-MECH",
+        "block_ref": {
+          "block_id": "B201",
+          "revision": 1
+        },
+        "stage_type": "mechanism",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C202",
+          "C203"
+        ],
+        "evidence_refs": [
+          "E202"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "mechanism": "contact resistance",
+          "falsification": "控制比較不出現預測差異。"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "df442d9fd527420f341905210df6e089f43dc15c884e3359e810362ebaa035e1",
+      "event_hash": "85d675b95115a1e7e4ea335384c426b31cc389e2e846f03b44b54f41297552ee"
+    },
+    {
+      "cursor": 40,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H002-SOL",
+        "block_ref": {
+          "block_id": "B201",
+          "revision": 1
+        },
+        "stage_type": "solution",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C202"
+        ],
+        "evidence_refs": [
+          "E202"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "strategy": "匹配導電度並改變接觸壓力",
+          "success_criterion": "預測指標跨過 decision threshold"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "85d675b95115a1e7e4ea335384c426b31cc389e2e846f03b44b54f41297552ee",
+      "event_hash": "f6eea50845aec20581b6e82fe556a0e154d18b0ccf282601ab5a621aa0aac7f0"
+    },
+    {
+      "cursor": 41,
       "event_type": "hypothesis_transition_recorded",
       "payload": {
         "schema_version": "2.0.0",
@@ -3514,22 +3940,22 @@
         ],
         "unexplained": "導電度增加後訊號重複性沒有改善。",
         "observation_or_uncertainty_refs": [
-          "E201"
+          "E104"
         ],
         "rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
         "new_hypothesis_claim_ref": "C201",
         "decision_refs": [
           "D101"
         ],
-        "source_event_cursor": 35,
+        "source_event_cursor": 41,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "fd74a5ce2aaaae085a7598e501ddf52ccd4ecb03fe8acd2907a263a609b132ad",
-      "event_hash": "56c71411f34ad26f0f02b326873e81e44cd2311896dec3610742a68d20d716dd"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "f6eea50845aec20581b6e82fe556a0e154d18b0ccf282601ab5a621aa0aac7f0",
+      "event_hash": "44706a888e6759e61cce0285f84c562a8631de2b383a576b2ec7af11e089b23e"
     },
     {
-      "cursor": 36,
+      "cursor": 42,
       "event_type": "hypothesis_layer_revised",
       "payload": {
         "schema_version": "2.0.0",
@@ -3576,16 +4002,16 @@
         "transition_ref": "TR-H001-H002",
         "story_visibility": "main",
         "research_status": "partial_support",
-        "source_event_cursor": 36,
+        "source_event_cursor": 42,
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "56c71411f34ad26f0f02b326873e81e44cd2311896dec3610742a68d20d716dd",
-      "event_hash": "68b2e1100ba8778d274fedba536b2f6bc6ccfee1c79bb457a949524722de14da"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "44706a888e6759e61cce0285f84c562a8631de2b383a576b2ec7af11e089b23e",
+      "event_hash": "cf256e51e56bea8b0893c8c24a94b401a5160e1768c3ad40b103d5b1fb66349f"
     },
     {
-      "cursor": 37,
+      "cursor": 43,
       "event_type": "asset_registered",
       "payload": {
         "schema_version": "1.0.0",
@@ -3594,7 +4020,7 @@
         "title": "Synthetic A102",
         "evidence_role": "synthetic_test_evidence",
         "source_evidence": [
-          "E201"
+          "E204"
         ],
         "path": "fishbone/FB001-rev2.svg",
         "preview_path": "fishbone/FB001-rev2.png",
@@ -3604,176 +4030,12 @@
         "provenance": "synthetic_fixture",
         "status": "approved"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "68b2e1100ba8778d274fedba536b2f6bc6ccfee1c79bb457a949524722de14da",
-      "event_hash": "24e856f0513e7fa012f87090997b9fdbe88c30efd3e06ce2ee55a4c2d098b7df"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "cf256e51e56bea8b0893c8c24a94b401a5160e1768c3ad40b103d5b1fb66349f",
+      "event_hash": "8ff29658f346a2e0e90de66b85360148871ee385c868ddba3caa5728fcaa2437"
     },
     {
-      "cursor": 38,
-      "event_type": "asset_registered",
-      "payload": {
-        "schema_version": "1.0.0",
-        "asset_id": "A201",
-        "asset_type": "data_plot",
-        "title": "Synthetic A201",
-        "evidence_role": "synthetic_test_evidence",
-        "source_evidence": [
-          "E201"
-        ],
-        "path": "plots/H02_contact_pressure.svg",
-        "preview_path": "plots/H02_contact_pressure.png",
-        "mime_type": "image/svg+xml",
-        "sha256": "367c5a09b8506bd939163177fffe71ed4872cf9499ba4d2525807c3f00870472",
-        "editable": true,
-        "provenance": "synthetic_fixture",
-        "status": "approved",
-        "generator": {
-          "kind": "matplotlib",
-          "version": "3.x",
-          "script": "thesis-deck-system/examples/synthetic-project/phase2/plot_contact_pressure.py",
-          "script_sha256": "3aeb7e22710c80af2bb316ce066de3397d9edd0520f8464c387ed59021eee1c6"
-        },
-        "input": {
-          "path": "thesis-deck-system/examples/synthetic-project/phase2/contact-pressure.csv",
-          "sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7"
-        },
-        "output": {
-          "svg_path": "plots/H02_contact_pressure.svg",
-          "svg_sha256": "367c5a09b8506bd939163177fffe71ed4872cf9499ba4d2525807c3f00870472",
-          "png_path": "plots/H02_contact_pressure.png",
-          "png_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787"
-        },
-        "transform_chain": [
-          {
-            "input_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
-            "operation": "plot",
-            "output_sha256": "367c5a09b8506bd939163177fffe71ed4872cf9499ba4d2525807c3f00870472"
-          }
-        ],
-        "accessibility": {
-          "alt_text": "contact pressure result plot"
-        }
-      },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "24e856f0513e7fa012f87090997b9fdbe88c30efd3e06ce2ee55a4c2d098b7df",
-      "event_hash": "9d18a5971f3f09a7075bf0fd95d0c7fb2f8b4de26dcb2befe0696955cdaa4d68"
-    },
-    {
-      "cursor": 39,
-      "event_type": "stage_revised",
-      "payload": {
-        "schema_version": "1.0.0",
-        "stage_id": "ST-H002-LIT",
-        "block_ref": {
-          "block_id": "B201",
-          "revision": 1
-        },
-        "stage_type": "literature",
-        "revision": 1,
-        "status": "complete",
-        "claim_refs": [
-          "C201",
-          "C202"
-        ],
-        "evidence_refs": [
-          "E201"
-        ],
-        "hypothesis_claim_refs": [],
-        "prediction_claim_refs": [],
-        "data": {
-          "consensus": "transport gradient 可產生位置效應。",
-          "disagreements_or_alternatives": [
-            "interface contact remains alternative"
-          ],
-          "known_mechanisms": [
-            "bulk transport",
-            "boundary accumulation"
-          ],
-          "research_gap": "缺少控制比較隔離機制。",
-          "relevance_to_observation": "兩種機制都預測位置效應。",
-          "implication_for_hypothesis_or_strategy": "需匹配條件後比較。",
-          "supporting_literature_evidence_refs": [
-            "E103"
-          ],
-          "contradicting_literature_evidence_refs": []
-        },
-        "provenance": "synthetic_fixture",
-        "created_at": "2026-08-27T00:00:00Z",
-        "updated_at": "2026-08-27T00:00:00Z"
-      },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "9d18a5971f3f09a7075bf0fd95d0c7fb2f8b4de26dcb2befe0696955cdaa4d68",
-      "event_hash": "827025488dd94e51583f5b46d379d9fd54c84abb8321b704cfb61323956e232e"
-    },
-    {
-      "cursor": 40,
-      "event_type": "stage_revised",
-      "payload": {
-        "schema_version": "1.0.0",
-        "stage_id": "ST-H002-MECH",
-        "block_ref": {
-          "block_id": "B201",
-          "revision": 1
-        },
-        "stage_type": "mechanism",
-        "revision": 1,
-        "status": "complete",
-        "claim_refs": [
-          "C202",
-          "C203"
-        ],
-        "evidence_refs": [
-          "E201"
-        ],
-        "hypothesis_claim_refs": [],
-        "prediction_claim_refs": [],
-        "data": {
-          "mechanism": "contact resistance",
-          "falsification": "控制比較不出現預測差異。"
-        },
-        "provenance": "synthetic_fixture",
-        "created_at": "2026-08-27T00:00:00Z",
-        "updated_at": "2026-08-27T00:00:00Z"
-      },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "827025488dd94e51583f5b46d379d9fd54c84abb8321b704cfb61323956e232e",
-      "event_hash": "3dc2bc982e0c8c37b8d7b344bae71dec092ff7c07c47f2014edd7875b5a990da"
-    },
-    {
-      "cursor": 41,
-      "event_type": "stage_revised",
-      "payload": {
-        "schema_version": "1.0.0",
-        "stage_id": "ST-H002-SOL",
-        "block_ref": {
-          "block_id": "B201",
-          "revision": 1
-        },
-        "stage_type": "solution",
-        "revision": 1,
-        "status": "complete",
-        "claim_refs": [
-          "C202"
-        ],
-        "evidence_refs": [
-          "E201"
-        ],
-        "hypothesis_claim_refs": [],
-        "prediction_claim_refs": [],
-        "data": {
-          "strategy": "匹配導電度並改變接觸壓力",
-          "success_criterion": "預測指標跨過 decision threshold"
-        },
-        "provenance": "synthetic_fixture",
-        "created_at": "2026-08-27T00:00:00Z",
-        "updated_at": "2026-08-27T00:00:00Z"
-      },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "3dc2bc982e0c8c37b8d7b344bae71dec092ff7c07c47f2014edd7875b5a990da",
-      "event_hash": "3915fba4a44787b601da006143349fa9f003c913d9a3c5b3e9d98d80c07ecc96"
-    },
-    {
-      "cursor": 42,
+      "cursor": 44,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -3790,7 +4052,7 @@
           "C203"
         ],
         "evidence_refs": [
-          "E201"
+          "E104"
         ],
         "hypothesis_claim_refs": [
           "C201"
@@ -3836,12 +4098,101 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "3915fba4a44787b601da006143349fa9f003c913d9a3c5b3e9d98d80c07ecc96",
-      "event_hash": "072999f31ad35ab81296365b9ff27baf4386c601817f0154f25314fd9dbe70e5"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "8ff29658f346a2e0e90de66b85360148871ee385c868ddba3caa5728fcaa2437",
+      "event_hash": "67ce91183a4618c7f4050166ae491bb8b97ab4f68ef84dc3cf40783235991e82"
     },
     {
-      "cursor": 43,
+      "cursor": 45,
+      "event_type": "evidence_linked",
+      "payload": {
+        "schema_version": "1.0.0",
+        "evidence_id": "E201",
+        "kind": "synthetic_measurement",
+        "title": "Synthetic E201 evidence",
+        "provenance": "committed synthetic fixture",
+        "source": {
+          "source_id": "E201",
+          "uri": "thesis-deck-system/examples/synthetic-project/phase2/contact-pressure.csv",
+          "sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7"
+        },
+        "claim_support_refs": [
+          "C201"
+        ],
+        "claim_contradict_refs": [],
+        "scope": {
+          "block_id": "B201"
+        },
+        "measurement": {
+          "synthetic": true
+        },
+        "causal_role": "experiment_result",
+        "origin": {
+          "layer_ref": "H002",
+          "experiment_stage_ref": "ST-EXP201",
+          "source_dataset_role": "discriminating_result"
+        },
+        "license_or_usage": "synthetic_test_only",
+        "verification": {
+          "status": "synthetic_test_only"
+        }
+      },
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "67ce91183a4618c7f4050166ae491bb8b97ab4f68ef84dc3cf40783235991e82",
+      "event_hash": "00a10b9d04be4ecc2f720e1660ce8a73b16971744261f866bfa0da29743c74bc"
+    },
+    {
+      "cursor": 46,
+      "event_type": "asset_registered",
+      "payload": {
+        "schema_version": "1.0.0",
+        "asset_id": "A201",
+        "asset_type": "data_plot",
+        "title": "Synthetic A201",
+        "evidence_role": "synthetic_test_evidence",
+        "source_evidence": [
+          "E201"
+        ],
+        "path": "plots/H02_contact_pressure.svg",
+        "preview_path": "plots/H02_contact_pressure.png",
+        "mime_type": "image/svg+xml",
+        "sha256": "14b60b251d0dae71d51423e6d165d81df4382c318aadb0e36ab889f7f6d9b5fc",
+        "editable": true,
+        "provenance": "synthetic_fixture",
+        "status": "approved",
+        "generator": {
+          "kind": "matplotlib",
+          "version": "3.x",
+          "script": "thesis-deck-system/examples/synthetic-project/phase2/plot_contact_pressure.py",
+          "script_sha256": "3aeb7e22710c80af2bb316ce066de3397d9edd0520f8464c387ed59021eee1c6"
+        },
+        "input": {
+          "path": "thesis-deck-system/examples/synthetic-project/phase2/contact-pressure.csv",
+          "sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7"
+        },
+        "output": {
+          "svg_path": "plots/H02_contact_pressure.svg",
+          "svg_sha256": "14b60b251d0dae71d51423e6d165d81df4382c318aadb0e36ab889f7f6d9b5fc",
+          "png_path": "plots/H02_contact_pressure.png",
+          "png_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787"
+        },
+        "transform_chain": [
+          {
+            "input_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
+            "operation": "plot",
+            "output_sha256": "14b60b251d0dae71d51423e6d165d81df4382c318aadb0e36ab889f7f6d9b5fc"
+          }
+        ],
+        "accessibility": {
+          "alt_text": "contact pressure result plot"
+        }
+      },
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "00a10b9d04be4ecc2f720e1660ce8a73b16971744261f866bfa0da29743c74bc",
+      "event_hash": "e113b0c42072b62e9806d5c1ad51b737c37fd6f5ecbee3b1ba3435e1dfa79b16"
+    },
+    {
+      "cursor": 47,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -3877,12 +4228,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "072999f31ad35ab81296365b9ff27baf4386c601817f0154f25314fd9dbe70e5",
-      "event_hash": "5fa63090f70143fb513b8b35af5f237bc6bfaf4e4d309104fc176ebce6af8dca"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "e113b0c42072b62e9806d5c1ad51b737c37fd6f5ecbee3b1ba3435e1dfa79b16",
+      "event_hash": "7be5fe955339ccaa2621703bcaa96a146cbee120928217fb1fa5dbac2a76aed2"
     },
     {
-      "cursor": 44,
+      "cursor": 48,
       "event_type": "stage_revised",
       "payload": {
         "schema_version": "1.0.0",
@@ -3920,12 +4271,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "5fa63090f70143fb513b8b35af5f237bc6bfaf4e4d309104fc176ebce6af8dca",
-      "event_hash": "7d6ab26a2621b1e98eae5abe9015e7c94f291701cb1d67b6b32835575a2ac06e"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "7be5fe955339ccaa2621703bcaa96a146cbee120928217fb1fa5dbac2a76aed2",
+      "event_hash": "791fd02ce4abcc04481caf3831f92e991f18259c9fe09e39d3811d79a3b3d768"
     },
     {
-      "cursor": 45,
+      "cursor": 49,
       "event_type": "action_status_changed",
       "payload": {
         "action_item_id": "NS101",
@@ -3938,12 +4289,12 @@
         },
         "result_summary": "Completed synthetic control"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "7d6ab26a2621b1e98eae5abe9015e7c94f291701cb1d67b6b32835575a2ac06e",
-      "event_hash": "861c37f250053478f3e08f9c0f8be547f0b8f6d121250e06cfb3b671fc9d7cad"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "791fd02ce4abcc04481caf3831f92e991f18259c9fe09e39d3811d79a3b3d768",
+      "event_hash": "44951d51f4c615a6093f6c68fe04747ebd30e8e287f7126d9957cb1bb274f29a"
     },
     {
-      "cursor": 46,
+      "cursor": 50,
       "event_type": "layer_discussion_recorded",
       "payload": {
         "schema_version": "2.0.0",
@@ -3965,15 +4316,15 @@
         "next_step_refs": [
           "NS201"
         ],
-        "source_event_cursor": 46,
+        "source_event_cursor": 50,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "861c37f250053478f3e08f9c0f8be547f0b8f6d121250e06cfb3b671fc9d7cad",
-      "event_hash": "3c51600ebeb8ae53ec2d04588da7d497948b87c52a8e0dbefd6fde817b0e4e12"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "44951d51f4c615a6093f6c68fe04747ebd30e8e287f7126d9957cb1bb274f29a",
+      "event_hash": "b82ae5819ad8bf62abb18fd2c457409709f7b79f6b1ddcc09884dc313a8a330e"
     },
     {
-      "cursor": 47,
+      "cursor": 51,
       "event_type": "decision_recorded",
       "payload": {
         "schema_version": "1.0.0",
@@ -4002,12 +4353,12 @@
         ],
         "provenance": "synthetic_fixture"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "3c51600ebeb8ae53ec2d04588da7d497948b87c52a8e0dbefd6fde817b0e4e12",
-      "event_hash": "e85cc605b44332162b49e2e2aaafac80ab22d79dcc0ba1748ac68f70b0b4edcf"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "b82ae5819ad8bf62abb18fd2c457409709f7b79f6b1ddcc09884dc313a8a330e",
+      "event_hash": "fc97ed98fe03d20c85d8d48e81a89a60a81835c273cddda391c02ee18f1e1134"
     },
     {
-      "cursor": 48,
+      "cursor": 52,
       "event_type": "action_committed",
       "payload": {
         "schema_version": "1.0.0",
@@ -4066,12 +4417,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "e85cc605b44332162b49e2e2aaafac80ab22d79dcc0ba1748ac68f70b0b4edcf",
-      "event_hash": "575e1351d7773dac646648c907f3984b35a07e04eade01a318e2adcb877004a5"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "fc97ed98fe03d20c85d8d48e81a89a60a81835c273cddda391c02ee18f1e1134",
+      "event_hash": "948b9869e949ebe751477135cdec459e9260bd6266d20843dc76a612cb9195a9"
     },
     {
-      "cursor": 49,
+      "cursor": 53,
       "event_type": "layer_summary_recorded",
       "payload": {
         "schema_version": "2.0.0",
@@ -4089,15 +4440,15 @@
         "next_step_refs": [
           "NS201"
         ],
-        "source_event_cursor": 49,
+        "source_event_cursor": 53,
         "created_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "575e1351d7773dac646648c907f3984b35a07e04eade01a318e2adcb877004a5",
-      "event_hash": "ad5a85b1c074bdb380968cb6d061d949f8559303ebc8cc3a82ae894a3287838d"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "948b9869e949ebe751477135cdec459e9260bd6266d20843dc76a612cb9195a9",
+      "event_hash": "d571fe87e1bff14d3557831d48210869c71092e83956f2a3e32326c0aa84cc9e"
     },
     {
-      "cursor": 50,
+      "cursor": 54,
       "event_type": "block_created",
       "payload": {
         "schema_version": "1.0.0",
@@ -4147,6 +4498,8 @@
           "C203"
         ],
         "evidence_refs": [
+          "E202",
+          "E204",
           "E201"
         ],
         "asset_refs": [
@@ -4164,12 +4517,12 @@
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "ad5a85b1c074bdb380968cb6d061d949f8559303ebc8cc3a82ae894a3287838d",
-      "event_hash": "9ec85679968c8ad6be353f93922b66f1ed3555d493cba2e74744061cafdd25c2"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "d571fe87e1bff14d3557831d48210869c71092e83956f2a3e32326c0aa84cc9e",
+      "event_hash": "aa2b0ad650beb1f4d521664f349addc911eb1890224153333e36d180aa1f1f1a"
     },
     {
-      "cursor": 51,
+      "cursor": 55,
       "event_type": "hypothesis_layer_created",
       "payload": {
         "schema_version": "2.0.0",
@@ -4189,7 +4542,7 @@
             "D101"
           ],
           "observation_refs": [
-            "E201"
+            "E104"
           ]
         },
         "fishbone_snapshot_ref": {
@@ -4223,13 +4576,13 @@
         "transition_ref": null,
         "story_visibility": "main",
         "research_status": "supported",
-        "source_event_cursor": 51,
+        "source_event_cursor": 55,
         "created_at": "2026-08-27T00:00:00Z",
         "updated_at": "2026-08-27T00:00:00Z"
       },
-      "timestamp": "2026-08-27T10:27:10Z",
-      "previous_hash": "9ec85679968c8ad6be353f93922b66f1ed3555d493cba2e74744061cafdd25c2",
-      "event_hash": "482bf04c30aec545ec19f47c8870269d053ed8e7730c8013f161fec631620c47"
+      "timestamp": "2026-08-27T11:24:21Z",
+      "previous_hash": "aa2b0ad650beb1f4d521664f349addc911eb1890224153333e36d180aa1f1f1a",
+      "event_hash": "43d071f8081b26df77d367261d9d9ce1bc7e260b54c6a69f8b3d3681252058f9"
     }
   ]
 }

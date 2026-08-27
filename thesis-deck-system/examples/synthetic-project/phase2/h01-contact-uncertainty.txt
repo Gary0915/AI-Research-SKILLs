@@ -1,0 +1,5 @@
+Synthetic H01 precursor observation: after matched bulk-conductivity
+improvement, residual signal variability remained position-sensitive at the
+electrode interface. This is an uncertainty record available before the H02
+contact-pressure discriminating experiment; it contains no pressure/CV/contact
+resistance measurements from that later experiment.

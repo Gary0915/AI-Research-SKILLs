@@ -24,7 +24,8 @@ def test_phase2_acceptance_build_is_cursor_aware_and_reviewable(tmp_path: Path):
         "slide-specs.json", "layout-plans.json", "MASTER-PHASE2.manifest.json",
         "meeting-projection.json", "fishbone/FB001-rev1.svg", "fishbone/FB001-rev2.svg",
         "acceptance-deck.pptx", "structural-audit.json", "professor-qa.json",
-        "scientific-provenance-qa.json", "private-fixture-status.json",
+        "scientific-provenance-qa.json", "evidence-causal-role-qa.json",
+        "h003-generic-professor-qa-fixture.json", "private-fixture-status.json",
     ]
     assert all((tmp_path / path).is_file() for path in expected)
     ledger = Ledger.load(tmp_path / "ledger-events.json")
@@ -38,7 +39,9 @@ def test_phase2_acceptance_build_is_cursor_aware_and_reviewable(tmp_path: Path):
     assert h02["hypothesis_layers"]["H002"]["fishbone_snapshot_ref"]["revision"] == 2
 
     specs = json.loads((tmp_path / "slide-specs.json").read_text(encoding="utf-8"))
-    assert len(specs) == 18
+    # H01's two experiment matrices are now a real governed split rather
+    # than a self-approved one-page override.
+    assert len(specs) == 19
     h01_specs = [spec for spec in specs if spec.get("hypothesis_layer_ref") == "H001"]
     h02_specs = [spec for spec in specs if spec.get("hypothesis_layer_ref") == "H002"]
     assert h01_specs[0]["semantic_role"] == "hypothesis_title"
@@ -63,6 +66,8 @@ def test_phase2_acceptance_build_is_cursor_aware_and_reviewable(tmp_path: Path):
 
     private = json.loads((tmp_path / "private-fixture-status.json").read_text(encoding="utf-8"))
     assert private["mode"] == "blocked_fixture"
+    assert json.loads((tmp_path / "evidence-causal-role-qa.json").read_text(encoding="utf-8"))["status"] == "pass"
+    assert json.loads((tmp_path / "h003-generic-professor-qa-fixture.json").read_text(encoding="utf-8"))["status"] == "pass"
 
     registry = SchemaRegistry(ROOT / "thesis-deck-system/schemas", include_phase2=True)
     assert all(not registry.errors("slide-spec", spec) for spec in specs)

@@ -133,3 +133,56 @@ def content_from_materialized_state(state: dict, layer_id: str, role: str, objec
         return f"Answered｜{summary.get('answered', '')}\nHypothesis status｜{summary.get('hypothesis_status', '')}\nDecision｜{decision.get('choice', '')}: {decision.get('rationale', '')}\nUnresolved｜{summary.get('remaining_unresolved', '')}\nNext question｜{summary.get('next_question', '')}\nNext Step｜{', '.join(summary.get('next_step_refs', []))}"
     transition = state["hypothesis_transitions"].get(object_ref, {})
     return f"Previous hypothesis｜{transition.get('previous_hypothesis_claim_ref')}\nKey results｜{', '.join(transition.get('key_result_refs', []))}\nNot explained｜{transition.get('unexplained', '')}\nNew observation｜{', '.join(transition.get('observation_or_uncertainty_refs', []))}\nTherefore｜{transition.get('rationale', '')}\nNew hypothesis｜{transition.get('new_hypothesis_claim_ref')}"
+
+
+def content_slots_from_materialized_state(state: dict, layer_id: str, role: str, object_ref=None, *, meeting_projection: dict | None = None) -> dict[str, str]:
+    """Compile slot-bound scientific content from one materialized cursor.
+
+    `content.body` remains a human-readable compatibility concatenation; it
+    is never the authoritative source used for placement.  Each governed slot
+    receives a separately persisted string generated from the same state.
+    """
+    body = content_from_materialized_state(state, layer_id, role, object_ref, meeting_projection=meeting_projection)
+    line_map = {}
+    for line in body.splitlines():
+        if "｜" in line:
+            key, value = line.split("｜", 1)
+            line_map.setdefault(key, value)
+    layer = state.get("hypothesis_layers", {}).get(layer_id, {})
+    block = state.get("blocks", {}).get((layer.get("research_block_refs") or [None])[0], {})
+    stages = state.get("stages", {})
+    stage_refs = block.get("stage_refs", {})
+    if role == "hypothesis_title":
+        return {"hypothesis_statement": body}
+    if role == "problem_definition":
+        return {"previous_finding": line_map.get("Previous finding", ""), "unresolved_conflict": line_map.get("Conflict", ""), "research_question": line_map.get("Research question", "")}
+    if role == "fishbone_locator":
+        return {"primary_figure": "Historical fishbone SVG bound by Asset Manifest.", "fishbone_focus": line_map.get("Focus branch", "")}
+    if role == "observation_problem":
+        return {"primary_figure": "Registered observation visual.", "research_question": line_map.get("Research question", ""), "observation_text": "\n".join(line for line in body.splitlines() if line.startswith(("Observation｜", "Problem｜")))}
+    if role == "literature_mechanism":
+        return {"literature_evidence": "\n".join(line for line in body.splitlines() if line.startswith(("Literature consensus｜", "Alternatives｜", "Gap｜", "Implication｜"))), "mechanism_diagram": "\n".join(line for line in body.splitlines() if line.startswith(("Mechanism｜", "Strategy｜")))}
+    if role == "mechanism_solution":
+        return {"mechanism_diagram": line_map.get("Mechanism", body), "strategy": line_map.get("Strategy", "")}
+    if role == "experiment_design":
+        return {"experiment_matrix": "\n".join(line for line in body.splitlines() if any(key in line for key in ("IV:", "Controls:", "N/replicates:", "Metrics/units:", "Method:"))), "decision_rule": "\n".join(line for line in body.splitlines() if "Decision rule:" in line or "Prediction:" in line)}
+    if role == "result_single":
+        return {"result_plot": "Registered quantitative SVG.", "result_annotation": body}
+    if role == "result_comparison":
+        result_ref = object_ref[-1] if isinstance(object_ref, list) else object_ref
+        result = stages.get(_stage_id(state, result_ref), {}).get("data", {}).get("summary", body)
+        experiment_ref = (object_ref[0] if isinstance(object_ref, list) and object_ref else None)
+        experiment = stages.get(_stage_id(state, experiment_ref), {}).get("data", {})
+        return {"control_panel": f"Control｜{'; '.join(experiment.get('controls_baselines', []))}", "proposed_panel": f"Result｜{result}"}
+    if role == "layer_integrated_discussion":
+        return {"supporting_results": line_map.get("Supporting", ""), "contradicting_results": line_map.get("Contradicting", ""), "uncertainty": "\n".join(line for line in body.splitlines() if line.startswith(("Alternatives｜", "Remaining uncertainty｜", "Mechanism assessment｜")))}
+    if role == "layer_summary_decision":
+        return {"decision_status": "\n".join(line for line in body.splitlines() if line.startswith(("Hypothesis status｜", "Decision｜", "Answered｜"))), "uncertainty": line_map.get("Unresolved", ""), "next_step": "\n".join(line for line in body.splitlines() if line.startswith(("Next question｜", "Next Step｜")))}
+    if role == "hypothesis_transition":
+        return {"transition_nodes": "\n".join(line for line in body.splitlines() if line.startswith(("Previous hypothesis｜", "Key results｜", "New observation｜", "New hypothesis｜"))), "derivation_strip": "\n".join(line for line in body.splitlines() if line.startswith(("Not explained｜", "Therefore｜")))}
+    if role == "progress_todo":
+        commitments = (meeting_projection or {}).get("previous_commitments", [])
+        return {"commitment_table": "\n".join(line for line in body.splitlines() if line.startswith("Commitment｜")), "current_position": line_map.get("Current position", ""), "parallel_work": "\n".join(line for line in body.splitlines() if line.startswith("Dependencies｜")) or ", ".join(str(item.get("workstream", "")) for item in commitments)}
+    if role == "schedule_next_step":
+        return {"timeline": body, "dependencies": ""}
+    return {"content": body}

@@ -251,7 +251,13 @@ def validate_temporal_bindings(
         )
         for binding_field, block_field, state_field, rule_id in ref_contracts:
             for ref in bindings.get(binding_field, []):
-                if ref not in block.get(block_field, []) or ref not in state[state_field]:
+                # A meeting-delta slide may deliberately bind commitments from
+                # more than one historical block.  Validate a reference against
+                # its owning block below; do not wrongly require every binding
+                # to be duplicated into every co-bound block graph.
+                if ref not in block.get(block_field, []):
+                    continue
+                if ref not in state[state_field]:
                     add(rule_id, f"{ref} is not reachable from {block_id} revision {block_revision} at cursor {cursor}", f"{path}/{binding_field}/{ref}")
 
         for stage_name, stage_id in block.get("stage_refs", {}).items():
@@ -293,9 +299,30 @@ def validate_temporal_bindings(
             if ref not in state["assets"] or not asset or not set(asset.get("source_evidence", [])) <= set(block.get("evidence_refs", [])):
                 add("TEMPORAL-ASSET-BLOCK-SCOPE", f"Asset {ref} is outside the materialized block graph", path)
 
+    def validate_record_block_union(record: dict[str, Any], cursor: Any, block_refs: list[dict[str, Any]], path: str) -> None:
+        """Every bound ID must be owned by at least one declared block graph."""
+        state = state_at(cursor, path)
+        if state is None:
+            return
+        blocks = [state["blocks"].get(ref.get("block_id")) for ref in block_refs]
+        bindings = record.get("bindings", record)
+        for binding_field, block_field, state_field, rule_id in (
+            ("claim_refs", "claim_refs", "claims", "TEMPORAL-CLAIM-UNREACHABLE"),
+            ("evidence_refs", "evidence_refs", "evidence", "TEMPORAL-EVIDENCE-UNREACHABLE"),
+            ("asset_refs", "asset_refs", "assets", "TEMPORAL-ASSET-UNREACHABLE"),
+            ("action_refs", "action_item_refs", "actions", "TEMPORAL-ACTION-UNREACHABLE"),
+            ("decision_refs", "decision_refs", "decisions", "TEMPORAL-DECISION-UNREACHABLE"),
+        ):
+            reachable = set().union(*(set(block.get(block_field, [])) for block in blocks if block))
+            for ref in bindings.get(binding_field, []):
+                if ref not in reachable or ref not in state[state_field]:
+                    add(rule_id, f"{ref} is not reachable from any declared block at cursor {cursor}", f"{path}/{binding_field}/{ref}")
+
     for index, spec in enumerate(specs):
-        for block_ref in spec.get("block_refs", []):
+        block_refs = spec.get("block_refs", [])
+        for block_ref in block_refs:
             validate_binding(spec, spec.get("source_cursor"), block_ref, f"slide_specs/{index}")
+        validate_record_block_union(spec, spec.get("source_cursor"), block_refs, f"slide_specs/{index}")
 
     for manifest_index, manifest in enumerate(manifests):
         manifest_cursor = manifest.get("source_event_cursor")
@@ -306,13 +333,16 @@ def validate_temporal_bindings(
             # manifest cursor, but equality is not required for every slide.
             if not isinstance(slide.get("source_event_cursor"), int) or slide.get("source_event_cursor") > manifest_cursor:
                 add("TEMPORAL-MANIFEST-CURSOR-MISMATCH", "Slide cursor is after the manifest materialization cursor", path)
-            validate_binding(slide, slide.get("source_event_cursor"), slide.get("block_ref", {}), path)
+            block_refs = slide.get("block_refs", [slide.get("block_ref", {})])
+            for block_ref in block_refs:
+                validate_binding(slide, slide.get("source_event_cursor"), block_ref, path)
+            validate_record_block_union(slide, slide.get("source_event_cursor"), block_refs, path)
             candidates = [spec for spec in specs if spec.get("slide_id") == slide.get("slide_id") and spec.get("source_cursor") == slide.get("source_event_cursor")]
             if not candidates:
                 add("TEMPORAL-SLIDE-SPEC-MISSING", "Manifest slide has no matching Slide Spec at its cursor", path)
             else:
                 spec = candidates[0]
-                if spec.get("block_refs", [None])[0] != slide.get("block_ref"):
+                if spec.get("block_refs", [None])[0] != slide.get("block_ref") or spec.get("block_refs", []) != block_refs:
                     add("TEMPORAL-MANIFEST-SPEC-BLOCK-MISMATCH", "Manifest and Slide Spec block refs differ", path)
                 for field in ("claim_refs", "evidence_refs", "asset_refs", "action_refs", "decision_refs"):
                     if set(spec.get("bindings", {}).get(field, [])) != set(slide.get(field, [])):

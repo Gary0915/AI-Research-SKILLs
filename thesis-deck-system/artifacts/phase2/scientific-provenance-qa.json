@@ -5,6 +5,7 @@
     "ledger_hash_replay",
     "cursor_isolation",
     "causal_temporal_order",
+    "evidence_causal_role_integrity",
     "hypothesis_derivation",
     "fishbone_revision_immutability",
     "experiment_metadata",
@@ -15,14 +16,17 @@
   "findings": [],
   "evidence": {
     "h01_cursor": 27,
-    "transition_cursor": 35,
-    "h02_cursor": 51,
+    "transition_cursor": 41,
+    "h02_cursor": 55,
     "causal_temporal_status": "pass",
+    "evidence_causal_role_status": "pass",
+    "precursor_evidence_id": "E104",
+    "downstream_result_evidence_id": "E201",
     "h01_fishbone_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
     "h01_replay_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
     "h02_fishbone_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
     "contact_csv_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
     "contact_script_sha256": "3aeb7e22710c80af2bb316ce066de3397d9edd0520f8464c387ed59021eee1c6",
-    "contact_svg_sha256": "367c5a09b8506bd939163177fffe71ed4872cf9499ba4d2525807c3f00870472"
+    "contact_svg_sha256": "14b60b251d0dae71d51423e6d165d81df4382c318aadb0e36ab889f7f6d9b5fc"
   }
 }

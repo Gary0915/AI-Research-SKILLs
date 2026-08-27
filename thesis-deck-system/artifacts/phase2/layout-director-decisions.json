@@ -4,149 +4,195 @@
     "selected_archetype": "A17",
     "slot_signature": "commitment_table@0.80,1.45,7.00,3.75|current_position@8.15,1.45,4.40,1.70|parallel_work@8.15,3.45,4.40,1.75",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "commitment_table",
+      "current_position",
+      "parallel_work"
+    ]
   },
   {
     "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
     "selected_archetype": "A01",
     "slot_signature": "hypothesis_statement@0.80,1.65,11.70,2.35",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "hypothesis_statement"
+    ]
   },
   {
     "slide_id": "S-H001-PROBLEM-DEFINITION-02",
     "selected_archetype": "A02",
     "slot_signature": "previous_finding@0.80,1.45,3.70,1.75|unresolved_conflict@4.80,1.45,3.70,1.75|research_question@8.80,1.45,3.70,1.75",
     "split_recommendation": false,
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    }
+    "required_slots": [
+      "previous_finding",
+      "unresolved_conflict",
+      "research_question"
+    ]
   },
   {
     "slide_id": "S-H001-FISHBONE-LOCATOR-03",
     "selected_archetype": "A03",
     "slot_signature": "primary_figure@4.25,1.35,8.35,4.90|fishbone_focus@0.80,1.65,3.00,1.40",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "primary_figure",
+      "fishbone_focus"
+    ]
   },
   {
     "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
     "selected_archetype": "A04",
     "slot_signature": "primary_figure@7.55,1.40,5.00,3.80|research_question@0.80,1.45,6.20,0.90|observation_text@0.80,2.55,6.20,2.65",
     "split_recommendation": false,
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    }
+    "required_slots": [
+      "primary_figure",
+      "research_question",
+      "observation_text"
+    ]
   },
   {
     "slide_id": "S-H001-LITERATURE-MECHANISM-05",
     "selected_archetype": "A05",
     "slot_signature": "literature_evidence@0.80,1.45,5.80,3.90|mechanism_diagram@7.00,1.45,5.55,3.90",
     "split_recommendation": false,
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    }
+    "required_slots": [
+      "literature_evidence",
+      "mechanism_diagram"
+    ]
   },
   {
     "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
     "selected_archetype": "A09",
     "slot_signature": "experiment_matrix@0.80,1.40,7.40,4.30|decision_rule@8.55,1.40,4.00,2.00",
     "split_recommendation": false,
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    }
+    "required_slots": [
+      "experiment_matrix",
+      "decision_rule"
+    ]
+  },
+  {
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+    "selected_archetype": "A09",
+    "slot_signature": "experiment_matrix@0.80,1.40,7.40,4.30|decision_rule@8.55,1.40,4.00,2.00",
+    "split_recommendation": false,
+    "required_slots": [
+      "experiment_matrix",
+      "decision_rule"
+    ]
   },
   {
     "slide_id": "S-H001-RESULT-COMPARISON-08",
     "selected_archetype": "A11",
     "slot_signature": "control_panel@0.80,1.45,5.75,4.20|proposed_panel@6.80,1.45,5.75,4.20",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "control_panel",
+      "proposed_panel"
+    ]
   },
   {
     "slide_id": "S-H001-RESULT-COMPARISON-09",
     "selected_archetype": "A11",
     "slot_signature": "control_panel@0.80,1.45,5.75,4.20|proposed_panel@6.80,1.45,5.75,4.20",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "control_panel",
+      "proposed_panel"
+    ]
   },
   {
     "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
     "selected_archetype": "A14",
     "slot_signature": "supporting_results@0.80,1.40,5.65,2.20|contradicting_results@6.80,1.40,5.75,2.20|uncertainty@0.80,3.90,11.75,1.70",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "supporting_results",
+      "contradicting_results",
+      "uncertainty"
+    ]
   },
   {
     "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
     "selected_archetype": "A15",
     "slot_signature": "decision_status@0.80,1.40,3.70,2.30|uncertainty@4.80,1.40,3.70,2.30|next_step@8.80,1.40,3.70,2.30",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "decision_status",
+      "uncertainty",
+      "next_step"
+    ]
   },
   {
     "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
     "selected_archetype": "A16",
     "slot_signature": "transition_nodes@0.80,1.55,11.75,2.70|derivation_strip@0.80,4.55,11.75,0.80",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "transition_nodes",
+      "derivation_strip"
+    ]
   },
   {
     "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
     "selected_archetype": "A01",
     "slot_signature": "hypothesis_statement@0.80,1.65,11.70,2.35",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "hypothesis_statement"
+    ]
   },
   {
     "slide_id": "S-H002-PROBLEM-DEFINITION-02",
     "selected_archetype": "A02",
     "slot_signature": "previous_finding@0.80,1.45,3.70,1.75|unresolved_conflict@4.80,1.45,3.70,1.75|research_question@8.80,1.45,3.70,1.75",
     "split_recommendation": false,
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    }
+    "required_slots": [
+      "previous_finding",
+      "unresolved_conflict",
+      "research_question"
+    ]
   },
   {
     "slide_id": "S-H002-FISHBONE-LOCATOR-03",
     "selected_archetype": "A03",
     "slot_signature": "primary_figure@4.25,1.35,8.35,4.90|fishbone_focus@0.80,1.65,3.00,1.40",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "primary_figure",
+      "fishbone_focus"
+    ]
   },
   {
     "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
     "selected_archetype": "A04",
     "slot_signature": "primary_figure@7.55,1.40,5.00,3.80|research_question@0.80,1.45,6.20,0.90|observation_text@0.80,2.55,6.20,2.65",
     "split_recommendation": false,
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    }
+    "required_slots": [
+      "primary_figure",
+      "research_question",
+      "observation_text"
+    ]
   },
   {
     "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
     "selected_archetype": "A11",
     "slot_signature": "control_panel@0.80,1.45,5.75,4.20|proposed_panel@6.80,1.45,5.75,4.20",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "control_panel",
+      "proposed_panel"
+    ]
   },
   {
     "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
     "selected_archetype": "A15",
     "slot_signature": "decision_status@0.80,1.40,3.70,2.30|uncertainty@4.80,1.40,3.70,2.30|next_step@8.80,1.40,3.70,2.30",
     "split_recommendation": false,
-    "reviewed_split_override": null
+    "required_slots": [
+      "decision_status",
+      "uncertainty",
+      "next_step"
+    ]
   }
 ]

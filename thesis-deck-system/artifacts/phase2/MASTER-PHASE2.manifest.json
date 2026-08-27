@@ -11,7 +11,7 @@
     "profile_id": "PROF-SYNTH-001",
     "version": "1.0.0"
   },
-  "source_event_cursor": 51,
+  "source_event_cursor": 55,
   "build_id": "BUILD-MASTER-PHASE2-ACCEPTANCE",
   "build_tool_version": "0.3.0",
   "created_at": "2026-08-27T00:00:00Z",
@@ -23,22 +23,36 @@
       "ordinal": 1,
       "slide_id": "S-PHASE2-PROGRESS-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
-        "block_id": "B201",
-        "revision": 1
+        "block_id": "B101",
+        "revision": 2
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 2
+        },
+        {
+          "block_id": "B201",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
       "action_refs": [
+        "NS101",
         "NS201"
       ],
       "decision_refs": [
+        "D101",
         "D201"
       ],
       "professor_profile_ref": {
@@ -49,7 +63,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "story_visibility": "main",
       "hypothesis_layer_ref": null,
       "semantic_role": "progress_todo"
@@ -58,11 +72,17 @@
       "ordinal": 2,
       "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -92,11 +112,17 @@
       "ordinal": 3,
       "slide_id": "S-H001-PROBLEM-DEFINITION-02",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -126,11 +152,17 @@
       "ordinal": 4,
       "slide_id": "S-H001-FISHBONE-LOCATOR-03",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -162,11 +194,17 @@
       "ordinal": 5,
       "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -198,11 +236,17 @@
       "ordinal": 6,
       "slide_id": "S-H001-LITERATURE-MECHANISM-05",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -232,11 +276,17 @@
       "ordinal": 7,
       "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -264,13 +314,19 @@
     },
     {
       "ordinal": 8,
-      "slide_id": "S-H001-RESULT-COMPARISON-08",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -280,9 +336,7 @@
         "E102",
         "E103"
       ],
-      "asset_refs": [
-        "A001"
-      ],
+      "asset_refs": [],
       "action_refs": [],
       "decision_refs": [],
       "professor_profile_ref": {
@@ -296,17 +350,23 @@
       "source_event_cursor": 27,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
-      "semantic_role": "result_comparison"
+      "semantic_role": "experiment_design"
     },
     {
       "ordinal": 9,
-      "slide_id": "S-H001-RESULT-COMPARISON-09",
+      "slide_id": "S-H001-RESULT-COMPARISON-08",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -336,13 +396,61 @@
     },
     {
       "ordinal": 10,
-      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "slide_id": "S-H001-RESULT-COMPARISON-09",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "asset_refs": [
+        "A001"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      },
+      "source_event_cursor": 27,
+      "story_visibility": "main",
+      "hypothesis_layer_ref": "H001",
+      "semantic_role": "result_comparison"
+    },
+    {
+      "ordinal": 11,
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "slide_spec_path": "slide-specs.json",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -371,14 +479,20 @@
       "semantic_role": "layer_integrated_discussion"
     },
     {
-      "ordinal": 11,
+      "ordinal": 12,
       "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
@@ -409,27 +523,29 @@
       "semantic_role": "layer_summary_decision"
     },
     {
-      "ordinal": 12,
+      "ordinal": 13,
       "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B101",
-        "revision": 1
+        "revision": 2
       },
+      "block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 2
+        }
+      ],
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
-        "E002",
-        "E101",
-        "E102",
-        "E103"
+        "E104",
+        "E101"
       ],
       "asset_refs": [],
-      "action_refs": [
-        "NS101"
-      ],
+      "action_refs": [],
       "decision_refs": [
         "D101"
       ],
@@ -441,24 +557,32 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 35,
+      "source_event_cursor": 41,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H001",
       "semantic_role": "hypothesis_transition"
     },
     {
-      "ordinal": 13,
+      "ordinal": 14,
       "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B201",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -472,24 +596,32 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "hypothesis_title"
     },
     {
-      "ordinal": 14,
+      "ordinal": 15,
       "slide_id": "S-H002-PROBLEM-DEFINITION-02",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B201",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -503,24 +635,32 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "problem_definition"
     },
     {
-      "ordinal": 15,
+      "ordinal": 16,
       "slide_id": "S-H002-FISHBONE-LOCATOR-03",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B201",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [
@@ -536,24 +676,32 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "fishbone_locator"
     },
     {
-      "ordinal": 16,
+      "ordinal": 17,
       "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B201",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -567,24 +715,32 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "observation_problem"
     },
     {
-      "ordinal": 17,
+      "ordinal": 18,
       "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B201",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [
@@ -600,24 +756,32 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "result_comparison"
     },
     {
-      "ordinal": 18,
+      "ordinal": 19,
       "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "1749785a1db26250f30223d323886886fcde61f6739672d83d885aff63f88a75",
+      "slide_spec_sha256": "6fe3c2a2145f8fc19645348bbacd4128b12eff9679e8ced7685aad4bcf6ecac3",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
       },
+      "block_refs": [
+        {
+          "block_id": "B201",
+          "revision": 1
+        }
+      ],
       "claim_refs": [
         "C201"
       ],
       "evidence_refs": [
+        "E202",
+        "E204",
         "E201"
       ],
       "asset_refs": [],
@@ -635,7 +799,7 @@
         "profile_id": "TP-SYNTH-PHASE2",
         "version": "2.0.0"
       },
-      "source_event_cursor": 51,
+      "source_event_cursor": 55,
       "story_visibility": "main",
       "hypothesis_layer_ref": "H002",
       "semantic_role": "layer_summary_decision"
@@ -643,7 +807,7 @@
   ],
   "outputs": {
     "pptx": "acceptance-deck.pptx",
-    "pptx_sha256": "5867ffa5a13e6621b0358665795a2f1751ddd419cc922c1c58e281ecc5fc47ac"
+    "pptx_sha256": "328214c8d7782d92cadbff56e4e33df14ba7534f283892eb47e4a15b80bdb677"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE2-ACCEPTANCE"

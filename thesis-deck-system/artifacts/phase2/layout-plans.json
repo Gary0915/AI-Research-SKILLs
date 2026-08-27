@@ -59,7 +59,7 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 234,
+    "text_units": 122,
     "text_budget": 260,
     "required_slots": [
       "commitment_table",
@@ -68,7 +68,7 @@
     ],
     "slot_signature": "commitment_table@0.80,1.45,7.00,3.75|current_position@8.15,1.45,4.40,1.70|parallel_work@8.15,3.45,4.40,1.75",
     "rationale": "Deterministic semantic-role mapping progress_todo → A17; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 51,
+    "source_event_cursor": 55,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -181,15 +181,11 @@
       "A04",
       "A05"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 184,
+    "text_units": 37,
     "text_budget": 180,
     "required_slots": [
       "previous_finding",
@@ -198,11 +194,6 @@
     ],
     "slot_signature": "previous_finding@0.80,1.45,3.70,1.75|unresolved_conflict@4.80,1.45,3.70,1.75|research_question@8.80,1.45,3.70,1.75",
     "rationale": "Deterministic semantic-role mapping problem_definition → A02; governed slot geometry selected from ROLE_GEOMETRY",
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    },
     "source_event_cursor": 27,
     "created_at": "2026-08-27T00:00:00Z"
   },
@@ -252,15 +243,11 @@
       "A04",
       "A05"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 108,
+    "text_units": 48,
     "text_budget": 60,
     "required_slots": [
       "primary_figure",
@@ -326,15 +313,11 @@
       "A05",
       "A09"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 283,
+    "text_units": 49,
     "text_budget": 180,
     "required_slots": [
       "primary_figure",
@@ -343,11 +326,6 @@
     ],
     "slot_signature": "primary_figure@7.55,1.40,5.00,3.80|research_question@0.80,1.45,6.20,0.90|observation_text@0.80,2.55,6.20,2.65",
     "rationale": "Deterministic semantic-role mapping observation_problem → A04; governed slot geometry selected from ROLE_GEOMETRY",
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    },
     "source_event_cursor": 27,
     "created_at": "2026-08-27T00:00:00Z"
   },
@@ -397,15 +375,11 @@
       "A04",
       "A09"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 283,
+    "text_units": 137,
     "text_budget": 260,
     "required_slots": [
       "literature_evidence",
@@ -413,11 +387,6 @@
     ],
     "slot_signature": "literature_evidence@0.80,1.45,5.80,3.90|mechanism_diagram@7.00,1.45,5.55,3.90",
     "rationale": "Deterministic semantic-role mapping literature_mechanism → A05; governed slot geometry selected from ROLE_GEOMETRY",
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    },
     "source_event_cursor": 27,
     "created_at": "2026-08-27T00:00:00Z"
   },
@@ -466,15 +435,11 @@
       "A04",
       "A05"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 527,
+    "text_units": 148,
     "text_budget": 260,
     "required_slots": [
       "experiment_matrix",
@@ -482,11 +447,66 @@
     ],
     "slot_signature": "experiment_matrix@0.80,1.40,7.40,4.30|decision_rule@8.55,1.40,4.00,2.00",
     "rationale": "Deterministic semantic-role mapping experiment_design → A09; governed slot geometry selected from ROLE_GEOMETRY",
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
+    "source_event_cursor": 27,
+    "created_at": "2026-08-27T00:00:00Z"
+  },
+  {
+    "schema_version": "2.0.0",
+    "layout_plan_id": "LP-H001-EXPERIMENT-DESIGN-07",
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+    "selected_archetype": "A09",
+    "native_template_layout": {
+      "semantic_role": "content_academic",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
+      "master_path": "ppt/slideMasters/slideMaster1.xml"
     },
+    "placement_plan": [
+      {
+        "slot": "experiment_matrix",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 7.4,
+        "height": 4.3,
+        "z_order": 1,
+        "element_role": "experiment",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "decision_rule",
+        "left": 8.55,
+        "top": 1.4,
+        "width": 4.0,
+        "height": 2.0,
+        "z_order": 2,
+        "element_role": "decision_rule",
+        "font_size_pt": 16
+      }
+    ],
+    "figure_text_hierarchy": [
+      "primary_figure",
+      "interpretation",
+      "provenance"
+    ],
+    "expected_professor_checks": [
+      "experiment_metadata_complete"
+    ],
+    "candidate_alternatives": [
+      "A04",
+      "A05"
+    ],
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
+    "split_recommendation": false,
+    "text_units": 148,
+    "text_budget": 260,
+    "required_slots": [
+      "experiment_matrix",
+      "decision_rule"
+    ],
+    "slot_signature": "experiment_matrix@0.80,1.40,7.40,4.30|decision_rule@8.55,1.40,4.00,2.00",
+    "rationale": "Deterministic semantic-role mapping experiment_design → A09; governed slot geometry selected from ROLE_GEOMETRY",
     "source_event_cursor": 27,
     "created_at": "2026-08-27T00:00:00Z"
   },
@@ -670,7 +690,7 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 255,
+    "text_units": 171,
     "text_budget": 300,
     "required_slots": [
       "supporting_results",
@@ -739,15 +759,11 @@
       "A04",
       "A05"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 271,
+    "text_units": 153,
     "text_budget": 240,
     "required_slots": [
       "decision_status",
@@ -808,7 +824,7 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 192,
+    "text_units": 99,
     "text_budget": 220,
     "required_slots": [
       "transition_nodes",
@@ -816,7 +832,7 @@
     ],
     "slot_signature": "transition_nodes@0.80,1.55,11.75,2.70|derivation_strip@0.80,4.55,11.75,0.80",
     "rationale": "Deterministic semantic-role mapping hypothesis_transition → A16; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 35,
+    "source_event_cursor": 41,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -870,7 +886,7 @@
     ],
     "slot_signature": "hypothesis_statement@0.80,1.65,11.70,2.35",
     "rationale": "Deterministic semantic-role mapping hypothesis_title → A01; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 51,
+    "source_event_cursor": 55,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -929,15 +945,11 @@
       "A04",
       "A05"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 250,
+    "text_units": 45,
     "text_budget": 180,
     "required_slots": [
       "previous_finding",
@@ -946,12 +958,7 @@
     ],
     "slot_signature": "previous_finding@0.80,1.45,3.70,1.75|unresolved_conflict@4.80,1.45,3.70,1.75|research_question@8.80,1.45,3.70,1.75",
     "rationale": "Deterministic semantic-role mapping problem_definition → A02; governed slot geometry selected from ROLE_GEOMETRY",
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    },
-    "source_event_cursor": 51,
+    "source_event_cursor": 55,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -1000,15 +1007,11 @@
       "A04",
       "A05"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 107,
+    "text_units": 48,
     "text_budget": 60,
     "required_slots": [
       "primary_figure",
@@ -1016,7 +1019,7 @@
     ],
     "slot_signature": "primary_figure@4.25,1.35,8.35,4.90|fishbone_focus@0.80,1.65,3.00,1.40",
     "rationale": "Deterministic semantic-role mapping fishbone_locator → A03; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 51,
+    "source_event_cursor": 55,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -1074,15 +1077,11 @@
       "A05",
       "A09"
     ],
-    "rejection_reasons": [
-      "text_budget_exceeded"
-    ],
-    "warnings": [
-      "text_over_budget"
-    ],
-    "density_estimate": "over_budget",
+    "rejection_reasons": [],
+    "warnings": [],
+    "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 293,
+    "text_units": 49,
     "text_budget": 180,
     "required_slots": [
       "primary_figure",
@@ -1091,12 +1090,7 @@
     ],
     "slot_signature": "primary_figure@7.55,1.40,5.00,3.80|research_question@0.80,1.45,6.20,0.90|observation_text@0.80,2.55,6.20,2.65",
     "rationale": "Deterministic semantic-role mapping observation_problem → A04; governed slot geometry selected from ROLE_GEOMETRY",
-    "reviewed_split_override": {
-      "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
-      "approved_by": "Phase 2 synthetic acceptance review",
-      "evidence": "visual-inspection.json"
-    },
-    "source_event_cursor": 51,
+    "source_event_cursor": 55,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -1148,7 +1142,7 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 61,
+    "text_units": 53,
     "text_budget": 150,
     "required_slots": [
       "control_panel",
@@ -1156,7 +1150,7 @@
     ],
     "slot_signature": "control_panel@0.80,1.45,5.75,4.20|proposed_panel@6.80,1.45,5.75,4.20",
     "rationale": "Deterministic semantic-role mapping result_comparison → A11; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 51,
+    "source_event_cursor": 55,
     "created_at": "2026-08-27T00:00:00Z"
   },
   {
@@ -1220,7 +1214,7 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 229,
+    "text_units": 149,
     "text_budget": 240,
     "required_slots": [
       "decision_status",
@@ -1229,7 +1223,7 @@
     ],
     "slot_signature": "decision_status@0.80,1.40,3.70,2.30|uncertainty@4.80,1.40,3.70,2.30|next_step@8.80,1.40,3.70,2.30",
     "rationale": "Deterministic semantic-role mapping layer_summary_decision → A15; governed slot geometry selected from ROLE_GEOMETRY",
-    "source_event_cursor": 51,
+    "source_event_cursor": 55,
     "created_at": "2026-08-27T00:00:00Z"
   }
 ]

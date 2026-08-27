@@ -15,7 +15,7 @@ import json
 import re
 
 from pptx import Presentation
-from pptx.util import Inches
+from pptx.util import Inches, Pt
 
 from .context import ProjectContext
 
@@ -60,7 +60,28 @@ class PythonPptxAssembler(PptxAssembler):
                     f"index={idx}, runtime={actual_layout_path}, role={role.get('layout_path')}"
                 )
             slide = prs.slides.add_slide(layout)
-            slide.shapes.title.text = spec["title"]["text"]
+            # The synthetic fixture's content layout has a tall default title
+            # font.  Constrain generated titles explicitly, otherwise long
+            # scientific labels wrap into and clip the governed content area.
+            title_shape = slide.shapes.title
+            title_text = spec["title"]["text"]
+            title_shape.text = title_text
+            title_frame = title_shape.text_frame
+            title_frame.margin_left = 0
+            title_frame.margin_right = 0
+            title_frame.margin_top = 0
+            title_frame.margin_bottom = 0
+            title_frame.word_wrap = True
+            title_shape.left = Inches(.55)
+            title_shape.top = Inches(.22)
+            title_shape.width = Inches(12.15)
+            title_shape.height = Inches(1.05)
+            # A conservative size leaves headroom for bilingual and
+            # fishbone titles while keeping ordinary titles prominent.
+            title_size = 24 if len(title_text) > 30 else 30
+            for paragraph in title_frame.paragraphs:
+                for run in paragraph.runs:
+                    run.font.size = Pt(title_size)
             content = spec.get("content", {})
             governed = spec.get("placement_plan", [])
             def box(slot: str, fallback: tuple[float, float, float, float]) -> tuple[float, float, float, float]:
@@ -97,22 +118,46 @@ class PythonPptxAssembler(PptxAssembler):
                             im=Image.new('RGB',(640,360),'#d9e5e8'); ImageDraw.Draw(im).text((30,160),'SYNTHETIC OBSERVATION',fill='#234'); im.save(preview)
                         left, top, width, height = box("primary_figure", (6.6, 1.6, 5.8, 3.3)); slide.shapes.add_picture(str(preview), Inches(left), Inches(top), width=Inches(width), height=Inches(height))
             else:
-                body_slot = {"hypothesis_title": "hypothesis_statement", "problem_definition": "research_question", "fishbone_locator": "fishbone_focus", "observation_problem": "observation_text", "literature_mechanism": "literature_evidence", "mechanism_solution": "strategy", "experiment_design": "experiment_matrix", "result_single": "result_annotation", "result_comparison": "control_panel", "layer_integrated_discussion": "uncertainty", "layer_summary_decision": "decision_status", "hypothesis_transition": "transition_nodes", "progress_todo": "commitment_table", "schedule_next_step": "timeline"}.get(spec.get("semantic_role"), "content")
-                left, top, width, height = box(body_slot, (.7, 1.55, 5.0, 4.9)); body = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
-                body.text = content.get("body") or "\n".join(str(value) for value in content.values() if isinstance(value, (str, int, float)))
-                for paragraph in body.text_frame.paragraphs:
-                    for run in paragraph.runs:
-                        run.font.size = __import__('pptx').util.Pt(18)
-                for placement_index, placement in enumerate(spec.get("placements", [])):
-                    asset_path = placement.get("asset_path")
-                    if not asset_path:
-                        continue
-                    resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
-                    preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
-                    slot_name = placement.get("slot")
-                    slot = next((item for item in governed if item.get("slot") == slot_name), None) if governed else None
-                    slot = slot or (governed[min(placement_index, len(governed) - 1)] if governed else {})
-                    slide.shapes.add_picture(str(preview), Inches(slot.get("left", 5.7)), Inches(slot.get("top", 1.55)), width=Inches(slot.get("width", 6.8)), height=Inches(slot.get("height", 4.5)))
+                slot_content = content.get("slots", {})
+                asset_by_slot = {placement.get("slot"): placement for placement in spec.get("placements", []) if placement.get("asset_path")}
+                # Legacy/Phase 1 compatibility specs do not have a Phase 2
+                # governed plan. Keep their single-body rendering path while
+                # preserving exact SVG ownership; Phase 2 specs always enter
+                # the slot-bound branch below.
+                if not governed:
+                    body = slide.shapes.add_textbox(Inches(.7), Inches(1.55), Inches(5.0), Inches(4.9))
+                    body.text = content.get("body") or "\n".join(str(value) for value in content.values() if isinstance(value, (str, int, float)))
+                    for paragraph in body.text_frame.paragraphs:
+                        for run in paragraph.runs:
+                            run.font.size = __import__('pptx').util.Pt(18)
+                    for placement in spec.get("placements", []):
+                        asset_path = placement.get("asset_path")
+                        if not asset_path:
+                            continue
+                        resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
+                        preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
+                        shape = slide.shapes.add_picture(str(preview), Inches(5.7), Inches(1.55), width=Inches(6.0), height=Inches(4.5))
+                        shape.name = f"tds-slot:{placement.get('slot', 'asset')}"
+                for governed_slot in sorted(governed, key=lambda item: item.get("z_order", 0)):
+                    slot_name = governed_slot["slot"]
+                    placement = asset_by_slot.get(slot_name)
+                    if placement:
+                        asset_path = placement["asset_path"]
+                        resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
+                        preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
+                        shape = slide.shapes.add_picture(str(preview), Inches(governed_slot["left"]), Inches(governed_slot["top"]), width=Inches(governed_slot["width"]), height=Inches(governed_slot["height"]))
+                    else:
+                        text = slot_content.get(slot_name)
+                        if text is None:
+                            raise ValueError(f"missing structured content for governed slot {slot_name} on {spec['slide_id']}")
+                        shape = slide.shapes.add_textbox(Inches(governed_slot["left"]), Inches(governed_slot["top"]), Inches(governed_slot["width"]), Inches(governed_slot["height"]))
+                        shape.text = str(text)
+                        for paragraph in shape.text_frame.paragraphs:
+                            for run in paragraph.runs:
+                                run.font.size = __import__('pptx').util.Pt(governed_slot.get("font_size_pt", 16))
+                    # Shape names are persisted in p:cNvPr@name and survive a
+                    # save/reload.  They form the stable physical-slot bridge.
+                    shape.name = f"tds-slot:{slot_name}"
             notes = slide.notes_slide.notes_text_frame
             source_refs = spec.get("speaker_notes", {}).get("source_refs", [])
             note_text = spec.get("speaker_notes", {}).get("text", "")
@@ -278,14 +323,22 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
                 for relationship in relation.get("svg_relationships", []):
                     if relationship.get("target", "").endswith("/" + media_name):
                         svg_asset_relationships.append({**relationship, "asset_id": asset_id})
-            body_slot = {"hypothesis_title": "hypothesis_statement", "problem_definition": "research_question", "fishbone_locator": "fishbone_focus", "observation_problem": "observation_text", "literature_mechanism": "literature_evidence", "mechanism_solution": "strategy", "experiment_design": "experiment_matrix", "result_single": "result_annotation", "result_comparison": "control_panel", "layer_integrated_discussion": "uncertainty", "layer_summary_decision": "decision_status", "hypothesis_transition": "transition_nodes", "progress_todo": "commitment_table", "schedule_next_step": "timeline"}.get(spec.get("semantic_role"), "content")
-            expected_slots = [body_slot] + [placement.get("slot") for placement in spec.get("placements", [])]
             governed = spec.get("placement_plan", [])
-            shape_boxes = [(shape.left / 914400, shape.top / 914400, shape.width / 914400, shape.height / 914400) for shape in slide.shapes]
+            intentionally_empty = {item.get("slot"): item for item in spec.get("intentionally_empty_slots", [])}
+            shape_by_slot = {shape.name.removeprefix("tds-slot:"): shape for shape in slide.shapes if shape.name.startswith("tds-slot:")}
             slot_matches = {}
-            for slot_name in expected_slots:
-                plan_slot = next((value for value in governed if value.get("slot") == slot_name), None)
-                slot_matches[slot_name] = bool(plan_slot and any(abs(box[0] - plan_slot["left"]) < .08 and abs(box[1] - plan_slot["top"]) < .08 and abs(box[2] - plan_slot["width"]) < .08 and abs(box[3] - plan_slot["height"]) < .08 for box in shape_boxes))
+            physical_slots = []
+            for plan_slot in governed:
+                slot_name = plan_slot["slot"]
+                shape = shape_by_slot.get(slot_name)
+                empty = intentionally_empty.get(slot_name)
+                asset = next((item for item in spec.get("placements", []) if item.get("slot") == slot_name), None)
+                expected_content = spec.get("content", {}).get("slots", {}).get(slot_name)
+                actual_geometry = None if shape is None else {"left": shape.left / 914400, "top": shape.top / 914400, "width": shape.width / 914400, "height": shape.height / 914400}
+                geometry_match = bool(shape and abs(actual_geometry["left"] - plan_slot["left"]) < .08 and abs(actual_geometry["top"] - plan_slot["top"]) < .08 and abs(actual_geometry["width"] - plan_slot["width"]) < .08 and abs(actual_geometry["height"] - plan_slot["height"]) < .08)
+                content_binding = bool(asset and shape) or bool(shape and expected_content is not None and shape.has_text_frame and str(expected_content) in shape.text)
+                slot_matches[slot_name] = bool(empty or (shape and geometry_match and content_binding))
+                physical_slots.append({"slot": slot_name, "planned_geometry": {key: plan_slot[key] for key in ("left", "top", "width", "height")}, "actual_shape_identity": None if shape is None else shape.name, "actual_geometry": actual_geometry, "geometry_tolerance_result": geometry_match, "content_or_asset_binding_result": content_binding, "intentionally_empty": empty})
             generated_slides.append({
                 "slide_spec_id": spec["slide_id"],
                 "generated_slide_id": slide.slide_id,
@@ -302,6 +355,7 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
                 "layout_master_role_match": actual_layout_index == role.get("layout_index") and actual_layout_path == role.get("layout_path") and actual_master_path == role.get("master_path") and (relation.get("master_relationship") or {}).get("target") == actual_master_path,
                 "governed_geometry_match": all(slot_matches.values()),
                 "governed_slot_matches": slot_matches,
+                "physical_slot_conformance": physical_slots,
                 "notes_relationship_target": (relation.get("notes_relationship") or {}).get("target"),
                 "note_source_refs": note_source_refs,
                 "expected_note_source_refs": expected_refs,

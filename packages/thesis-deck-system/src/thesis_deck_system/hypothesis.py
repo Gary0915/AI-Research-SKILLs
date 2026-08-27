@@ -120,3 +120,77 @@ def validate_causal_history(ledger_or_events) -> list[Finding]:
         if not experiment_events or max(e.cursor for e in experiment_events) >= event.cursor:
             findings.append(Finding("P2-CAUSAL-RESULT-BEFORE-EXPERIMENT", "scientific_reasoning", "Result is not appended after experiment metadata", str(event.payload.get("stage_id"))))
     return findings
+
+
+def validate_evidence_causal_roles(ledger_or_events) -> list[Finding]:
+    """Validate causal role/origin, not merely the card's append cursor.
+
+    An experiment-result Evidence Card cannot become a historical precursor by
+    being appended before the experiment it purports to report.  This is a
+    separate check because chronological event validation alone cannot expose
+    a falsified provenance role.
+    """
+    events = ledger_or_events.replay() if hasattr(ledger_or_events, "replay") else list(ledger_or_events)
+    findings: list[Finding] = []
+    evidence: dict[str, tuple[int, dict]] = {}
+    stages: dict[str, int] = {}
+    for event in events:
+        payload = event.payload
+        if event.event_type == "evidence_linked" and payload.get("evidence_id"):
+            evidence[str(payload["evidence_id"])] = (event.cursor, payload)
+        if event.event_type == "stage_revised" and payload.get("stage_id"):
+            stages[str(payload["stage_id"])] = event.cursor
+
+    for evidence_id, (evidence_cursor, card) in evidence.items():
+        if card.get("causal_role") != "experiment_result":
+            continue
+        origin = card.get("origin", {})
+        experiment_ref = origin.get("experiment_stage_ref")
+        experiment_cursor = stages.get(str(experiment_ref))
+        if not experiment_ref or experiment_cursor is None or experiment_cursor >= evidence_cursor:
+            findings.append(Finding(
+                "P2-CAUSAL-EXPERIMENT-RESULT-EVIDENCE-ORIGIN",
+                "scientific_reasoning",
+                "Experiment-result Evidence must be appended after its declared experiment boundary",
+                evidence_id,
+            ))
+
+    for event in events:
+        if event.event_type != "hypothesis_transition_recorded":
+            continue
+        transition = event.payload
+        target_layer = transition.get("to_layer_ref")
+        for evidence_id in transition.get("observation_or_uncertainty_refs", []):
+            item = evidence.get(str(evidence_id))
+            if item is None:
+                continue
+            evidence_cursor, card = item
+            origin = card.get("origin", {})
+            role = card.get("causal_role")
+            downstream = (
+                role == "experiment_result"
+                or origin.get("experiment_stage_ref")
+                or origin.get("layer_ref") == target_layer and origin.get("source_dataset_role") == "discriminating_result"
+            )
+            if downstream:
+                findings.append(Finding(
+                    "P2-CAUSAL-TRANSITION-DOWNSTREAM-EVIDENCE",
+                    "scientific_reasoning",
+                    "Transition precursor evidence is a downstream experiment-result object",
+                    str(evidence_id),
+                ))
+            elif role != "transition_precursor":
+                findings.append(Finding(
+                    "P2-CAUSAL-TRANSITION-PRECURSOR-ROLE",
+                    "scientific_reasoning",
+                    "Transition uncertainty Evidence must declare causal_role=transition_precursor",
+                    str(evidence_id),
+                ))
+            if evidence_cursor >= event.cursor:
+                findings.append(Finding(
+                    "P2-CAUSAL-TRANSITION-FUTURE-OBSERVATION",
+                    "scientific_reasoning",
+                    "Transition precursor evidence is appended at or after the transition",
+                    str(evidence_id),
+                ))
+    return findings

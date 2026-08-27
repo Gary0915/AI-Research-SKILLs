@@ -32,22 +32,36 @@
     "PROF-RESULTS-COMPLETE",
     "PROF-INTEGRATED-DISCUSSION",
     "PROF-LAYER-SUMMARY",
+    "PROF-TRANSITION-PROVENANCE",
+    "PROF-HYPOTHESIS-EXISTS",
+    "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+    "PROF-FISHBONE-EXISTS",
+    "PROF-FISHBONE-FOCUS",
+    "PROF-FISHBONE-REVISION",
+    "PROF-QUESTION-BEFORE-RESULT",
+    "PROF-LITERATURE-SYNTHESIS",
+    "PROF-MECHANISM-EVIDENCE",
+    "PROF-STRATEGY-DERIVED",
+    "PROF-EXPERIMENT-METADATA",
+    "PROF-RESULTS-COMPLETE",
+    "PROF-INTEGRATED-DISCUSSION",
+    "PROF-LAYER-SUMMARY",
     "PROF-HISTORY-REACHABLE",
     "PROF-NEXT-STEP-OWNER-TIMING"
   ],
-  "check_count": 29,
+  "check_count": 43,
   "evidence": {
     "PROF-HYPOTHESIS-EXISTS": {
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": [
         "hypothesis_title",
         "problem_definition",
         "fishbone_locator",
-        "observation_problem",
-        "result_comparison",
+        "result_single",
+        "layer_integrated_discussion",
         "layer_summary_decision"
       ]
     },
@@ -55,13 +69,13 @@
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": [
         "hypothesis_title",
         "problem_definition",
         "fishbone_locator",
-        "observation_problem",
-        "result_comparison",
+        "result_single",
+        "layer_integrated_discussion",
         "layer_summary_decision"
       ]
     },
@@ -69,14 +83,14 @@
       "passed": true,
       "profile_rule": "narrative_rules.persistent_orientation_view",
       "configured_value": "fishbone/research-map",
-      "path": "H002",
+      "path": "H003",
       "detail": true
     },
     "PROF-FISHBONE-FOCUS": {
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": [
         "FB-ELECTRODE-CONTACT"
       ]
@@ -85,26 +99,26 @@
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": {
         "fishbone_id": "FB001",
-        "revision": 2
+        "revision": 3
       }
     },
     "PROF-QUESTION-BEFORE-RESULT": {
       "passed": true,
       "profile_rule": "narrative_rules.require_question_before_data",
       "configured_value": true,
-      "path": "H002",
+      "path": "H003",
       "detail": [
-        4
+        3
       ]
     },
     "PROF-LITERATURE-SYNTHESIS": {
       "passed": true,
       "profile_rule": "narrative_rules.literature_must_synthesize_to_hypothesis_or_strategy",
       "configured_value": true,
-      "path": "H002",
+      "path": "H003",
       "detail": {
         "consensus": "transport gradient 可產生位置效應。",
         "disagreements_or_alternatives": [
@@ -127,20 +141,19 @@
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": {
         "schema_version": "1.0.0",
-        "stage_id": "ST-H002-MECH",
+        "stage_id": "ST-H003-MECH",
         "block_ref": {
-          "block_id": "B201",
+          "block_id": "B301",
           "revision": 1
         },
         "stage_type": "mechanism",
         "revision": 1,
         "status": "complete",
         "claim_refs": [
-          "C202",
-          "C203"
+          "C301"
         ],
         "evidence_refs": [
           "E202"
@@ -160,7 +173,7 @@
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": {
         "strategy": "匹配導電度並改變接觸壓力",
         "success_criterion": "預測指標跨過 decision threshold"
@@ -170,10 +183,10 @@
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": [
         {
-          "stage_id": "ST-EXP201",
+          "stage_id": "ST-EXP301",
           "data": {
             "independent_variables": [
               "contact pressure"
@@ -215,22 +228,22 @@
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": [
-        "ST-RES201"
+        "ST-RES301"
       ]
     },
     "PROF-INTEGRATED-DISCUSSION": {
       "passed": true,
       "profile_rule": "narrative_rules.discussion_must_update_decision",
       "configured_value": true,
-      "path": "H002",
+      "path": "H003",
       "detail": {
         "schema_version": "2.0.0",
-        "discussion_id": "DISC-H002",
-        "hypothesis_layer_ref": "H002",
+        "discussion_id": "DISC-H003",
+        "hypothesis_layer_ref": "H003",
         "supporting_results": [
-          "RES201"
+          "RES301"
         ],
         "contradicting_results": [],
         "non_discriminating_results": [],
@@ -241,9 +254,9 @@
         ],
         "remaining_uncertainty": "高壓長期循環是否造成新的 wear mechanism 尚未知。",
         "hypothesis_status": "supported",
-        "decision_ref": "D201",
+        "decision_ref": "D301",
         "next_step_refs": [
-          "NS201"
+          "NS301"
         ],
         "source_event_cursor": 50,
         "created_at": "2026-08-27T00:00:00Z"
@@ -253,22 +266,22 @@
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "H002",
+      "path": "H003",
       "detail": {
         "schema_version": "2.0.0",
-        "summary_id": "SUM-H002",
-        "hypothesis_layer_ref": "H002",
+        "summary_id": "SUM-H003",
+        "hypothesis_layer_ref": "H003",
         "answered": "低接觸壓力下 contact resistance 是主導不穩定來源。",
         "supporting_evidence_refs": [
           "E201",
-          "RES201"
+          "RES301"
         ],
         "remaining_unresolved": "高壓循環的耐久性與 wear 尚未測試。",
         "hypothesis_status": "supported",
-        "decision_ref": "D201",
+        "decision_ref": "D301",
         "next_question": "接觸壓力改善能否在長期循環下維持？",
         "next_step_refs": [
-          "NS201"
+          "NS301"
         ],
         "source_event_cursor": 53,
         "created_at": "2026-08-27T00:00:00Z"
@@ -278,28 +291,22 @@
       "passed": true,
       "profile_rule": null,
       "configured_value": null,
-      "path": "TR-H001-H002",
+      "path": "TR-H002-H003",
       "detail": {
-        "schema_version": "2.0.0",
-        "transition_id": "TR-H001-H002",
-        "from_layer_ref": "H001",
-        "to_layer_ref": "H002",
-        "previous_hypothesis_claim_ref": "C101",
+        "transition_id": "TR-H002-H003",
+        "from_layer_ref": "H002",
+        "to_layer_ref": "H003",
+        "previous_hypothesis_claim_ref": "C201",
+        "new_hypothesis_claim_ref": "C301",
         "key_result_refs": [
-          "RES101",
-          "RES102"
+          "RES201"
         ],
-        "unexplained": "導電度增加後訊號重複性沒有改善。",
+        "decision_refs": [
+          "D201"
+        ],
         "observation_or_uncertainty_refs": [
           "E104"
-        ],
-        "rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
-        "new_hypothesis_claim_ref": "C201",
-        "decision_refs": [
-          "D101"
-        ],
-        "source_event_cursor": 41,
-        "created_at": "2026-08-27T00:00:00Z"
+        ]
       }
     },
     "PROF-HISTORY-REACHABLE": {
@@ -309,7 +316,8 @@
       "path": "layers",
       "detail": [
         "H001",
-        "H002"
+        "H002",
+        "H003"
       ]
     },
     "PROF-NEXT-STEP-OWNER-TIMING": {

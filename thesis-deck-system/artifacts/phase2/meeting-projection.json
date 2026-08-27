@@ -1,6 +1,6 @@
 {
   "projection_kind": "meeting",
-  "source_event_cursor": 51,
+  "source_event_cursor": 55,
   "current_layer_id": "H002",
   "historical_layer_refs": [
     "H001"
@@ -23,7 +23,7 @@
         "D101"
       ],
       "observation_refs": [
-        "E201"
+        "E104"
       ]
     },
     "fishbone_snapshot_ref": {
@@ -57,7 +57,7 @@
     "transition_ref": null,
     "story_visibility": "main",
     "research_status": "supported",
-    "source_event_cursor": 51,
+    "source_event_cursor": 55,
     "created_at": "2026-08-27T00:00:00Z",
     "updated_at": "2026-08-27T00:00:00Z"
   },
