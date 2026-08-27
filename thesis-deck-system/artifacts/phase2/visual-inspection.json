@@ -1,5 +1,7 @@
 {
+  "inspection_schema_version": "1.0.0",
   "checked_by": "Codex Phase 2 render QA",
+  "status": "pass",
   "slides": [
     {
       "slide_id": "S-PHASE2-PROGRESS-01",
@@ -12,11 +14,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-PHASE2-PROGRESS-01",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -30,11 +43,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -48,11 +72,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -66,11 +101,24 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+        "dominant_visual": "fishbone map",
+        "current_focus": [
+          "FB-MATERIAL-HYDRATION"
+        ],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -84,11 +132,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+        "dominant_visual": "registered figure",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -102,11 +161,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -120,11 +190,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -138,11 +219,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-RESULT-COMPARISON-08",
+        "dominant_visual": "registered figure",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "symmetric",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -156,11 +248,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-RESULT-COMPARISON-09",
+        "dominant_visual": "registered figure",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "symmetric",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -174,11 +277,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -192,11 +306,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -210,11 +335,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -228,11 +364,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -246,11 +393,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -264,11 +422,24 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+        "dominant_visual": "fishbone map",
+        "current_focus": [
+          "FB-ELECTRODE-CONTACT"
+        ],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -282,11 +453,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -300,11 +482,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+        "dominant_visual": "registered figure",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "symmetric",
+        "density": "reviewed"
+      },
       "status": "pass"
     },
     {
@@ -318,11 +511,22 @@
         "overlap",
         "minimum_font",
         "title_hierarchy",
-        "zh_tw_readability",
-        "density",
-        "archetype_geometry"
+        "zh_tw_wrapping",
+        "density_budget",
+        "archetype_geometry",
+        "required_slots",
+        "comparison_symmetry",
+        "fishbone_focus_prominence",
+        "result_discussion_separation"
       ],
-      "observations": "Rendered from the Phase 2 compatibility deck; visual QA executed against this exact slide image.",
+      "observations": {
+        "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
       "status": "pass"
     }
   ],
@@ -336,10 +540,165 @@
       "overlap",
       "minimum_font",
       "title_hierarchy",
-      "zh_tw_readability",
-      "density",
-      "archetype_geometry"
+      "zh_tw_wrapping",
+      "density_budget",
+      "archetype_geometry",
+      "required_slots",
+      "comparison_symmetry",
+      "fishbone_focus_prominence",
+      "result_discussion_separation"
     ],
-    "findings": []
+    "check_count": 14,
+    "findings": [],
+    "slide_observations": [
+      {
+        "slide_id": "S-PHASE2-PROGRESS-01",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+        "dominant_visual": "fishbone map",
+        "current_focus": [
+          "FB-MATERIAL-HYDRATION"
+        ],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+        "dominant_visual": "registered figure",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-RESULT-COMPARISON-08",
+        "dominant_visual": "registered figure",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "symmetric",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-RESULT-COMPARISON-09",
+        "dominant_visual": "registered figure",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "symmetric",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+        "dominant_visual": "fishbone map",
+        "current_focus": [
+          "FB-ELECTRODE-CONTACT"
+        ],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "explicit",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+        "dominant_visual": "registered figure",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "symmetric",
+        "density": "reviewed"
+      },
+      {
+        "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+        "dominant_visual": "structured text",
+        "current_focus": [],
+        "question_visibility": "title-led",
+        "comparison_balance": "not_applicable",
+        "density": "reviewed"
+      }
+    ]
   }
 }

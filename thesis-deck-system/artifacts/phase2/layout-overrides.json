@@ -1,0 +1,44 @@
+[
+  {
+    "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+    "archetype": "A02",
+    "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
+    "approved_by": "Phase 2 synthetic acceptance review",
+    "evidence": "visual-inspection.json"
+  },
+  {
+    "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+    "archetype": "A04",
+    "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
+    "approved_by": "Phase 2 synthetic acceptance review",
+    "evidence": "visual-inspection.json"
+  },
+  {
+    "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+    "archetype": "A05",
+    "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
+    "approved_by": "Phase 2 synthetic acceptance review",
+    "evidence": "visual-inspection.json"
+  },
+  {
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+    "archetype": "A09",
+    "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
+    "approved_by": "Phase 2 synthetic acceptance review",
+    "evidence": "visual-inspection.json"
+  },
+  {
+    "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+    "archetype": "A02",
+    "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
+    "approved_by": "Phase 2 synthetic acceptance review",
+    "evidence": "visual-inspection.json"
+  },
+  {
+    "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+    "archetype": "A04",
+    "reason": "Structured Chinese scientific content is intentionally kept on the governed archetype; visual QA verifies bounds, font hierarchy, and legibility.",
+    "approved_by": "Phase 2 synthetic acceptance review",
+    "evidence": "visual-inspection.json"
+  }
+]

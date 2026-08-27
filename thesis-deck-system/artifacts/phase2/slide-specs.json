@@ -27,14 +27,14 @@
       "source_refs": [
         "E201"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 26,
+    "source_cursor": 51,
     "bindings": {
       "claim_refs": [
         "C201"
@@ -51,7 +51,7 @@
       ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -59,10 +59,10 @@
       }
     },
     "content": {
-      "body": "Prior commitment｜NS101 matched-conductivity pressure test：done\nCurrent position｜H02 / FB-ELECTRODE-CONTACT\nNext｜NS201 high-pressure cycling；Owner: Gary；Due: 2026-09-24\nParallel work｜cycling fixture + electrode geometry review"
+      "body": "Current position｜H002\nCommitment｜NS101｜done｜Owner: Gary｜Due: 2026-09-10T09:00:00Z\nDependencies｜pressure fixture｜Parallel: True\nCommitment｜NS201｜planned｜Owner: Gary｜Due: 2026-09-24T00:00:00Z\nDependencies｜pressure fixture｜Parallel: True"
     },
     "hypothesis_layer_ref": null,
-    "hypothesis_layer_revision": null,
+    "hypothesis_layer_revision": 1,
     "current_hypothesis_layer_ref": "H002",
     "semantic_role": "progress_todo",
     "combined_roles": [
@@ -73,13 +73,33 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
+        "slot": "commitment_table",
+        "left": 0.8,
         "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "width": 7.0,
+        "height": 3.75,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "commitment",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "current_position",
+        "left": 8.15,
+        "top": 1.45,
+        "width": 4.4,
+        "height": 1.7,
+        "z_order": 2,
+        "element_role": "position",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "parallel_work",
+        "left": 8.15,
+        "top": 3.45,
+        "width": 4.4,
+        "height": 1.75,
+        "z_order": 3,
+        "element_role": "parallel",
         "font_size_pt": 16
       }
     ],
@@ -107,36 +127,42 @@
     },
     "placements": [],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [],
       "action_refs": [],
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -144,7 +170,7 @@
       }
     },
     "content": {
-      "body": "目前相信｜Bulk conductivity 主導位置不穩定。\nFalsifier｜導電度提升後重複性仍不改善。"
+      "body": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -158,14 +184,14 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "hypothesis_statement",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 11.7,
+        "height": 2.35,
         "z_order": 1,
-        "element_role": "scientific_content",
-        "font_size_pt": 24
+        "element_role": "assertion",
+        "font_size_pt": 28
       }
     ],
     "layout_plan_ref": "LP-H001-HYPOTHESIS-TITLE-01"
@@ -192,36 +218,42 @@
     },
     "placements": [],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [],
       "action_refs": [],
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -229,7 +261,7 @@
       }
     },
     "content": {
-      "body": "Unresolved problem｜合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。\nPrevious finding｜含水量與導電度存在位置梯度\nConflict｜導電度提高是否足以修復重複性仍未知。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nRemaining uncertainty｜合成五個位置、每個位置三個 replicate 的機制辨識。"
+      "body": "Problem｜合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。\nPrevious finding｜含水量與導電度存在位置梯度\nConflict｜導電度提高是否足以修復重複性仍未知。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nScope｜合成五個位置、每個位置三個 replicate 的機制辨識。"
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -243,14 +275,34 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
+        "slot": "previous_finding",
+        "left": 0.8,
         "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "width": 3.7,
+        "height": 1.75,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "evidence",
         "font_size_pt": 18
+      },
+      {
+        "slot": "unresolved_conflict",
+        "left": 4.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 2,
+        "element_role": "problem",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "research_question",
+        "left": 8.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 3,
+        "element_role": "question",
+        "font_size_pt": 20
       }
     ],
     "layout_plan_ref": "LP-H001-PROBLEM-DEFINITION-02"
@@ -283,29 +335,35 @@
       }
     ],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [
         "A101"
@@ -314,7 +372,7 @@
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -322,7 +380,7 @@
       }
     },
     "content": {
-      "body": "Historical snapshot｜FB001 rev1\nFocus branch｜FB-MATERIAL-HYDRATION\nOld layer topology is immutable; current overview uses latest revision."
+      "body": "Historical snapshot｜FB001 rev1\nFocus branch｜FB-MATERIAL-HYDRATION\nImmutable map; current branch highlighted."
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -341,13 +399,23 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "primary_figure",
+        "left": 4.25,
+        "top": 1.35,
+        "width": 8.35,
+        "height": 4.9,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "fishbone",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "fishbone_focus",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 3.0,
+        "height": 1.4,
+        "z_order": 2,
+        "element_role": "annotation",
         "font_size_pt": 16
       }
     ],
@@ -373,38 +441,52 @@
         "C101"
       ]
     },
-    "placements": [],
+    "placements": [
+      {
+        "slot": "primary_figure",
+        "asset_id": "A002",
+        "asset_path": "observation/observation_visual.svg"
+      }
+    ],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "asset_refs": [],
+      "asset_refs": [
+        "A002"
+      ],
       "action_refs": [],
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -412,7 +494,7 @@
       }
     },
     "content": {
-      "body": "Observation｜缺陷密度沿位置增加，訊號 CV 同步升高。\nLiterature synthesis｜transport gradient 可改變 bulk conductivity；但 interface variability 仍是 alternative。\nMechanism｜含水量梯度 → conductivity gradient。\nStrategy｜提升並均化含水量，再檢查 CV 是否同步下降。"
+      "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜bulk transport\nStrategy｜均化導電度"
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -426,13 +508,33 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "primary_figure",
+        "left": 7.55,
+        "top": 1.4,
+        "width": 5.0,
+        "height": 3.8,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "observation_visual",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "research_question",
+        "left": 0.8,
+        "top": 1.45,
+        "width": 6.2,
+        "height": 0.9,
+        "z_order": 2,
+        "element_role": "question",
+        "font_size_pt": 20
+      },
+      {
+        "slot": "observation_text",
+        "left": 0.8,
+        "top": 2.55,
+        "width": 6.2,
+        "height": 2.65,
+        "z_order": 3,
+        "element_role": "observation",
         "font_size_pt": 16
       }
     ],
@@ -460,36 +562,42 @@
     },
     "placements": [],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [],
       "action_refs": [],
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -497,7 +605,7 @@
       }
     },
     "content": {
-      "body": "Observation｜缺陷密度沿位置增加，訊號 CV 同步升高。\nLiterature synthesis｜transport gradient 可改變 bulk conductivity；但 interface variability 仍是 alternative。\nMechanism｜含水量梯度 → conductivity gradient。\nStrategy｜提升並均化含水量，再檢查 CV 是否同步下降。"
+      "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜bulk transport\nStrategy｜均化導電度"
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -511,13 +619,23 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
+        "slot": "literature_evidence",
+        "left": 0.8,
         "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "width": 5.8,
+        "height": 3.9,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "literature",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "mechanism_diagram",
+        "left": 7.0,
+        "top": 1.45,
+        "width": 5.55,
+        "height": 3.9,
+        "z_order": 2,
+        "element_role": "mechanism",
         "font_size_pt": 16
       }
     ],
@@ -545,36 +663,42 @@
     },
     "placements": [],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [],
       "action_refs": [],
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -582,7 +706,7 @@
       }
     },
     "content": {
-      "body": "EXP101｜提升含水量以提高 bulk conductivity\nIV: 含水量｜Control: 原始配方\nN: n=3 per position｜Metric/units: 導電度 / mS/cm\nDecision rule: Go if mean conductivity increases ≥20%\n\nEXP102｜檢查導電度改善是否同步改善重複性\nIV: 位置｜Control: 原始位置分布\nN: n=3 per position｜Metric/units: 訊號 CV / percent\nDecision rule: Go if CV decreases ≥30%; Partial-Go if 10–30%; No-Go otherwise"
+      "body": "EXP101｜IV: ['含水量']\nControls: ['原始配方']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['導電度 (mS/cm)']\nMethod: ['synthetic-four-probe']\nPrediction: ['導電度提升']\nDecision rule: {'go': 'mean conductivity increases >=20%', 'partial_go': '10-20%', 'no_go': '<10%'}\n\nEXP102｜IV: ['位置']\nControls: ['原始位置分布']\nN/replicates: {'replicates': 3, 'samples': 15}\nMetrics/units: ['訊號 CV (%)']\nMethod: ['synthetic-signal-test']\nPrediction: ['CV 下降']\nDecision rule: {'go': 'CV decreases >=30%', 'partial_go': '10-30%', 'no_go': '<10%'}"
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -596,13 +720,23 @@
     "compaction_rationale": "兩個 Experiment Design 同頁依 experiment_order 呈現；Results 仍在其後分頁。",
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "experiment_matrix",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 7.4,
+        "height": 4.3,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "experiment",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "decision_rule",
+        "left": 8.55,
+        "top": 1.4,
+        "width": 4.0,
+        "height": 2.0,
+        "z_order": 2,
+        "element_role": "decision_rule",
         "font_size_pt": 16
       }
     ],
@@ -630,35 +764,41 @@
     },
     "placements": [
       {
-        "slot": "primary_figure",
+        "slot": "proposed_panel",
         "asset_id": "A001",
         "asset_path": "plots/B001_defect_density.svg"
       }
     ],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [
         "A001"
@@ -667,7 +807,7 @@
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -689,13 +829,23 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
+        "slot": "control_panel",
+        "left": 0.8,
         "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "width": 5.75,
+        "height": 4.2,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "comparison_control",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "proposed_panel",
+        "left": 6.8,
+        "top": 1.45,
+        "width": 5.75,
+        "height": 4.2,
+        "z_order": 2,
+        "element_role": "comparison_proposed",
         "font_size_pt": 16
       }
     ],
@@ -723,35 +873,41 @@
     },
     "placements": [
       {
-        "slot": "primary_figure",
+        "slot": "proposed_panel",
         "asset_id": "A001",
         "asset_path": "plots/B001_defect_density.svg"
       }
     ],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [
         "A001"
@@ -760,7 +916,7 @@
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -782,13 +938,23 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
+        "slot": "control_panel",
+        "left": 0.8,
         "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "width": 5.75,
+        "height": 4.2,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "comparison_control",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "proposed_panel",
+        "left": 6.8,
+        "top": 1.45,
+        "width": 5.75,
+        "height": 4.2,
+        "z_order": 2,
+        "element_role": "comparison_proposed",
         "font_size_pt": 16
       }
     ],
@@ -816,29 +982,35 @@
     },
     "placements": [],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [],
       "action_refs": [],
@@ -847,7 +1019,7 @@
       ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -869,13 +1041,33 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "supporting_results",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 5.65,
+        "height": 2.2,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "support",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "contradicting_results",
+        "left": 6.8,
+        "top": 1.4,
+        "width": 5.75,
+        "height": 2.2,
+        "z_order": 2,
+        "element_role": "contradiction",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "uncertainty",
+        "left": 0.8,
+        "top": 3.9,
+        "width": 11.75,
+        "height": 1.7,
+        "z_order": 3,
+        "element_role": "uncertainty",
         "font_size_pt": 16
       }
     ],
@@ -903,29 +1095,35 @@
     },
     "placements": [],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 27,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [],
       "action_refs": [
@@ -936,7 +1134,7 @@
       ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -944,7 +1142,7 @@
       }
     },
     "content": {
-      "body": "Answered｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nEvidence｜E101, RES101, RES102\nHypothesis status｜partial_support\nDecision｜D101\nUnresolved｜interface contact 的貢獻尚未量化。\nNext question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext Step｜NS101｜Owner: Gary｜Timing committed"
+      "body": "Answered｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nHypothesis status｜partial_support\nDecision｜Partial-Go: Bulk conductivity is contributory but insufficient.\nUnresolved｜interface contact 的貢獻尚未量化。\nNext question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext Step｜NS101"
     },
     "hypothesis_layer_ref": "H001",
     "hypothesis_layer_revision": 1,
@@ -958,13 +1156,33 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "decision_status",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "status",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "uncertainty",
+        "left": 4.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
+        "z_order": 2,
+        "element_role": "uncertainty",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "next_step",
+        "left": 8.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
+        "z_order": 3,
+        "element_role": "next_step",
         "font_size_pt": 16
       }
     ],
@@ -992,29 +1210,35 @@
     },
     "placements": [],
     "citations": [
+      "E002",
       "E101",
-      "E102"
+      "E102",
+      "E103"
     ],
     "speaker_notes": {
       "source_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "history",
       "defense": "appendix"
     },
-    "source_cursor": 14,
+    "source_cursor": 35,
     "bindings": {
       "claim_refs": [
         "C101"
       ],
       "evidence_refs": [
+        "E002",
         "E101",
-        "E102"
+        "E102",
+        "E103"
       ],
       "asset_refs": [],
       "action_refs": [
@@ -1025,7 +1249,7 @@
       ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -1047,13 +1271,23 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "transition_nodes",
+        "left": 0.8,
+        "top": 1.55,
+        "width": 11.75,
+        "height": 2.7,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "transition",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "derivation_strip",
+        "left": 0.8,
+        "top": 4.55,
+        "width": 11.75,
+        "height": 0.8,
+        "z_order": 2,
+        "element_role": "derivation",
         "font_size_pt": 16
       }
     ],
@@ -1087,14 +1321,14 @@
       "source_refs": [
         "E201"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 26,
+    "source_cursor": 51,
     "bindings": {
       "claim_refs": [
         "C201"
@@ -1107,7 +1341,7 @@
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -1115,7 +1349,7 @@
       }
     },
     "content": {
-      "body": "目前相信｜低接觸壓力下，Contact resistance 主導訊號不穩定。\nFalsifier｜匹配導電度後，改變接觸壓力不影響 CV。"
+      "body": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？"
     },
     "hypothesis_layer_ref": "H002",
     "hypothesis_layer_revision": 1,
@@ -1129,14 +1363,14 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "hypothesis_statement",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 11.7,
+        "height": 2.35,
         "z_order": 1,
-        "element_role": "scientific_content",
-        "font_size_pt": 24
+        "element_role": "assertion",
+        "font_size_pt": 28
       }
     ],
     "layout_plan_ref": "LP-H002-HYPOTHESIS-TITLE-01"
@@ -1169,14 +1403,14 @@
       "source_refs": [
         "E201"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 26,
+    "source_cursor": 51,
     "bindings": {
       "claim_refs": [
         "C201"
@@ -1189,7 +1423,7 @@
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -1197,7 +1431,7 @@
       }
     },
     "content": {
-      "body": "Unresolved problem｜導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。\nPrevious finding｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性\nConflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？\nRemaining uncertainty｜匹配 bulk conductivity，改變 contact pressure 的對照實驗。"
+      "body": "Problem｜導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。\nPrevious finding｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性\nConflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？\nScope｜匹配 bulk conductivity，改變 contact pressure 的對照實驗。"
     },
     "hypothesis_layer_ref": "H002",
     "hypothesis_layer_revision": 1,
@@ -1211,14 +1445,34 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
+        "slot": "previous_finding",
+        "left": 0.8,
         "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "width": 3.7,
+        "height": 1.75,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "evidence",
         "font_size_pt": 18
+      },
+      {
+        "slot": "unresolved_conflict",
+        "left": 4.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 2,
+        "element_role": "problem",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "research_question",
+        "left": 8.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 3,
+        "element_role": "question",
+        "font_size_pt": 20
       }
     ],
     "layout_plan_ref": "LP-H002-PROBLEM-DEFINITION-02"
@@ -1257,14 +1511,14 @@
       "source_refs": [
         "E201"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 26,
+    "source_cursor": 51,
     "bindings": {
       "claim_refs": [
         "C201"
@@ -1279,7 +1533,7 @@
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -1287,7 +1541,7 @@
       }
     },
     "content": {
-      "body": "Historical snapshot｜FB001 rev2\nFocus branch｜FB-ELECTRODE-CONTACT\nOld layer topology is immutable; current overview uses latest revision."
+      "body": "Historical snapshot｜FB001 rev2\nFocus branch｜FB-ELECTRODE-CONTACT\nImmutable map; current branch highlighted."
     },
     "hypothesis_layer_ref": "H002",
     "hypothesis_layer_revision": 1,
@@ -1306,13 +1560,23 @@
     "compaction_rationale": null,
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "primary_figure",
+        "left": 4.25,
+        "top": 1.35,
+        "width": 8.35,
+        "height": 4.9,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "fishbone",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "fishbone_focus",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 3.0,
+        "height": 1.4,
+        "z_order": 2,
+        "element_role": "annotation",
         "font_size_pt": 16
       }
     ],
@@ -1346,14 +1610,14 @@
       "source_refs": [
         "E201"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 26,
+    "source_cursor": 51,
     "bindings": {
       "claim_refs": [
         "C201"
@@ -1366,7 +1630,7 @@
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -1374,7 +1638,7 @@
       }
     },
     "content": {
-      "body": "Observation｜H01 提升 conductivity，但 CV 未改善。\nLiterature synthesis｜bulk transport 與 interface contact 可產生不同可辨識預測。\nMechanism｜低壓造成 contact resistance 波動。\nStrategy｜匹配 bulk conductivity，僅改變 contact pressure。"
+      "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜contact resistance\nStrategy｜匹配導電度並改變接觸壓力"
     },
     "hypothesis_layer_ref": "H002",
     "hypothesis_layer_revision": 1,
@@ -1390,13 +1654,33 @@
     "compaction_rationale": "相鄰 Scientific Method stages 共享一頁，但保持 Observation → Literature → Mechanism → Strategy 的閱讀順序。",
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "primary_figure",
+        "left": 7.55,
+        "top": 1.4,
+        "width": 5.0,
+        "height": 3.8,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "observation_visual",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "research_question",
+        "left": 0.8,
+        "top": 1.45,
+        "width": 6.2,
+        "height": 0.9,
+        "z_order": 2,
+        "element_role": "question",
+        "font_size_pt": 20
+      },
+      {
+        "slot": "observation_text",
+        "left": 0.8,
+        "top": 2.55,
+        "width": 6.2,
+        "height": 2.65,
+        "z_order": 3,
+        "element_role": "observation",
         "font_size_pt": 16
       }
     ],
@@ -1424,7 +1708,7 @@
     },
     "placements": [
       {
-        "slot": "primary_figure",
+        "slot": "proposed_panel",
         "asset_id": "A201",
         "asset_path": "plots/H02_contact_pressure.svg"
       }
@@ -1436,14 +1720,14 @@
       "source_refs": [
         "E201"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 26,
+    "source_cursor": 51,
     "bindings": {
       "claim_refs": [
         "C201"
@@ -1458,7 +1742,7 @@
       "decision_refs": [],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -1466,7 +1750,7 @@
       }
     },
     "content": {
-      "body": "RES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降"
+      "body": "EXP201｜\nRES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降"
     },
     "hypothesis_layer_ref": "H002",
     "hypothesis_layer_revision": 1,
@@ -1481,13 +1765,23 @@
     "compaction_rationale": "單一 discriminating experiment 與結果共頁，Experiment metadata 先於 Result。",
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
+        "slot": "control_panel",
+        "left": 0.8,
         "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "width": 5.75,
+        "height": 4.2,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "comparison_control",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "proposed_panel",
+        "left": 6.8,
+        "top": 1.45,
+        "width": 5.75,
+        "height": 4.2,
+        "z_order": 2,
+        "element_role": "comparison_proposed",
         "font_size_pt": 16
       }
     ],
@@ -1521,14 +1815,14 @@
       "source_refs": [
         "E201"
       ],
-      "text": "Synthetic Phase 2 fixture; source refs are ledger-derived."
+      "text": "Compiled from persisted ledger materialization."
     },
     "story_visibility": {
       "master": "main",
       "meeting": "main",
       "defense": "appendix"
     },
-    "source_cursor": 26,
+    "source_cursor": 51,
     "bindings": {
       "claim_refs": [
         "C201"
@@ -1545,7 +1839,7 @@
       ],
       "professor_profile_ref": {
         "profile_id": "PROF-SYNTH-001",
-        "version": "2.0.0"
+        "version": "1.0.0"
       },
       "template_profile_ref": {
         "profile_id": "TP-SYNTH-PHASE2",
@@ -1553,7 +1847,7 @@
       }
     },
     "content": {
-      "body": "Answered｜低接觸壓力下 contact resistance 是主導不穩定來源。\nEvidence｜E201, RES201\nHypothesis status｜supported\nDecision｜D201\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。\nNext question｜接觸壓力改善能否在長期循環下維持？\nNext Step｜NS201｜Owner: Gary｜Timing committed"
+      "body": "Answered｜低接觸壓力下 contact resistance 是主導不穩定來源。\nHypothesis status｜supported\nDecision｜Go: Contact-pressure control discriminates the interface mechanism.\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。\nNext question｜接觸壓力改善能否在長期循環下維持？\nNext Step｜NS201"
     },
     "hypothesis_layer_ref": "H002",
     "hypothesis_layer_revision": 1,
@@ -1568,13 +1862,33 @@
     "compaction_rationale": "H02 acceptance 將 integrated Discussion 與 Summary/Decision 並列，完整 evidence set 已在前頁呈現。",
     "placement_plan": [
       {
-        "slot": "content",
-        "left": 0.7,
-        "top": 1.45,
-        "width": 12.0,
-        "height": 5.25,
+        "slot": "decision_status",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
         "z_order": 1,
-        "element_role": "scientific_content",
+        "element_role": "status",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "uncertainty",
+        "left": 4.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
+        "z_order": 2,
+        "element_role": "uncertainty",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "next_step",
+        "left": 8.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
+        "z_order": 3,
+        "element_role": "next_step",
         "font_size_pt": 16
       }
     ],

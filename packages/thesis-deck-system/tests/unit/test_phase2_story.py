@@ -81,6 +81,8 @@ def test_layout_director_is_deterministic_and_never_merges_hypothesis_problem():
     second = director.select(dict(request))
     assert first == second
     assert first["selected_archetype"] == "A01"
+    signatures = {tuple(item[:5] for item in layout.ROLE_GEOMETRY[role]) for role in layout.ROLE_TO_ARCHETYPE}
+    assert len(signatures) >= 6 and set(layout.ROLE_TO_ARCHETYPE) <= set(layout.ROLE_GEOMETRY)
     with pytest.raises(ValueError, match="must remain separate"):
         director.select({**request, "semantic_role": "hypothesis_problem_merged"})
 
@@ -91,3 +93,40 @@ def test_traditional_chinese_wrapping_preserves_punctuation_and_mixed_terms():
     assert all(len(line) <= 18 for line in lines)
     assert not any(line.startswith(("，", "。", "？", "）")) for line in lines[1:])
     assert "Contact resistance" in "".join(lines)
+
+
+def test_fishbone_hierarchy_rejects_duplicates_orphans_and_cycles(tmp_path: Path):
+    fishbone = _module("fishbone")
+    duplicate = {"fishbone_id": "FB001", "revision": 1, "branches": [{"branch_id": "FB-A", "label": "A", "parent_ref": None}, {"branch_id": "FB-A", "label": "A2", "parent_ref": None}]}
+    orphan = {"fishbone_id": "FB001", "revision": 1, "branches": [{"branch_id": "FB-A", "label": "A", "parent_ref": "FB-NOT"}]}
+    cycle = {"fishbone_id": "FB001", "revision": 1, "branches": [{"branch_id": "FB-A", "label": "A", "parent_ref": "FB-B"}, {"branch_id": "FB-B", "label": "B", "parent_ref": "FB-A"}]}
+    for revision, expected in ((duplicate, "duplicate"), (orphan, "orphan"), (cycle, "cycle")):
+        with pytest.raises(ValueError, match=expected):
+            fishbone.render_fishbone_svg(revision, [], "H01", tmp_path / f"{expected}.svg")
+
+
+def test_fishbone_child_connector_uses_declared_parent(tmp_path: Path):
+    fishbone = _module("fishbone")
+    revision = {"fishbone_id": "FB001", "revision": 2, "branches": [{"branch_id": "FB-ELECTRODE", "label": "電極", "parent_ref": None}, {"branch_id": "FB-ELECTRODE-CONTACT", "label": "接觸", "parent_ref": "FB-ELECTRODE"}]}
+    svg = fishbone.render_fishbone_svg(revision, ["FB-ELECTRODE-CONTACT"], "H02", tmp_path / "hierarchy.svg").read_text(encoding="utf-8")
+    assert 'data-parent-ref="FB-ELECTRODE"' in svg
+    assert 'id="FB-ELECTRODE-CONTACT"' in svg
+
+
+def test_causal_history_rejects_future_transition_and_early_discussion():
+    from thesis_deck_system.hypothesis import validate_causal_history
+    from thesis_deck_system.ledger import Ledger
+    ledger = Ledger()
+    ledger.append("claim_created", {"claim_id": "C101"})
+    ledger.append("hypothesis_transition_recorded", {"transition_id": "TR-H001-H002", "previous_hypothesis_claim_ref": "C101", "new_hypothesis_claim_ref": "C201", "key_result_refs": ["RES101"], "observation_or_uncertainty_refs": ["E201"]})
+    findings = {finding.rule_id for finding in validate_causal_history(ledger)}
+    assert "P2-CAUSAL-TRANSITION-FUTURE-CLAIM" in findings
+    assert "P2-CAUSAL-TRANSITION-FUTURE-RESULT" in findings
+    assert "P2-CAUSAL-TRANSITION-FUTURE-OBSERVATION" in findings
+
+
+def test_summary_compiler_resolves_its_explicit_decision_reference():
+    story = _module("story")
+    state = {"hypothesis_layers": {"H002": {"hypothesis_claim_ref": "C201", "problem_ref": "P201"}}, "claims": {"C201": {"falsifiable_predictions": [{"observation_that_falsifies": "falsifier"}], "text": "H02"}}, "problems": {"P201": {}}, "layer_summaries": {"SUM-H002": {"answered": "answered", "hypothesis_status": "supported", "decision_ref": "D002", "remaining_unresolved": "none", "next_question": "next", "next_step_refs": ["NS201"]}}, "decisions": {"D001": {"choice": "No-Go", "rationale": "old"}, "D002": {"choice": "Go", "rationale": "revised"}}}
+    body = story.content_from_materialized_state(state, "H002", "layer_summary_decision", "SUM-H002")
+    assert "Go: revised" in body and "No-Go" not in body

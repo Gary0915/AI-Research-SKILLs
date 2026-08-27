@@ -47,7 +47,9 @@ def test_phase2_acceptance_build_is_cursor_aware_and_reviewable(tmp_path: Path):
     assert h02_specs[0]["semantic_role"] == "hypothesis_title"
     assert h02_specs[1]["semantic_role"] == "problem_definition"
     assert h02_specs[2]["semantic_role"] == "fishbone_locator"
-    assert all(spec["source_cursor"] == result["h01_cursor"] for spec in h01_specs)
+    transition_spec = next(spec for spec in h01_specs if spec["semantic_role"] == "hypothesis_transition")
+    assert transition_spec["source_cursor"] > result["h01_cursor"]
+    assert all(spec["source_cursor"] == result["h01_cursor"] for spec in h01_specs if spec is not transition_spec)
     assert all(spec["source_cursor"] == result["h02_cursor"] for spec in h02_specs)
 
     audit = json.loads((tmp_path / "structural-audit.json").read_text(encoding="utf-8"))

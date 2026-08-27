@@ -17,6 +17,30 @@ ROLE_TO_ARCHETYPE = {
     "progress_todo": "A17", "schedule_next_step": "A18",
 }
 
+# Coordinates are inches in the 13.333 x 7.5 native content canvas.  These
+# are governed contracts, not labels: every semantic role receives a distinct
+# slot signature and the assembler consumes these coordinates verbatim.
+ROLE_GEOMETRY = {
+    "hypothesis_title": [("hypothesis_statement", .8, 1.65, 11.7, 2.35, "assertion", 1, 28)],
+    "problem_definition": [("previous_finding", .8, 1.45, 3.7, 1.75, "evidence", 1, 18), ("unresolved_conflict", 4.8, 1.45, 3.7, 1.75, "problem", 2, 18), ("research_question", 8.8, 1.45, 3.7, 1.75, "question", 3, 20)],
+    "fishbone_locator": [("primary_figure", 4.25, 1.35, 8.35, 4.9, "fishbone", 1, 16), ("fishbone_focus", .8, 1.65, 3.0, 1.4, "annotation", 2, 16)],
+    "observation_problem": [("primary_figure", 7.55, 1.4, 5.0, 3.8, "observation_visual", 1, 16), ("research_question", .8, 1.45, 6.2, .9, "question", 2, 20), ("observation_text", .8, 2.55, 6.2, 2.65, "observation", 3, 16)],
+    "photo_schematic": [("primary_figure", .8, 1.45, 7.4, 4.5, "schematic", 1, 16), ("annotation", 8.55, 1.45, 4.0, 2.1, "annotation", 2, 16)],
+    "literature_mechanism": [("literature_evidence", .8, 1.45, 5.8, 3.9, "literature", 1, 16), ("mechanism_diagram", 7.0, 1.45, 5.55, 3.9, "mechanism", 2, 16)],
+    "mechanism_solution": [("mechanism_diagram", .8, 1.55, 5.5, 3.5, "mechanism", 1, 16), ("strategy", 6.75, 1.55, 5.8, 3.5, "strategy", 2, 16)],
+    "experiment_design": [("experiment_matrix", .8, 1.4, 7.4, 4.3, "experiment", 1, 16), ("decision_rule", 8.55, 1.4, 4.0, 2.0, "decision_rule", 2, 16)],
+    "result_single": [("result_plot", 6.0, 1.35, 6.55, 4.45, "result", 1, 16), ("result_annotation", .8, 1.65, 4.8, 2.3, "annotation", 2, 16)],
+    "result_comparison": [("control_panel", .8, 1.45, 5.75, 4.2, "comparison_control", 1, 16), ("proposed_panel", 6.8, 1.45, 5.75, 4.2, "comparison_proposed", 2, 16)],
+    "control_vs_proposed": [("control_panel", .8, 1.45, 5.75, 4.2, "comparison_control", 1, 16), ("proposed_panel", 6.8, 1.45, 5.75, 4.2, "comparison_proposed", 2, 16)],
+    "image_matrix": [("matrix_grid", .8, 1.45, 11.75, 4.6, "image_matrix", 1, 16), ("matrix_annotation", .8, 6.2, 11.75, .5, "annotation", 2, 16)],
+    "hero_plot_discussion": [("result_plot", 6.0, 1.35, 6.55, 4.45, "result", 1, 16), ("discussion_panel", .8, 1.65, 4.8, 3.8, "interpretation", 2, 16)],
+    "layer_integrated_discussion": [("supporting_results", .8, 1.4, 5.65, 2.2, "support", 1, 16), ("contradicting_results", 6.8, 1.4, 5.75, 2.2, "contradiction", 2, 16), ("uncertainty", .8, 3.9, 11.75, 1.7, "uncertainty", 3, 16)],
+    "layer_summary_decision": [("decision_status", .8, 1.4, 3.7, 2.3, "status", 1, 18), ("uncertainty", 4.8, 1.4, 3.7, 2.3, "uncertainty", 2, 16), ("next_step", 8.8, 1.4, 3.7, 2.3, "next_step", 3, 16)],
+    "hypothesis_transition": [("transition_nodes", .8, 1.55, 11.75, 2.7, "transition", 1, 18), ("derivation_strip", .8, 4.55, 11.75, .8, "derivation", 2, 16)],
+    "progress_todo": [("commitment_table", .8, 1.45, 7.0, 3.75, "commitment", 1, 16), ("current_position", 8.15, 1.45, 4.4, 1.7, "position", 2, 16), ("parallel_work", 8.15, 3.45, 4.4, 1.75, "parallel", 3, 16)],
+    "schedule_next_step": [("timeline", .8, 1.6, 8.0, 2.5, "timeline", 1, 16), ("dependencies", 9.05, 1.6, 3.5, 2.5, "dependencies", 2, 16)],
+}
+
 
 def load_archetype_registry(path: Path) -> dict:
     records = json.loads(Path(path).read_text(encoding="utf-8"))
@@ -39,17 +63,26 @@ class LayoutDirector:
         text_units = request.get("text_units", 0)
         over_budget = text_units > archetype["text_budget"]
         role_profile = self.template_profile.get("semantic_roles", {}).get(archetype["native_layout_role"], {})
-        placement_plan = [{"slot": "content", "left": 0.7, "top": 1.45, "width": 12.0, "height": 5.25, "z_order": 1, "element_role": "scientific_content", "font_size_pt": max(16, archetype["zh_tw_typography"]["minimum_font_pt"])}]
+        placement_plan = [
+            {"slot": slot, "left": left, "top": top, "width": width, "height": height, "z_order": z, "element_role": element, "font_size_pt": max(16, font)}
+            for slot, left, top, width, height, element, z, font in ROLE_GEOMETRY.get(role, [("content", .7, 1.45, 12.0, 5.25, "scientific_content", 1, 16)])
+        ]
+        slot_signature = "|".join(f"{item['slot']}@{item['left']:.2f},{item['top']:.2f},{item['width']:.2f},{item['height']:.2f}" for item in placement_plan)
+        split = bool(over_budget and archetype["failure_policy"] == "split")
         return {
             "selected_archetype": archetype_id,
             "native_template_layout": role_profile,
             "placement_plan": placement_plan,
             "figure_text_hierarchy": ["primary_figure", "interpretation", "provenance"],
             "expected_professor_checks": archetype["professor_rules"],
-            "candidate_alternatives": [],
-            "rejection_reasons": [],
+            "candidate_alternatives": [value for value in ("A04", "A05", "A09") if value != archetype_id and value in self.registry][:2],
+            "rejection_reasons": ["text_budget_exceeded"] if over_budget else [],
             "warnings": ["text_over_budget"] if over_budget else [],
             "density_estimate": "over_budget" if over_budget else request.get("density_estimate", "medium"),
-            "split_recommendation": bool(over_budget and archetype["failure_policy"] == "split"),
-            "rationale": f"Deterministic semantic-role mapping {role} → {archetype_id}",
+            "split_recommendation": split,
+            "text_units": int(text_units),
+            "text_budget": int(archetype["text_budget"]),
+            "required_slots": [item["slot"] for item in placement_plan],
+            "slot_signature": slot_signature,
+            "rationale": f"Deterministic semantic-role mapping {role} → {archetype_id}; governed slot geometry selected from ROLE_GEOMETRY",
         }

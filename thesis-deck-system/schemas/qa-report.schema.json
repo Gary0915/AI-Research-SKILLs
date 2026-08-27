@@ -5,12 +5,12 @@
   "additionalProperties": false,
   "required": ["schema_version", "qa_report_id", "build_id", "deck_id", "created_at", "overall_status", "professor_profile_ref", "pipeline", "findings", "artifacts", "tool_versions"],
   "properties": {
-    "schema_version": {"const": "1.0.0"},
+    "schema_version": {"type": "string", "enum": ["1.0.0", "2.0.0"]},
     "qa_report_id": {"type": "string"},
     "build_id": {"type": "string"},
     "deck_id": {"type": "string"},
     "created_at": {"type": "string", "format": "date-time"},
-    "overall_status": {"enum": ["pass", "fail", "blocked", "candidate"]},
+    "overall_status": {"enum": ["pass", "fail", "blocked", "candidate", "pass_with_native_environment_block"]},
     "professor_profile_ref": {"type": "object"},
     "pipeline": {
       "type": "array",
@@ -31,5 +31,6 @@
     "tool_versions": {"type": "object"},
     "structural_audit": {"type": "object"},
     "native_status": {"type": "string", "enum": ["pass", "blocked_environment", "not_run"]}
+    ,"native_powerpoint_status": {"type": "string", "enum": ["pass", "blocked_environment", "not_run"]}
   }
 }

@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "asset_id": "A001",
+      "source_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
+      "script_sha256": "b8c35668c252fb1c46ce1f1dcb8366b4d79919d12e12f07bd623dd142b301706",
+      "svg_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+      "png_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1",
+      "verified": true
+    },
+    {
+      "asset_id": "A201",
+      "source_sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7",
+      "script_sha256": "3aeb7e22710c80af2bb316ce066de3397d9edd0520f8464c387ed59021eee1c6",
+      "svg_sha256": "b3258ac83004a1f616c16a1022fe99c77ed265f6d06df9276277b3cb077845fa",
+      "png_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787",
+      "verified": true
+    }
+  ]
+}

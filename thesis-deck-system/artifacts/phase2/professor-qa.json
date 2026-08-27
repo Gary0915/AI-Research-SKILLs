@@ -1,15 +1,409 @@
 {
   "profile_ref": {
     "profile_id": "PROF-SYNTH-001",
-    "version": "2.0.0"
+    "version": "1.0.0"
   },
   "status": "pass",
   "executed_checks": [
-    "layer_structure",
-    "fishbone_history",
-    "integrated_discussion",
-    "summary_decision",
-    "commitment_carry_forward"
+    "PROF-HYPOTHESIS-EXISTS",
+    "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+    "PROF-FISHBONE-EXISTS",
+    "PROF-FISHBONE-FOCUS",
+    "PROF-FISHBONE-REVISION",
+    "PROF-QUESTION-BEFORE-RESULT",
+    "PROF-LITERATURE-SYNTHESIS",
+    "PROF-MECHANISM-EVIDENCE",
+    "PROF-STRATEGY-DERIVED",
+    "PROF-EXPERIMENT-METADATA",
+    "PROF-RESULTS-COMPLETE",
+    "PROF-INTEGRATED-DISCUSSION",
+    "PROF-LAYER-SUMMARY",
+    "PROF-TRANSITION-PROVENANCE",
+    "PROF-HYPOTHESIS-EXISTS",
+    "PROF-HYPOTHESIS-PROBLEM-SEPARATE",
+    "PROF-FISHBONE-EXISTS",
+    "PROF-FISHBONE-FOCUS",
+    "PROF-FISHBONE-REVISION",
+    "PROF-QUESTION-BEFORE-RESULT",
+    "PROF-LITERATURE-SYNTHESIS",
+    "PROF-MECHANISM-EVIDENCE",
+    "PROF-STRATEGY-DERIVED",
+    "PROF-EXPERIMENT-METADATA",
+    "PROF-RESULTS-COMPLETE",
+    "PROF-INTEGRATED-DISCUSSION",
+    "PROF-LAYER-SUMMARY",
+    "PROF-HISTORY-REACHABLE",
+    "PROF-NEXT-STEP-OWNER-TIMING"
   ],
+  "check_count": 29,
+  "evidence": {
+    "PROF-HYPOTHESIS-EXISTS": {
+      "passed": true,
+      "path": "H002",
+      "detail": [
+        "hypothesis_title",
+        "problem_definition",
+        "fishbone_locator",
+        "observation_problem",
+        "result_comparison",
+        "layer_summary_decision"
+      ]
+    },
+    "PROF-HYPOTHESIS-PROBLEM-SEPARATE": {
+      "passed": true,
+      "path": "H002",
+      "detail": [
+        "hypothesis_title",
+        "problem_definition",
+        "fishbone_locator",
+        "observation_problem",
+        "result_comparison",
+        "layer_summary_decision"
+      ]
+    },
+    "PROF-FISHBONE-EXISTS": {
+      "passed": true,
+      "path": "H002",
+      "detail": true
+    },
+    "PROF-FISHBONE-FOCUS": {
+      "passed": true,
+      "path": "H002",
+      "detail": [
+        "FB-ELECTRODE-CONTACT"
+      ]
+    },
+    "PROF-FISHBONE-REVISION": {
+      "passed": true,
+      "path": "H002",
+      "detail": {
+        "fishbone_id": "FB001",
+        "revision": 2
+      }
+    },
+    "PROF-QUESTION-BEFORE-RESULT": {
+      "passed": true,
+      "path": "H002",
+      "detail": [
+        4
+      ]
+    },
+    "PROF-LITERATURE-SYNTHESIS": {
+      "passed": true,
+      "path": "H002",
+      "detail": {
+        "consensus": "transport gradient 可產生位置效應。",
+        "disagreements_or_alternatives": [
+          "interface contact remains alternative"
+        ],
+        "known_mechanisms": [
+          "bulk transport",
+          "boundary accumulation"
+        ],
+        "research_gap": "缺少控制比較隔離機制。",
+        "relevance_to_observation": "兩種機制都預測位置效應。",
+        "implication_for_hypothesis_or_strategy": "需匹配條件後比較。",
+        "supporting_literature_evidence_refs": [
+          "E103"
+        ],
+        "contradicting_literature_evidence_refs": []
+      }
+    },
+    "PROF-MECHANISM-EVIDENCE": {
+      "passed": true,
+      "path": "H002",
+      "detail": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H002-MECH",
+        "block_ref": {
+          "block_id": "B201",
+          "revision": 1
+        },
+        "stage_type": "mechanism",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C202",
+          "C203"
+        ],
+        "evidence_refs": [
+          "E201"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "mechanism": "contact resistance",
+          "falsification": "控制比較不出現預測差異。"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      }
+    },
+    "PROF-STRATEGY-DERIVED": {
+      "passed": true,
+      "path": "H002",
+      "detail": {
+        "strategy": "匹配導電度並改變接觸壓力",
+        "success_criterion": "預測指標跨過 decision threshold"
+      }
+    },
+    "PROF-EXPERIMENT-METADATA": {
+      "passed": true,
+      "path": "H002",
+      "detail": [
+        {
+          "stage_id": "ST-EXP201",
+          "data": {
+            "independent_variables": [
+              "contact pressure"
+            ],
+            "controlled_variables": [
+              "bulk conductivity",
+              "電極幾何"
+            ],
+            "controls_baselines": [
+              "low-pressure control"
+            ],
+            "sample_plan": {
+              "replicates": 5,
+              "samples": 15
+            },
+            "measured_outputs": [
+              "訊號 CV (%)",
+              "contact resistance (ohm)"
+            ],
+            "instrumentation_method_refs": [
+              "synthetic-pressure-fixture"
+            ],
+            "predicted_outcomes": [
+              "CV and resistance decrease"
+            ],
+            "decision_rules": {
+              "go": "both metrics improve",
+              "partial_go": "one metric improves",
+              "no_go": "neither improves"
+            },
+            "required_evidence": [
+              "E201"
+            ]
+          }
+        }
+      ]
+    },
+    "PROF-RESULTS-COMPLETE": {
+      "passed": true,
+      "path": "H002",
+      "detail": [
+        "ST-RES201"
+      ]
+    },
+    "PROF-INTEGRATED-DISCUSSION": {
+      "passed": true,
+      "path": "H002",
+      "detail": {
+        "schema_version": "2.0.0",
+        "discussion_id": "DISC-H002",
+        "hypothesis_layer_ref": "H002",
+        "supporting_results": [
+          "RES201"
+        ],
+        "contradicting_results": [],
+        "non_discriminating_results": [],
+        "cross_experiment_pattern": "匹配導電度後，提高接觸壓力明顯降低變異。",
+        "mechanism_assessment": "contact resistance 在低壓條件下主導不穩定。",
+        "alternative_explanations": [
+          "電極幾何仍可能調節壓力分布"
+        ],
+        "remaining_uncertainty": "高壓長期循環是否造成新的 wear mechanism 尚未知。",
+        "hypothesis_status": "supported",
+        "decision_ref": "D201",
+        "next_step_refs": [
+          "NS201"
+        ],
+        "source_event_cursor": 46,
+        "created_at": "2026-08-27T00:00:00Z"
+      }
+    },
+    "PROF-LAYER-SUMMARY": {
+      "passed": true,
+      "path": "H002",
+      "detail": {
+        "schema_version": "2.0.0",
+        "summary_id": "SUM-H002",
+        "hypothesis_layer_ref": "H002",
+        "answered": "低接觸壓力下 contact resistance 是主導不穩定來源。",
+        "supporting_evidence_refs": [
+          "E201",
+          "RES201"
+        ],
+        "remaining_unresolved": "高壓循環的耐久性與 wear 尚未測試。",
+        "hypothesis_status": "supported",
+        "decision_ref": "D201",
+        "next_question": "接觸壓力改善能否在長期循環下維持？",
+        "next_step_refs": [
+          "NS201"
+        ],
+        "source_event_cursor": 49,
+        "created_at": "2026-08-27T00:00:00Z"
+      }
+    },
+    "PROF-TRANSITION-PROVENANCE": {
+      "passed": true,
+      "path": "H001",
+      "detail": {
+        "schema_version": "2.0.0",
+        "transition_id": "TR-H001-H002",
+        "from_layer_ref": "H001",
+        "to_layer_ref": "H002",
+        "previous_hypothesis_claim_ref": "C101",
+        "key_result_refs": [
+          "RES101",
+          "RES102"
+        ],
+        "unexplained": "導電度增加後訊號重複性沒有改善。",
+        "observation_or_uncertainty_refs": [
+          "E201"
+        ],
+        "rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+        "new_hypothesis_claim_ref": "C201",
+        "decision_refs": [
+          "D101"
+        ],
+        "source_event_cursor": 35,
+        "created_at": "2026-08-27T00:00:00Z"
+      }
+    },
+    "PROF-HISTORY-REACHABLE": {
+      "passed": true,
+      "path": "layers",
+      "detail": [
+        "H001",
+        "H002"
+      ]
+    },
+    "PROF-NEXT-STEP-OWNER-TIMING": {
+      "passed": true,
+      "path": "meeting",
+      "detail": [
+        {
+          "schema_version": "1.0.0",
+          "action_item_id": "NS101",
+          "revision": 1,
+          "action_type": "experiment",
+          "title": "Matched-conductivity contact-pressure test",
+          "action": "Run controlled pressure comparison.",
+          "rationale": "Resolve bulk versus interface mechanism.",
+          "source_decision_ref": "D101",
+          "linked_block_refs": [
+            {
+              "block_id": "B101",
+              "revision": 1
+            }
+          ],
+          "linked_claim_refs": [
+            "C101",
+            "C103"
+          ],
+          "prior_commitment": {
+            "meeting_id": "MEETING-001",
+            "committed_at": "2026-08-27T00:00:00Z"
+          },
+          "owner": {
+            "actor_id": "gary",
+            "display_name": "Gary"
+          },
+          "target_window": {
+            "start": "2026-09-01T00:00:00Z",
+            "due": "2026-09-10T09:00:00Z",
+            "timezone": "Asia/Taipei"
+          },
+          "actual_completion": {
+            "completed_at": "2026-09-10T09:00:00Z",
+            "closure_evidence_refs": [
+              "E201"
+            ]
+          },
+          "success_failure_criteria": {
+            "success": "effect exceeds uncertainty",
+            "failure": "no discriminating effect"
+          },
+          "required_evidence": [
+            "E101"
+          ],
+          "dependency_refs": [
+            "pressure fixture"
+          ],
+          "blocker_refs": [],
+          "parallelizable": true,
+          "workstream": "interface-mechanism",
+          "status": "done",
+          "result_summary": "Completed synthetic control",
+          "supersedes": [],
+          "superseded_by": [],
+          "provenance": "synthetic_fixture",
+          "created_at": "2026-08-27T00:00:00Z",
+          "updated_at": "2026-08-27T00:00:00Z"
+        },
+        {
+          "schema_version": "1.0.0",
+          "action_item_id": "NS201",
+          "revision": 1,
+          "action_type": "experiment",
+          "title": "High-pressure cycling durability",
+          "action": "Run controlled pressure comparison.",
+          "rationale": "Resolve bulk versus interface mechanism.",
+          "source_decision_ref": "D201",
+          "linked_block_refs": [
+            {
+              "block_id": "B201",
+              "revision": 1
+            }
+          ],
+          "linked_claim_refs": [
+            "C201",
+            "C203"
+          ],
+          "prior_commitment": {
+            "meeting_id": "MEETING-001",
+            "committed_at": "2026-08-27T00:00:00Z"
+          },
+          "owner": {
+            "actor_id": "gary",
+            "display_name": "Gary"
+          },
+          "target_window": {
+            "start": "2026-09-11T00:00:00Z",
+            "due": "2026-09-24T00:00:00Z",
+            "timezone": "Asia/Taipei"
+          },
+          "actual_completion": {
+            "completed_at": null,
+            "closure_evidence_refs": []
+          },
+          "success_failure_criteria": {
+            "success": "effect exceeds uncertainty",
+            "failure": "no discriminating effect"
+          },
+          "required_evidence": [
+            "E201"
+          ],
+          "dependency_refs": [
+            "pressure fixture"
+          ],
+          "blocker_refs": [],
+          "parallelizable": true,
+          "workstream": "interface-mechanism",
+          "status": "planned",
+          "result_summary": "Awaiting controlled comparison",
+          "supersedes": [],
+          "superseded_by": [],
+          "provenance": "synthetic_fixture",
+          "created_at": "2026-08-27T00:00:00Z",
+          "updated_at": "2026-08-27T00:00:00Z"
+        }
+      ]
+    }
+  },
   "findings": []
 }

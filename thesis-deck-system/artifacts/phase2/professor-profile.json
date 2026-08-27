@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "PROF-SYNTH-001",
+  "version": "1.0.0",
+  "project_id": "THESIS-SYNTH-001",
+  "primary_language": "zh-TW",
+  "technical_term_policy": "English technical terminology allowed",
+  "narrative_rules": {
+    "scientific_method_required": true,
+    "require_question_before_data": true,
+    "literature_must_synthesize_to_hypothesis_or_strategy": true,
+    "discussion_must_update_decision": true,
+    "preserve_failed_and_changed_hypotheses": true,
+    "persistent_orientation_view": "fishbone/research-map"
+  },
+  "meeting_rules": {
+    "require_previous_commitments": true,
+    "require_current_progress": true,
+    "require_next_steps_and_timing": true,
+    "require_blockers_dependencies_and_parallel_work": true
+  },
+  "master_deck_rules": {
+    "cumulative_growth": true,
+    "meeting_and_defense_are_projections": true
+  },
+  "content_rules": {
+    "figures_dominate": true,
+    "text_supports_interpretation": true,
+    "high_density_allowed_only_when_structured": true
+  },
+  "visual_exemplars": {
+    "template_language_refs": [
+      "EXEMPLAR-1",
+      "EXEMPLAR-3"
+    ],
+    "content_layout_primary_ref": "EXEMPLAR-2"
+  },
+  "font_policy": {
+    "final_fonts_locked": false,
+    "required_fonts": [],
+    "fallback_fonts": [],
+    "source": "pending_private_template"
+  },
+  "change_log": [
+    {
+      "version": "1.0.0",
+      "source": "Phase 1 synthetic fixture"
+    }
+  ],
+  "provenance": "synthetic_fixture",
+  "created_at": "2026-08-27T00:00:00Z",
+  "updated_at": "2026-08-27T00:00:00Z"
+}

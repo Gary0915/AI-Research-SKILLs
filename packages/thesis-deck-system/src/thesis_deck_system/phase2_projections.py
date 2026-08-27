@@ -25,10 +25,10 @@ def meeting_projection(state: dict, *, source_cursor: int, current_layer_id: str
         raise ValueError(f"current hypothesis layer not materialized: {current_layer_id}")
     fishbones = list(state.get("fishbone_revisions", {}).items())
     latest = max(fishbones, key=lambda pair: pair[1].get("revision", 0)) if fishbones else None
-    commitments = sorted(
-        [item for item in state.get("actions", {}).values() if item.get("status") not in {"done", "cancelled", "superseded"}],
-        key=lambda item: item.get("action_item_id", ""),
-    )
+    # Previous commitments are historical facts, including completed work;
+    # filtering them out would make a meeting projection lose its ledger
+    # history.  Consumers can use open_commitments for the actionable subset.
+    commitments = sorted(list(state.get("actions", {}).values()), key=lambda item: item.get("action_item_id", ""))
     return {
         "projection_kind": "meeting",
         "source_event_cursor": source_cursor,
@@ -37,4 +37,5 @@ def meeting_projection(state: dict, *, source_cursor: int, current_layer_id: str
         "current_layer": state["hypothesis_layers"][current_layer_id],
         "latest_fishbone_ref": None if latest is None else {"fishbone_id": latest[1].get("fishbone_id", latest[0].split("@", 1)[0]), "revision": latest[1]["revision"]},
         "previous_commitments": commitments,
+        "open_commitments": [item for item in commitments if item.get("status") not in {"done", "cancelled", "superseded"}],
     }

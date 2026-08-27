@@ -1,0 +1,23 @@
+schema_version: "1.0.0"
+routes:
+  更新這週 Group Meeting:
+    top_level: thesis-deck-router
+    handoff: [master-deck-ledger, hypothesis-layer-planner, layout-director, professor-qa]
+  新增一個 Hypothesis:
+    top_level: thesis-deck-router
+    handoff: [scientific-method-planner, hypothesis-layer-planner, master-deck-ledger, fishbone-director, layout-director, professor-qa]
+  整理這批實驗數據成結果頁:
+    top_level: thesis-deck-router
+    handoff: [scientific-method-planner, master-deck-ledger, layout-director, professor-qa]
+  畫目前研究魚骨圖:
+    top_level: thesis-deck-router
+    handoff: [fishbone-director, master-deck-ledger, layout-director, professor-qa]
+  做文獻與機制頁:
+    top_level: thesis-deck-router
+    handoff: [scientific-method-planner, layout-director, professor-qa]
+  更新 Master Deck:
+    top_level: thesis-deck-router
+    handoff: [master-deck-ledger, hypothesis-layer-planner, layout-director, professor-qa]
+  審核這份簡報:
+    top_level: thesis-deck-router
+    handoff: [professor-qa]

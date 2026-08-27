@@ -102,3 +102,5 @@ output/
 0-autoresearch-skill/image_generation_brief.md
 0-autoresearch-skill/autoresearch-loops-image.png
 thesis-deck-system/examples/private-fixtures.local.json
+thesis-deck-system/private-fixtures/
+thesis-deck-system/artifacts/private/

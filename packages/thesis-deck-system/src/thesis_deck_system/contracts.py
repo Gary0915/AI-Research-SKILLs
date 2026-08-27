@@ -264,6 +264,12 @@ def validate_temporal_bindings(
                 add("TEMPORAL-STAGE-UNREACHABLE", f"Stage {stage_id} is not materialized", path)
             elif stage.get("block_ref", {}).get("block_id") != block_id or stage.get("block_ref", {}).get("revision", 0) > block_revision:
                 add("TEMPORAL-STAGE-BLOCK-REVISION", f"Stage {stage_id} has an impossible block revision", path)
+        for stage_id in block.get("experiment_stage_refs", []) + block.get("result_stage_refs", []):
+            stage = state["stages"].get(stage_id)
+            if not stage:
+                add("TEMPORAL-STAGE-UNREACHABLE", f"Stage {stage_id} is not materialized", path)
+            elif stage.get("block_ref", {}).get("block_id") != block_id or stage.get("block_ref", {}).get("revision", 0) > block_revision:
+                add("TEMPORAL-STAGE-BLOCK-REVISION", f"Stage {stage_id} has an impossible block revision", path)
 
         for ref in block.get("claim_refs", []):
             claim = state["claims"].get(ref)
@@ -295,8 +301,11 @@ def validate_temporal_bindings(
         manifest_cursor = manifest.get("source_event_cursor")
         for slide_index, slide in enumerate(manifest.get("slides", [])):
             path = f"deck_manifests/{manifest_index}/slides/{slide_index}"
-            if slide.get("source_event_cursor") != manifest_cursor:
-                add("TEMPORAL-MANIFEST-CURSOR-MISMATCH", "Slide cursor differs from manifest cursor", path)
+            # A cumulative master deck contains historical slides compiled at
+            # earlier immutable cursors.  They must never point *after* the
+            # manifest cursor, but equality is not required for every slide.
+            if not isinstance(slide.get("source_event_cursor"), int) or slide.get("source_event_cursor") > manifest_cursor:
+                add("TEMPORAL-MANIFEST-CURSOR-MISMATCH", "Slide cursor is after the manifest materialization cursor", path)
             validate_binding(slide, slide.get("source_event_cursor"), slide.get("block_ref", {}), path)
             candidates = [spec for spec in specs if spec.get("slide_id") == slide.get("slide_id") and spec.get("source_cursor") == slide.get("source_event_cursor")]
             if not candidates:

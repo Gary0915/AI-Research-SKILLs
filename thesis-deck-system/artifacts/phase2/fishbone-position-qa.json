@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "stable_branch_max_delta": 0,
+  "stable_branch_deltas": {
+    "FB-ELECTRODE": 0,
+    "FB-ELECTRODE-GEOMETRY": 0,
+    "FB-MATERIAL": 0,
+    "FB-MATERIAL-HYDRATION": 0,
+    "FB-MEASUREMENT": 0,
+    "FB-SYSTEM": 0
+  },
+  "hierarchy_parent": "FB-ELECTRODE-CONTACT -> FB-ELECTRODE"
+}

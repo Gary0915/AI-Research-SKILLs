@@ -62,34 +62,43 @@ class PythonPptxAssembler(PptxAssembler):
             slide = prs.slides.add_slide(layout)
             slide.shapes.title.text = spec["title"]["text"]
             content = spec.get("content", {})
+            governed = spec.get("placement_plan", [])
+            def box(slot: str, fallback: tuple[float, float, float, float]) -> tuple[float, float, float, float]:
+                item = next((value for value in governed if value.get("slot") == slot), None)
+                if item is None:
+                    item = governed[0] if governed else None
+                return (item.get("left", fallback[0]), item.get("top", fallback[1]), item.get("width", fallback[2]), item.get("height", fallback[3])) if item else fallback
             if spec["recipe"] == "hero_plot_discussion" and spec["placements"] and spec["placements"][0].get("asset_path"):
-                body = slide.shapes.add_textbox(Inches(.7), Inches(1.5), Inches(4.4), Inches(4.8))
+                left, top, width, height = box("result_annotation", (.7, 1.5, 4.4, 4.8))
+                body = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
                 body.text = "Result / Discussion\n" + content.get("discussion", "Partial support; control required.") + "\nDecision: " + content.get("decision", "Partial-Go") + "\nNext Step: " + content.get("next_step", "Run matched-position tracer control by 2026-09-02")
                 for paragraph in body.text_frame.paragraphs:
                     for run in paragraph.runs: run.font.size = __import__('pptx').util.Pt(16)
                 plot_path = spec["placements"][0]["asset_path"]; plot_path = str(context.resolve_repo_path(plot_path)) if not Path(plot_path).is_absolute() else plot_path
                 try:
-                    slide.shapes.add_picture(plot_path, Inches(5.3), Inches(1.7), width=Inches(7.2), height=Inches(4.0))
+                    left, top, width, height = box("result_plot", (5.3, 1.7, 7.2, 4.0)); slide.shapes.add_picture(plot_path, Inches(left), Inches(top), width=Inches(width), height=Inches(height))
                 except Exception:
                     # python-pptx cannot decode SVG; retain the registered SVG in the package and use PNG only as compatibility preview.
-                    slide.shapes.add_picture(str(Path(plot_path).with_suffix('.png')), Inches(5.3), Inches(1.7), width=Inches(7.2), height=Inches(4.0))
+                    left, top, width, height = box("result_plot", (5.3, 1.7, 7.2, 4.0)); slide.shapes.add_picture(str(Path(plot_path).with_suffix('.png')), Inches(left), Inches(top), width=Inches(width), height=Inches(height))
             elif spec["recipe"] == "photo_observation":
-                body = slide.shapes.add_textbox(Inches(.7), Inches(1.7), Inches(5.6), Inches(3.8))
+                left, top, width, height = box("observation_text", (.7, 1.7, 5.6, 3.8)); body = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
                 body.text = content.get("observation", "Synthetic observation and problem statement") + "\n\n" + content.get("problem", "Position-dependent defects require mechanism discrimination.")
                 for paragraph in body.text_frame.paragraphs:
                     for run in paragraph.runs: run.font.size = __import__('pptx').util.Pt(18)
                 visual = content.get("observation_visual_path"); visual = str(context.resolve_repo_path(visual)) if visual and not Path(visual).is_absolute() else visual
                 if visual:
-                    try: slide.shapes.add_picture(visual, Inches(6.6), Inches(1.6), width=Inches(5.8), height=Inches(3.3))
+                    try:
+                        left, top, width, height = box("primary_figure", (6.6, 1.6, 5.8, 3.3)); slide.shapes.add_picture(visual, Inches(left), Inches(top), width=Inches(width), height=Inches(height))
                     except Exception:
                         # observation visual is vector source; use a deterministic preview when decoder lacks SVG support.
                         from PIL import Image, ImageDraw
                         preview = Path(visual).with_suffix('.png')
                         if not preview.exists():
                             im=Image.new('RGB',(640,360),'#d9e5e8'); ImageDraw.Draw(im).text((30,160),'SYNTHETIC OBSERVATION',fill='#234'); im.save(preview)
-                        slide.shapes.add_picture(str(preview), Inches(6.6), Inches(1.6), width=Inches(5.8), height=Inches(3.3))
+                        left, top, width, height = box("primary_figure", (6.6, 1.6, 5.8, 3.3)); slide.shapes.add_picture(str(preview), Inches(left), Inches(top), width=Inches(width), height=Inches(height))
             else:
-                body = slide.shapes.add_textbox(Inches(.7), Inches(1.55), Inches(5.0), Inches(4.9))
+                body_slot = {"hypothesis_title": "hypothesis_statement", "problem_definition": "research_question", "fishbone_locator": "fishbone_focus", "observation_problem": "observation_text", "literature_mechanism": "literature_evidence", "mechanism_solution": "strategy", "experiment_design": "experiment_matrix", "result_single": "result_annotation", "result_comparison": "control_panel", "layer_integrated_discussion": "uncertainty", "layer_summary_decision": "decision_status", "hypothesis_transition": "transition_nodes", "progress_todo": "commitment_table", "schedule_next_step": "timeline"}.get(spec.get("semantic_role"), "content")
+                left, top, width, height = box(body_slot, (.7, 1.55, 5.0, 4.9)); body = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
                 body.text = content.get("body") or "\n".join(str(value) for value in content.values() if isinstance(value, (str, int, float)))
                 for paragraph in body.text_frame.paragraphs:
                     for run in paragraph.runs:
@@ -100,7 +109,10 @@ class PythonPptxAssembler(PptxAssembler):
                         continue
                     resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
                     preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
-                    slide.shapes.add_picture(str(preview), Inches(5.7), Inches(1.55 + placement_index * 0.15), width=Inches(6.8), height=Inches(4.5))
+                    slot_name = placement.get("slot")
+                    slot = next((item for item in governed if item.get("slot") == slot_name), None) if governed else None
+                    slot = slot or (governed[min(placement_index, len(governed) - 1)] if governed else {})
+                    slide.shapes.add_picture(str(preview), Inches(slot.get("left", 5.7)), Inches(slot.get("top", 1.55)), width=Inches(slot.get("width", 6.8)), height=Inches(slot.get("height", 4.5)))
             notes = slide.notes_slide.notes_text_frame
             source_refs = spec.get("speaker_notes", {}).get("source_refs", [])
             note_text = spec.get("speaker_notes", {}).get("text", "")
@@ -266,6 +278,14 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
                 for relationship in relation.get("svg_relationships", []):
                     if relationship.get("target", "").endswith("/" + media_name):
                         svg_asset_relationships.append({**relationship, "asset_id": asset_id})
+            body_slot = {"hypothesis_title": "hypothesis_statement", "problem_definition": "research_question", "fishbone_locator": "fishbone_focus", "observation_problem": "observation_text", "literature_mechanism": "literature_evidence", "mechanism_solution": "strategy", "experiment_design": "experiment_matrix", "result_single": "result_annotation", "result_comparison": "control_panel", "layer_integrated_discussion": "uncertainty", "layer_summary_decision": "decision_status", "hypothesis_transition": "transition_nodes", "progress_todo": "commitment_table", "schedule_next_step": "timeline"}.get(spec.get("semantic_role"), "content")
+            expected_slots = [body_slot] + [placement.get("slot") for placement in spec.get("placements", [])]
+            governed = spec.get("placement_plan", [])
+            shape_boxes = [(shape.left / 914400, shape.top / 914400, shape.width / 914400, shape.height / 914400) for shape in slide.shapes]
+            slot_matches = {}
+            for slot_name in expected_slots:
+                plan_slot = next((value for value in governed if value.get("slot") == slot_name), None)
+                slot_matches[slot_name] = bool(plan_slot and any(abs(box[0] - plan_slot["left"]) < .08 and abs(box[1] - plan_slot["top"]) < .08 and abs(box[2] - plan_slot["width"]) < .08 and abs(box[3] - plan_slot["height"]) < .08 for box in shape_boxes))
             generated_slides.append({
                 "slide_spec_id": spec["slide_id"],
                 "generated_slide_id": slide.slide_id,
@@ -280,6 +300,8 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
                 "expected_layout_path": role.get("layout_path"),
                 "expected_master_path": role.get("master_path"),
                 "layout_master_role_match": actual_layout_index == role.get("layout_index") and actual_layout_path == role.get("layout_path") and actual_master_path == role.get("master_path") and (relation.get("master_relationship") or {}).get("target") == actual_master_path,
+                "governed_geometry_match": all(slot_matches.values()),
+                "governed_slot_matches": slot_matches,
                 "notes_relationship_target": (relation.get("notes_relationship") or {}).get("target"),
                 "note_source_refs": note_source_refs,
                 "expected_note_source_refs": expected_refs,

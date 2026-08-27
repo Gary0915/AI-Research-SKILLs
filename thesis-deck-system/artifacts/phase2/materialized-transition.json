@@ -1,0 +1,2894 @@
+{
+  "blocks": {
+    "B101": {
+      "schema_version": "1.0.0",
+      "block_id": "B101",
+      "revision": 1,
+      "title": "H01 Bulk conductivity mechanism",
+      "research_question": {
+        "question_id": "RQ-B101",
+        "text": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+        "scope": "synthetic fixture only"
+      },
+      "problem_statement": "合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。",
+      "research_status": "active",
+      "story_visibility": {
+        "master": "main",
+        "meeting": "main",
+        "defense": "appendix"
+      },
+      "hypothesis_claim_refs": [
+        "C101"
+      ],
+      "mechanism_claim_refs": [
+        "C102"
+      ],
+      "prediction_claim_refs": [
+        "C103"
+      ],
+      "stage_refs": {
+        "observation": "ST-H001-OBS",
+        "literature": "ST-H001-LIT",
+        "mechanism": "ST-H001-MECH",
+        "solution": "ST-H001-SOL",
+        "experiment": "ST-EXP101",
+        "result": "ST-RES101",
+        "discussion": "ST-H001-DISC",
+        "next_step": "NS101"
+      },
+      "experiment_stage_refs": [
+        "ST-EXP101",
+        "ST-EXP102"
+      ],
+      "result_stage_refs": [
+        "ST-RES101",
+        "ST-RES102"
+      ],
+      "claim_refs": [
+        "C101",
+        "C102",
+        "C103"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "asset_refs": [
+        "A001",
+        "A002",
+        "A101"
+      ],
+      "action_item_refs": [
+        "NS101"
+      ],
+      "decision_refs": [
+        "D101"
+      ],
+      "decision_criteria_ref": "ST-EXP101#/data/decision_rules",
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "claims": {
+    "C101": {
+      "schema_version": "1.0.0",
+      "claim_id": "C101",
+      "revision": 1,
+      "claim_type": "hypothesis",
+      "text": "Bulk conductivity drives the positional signal gradient.",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage": "mechanism",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "committed synthetic fixture",
+        "exclusions": [
+          "laboratory inference"
+        ]
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "medium",
+        "rationale": "synthetic test fixture"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [
+        "instrument proxy is valid"
+      ],
+      "falsifiable_predictions": [
+        {
+          "prediction_claim_ref": "C101",
+          "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+        }
+      ],
+      "discriminating_evidence_requirements": [
+        {
+          "requirement_id": "REQ-C101",
+          "description": "controlled comparison with replicates"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "C102": {
+      "schema_version": "1.0.0",
+      "claim_id": "C102",
+      "revision": 1,
+      "claim_type": "mechanism",
+      "text": "Hydration creates a conductivity gradient.",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage": "mechanism",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "committed synthetic fixture",
+        "exclusions": [
+          "laboratory inference"
+        ]
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "medium",
+        "rationale": "synthetic test fixture"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [
+        "instrument proxy is valid"
+      ],
+      "falsifiable_predictions": [
+        {
+          "prediction_claim_ref": "C102",
+          "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+        }
+      ],
+      "discriminating_evidence_requirements": [
+        {
+          "requirement_id": "REQ-C102",
+          "description": "controlled comparison with replicates"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "C103": {
+      "schema_version": "1.0.0",
+      "claim_id": "C103",
+      "revision": 1,
+      "claim_type": "prediction",
+      "text": "Conductivity increase should lower signal CV.",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage": "experiment",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "committed synthetic fixture",
+        "exclusions": [
+          "laboratory inference"
+        ]
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "medium",
+        "rationale": "synthetic test fixture"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [
+        "instrument proxy is valid"
+      ],
+      "falsifiable_predictions": [
+        {
+          "prediction_claim_ref": "C103",
+          "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+        }
+      ],
+      "discriminating_evidence_requirements": [
+        {
+          "requirement_id": "REQ-C103",
+          "description": "controlled comparison with replicates"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "C201": {
+      "schema_version": "1.0.0",
+      "claim_id": "C201",
+      "revision": 1,
+      "claim_type": "hypothesis",
+      "text": "Contact resistance drives instability at low pressure.",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage": "mechanism",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "committed synthetic fixture",
+        "exclusions": [
+          "laboratory inference"
+        ]
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "medium",
+        "rationale": "synthetic test fixture"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [
+        "instrument proxy is valid"
+      ],
+      "falsifiable_predictions": [
+        {
+          "prediction_claim_ref": "C201",
+          "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+        }
+      ],
+      "discriminating_evidence_requirements": [
+        {
+          "requirement_id": "REQ-C201",
+          "description": "controlled comparison with replicates"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "C202": {
+      "schema_version": "1.0.0",
+      "claim_id": "C202",
+      "revision": 1,
+      "claim_type": "mechanism",
+      "text": "Interface contact fluctuates under low pressure.",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage": "mechanism",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "committed synthetic fixture",
+        "exclusions": [
+          "laboratory inference"
+        ]
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "medium",
+        "rationale": "synthetic test fixture"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [
+        "instrument proxy is valid"
+      ],
+      "falsifiable_predictions": [
+        {
+          "prediction_claim_ref": "C202",
+          "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+        }
+      ],
+      "discriminating_evidence_requirements": [
+        {
+          "requirement_id": "REQ-C202",
+          "description": "controlled comparison with replicates"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "C203": {
+      "schema_version": "1.0.0",
+      "claim_id": "C203",
+      "revision": 1,
+      "claim_type": "prediction",
+      "text": "Matched conductivity plus pressure increase should lower CV.",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage": "experiment",
+      "scope": {
+        "population": "synthetic samples",
+        "conditions": "committed synthetic fixture",
+        "exclusions": [
+          "laboratory inference"
+        ]
+      },
+      "epistemic_status": "testing",
+      "confidence": {
+        "level": "medium",
+        "rationale": "synthetic test fixture"
+      },
+      "evidence_support_refs": [],
+      "evidence_contradict_refs": [],
+      "assumptions": [
+        "instrument proxy is valid"
+      ],
+      "falsifiable_predictions": [
+        {
+          "prediction_claim_ref": "C203",
+          "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+        }
+      ],
+      "discriminating_evidence_requirements": [
+        {
+          "requirement_id": "REQ-C203",
+          "description": "controlled comparison with replicates"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "supersedes": [],
+      "superseded_by": [],
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "evidence": {
+    "E002": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E002",
+      "kind": "synthetic_observation",
+      "title": "Synthetic E002 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E002",
+        "uri": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
+        "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd"
+      },
+      "claim_support_refs": [
+        "C101"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B101"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "E101": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E101",
+      "kind": "synthetic_measurement",
+      "title": "Synthetic E101 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E101",
+        "uri": "thesis-deck-system/examples/synthetic-project/measurements.csv",
+        "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
+      },
+      "claim_support_refs": [
+        "C103"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B101"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "E102": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E102",
+      "kind": "synthetic_observation",
+      "title": "Synthetic E102 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E102",
+        "uri": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
+        "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd"
+      },
+      "claim_support_refs": [
+        "C101"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B101"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "E103": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E103",
+      "kind": "synthetic_literature",
+      "title": "Synthetic E103 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E103",
+        "uri": "thesis-deck-system/examples/synthetic-project/evidence/literature-note.txt",
+        "sha256": "5b510e5b31d6714228a03c31a544b12a0991ab0dc797166167cfe8d8447f7fee"
+      },
+      "claim_support_refs": [
+        "C101",
+        "C102"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B101"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    },
+    "E201": {
+      "schema_version": "1.0.0",
+      "evidence_id": "E201",
+      "kind": "synthetic_measurement",
+      "title": "Synthetic E201 evidence",
+      "provenance": "committed synthetic fixture",
+      "source": {
+        "source_id": "E201",
+        "uri": "thesis-deck-system/examples/synthetic-project/phase2/contact-pressure.csv",
+        "sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7"
+      },
+      "claim_support_refs": [
+        "C201"
+      ],
+      "claim_contradict_refs": [],
+      "scope": {
+        "block_id": "B201"
+      },
+      "measurement": {
+        "synthetic": true
+      },
+      "license_or_usage": "synthetic_test_only",
+      "verification": {
+        "status": "synthetic_test_only"
+      }
+    }
+  },
+  "assets": {
+    "A001": {
+      "schema_version": "1.0.0",
+      "asset_id": "A001",
+      "asset_type": "data_plot",
+      "title": "Synthetic defect density plot",
+      "evidence_role": "quantitative_evidence",
+      "source_evidence": [
+        "E101"
+      ],
+      "path": "plots/B001_defect_density.svg",
+      "preview_path": "plots/B001_defect_density.png",
+      "mime_type": "image/svg+xml",
+      "sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+      "editable": true,
+      "generator": {
+        "kind": "matplotlib",
+        "version": "3.x",
+        "script": "thesis-deck-system/examples/synthetic-project/plot.py",
+        "script_sha256": "b8c35668c252fb1c46ce1f1dcb8366b4d79919d12e12f07bd623dd142b301706"
+      },
+      "input": {
+        "path": "thesis-deck-system/examples/synthetic-project/measurements.csv",
+        "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
+      },
+      "output": {
+        "svg_path": "plots/B001_defect_density.svg",
+        "svg_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+        "png_path": "plots/B001_defect_density.png",
+        "png_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
+      },
+      "transform_chain": [
+        {
+          "input_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
+          "operation": "plot",
+          "output_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
+        }
+      ],
+      "provenance": "synthetic_fixture",
+      "accessibility": {
+        "alt_text": "defect density by position"
+      },
+      "status": "approved"
+    },
+    "A002": {
+      "schema_version": "1.0.0",
+      "asset_id": "A002",
+      "asset_type": "observation_photo",
+      "title": "Synthetic A002",
+      "evidence_role": "synthetic_test_evidence",
+      "source_evidence": [
+        "E002"
+      ],
+      "path": "observation/observation_visual.svg",
+      "preview_path": "observation/observation_visual.png",
+      "mime_type": "image/svg+xml",
+      "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+      "editable": true,
+      "provenance": "synthetic_fixture",
+      "status": "approved"
+    },
+    "A101": {
+      "schema_version": "1.0.0",
+      "asset_id": "A101",
+      "asset_type": "mechanism_diagram",
+      "title": "Synthetic A101",
+      "evidence_role": "synthetic_test_evidence",
+      "source_evidence": [
+        "E103"
+      ],
+      "path": "fishbone/FB001-rev1.svg",
+      "preview_path": "fishbone/FB001-rev1.png",
+      "mime_type": "image/svg+xml",
+      "sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+      "editable": true,
+      "provenance": "synthetic_fixture",
+      "status": "approved"
+    }
+  },
+  "actions": {
+    "NS101": {
+      "schema_version": "1.0.0",
+      "action_item_id": "NS101",
+      "revision": 1,
+      "action_type": "experiment",
+      "title": "Matched-conductivity contact-pressure test",
+      "action": "Run controlled pressure comparison.",
+      "rationale": "Resolve bulk versus interface mechanism.",
+      "source_decision_ref": "D101",
+      "linked_block_refs": [
+        {
+          "block_id": "B101",
+          "revision": 1
+        }
+      ],
+      "linked_claim_refs": [
+        "C101",
+        "C103"
+      ],
+      "prior_commitment": {
+        "meeting_id": "MEETING-001",
+        "committed_at": "2026-08-27T00:00:00Z"
+      },
+      "owner": {
+        "actor_id": "gary",
+        "display_name": "Gary"
+      },
+      "target_window": {
+        "start": "2026-09-01T00:00:00Z",
+        "due": "2026-09-10T09:00:00Z",
+        "timezone": "Asia/Taipei"
+      },
+      "actual_completion": {
+        "completed_at": null,
+        "closure_evidence_refs": []
+      },
+      "success_failure_criteria": {
+        "success": "effect exceeds uncertainty",
+        "failure": "no discriminating effect"
+      },
+      "required_evidence": [
+        "E101"
+      ],
+      "dependency_refs": [
+        "pressure fixture"
+      ],
+      "blocker_refs": [],
+      "parallelizable": true,
+      "workstream": "interface-mechanism",
+      "status": "planned",
+      "result_summary": "Awaiting controlled comparison",
+      "supersedes": [],
+      "superseded_by": [],
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "decisions": {
+    "D101": {
+      "schema_version": "1.0.0",
+      "decision_id": "D101",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "timestamp": "2026-08-27T00:00:00Z",
+      "actor": {
+        "type": "person",
+        "id": "gary"
+      },
+      "decision_type": "research_gate",
+      "subject_refs": [
+        "B101",
+        "ST-H001-DISC"
+      ],
+      "choice": "Partial-Go",
+      "alternatives": [
+        "No-Go"
+      ],
+      "rationale": "Bulk conductivity is contributory but insufficient.",
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "provenance": "synthetic_fixture"
+    }
+  },
+  "stages": {
+    "ST-H001-OBS": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H001-OBS",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "observation",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "observation": "位置依賴缺陷與訊號變異已觀察到。",
+        "problem": "現有模型無法解釋此變異。"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-H001-LIT": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H001-LIT",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "literature",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C101",
+        "C102"
+      ],
+      "evidence_refs": [
+        "E103"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "consensus": "transport gradient 可產生位置效應。",
+        "disagreements_or_alternatives": [
+          "interface contact remains alternative"
+        ],
+        "known_mechanisms": [
+          "bulk transport",
+          "boundary accumulation"
+        ],
+        "research_gap": "缺少控制比較隔離機制。",
+        "relevance_to_observation": "兩種機制都預測位置效應。",
+        "implication_for_hypothesis_or_strategy": "需匹配條件後比較。",
+        "supporting_literature_evidence_refs": [
+          "E103"
+        ],
+        "contradicting_literature_evidence_refs": []
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-H001-MECH": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H001-MECH",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "mechanism",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C102",
+        "C103"
+      ],
+      "evidence_refs": [
+        "E103"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "mechanism": "bulk transport",
+        "falsification": "控制比較不出現預測差異。"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-H001-SOL": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H001-SOL",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "solution",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C102"
+      ],
+      "evidence_refs": [
+        "E103"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "strategy": "均化導電度",
+        "success_criterion": "預測指標跨過 decision threshold"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-EXP101": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-EXP101",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "experiment",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C101",
+        "C103"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "hypothesis_claim_refs": [
+        "C101"
+      ],
+      "prediction_claim_refs": [
+        "C103"
+      ],
+      "data": {
+        "independent_variables": [
+          "含水量"
+        ],
+        "controlled_variables": [
+          "電極幾何",
+          "接觸壓力"
+        ],
+        "controls_baselines": [
+          "原始配方"
+        ],
+        "sample_plan": {
+          "replicates": 3,
+          "samples": 15
+        },
+        "measured_outputs": [
+          "導電度 (mS/cm)"
+        ],
+        "instrumentation_method_refs": [
+          "synthetic-four-probe"
+        ],
+        "predicted_outcomes": [
+          "導電度提升"
+        ],
+        "decision_rules": {
+          "go": "mean conductivity increases >=20%",
+          "partial_go": "10-20%",
+          "no_go": "<10%"
+        },
+        "required_evidence": [
+          "E101"
+        ]
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-EXP102": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-EXP102",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "experiment",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C101",
+        "C103"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "hypothesis_claim_refs": [
+        "C101"
+      ],
+      "prediction_claim_refs": [
+        "C103"
+      ],
+      "data": {
+        "independent_variables": [
+          "位置"
+        ],
+        "controlled_variables": [
+          "配方",
+          "電極",
+          "接觸壓力"
+        ],
+        "controls_baselines": [
+          "原始位置分布"
+        ],
+        "sample_plan": {
+          "replicates": 3,
+          "samples": 15
+        },
+        "measured_outputs": [
+          "訊號 CV (%)"
+        ],
+        "instrumentation_method_refs": [
+          "synthetic-signal-test"
+        ],
+        "predicted_outcomes": [
+          "CV 下降"
+        ],
+        "decision_rules": {
+          "go": "CV decreases >=30%",
+          "partial_go": "10-30%",
+          "no_go": "<10%"
+        },
+        "required_evidence": [
+          "E101",
+          "E102"
+        ]
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-RES101": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-RES101",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "result",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C103"
+      ],
+      "evidence_refs": [
+        "E101"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "summary": "平均導電度增加 24% ± 5% SD",
+        "metrics": [
+          {
+            "name": "CV",
+            "value": 24,
+            "uncertainty": 5,
+            "units": "%"
+          }
+        ],
+        "decision_ref": "D101"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-RES102": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-RES102",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "result",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C103"
+      ],
+      "evidence_refs": [
+        "E101"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "summary": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+        "metrics": [
+          {
+            "name": "CV",
+            "value": 4,
+            "uncertainty": 5,
+            "units": "%"
+          }
+        ],
+        "decision_ref": "D101"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-H001-DISC": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H001-DISC",
+      "block_ref": {
+        "block_id": "B101",
+        "revision": 1
+      },
+      "stage_type": "discussion",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C101",
+        "C102"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "hypothesis_support": "partial_support",
+        "failed_assumptions": [
+          "uniform spatial exposure"
+        ],
+        "missing_evidence": [
+          "contact control"
+        ],
+        "limitations": [
+          "synthetic only"
+        ],
+        "decision_ref": "D101",
+        "next_step_ref": "NS101",
+        "interpretation": "Results support only part of the bulk hypothesis."
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    },
+    "ST-H002-OBS": {
+      "schema_version": "1.0.0",
+      "stage_id": "ST-H002-OBS",
+      "block_ref": {
+        "block_id": "B201",
+        "revision": 1
+      },
+      "stage_type": "observation",
+      "revision": 1,
+      "status": "complete",
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "hypothesis_claim_refs": [],
+      "prediction_claim_refs": [],
+      "data": {
+        "observation": "位置依賴缺陷與訊號變異已觀察到。",
+        "problem": "現有模型無法解釋此變異。"
+      },
+      "provenance": "synthetic_fixture",
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "hypothesis_layers": {
+    "H001": {
+      "schema_version": "2.0.0",
+      "hypothesis_layer_id": "H001",
+      "revision": 1,
+      "title": "H01｜Bulk conductivity 主導假說",
+      "hypothesis_claim_ref": "C101",
+      "problem_ref": "P101",
+      "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+      "mechanism_key": "bulk_conductivity",
+      "derived_from": null,
+      "fishbone_snapshot_ref": {
+        "fishbone_id": "FB001",
+        "revision": 1
+      },
+      "fishbone_focus_refs": [
+        "FB-MATERIAL-HYDRATION"
+      ],
+      "research_block_refs": [
+        "B101"
+      ],
+      "experiment_refs": [
+        "EXP101",
+        "EXP102"
+      ],
+      "result_refs": [
+        "RES101",
+        "RES102"
+      ],
+      "experiment_order": [
+        "EXP101",
+        "EXP102"
+      ],
+      "result_order": [
+        "RES101",
+        "RES102"
+      ],
+      "layer_discussion_ref": "DISC-H001",
+      "layer_summary_ref": "SUM-H001",
+      "layer_decision_ref": "D101",
+      "next_step_refs": [
+        "NS101"
+      ],
+      "transition_ref": null,
+      "story_visibility": "main",
+      "research_status": "partial_support",
+      "source_event_cursor": 27,
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "hypothesis_layer_revisions": {
+    "H001@1": {
+      "schema_version": "2.0.0",
+      "hypothesis_layer_id": "H001",
+      "revision": 1,
+      "title": "H01｜Bulk conductivity 主導假說",
+      "hypothesis_claim_ref": "C101",
+      "problem_ref": "P101",
+      "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+      "mechanism_key": "bulk_conductivity",
+      "derived_from": null,
+      "fishbone_snapshot_ref": {
+        "fishbone_id": "FB001",
+        "revision": 1
+      },
+      "fishbone_focus_refs": [
+        "FB-MATERIAL-HYDRATION"
+      ],
+      "research_block_refs": [
+        "B101"
+      ],
+      "experiment_refs": [
+        "EXP101",
+        "EXP102"
+      ],
+      "result_refs": [
+        "RES101",
+        "RES102"
+      ],
+      "experiment_order": [
+        "EXP101",
+        "EXP102"
+      ],
+      "result_order": [
+        "RES101",
+        "RES102"
+      ],
+      "layer_discussion_ref": "DISC-H001",
+      "layer_summary_ref": "SUM-H001",
+      "layer_decision_ref": "D101",
+      "next_step_refs": [
+        "NS101"
+      ],
+      "transition_ref": null,
+      "story_visibility": "main",
+      "research_status": "partial_support",
+      "source_event_cursor": 27,
+      "created_at": "2026-08-27T00:00:00Z",
+      "updated_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "problems": {
+    "P101": {
+      "schema_version": "2.0.0",
+      "problem_id": "P101",
+      "hypothesis_layer_ref": "H001",
+      "problem_statement": "合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。",
+      "previous_findings": [
+        "含水量與導電度存在位置梯度"
+      ],
+      "unresolved_conflict": "導電度提高是否足以修復重複性仍未知。",
+      "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "derived_from_decision_refs": [],
+      "scope": "合成五個位置、每個位置三個 replicate 的機制辨識。",
+      "source_event_cursor": 3,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "P201": {
+      "schema_version": "2.0.0",
+      "problem_id": "P201",
+      "hypothesis_layer_ref": "H002",
+      "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
+      "previous_findings": [
+        "H01 支持導電度梯度存在",
+        "H01 未支持導電度單獨主導重複性"
+      ],
+      "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
+      "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+      "evidence_refs": [
+        "E201"
+      ],
+      "derived_from_decision_refs": [
+        "D101"
+      ],
+      "scope": "匹配 bulk conductivity，改變 contact pressure 的對照實驗。",
+      "source_event_cursor": 17,
+      "created_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "fishbone_revisions": {
+    "FB001@1": {
+      "schema_version": "2.0.0",
+      "fishbone_id": "FB001",
+      "revision": 1,
+      "supersedes_revision": null,
+      "branches": [
+        {
+          "branch_id": "FB-MATERIAL",
+          "label": "材料",
+          "parent_ref": null,
+          "status": "completed"
+        },
+        {
+          "branch_id": "FB-MATERIAL-HYDRATION",
+          "label": "含水量",
+          "parent_ref": "FB-MATERIAL",
+          "status": "current"
+        },
+        {
+          "branch_id": "FB-ELECTRODE",
+          "label": "電極",
+          "parent_ref": null,
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-ELECTRODE-GEOMETRY",
+          "label": "幾何",
+          "parent_ref": "FB-ELECTRODE",
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-MEASUREMENT",
+          "label": "量測",
+          "parent_ref": null,
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-SYSTEM",
+          "label": "系統",
+          "parent_ref": null,
+          "status": "future"
+        }
+      ],
+      "linked_hypothesis_layers": [
+        "H001"
+      ],
+      "rationale": "初始研究地圖先檢驗 bulk conductivity 與含水量分布。",
+      "source_event_cursor": 1,
+      "created_at": "2026-08-27T00:00:00Z"
+    },
+    "FB001@2": {
+      "schema_version": "2.0.0",
+      "fishbone_id": "FB001",
+      "revision": 2,
+      "supersedes_revision": 1,
+      "branches": [
+        {
+          "branch_id": "FB-MATERIAL",
+          "label": "材料",
+          "parent_ref": null,
+          "status": "completed"
+        },
+        {
+          "branch_id": "FB-MATERIAL-HYDRATION",
+          "label": "含水量",
+          "parent_ref": "FB-MATERIAL",
+          "status": "partial"
+        },
+        {
+          "branch_id": "FB-ELECTRODE",
+          "label": "電極",
+          "parent_ref": null,
+          "status": "current"
+        },
+        {
+          "branch_id": "FB-ELECTRODE-GEOMETRY",
+          "label": "幾何",
+          "parent_ref": "FB-ELECTRODE",
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-ELECTRODE-CONTACT",
+          "label": "接觸電阻",
+          "parent_ref": "FB-ELECTRODE",
+          "status": "current"
+        },
+        {
+          "branch_id": "FB-MEASUREMENT",
+          "label": "量測",
+          "parent_ref": null,
+          "status": "future"
+        },
+        {
+          "branch_id": "FB-SYSTEM",
+          "label": "系統",
+          "parent_ref": null,
+          "status": "future"
+        }
+      ],
+      "linked_hypothesis_layers": [
+        "H002"
+      ],
+      "rationale": "H01 改善導電度但未改善重複性，因此加入穩定 branch ID 的 electrode-contact 分支。",
+      "source_event_cursor": 15,
+      "created_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "layer_discussions": {
+    "DISC-H001": {
+      "schema_version": "2.0.0",
+      "discussion_id": "DISC-H001",
+      "hypothesis_layer_ref": "H001",
+      "supporting_results": [
+        "RES101"
+      ],
+      "contradicting_results": [
+        "RES102"
+      ],
+      "non_discriminating_results": [],
+      "cross_experiment_pattern": "導電度提升成立，但重複性沒有同步改善。",
+      "mechanism_assessment": "bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
+      "alternative_explanations": [
+        "接觸電阻",
+        "局部壓力差",
+        "電極幾何"
+      ],
+      "remaining_uncertainty": "contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+      "hypothesis_status": "partial_support",
+      "decision_ref": "D101",
+      "next_step_refs": [
+        "NS101"
+      ],
+      "source_event_cursor": 22,
+      "created_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "layer_summaries": {
+    "SUM-H001": {
+      "schema_version": "2.0.0",
+      "summary_id": "SUM-H001",
+      "hypothesis_layer_ref": "H001",
+      "answered": "bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
+      "supporting_evidence_refs": [
+        "E101",
+        "RES101",
+        "RES102"
+      ],
+      "remaining_unresolved": "interface contact 的貢獻尚未量化。",
+      "hypothesis_status": "partial_support",
+      "decision_ref": "D101",
+      "next_question": "匹配 bulk conductivity 後，contact resistance 是否主導變異？",
+      "next_step_refs": [
+        "NS101"
+      ],
+      "source_event_cursor": 25,
+      "created_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "hypothesis_transitions": {
+    "TR-H001-H002": {
+      "schema_version": "2.0.0",
+      "transition_id": "TR-H001-H002",
+      "from_layer_ref": "H001",
+      "to_layer_ref": "H002",
+      "previous_hypothesis_claim_ref": "C101",
+      "key_result_refs": [
+        "RES101",
+        "RES102"
+      ],
+      "unexplained": "導電度增加後訊號重複性沒有改善。",
+      "observation_or_uncertainty_refs": [
+        "E201"
+      ],
+      "rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+      "new_hypothesis_claim_ref": "C201",
+      "decision_refs": [
+        "D101"
+      ],
+      "source_event_cursor": 35,
+      "created_at": "2026-08-27T00:00:00Z"
+    }
+  },
+  "events": [
+    {
+      "cursor": 1,
+      "event_type": "fishbone_created",
+      "payload": {
+        "schema_version": "2.0.0",
+        "fishbone_id": "FB001",
+        "revision": 1,
+        "supersedes_revision": null,
+        "branches": [
+          {
+            "branch_id": "FB-MATERIAL",
+            "label": "材料",
+            "parent_ref": null,
+            "status": "completed"
+          },
+          {
+            "branch_id": "FB-MATERIAL-HYDRATION",
+            "label": "含水量",
+            "parent_ref": "FB-MATERIAL",
+            "status": "current"
+          },
+          {
+            "branch_id": "FB-ELECTRODE",
+            "label": "電極",
+            "parent_ref": null,
+            "status": "future"
+          },
+          {
+            "branch_id": "FB-ELECTRODE-GEOMETRY",
+            "label": "幾何",
+            "parent_ref": "FB-ELECTRODE",
+            "status": "future"
+          },
+          {
+            "branch_id": "FB-MEASUREMENT",
+            "label": "量測",
+            "parent_ref": null,
+            "status": "future"
+          },
+          {
+            "branch_id": "FB-SYSTEM",
+            "label": "系統",
+            "parent_ref": null,
+            "status": "future"
+          }
+        ],
+        "linked_hypothesis_layers": [
+          "H001"
+        ],
+        "rationale": "初始研究地圖先檢驗 bulk conductivity 與含水量分布。",
+        "source_event_cursor": 1,
+        "created_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": null,
+      "event_hash": "8ee8717d92c0b7aa27c8feacfd31360eecfd3d18170ca44d0747c9cc05aacef7"
+    },
+    {
+      "cursor": 2,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C101",
+        "revision": 1,
+        "claim_type": "hypothesis",
+        "text": "Bulk conductivity drives the positional signal gradient.",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage": "mechanism",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "committed synthetic fixture",
+          "exclusions": [
+            "laboratory inference"
+          ]
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "medium",
+          "rationale": "synthetic test fixture"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [
+          "instrument proxy is valid"
+        ],
+        "falsifiable_predictions": [
+          {
+            "prediction_claim_ref": "C101",
+            "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+          }
+        ],
+        "discriminating_evidence_requirements": [
+          {
+            "requirement_id": "REQ-C101",
+            "description": "controlled comparison with replicates"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "8ee8717d92c0b7aa27c8feacfd31360eecfd3d18170ca44d0747c9cc05aacef7",
+      "event_hash": "fa1c26b5e07779b90ceacd4098c720d7bc069af5722e5b510951f041cdc3e02f"
+    },
+    {
+      "cursor": 3,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C102",
+        "revision": 1,
+        "claim_type": "mechanism",
+        "text": "Hydration creates a conductivity gradient.",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage": "mechanism",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "committed synthetic fixture",
+          "exclusions": [
+            "laboratory inference"
+          ]
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "medium",
+          "rationale": "synthetic test fixture"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [
+          "instrument proxy is valid"
+        ],
+        "falsifiable_predictions": [
+          {
+            "prediction_claim_ref": "C102",
+            "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+          }
+        ],
+        "discriminating_evidence_requirements": [
+          {
+            "requirement_id": "REQ-C102",
+            "description": "controlled comparison with replicates"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "fa1c26b5e07779b90ceacd4098c720d7bc069af5722e5b510951f041cdc3e02f",
+      "event_hash": "a105d7f323f3f2b7e65d83a6e1710683a466f9dc8c53d4e1d899f641d80c33f1"
+    },
+    {
+      "cursor": 4,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C103",
+        "revision": 1,
+        "claim_type": "prediction",
+        "text": "Conductivity increase should lower signal CV.",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage": "experiment",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "committed synthetic fixture",
+          "exclusions": [
+            "laboratory inference"
+          ]
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "medium",
+          "rationale": "synthetic test fixture"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [
+          "instrument proxy is valid"
+        ],
+        "falsifiable_predictions": [
+          {
+            "prediction_claim_ref": "C103",
+            "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+          }
+        ],
+        "discriminating_evidence_requirements": [
+          {
+            "requirement_id": "REQ-C103",
+            "description": "controlled comparison with replicates"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "a105d7f323f3f2b7e65d83a6e1710683a466f9dc8c53d4e1d899f641d80c33f1",
+      "event_hash": "158028d50525063eb2a11d109f071c7315e951d72a31fe4c4aba4ad9e80683db"
+    },
+    {
+      "cursor": 5,
+      "event_type": "evidence_linked",
+      "payload": {
+        "schema_version": "1.0.0",
+        "evidence_id": "E002",
+        "kind": "synthetic_observation",
+        "title": "Synthetic E002 evidence",
+        "provenance": "committed synthetic fixture",
+        "source": {
+          "source_id": "E002",
+          "uri": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
+          "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd"
+        },
+        "claim_support_refs": [
+          "C101"
+        ],
+        "claim_contradict_refs": [],
+        "scope": {
+          "block_id": "B101"
+        },
+        "measurement": {
+          "synthetic": true
+        },
+        "license_or_usage": "synthetic_test_only",
+        "verification": {
+          "status": "synthetic_test_only"
+        }
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "158028d50525063eb2a11d109f071c7315e951d72a31fe4c4aba4ad9e80683db",
+      "event_hash": "b76e5568296a7513304dc79461a4cf9d8055d182f2c7922c83cfb24f3d7eab16"
+    },
+    {
+      "cursor": 6,
+      "event_type": "evidence_linked",
+      "payload": {
+        "schema_version": "1.0.0",
+        "evidence_id": "E101",
+        "kind": "synthetic_measurement",
+        "title": "Synthetic E101 evidence",
+        "provenance": "committed synthetic fixture",
+        "source": {
+          "source_id": "E101",
+          "uri": "thesis-deck-system/examples/synthetic-project/measurements.csv",
+          "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
+        },
+        "claim_support_refs": [
+          "C103"
+        ],
+        "claim_contradict_refs": [],
+        "scope": {
+          "block_id": "B101"
+        },
+        "measurement": {
+          "synthetic": true
+        },
+        "license_or_usage": "synthetic_test_only",
+        "verification": {
+          "status": "synthetic_test_only"
+        }
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "b76e5568296a7513304dc79461a4cf9d8055d182f2c7922c83cfb24f3d7eab16",
+      "event_hash": "2b1ea6a11f44717436941066d8f939f4cd8738c5b5cc9161a4c9b1b2d68b4a08"
+    },
+    {
+      "cursor": 7,
+      "event_type": "evidence_linked",
+      "payload": {
+        "schema_version": "1.0.0",
+        "evidence_id": "E102",
+        "kind": "synthetic_observation",
+        "title": "Synthetic E102 evidence",
+        "provenance": "committed synthetic fixture",
+        "source": {
+          "source_id": "E102",
+          "uri": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
+          "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd"
+        },
+        "claim_support_refs": [
+          "C101"
+        ],
+        "claim_contradict_refs": [],
+        "scope": {
+          "block_id": "B101"
+        },
+        "measurement": {
+          "synthetic": true
+        },
+        "license_or_usage": "synthetic_test_only",
+        "verification": {
+          "status": "synthetic_test_only"
+        }
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "2b1ea6a11f44717436941066d8f939f4cd8738c5b5cc9161a4c9b1b2d68b4a08",
+      "event_hash": "0a9b1278f2b03be4d0e23d8f8e50c3c542dc8271273c563f389588ea43caca40"
+    },
+    {
+      "cursor": 8,
+      "event_type": "evidence_linked",
+      "payload": {
+        "schema_version": "1.0.0",
+        "evidence_id": "E103",
+        "kind": "synthetic_literature",
+        "title": "Synthetic E103 evidence",
+        "provenance": "committed synthetic fixture",
+        "source": {
+          "source_id": "E103",
+          "uri": "thesis-deck-system/examples/synthetic-project/evidence/literature-note.txt",
+          "sha256": "5b510e5b31d6714228a03c31a544b12a0991ab0dc797166167cfe8d8447f7fee"
+        },
+        "claim_support_refs": [
+          "C101",
+          "C102"
+        ],
+        "claim_contradict_refs": [],
+        "scope": {
+          "block_id": "B101"
+        },
+        "measurement": {
+          "synthetic": true
+        },
+        "license_or_usage": "synthetic_test_only",
+        "verification": {
+          "status": "synthetic_test_only"
+        }
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "0a9b1278f2b03be4d0e23d8f8e50c3c542dc8271273c563f389588ea43caca40",
+      "event_hash": "43de31ad488fe71c8519deb76cb2bb467660638cc879cf37fdb87971ac2f42f2"
+    },
+    {
+      "cursor": 9,
+      "event_type": "asset_registered",
+      "payload": {
+        "schema_version": "1.0.0",
+        "asset_id": "A001",
+        "asset_type": "data_plot",
+        "title": "Synthetic defect density plot",
+        "evidence_role": "quantitative_evidence",
+        "source_evidence": [
+          "E101"
+        ],
+        "path": "plots/B001_defect_density.svg",
+        "preview_path": "plots/B001_defect_density.png",
+        "mime_type": "image/svg+xml",
+        "sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+        "editable": true,
+        "generator": {
+          "kind": "matplotlib",
+          "version": "3.x",
+          "script": "thesis-deck-system/examples/synthetic-project/plot.py",
+          "script_sha256": "b8c35668c252fb1c46ce1f1dcb8366b4d79919d12e12f07bd623dd142b301706"
+        },
+        "input": {
+          "path": "thesis-deck-system/examples/synthetic-project/measurements.csv",
+          "sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6"
+        },
+        "output": {
+          "svg_path": "plots/B001_defect_density.svg",
+          "svg_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+          "png_path": "plots/B001_defect_density.png",
+          "png_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
+        },
+        "transform_chain": [
+          {
+            "input_sha256": "df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6",
+            "operation": "plot",
+            "output_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "accessibility": {
+          "alt_text": "defect density by position"
+        },
+        "status": "approved"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "43de31ad488fe71c8519deb76cb2bb467660638cc879cf37fdb87971ac2f42f2",
+      "event_hash": "166b26ad86e065b1206111cd402f47fe89c1e4ff6fba21609add89adf65a15f1"
+    },
+    {
+      "cursor": 10,
+      "event_type": "asset_registered",
+      "payload": {
+        "schema_version": "1.0.0",
+        "asset_id": "A002",
+        "asset_type": "observation_photo",
+        "title": "Synthetic A002",
+        "evidence_role": "synthetic_test_evidence",
+        "source_evidence": [
+          "E002"
+        ],
+        "path": "observation/observation_visual.svg",
+        "preview_path": "observation/observation_visual.png",
+        "mime_type": "image/svg+xml",
+        "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+        "editable": true,
+        "provenance": "synthetic_fixture",
+        "status": "approved"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "166b26ad86e065b1206111cd402f47fe89c1e4ff6fba21609add89adf65a15f1",
+      "event_hash": "4073e5f043d72e4fbc93e00b77f1798f97e9cf025eb3fa6a36e7e4a095b126df"
+    },
+    {
+      "cursor": 11,
+      "event_type": "asset_registered",
+      "payload": {
+        "schema_version": "1.0.0",
+        "asset_id": "A101",
+        "asset_type": "mechanism_diagram",
+        "title": "Synthetic A101",
+        "evidence_role": "synthetic_test_evidence",
+        "source_evidence": [
+          "E103"
+        ],
+        "path": "fishbone/FB001-rev1.svg",
+        "preview_path": "fishbone/FB001-rev1.png",
+        "mime_type": "image/svg+xml",
+        "sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+        "editable": true,
+        "provenance": "synthetic_fixture",
+        "status": "approved"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "4073e5f043d72e4fbc93e00b77f1798f97e9cf025eb3fa6a36e7e4a095b126df",
+      "event_hash": "7a04cf9cba00f28652486ea01826332735b5767abb82e4daa33b224a1d1570c8"
+    },
+    {
+      "cursor": 12,
+      "event_type": "problem_created",
+      "payload": {
+        "schema_version": "2.0.0",
+        "problem_id": "P101",
+        "hypothesis_layer_ref": "H001",
+        "problem_statement": "合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。",
+        "previous_findings": [
+          "含水量與導電度存在位置梯度"
+        ],
+        "unresolved_conflict": "導電度提高是否足以修復重複性仍未知。",
+        "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+        "evidence_refs": [
+          "E101",
+          "E102"
+        ],
+        "derived_from_decision_refs": [],
+        "scope": "合成五個位置、每個位置三個 replicate 的機制辨識。",
+        "source_event_cursor": 3,
+        "created_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "7a04cf9cba00f28652486ea01826332735b5767abb82e4daa33b224a1d1570c8",
+      "event_hash": "13b07df072b25a1c8c6971f27e008ba5fca401950d3e2917430f6de4a7e54974"
+    },
+    {
+      "cursor": 13,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H001-OBS",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "observation",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002",
+          "E102"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "observation": "位置依賴缺陷與訊號變異已觀察到。",
+          "problem": "現有模型無法解釋此變異。"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "13b07df072b25a1c8c6971f27e008ba5fca401950d3e2917430f6de4a7e54974",
+      "event_hash": "ab1b76b28b6bcbba96f975104d9e35956feada5d5788c7e658f7aebe6813003b"
+    },
+    {
+      "cursor": 14,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H001-LIT",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "literature",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C101",
+          "C102"
+        ],
+        "evidence_refs": [
+          "E103"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "consensus": "transport gradient 可產生位置效應。",
+          "disagreements_or_alternatives": [
+            "interface contact remains alternative"
+          ],
+          "known_mechanisms": [
+            "bulk transport",
+            "boundary accumulation"
+          ],
+          "research_gap": "缺少控制比較隔離機制。",
+          "relevance_to_observation": "兩種機制都預測位置效應。",
+          "implication_for_hypothesis_or_strategy": "需匹配條件後比較。",
+          "supporting_literature_evidence_refs": [
+            "E103"
+          ],
+          "contradicting_literature_evidence_refs": []
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "ab1b76b28b6bcbba96f975104d9e35956feada5d5788c7e658f7aebe6813003b",
+      "event_hash": "3f5acc6d2ff3f3930c77478b109a4dcddc7fb2078686ed49e3d1b3742b528eec"
+    },
+    {
+      "cursor": 15,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H001-MECH",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "mechanism",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C102",
+          "C103"
+        ],
+        "evidence_refs": [
+          "E103"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "mechanism": "bulk transport",
+          "falsification": "控制比較不出現預測差異。"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "3f5acc6d2ff3f3930c77478b109a4dcddc7fb2078686ed49e3d1b3742b528eec",
+      "event_hash": "14f0a50c3189f7276c1645e6f0c701a36dd9cdd82301a9044f8ed79a501a6357"
+    },
+    {
+      "cursor": 16,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H001-SOL",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "solution",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C102"
+        ],
+        "evidence_refs": [
+          "E103"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "strategy": "均化導電度",
+          "success_criterion": "預測指標跨過 decision threshold"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "14f0a50c3189f7276c1645e6f0c701a36dd9cdd82301a9044f8ed79a501a6357",
+      "event_hash": "2b1bfefc0bba5234e9dad16cb64a4dbb6d03c5e4f79e469b641ece7e085a16b9"
+    },
+    {
+      "cursor": 17,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-EXP101",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "experiment",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C101",
+          "C103"
+        ],
+        "evidence_refs": [
+          "E101",
+          "E102",
+          "E103"
+        ],
+        "hypothesis_claim_refs": [
+          "C101"
+        ],
+        "prediction_claim_refs": [
+          "C103"
+        ],
+        "data": {
+          "independent_variables": [
+            "含水量"
+          ],
+          "controlled_variables": [
+            "電極幾何",
+            "接觸壓力"
+          ],
+          "controls_baselines": [
+            "原始配方"
+          ],
+          "sample_plan": {
+            "replicates": 3,
+            "samples": 15
+          },
+          "measured_outputs": [
+            "導電度 (mS/cm)"
+          ],
+          "instrumentation_method_refs": [
+            "synthetic-four-probe"
+          ],
+          "predicted_outcomes": [
+            "導電度提升"
+          ],
+          "decision_rules": {
+            "go": "mean conductivity increases >=20%",
+            "partial_go": "10-20%",
+            "no_go": "<10%"
+          },
+          "required_evidence": [
+            "E101"
+          ]
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "2b1bfefc0bba5234e9dad16cb64a4dbb6d03c5e4f79e469b641ece7e085a16b9",
+      "event_hash": "8482c7135df5e23bad61cb3b04853e82bf79eed9350be790f154b6c6b0d2b598"
+    },
+    {
+      "cursor": 18,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-EXP102",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "experiment",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C101",
+          "C103"
+        ],
+        "evidence_refs": [
+          "E101",
+          "E102",
+          "E103"
+        ],
+        "hypothesis_claim_refs": [
+          "C101"
+        ],
+        "prediction_claim_refs": [
+          "C103"
+        ],
+        "data": {
+          "independent_variables": [
+            "位置"
+          ],
+          "controlled_variables": [
+            "配方",
+            "電極",
+            "接觸壓力"
+          ],
+          "controls_baselines": [
+            "原始位置分布"
+          ],
+          "sample_plan": {
+            "replicates": 3,
+            "samples": 15
+          },
+          "measured_outputs": [
+            "訊號 CV (%)"
+          ],
+          "instrumentation_method_refs": [
+            "synthetic-signal-test"
+          ],
+          "predicted_outcomes": [
+            "CV 下降"
+          ],
+          "decision_rules": {
+            "go": "CV decreases >=30%",
+            "partial_go": "10-30%",
+            "no_go": "<10%"
+          },
+          "required_evidence": [
+            "E101",
+            "E102"
+          ]
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "8482c7135df5e23bad61cb3b04853e82bf79eed9350be790f154b6c6b0d2b598",
+      "event_hash": "cf0601ffa691861aa6c4404e0986cf6f37be95495320145a9be9fcf910e473c6"
+    },
+    {
+      "cursor": 19,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-RES101",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "result",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C103"
+        ],
+        "evidence_refs": [
+          "E101"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "summary": "平均導電度增加 24% ± 5% SD",
+          "metrics": [
+            {
+              "name": "CV",
+              "value": 24,
+              "uncertainty": 5,
+              "units": "%"
+            }
+          ],
+          "decision_ref": "D101"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "cf0601ffa691861aa6c4404e0986cf6f37be95495320145a9be9fcf910e473c6",
+      "event_hash": "69fd6297b1c90c86138dac30a49e0eb63720dd83fe96a4c3d64262646fc66eb5"
+    },
+    {
+      "cursor": 20,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-RES102",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "result",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C103"
+        ],
+        "evidence_refs": [
+          "E101"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "summary": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+          "metrics": [
+            {
+              "name": "CV",
+              "value": 4,
+              "uncertainty": 5,
+              "units": "%"
+            }
+          ],
+          "decision_ref": "D101"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "69fd6297b1c90c86138dac30a49e0eb63720dd83fe96a4c3d64262646fc66eb5",
+      "event_hash": "afa87e14c7be380e5a3146a5045e5b8bd954e47a963309ae14999f008f103eb1"
+    },
+    {
+      "cursor": 21,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H001-DISC",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "stage_type": "discussion",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C101",
+          "C102"
+        ],
+        "evidence_refs": [
+          "E101",
+          "E102",
+          "E103"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "hypothesis_support": "partial_support",
+          "failed_assumptions": [
+            "uniform spatial exposure"
+          ],
+          "missing_evidence": [
+            "contact control"
+          ],
+          "limitations": [
+            "synthetic only"
+          ],
+          "decision_ref": "D101",
+          "next_step_ref": "NS101",
+          "interpretation": "Results support only part of the bulk hypothesis."
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "afa87e14c7be380e5a3146a5045e5b8bd954e47a963309ae14999f008f103eb1",
+      "event_hash": "6761519c97f19ed734364b93b7e1bde926a88bdc03bd7c915ffef79199d7965e"
+    },
+    {
+      "cursor": 22,
+      "event_type": "layer_discussion_recorded",
+      "payload": {
+        "schema_version": "2.0.0",
+        "discussion_id": "DISC-H001",
+        "hypothesis_layer_ref": "H001",
+        "supporting_results": [
+          "RES101"
+        ],
+        "contradicting_results": [
+          "RES102"
+        ],
+        "non_discriminating_results": [],
+        "cross_experiment_pattern": "導電度提升成立，但重複性沒有同步改善。",
+        "mechanism_assessment": "bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
+        "alternative_explanations": [
+          "接觸電阻",
+          "局部壓力差",
+          "電極幾何"
+        ],
+        "remaining_uncertainty": "contact interface 是否為主導因素仍需匹配導電度後檢驗。",
+        "hypothesis_status": "partial_support",
+        "decision_ref": "D101",
+        "next_step_refs": [
+          "NS101"
+        ],
+        "source_event_cursor": 22,
+        "created_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "6761519c97f19ed734364b93b7e1bde926a88bdc03bd7c915ffef79199d7965e",
+      "event_hash": "153726057b104a7384d552f567a2bdf272863599ffcb104e04f0595332c73cd0"
+    },
+    {
+      "cursor": 23,
+      "event_type": "decision_recorded",
+      "payload": {
+        "schema_version": "1.0.0",
+        "decision_id": "D101",
+        "block_ref": {
+          "block_id": "B101",
+          "revision": 1
+        },
+        "timestamp": "2026-08-27T00:00:00Z",
+        "actor": {
+          "type": "person",
+          "id": "gary"
+        },
+        "decision_type": "research_gate",
+        "subject_refs": [
+          "B101",
+          "ST-H001-DISC"
+        ],
+        "choice": "Partial-Go",
+        "alternatives": [
+          "No-Go"
+        ],
+        "rationale": "Bulk conductivity is contributory but insufficient.",
+        "evidence_refs": [
+          "E101",
+          "E102"
+        ],
+        "provenance": "synthetic_fixture"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "153726057b104a7384d552f567a2bdf272863599ffcb104e04f0595332c73cd0",
+      "event_hash": "de6e91c89d90d36ece97fef5cc15069f8b6a8a81bcd9ff69c233245e72ca880a"
+    },
+    {
+      "cursor": 24,
+      "event_type": "action_committed",
+      "payload": {
+        "schema_version": "1.0.0",
+        "action_item_id": "NS101",
+        "revision": 1,
+        "action_type": "experiment",
+        "title": "Matched-conductivity contact-pressure test",
+        "action": "Run controlled pressure comparison.",
+        "rationale": "Resolve bulk versus interface mechanism.",
+        "source_decision_ref": "D101",
+        "linked_block_refs": [
+          {
+            "block_id": "B101",
+            "revision": 1
+          }
+        ],
+        "linked_claim_refs": [
+          "C101",
+          "C103"
+        ],
+        "prior_commitment": {
+          "meeting_id": "MEETING-001",
+          "committed_at": "2026-08-27T00:00:00Z"
+        },
+        "owner": {
+          "actor_id": "gary",
+          "display_name": "Gary"
+        },
+        "target_window": {
+          "start": "2026-09-01T00:00:00Z",
+          "due": "2026-09-10T09:00:00Z",
+          "timezone": "Asia/Taipei"
+        },
+        "actual_completion": {
+          "completed_at": null,
+          "closure_evidence_refs": []
+        },
+        "success_failure_criteria": {
+          "success": "effect exceeds uncertainty",
+          "failure": "no discriminating effect"
+        },
+        "required_evidence": [
+          "E101"
+        ],
+        "dependency_refs": [
+          "pressure fixture"
+        ],
+        "blocker_refs": [],
+        "parallelizable": true,
+        "workstream": "interface-mechanism",
+        "status": "planned",
+        "result_summary": "Awaiting controlled comparison",
+        "supersedes": [],
+        "superseded_by": [],
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "de6e91c89d90d36ece97fef5cc15069f8b6a8a81bcd9ff69c233245e72ca880a",
+      "event_hash": "10c661810c99dcf83267f69d76a4bcccebe29a0d336d87e75ed932b13a6e6e3e"
+    },
+    {
+      "cursor": 25,
+      "event_type": "layer_summary_recorded",
+      "payload": {
+        "schema_version": "2.0.0",
+        "summary_id": "SUM-H001",
+        "hypothesis_layer_ref": "H001",
+        "answered": "bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
+        "supporting_evidence_refs": [
+          "E101",
+          "RES101",
+          "RES102"
+        ],
+        "remaining_unresolved": "interface contact 的貢獻尚未量化。",
+        "hypothesis_status": "partial_support",
+        "decision_ref": "D101",
+        "next_question": "匹配 bulk conductivity 後，contact resistance 是否主導變異？",
+        "next_step_refs": [
+          "NS101"
+        ],
+        "source_event_cursor": 25,
+        "created_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "10c661810c99dcf83267f69d76a4bcccebe29a0d336d87e75ed932b13a6e6e3e",
+      "event_hash": "eb11fe1c9272a18070e271ef560463cda714593a01aa94492dc250695955f5fb"
+    },
+    {
+      "cursor": 26,
+      "event_type": "block_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "block_id": "B101",
+        "revision": 1,
+        "title": "H01 Bulk conductivity mechanism",
+        "research_question": {
+          "question_id": "RQ-B101",
+          "text": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "scope": "synthetic fixture only"
+        },
+        "problem_statement": "合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。",
+        "research_status": "active",
+        "story_visibility": {
+          "master": "main",
+          "meeting": "main",
+          "defense": "appendix"
+        },
+        "hypothesis_claim_refs": [
+          "C101"
+        ],
+        "mechanism_claim_refs": [
+          "C102"
+        ],
+        "prediction_claim_refs": [
+          "C103"
+        ],
+        "stage_refs": {
+          "observation": "ST-H001-OBS",
+          "literature": "ST-H001-LIT",
+          "mechanism": "ST-H001-MECH",
+          "solution": "ST-H001-SOL",
+          "experiment": "ST-EXP101",
+          "result": "ST-RES101",
+          "discussion": "ST-H001-DISC",
+          "next_step": "NS101"
+        },
+        "experiment_stage_refs": [
+          "ST-EXP101",
+          "ST-EXP102"
+        ],
+        "result_stage_refs": [
+          "ST-RES101",
+          "ST-RES102"
+        ],
+        "claim_refs": [
+          "C101",
+          "C102",
+          "C103"
+        ],
+        "evidence_refs": [
+          "E002",
+          "E101",
+          "E102",
+          "E103"
+        ],
+        "asset_refs": [
+          "A001",
+          "A002",
+          "A101"
+        ],
+        "action_item_refs": [
+          "NS101"
+        ],
+        "decision_refs": [
+          "D101"
+        ],
+        "decision_criteria_ref": "ST-EXP101#/data/decision_rules",
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "eb11fe1c9272a18070e271ef560463cda714593a01aa94492dc250695955f5fb",
+      "event_hash": "048a76fafaa006b4768a82e81c323bcd93dcc418f4b7811a5b3f5cb61a0bbb3d"
+    },
+    {
+      "cursor": 27,
+      "event_type": "hypothesis_layer_created",
+      "payload": {
+        "schema_version": "2.0.0",
+        "hypothesis_layer_id": "H001",
+        "revision": 1,
+        "title": "H01｜Bulk conductivity 主導假說",
+        "hypothesis_claim_ref": "C101",
+        "problem_ref": "P101",
+        "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+        "mechanism_key": "bulk_conductivity",
+        "derived_from": null,
+        "fishbone_snapshot_ref": {
+          "fishbone_id": "FB001",
+          "revision": 1
+        },
+        "fishbone_focus_refs": [
+          "FB-MATERIAL-HYDRATION"
+        ],
+        "research_block_refs": [
+          "B101"
+        ],
+        "experiment_refs": [
+          "EXP101",
+          "EXP102"
+        ],
+        "result_refs": [
+          "RES101",
+          "RES102"
+        ],
+        "experiment_order": [
+          "EXP101",
+          "EXP102"
+        ],
+        "result_order": [
+          "RES101",
+          "RES102"
+        ],
+        "layer_discussion_ref": "DISC-H001",
+        "layer_summary_ref": "SUM-H001",
+        "layer_decision_ref": "D101",
+        "next_step_refs": [
+          "NS101"
+        ],
+        "transition_ref": null,
+        "story_visibility": "main",
+        "research_status": "partial_support",
+        "source_event_cursor": 27,
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "048a76fafaa006b4768a82e81c323bcd93dcc418f4b7811a5b3f5cb61a0bbb3d",
+      "event_hash": "85e55569f59f971f4370b9e4194134ec587ee8c28b0569b180fcaea352b9bc6f"
+    },
+    {
+      "cursor": 28,
+      "event_type": "fishbone_revised",
+      "payload": {
+        "schema_version": "2.0.0",
+        "fishbone_id": "FB001",
+        "revision": 2,
+        "supersedes_revision": 1,
+        "branches": [
+          {
+            "branch_id": "FB-MATERIAL",
+            "label": "材料",
+            "parent_ref": null,
+            "status": "completed"
+          },
+          {
+            "branch_id": "FB-MATERIAL-HYDRATION",
+            "label": "含水量",
+            "parent_ref": "FB-MATERIAL",
+            "status": "partial"
+          },
+          {
+            "branch_id": "FB-ELECTRODE",
+            "label": "電極",
+            "parent_ref": null,
+            "status": "current"
+          },
+          {
+            "branch_id": "FB-ELECTRODE-GEOMETRY",
+            "label": "幾何",
+            "parent_ref": "FB-ELECTRODE",
+            "status": "future"
+          },
+          {
+            "branch_id": "FB-ELECTRODE-CONTACT",
+            "label": "接觸電阻",
+            "parent_ref": "FB-ELECTRODE",
+            "status": "current"
+          },
+          {
+            "branch_id": "FB-MEASUREMENT",
+            "label": "量測",
+            "parent_ref": null,
+            "status": "future"
+          },
+          {
+            "branch_id": "FB-SYSTEM",
+            "label": "系統",
+            "parent_ref": null,
+            "status": "future"
+          }
+        ],
+        "linked_hypothesis_layers": [
+          "H002"
+        ],
+        "rationale": "H01 改善導電度但未改善重複性，因此加入穩定 branch ID 的 electrode-contact 分支。",
+        "source_event_cursor": 15,
+        "created_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "85e55569f59f971f4370b9e4194134ec587ee8c28b0569b180fcaea352b9bc6f",
+      "event_hash": "e90d5e14a0a64317ffa3cef9267baf390689848001411f11f9035fefb6409725"
+    },
+    {
+      "cursor": 29,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C201",
+        "revision": 1,
+        "claim_type": "hypothesis",
+        "text": "Contact resistance drives instability at low pressure.",
+        "block_ref": {
+          "block_id": "B201",
+          "revision": 1
+        },
+        "stage": "mechanism",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "committed synthetic fixture",
+          "exclusions": [
+            "laboratory inference"
+          ]
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "medium",
+          "rationale": "synthetic test fixture"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [
+          "instrument proxy is valid"
+        ],
+        "falsifiable_predictions": [
+          {
+            "prediction_claim_ref": "C201",
+            "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+          }
+        ],
+        "discriminating_evidence_requirements": [
+          {
+            "requirement_id": "REQ-C201",
+            "description": "controlled comparison with replicates"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "e90d5e14a0a64317ffa3cef9267baf390689848001411f11f9035fefb6409725",
+      "event_hash": "ef395dd93f7ba9e76ad7115fdf5b6c944f9032b568ad844b3b2298dd808bf2c0"
+    },
+    {
+      "cursor": 30,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C202",
+        "revision": 1,
+        "claim_type": "mechanism",
+        "text": "Interface contact fluctuates under low pressure.",
+        "block_ref": {
+          "block_id": "B201",
+          "revision": 1
+        },
+        "stage": "mechanism",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "committed synthetic fixture",
+          "exclusions": [
+            "laboratory inference"
+          ]
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "medium",
+          "rationale": "synthetic test fixture"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [
+          "instrument proxy is valid"
+        ],
+        "falsifiable_predictions": [
+          {
+            "prediction_claim_ref": "C202",
+            "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+          }
+        ],
+        "discriminating_evidence_requirements": [
+          {
+            "requirement_id": "REQ-C202",
+            "description": "controlled comparison with replicates"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "ef395dd93f7ba9e76ad7115fdf5b6c944f9032b568ad844b3b2298dd808bf2c0",
+      "event_hash": "91a948cce3031d2a9488bc9087a2527427d7375c2c3b979464da78c8fe052ccf"
+    },
+    {
+      "cursor": 31,
+      "event_type": "claim_created",
+      "payload": {
+        "schema_version": "1.0.0",
+        "claim_id": "C203",
+        "revision": 1,
+        "claim_type": "prediction",
+        "text": "Matched conductivity plus pressure increase should lower CV.",
+        "block_ref": {
+          "block_id": "B201",
+          "revision": 1
+        },
+        "stage": "experiment",
+        "scope": {
+          "population": "synthetic samples",
+          "conditions": "committed synthetic fixture",
+          "exclusions": [
+            "laboratory inference"
+          ]
+        },
+        "epistemic_status": "testing",
+        "confidence": {
+          "level": "medium",
+          "rationale": "synthetic test fixture"
+        },
+        "evidence_support_refs": [],
+        "evidence_contradict_refs": [],
+        "assumptions": [
+          "instrument proxy is valid"
+        ],
+        "falsifiable_predictions": [
+          {
+            "prediction_claim_ref": "C203",
+            "observation_that_falsifies": "Matched conditions do not change the predicted CV or resistance."
+          }
+        ],
+        "discriminating_evidence_requirements": [
+          {
+            "requirement_id": "REQ-C203",
+            "description": "controlled comparison with replicates"
+          }
+        ],
+        "provenance": "synthetic_fixture",
+        "supersedes": [],
+        "superseded_by": [],
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "91a948cce3031d2a9488bc9087a2527427d7375c2c3b979464da78c8fe052ccf",
+      "event_hash": "23ad1e4de724c3649030900c8f5199d6401b559dd7eb9fb483d7486eab46a399"
+    },
+    {
+      "cursor": 32,
+      "event_type": "evidence_linked",
+      "payload": {
+        "schema_version": "1.0.0",
+        "evidence_id": "E201",
+        "kind": "synthetic_measurement",
+        "title": "Synthetic E201 evidence",
+        "provenance": "committed synthetic fixture",
+        "source": {
+          "source_id": "E201",
+          "uri": "thesis-deck-system/examples/synthetic-project/phase2/contact-pressure.csv",
+          "sha256": "b8475ad3e5dcc35c89ad09ea78b67b7bf201c2545a4d4dab3e3d764d056e33c7"
+        },
+        "claim_support_refs": [
+          "C201"
+        ],
+        "claim_contradict_refs": [],
+        "scope": {
+          "block_id": "B201"
+        },
+        "measurement": {
+          "synthetic": true
+        },
+        "license_or_usage": "synthetic_test_only",
+        "verification": {
+          "status": "synthetic_test_only"
+        }
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "23ad1e4de724c3649030900c8f5199d6401b559dd7eb9fb483d7486eab46a399",
+      "event_hash": "b718a6909301c3b0acef588e4778b8af8389a72076ad1508be04afc822e08823"
+    },
+    {
+      "cursor": 33,
+      "event_type": "problem_created",
+      "payload": {
+        "schema_version": "2.0.0",
+        "problem_id": "P201",
+        "hypothesis_layer_ref": "H002",
+        "problem_statement": "導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。",
+        "previous_findings": [
+          "H01 支持導電度梯度存在",
+          "H01 未支持導電度單獨主導重複性"
+        ],
+        "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
+        "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+        "evidence_refs": [
+          "E201"
+        ],
+        "derived_from_decision_refs": [
+          "D101"
+        ],
+        "scope": "匹配 bulk conductivity，改變 contact pressure 的對照實驗。",
+        "source_event_cursor": 17,
+        "created_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "b718a6909301c3b0acef588e4778b8af8389a72076ad1508be04afc822e08823",
+      "event_hash": "c586f64670a6ee6ba1604bd3297309545d7628c33035298a7dbe22995c34ace6"
+    },
+    {
+      "cursor": 34,
+      "event_type": "stage_revised",
+      "payload": {
+        "schema_version": "1.0.0",
+        "stage_id": "ST-H002-OBS",
+        "block_ref": {
+          "block_id": "B201",
+          "revision": 1
+        },
+        "stage_type": "observation",
+        "revision": 1,
+        "status": "complete",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E201"
+        ],
+        "hypothesis_claim_refs": [],
+        "prediction_claim_refs": [],
+        "data": {
+          "observation": "位置依賴缺陷與訊號變異已觀察到。",
+          "problem": "現有模型無法解釋此變異。"
+        },
+        "provenance": "synthetic_fixture",
+        "created_at": "2026-08-27T00:00:00Z",
+        "updated_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "c586f64670a6ee6ba1604bd3297309545d7628c33035298a7dbe22995c34ace6",
+      "event_hash": "ef37450d3b67ee1824c3dad6646c450e4fd4b57730a5b250ea85c56b06fd197c"
+    },
+    {
+      "cursor": 35,
+      "event_type": "hypothesis_transition_recorded",
+      "payload": {
+        "schema_version": "2.0.0",
+        "transition_id": "TR-H001-H002",
+        "from_layer_ref": "H001",
+        "to_layer_ref": "H002",
+        "previous_hypothesis_claim_ref": "C101",
+        "key_result_refs": [
+          "RES101",
+          "RES102"
+        ],
+        "unexplained": "導電度增加後訊號重複性沒有改善。",
+        "observation_or_uncertainty_refs": [
+          "E201"
+        ],
+        "rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+        "new_hypothesis_claim_ref": "C201",
+        "decision_refs": [
+          "D101"
+        ],
+        "source_event_cursor": 35,
+        "created_at": "2026-08-27T00:00:00Z"
+      },
+      "timestamp": "2026-08-27T10:04:05Z",
+      "previous_hash": "ef37450d3b67ee1824c3dad6646c450e4fd4b57730a5b250ea85c56b06fd197c",
+      "event_hash": "d922c7d42ef145c1b86f9b07610ea7c12eb136ca7d9e5f69a25b474cdf011d1a"
+    }
+  ]
+}
