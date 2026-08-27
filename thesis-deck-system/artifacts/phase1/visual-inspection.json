@@ -1,0 +1,27 @@
+{
+  "checked_by": "Codex visual inspection",
+  "slides": [
+    {
+      "slide_id": "S-B001-OBSERVATION-01",
+      "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-3.png",
+      "checks": [
+        "nonblank",
+        "legible",
+        "visual present"
+      ],
+      "observations": "Synthetic observation visual and problem are visible.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "S-B001-RESULT-01",
+      "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-4.png",
+      "checks": [
+        "nonblank",
+        "legible",
+        "plot and next step present"
+      ],
+      "observations": "Plot, revised discussion, decision and timing are visible.",
+      "status": "pass"
+    }
+  ]
+}

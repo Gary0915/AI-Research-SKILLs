@@ -3,7 +3,7 @@ evidence_id: E001
 kind: synthetic_measurement
 title: "Synthetic B001 measurement CSV"
 provenance: "Generated from committed synthetic measurements.csv"
-source: {source_id: measurements, uri: thesis-deck-system/examples/synthetic-project/measurements.csv, sha256: 0000000000000000000000000000000000000000000000000000000000000000}
+source: {source_id: measurements, uri: thesis-deck-system/examples/synthetic-project/measurements.csv, sha256: df1cfda02c62622bc1850cfae143154b784bb3119f6a8bf3cdbfa29838aa73a6}
 claim_support_refs: [C003]
 claim_contradict_refs: []
 scope: {block_id: B001, units: count/mm2}

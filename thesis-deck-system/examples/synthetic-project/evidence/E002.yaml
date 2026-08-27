@@ -3,7 +3,7 @@ evidence_id: E002
 kind: synthetic_observation
 title: "Synthetic microscopy observation"
 provenance: "Committed synthetic observation visual"
-source: {source_id: synthetic-observation, uri: thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg, sha256: 0000000000000000000000000000000000000000000000000000000000000000}
+source: {source_id: synthetic-observation, uri: thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg, sha256: 9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd}
 claim_support_refs: [C001]
 claim_contradict_refs: []
 scope: {block_id: B001}

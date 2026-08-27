@@ -48,7 +48,7 @@ def profile_template(path: Path, output_path: Path) -> dict:
                 ph = shape.find(".//p:ph", NS)
                 if ph is not None:
                     placeholders.append({"type": ph.attrib.get("type", "body"), "idx": ph.attrib.get("idx", "0")})
-            layouts.append({"path": name, "name": Path(name).stem, "placeholders": placeholders})
+            layouts.append({"path": name, "name": Path(name).stem, "layout_index": len(layouts), "placeholders": placeholders})
         theme_fonts = []
         theme_colors = []
         theme_names = sorted(n for n in names if n.startswith("ppt/theme/") and n.endswith(".xml"))
@@ -56,7 +56,7 @@ def profile_template(path: Path, output_path: Path) -> dict:
             root = ET.fromstring(archive.read(theme_names[0]))
             theme_fonts = [node.attrib.get("typeface") for node in root.findall(".//a:latin", NS) if node.attrib.get("typeface")]
             theme_colors = [node.tag.rsplit("}", 1)[-1] for node in root.findall(".//a:clrScheme/*", NS)]
-    profile = {"schema_version": "1.0.0", "profile_id": "TP-SYNTH-001", "version": "1.0.0", "source_path": path.as_posix(), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "slide_size": {"width_emu": prs.slide_width, "height_emu": prs.slide_height, "aspect_ratio": "16:9"}, "masters": masters, "layouts": layouts, "theme": {"major_fonts": theme_fonts[:1], "minor_fonts": theme_fonts[1:2], "colors": theme_colors}, "semantic_roles": {"photo_observation": {"layout_name_contains": "slideLayout2", "required_placeholders": ["title", "body"]}, "hero_plot_discussion": {"layout_name_contains": "slideLayout1", "required_placeholders": ["title", "body"]}}, "created_at": "2026-08-27T00:00:00Z"}
+    profile = {"schema_version": "1.0.0", "profile_id": "TP-SYNTH-001", "version": "1.0.0", "source_path": path.as_posix(), "source_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "slide_size": {"width_emu": prs.slide_width, "height_emu": prs.slide_height, "aspect_ratio": "16:9"}, "masters": masters, "layouts": layouts, "theme": {"major_fonts": theme_fonts[:1], "minor_fonts": theme_fonts[1:2], "colors": theme_colors}, "semantic_roles": {"photo_observation": {"layout_index": 1, "layout_path": "ppt/slideLayouts/slideLayout2.xml", "required_placeholders": ["title", "body"]}, "hero_plot_discussion": {"layout_index": 1, "layout_path": "ppt/slideLayouts/slideLayout2.xml", "required_placeholders": ["title", "body"]}}, "created_at": "2026-08-27T00:00:00Z"}
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(profile, indent=2), encoding="utf-8")
     return profile

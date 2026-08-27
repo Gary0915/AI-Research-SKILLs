@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "A002",
+  "asset_type": "observation_photo",
+  "title": "Synthetic observation",
+  "evidence_role": "synthetic_test_evidence",
+  "source_evidence": [
+    "E002"
+  ],
+  "path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
+  "preview_path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.png",
+  "mime_type": "image/svg+xml",
+  "sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+  "editable": true,
+  "provenance": "synthetic_fixture",
+  "status": "approved"
+}

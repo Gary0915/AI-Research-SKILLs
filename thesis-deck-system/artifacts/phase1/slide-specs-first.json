@@ -22,7 +22,7 @@
     "placements": [
       {
         "slot": "hero_visual",
-        "asset_id": "A001",
+        "asset_id": "A002",
         "asset_path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg"
       }
     ],
@@ -47,7 +47,7 @@
         "E002"
       ],
       "asset_refs": [
-        "A001"
+        "A002"
       ],
       "action_refs": [
         "NS001"
@@ -62,9 +62,9 @@
       }
     },
     "content": {
-      "observation": "Synthetic microscopy: defect density varies by position.",
-      "problem": "Test transport versus boundary accumulation.",
-      "observation_visual_path": "D:\\Gary\\碩論\\簡報製作\\thesis-deck-system\\examples\\synthetic-project\\assets\\observation_visual.svg",
+      "observation": "Synthetic microscopy shows position-dependent defect density.",
+      "problem": "The spatial trend is not explained by the current process model.",
+      "observation_visual_path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
       "claim_refs": [
         "C001"
       ],
@@ -103,7 +103,8 @@
     "citations": [],
     "speaker_notes": {
       "source_refs": [
-        "E001"
+        "E001",
+        "E003"
       ],
       "text": "Synthetic fixture — verify evidence provenance."
     },
@@ -116,10 +117,12 @@
     "bindings": {
       "claim_refs": [
         "C001",
+        "C002",
         "C003"
       ],
       "evidence_refs": [
-        "E001"
+        "E001",
+        "E003"
       ],
       "asset_refs": [
         "A001"
@@ -137,15 +140,17 @@
       }
     },
     "content": {
-      "discussion": "Trend supports transport, but boundary effects remain unresolved.",
-      "decision": "Partial-Go: add control",
-      "next_step": "Tracer control; researcher; due 2026-09-02",
+      "discussion": "The gradient supports the transport hypothesis, but does not discriminate boundary effects.",
+      "decision": "Trend supports the mechanism but a control is missing.",
+      "next_step": "Run synthetic position comparison",
       "claim_refs": [
         "C001",
+        "C002",
         "C003"
       ],
       "evidence_refs": [
-        "E001"
+        "E001",
+        "E003"
       ]
     }
   }

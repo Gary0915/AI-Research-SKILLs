@@ -3,7 +3,7 @@
   "profile_id": "TP-SYNTH-001",
   "version": "1.0.0",
   "source_path": "thesis-deck-system/artifacts/phase1/synthetic_native_template.pptx",
-  "source_sha256": "043619a52cd69edf9ed944cc4fbd725cc19519cefad588d29ba063988f4872fc",
+  "source_sha256": "3727429f29fe24a077dfcbc218d7a1f649a317fb6ed0d0ddfffe6dec2edda5de",
   "slide_size": {
     "width_emu": 12191999,
     "height_emu": 6858000,
@@ -32,6 +32,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout1.xml",
       "name": "slideLayout1",
+      "layout_index": 0,
       "placeholders": [
         {
           "type": "ctrTitle",
@@ -58,6 +59,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout10.xml",
       "name": "slideLayout10",
+      "layout_index": 1,
       "placeholders": [
         {
           "type": "title",
@@ -84,6 +86,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout11.xml",
       "name": "slideLayout11",
+      "layout_index": 2,
       "placeholders": [
         {
           "type": "title",
@@ -110,6 +113,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout2.xml",
       "name": "slideLayout2",
+      "layout_index": 3,
       "placeholders": [
         {
           "type": "title",
@@ -136,6 +140,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout3.xml",
       "name": "slideLayout3",
+      "layout_index": 4,
       "placeholders": [
         {
           "type": "title",
@@ -162,6 +167,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout4.xml",
       "name": "slideLayout4",
+      "layout_index": 5,
       "placeholders": [
         {
           "type": "title",
@@ -192,6 +198,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout5.xml",
       "name": "slideLayout5",
+      "layout_index": 6,
       "placeholders": [
         {
           "type": "title",
@@ -230,6 +237,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout6.xml",
       "name": "slideLayout6",
+      "layout_index": 7,
       "placeholders": [
         {
           "type": "title",
@@ -252,6 +260,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout7.xml",
       "name": "slideLayout7",
+      "layout_index": 8,
       "placeholders": [
         {
           "type": "dt",
@@ -270,6 +279,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout8.xml",
       "name": "slideLayout8",
+      "layout_index": 9,
       "placeholders": [
         {
           "type": "title",
@@ -300,6 +310,7 @@
     {
       "path": "ppt/slideLayouts/slideLayout9.xml",
       "name": "slideLayout9",
+      "layout_index": 10,
       "placeholders": [
         {
           "type": "title",
@@ -352,14 +363,16 @@
   },
   "semantic_roles": {
     "photo_observation": {
-      "layout_name_contains": "slideLayout2",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
       "required_placeholders": [
         "title",
         "body"
       ]
     },
     "hero_plot_discussion": {
-      "layout_name_contains": "slideLayout1",
+      "layout_index": 1,
+      "layout_path": "ppt/slideLayouts/slideLayout2.xml",
       "required_placeholders": [
         "title",
         "body"

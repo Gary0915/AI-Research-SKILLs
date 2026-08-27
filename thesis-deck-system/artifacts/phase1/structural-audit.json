@@ -1,0 +1,139 @@
+{
+  "slide_count": 4,
+  "slide_xml_count": 4,
+  "has_editable_text": true,
+  "editable_text_per_slide": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "orphan_parts": [],
+  "xml_parts": 28,
+  "masters": 1,
+  "layouts": 11,
+  "content_types_present": true,
+  "unique_slide_ids": true,
+  "slide_order": [
+    256,
+    257,
+    258,
+    259
+  ],
+  "media_parts": [
+    "ppt/media/image1.png",
+    "ppt/media/image2.png",
+    "ppt/media/plot-canonical.svg"
+  ],
+  "notes_parts": [
+    "ppt/notesSlides/_rels/notesSlide1.xml.rels",
+    "ppt/notesSlides/_rels/notesSlide2.xml.rels",
+    "ppt/notesSlides/notesSlide1.xml",
+    "ppt/notesSlides/notesSlide2.xml"
+  ],
+  "full_slide_raster_substitution": false,
+  "vector_media_used": true,
+  "result_slide_svg_relationship": [
+    {
+      "relationship_id": "rId99",
+      "target": "ppt/media/plot-canonical.svg",
+      "content_type": "image/svg+xml",
+      "referenced_in_slide": true
+    }
+  ],
+  "slide_relationships": [
+    {
+      "slide_part": "ppt/slides/slide1.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout1.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_part": "ppt/slideLayouts/slideLayout1.xml",
+      "svg_relationships": []
+    },
+    {
+      "slide_part": "ppt/slides/slide2.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "svg_relationships": []
+    },
+    {
+      "slide_part": "ppt/slides/slide3.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/media/image1.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId3",
+          "target": "ppt/notesSlides/notesSlide1.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        }
+      ],
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "svg_relationships": []
+    },
+    {
+      "slide_part": "ppt/slides/slide4.xml",
+      "relationships": [
+        {
+          "relationship_id": "rId1",
+          "target": "ppt/slideLayouts/slideLayout2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId2",
+          "target": "ppt/media/image2.png",
+          "content_type": "image/png",
+          "referenced_in_slide": true
+        },
+        {
+          "relationship_id": "rId3",
+          "target": "ppt/notesSlides/notesSlide2.xml",
+          "content_type": "xml",
+          "referenced_in_slide": false
+        },
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/plot-canonical.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ],
+      "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+      "svg_relationships": [
+        {
+          "relationship_id": "rId99",
+          "target": "ppt/media/plot-canonical.svg",
+          "content_type": "image/svg+xml",
+          "referenced_in_slide": true
+        }
+      ]
+    }
+  ],
+  "relationship_targets_checked": 52,
+  "source_template_sha256": "3727429f29fe24a077dfcbc218d7a1f649a317fb6ed0d0ddfffe6dec2edda5de",
+  "generated_pptx_sha256": "18379a6c13acae930e9174fcf82ae80194410c92a542ffee6b208f5ea3fee6c1",
+  "source_template_unchanged": true
+}

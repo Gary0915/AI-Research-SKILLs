@@ -22,7 +22,7 @@
     "placements": [
       {
         "slot": "hero_visual",
-        "asset_id": "A001",
+        "asset_id": "A002",
         "asset_path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg"
       }
     ],
@@ -47,7 +47,7 @@
         "E002"
       ],
       "asset_refs": [
-        "A001"
+        "A002"
       ],
       "action_refs": [
         "NS001"
@@ -62,9 +62,9 @@
       }
     },
     "content": {
-      "observation": "Synthetic microscopy: defect density varies by position.",
-      "problem": "Test transport versus boundary accumulation.",
-      "observation_visual_path": "D:\\Gary\\碩論\\簡報製作\\thesis-deck-system\\examples\\synthetic-project\\assets\\observation_visual.svg",
+      "observation": "Synthetic microscopy shows position-dependent defect density.",
+      "problem": "The spatial trend is not explained by the current process model.",
+      "observation_visual_path": "thesis-deck-system/examples/synthetic-project/assets/observation_visual.svg",
       "claim_refs": [
         "C001"
       ],
@@ -140,9 +140,9 @@
       }
     },
     "content": {
-      "discussion": "Updated: trend is partial support; tracer control is required before Go.",
-      "decision": "Partial-Go: defer causal claim",
-      "next_step": "Tracer control; researcher; due 2026-09-10",
+      "discussion": "The trend is reproducible but remains only partial support; run a matched-position tracer control before Go.",
+      "decision": "Trend supports the mechanism but a control is missing.",
+      "next_step": "Run synthetic position comparison; due 2026-09-10T09:00:00Z",
       "claim_refs": [
         "C001",
         "C002",

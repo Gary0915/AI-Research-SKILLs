@@ -2,11 +2,12 @@ from pathlib import Path
 
 from thesis_deck_system.pptx import PythonPptxAssembler, audit_pptx
 from thesis_deck_system.slides import compile_slide
-from thesis_deck_system.template import create_synthetic_template
+from thesis_deck_system.template import create_synthetic_template, profile_template
 
 
 def test_python_backend_preserves_native_layout_and_editable_content(tmp_path: Path):
     template = create_synthetic_template(tmp_path / "template.pptx")
+    profile_template(template, tmp_path / "template-profile.json")
     output = tmp_path / "deck.pptx"
     result = PythonPptxAssembler().assemble(template, [compile_slide("B001", "observation", "photo_observation", 1), compile_slide("B001", "result", "hero_plot_discussion", 1)], output)
     assert result.output_path == output

@@ -3,7 +3,7 @@
   "qa_report_id": "QA-MASTER-PHASE1-REVISED",
   "build_id": "BUILD-MASTER-PHASE1-REVISED",
   "deck_id": "MASTER-PHASE1-REVISED",
-  "created_at": "2026-08-26T17:47:11.271207Z",
+  "created_at": "2026-08-27T04:09:04.877928Z",
   "overall_status": "blocked",
   "professor_profile_ref": {
     "profile_id": "PROF-SYNTH-001",
@@ -16,7 +16,13 @@
       "status": "pass",
       "evidence": {
         "ok": true,
-        "evidence": "fixture and persisted ledger loaded"
+        "evidence": {
+          "check_ids": [
+            "SCHEMA-ALL",
+            "LEDGER-REPLAY"
+          ],
+          "objects": 17
+        }
       }
     },
     {
@@ -25,7 +31,12 @@
       "status": "pass",
       "evidence": {
         "ok": true,
-        "evidence": "scientific validators"
+        "evidence": {
+          "check_ids": [
+            "SCI-METHOD",
+            "SCI-DISCUSSION-NEXT"
+          ]
+        }
       }
     },
     {
@@ -34,7 +45,14 @@
       "status": "pass",
       "evidence": {
         "ok": true,
-        "evidence": "provenance validators"
+        "evidence": {
+          "check_ids": [
+            "PROV-EVIDENCE-HASH",
+            "PROV-ASSET-HASH"
+          ],
+          "verified": 5,
+          "errors": []
+        }
       }
     },
     {
@@ -43,7 +61,12 @@
       "status": "pass",
       "evidence": {
         "ok": true,
-        "evidence": "professor profile rules"
+        "evidence": {
+          "check_ids": [
+            "PROF-QUESTION",
+            "PROF-RECIPES"
+          ]
+        }
       }
     },
     {
@@ -52,7 +75,13 @@
       "status": "pass",
       "evidence": {
         "ok": true,
-        "evidence": "slide specs assembled"
+        "evidence": {
+          "check_ids": [
+            "COMPILE-SPECS",
+            "ASSEMBLE-DECK"
+          ],
+          "spec_count": 2
+        }
       }
     },
     {
@@ -60,8 +89,28 @@
       "stage": "structural_pptx_engineering",
       "status": "pass",
       "evidence": {
-        "ok": true,
-        "evidence": "structural audit"
+        "ok": [
+          {
+            "relationship_id": "rId99",
+            "target": "ppt/media/plot-canonical.svg",
+            "content_type": "image/svg+xml",
+            "referenced_in_slide": true
+          }
+        ],
+        "evidence": {
+          "check_ids": [
+            "PPTX-REL",
+            "PPTX-SVG"
+          ],
+          "svg": [
+            {
+              "relationship_id": "rId99",
+              "target": "ppt/media/plot-canonical.svg",
+              "content_type": "image/svg+xml",
+              "referenced_in_slide": true
+            }
+          ]
+        }
       }
     },
     {
@@ -69,8 +118,14 @@
       "stage": "render_montage_visual",
       "status": "pass",
       "evidence": {
-        "ok": true,
-        "evidence": "render/montage evidence"
+        "ok": "thesis-deck-system/artifacts/phase1/visual-inspection.json",
+        "evidence": {
+          "check_ids": [
+            "RENDER-FILES",
+            "HUMAN-INSPECTION"
+          ],
+          "record": "thesis-deck-system/artifacts/phase1/visual-inspection.json"
+        }
       }
     },
     {
@@ -95,10 +150,8 @@
   "findings": [],
   "artifacts": {
     "pptx": "thesis-deck-system/artifacts/phase1/master_revised_build.pptx",
-    "template_profile": "thesis-deck-system/artifacts/phase1/template-profile.json",
-    "plot_svg": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.svg",
-    "plot_png": "thesis-deck-system/artifacts/phase1/plots/B001_defect_density.png",
-    "meeting_delta": "thesis-deck-system/artifacts/phase1/meeting-delta.json"
+    "structural_audit": "thesis-deck-system/artifacts/phase1/structural-audit.json",
+    "visual_inspection": "thesis-deck-system/artifacts/phase1/visual-inspection.json"
   },
   "tool_versions": {
     "control_plane": "0.2.0",
@@ -108,6 +161,12 @@
     "slide_count": 4,
     "slide_xml_count": 4,
     "has_editable_text": true,
+    "editable_text_per_slide": [
+      true,
+      true,
+      true,
+      true
+    ],
     "orphan_parts": [],
     "xml_parts": 28,
     "masters": 1,
@@ -133,8 +192,109 @@
     ],
     "full_slide_raster_substitution": false,
     "vector_media_used": true,
-    "relationship_targets_checked": 51,
-    "source_template_hash": "434d29fb209adf32a832674b9deb2919225d15f4f3c859042c53fa8c65447335"
+    "result_slide_svg_relationship": [
+      {
+        "relationship_id": "rId99",
+        "target": "ppt/media/plot-canonical.svg",
+        "content_type": "image/svg+xml",
+        "referenced_in_slide": true
+      }
+    ],
+    "slide_relationships": [
+      {
+        "slide_part": "ppt/slides/slide1.xml",
+        "relationships": [
+          {
+            "relationship_id": "rId1",
+            "target": "ppt/slideLayouts/slideLayout1.xml",
+            "content_type": "xml",
+            "referenced_in_slide": false
+          }
+        ],
+        "layout_part": "ppt/slideLayouts/slideLayout1.xml",
+        "svg_relationships": []
+      },
+      {
+        "slide_part": "ppt/slides/slide2.xml",
+        "relationships": [
+          {
+            "relationship_id": "rId1",
+            "target": "ppt/slideLayouts/slideLayout2.xml",
+            "content_type": "xml",
+            "referenced_in_slide": false
+          }
+        ],
+        "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+        "svg_relationships": []
+      },
+      {
+        "slide_part": "ppt/slides/slide3.xml",
+        "relationships": [
+          {
+            "relationship_id": "rId1",
+            "target": "ppt/slideLayouts/slideLayout2.xml",
+            "content_type": "xml",
+            "referenced_in_slide": false
+          },
+          {
+            "relationship_id": "rId2",
+            "target": "ppt/media/image1.png",
+            "content_type": "image/png",
+            "referenced_in_slide": true
+          },
+          {
+            "relationship_id": "rId3",
+            "target": "ppt/notesSlides/notesSlide1.xml",
+            "content_type": "xml",
+            "referenced_in_slide": false
+          }
+        ],
+        "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+        "svg_relationships": []
+      },
+      {
+        "slide_part": "ppt/slides/slide4.xml",
+        "relationships": [
+          {
+            "relationship_id": "rId1",
+            "target": "ppt/slideLayouts/slideLayout2.xml",
+            "content_type": "xml",
+            "referenced_in_slide": false
+          },
+          {
+            "relationship_id": "rId2",
+            "target": "ppt/media/image2.png",
+            "content_type": "image/png",
+            "referenced_in_slide": true
+          },
+          {
+            "relationship_id": "rId3",
+            "target": "ppt/notesSlides/notesSlide2.xml",
+            "content_type": "xml",
+            "referenced_in_slide": false
+          },
+          {
+            "relationship_id": "rId99",
+            "target": "ppt/media/plot-canonical.svg",
+            "content_type": "image/svg+xml",
+            "referenced_in_slide": true
+          }
+        ],
+        "layout_part": "ppt/slideLayouts/slideLayout2.xml",
+        "svg_relationships": [
+          {
+            "relationship_id": "rId99",
+            "target": "ppt/media/plot-canonical.svg",
+            "content_type": "image/svg+xml",
+            "referenced_in_slide": true
+          }
+        ]
+      }
+    ],
+    "relationship_targets_checked": 52,
+    "source_template_sha256": "3727429f29fe24a077dfcbc218d7a1f649a317fb6ed0d0ddfffe6dec2edda5de",
+    "generated_pptx_sha256": "18379a6c13acae930e9174fcf82ae80194410c92a542ffee6b208f5ea3fee6c1",
+    "source_template_unchanged": true
   },
   "native_status": "blocked_environment"
 }

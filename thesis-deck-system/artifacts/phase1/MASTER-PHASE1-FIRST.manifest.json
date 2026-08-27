@@ -23,7 +23,7 @@
       "ordinal": 1,
       "slide_id": "S-B001-OBSERVATION-01",
       "slide_spec_path": "thesis-deck-system/artifacts/phase1/slide-specs-first.json",
-      "slide_spec_sha256": "8982da51cb2f8a4d7dd42f55099a1ef458c4024c5a72e16a99ad3e8489b165f0",
+      "slide_spec_sha256": "a94a3ae9fe30ee0c7f7f5df742d6af4dc1f8e596662b256496f9a1ff2b6a06b2",
       "block_ref": {
         "block_id": "B001",
         "revision": 1
@@ -35,7 +35,7 @@
         "E002"
       ],
       "asset_refs": [
-        "A001"
+        "A002"
       ],
       "action_refs": [
         "NS001"
@@ -55,17 +55,19 @@
       "ordinal": 2,
       "slide_id": "S-B001-RESULT-01",
       "slide_spec_path": "thesis-deck-system/artifacts/phase1/slide-specs-first.json",
-      "slide_spec_sha256": "8982da51cb2f8a4d7dd42f55099a1ef458c4024c5a72e16a99ad3e8489b165f0",
+      "slide_spec_sha256": "a94a3ae9fe30ee0c7f7f5df742d6af4dc1f8e596662b256496f9a1ff2b6a06b2",
       "block_ref": {
         "block_id": "B001",
         "revision": 1
       },
       "claim_refs": [
         "C001",
+        "C002",
         "C003"
       ],
       "evidence_refs": [
-        "E001"
+        "E001",
+        "E003"
       ],
       "asset_refs": [
         "A001"
@@ -87,7 +89,7 @@
   ],
   "outputs": {
     "pptx": "thesis-deck-system/artifacts/phase1/master_first_build.pptx",
-    "pptx_sha256": "a5b018cda5082c59f46d47071a3f28d53b8d90530d835bb780eb92cb4c1d5b9c"
+    "pptx_sha256": "677ca87d12d5ec5b5916d52e5d240c8d9a77648c4f804cc5416ca79bb33d0f93"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE1-REVISED"

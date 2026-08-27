@@ -1,65 +1,56 @@
-# IMPLEMENTATION REPORT — Phase 1 Revision
+# IMPLEMENTATION REPORT — Phase 1 Revision 2
 
 ## 1. Objective completed
-Corrected P1-R1–P1-R12 on `codex/thesis-deck-system` without starting Phase 2. The committed B001 bundle is loaded, schema/semantic validated, replayed from a persisted hash-chain ledger, compiled through two recipes, assembled into first/revised editable PPTX decks, rendered, montaged, structurally audited, and reported through the canonical QA pipeline.
+Corrected P1-B1–P1-B9 on `codex/thesis-deck-system`. The committed scientific bundle now validates, enters a persisted hash-chain Ledger, reloads/materializes from zero, compiles ledger-derived Slide Specs, resolves stable native layouts, assembles a PPTX whose result slide actually references SVG media, passes relationship-aware structural QA, renders through a documented compatibility fallback, and records executed Stage 1–7 QA evidence. Phase 2 and production use were not started.
 
 ## 2. Architecture decisions
-The Python control plane remains the sole runtime and `PythonPptxAssembler` remains the sole backend. `fixture.py` is the authoritative bundle loader; `Ledger.append/serialize/load/replay/materialize` is the authoritative history path. SVG is the canonical plot asset; because python-pptx cannot decode SVG, the assembler uses a deterministic PNG compatibility preview while retaining `ppt/media/plot-canonical.svg` in the package and auditing vector provenance. Canonical manifests use repository-relative POSIX paths.
+The single Python control plane/backend remains. Canonical paths are repository-relative POSIX paths and are resolved only at runtime. Template roles use `layout_index + layout_path` and missing mappings raise. The PowerPoint SVG bridge uses the Office SVG extension: the result slide keeps its PNG fallback blip and contains `asvg:svgBlip r:embed="rId99"`; `slide4.xml.rels` maps `rId99` to `ppt/media/plot-canonical.svg`. LibreOffice cannot parse that Office extension, so renders use a separately labeled, generated PNG-fallback compatibility PPTX; the canonical reviewed PPTX retains the true SVG relationship.
 
 ## 3. Files changed
-Added/updated: `packages/thesis-deck-system/src/thesis_deck_system/{build.py,fixture.py,ledger.py,pptx.py,qa.py,slides.py,plotting.py,contracts.py}`, committed B001 `stages/`, `evidence/`, `decisions/`, `assets/`, `plot.py`, expanded tests, regenerated `thesis-deck-system/artifacts/phase1/`, and this report. No unrelated files modified; no files deleted.
+Added: A002 manifest, synthetic literature source note, structural audit, visual inspection record, compatibility-render PPTX artifacts, and revision regression coverage. Modified: canonical schemas, build/fixture/ledger/projection/slide/template/PPTX/QA modules, E001–E003 hashes, generated artifacts, and this report. Deleted: none. No unrelated files changed.
 
 ## 4. Behavior implemented
-`load_fixture()` resolves every B001 stage/evidence/claim/action/decision/profile reference and validates the complete bundle. The build appends every event through `Ledger.append()`, serializes full hash-chain Event records, reloads from disk, replays from zero, and materializes first/revised snapshots. Professor QA consumes the loaded profile rules. Recipe layout roles resolve through `template-profile.json`; observation includes a committed synthetic visual and problem statement; result/discussion includes plot, interpretation, decision and timed Next Step. Slide Specs are persisted and manifests bind each slide to scientific sources, profiles, cursor, path and hash. Structural QA checks package parts, content types, relationship targets, IDs/order, layouts/masters, notes, media, orphan parts, editability, source hash and vector media.
+The complete B001 fixture is loaded and validated. Ledger events reconstruct full B001, stages, claims, decisions and actions. Slide content comes from materialized Stage/Decision/Action records, not build-local scientific strings. Meeting delta derives prior/current action state and detects `B001` via `payload.block_ref.block_id`. Observation binds A002/E002; result binds A001/E001/E003. Generated Slide Specs, manifests, A001/A002 and Template Profile validate against strengthened schemas.
 
-## 5. Schema inventory and validators
-All 12 Phase 1 schemas are executable Draft 2020-12 schemas with `FormatChecker`; explicit types and nested bindings are enforced. Semantic IDs include dangling claims, missing question, unfalsifiable mechanism, unsynthesized literature, incomplete experiment/action, status/visibility conflation, lost commitment, generated evidence, unreachable failed history, duplicate/dangling manifest bindings, and critical-release blocking.
+## 5. Schema and path validation
+Draft 2020-12 plus `FormatChecker` validates exact generated records. Slide Spec schema defines content, placements, relative asset paths and bindings. Deck Manifest constrains per-slide records. Template Profile requires stable role identity. Asset/Evidence schemas type IDs/hashes and reject absolute canonical paths. Recursive scan over fixture/artifact JSON/YAML found no drive, UNC or Unix-absolute canonical paths.
 
-## 6. Ledger replay and B001 trace
-`thesis-deck-system/artifacts/phase1/ledger-events.json` contains append-produced events with cursor, timestamp, previous_hash and event_hash. `materialized-first.json` is the first-build state; `materialized-revised.json` is replayed from the same persisted stream and contains Discussion revision 2, D002 and NS001 revision 2. First cursor is 14; revised cursor is 17. B001 contains Observation, Literature, Mechanism, Solution, Experiment, Result, Discussion v1/v2 and Next Step references, with E001/E002/E003 and C001/C002/C003.
+## 6. Provenance evidence
+E001 hash matches `measurements.csv`; E002 matches `observation_visual.svg`; E003 matches the distinct `literature-note.txt`. A001 verifies CSV, script, SVG and PNG hashes; A002 verifies its observation source. `plots/A001.asset.json` and `plots/A002.asset.json` validate against Asset Manifest schema.
 
-## 7. Claim/evidence/action graph and fixture inventory
-C001 hypothesis → C003 prediction → E001 measurement → A001 SVG plot; C002 mechanism → E003 synthetic literature synthesis; E002 is the synthetic observation visual; D001/D002 bind decisions; NS001 preserves prior commitment and revised timing. Fixture root: `thesis-deck-system/examples/synthetic-project/`; stages, evidence, decisions and observation asset are committed and loaded together.
+## 7. Ledger, Slide Specs and meeting projection
+Artifacts: `ledger-events.json`, `materialized-first.json`, `materialized-revised.json`, `slide-specs-first.json`, `slide-specs-revised.json`, `meeting-delta.json`. Discussion v2 and NS001 revision are replayed. `meeting-delta.json` contains B001 in `changed_block_ids` and ledger-derived previous/current action states.
 
-## 8. Template, recipes and manifests
-`artifacts/phase1/template-profile.json` profiles the synthetic native template and maps both semantic roles to native layouts. Persisted specs: `slide-specs-first.json`, `slide-specs-revised.json`. Manifests: `MASTER-PHASE1-FIRST.manifest.json` and `MASTER-PHASE1-REVISED.manifest.json`, with unique ordinals 1/2 and complete per-slide bindings. Revised content changes the interpretation to partial support, defers the causal claim, and moves the NS001 due date to 2026-09-10.
+## 8. Structural PPTX and SVG relationship
+`structural-audit.json` reports source-template and generated-PPTX hashes separately, slide IDs/order, per-slide relationships, layout targets, media targets/types, notes, editable text, orphan targets, and SVG proof. Actual proof: generated result slide `ppt/slides/slide4.xml` references `rId99`; `ppt/slides/_rels/slide4.xml.rels` targets `../media/plot-canonical.svg`; resolved target is `ppt/media/plot-canonical.svg` with `image/svg+xml`.
 
 ## 9. QA gates
-The exact canonical order is: schema/ledger integrity → scientific reasoning → citation/evidence provenance → professor-style logic → compile/assemble PPTX → structural PPTX engineering QA → render/montage visual QA → native PowerPoint round-trip acceptance → final deck/version audit → release. Stages 1–7 are generated from executed gate checks and evidence; Stage 8 is `blocked_environment`, Stage 9 `not_run`, Stage 10 `blocked`; no production release is claimed. QA report: `thesis-deck-system/artifacts/phase1/qa-report.json`.
+Stages 1–7 execute owning checks and persist check IDs, counts, inspected paths/hashes, SVG relationship evidence and visual-inspection path. Stage 8 is `blocked_environment`; Stage 9 is `not_run`; Stage 10 is `blocked`. `qa-report.json` contains no open Stage 1–7 findings.
 
-## 10. Plot provenance and structural evidence
-`examples/synthetic-project/plot.py` is the real repository-relative generator source. A001 records CSV/script/SVG/PNG hashes, Matplotlib version, parameters and sample-SD policy. Revised PPTX structural audit reports `ppt/media/plot-canonical.svg` plus compatibility preview media, native layout/master relationships, content types, notes refs, unique IDs/order, zero orphan parts, editable text and no full-slide raster substitution.
+## 10. Render and visual QA
+All four slides of first/revised compatibility-render builds were converted to PDF/PNG, montaged and inspected. `visual-inspection.json` records concrete checks for generated slides 3–4. The compatibility PPTX differs only by removing the Office SVG extension for LibreOffice; canonical PPTX structural acceptance uses the SVG-linked deck. Render directories and full/changed montages are committed.
 
-## 11. Render/montage visual QA
-LibreOffice + Poppler regenerated all four PNGs for each build. Paths: `artifacts/phase1/render_first/` and `render_revised/`; montages: `render_first/full-deck-montage.png`, `render_revised/full-deck-montage.png`, `render_revised/changed-slide-montage.png`. Every revised slide was inspected. Slides 1–2 preserve native template examples; slide 3 shows the synthetic observation visual and concise problem text without blank/cropped output; slide 4 shows the plot, updated discussion, decision and revised 2026-09-10 Next Step. No blank renders or off-slide objects were observed.
-
-## 12. Negative-test matrix
-The existing 11 required negative cases remain passing at their expected gates; targeted revision checks cover missing fixture references, persisted hash tampering, profile-rule failure, duplicate manifest ordinals, absolute canonical paths, missing script/hash, missing SVG media, incomplete bindings and non-meaningful revision. Full suite: 25 passed.
-
-## 13. Commands/tests run and results
-`git pull --rebase origin codex/thesis-deck-system`; `python -m pytest -q packages/thesis-deck-system/tests` → 25 passed; clean `build()`; fixture validation; `Ledger.load().replay().materialize()`; structural audit; LibreOffice PDF conversion; Poppler PNG rendering; montage generation; `git diff --check`; remote `git ls-tree` verification. Native PowerPoint acceptance is blocked only by unavailable Windows PowerPoint.
-
-## 14. P1-R1–P1-R12 traceability
-| Requirement | Implementation / evidence |
+## 11. P1-B1–P1-B9 traceability
+| Blocker | Proof |
 |---|---|
-| P1-R1 | `fixture.py`; committed `stages/`, `evidence/`; `materialized-*.json`; fixture tests |
-| P1-R2 | `ledger.py` append/serialize/load/replay; `ledger-events.json`; replay tests |
-| P1-R3 | `qa.py` executable gates; `qa-report.json` evidence per stages 1–7 |
-| P1-R4 | `professor_qa()` consumes `professor-profile.yaml`; profile-rule tests |
-| P1-R5 | `slides.py`, `pptx.py`; observation SVG and result content in revised deck |
-| P1-R6 | SVG canonical asset, `ppt/media/plot-canonical.svg`, vector audit |
-| P1-R7 | persisted Slide Specs and complete unique-ordinal manifests |
-| P1-R8 | expanded `audit_pptx()` checklist and structural artifact |
-| P1-R9 | committed `plot.py`, A001 script/data/output hashes |
-| P1-R10 | `rel()` canonical POSIX paths and path validation |
-| P1-R11 | Discussion v1/v2, D001/D002, NS001 revision and visible revised slide |
-| P1-R12 | typed/format-checked schemas, nested bindings, targeted negatives |
+| P1-B1 | `slide4.xml` → `rId99` → `ppt/media/plot-canonical.svg`; `structural-audit.json`; relationship test |
+| P1-B2 | strengthened Slide Spec/Deck Manifest/Template Profile/Asset/Evidence schemas; exact-artifact validation |
+| P1-B3 | repository-relative paths; recursive scan result |
+| P1-B4 | Stage 1–7 owning gate evidence in `qa-report.json` |
+| P1-B5 | `state_content()` compiles materialized history; no obs/res/res2 truth dictionaries |
+| P1-B6 | stable `layout_index/layout_path`; broken mapping raises |
+| P1-B7 | A002/E002 observation binding and A002 manifest |
+| P1-B8 | real verified E001/E002/E003 and A001/A002 hashes |
+| P1-B9 | relationship-aware `structural-audit.json`; distinct source/output hashes |
 
-## 15. Known failures / deviations / questions
-Native PowerPoint round-trip remains `blocked_environment`; PNG is retained solely as python-pptx compatibility preview while canonical SVG is packaged and audited. Private exemplar/template ingestion and production Group Meeting acceptance remain out of scope. Reviewer decision is requested on the authoritative Windows PowerPoint environment and permitted private fixture paths.
+## 12. Commands/tests and results
+`python -m pytest -q packages/thesis-deck-system/tests`; clean `build()`; exact schema validation; persisted ledger reload/replay/materialize; Evidence/Asset hash verification; recursive absolute-path scan; relationship-aware PPTX audit; LibreOffice/Poppler render; montage generation; `finalize_visual_qa()`; visual inspection; `git diff --check`; remote verification. Full suite: 25 passed, 0 failed.
 
-## 16. Recommended next phase
-No Phase 2 work started. Await reviewer approval of this Phase 1 revision.
+## 13. Known failures / deviations
+Native PowerPoint round-trip is unavailable and remains `blocked_environment`. LibreOffice cannot consume the Microsoft Office SVG extension, so render evidence uses the generated compatibility fallback deck; no claim is made that the fallback deck satisfies vector acceptance. The canonical Master Deck does satisfy the slide-to-SVG OpenXML relationship contract.
+
+## 14. Questions / recommended next action
+Reviewer decision remains needed for the authoritative native PowerPoint environment and permitted private fixture paths. No Phase 2 action is recommended before approval.
 
 ```yaml
 codex_report:
@@ -67,16 +58,16 @@ codex_report:
   status: awaiting_review
   branch: codex/thesis-deck-system
   commit_sha: null
-  files_added: ["packages/thesis-deck-system", "thesis-deck-system/examples/synthetic-project", "thesis-deck-system/artifacts/phase1", "thesis-deck-system/reports/PHASE_1_IMPLEMENTATION_REPORT.md"]
-  files_modified: ["packages/thesis-deck-system/src/thesis_deck_system", "thesis-deck-system/reports/PHASE_1_IMPLEMENTATION_REPORT.md"]
+  files_added: ["thesis-deck-system/artifacts/phase1/plots/A002.asset.json", "thesis-deck-system/artifacts/phase1/structural-audit.json", "thesis-deck-system/artifacts/phase1/visual-inspection.json", "thesis-deck-system/examples/synthetic-project/evidence/literature-note.txt"]
+  files_modified: ["packages/thesis-deck-system/src/thesis_deck_system", "thesis-deck-system/schemas", "thesis-deck-system/examples/synthetic-project/evidence", "thesis-deck-system/artifacts/phase1", "thesis-deck-system/reports/PHASE_1_IMPLEMENTATION_REPORT.md"]
   files_deleted: []
-  artifacts: ["thesis-deck-system/artifacts/phase1/master_first_build.pptx", "thesis-deck-system/artifacts/phase1/master_revised_build.pptx", "thesis-deck-system/artifacts/phase1/ledger-events.json", "thesis-deck-system/artifacts/phase1/qa-report.json"]
-  render_previews: ["thesis-deck-system/artifacts/phase1/render_first/", "thesis-deck-system/artifacts/phase1/render_revised/"]
-  tests_run: ["python -m pytest -q packages/thesis-deck-system/tests", "fixture validation", "ledger reload/replay/materialize", "structural PPTX audit", "LibreOffice + Poppler render/montage", "git diff --check"]
-  tests_passed: ["25 pytest tests", "fixture and persisted ledger checks", "Stages 1-7 gate execution", "structural audit", "render/montage QA"]
+  artifacts: ["thesis-deck-system/artifacts/phase1/master_revised_build.pptx", "thesis-deck-system/artifacts/phase1/structural-audit.json", "thesis-deck-system/artifacts/phase1/qa-report.json"]
+  render_previews: ["thesis-deck-system/artifacts/phase1/render_first", "thesis-deck-system/artifacts/phase1/render_revised"]
+  tests_run: ["pytest", "schema validation", "hash verification", "ledger replay", "PPTX relationship audit", "render/montage QA", "absolute-path scan", "git diff --check"]
+  tests_passed: ["25 pytest tests", "all generated schemas", "E001-E003 and A001-A002 hashes", "Stages 1-7"]
   tests_failed: []
-  known_failures: ["native PowerPoint round-trip unavailable: blocked_environment"]
-  deviations: ["python-pptx SVG decoder limitation handled with deterministic PNG preview plus packaged canonical SVG"]
+  known_failures: ["native PowerPoint blocked_environment", "LibreOffice requires PNG-fallback compatibility render artifact"]
+  deviations: []
   reviewer_questions: ["authoritative native PowerPoint environment", "permitted private fixture paths"]
   next_action_requested: REVIEW
 ```

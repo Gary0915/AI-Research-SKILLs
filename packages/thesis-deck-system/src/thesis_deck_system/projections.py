@@ -13,15 +13,18 @@ def meeting_delta(events: list[dict[str, Any]], since_cursor: int) -> dict[str, 
         if event.get("event_type") in {"action_committed", "action_status_changed", "action_closed"}:
             actions.setdefault(payload["action_item_id"], {}).update(payload)
         if event.get("event_type") in {"block_created", "block_revised", "stage_revised"} and event.get("cursor", 0) > since_cursor:
-            block_id = payload.get("block_id")
+            block_id = payload.get("block_id") or payload.get("block_ref", {}).get("block_id")
             if block_id and block_id not in changed_blocks:
                 changed_blocks.append(block_id)
     carried = [action for action in actions.values() if action.get("status") not in {"done", "cancelled", "superseded"}]
     carried.sort(key=lambda item: item["action_item_id"])
+    prior = {e.get("payload",{}).get("action_item_id"): e.get("payload",{}) for e in events if e.get("cursor",0)<=since_cursor and e.get("event_type") in {"action_committed","action_status_changed"}}
     return {
         "since_cursor": since_cursor,
         "prior_commitment_ids": [item["action_item_id"] for item in carried],
         "included_action_ids": [item["action_item_id"] for item in carried],
         "actions": carried,
         "changed_block_ids": changed_blocks,
+        "previous_actions": sorted(prior.values(), key=lambda x:x.get("action_item_id","")),
+        "current_actions": sorted(actions.values(), key=lambda x:x.get("action_item_id","")),
     }
