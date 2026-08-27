@@ -141,8 +141,8 @@
     },
     "content": {
       "discussion": "The trend is reproducible but remains only partial support; run a matched-position tracer control before Go.",
-      "decision": "Trend supports the mechanism but a control is missing.",
-      "next_step": "Run synthetic position comparison; due 2026-09-10T09:00:00Z",
+      "decision": "Reproducible trend remains non-discriminating.",
+      "next_step": "Run synthetic position comparison; status in_progress; due 2026-09-10T09:00:00Z",
       "claim_refs": [
         "C001",
         "C002",

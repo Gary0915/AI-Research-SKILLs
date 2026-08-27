@@ -142,7 +142,7 @@
     "content": {
       "discussion": "The gradient supports the transport hypothesis, but does not discriminate boundary effects.",
       "decision": "Trend supports the mechanism but a control is missing.",
-      "next_step": "Run synthetic position comparison",
+      "next_step": "Run synthetic position comparison; status planned; due 2026-09-02T09:00:00Z",
       "claim_refs": [
         "C001",
         "C002",

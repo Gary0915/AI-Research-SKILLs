@@ -2,14 +2,37 @@
   "checked_by": "Codex visual inspection",
   "slides": [
     {
+      "slide_id": "TEMPLATE-SLIDE-01",
+      "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-1.png",
+      "checks": [
+        "nonblank",
+        "legible",
+        "no clipping"
+      ],
+      "observations": "Synthetic template title and subtitle are centered, readable, and unclipped.",
+      "status": "pass"
+    },
+    {
+      "slide_id": "TEMPLATE-SLIDE-02",
+      "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-2.png",
+      "checks": [
+        "nonblank",
+        "legible",
+        "native placeholder visible"
+      ],
+      "observations": "Representative native title/content placeholders render clearly without overlap.",
+      "status": "pass"
+    },
+    {
       "slide_id": "S-B001-OBSERVATION-01",
       "render_path": "thesis-deck-system/artifacts/phase1/render_revised/slide-3.png",
       "checks": [
         "nonblank",
         "legible",
-        "visual present"
+        "visual present",
+        "no overlap"
       ],
-      "observations": "Synthetic observation visual and problem are visible.",
+      "observations": "Synthetic observation visual, observation statement, and problem statement are visible and separated.",
       "status": "pass"
     },
     {
@@ -18,9 +41,10 @@
       "checks": [
         "nonblank",
         "legible",
-        "plot and next step present"
+        "plot and next step present",
+        "no overlap"
       ],
-      "observations": "Plot, revised discussion, decision and timing are visible.",
+      "observations": "Plot, D002 rationale, revised discussion, NS001 status, and due time are visible without collision.",
       "status": "pass"
     }
   ]

@@ -10,6 +10,9 @@ import xml.etree.ElementTree as ET
 import posixpath
 import tempfile
 import copy
+import hashlib
+import json
+import re
 
 from pptx import Presentation
 from pptx.util import Inches
@@ -31,7 +34,7 @@ class PythonPptxAssembler(PptxAssembler):
         shutil.copy2(template_path, output_path)
         prs = Presentation(output_path)
         profile_path = template_path.with_name("template-profile.json")
-        profile = __import__("json").loads(profile_path.read_text(encoding="utf-8")) if profile_path.exists() else {"semantic_roles": {}}
+        profile = json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.exists() else {"semantic_roles": {}}
         roles = profile.get("semantic_roles", {})
         repo_root = template_path.parents[3]
         for spec in slide_specs:
@@ -40,6 +43,13 @@ class PythonPptxAssembler(PptxAssembler):
             idx = role["layout_index"]
             if idx >= len(prs.slide_layouts): raise ValueError(f"layout index out of range: {idx}")
             layout = prs.slide_layouts[idx]
+            actual_layout_path = layout.part.partname.lstrip("/")
+            indexed = next((item for item in profile.get("layouts", []) if item.get("layout_index") == idx), None)
+            if indexed is None or indexed.get("layout_path") != actual_layout_path or role.get("layout_path") != actual_layout_path:
+                raise ValueError(
+                    f"layout identity mismatch for {spec['native_layout_role']}: "
+                    f"index={idx}, runtime={actual_layout_path}, role={role.get('layout_path')}"
+                )
             slide = prs.slides.add_slide(layout)
             slide.shapes.title.text = spec["title"]["text"]
             content = spec.get("content", {})
@@ -70,7 +80,9 @@ class PythonPptxAssembler(PptxAssembler):
                             im=Image.new('RGB',(640,360),'#d9e5e8'); ImageDraw.Draw(im).text((30,160),'SYNTHETIC OBSERVATION',fill='#234'); im.save(preview)
                         slide.shapes.add_picture(str(preview), Inches(6.6), Inches(1.6), width=Inches(5.8), height=Inches(3.3))
             notes = slide.notes_slide.notes_text_frame
-            notes.text = "[Sources]\nSynthetic fixture: E001\n[/Sources]"
+            source_refs = spec.get("speaker_notes", {}).get("source_refs", [])
+            note_text = spec.get("speaker_notes", {}).get("text", "")
+            notes.text = "[Sources]\n" + "\n".join(source_refs) + "\n[/Sources]\n" + note_text
         prs.save(output_path)
         # Preserve canonical vector source as an auditable package part.
         svg_paths = [(repo_root / s["placements"][0]["asset_path"]) for s in slide_specs if s.get("recipe")=="hero_plot_discussion" and str(s["placements"][0].get("asset_path","")).endswith(".svg")]
@@ -126,7 +138,7 @@ def make_render_compat_copy(source: Path, output: Path) -> Path:
     tmp.replace(output); return output
 
 
-def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | None = None) -> dict:
+def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | None = None, slide_specs: list[dict] | None = None) -> dict:
     prs = Presentation(path)
     with zipfile.ZipFile(path) as archive:
         names = set(archive.namelist())
@@ -150,8 +162,61 @@ def audit_pptx(path: Path, template_path: Path | None = None, profile: dict | No
                 for rel in rr:
                     target=rel.attrib.get('Target',''); norm=posixpath.normpath(posixpath.join(posixpath.dirname(sname),target));
                     if target and not target.startswith('http'): targets.append({'relationship_id':rel.attrib.get('Id'),'target':norm,'content_type': 'image/svg+xml' if norm.endswith('.svg') else 'image/png' if norm.endswith('.png') else 'xml','referenced_in_slide': rel.attrib.get('Id') in embeds})
-            slide_relationships.append({'slide_part':sname,'relationships':targets,'layout_part':next((x['target'] for x in targets if 'slideLayout' in x['target']),None),'svg_relationships':[x for x in targets if x['target'].endswith('.svg') and x['referenced_in_slide']]})
+            layout_rel = next((x for x in targets if 'slideLayout' in x['target']), None)
+            layout_part = layout_rel['target'] if layout_rel else None
+            master_rel = None
+            if layout_part:
+                lrname = layout_part.replace('ppt/slideLayouts/', 'ppt/slideLayouts/_rels/') + '.rels'
+                if lrname in names:
+                    lrroot = ET.fromstring(archive.read(lrname))
+                    for rel in lrroot:
+                        if rel.attrib.get('Type', '').endswith('/slideMaster'):
+                            target = rel.attrib.get('Target', '')
+                            master_rel = {
+                                'relationship_id': rel.attrib.get('Id'),
+                                'target': posixpath.normpath(posixpath.join(posixpath.dirname(layout_part), target)),
+                            }
+                            break
+            notes_rel = next((x for x in targets if 'notesSlides/' in x['target']), None)
+            slide_relationships.append({'slide_part':sname,'relationships':targets,'layout_relationship':layout_rel,'layout_part':layout_part,'master_relationship':master_rel,'master_part':master_rel['target'] if master_rel else None,'notes_relationship':notes_rel,'svg_relationships':[x for x in targets if x['target'].endswith('.svg') and x['referenced_in_slide']]})
     media = sorted(n for n in names if n.startswith("ppt/media/"))
     slide_ids = [s.slide_id for s in prs.slides]
-    generated_hash=__import__("hashlib").sha256(path.read_bytes()).hexdigest(); source_hash=__import__("hashlib").sha256(template_path.read_bytes()).hexdigest() if template_path else None
-    return {"slide_count": len(prs.slides), "slide_xml_count": len(slide_names), "has_editable_text": any(shape.has_text_frame and shape.text for slide in prs.slides for shape in slide.shapes), "editable_text_per_slide":[any(shape.has_text_frame and shape.text for shape in slide.shapes) for slide in prs.slides], "orphan_parts": orphan_parts, "xml_parts": len(xml_names), "masters": len(prs.slide_masters), "layouts": len(prs.slide_layouts), "content_types_present": "[Content_Types].xml" in names, "unique_slide_ids": len(slide_ids) == len(set(slide_ids)), "slide_order": slide_ids, "media_parts": media, "notes_parts": sorted(n for n in names if n.startswith("ppt/notesSlides/")), "full_slide_raster_substitution": False, "vector_media_used": any(x["svg_relationships"] for x in slide_relationships), "result_slide_svg_relationship": slide_relationships[-1]["svg_relationships"] if slide_relationships else [], "slide_relationships":slide_relationships, "relationship_targets_checked": len(relationships), "source_template_sha256": source_hash, "generated_pptx_sha256": generated_hash, "source_template_unchanged": source_hash is not None}
+    generated_hash=hashlib.sha256(path.read_bytes()).hexdigest()
+    source_after=hashlib.sha256(template_path.read_bytes()).hexdigest() if template_path else None
+    source_before=(profile or {}).get("source_sha256") if template_path else None
+    specs = slide_specs or []
+    generated_slides = []
+    if specs:
+        relationships_by_part = {item["slide_part"]: item for item in slide_relationships}
+        for spec, slide in zip(specs, list(prs.slides)[-len(specs):]):
+            slide_part = slide.part.partname.lstrip("/")
+            relation = relationships_by_part[slide_part]
+            role = (profile or {}).get("semantic_roles", {}).get(spec["native_layout_role"], {})
+            note_text = slide.notes_slide.notes_text_frame.text
+            note_source_refs = sorted(set(re.findall(r"\bE[0-9]{3,}\b", note_text)))
+            expected_refs = sorted(spec.get("speaker_notes", {}).get("source_refs", []))
+            actual_layout_path = slide.slide_layout.part.partname.lstrip("/")
+            actual_master_path = slide.slide_layout.slide_master.part.partname.lstrip("/")
+            actual_layout_index = next(index for index, layout in enumerate(prs.slide_layouts) if layout.part.partname == slide.slide_layout.part.partname)
+            generated_slides.append({
+                "slide_spec_id": spec["slide_id"],
+                "generated_slide_id": slide.slide_id,
+                "slide_part": slide_part,
+                "layout_relationship_id": (relation.get("layout_relationship") or {}).get("relationship_id"),
+                "actual_layout_part": actual_layout_path,
+                "actual_layout_index": actual_layout_index,
+                "master_relationship_id": (relation.get("master_relationship") or {}).get("relationship_id"),
+                "actual_master_part": actual_master_path,
+                "expected_semantic_role": spec["native_layout_role"],
+                "expected_layout_index": role.get("layout_index"),
+                "expected_layout_path": role.get("layout_path"),
+                "expected_master_path": role.get("master_path"),
+                "layout_master_role_match": actual_layout_index == role.get("layout_index") and actual_layout_path == role.get("layout_path") and actual_master_path == role.get("master_path") and (relation.get("master_relationship") or {}).get("target") == actual_master_path,
+                "notes_relationship_target": (relation.get("notes_relationship") or {}).get("target"),
+                "note_source_refs": note_source_refs,
+                "expected_note_source_refs": expected_refs,
+                "notes_source_match": note_source_refs == expected_refs,
+                "media_refs": [item for item in relation["relationships"] if item["target"].startswith("ppt/media/")],
+                "editable_text": any(shape.has_text_frame and shape.text for shape in slide.shapes),
+            })
+    return {"slide_count": len(prs.slides), "slide_xml_count": len(slide_names), "has_editable_text": any(shape.has_text_frame and shape.text for slide in prs.slides for shape in slide.shapes), "editable_text_per_slide":[any(shape.has_text_frame and shape.text for shape in slide.shapes) for slide in prs.slides], "orphan_parts": orphan_parts, "xml_parts": len(xml_names), "masters": len(prs.slide_masters), "layouts": len(prs.slide_layouts), "content_types_present": "[Content_Types].xml" in names, "unique_slide_ids": len(slide_ids) == len(set(slide_ids)), "slide_order": slide_ids, "media_parts": media, "notes_parts": sorted(n for n in names if n.startswith("ppt/notesSlides/")), "full_slide_raster_substitution": False, "vector_media_used": any(x["svg_relationships"] for x in slide_relationships), "result_slide_svg_relationship": slide_relationships[-1]["svg_relationships"] if slide_relationships else [], "slide_relationships":slide_relationships, "generated_slides": generated_slides, "relationship_targets_checked": len(relationships), "source_template_sha256_before": source_before, "source_template_sha256_after": source_after, "generated_pptx_sha256": generated_hash, "source_template_unchanged": source_before is not None and source_before == source_after}

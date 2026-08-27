@@ -70,9 +70,10 @@ class Ledger:
         ledger.replay()
         return ledger
 
-    def materialize(self) -> dict[str, Any]:
+    def materialize(self, until_cursor: int | None = None) -> dict[str, Any]:
         state = {"blocks": {}, "claims": {}, "actions": {}, "decisions": {}, "stages": {}, "events": []}
-        for event in self.replay():
+        events = self.replay()
+        for event in events[:until_cursor] if until_cursor is not None else events:
             state["events"].append(asdict(event))
             payload = event.payload
             if event.event_type == "block_created":

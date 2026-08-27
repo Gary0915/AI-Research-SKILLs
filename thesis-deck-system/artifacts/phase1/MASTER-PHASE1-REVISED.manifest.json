@@ -23,7 +23,7 @@
       "ordinal": 1,
       "slide_id": "S-B001-OBSERVATION-01",
       "slide_spec_path": "thesis-deck-system/artifacts/phase1/slide-specs-revised.json",
-      "slide_spec_sha256": "d1bcdbc79496088dff131d19be5d579ec98ce9d2a043a01025e252328338c90b",
+      "slide_spec_sha256": "eb0793f43b72612cd9788b7df321b992bb72897d149f08c2797ad53f62f22302",
       "block_ref": {
         "block_id": "B001",
         "revision": 2
@@ -55,7 +55,7 @@
       "ordinal": 2,
       "slide_id": "S-B001-RESULT-01",
       "slide_spec_path": "thesis-deck-system/artifacts/phase1/slide-specs-revised.json",
-      "slide_spec_sha256": "d1bcdbc79496088dff131d19be5d579ec98ce9d2a043a01025e252328338c90b",
+      "slide_spec_sha256": "eb0793f43b72612cd9788b7df321b992bb72897d149f08c2797ad53f62f22302",
       "block_ref": {
         "block_id": "B001",
         "revision": 2
@@ -89,7 +89,7 @@
   ],
   "outputs": {
     "pptx": "thesis-deck-system/artifacts/phase1/master_revised_build.pptx",
-    "pptx_sha256": "18379a6c13acae930e9174fcf82ae80194410c92a542ffee6b208f5ea3fee6c1"
+    "pptx_sha256": "8aeea93a776382902e401b1ff1de1f6f7951ca9dbc30e5c2c06f9611b25b5e55"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE1-REVISED"

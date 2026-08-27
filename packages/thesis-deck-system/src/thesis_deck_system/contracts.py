@@ -171,4 +171,14 @@ def semantic_findings(bundle: dict[str, Any]) -> list[Finding]:
         release_stage = next((item for item in report.get("pipeline", []) if item.get("stage") == "release"), {})
         if open_critical and release_stage.get("status") == "pass":
             findings.append(Finding("RELEASE-CRITICAL-FINDING-OPEN", "release", "Release cannot pass with an open critical finding"))
+    for manifest in bundle.get("deck_manifests", []):
+        ordinals = [slide.get("ordinal") for slide in manifest.get("slides", [])]
+        if ordinals != list(range(1, len(ordinals) + 1)):
+            findings.append(Finding("MANIFEST-ORDINAL-SEQUENCE", "schema_ledger_integrity", "Manifest ordinals must be unique and sequential", manifest.get("deck_id", "")))
+    for profile in bundle.get("template_profiles", []):
+        layouts = {layout.get("layout_index"): layout for layout in profile.get("layouts", [])}
+        for role_name, role in profile.get("semantic_roles", {}).items():
+            layout = layouts.get(role.get("layout_index"))
+            if not layout or layout.get("layout_path") != role.get("layout_path") or layout.get("master_path") != role.get("master_path"):
+                findings.append(Finding("TEMPLATE-ROLE-IDENTITY-MISMATCH", "schema_ledger_integrity", f"Semantic role {role_name} does not match its indexed layout", role_name))
     return findings
