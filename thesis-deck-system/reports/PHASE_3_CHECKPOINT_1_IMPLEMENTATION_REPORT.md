@@ -2,10 +2,10 @@
 
 ## 1. Objective completed
 
-Implemented Phase 3 Checkpoint 1 only: the synthetic-safe privacy, provider,
-figure-control-plane, Observation-evidence, fabrication-process, and
-machine-readable Skill-routing foundations. No production private exemplar was
-resolved, opened, rendered, profiled, or otherwise accessed.
+Implemented the bounded Phase 3 Checkpoint 1 revision only: execution-derived
+safety evidence (CP1-B1), expanded privacy detection (CP1-B2), and canonical
+Observation provenance binding (CP1-B3). No production private exemplar was
+resolved, opened, rendered, profiled, hashed, or otherwise accessed.
 
 ## 2. Architecture decisions
 
@@ -29,6 +29,16 @@ resolved, opened, rendered, profiled, or otherwise accessed.
 - Observation and fabrication checks are separate cross-contract validators.
   A concept image cannot become empirical evidence, and a fabrication process
   cannot be substituted by a mechanism or measurement schematic.
+- `Checkpoint1ExecutionEvidence` is now the sole source for the final QA
+  artifact. Every owning check is executed and recorded before its final status
+  is derived. Checkpoint-1 alias/source entry points append a synthetic-safe
+  attempt record before rejecting; any attempted private operation derives an
+  aggregate failure. The builder executes the non-private controls and the
+  supplied full regression check before persisting the record.
+- Observation binding no longer accepts an embedded caller-declared origin.
+  It resolves schema-valid canonical Evidence Cards and FigureOutput Manifests;
+  a generated Concept output remains ineligible even when an untrusted legacy
+  origin string tries to claim measurement/photo/source-derived provenance.
 
 ## 3. Files changed
 
@@ -56,9 +66,14 @@ resolved, opened, rendered, profiled, or otherwise accessed.
 
 ### Modified
 
-- `.gitignore`
-- `packages/thesis-deck-system/src/thesis_deck_system/contracts.py`
-- `thesis-deck-system/reports/PHASE_0_IMPLEMENTATION_REPORT.md`
+- `packages/thesis-deck-system/src/thesis_deck_system/phase3_checkpoint.py`
+- `packages/thesis-deck-system/src/thesis_deck_system/phase3_contracts.py`
+- `packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py`
+- `packages/thesis-deck-system/tests/unit/test_phase3_checkpoint1.py`
+- `thesis-deck-system/artifacts/phase3/checkpoint-1-qa.json`
+- `thesis-deck-system/schemas/checkpoint-qa.schema.json`
+- `thesis-deck-system/schemas/observation-visual-binding.schema.json`
+- `thesis-deck-system/reports/PHASE_3_CHECKPOINT_1_IMPLEMENTATION_REPORT.md`
 
 ### Deleted
 
@@ -67,18 +82,26 @@ resolved, opened, rendered, profiled, or otherwise accessed.
 ## 4. Behavior implemented
 
 - A future private profile root can be validated and write-probed without alias
-  resolution or source access.
-- Repository and staged candidate scanning recognizes synthetic path/text/URL,
-  OOXML, notes, author/company/media, private PPTX, and private render
-  canaries; staged text content is scanned before release.
+  resolution or source access. Its only Checkpoint-1 alias/source entry points
+  record an attempt before immediately blocking it.
+- The QA writer derives counters, per-gate statuses, aggregate status, evidence
+  ID, and hash from persisted execution evidence. It rejects a fabricated
+  record, missing owning check, hash mismatch, non-derived status, or a guard
+  event whose stored counter disagrees with the append-only attempt list.
+- Repository and staged candidate scanning recognizes Windows backslash and
+  forward-slash paths, UNC, WSL mounted drives, configured private-root
+  signatures, and configured private PPTX/render/media basenames. Findings
+  retain only rule classification and location. Staged text is read from the
+  Git index blob rather than the mutable working-tree file.
 - Unknown sanitizer fields, invalid types, and prohibited values fail closed.
 - Private image review preflight has explicit blocked outcomes; conceptual image
   providers are abstract and limited to non-evidence generation.
 - Phase 3 schemas are registered additively with `include_phase3=True`.
 - Figure, Observation, fabrication, and Skill-routing validators reject the
-  unsafe/cross-class cases defined for Checkpoint 1. Evidence figures must use
-  source/extracted lineage, and concept Figure Specs are non-evidence with no
-  claim references.
+  unsafe/cross-class cases defined for Checkpoint 1. Empirical Observation now
+  requires a canonical Evidence Card plus a canonical empirical FigureOutput
+  provenance binding; concepts may only remain separately auxiliary
+  non-evidence visuals.
 
 ## 5. Commands/tests run
 
@@ -92,18 +115,14 @@ git diff --check
 
 ## 6. Test results
 
-- Checkpoint-focused synthetic suite: 35 passed, 0 failed.
-- Final complete Phase 1–2 plus Checkpoint 1 suite: 135 passed, 0 failed.
-- The complete suite was launched from the repository root because one existing
-  Phase 2 regression reads repository-relative source paths. An earlier
-  package-directory invocation therefore failed one existing path-assumption
-  test; the required repository-root invocation passed all 135 tests.
+- Checkpoint-focused synthetic suite: 64 passed, 0 failed.
+- Final full Phase 1–2 plus Checkpoint 1 suite: 164 passed, 0 failed.
 
 ## 7. Artifacts produced
 
 - `thesis-deck-system/artifacts/phase3/checkpoint-1-qa.json` — schema-valid,
-  non-private Checkpoint 1 QA evidence with both private-operation counters at
-  zero.
+  non-private Checkpoint 1 QA record with execution evidence ID/hash, all seven
+  owning checks/results, derived counters, and derived aggregate status.
 - The eleven Phase 3 contract schemas listed in Files changed.
 
 ## 8. Visual QA evidence
@@ -131,7 +150,15 @@ explicit unknown conditions. The complete Phase 1–2 regression suite passed.
 | CP1-6 Fabrication boundary | fabrication schema, `phase3_contracts.py` | ordering, provenance, unknown condition, mechanism/measurement substitution checks | pass | no director or renderer implemented |
 | CP1-7 Skill/routing foundation | skill-routing schema, `phase3_contracts.py` | bounded fabrication-route validation | pass | no new repo-local Skill files are registered or published |
 
-## 11. Known failures / technical debt
+## 11. CP1-B revision traceability
+
+| Blocker | Correction | Evidence | Status |
+| --- | --- | --- | --- |
+| CP1-B1 execution-derived evidence | `build_checkpoint1_qa`, `Checkpoint1ExecutionEvidence`, guarded alias/source entry points, hash-bound QA schema and consistency validator | real owning controls execute before persisted summary; alias/source attempts increment before blocking; failed owner, fabricated record, and event/count mismatch fail | pass |
+| CP1-B2 path/basename coverage | expanded scanner patterns plus configured root-signature/basename inputs and staged-index blob reads | synthetic Windows, UNC, WSL, nested mapping/list, staged-index-vs-worktree, PPTX/render/media basename tests; findings omit the forbidden raw value | pass |
+| CP1-B3 canonical Observation provenance | canonical Evidence/FigureOutput catalogs, required output binding, and primary-artifact reference match | canonical synthetic measurement and real photo positive tests; spoofed-origin generated concepts and a top-level/primary-artifact provenance mismatch fail | pass |
+
+## 12. Known failures / technical debt
 
 - None in the final required test run.
 - The local raw profiler, sanitizer profiles, resolvers, directors, template
@@ -140,20 +167,18 @@ explicit unknown conditions. The complete Phase 1–2 regression suite passed.
 - Native PowerPoint acceptance and production Group Meeting readiness remain
   blocked/not run.
 
-## 12. Deviations from reviewer prompt
+## 13. Deviations from reviewer prompt
 
-- Sanitized three stale absolute system-executable path literals in the Phase 0
-  report so the required repository privacy scan could be clean. This changed
-  no Phase 0 scientific/architectural content and introduced no private data.
-- No other Phase 1–2 artifacts were retained after regression tests; generated
-  Phase 1 test side effects were restored before delivery.
+- Phase 1 test-generated artifacts are restored from `HEAD` after the required
+  regression run. They are unrelated to this safety revision and are not part
+  of its commit.
 
-## 13. Questions requiring reviewer decision
+## 14. Questions requiring reviewer decision
 
 - None for Checkpoint 1. Authorize Checkpoint 2 separately before any private
   alias resolution or production private exemplar access.
 
-## 14. Recommended next phase
+## 15. Recommended next phase
 
 Reviewer decision on Checkpoint 1, followed only by the specifically authorized
 Phase 3 Checkpoint 2 scope.
@@ -196,12 +221,12 @@ codex_report:
     - python -m pytest tests/unit/test_phase3_checkpoint1.py -q
     - PYTHONPATH=packages/thesis-deck-system/src python -m pytest packages/thesis-deck-system/tests -q
   tests_passed:
-    - 35 checkpoint-focused tests
-    - 135 final full-suite tests
+    - 64 checkpoint-focused tests
+    - 164 final full-suite tests
   tests_failed: []
   known_failures: []
   deviations:
-    - Sanitized stale absolute system executable paths in the Phase 0 report for repository privacy-scan compliance.
+    - Phase 1 test-generated artifacts were restored from HEAD after the required regression run and were not committed.
   reviewer_questions: []
   next_action_requested: REVIEW
 ```

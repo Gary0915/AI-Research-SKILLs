@@ -1,5 +1,36 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "checkpoint-qa.schema.json", "type": "object", "additionalProperties": false,
-  "required": ["schema_version", "checkpoint_id", "private_source_open_attempts", "real_private_alias_resolution_attempts", "privacy_root_status", "sanitizer_scanner_status", "provider_authorization_status", "figure_contract_status", "observation_evidence_status", "fabrication_contract_status", "phase1_phase2_regression_status"],
-  "properties": {"schema_version": {"const": "3.0.0"}, "checkpoint_id": {"const": "PHASE_3_CHECKPOINT_1"}, "private_source_open_attempts": {"type": "integer", "const": 0}, "real_private_alias_resolution_attempts": {"type": "integer", "const": 0}, "privacy_root_status": {"type": "string", "enum": ["pass", "fail"]}, "sanitizer_scanner_status": {"type": "string", "enum": ["pass", "fail"]}, "provider_authorization_status": {"type": "string", "enum": ["pass", "fail"]}, "figure_contract_status": {"type": "string", "enum": ["pass", "fail"]}, "observation_evidence_status": {"type": "string", "enum": ["pass", "fail"]}, "fabrication_contract_status": {"type": "string", "enum": ["pass", "fail"]}, "phase1_phase2_regression_status": {"type": "string", "enum": ["pass", "fail"]}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "checkpoint-qa.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "checkpoint_id", "execution_evidence_id", "execution_evidence_sha256", "execution_evidence", "private_source_open_attempts", "real_private_alias_resolution_attempts", "privacy_root_status", "sanitizer_scanner_status", "provider_authorization_status", "figure_contract_status", "observation_evidence_status", "fabrication_contract_status", "phase1_phase2_regression_status", "aggregate_status"],
+  "properties": {
+    "schema_version": {"const": "3.1.0"},
+    "checkpoint_id": {"const": "PHASE_3_CHECKPOINT_1"},
+    "execution_evidence_id": {"type": "string", "pattern": "^CP1-EXEC-[0-9]{3,}$"},
+    "execution_evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "execution_evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "evidence_id", "policy_id", "private_source_open_attempts", "real_private_alias_resolution_attempts", "attempt_kinds", "owning_checks"],
+      "properties": {
+        "schema_version": {"const": "3.1.0"},
+        "evidence_id": {"type": "string", "pattern": "^CP1-EXEC-[0-9]{3,}$"},
+        "policy_id": {"const": "checkpoint_1_private_source_free"},
+        "private_source_open_attempts": {"type": "integer", "minimum": 0},
+        "real_private_alias_resolution_attempts": {"type": "integer", "minimum": 0},
+        "attempt_kinds": {"type": "array", "items": {"type": "string", "enum": ["private_source_open", "private_alias_resolution"]}},
+        "owning_checks": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "additionalProperties": false, "required": ["check_id", "result"], "properties": {"check_id": {"type": "string", "enum": ["CP1-PRIVACY-ROOT", "CP1-SANITIZER-SCANNER", "CP1-PROVIDER-AUTHORIZATION", "CP1-FIGURE-CONTRACTS", "CP1-OBSERVATION-EVIDENCE", "CP1-FABRICATION-CONTRACTS", "CP1-PHASE1-PHASE2-REGRESSION"]}, "result": {"type": "string", "enum": ["pass", "fail"]}}}}
+      }
+    },
+    "private_source_open_attempts": {"type": "integer", "minimum": 0},
+    "real_private_alias_resolution_attempts": {"type": "integer", "minimum": 0},
+    "privacy_root_status": {"type": "string", "enum": ["pass", "fail"]},
+    "sanitizer_scanner_status": {"type": "string", "enum": ["pass", "fail"]},
+    "provider_authorization_status": {"type": "string", "enum": ["pass", "fail"]},
+    "figure_contract_status": {"type": "string", "enum": ["pass", "fail"]},
+    "observation_evidence_status": {"type": "string", "enum": ["pass", "fail"]},
+    "fabrication_contract_status": {"type": "string", "enum": ["pass", "fail"]},
+    "phase1_phase2_regression_status": {"type": "string", "enum": ["pass", "fail"]},
+    "aggregate_status": {"type": "string", "enum": ["pass", "fail"]}
+  }
 }

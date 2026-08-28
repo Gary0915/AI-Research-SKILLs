@@ -2,20 +2,49 @@
 
 from __future__ import annotations
 
+from typing import Any
 
-_EMPIRICAL_ORIGINS = {"experimental_photo", "microscopy", "instrument_output", "measurement", "source_derived_scientific_visual"}
+
+_EMPIRICAL_EVIDENCE_KINDS = {
+    "experimental_measurement", "synthetic_measurement", "observation_photo", "synthetic_observation",
+    "microscopy_image", "simulation_output",
+}
+_EMPIRICAL_OUTPUT_TYPES = {"scientific_plot", "real_photo"}
 
 
-def validate_observation_visual_binding(binding: dict) -> list[str]:
+def canonical_observation_catalogs(registry: Any, evidence_cards: list[dict], output_manifests: list[dict]) -> dict:
+    """Build the Observation catalog only from schema-valid canonical identities."""
+    evidence_by_id: dict[str, dict] = {}
+    for card in evidence_cards:
+        if registry.errors("evidence-card", card):
+            raise ValueError("canonical Evidence card is invalid")
+        evidence_by_id[card["evidence_id"]] = card
+    outputs: dict[str, dict] = {}
+    for output in output_manifests:
+        if registry.errors("figure-output-manifest", output):
+            raise ValueError("canonical FigureOutput manifest is invalid")
+        outputs[output["figure_output_id"]] = output
+    return {"evidence": evidence_by_id, "outputs": outputs}
+
+
+def validate_observation_visual_binding(binding: dict, *, catalog: dict | None = None) -> list[str]:
+    """Require canonical empirical Evidence + FigureOutput provenance for Observation."""
     findings: list[str] = []
     if binding.get("empirical_evidence_required"):
         evidence_ref = binding.get("observation_evidence_ref")
-        catalog = binding.get("evidence_catalog", {})
-        evidence = catalog.get(evidence_ref) if evidence_ref else None
-        if not evidence_ref or evidence_ref not in binding.get("evidence_refs", []) or not evidence:
+        output_ref = binding.get("observation_output_ref")
+        evidence = catalog.get("evidence", {}).get(evidence_ref) if catalog and evidence_ref else None
+        output = catalog.get("outputs", {}).get(output_ref) if catalog and output_ref else None
+        if not evidence_ref or evidence_ref not in binding.get("evidence_refs", []) or not evidence or not output:
             findings.append("P3-OBSERVATION-EMPIRICAL-EVIDENCE-MISSING")
-        elif evidence.get("origin") not in _EMPIRICAL_ORIGINS:
+        elif evidence.get("kind") not in _EMPIRICAL_EVIDENCE_KINDS or output.get("figure_type") not in _EMPIRICAL_OUTPUT_TYPES:
             findings.append("P3-OBSERVATION-GENERATED-AS-EVIDENCE")
+        elif evidence_ref not in output.get("provenance_refs", []) or output.get("evidence_status") == "non_evidence":
+            findings.append("P3-OBSERVATION-PROVENANCE-MISMATCH")
+        elif output.get("figure_type") == "scientific_plot" and evidence_ref not in output.get("primary_artifact", {}).get("data_provenance_refs", []):
+            findings.append("P3-OBSERVATION-PROVENANCE-MISMATCH")
+        elif output.get("figure_type") == "real_photo" and evidence_ref != output.get("primary_artifact", {}).get("evidence_card_ref"):
+            findings.append("P3-OBSERVATION-PROVENANCE-MISMATCH")
     for visual in binding.get("auxiliary_visuals", []):
         if visual.get("figure_type") == "concept_illustration" and visual.get("evidence_status") != "non_evidence":
             findings.append("P3-OBSERVATION-AUXILIARY-CONCEPT-STATUS")

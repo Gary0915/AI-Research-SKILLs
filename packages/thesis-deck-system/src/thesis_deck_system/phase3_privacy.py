@@ -22,7 +22,7 @@ _ALLOWED_PROFILE_FIELDS = {
     "slide_size",
 }
 _CANARY_PATTERNS = (
-    ("absolute_path", re.compile(r"(?:[A-Za-z]:[\\/](?!/)|\\\\|/(?:home|Users)/)")),
+    ("absolute_path", re.compile(r"(?:(?<![A-Za-z0-9])[A-Za-z]:[\\/]|\\\\|/mnt/[A-Za-z]/|/(?:home|Users)/)", re.I)),
     ("url_or_doi", re.compile(r"(?:https?://|doi:\s*|10\.\d{4,9}/)", re.I)),
     ("private_text_canary", re.compile(r"PRIVATE_(?:(?:TEXT|NOTES|AUTHOR|COMPANY|MEDIA)_)?CANARY", re.I)),
     ("ooxml_fragment", re.compile(r"<(?:Relationship|p:|a:|w:)[^>]*>")),
@@ -73,7 +73,7 @@ class PrivateProfileStore:
     def _git_tracked_or_staged(self, root: Path) -> bool:
         rel = root.relative_to(self.repository_root).as_posix()
         for args in (("ls-files", "--cached", "--", rel), ("diff", "--cached", "--name-only", "--", rel)):
-            result = subprocess.run(["git", *args], cwd=self.repository_root, check=False, capture_output=True, text=True)
+            result = subprocess.run(["git", *args], cwd=self.repository_root, check=False, capture_output=True, text=True, encoding="utf-8", errors="strict")
             if result.stdout.strip():
                 return True
         return False
@@ -95,9 +95,21 @@ class PrivateProfileStore:
             raise PrivacyViolation("private root became tracked or staged")
         return {**self.retention_policy(), "writable": True, "retention_manifest_required": True}
 
+    def resolve_private_alias(self, request_id: str, *, execution_evidence: Any) -> None:
+        """Checkpoint 1 entry point: record the attempt, then reject before resolution."""
+        execution_evidence.reject_private_alias_resolution(request_id)
+
+    def open_private_source(self, request_id: str, *, execution_evidence: Any) -> None:
+        """Checkpoint 1 entry point: record the attempt, then reject before source open."""
+        execution_evidence.reject_private_source_open(request_id)
+
 
 class RepositoryPrivacyScanner:
     """Scans synthetic candidate content without retaining the forbidden value."""
+
+    def __init__(self, *, private_root_signatures: Iterable[str] = (), forbidden_basenames: Iterable[str] = ()):
+        self._private_root_patterns = tuple(re.compile(re.escape(value), re.I) for value in private_root_signatures)
+        self._forbidden_basenames = {value.casefold() for value in forbidden_basenames}
 
     def scan_mapping(self, value: Any, *, location: str) -> list[PrivacyFinding]:
         findings: list[PrivacyFinding] = []
@@ -115,6 +127,11 @@ class RepositoryPrivacyScanner:
                     if pattern.search(item):
                         findings.append(PrivacyFinding(classification, item_location))
                         break
+                else:
+                    if any(pattern.search(item) for pattern in self._private_root_patterns):
+                        findings.append(PrivacyFinding("configured_private_root", item_location))
+                    elif Path(item).name.casefold() in self._forbidden_basenames:
+                        findings.append(PrivacyFinding("forbidden_private_basename", item_location))
 
         visit(value, location)
         return findings
@@ -126,7 +143,11 @@ class RepositoryPrivacyScanner:
             path = Path(path_value)
             location = path.relative_to(root).as_posix() if path.is_relative_to(root) else path.name
             suffix = path.suffix.lower()
-            if suffix in {".pptx", ".pptm", ".ppsx", ".potx"}:
+            if any(pattern.search(location) for pattern in self._private_root_patterns):
+                findings.append(PrivacyFinding("configured_private_root", location))
+            elif path.name.casefold() in self._forbidden_basenames:
+                findings.append(PrivacyFinding("forbidden_private_basename", location))
+            elif suffix in {".pptx", ".pptm", ".ppsx", ".potx"}:
                 findings.append(PrivacyFinding("private_pptx_candidate", location))
             elif suffix in {".png", ".jpg", ".jpeg", ".webp"} and "private" in path.name.lower():
                 findings.append(PrivacyFinding("private_render_candidate", location))
@@ -134,10 +155,27 @@ class RepositoryPrivacyScanner:
 
     def scan_staged(self, repository_root: Path | str) -> list[PrivacyFinding]:
         repo = Path(repository_root)
-        result = subprocess.run(["git", "diff", "--cached", "--name-only"], cwd=repo, check=False, capture_output=True, text=True)
+        result = subprocess.run(["git", "diff", "--cached", "--name-only"], cwd=repo, check=False, capture_output=True, text=True, encoding="utf-8", errors="strict")
         paths = [repo / line for line in result.stdout.splitlines() if line]
         content_paths = [path for path in paths if "/tests/" not in path.as_posix() and "/schemas/" not in path.as_posix() and path.name != "phase3_privacy.py"]
-        return self.scan_paths(paths, location_root=repo) + self._scan_text_paths(content_paths, repo)
+        return self.scan_paths(paths, location_root=repo) + self._scan_staged_text_paths(content_paths, repo)
+
+    def _scan_staged_text_paths(self, paths: Iterable[Path], repository_root: Path) -> list[PrivacyFinding]:
+        findings: list[PrivacyFinding] = []
+        for path in paths:
+            if path.suffix.lower() not in {".json", ".yaml", ".yml", ".md", ".py"}:
+                continue
+            rel = path.relative_to(repository_root).as_posix()
+            try:
+                result = subprocess.run(["git", "show", f":{rel}"], cwd=repository_root, check=False, capture_output=True, text=True, encoding="utf-8", errors="strict")
+            except UnicodeDecodeError:
+                findings.append(PrivacyFinding("staged_blob_unreadable", rel))
+                continue
+            if result.returncode != 0:
+                findings.append(PrivacyFinding("staged_blob_unreadable", rel))
+            else:
+                findings.extend(self.scan_mapping(result.stdout, location=rel))
+        return findings
 
     def _scan_text_paths(self, paths: Iterable[Path], repository_root: Path) -> list[PrivacyFinding]:
         findings: list[PrivacyFinding] = []
@@ -155,7 +193,7 @@ class RepositoryPrivacyScanner:
     def scan_repository(self, repository_root: Path | str) -> list[PrivacyFinding]:
         """Scan tracked files and staged candidates without returning any private content."""
         repo = Path(repository_root)
-        result = subprocess.run(["git", "ls-files", "--cached"], cwd=repo, check=False, capture_output=True, text=True)
+        result = subprocess.run(["git", "ls-files", "--cached"], cwd=repo, check=False, capture_output=True, text=True, encoding="utf-8", errors="strict")
         paths = [repo / line for line in result.stdout.splitlines() if line]
         findings = self.scan_staged(repo)
         artifact_roots = (repo / "thesis-deck-system" / "artifacts", repo / "thesis-deck-system" / "profiles", repo / "thesis-deck-system" / "reports")

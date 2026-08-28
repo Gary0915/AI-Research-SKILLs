@@ -1,6 +1,46 @@
 {
-  "schema_version": "3.0.0",
+  "schema_version": "3.1.0",
   "checkpoint_id": "PHASE_3_CHECKPOINT_1",
+  "execution_evidence_id": "CP1-EXEC-001",
+  "execution_evidence_sha256": "9db58533be8af6be1ccb7eff16eacb74decdf4065c79aff181e4e0e292e2cd25",
+  "execution_evidence": {
+    "schema_version": "3.1.0",
+    "evidence_id": "CP1-EXEC-001",
+    "policy_id": "checkpoint_1_private_source_free",
+    "private_source_open_attempts": 0,
+    "real_private_alias_resolution_attempts": 0,
+    "attempt_kinds": [],
+    "owning_checks": [
+      {
+        "check_id": "CP1-PRIVACY-ROOT",
+        "result": "pass"
+      },
+      {
+        "check_id": "CP1-SANITIZER-SCANNER",
+        "result": "pass"
+      },
+      {
+        "check_id": "CP1-PROVIDER-AUTHORIZATION",
+        "result": "pass"
+      },
+      {
+        "check_id": "CP1-FIGURE-CONTRACTS",
+        "result": "pass"
+      },
+      {
+        "check_id": "CP1-OBSERVATION-EVIDENCE",
+        "result": "pass"
+      },
+      {
+        "check_id": "CP1-FABRICATION-CONTRACTS",
+        "result": "pass"
+      },
+      {
+        "check_id": "CP1-PHASE1-PHASE2-REGRESSION",
+        "result": "pass"
+      }
+    ]
+  },
   "private_source_open_attempts": 0,
   "real_private_alias_resolution_attempts": 0,
   "privacy_root_status": "pass",
@@ -9,5 +49,6 @@
   "figure_contract_status": "pass",
   "observation_evidence_status": "pass",
   "fabrication_contract_status": "pass",
-  "phase1_phase2_regression_status": "pass"
+  "phase1_phase2_regression_status": "pass",
+  "aggregate_status": "pass"
 }
