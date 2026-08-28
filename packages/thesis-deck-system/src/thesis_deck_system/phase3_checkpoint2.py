@@ -23,6 +23,8 @@ _NS = {"p": "http://schemas.openxmlformats.org/presentationml/2006/main", "a": "
 _REL_NS = "http://schemas.openxmlformats.org/package/2006/relationships"
 _BASIS = {"measured", "derived", "not_observable_structurally"}
 _SOURCE_SCOPES = {"slide_master", "slide_layout", "theme", "slide_recurrence_derived", "not_observable_structurally"}
+_COLOR_TOKENS = {"accent1", "accent2", "accent3", "accent4", "accent5", "accent6", "dk1", "dk2", "lt1", "lt2", "hlink", "folhlink"}
+_SAFE_FONT_NAMES = {"Arial", "Calibri", "Times New Roman", "Aptos", "Noto Sans CJK", "Microsoft JhengHei", "Yu Gothic", "Meiryo", "Segoe UI", "Cambria", "Georgia"}
 
 
 class Checkpoint2PolicyViolation(RuntimeError):
@@ -67,6 +69,20 @@ def _compose_transform(parent: dict[str, Any], child: dict[str, Any]) -> tuple[f
     return (px + (ox - cx) * sx, py + (oy - cy) * sy, ow * sx, oh * sy)
 
 
+def _rotation_state(transform: dict[str, Any] | None) -> dict[str, Any]:
+    """Return an explicit truth state for DrawingML rotation.
+
+    Rotation is intentionally excluded from geometry composition in this
+    checkpoint.  A rotated item therefore remains visible in the local raw
+    profile but cannot be consumed as measured positional evidence.
+    """
+    raw = float((transform or {}).get("rot", 0) or 0)
+    degrees = _round(raw / 600000.0)
+    if abs(degrees) > 1e-9:
+        return {"rotation_status": "unsupported", "rotation_deg": degrees, "geometry_eligible": False}
+    return {"rotation_status": "none", "rotation_deg": 0.0, "geometry_eligible": True}
+
+
 def _connector_semantics(x: float, y: float, w: float, h: float, *, flip_h: bool, flip_v: bool, head_arrow: str, tail_arrow: str) -> dict[str, Any]:
     """Return directed endpoints from DrawingML end markers and flips."""
     start, end = [x, y], [x + w, y + h]
@@ -106,12 +122,14 @@ def _union_area(items: list[dict[str, Any]]) -> float:
 
 def _classify_structural_family(*, objects: list[dict[str, Any]], connectors: list[dict[str, Any]], metrics: dict[str, Any], groups: list[dict[str, Any]]) -> dict[str, Any]:
     """Conservative family inference; counts alone are never a signature."""
+    objects = [item for item in objects if item.get("geometry_eligible", True)]
+    connectors = [item for item in connectors if item.get("geometry_eligible", True)]
     pictures = [item for item in objects if item.get("object_class") == "picture"]
     xs = sorted(item["geometry"]["x"] for item in pictures if "geometry" in item)
     ys = sorted(item["geometry"]["y"] for item in pictures if "geometry" in item)
     ids = [item.get("object_id", "") for item in pictures]
     matrix = len(pictures) >= 4 and len({round(y, 2) for y in ys}) >= 2 and len({round(x, 2) for x in xs}) >= 2
-    comparison = len(pictures) == 2 and abs(pictures[0]["geometry"]["w"] - pictures[1]["geometry"]["w"]) <= 0.03 and abs(pictures[0]["geometry"]["h"] - pictures[1]["geometry"]["h"]) <= 0.03 and abs(pictures[0]["geometry"]["x"] - pictures[1]["geometry"]["x"]) > 0.2
+    comparison = len(pictures) == 2 and bool(groups) and abs(pictures[0]["geometry"]["w"] - pictures[1]["geometry"]["w"]) <= 0.03 and abs(pictures[0]["geometry"]["h"] - pictures[1]["geometry"]["h"]) <= 0.03 and abs(pictures[0]["geometry"]["x"] - pictures[1]["geometry"]["x"]) > 0.2
     spine = [item for item in connectors if item.get("orientation") == "horizontal"]
     branches = [item for item in connectors if item.get("orientation") in {"vertical", "diagonal"}]
     fishbone = bool(spine and len(branches) >= 2 and groups)
@@ -133,8 +151,83 @@ def _geometry(x: float, y: float, w: float, h: float, basis: str = "measured") -
     return {"x": _round(x_clipped), "y": _round(y_clipped), "w": _round(max(1e-6, min(1.0 - x_clipped, w))), "h": _round(max(1e-6, min(1.0 - y_clipped, h))), "basis": basis}
 
 
-def _style(fill_role: str = "none", stroke_role: str = "none", line_width_pt: float = 0.0, basis: str = "measured") -> dict[str, Any]:
-    return {"fill_role": fill_role, "stroke_role": stroke_role, "line_width_pt": _round(max(0.0, min(20.0, line_width_pt))), "basis": basis}
+def _style(fill_role: str = "none", stroke_role: str = "none", line_width_pt: float = 0.0, basis: str = "measured", *, fill_color: dict[str, Any] | None = None, stroke_color: dict[str, Any] | None = None, source_scope: str = "not_observable_structurally") -> dict[str, Any]:
+    return {
+        "role": "emphasis" if fill_role == "emphasis" or stroke_role == "emphasis" else "neutral",
+        "fill_role": fill_role,
+        "stroke_role": stroke_role,
+        "line_width_pt": _round(max(0.0, min(20.0, line_width_pt))),
+        "basis": basis,
+        "source_scope": source_scope,
+        "fill_color_evidence": fill_color or _unknown_color("fill", basis),
+        "stroke_color_evidence": stroke_color or _unknown_color("stroke", basis),
+    }
+
+
+def _unknown_color(source_kind: str, basis: str = "not_observable_structurally") -> dict[str, Any]:
+    return {
+        "source_kind": "unknown" if source_kind != "none" else "none",
+        "direct_rgb": None,
+        "theme_token": None,
+        "resolved_rgb": None,
+        "tint": None,
+        "shade": None,
+        "lum_mod": None,
+        "lum_off": None,
+        "transform_status": "unresolved",
+        "source_scope": "not_observable_structurally",
+        "basis": basis,
+    }
+
+
+def _color_evidence(element: ET.Element, fill: bool = True, theme_palette: dict[str, str] | None = None, *, source_scope: str = "slide_recurrence_derived") -> dict[str, Any]:
+    """Extract reconstructable but privacy-safe DrawingML color evidence."""
+    theme_palette = theme_palette or {}
+    solid = element.find(".//a:solidFill", _NS) if fill else element.find(".//a:ln/a:solidFill", _NS)
+    no_fill = element.find(".//a:noFill", _NS) if fill else element.find(".//a:ln/a:noFill", _NS)
+    if solid is None:
+        if no_fill is not None:
+            evidence = _unknown_color("none")
+            evidence.update({"source_kind": "none", "transform_status": "supported", "source_scope": source_scope, "basis": "measured"})
+            return evidence
+        return _unknown_color("unknown")
+    direct = solid.find("a:srgbClr", _NS)
+    scheme = solid.find("a:schemeClr", _NS)
+    if direct is not None:
+        source_kind = "direct_rgb"
+        direct_rgb = (direct.get("val") or "").upper()
+        token = None
+        resolved = direct_rgb if re.fullmatch(r"[0-9A-F]{6}", direct_rgb) else None
+        color_node = direct
+    elif scheme is not None:
+        token = (scheme.get("val") or "").lower()
+        if token not in _COLOR_TOKENS:
+            token = None
+        source_kind = "theme_role" if token else "unknown"
+        direct_rgb = None
+        resolved = theme_palette.get(token) if token else None
+        color_node = scheme
+    else:
+        return _unknown_color("unknown")
+    transform_names = {"tint", "shade", "lumMod", "lumOff"}
+    unsupported = [child.tag.rsplit("}", 1)[-1] for child in list(color_node) if child.tag.rsplit("}", 1)[-1] not in transform_names]
+    values: dict[str, float | None] = {}
+    for name in transform_names:
+        node = color_node.find(f"a:{name}", _NS)
+        values[name] = _round(float(node.get("val")) / 100000.0) if node is not None and node.get("val") is not None else None
+    return {
+        "source_kind": source_kind,
+        "direct_rgb": direct_rgb,
+        "theme_token": token,
+        "resolved_rgb": resolved,
+        "tint": values["tint"],
+        "shade": values["shade"],
+        "lum_mod": values["lumMod"],
+        "lum_off": values["lumOff"],
+        "transform_status": "unsupported" if unsupported else "supported",
+        "source_scope": source_scope,
+        "basis": "measured",
+    }
 
 
 def _color_role(element: ET.Element, fill: bool = True) -> str:
@@ -160,28 +253,56 @@ def _color_role(element: ET.Element, fill: bool = True) -> str:
 
 
 def _font_family(typeface: str | None) -> str:
-    allowed = {"Arial", "Calibri", "Times New Roman", "Aptos", "Noto Sans CJK", "Microsoft JhengHei"}
-    if typeface in allowed:
-        return typeface
-    return "other_approved"
+    """Preserve exact safe typefaces; reject unsafe/private-looking names."""
+    if not isinstance(typeface, str) or not typeface:
+        return "unknown"
+    candidate = typeface.strip()
+    if candidate in _SAFE_FONT_NAMES:
+        return candidate
+    if re.fullmatch(r"[A-Za-z][A-Za-z0-9 ._-]{0,63}", candidate) and not any(token in candidate.casefold() for token in ("private", "secret", "pptx", "http", "\\", "/")):
+        return candidate
+    return "unknown"
 
 
 def _font_roles(slides: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    observations: dict[tuple[str, str, str, str], list[float]] = {}
+    observations: dict[tuple[str, str, str, str, str, str], list[float]] = {}
     for slide in slides:
         for item in slide.get("font_observations", []):
-            key = (item["role"], item["family"], item["weight"], item.get("source_scope", "not_observable_structurally"))
+            key = (item["role"], item["family"], item["weight"], item.get("style", "normal"), item.get("source_scope", "not_observable_structurally"), item.get("theme_font_role") or "none")
             observations.setdefault(key, []).append(item["size_pt"])
     result = []
-    for (role, family, weight, source_scope), sizes in sorted(observations.items()):
-        result.append({"role": role, "family": family, "size_pt": _round(median(sizes)), "weight": weight, "style": "normal", "basis": "measured", "source_scope": source_scope})
+    for (role, family, weight, style, source_scope, theme_font_role), sizes in sorted(observations.items()):
+        result.append({"role": role, "family": family, "theme_font_role": None if theme_font_role == "none" else theme_font_role, "size_pt": _round(median(sizes)), "weight": weight, "style": style, "basis": "measured", "source_scope": source_scope})
     return result
 
 
-def _theme_style_roles(package: zipfile.ZipFile, names: list[str]) -> list[dict[str, Any]]:
+def _theme_palette(package: zipfile.ZipFile, names: list[str]) -> dict[str, str]:
+    palette: dict[str, str] = {}
+    for name in sorted((item for item in names if re.fullmatch(r"ppt/theme/theme\d+\.xml", item)), key=_part_number):
+        try:
+            root = ET.fromstring(package.read(name))
+        except (KeyError, ET.ParseError):
+            continue
+        scheme = root.find(".//a:clrScheme", _NS)
+        if scheme is None:
+            continue
+        for child in list(scheme):
+            token = child.tag.rsplit("}", 1)[-1].lower()
+            if token not in _COLOR_TOKENS:
+                continue
+            value = child.find("a:srgbClr", _NS)
+            if value is None:
+                value = child.find("a:sysClr", _NS)
+            rgb = (value.get("lastClr") if value is not None and value.tag.rsplit("}", 1)[-1] == "sysClr" else value.get("val") if value is not None else None)
+            if rgb and re.fullmatch(r"[0-9A-Fa-f]{6}", rgb):
+                palette.setdefault(token, rgb.upper())
+    return palette
+
+
+def _theme_style_roles(package: zipfile.ZipFile, names: list[str], theme_palette: dict[str, str]) -> list[dict[str, Any]]:
     """Expose only controlled theme role tokens; raw theme XML stays local."""
     roles: list[dict[str, Any]] = []
-    allowed = {"dk1", "lt1", "dk2", "lt2", "accent1", "accent2", "accent3", "accent4", "accent5", "accent6", "hlink", "folHlink"}
+    allowed = _COLOR_TOKENS
     for name in sorted((item for item in names if re.fullmatch(r"ppt/theme/theme\d+\.xml", item)), key=_part_number):
         try:
             root = ET.fromstring(package.read(name))
@@ -195,7 +316,8 @@ def _theme_style_roles(package: zipfile.ZipFile, names: list[str]) -> list[dict[
             if token not in allowed:
                 continue
             role = f"theme:{token.lower()}"
-            roles.append({"role": "neutral" if token in {"dk1", "lt1", "dk2", "lt2"} else "accent", "fill_role": role, "stroke_role": role, "line_width_pt": 0.0, "basis": "measured", "source_scope": "theme"})
+            color = {"source_kind": "theme_role", "direct_rgb": None, "theme_token": token.lower(), "resolved_rgb": theme_palette.get(token.lower()), "tint": None, "shade": None, "lum_mod": None, "lum_off": None, "transform_status": "supported" if token.lower() in theme_palette else "unresolved", "source_scope": "theme", "basis": "measured"}
+            roles.append({"role": "neutral" if token.lower() in {"dk1", "lt1", "dk2", "lt2"} else "accent", "fill_role": role, "stroke_role": role, "line_width_pt": 0.0, "basis": "measured", "source_scope": "theme", "fill_color_evidence": color, "stroke_color_evidence": color})
     return roles
 
 
@@ -341,25 +463,31 @@ class ReadOnlyPrivateSourceSession:
                 width = int(size.get("cx")) if size is not None else 0
                 height = int(size.get("cy")) if size is not None else 0
                 slides = sorted((name for name in names if re.fullmatch(r"ppt/slides/slide\d+\.xml", name)), key=_part_number)
-                slide_profiles = [self._slide_profile(ET.fromstring(package.read(name)), width, height, index + 1) for index, name in enumerate(slides)]
+                theme_palette = _theme_palette(package, names)
+                slide_profiles = [self._slide_profile(ET.fromstring(package.read(name)), width, height, index + 1, theme_palette=theme_palette) for index, name in enumerate(slides)]
                 masters = sorted((name for name in names if re.fullmatch(r"ppt/slideMasters/slideMaster\d+\.xml", name)), key=_part_number)
                 layouts = sorted((name for name in names if re.fullmatch(r"ppt/slideLayouts/slideLayout\d+\.xml", name)), key=_part_number)
                 topology = self._topology(package, layouts, slides)
                 master_xml = [package.read(name) for name in masters]
                 layout_xml = [package.read(name) for name in layouts]
-                theme_roles = _theme_style_roles(package, names)
+                theme_roles = _theme_style_roles(package, names, theme_palette)
             slide_size = {"width": _round(width / 914400), "height": _round(height / 914400), "basis": "measured"}
             base: dict[str, Any] = {"alias_uri": self.alias_uri, "source_sha256": source_sha, "profile_id": _safe_id(self.alias_uri), "slide_size": slide_size, "slide_count": len(slides), "render_count": 0}
             if authority == "shell":
-                master_profiles = [self._slide_profile(ET.fromstring(value), width, height, index + 1, source_scope="slide_master") for index, value in enumerate(master_xml)]
-                layout_profiles = [self._slide_profile(ET.fromstring(value), width, height, index + 1, source_scope="slide_layout") for index, value in enumerate(layout_xml)]
+                master_profiles = [self._slide_profile(ET.fromstring(value), width, height, index + 1, source_scope="slide_master", theme_palette=theme_palette) for index, value in enumerate(master_xml)]
+                layout_profiles = [self._slide_profile(ET.fromstring(value), width, height, index + 1, source_scope="slide_layout", theme_palette=theme_palette) for index, value in enumerate(layout_xml)]
                 shell_profiles = [*master_profiles, *layout_profiles]
                 typography = _font_roles(shell_profiles)
-                profile = {**base, "master_count": len(masters), "layout_count": len(layouts), "measurement_basis": {"slide_size": "measured", "topology": "measured", "regions": "measured" if shell_profiles else "not_observable_structurally", "typography": "measured" if typography else "not_observable_structurally", "styles": "measured" if shell_profiles else "not_observable_structurally", "primitives": "measured" if shell_profiles else "not_observable_structurally", "placeholders": "measured" if any(profile.get("placeholders") for profile in shell_profiles) else "not_observable_structurally"}, "layout_master_topology": topology["layout_master"], "slide_layout_topology": topology["slide_layout"], "shell_regions": self._shell_regions(shell_profiles, width, height), "safe_content_bounds": self._safe_bounds(shell_profiles), "typography_roles": typography, "style_roles": [*self._style_roles(shell_profiles), *theme_roles], "shell_primitives": self._shell_primitives(shell_profiles), "placeholder_measurements": [placeholder for profile in shell_profiles for placeholder in profile.get("placeholders", [])]}
+                profile = {**base, "master_count": len(masters), "layout_count": len(layouts), "measurement_basis": {"slide_size": "measured", "topology": "measured", "regions": "measured" if shell_profiles else "not_observable_structurally", "typography": "measured" if typography else "not_observable_structurally", "styles": "measured" if shell_profiles else "not_observable_structurally", "primitives": "measured" if shell_profiles else "not_observable_structurally", "placeholders": "measured" if any(profile.get("placeholders") for profile in shell_profiles) else "not_observable_structurally"}, "layout_master_topology": topology["layout_master"], "slide_layout_topology": topology["slide_layout"], "shell_regions": self._shell_regions(shell_profiles, width, height), "safe_content_bounds": self._safe_bounds(shell_profiles), "typography_roles": typography, "style_roles": [*self._style_roles(shell_profiles), *theme_roles], "shell_primitives": self._shell_primitives(shell_profiles), "placeholder_measurements": [placeholder for profile in shell_profiles for placeholder in profile.get("placeholders", [])], "theme_palette": [{"theme_token": key, "resolved_rgb": value, "basis": "measured", "source_scope": "theme"} for key, value in sorted(theme_palette.items())]}
             else:
                 # Font observations are local-only profiler input and never cross
                 # the sanitizer boundary in the body descriptor.
-                body_measurements = [{key: value for key, value in slide.items() if key not in {"font_observations", "placeholders"}} for slide in slide_profiles]
+                body_measurements = []
+                for slide in slide_profiles:
+                    measurement = {key: value for key, value in slide.items() if key not in {"font_observations", "placeholders", "source_container_id"}}
+                    measurement["objects"] = [{key: value for key, value in obj.items() if key not in {"source_container_id", "placeholder_type"}} for obj in measurement.get("objects", [])]
+                    measurement["typography_observations"] = list(slide.get("typography_observations", []))
+                    body_measurements.append(measurement)
                 profile = {**base, "candidate_families": [self._classify_slide(slide) for slide in slide_profiles], "body_measurements": body_measurements}
             self._private_root.mkdir(parents=True, exist_ok=True)
             (self._private_root / f"{_safe_id(self.alias_uri).lower()}-raw.json").write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -388,7 +516,7 @@ class ReadOnlyPrivateSourceSession:
         return {"layout_master": layout_master, "slide_layout": slide_layout}
 
     @staticmethod
-    def _slide_profile(slide: ET.Element, width: int, height: int, ordinal: int, source_scope: str = "slide_recurrence_derived") -> dict[str, Any]:
+    def _slide_profile(slide: ET.Element, width: int, height: int, ordinal: int, source_scope: str = "slide_recurrence_derived", theme_palette: dict[str, str] | None = None) -> dict[str, Any]:
         shapes: list[dict[str, Any]] = []
         connectors: list[dict[str, Any]] = []
         groups: list[dict[str, Any]] = []
@@ -404,7 +532,7 @@ class ReadOnlyPrivateSourceSession:
             if off is None or ext is None:
                 return None
             ch_off, ch_ext = xfrm.find("a:chOff", _NS), xfrm.find("a:chExt", _NS)
-            return {"off": [float(off.get("x", 0)), float(off.get("y", 0))], "ext": [float(ext.get("cx", 0)), float(ext.get("cy", 0))], "ch_off": [float(ch_off.get("x", 0)) if ch_off is not None else 0.0, float(ch_off.get("y", 0)) if ch_off is not None else 0.0], "ch_ext": [float(ch_ext.get("cx", 0)) if ch_ext is not None else float(ext.get("cx", 0)), float(ch_ext.get("cy", 0)) if ch_ext is not None else float(ext.get("cy", 0))], "flip_h": xfrm.get("flipH") in {"1", "true"}, "flip_v": xfrm.get("flipV") in {"1", "true"}}
+            return {"off": [float(off.get("x", 0)), float(off.get("y", 0))], "ext": [float(ext.get("cx", 0)), float(ext.get("cy", 0))], "ch_off": [float(ch_off.get("x", 0)) if ch_off is not None else 0.0, float(ch_off.get("y", 0)) if ch_off is not None else 0.0], "ch_ext": [float(ch_ext.get("cx", 0)) if ch_ext is not None else float(ext.get("cx", 0)), float(ch_ext.get("cy", 0)) if ch_ext is not None else float(ext.get("cy", 0))], "flip_h": xfrm.get("flipH") in {"1", "true"}, "flip_v": xfrm.get("flipV") in {"1", "true"}, "rot": float(xfrm.get("rot", 0) or 0)}
 
         def walk(element: ET.Element, group_id: str | None = None, parent_transform: dict[str, Any] | None = None) -> None:
             nonlocal counter
@@ -413,8 +541,12 @@ class ReadOnlyPrivateSourceSession:
                 counter += 1; gid = f"G{counter:03d}"; children = list(element)
                 member_count = sum(1 for child in children if child.tag.rsplit("}", 1)[-1] not in {"nvGrpSpPr", "grpSpPr"})
                 group_transform = transform_of(element)
-                absolute_group = group_transform if parent_transform is None else ({"off": list(_compose_transform(parent_transform, group_transform)[0:2]), "ext": list(_compose_transform(parent_transform, group_transform)[2:4]), "ch_off": [0.0, 0.0], "ch_ext": list(_compose_transform(parent_transform, group_transform)[2:4]), "flip_h": False, "flip_v": False} if group_transform else None)
-                groups.append({"group_id": gid, "member_count": max(1, member_count), "basis": "measured", "source_scope": source_scope})
+                composed = _compose_transform(parent_transform, group_transform) if parent_transform is not None and group_transform else None
+                absolute_group = group_transform if parent_transform is None else ({"off": list(composed[0:2]), "ext": list(composed[2:4]), "ch_off": [0.0, 0.0], "ch_ext": list(composed[2:4]), "flip_h": False, "flip_v": False, "rot": group_transform.get("rot", 0) + parent_transform.get("rot", 0)} if group_transform and composed else None)
+                rotation = _rotation_state(group_transform)
+                if parent_transform and parent_transform.get("rot", 0):
+                    rotation = {"rotation_status": "unsupported", "rotation_deg": _round((group_transform.get("rot", 0) + parent_transform.get("rot", 0)) / 600000.0), "geometry_eligible": False}
+                groups.append({"group_id": gid, "member_count": max(1, member_count), "basis": "measured" if rotation["geometry_eligible"] else "not_observable_structurally", "source_scope": source_scope, **rotation})
                 for child in children: walk(child, gid, absolute_group)
                 return
             if tag not in {"sp", "pic", "graphicFrame", "cxnSp"}:
@@ -423,6 +555,9 @@ class ReadOnlyPrivateSourceSession:
                 return
             raw_transform = transform_of(element)
             if raw_transform is None or not width or not height: return
+            rotation = _rotation_state(raw_transform)
+            if parent_transform and parent_transform.get("rot", 0):
+                rotation = {"rotation_status": "unsupported", "rotation_deg": _round((raw_transform.get("rot", 0) + parent_transform.get("rot", 0)) / 600000.0), "geometry_eligible": False}
             if parent_transform is not None:
                 abs_x, abs_y, abs_w, abs_h = _compose_transform(parent_transform, raw_transform)
             else:
@@ -441,100 +576,141 @@ class ReadOnlyPrivateSourceSession:
                 value = prst.get("prst") if prst is not None else "rect"
                 primitive = "round_rect" if value in {"roundRect", "round1Rect"} else "ellipse" if value in {"ellipse", "arc"} else "rect"
                 object_class = "native_shape"
-            geom = _geometry(x, y, w, h)
+            geom = _geometry(x, y, w, h, "measured" if rotation["geometry_eligible"] else "not_observable_structurally")
             placeholder = element.find(".//p:ph", _NS)
+            placeholder_type_value: str | None = None
             if placeholder is not None:
                 placeholder_type = (placeholder.get("type") or "obj").lower()
                 allowed_placeholder_types = {"title", "ctrtitle", "subTitle", "body", "obj", "dt", "ftr", "sldNum", "hdr"}
                 normalized_type = "subtitle" if placeholder_type == "subtitle" else placeholder_type
                 if normalized_type not in {"title", "ctrtitle", "subtitle", "body", "obj", "dt", "ftr", "sldnum", "hdr"}:
                     normalized_type = "unknown"
-                placeholders.append({"placeholder_id": f"PH{len(placeholders)+1:03d}", "placeholder_type": normalized_type, "geometry": geom, "basis": "measured", "source_scope": source_scope})
-            style = _style(_color_role(element, True), _color_role(element, False), float(element.find(".//a:ln", _NS).get("w", 0) or 0) / 12700 if element.find(".//a:ln", _NS) is not None else 0.0)
-            shapes.append({"object_id": oid, "object_class": object_class, "primitive_type": primitive, "geometry": geom, "group_id": group_id, "style": style, "basis": "measured", "source_scope": source_scope})
+                placeholder_type_value = normalized_type
+                placeholders.append({"placeholder_id": f"PH{len(placeholders)+1:03d}", "placeholder_type": normalized_type, "geometry": geom, "basis": "measured" if rotation["geometry_eligible"] else "not_observable_structurally", "source_scope": source_scope, "source_container_id": f"{source_scope[6:7].upper()}{ordinal:03d}" if source_scope in {"slide_master", "slide_layout"} else None})
+            style = _style(_color_role(element, True), _color_role(element, False), float(element.find(".//a:ln", _NS).get("w", 0) or 0) / 12700 if element.find(".//a:ln", _NS) is not None else 0.0, "measured" if rotation["geometry_eligible"] else "not_observable_structurally", fill_color=_color_evidence(element, True, theme_palette, source_scope=source_scope), stroke_color=_color_evidence(element, False, theme_palette, source_scope=source_scope), source_scope=source_scope)
+            shapes.append({"object_id": oid, "object_class": object_class, "primitive_type": primitive, "geometry": geom, "group_id": group_id, "style": style, "basis": "measured" if rotation["geometry_eligible"] else "not_observable_structurally", "source_scope": source_scope, "source_container_id": f"{source_scope[6:7].upper()}{ordinal:03d}" if source_scope in {"slide_master", "slide_layout"} else None, "placeholder_type": placeholder_type_value, **rotation})
             if object_class == "connector":
                 orientation = "horizontal" if abs(w) >= abs(h) * 2 else "vertical" if abs(h) >= abs(w) * 2 else "diagonal"
                 head = element.find(".//a:headEnd", _NS); tail = element.find(".//a:tailEnd", _NS)
                 semantics = _connector_semantics(x, y, w, h, flip_h=raw_transform["flip_h"], flip_v=raw_transform["flip_v"], head_arrow=(head.get("type", "triangle") if head is not None else "none"), tail_arrow=(tail.get("type", "triangle") if tail is not None else "none"))
-                connectors.append({"object_id": oid, "orientation": orientation, **semantics, "flip_h": raw_transform["flip_h"], "flip_v": raw_transform["flip_v"], "basis": "measured", "source_scope": source_scope})
+                connectors.append({"object_id": oid, "orientation": orientation, **semantics, "flip_h": raw_transform["flip_h"], "flip_v": raw_transform["flip_v"], "basis": "measured" if rotation["geometry_eligible"] else "not_observable_structurally", "source_scope": source_scope, **rotation})
             if object_class == "text":
                 for run in element.findall(".//a:r", _NS):
-                    props = run.find("a:rPr", _NS) or run.find("a:defRPr", _NS)
+                    props = run.find("a:rPr", _NS)
+                    if props is None:
+                        props = run.find("a:defRPr", _NS)
                     if props is None: continue
                     size = float(props.get("sz", 0) or 0) / 100
                     if size <= 0: continue
                     family = _font_family(next((node.get("typeface") for node in props.findall(".//a:latin", _NS) if node.get("typeface")), None))
-                    role = "title" if y < 0.25 else "footer" if y > 0.85 else "body"
-                    fonts.append({"role": role, "family": family, "size_pt": size, "weight": "bold" if props.get("b") in {"1", "true"} else "regular", "source_scope": source_scope})
+                    role = "title" if y < 0.20 else "unknown" if y > 0.88 else "body"
+                    role_confidence = "structurally_supported" if y < 0.20 else "unknown" if y > 0.88 else "provisional"
+                    fonts.append({"observation_id": f"T{len(fonts)+1:03d}", "role": role, "role_confidence": role_confidence, "family": family, "theme_font_role": None, "size_pt": size, "weight": "bold" if props.get("b") in {"1", "true"} else "regular", "style": "italic" if props.get("i") in {"1", "true"} else "normal", "source_scope": source_scope, "basis": "measured", "supporting_object_id": oid})
         for child in list(slide): walk(child)
-        text_shapes = [item for item in shapes if item["object_class"] == "text"]
+        eligible_shapes = [item for item in shapes if item.get("geometry_eligible", True)]
+        text_shapes = [item for item in eligible_shapes if item["object_class"] == "text"]
         text_area = _union_area(text_shapes)
-        figure_shapes = [item for item in shapes if item["object_class"] in {"picture", "table", "chart", "native_shape"}]
+        figure_shapes = [item for item in eligible_shapes if item["object_class"] in {"picture", "table", "chart", "native_shape"}]
         figure_area = _union_area(figure_shapes)
-        total_area = _union_area(shapes)
-        pictures = [item for item in shapes if item["object_class"] == "picture"]
+        total_area = _union_area(eligible_shapes)
+        pictures = [item for item in eligible_shapes if item["object_class"] == "picture"]
         same_size_pairs = [(a, b) for index, a in enumerate(pictures) for b in pictures[index + 1:] if abs(a["geometry"]["w"] - b["geometry"]["w"]) <= 0.03 and abs(a["geometry"]["h"] - b["geometry"]["h"]) <= 0.03]
-        panels = [{"panel_id": f"P{index:03d}", "geometry": item["geometry"], "basis": "derived"} for index, item in enumerate(pictures, 1) if same_size_pairs]
-        matrix_rows = len({round(item["geometry"]["y"], 2) for item in pictures}) if len(pictures) >= 4 else None
-        matrix_columns = len({round(item["geometry"]["x"], 2) for item in pictures}) if len(pictures) >= 4 else None
+        aligned_rows = sorted({round(item["geometry"]["y"], 2) for item in pictures})
+        aligned_cols = sorted({round(item["geometry"]["x"], 2) for item in pictures})
+        grid_signature = len(pictures) >= 4 and len(aligned_rows) >= 2 and len(aligned_cols) >= 2 and len(aligned_rows) * len(aligned_cols) == len(pictures)
+        panels = [{"panel_id": f"P{index:03d}", "geometry": item["geometry"], "basis": "derived"} for index, item in enumerate(pictures, 1) if grid_signature or same_size_pairs]
+        matrix_rows = len(aligned_rows) if grid_signature else None
+        matrix_columns = len(aligned_cols) if grid_signature else None
         caption_ids = [text["object_id"] for text in text_shapes if any(text["geometry"]["y"] >= fig["geometry"]["y"] + fig["geometry"]["h"] and text["geometry"]["y"] - (fig["geometry"]["y"] + fig["geometry"]["h"]) <= 0.06 for fig in figure_shapes)]
-        relation = "adjacent" if pictures and any(item["object_class"] in {"native_shape", "group"} for item in shapes) else None
+        vector_regions = [item for item in eligible_shapes if item["object_class"] in {"native_shape", "table", "chart"}]
+        relation = "adjacent" if pictures and vector_regions else "separate" if pictures and not vector_regions else None
         metric_ids = [item["object_id"] for item in figure_shapes]
-        metrics = {"text_area_ratio": _metric_observation(text_area, basis="derived", evidence_ids=[item["object_id"] for item in text_shapes]), "figure_area_ratio": _metric_observation(figure_area, basis="derived", evidence_ids=metric_ids), "dominant_figure_ratio": _metric_observation(_round(max((item["geometry"]["w"] * item["geometry"]["h"] for item in figure_shapes), default=0.0) / figure_area) if figure_area else None, basis="derived" if figure_area else "not_observable_structurally", evidence_ids=metric_ids), "figure_text_ratio": _metric_observation(_round(figure_area / text_area) if text_area else None, basis="derived" if text_area else "not_observable_structurally", evidence_ids=metric_ids if text_area else []), "annotation_density": _metric_observation(_round((len(connectors) + len(text_shapes)) / max(1, len(figure_shapes))), basis="derived", evidence_ids=[item["object_id"] for item in connectors] + [item["object_id"] for item in text_shapes]), "whitespace_fraction": _metric_observation(_round(max(0.0, 1.0 - total_area)), basis="derived", evidence_ids=[item["object_id"] for item in shapes]), "comparison_symmetry": _metric_observation(_round(1.0 - abs(same_size_pairs[0][0]["geometry"]["w"] - same_size_pairs[0][1]["geometry"]["w"])) if same_size_pairs else None, basis="derived" if same_size_pairs else "not_observable_structurally", evidence_ids=[item["object_id"] for pair in same_size_pairs[:1] for item in pair]), "matrix_rows": _metric_observation(matrix_rows, basis="derived" if matrix_rows else "not_observable_structurally", evidence_ids=[item["object_id"] for item in pictures] if matrix_rows else []), "matrix_columns": _metric_observation(matrix_columns, basis="derived" if matrix_columns else "not_observable_structurally", evidence_ids=[item["object_id"] for item in pictures] if matrix_columns else []), "panel_count": _metric_observation(len(panels) if panels else None, basis="derived" if panels else "not_observable_structurally", evidence_ids=[item["panel_id"] for item in panels]), "caption_candidate_count": _metric_observation(len(caption_ids) if caption_ids else None, basis="derived" if caption_ids else "not_observable_structurally", evidence_ids=caption_ids), "callout_candidate_count": _metric_observation(sum(1 for item in shapes if item["style"]["stroke_role"] == "emphasis") or None, basis="derived" if any(item["style"]["stroke_role"] == "emphasis" for item in shapes) else "not_observable_structurally", evidence_ids=[item["object_id"] for item in shapes if item["style"]["stroke_role"] == "emphasis"]), "photo_schematic_relation": _metric_observation(relation, basis="derived" if relation else "not_observable_structurally", evidence_ids=metric_ids if relation else [])}
-        return {"slide_id": f"SL{ordinal:03d}", "measurement_basis": "measured", "objects": shapes, "connectors": connectors, "groups": groups, "panels": panels, "metrics": metrics, "style_roles": [item["style"] for item in shapes], "font_observations": fonts, "placeholders": placeholders}
+        metrics = {"text_area_ratio": _metric_observation(text_area, basis="derived", evidence_ids=[item["object_id"] for item in text_shapes]), "figure_area_ratio": _metric_observation(figure_area, basis="derived", evidence_ids=metric_ids), "dominant_figure_ratio": _metric_observation(_round(max((item["geometry"]["w"] * item["geometry"]["h"] for item in figure_shapes), default=0.0) / figure_area) if figure_area else None, basis="derived" if figure_area else "not_observable_structurally", evidence_ids=metric_ids), "figure_text_ratio": _metric_observation(_round(figure_area / text_area) if text_area else None, basis="derived" if text_area else "not_observable_structurally", evidence_ids=metric_ids if text_area else []), "annotation_density": _metric_observation(_round((len(connectors) + len(text_shapes)) / max(1, len(figure_shapes))), basis="derived", evidence_ids=[item["object_id"] for item in connectors] + [item["object_id"] for item in text_shapes]), "whitespace_fraction": _metric_observation(_round(max(0.0, 1.0 - total_area)), basis="derived", evidence_ids=[item["object_id"] for item in eligible_shapes]), "comparison_symmetry": _metric_observation(_round(1.0 - abs(same_size_pairs[0][0]["geometry"]["w"] - same_size_pairs[0][1]["geometry"]["w"])) if same_size_pairs else None, basis="derived" if same_size_pairs else "not_observable_structurally", evidence_ids=[item["object_id"] for pair in same_size_pairs[:1] for item in pair]), "matrix_rows": _metric_observation(matrix_rows, basis="derived" if matrix_rows else "not_observable_structurally", evidence_ids=[item["object_id"] for item in pictures] if matrix_rows else []), "matrix_columns": _metric_observation(matrix_columns, basis="derived" if matrix_columns else "not_observable_structurally", evidence_ids=[item["object_id"] for item in pictures] if matrix_columns else []), "panel_count": _metric_observation(len(panels) if panels else None, basis="derived" if panels else "not_observable_structurally", evidence_ids=[item["panel_id"] for item in panels]), "caption_candidate_count": _metric_observation(len(caption_ids) if caption_ids else None, basis="derived" if caption_ids else "not_observable_structurally", evidence_ids=caption_ids), "callout_candidate_count": _metric_observation(sum(1 for item in eligible_shapes if item["style"]["stroke_role"] == "emphasis") or None, basis="derived" if any(item["style"]["stroke_role"] == "emphasis" for item in eligible_shapes) else "not_observable_structurally", evidence_ids=[item["object_id"] for item in eligible_shapes if item["style"]["stroke_role"] == "emphasis"]), "photo_schematic_relation": _metric_observation(relation, basis="derived" if relation else "not_observable_structurally", evidence_ids=metric_ids if relation else [])}
+        source_container_id = f"{source_scope[6:7].upper()}{ordinal:03d}" if source_scope in {"slide_master", "slide_layout"} else None
+        return {"slide_id": f"SL{ordinal:03d}", "source_container_id": source_container_id, "measurement_basis": "measured", "objects": shapes, "connectors": connectors, "groups": groups, "panels": panels, "metrics": metrics, "style_roles": [item["style"] for item in shapes], "font_observations": fonts, "typography_observations": fonts, "placeholders": placeholders}
 
     @staticmethod
     def _safe_bounds(slides: list[dict[str, Any]]) -> dict[str, Any]:
         # Master/layout geometry identifies exclusions, not a guaranteed content
         # rectangle.  Do not promote a full-slide fallback to measured evidence.
-        exclusions = [item["geometry"] for slide in slides for item in slide.get("objects", []) if item["object_class"] in {"text", "native_shape"} and item["geometry"]["y"] < 0.2]
-        lower = [item["geometry"] for slide in slides for item in slide.get("objects", []) if item["object_class"] in {"text", "native_shape"} and item["geometry"]["y"] + item["geometry"]["h"] > 0.85]
-        if not exclusions and not lower:
+        content = [item["geometry"] for slide in slides for item in slide.get("objects", []) if item.get("placeholder_type") in {"body", "obj"} and item.get("geometry_eligible", True)]
+        if not content:
             return {"value": None, "basis": "not_observable_structurally", "source_scope": "not_observable_structurally", "evidence_ids": []}
-        top = max((item["y"] + item["h"] for item in exclusions), default=0.0)
-        bottom = min((item["y"] for item in lower), default=1.0)
-        if bottom - top < 0.15:
+        left = max(item["x"] for item in content)
+        top = max(item["y"] for item in content)
+        right = min(item["x"] + item["w"] for item in content)
+        bottom = min(item["y"] + item["h"] for item in content)
+        if right <= left or bottom <= top:
             return {"value": None, "basis": "not_observable_structurally", "source_scope": "not_observable_structurally", "evidence_ids": []}
-        scopes = {item.get("source_scope") for slide in slides for item in slide.get("objects", []) if item.get("geometry") in exclusions and item.get("source_scope") in {"slide_master", "slide_layout"}}
+        scopes = {item.get("source_scope") for slide in slides for item in slide.get("objects", []) if item.get("placeholder_type") in {"body", "obj"} and item.get("source_scope") in {"slide_master", "slide_layout"}}
         source_scope = next(iter(scopes)) if len(scopes) == 1 else "not_observable_structurally"
         if source_scope == "not_observable_structurally":
             return {"value": None, "basis": "not_observable_structurally", "source_scope": source_scope, "evidence_ids": []}
-        return {"value": _geometry(0.0, top, 1.0, bottom - top, "derived"), "basis": "derived", "source_scope": source_scope, "evidence_ids": ["shell_exclusions"]}
+        return {"value": _geometry(left, top, right - left, bottom - top, "derived"), "basis": "derived", "source_scope": source_scope, "evidence_ids": ["content_placeholders"]}
 
     @staticmethod
     def _shell_regions(slides: list[dict[str, Any]], width: int, height: int) -> list[dict[str, Any]]:
         result: list[dict[str, Any]] = []
-        for role, predicate in (("title", lambda g: g["y"] < 0.25 and g["h"] < 0.2), ("header", lambda g: g["y"] < 0.12), ("footer", lambda g: g["y"] + g["h"] > 0.85), ("page_number", lambda g: g["y"] + g["h"] > 0.9 and g["x"] > 0.75), ("navigation", lambda g: g["y"] + g["h"] > 0.88)):
-            candidates = [item["geometry"] for slide in slides for item in slide.get("objects", []) if item["object_class"] in {"text", "native_shape", "connector"} and predicate(item["geometry"])]
-            if not candidates: continue
-            scope = next((item.get("source_scope") for slide in slides for item in slide.get("objects", []) if item.get("geometry") in candidates), "not_observable_structurally")
-            result.append({"region_id": f"R{len(result)+1:03d}", "role": role, "geometry": _geometry(median([item["x"] for item in candidates]), median([item["y"] for item in candidates]), median([item["w"] for item in candidates]), median([item["h"] for item in candidates]), "measured"), "basis": "measured", "source_scope": scope, "recurrence_count": len(candidates)})
+        placeholder_roles = {"title": "title", "ctrtitle": "title", "subtitle": "subtitle", "ftr": "footer", "sldnum": "page_number", "hdr": "header", "dt": "navigation"}
+        by_role: dict[str, list[dict[str, Any]]] = {}
+        for slide in slides:
+            for item in slide.get("objects", []):
+                role = placeholder_roles.get(item.get("placeholder_type", ""))
+                if role:
+                    by_role.setdefault(role, []).append(item)
+        if not by_role:
+            # Geometry-only fallback is mutually exclusive and explicitly marked.
+            for slide in slides:
+                for item in slide.get("objects", []):
+                    g = item["geometry"]
+                    role = "title" if g["y"] < 0.25 and g["h"] < 0.2 else "footer" if g["y"] + g["h"] > 0.85 else None
+                    if role:
+                        by_role.setdefault(role, []).append(item)
+        eligible = {slide.get("source_container_id") for slide in slides if slide.get("source_container_id")}
+        eligible.update(item.get("source_container_id") for slide in slides for item in slide.get("objects", []) if item.get("source_container_id"))
+        for role, items in sorted(by_role.items()):
+            containers = {item.get("source_container_id") for item in items if item.get("source_container_id")}
+            scope = next(iter({item.get("source_scope") for item in items}), "not_observable_structurally")
+            evidence = "placeholder_semantic" if any(item.get("placeholder_type") for item in items) else "geometry_fallback"
+            result.append({"region_id": f"R{len(result)+1:03d}", "role": role, "geometry": _geometry(median([item["geometry"]["x"] for item in items]), median([item["geometry"]["y"] for item in items]), median([item["geometry"]["w"] for item in items]), median([item["geometry"]["h"] for item in items]), "measured"), "basis": "measured", "source_scope": scope, "occurrence_count": len(items), "source_container_count": len(containers), "eligible_container_count": len(eligible), "coverage_ratio": _round(len(containers) / len(eligible)) if eligible else 0.0, "supporting_source_ids": sorted(containers), "role_evidence": evidence})
         return result
 
     @staticmethod
     def _style_roles(slides: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        roles = {(item["style"]["fill_role"], item["style"]["stroke_role"], item["style"]["line_width_pt"], item.get("source_scope", "not_observable_structurally")) for slide in slides for item in slide.get("objects", [])}
-        return [{"role": "emphasis" if fill == "emphasis" or stroke == "emphasis" else "neutral", "fill_role": fill, "stroke_role": stroke, "line_width_pt": width, "basis": "measured", "source_scope": source_scope} for fill, stroke, width, source_scope in sorted(roles)]
+        roles = {(json.dumps(item["style"], sort_keys=True), item.get("source_scope", "not_observable_structurally")) for slide in slides for item in slide.get("objects", [])}
+        result = []
+        for encoded, source_scope in sorted(roles):
+            style = json.loads(encoded)
+            result.append({"role": "emphasis" if style["fill_role"] == "emphasis" or style["stroke_role"] == "emphasis" else "neutral", **style, "source_scope": source_scope})
+        return result
 
     @staticmethod
     def _shell_primitives(slides: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        grouped: dict[tuple[str, float, float, float, float, str], int] = {}
+        grouped: dict[tuple[str, float, float, float, float, str], dict[str, Any]] = {}
         for slide in slides:
             for item in slide.get("objects", []):
                 if item["object_class"] in {"picture", "connector"}:
                     continue
-                g = item["geometry"]; key = (item["object_class"], round(g["x"], 3), round(g["y"], 3), round(g["w"], 3), round(g["h"], 3), item.get("source_scope", "not_observable_structurally")); grouped[key] = grouped.get(key, 0) + 1
+                if not item.get("geometry_eligible", True):
+                    continue
+                g = item["geometry"]; key = (item["object_class"], round(g["x"], 3), round(g["y"], 3), round(g["w"], 3), round(g["h"], 3), item.get("source_scope", "not_observable_structurally")); grouped.setdefault(key, {"occurrences": 0, "containers": set()}); grouped[key]["occurrences"] += 1; grouped[key]["containers"].add(item.get("source_container_id"))
         result = []
-        for idx, ((kind, x, y, w, h, source_scope), count) in enumerate(sorted(grouped.items()), 1):
+        for idx, ((kind, x, y, w, h, source_scope), info) in enumerate(sorted(grouped.items()), 1):
+            count, containers = info["occurrences"], {item for item in info["containers"] if item}
             primitive_class = {"text": "text_region", "line": "connector"}.get(kind, kind if kind in {"picture", "table_or_chart", "native_shape", "connector", "group"} else "unknown")
-            if count < 2 and kind not in {"text", "native_shape"}:
+            if count < 1:
                 continue
-            result.append({"primitive_id": f"S{idx:03d}", "primitive_class": primitive_class, "geometry": _geometry(x, y, w, h, "measured"), "recurrence_count": count, "basis": "measured", "source_scope": source_scope})
+            result.append({"primitive_id": f"S{idx:03d}", "primitive_class": primitive_class, "geometry": _geometry(x, y, w, h, "measured"), "occurrence_count": count, "source_container_count": len(containers), "eligible_container_count": len({slide.get("source_container_id") for slide in slides if slide.get("source_container_id")}), "coverage_ratio": _round(len(containers) / max(1, len({slide.get("source_container_id") for slide in slides if slide.get("source_container_id")}))), "supporting_source_ids": sorted(containers), "basis": "measured", "source_scope": source_scope, "role_evidence": "source_container_recurrence"})
         return result
 
     @staticmethod
     def _classify_slide(slide: dict[str, Any]) -> dict[str, Any]:
         return _classify_structural_family(objects=slide["objects"], connectors=slide["connectors"], metrics=slide["metrics"], groups=slide["groups"])
+
+
+def _shell_regions(slides: list[dict[str, Any]], width: int, height: int) -> list[dict[str, Any]]:
+    """Module-level resolver hook used by structural QA and unit tests."""
+    return ReadOnlyPrivateSourceSession._shell_regions(slides, width, height)
 
 
 def _schema_registry() -> SchemaRegistry:
@@ -556,8 +732,38 @@ def _sanitize_geometry(value: dict[str, Any]) -> dict[str, Any]:
     return _geometry(value["x"], value["y"], value["w"], value["h"], value["basis"])
 
 
+def _sanitize_color_evidence(value: dict[str, Any]) -> dict[str, Any]:
+    required = {"source_kind", "direct_rgb", "theme_token", "resolved_rgb", "tint", "shade", "lum_mod", "lum_off", "transform_status", "source_scope", "basis"}
+    if set(value) != required or value["source_kind"] not in {"none", "direct_rgb", "theme_role", "unknown"} or value["transform_status"] not in {"supported", "unsupported", "unresolved"} or value["source_scope"] not in _SOURCE_SCOPES or value["basis"] not in _BASIS:
+        raise Checkpoint2PolicyViolation("invalid color reconstruction evidence")
+    for key in ("direct_rgb", "resolved_rgb"):
+        if value[key] is not None and (not isinstance(value[key], str) or not re.fullmatch(r"[0-9A-Fa-f]{6}", value[key])):
+            raise Checkpoint2PolicyViolation("invalid sanitized RGB")
+    if value["theme_token"] is not None and value["theme_token"] not in _COLOR_TOKENS:
+        raise Checkpoint2PolicyViolation("invalid theme token")
+    return {key: value[key] for key in sorted(required)}
+
+
+def _sanitize_font_observation(value: dict[str, Any], *, shell: bool = False) -> dict[str, Any]:
+    required = {"role", "family", "theme_font_role", "size_pt", "weight", "style", "basis", "source_scope"}
+    if not shell:
+        required |= {"observation_id", "role_confidence", "supporting_object_id"}
+    if set(value) != required or value["source_scope"] not in _SOURCE_SCOPES or value["basis"] not in _BASIS or value["weight"] not in {"regular", "bold", "unknown"} or value["style"] not in {"normal", "italic", "unknown"}:
+        raise Checkpoint2PolicyViolation("invalid typography observation")
+    family = value["family"]
+    if not isinstance(family, str) or family == "other_approved" or not re.fullmatch(r"[A-Za-z][A-Za-z0-9 ._-]{0,63}|unknown", family):
+        raise Checkpoint2PolicyViolation("unsafe font family")
+    if value["theme_font_role"] is not None and value["theme_font_role"] not in {"major", "minor"}:
+        raise Checkpoint2PolicyViolation("invalid theme font role")
+    if not isinstance(value["size_pt"], (int, float)) or value["size_pt"] <= 0 or value["size_pt"] > 200:
+        raise Checkpoint2PolicyViolation("invalid font size")
+    if not shell and (value["role_confidence"] not in {"structurally_supported", "provisional", "unknown"} or not re.fullmatch(r"O[0-9]{3,}", str(value["supporting_object_id"])) or not re.fullmatch(r"T[0-9]{3,}", str(value["observation_id"]))):
+        raise Checkpoint2PolicyViolation("invalid body typography evidence")
+    return {key: value[key] for key in sorted(required)}
+
+
 def _sanitize_shell_full(raw: dict[str, Any]) -> dict[str, Any]:
-    allowed = {"alias_uri", "source_sha256", "profile_id", "slide_size", "master_count", "layout_count", "shell_primitives", "slide_count", "measurement_basis", "layout_master_topology", "slide_layout_topology", "shell_regions", "safe_content_bounds", "typography_roles", "style_roles", "placeholder_measurements"}
+    allowed = {"alias_uri", "source_sha256", "profile_id", "slide_size", "master_count", "layout_count", "shell_primitives", "slide_count", "measurement_basis", "layout_master_topology", "slide_layout_topology", "shell_regions", "safe_content_bounds", "typography_roles", "style_roles", "placeholder_measurements", "theme_palette"}
     if set(raw) != allowed: raise Checkpoint2PolicyViolation("unknown or incomplete shell descriptor fields")
     if raw["alias_uri"] not in SHELL_ALIASES or not isinstance(raw["source_sha256"], str) or not re.fullmatch(r"[0-9a-f]{64}", raw["source_sha256"]): raise Checkpoint2PolicyViolation("invalid shell identity")
     if not isinstance(raw["profile_id"], str) or not re.fullmatch(r"P3-[A-Z0-9-]+", raw["profile_id"]): raise Checkpoint2PolicyViolation("invalid shell profile ID")
@@ -570,7 +776,7 @@ def _sanitize_shell_full(raw: dict[str, Any]) -> dict[str, Any]:
     basis = raw["measurement_basis"]
     basis_keys = {"slide_size", "topology", "regions", "typography", "styles", "primitives", "placeholders"}
     if set(basis) != basis_keys or any(value not in _BASIS for value in basis.values()): raise Checkpoint2PolicyViolation("invalid shell measurement basis")
-    out = {"alias_uri": raw["alias_uri"], "source_sha256": raw["source_sha256"], "profile_id": raw["profile_id"], "slide_size": {"width": float(size["width"]), "height": float(size["height"]), "basis": size["basis"]}, "master_count": int(raw["master_count"]), "layout_count": int(raw["layout_count"]), "slide_count": int(raw["slide_count"]), "measurement_basis": {key: basis[key] for key in sorted(basis_keys)}, "layout_master_topology": [], "slide_layout_topology": [], "shell_regions": [], "safe_content_bounds": {"value": safe_value, "basis": safe["basis"], "source_scope": safe["source_scope"], "evidence_ids": list(safe["evidence_ids"])}, "typography_roles": [], "style_roles": [], "shell_primitives": [], "placeholder_measurements": []}
+    out = {"alias_uri": raw["alias_uri"], "source_sha256": raw["source_sha256"], "profile_id": raw["profile_id"], "slide_size": {"width": float(size["width"]), "height": float(size["height"]), "basis": size["basis"]}, "master_count": int(raw["master_count"]), "layout_count": int(raw["layout_count"]), "slide_count": int(raw["slide_count"]), "measurement_basis": {key: basis[key] for key in sorted(basis_keys)}, "layout_master_topology": [], "slide_layout_topology": [], "shell_regions": [], "safe_content_bounds": {"value": safe_value, "basis": safe["basis"], "source_scope": safe["source_scope"], "evidence_ids": list(safe["evidence_ids"])}, "typography_roles": [], "style_roles": [], "shell_primitives": [], "placeholder_measurements": [], "theme_palette": []}
     for key in ("layout_master_topology", "slide_layout_topology"):
         values = []
         for item in raw[key]:
@@ -578,21 +784,28 @@ def _sanitize_shell_full(raw: dict[str, Any]) -> dict[str, Any]:
             values.append({"source_id": str(item["source_id"]), "target_id": str(item["target_id"]), "basis": item["basis"], "source_scope": item["source_scope"]})
         out[key] = values
     for item in raw["shell_regions"]:
-        if set(item) != {"region_id", "role", "geometry", "basis", "source_scope", "recurrence_count"} or item["basis"] not in _BASIS or item["source_scope"] not in _SOURCE_SCOPES: raise Checkpoint2PolicyViolation("invalid shell region")
-        out["shell_regions"].append({"region_id": str(item["region_id"]), "role": item["role"], "geometry": _sanitize_geometry(item["geometry"]), "basis": item["basis"], "source_scope": item["source_scope"], "recurrence_count": int(item["recurrence_count"])})
+        expected = {"region_id", "role", "geometry", "basis", "source_scope", "occurrence_count", "source_container_count", "eligible_container_count", "coverage_ratio", "supporting_source_ids", "role_evidence"}
+        if set(item) != expected or item["basis"] not in _BASIS or item["source_scope"] not in _SOURCE_SCOPES: raise Checkpoint2PolicyViolation("invalid shell region")
+        if item["occurrence_count"] < item["source_container_count"] or item["source_container_count"] > item["eligible_container_count"] or not 0 <= item["coverage_ratio"] <= 1: raise Checkpoint2PolicyViolation("invalid shell recurrence arithmetic")
+        out["shell_regions"].append({"region_id": str(item["region_id"]), "role": item["role"], "geometry": _sanitize_geometry(item["geometry"]), "basis": item["basis"], "source_scope": item["source_scope"], "occurrence_count": int(item["occurrence_count"]), "source_container_count": int(item["source_container_count"]), "eligible_container_count": int(item["eligible_container_count"]), "coverage_ratio": float(item["coverage_ratio"]), "supporting_source_ids": [str(value) for value in item["supporting_source_ids"]], "role_evidence": item["role_evidence"]})
     for item in raw["shell_primitives"]:
-        if set(item) != {"primitive_id", "primitive_class", "geometry", "recurrence_count", "basis", "source_scope"} or item["basis"] not in _BASIS or item["source_scope"] not in _SOURCE_SCOPES: raise Checkpoint2PolicyViolation("invalid shell primitive")
-        out["shell_primitives"].append({"primitive_id": str(item["primitive_id"]), "primitive_class": item["primitive_class"], "geometry": _sanitize_geometry(item["geometry"]), "recurrence_count": int(item["recurrence_count"]), "basis": item["basis"], "source_scope": item["source_scope"]})
+        expected = {"primitive_id", "primitive_class", "geometry", "occurrence_count", "source_container_count", "eligible_container_count", "coverage_ratio", "supporting_source_ids", "basis", "source_scope", "role_evidence"}
+        if set(item) != expected or item["basis"] not in _BASIS or item["source_scope"] not in _SOURCE_SCOPES: raise Checkpoint2PolicyViolation("invalid shell primitive")
+        if item["occurrence_count"] < item["source_container_count"] or item["source_container_count"] > item["eligible_container_count"] or not 0 <= item["coverage_ratio"] <= 1: raise Checkpoint2PolicyViolation("invalid primitive recurrence arithmetic")
+        out["shell_primitives"].append({"primitive_id": str(item["primitive_id"]), "primitive_class": item["primitive_class"], "geometry": _sanitize_geometry(item["geometry"]), "occurrence_count": int(item["occurrence_count"]), "source_container_count": int(item["source_container_count"]), "eligible_container_count": int(item["eligible_container_count"]), "coverage_ratio": float(item["coverage_ratio"]), "supporting_source_ids": [str(value) for value in item["supporting_source_ids"]], "basis": item["basis"], "source_scope": item["source_scope"], "role_evidence": item["role_evidence"]})
     for item in raw["typography_roles"]:
-        if set(item) != {"role", "family", "size_pt", "weight", "style", "basis", "source_scope"} or item["source_scope"] not in _SOURCE_SCOPES: raise Checkpoint2PolicyViolation("invalid typography role")
-        out["typography_roles"].append({"role": item["role"], "family": item["family"], "size_pt": float(item["size_pt"]), "weight": item["weight"], "style": item["style"], "basis": item["basis"], "source_scope": item["source_scope"]})
+        out["typography_roles"].append(_sanitize_font_observation(item, shell=True))
     for item in raw["style_roles"]:
-        if set(item) != {"role", "fill_role", "stroke_role", "line_width_pt", "basis", "source_scope"}: raise Checkpoint2PolicyViolation("invalid style role")
-        out["style_roles"].append({"role": item["role"], "fill_role": item["fill_role"], "stroke_role": item["stroke_role"], "line_width_pt": float(item["line_width_pt"]), "basis": item["basis"], "source_scope": item["source_scope"]})
+        expected = {"role", "fill_role", "stroke_role", "line_width_pt", "basis", "source_scope", "fill_color_evidence", "stroke_color_evidence"}
+        if set(item) != expected: raise Checkpoint2PolicyViolation("invalid style role")
+        out["style_roles"].append({"role": item["role"], "fill_role": item["fill_role"], "stroke_role": item["stroke_role"], "line_width_pt": float(item["line_width_pt"]), "basis": item["basis"], "source_scope": item["source_scope"], "fill_color_evidence": _sanitize_color_evidence(item["fill_color_evidence"]), "stroke_color_evidence": _sanitize_color_evidence(item["stroke_color_evidence"])})
     for item in raw["placeholder_measurements"]:
-        if set(item) != {"placeholder_id", "placeholder_type", "geometry", "basis", "source_scope"} or item["source_scope"] not in _SOURCE_SCOPES or item["basis"] not in _BASIS:
+        if set(item) != {"placeholder_id", "placeholder_type", "geometry", "basis", "source_scope", "source_container_id"} or item["source_scope"] not in _SOURCE_SCOPES or item["basis"] not in _BASIS:
             raise Checkpoint2PolicyViolation("invalid placeholder measurement")
-        out["placeholder_measurements"].append({"placeholder_id": str(item["placeholder_id"]), "placeholder_type": item["placeholder_type"], "geometry": _sanitize_geometry(item["geometry"]), "basis": item["basis"], "source_scope": item["source_scope"]})
+        out["placeholder_measurements"].append({"placeholder_id": str(item["placeholder_id"]), "placeholder_type": item["placeholder_type"], "geometry": _sanitize_geometry(item["geometry"]), "basis": item["basis"], "source_scope": item["source_scope"], "source_container_id": item["source_container_id"]})
+    for item in raw.get("theme_palette", []):
+        if set(item) != {"theme_token", "resolved_rgb", "basis", "source_scope"} or item["theme_token"] not in _COLOR_TOKENS or item["resolved_rgb"] is None or not re.fullmatch(r"[0-9A-Fa-f]{6}", item["resolved_rgb"]): raise Checkpoint2PolicyViolation("invalid theme palette evidence")
+        out["theme_palette"].append({"theme_token": item["theme_token"], "resolved_rgb": item["resolved_rgb"].upper(), "basis": item["basis"], "source_scope": item["source_scope"]})
     _lexical_reject(out)
     errors = _schema_registry().errors("sanitized-shell-structural-descriptors", {"schema_version": "1.0.0", "descriptors": [out, out]})
     if errors: raise Checkpoint2PolicyViolation("sanitized shell descriptor schema failed: " + "; ".join(errors[:3]))
@@ -607,23 +820,25 @@ def _sanitize_body_full(raw: dict[str, Any]) -> dict[str, Any]:
         if set(item) != {"family", "confidence", "evidence_basis"}: raise Checkpoint2PolicyViolation("invalid candidate family")
         out["candidate_families"].append({"family": item["family"], "confidence": item["confidence"], "evidence_basis": list(item["evidence_basis"])})
     for item in raw["body_measurements"]:
-        required = {"slide_id", "measurement_basis", "objects", "connectors", "groups", "panels", "metrics", "style_roles"}
+        required = {"slide_id", "measurement_basis", "objects", "connectors", "groups", "panels", "metrics", "style_roles", "typography_observations"}
         if set(item) != required: raise Checkpoint2PolicyViolation("invalid body measurement")
         objects = []
         for obj in item["objects"]:
-            if set(obj) != {"object_id", "object_class", "primitive_type", "geometry", "group_id", "style", "basis", "source_scope"} or obj["source_scope"] not in _SOURCE_SCOPES: raise Checkpoint2PolicyViolation("invalid body object")
+            expected_obj = {"object_id", "object_class", "primitive_type", "geometry", "group_id", "style", "basis", "source_scope", "rotation_status", "rotation_deg", "geometry_eligible"}
+            if set(obj) != expected_obj or obj["source_scope"] not in _SOURCE_SCOPES: raise Checkpoint2PolicyViolation("invalid body object")
             style = obj["style"]
-            if set(style) != {"fill_role", "stroke_role", "line_width_pt", "basis"}: raise Checkpoint2PolicyViolation("invalid body style")
-            objects.append({"object_id": str(obj["object_id"]), "object_class": obj["object_class"], "primitive_type": obj["primitive_type"], "geometry": _sanitize_geometry(obj["geometry"]), "group_id": obj["group_id"], "style": {"fill_role": style["fill_role"], "stroke_role": style["stroke_role"], "line_width_pt": float(style["line_width_pt"]), "basis": style["basis"]}, "basis": obj["basis"], "source_scope": obj["source_scope"]})
+            expected_style = {"role", "fill_role", "stroke_role", "line_width_pt", "basis", "source_scope", "fill_color_evidence", "stroke_color_evidence"}
+            if set(style) != expected_style: raise Checkpoint2PolicyViolation("invalid body style")
+            objects.append({"object_id": str(obj["object_id"]), "object_class": obj["object_class"], "primitive_type": obj["primitive_type"], "geometry": _sanitize_geometry(obj["geometry"]), "group_id": obj["group_id"], "style": {"role": style["role"], "fill_role": style["fill_role"], "stroke_role": style["stroke_role"], "line_width_pt": float(style["line_width_pt"]), "basis": style["basis"], "source_scope": style["source_scope"], "fill_color_evidence": _sanitize_color_evidence(style["fill_color_evidence"]), "stroke_color_evidence": _sanitize_color_evidence(style["stroke_color_evidence"])}, "basis": obj["basis"], "source_scope": obj["source_scope"], "rotation_status": obj["rotation_status"], "rotation_deg": float(obj["rotation_deg"]), "geometry_eligible": bool(obj["geometry_eligible"])})
         connectors = []
         for conn in item["connectors"]:
-            expected = {"object_id", "orientation", "start", "end", "head_arrow", "tail_arrow", "directedness", "flip_h", "flip_v", "basis", "source_scope"}
+            expected = {"object_id", "orientation", "start", "end", "head_arrow", "tail_arrow", "directedness", "flip_h", "flip_v", "basis", "source_scope", "rotation_status", "rotation_deg", "geometry_eligible"}
             if set(conn) != expected or conn["source_scope"] not in _SOURCE_SCOPES: raise Checkpoint2PolicyViolation("invalid connector")
-            connectors.append({"object_id": str(conn["object_id"]), "orientation": conn["orientation"], "start": [float(conn["start"][0]), float(conn["start"][1])], "end": [float(conn["end"][0]), float(conn["end"][1])], "head_arrow": conn["head_arrow"], "tail_arrow": conn["tail_arrow"], "directedness": conn["directedness"], "flip_h": bool(conn["flip_h"]), "flip_v": bool(conn["flip_v"]), "basis": conn["basis"], "source_scope": conn["source_scope"]})
+            connectors.append({"object_id": str(conn["object_id"]), "orientation": conn["orientation"], "start": [float(conn["start"][0]), float(conn["start"][1])], "end": [float(conn["end"][0]), float(conn["end"][1])], "head_arrow": conn["head_arrow"], "tail_arrow": conn["tail_arrow"], "directedness": conn["directedness"], "flip_h": bool(conn["flip_h"]), "flip_v": bool(conn["flip_v"]), "basis": conn["basis"], "source_scope": conn["source_scope"], "rotation_status": conn["rotation_status"], "rotation_deg": float(conn["rotation_deg"]), "geometry_eligible": bool(conn["geometry_eligible"])})
         groups = []
         for group in item["groups"]:
-            if set(group) != {"group_id", "member_count", "basis", "source_scope"}: raise Checkpoint2PolicyViolation("invalid group")
-            groups.append({"group_id": str(group["group_id"]), "member_count": int(group["member_count"]), "basis": group["basis"], "source_scope": group["source_scope"]})
+            if set(group) != {"group_id", "member_count", "basis", "source_scope", "rotation_status", "rotation_deg", "geometry_eligible"}: raise Checkpoint2PolicyViolation("invalid group")
+            groups.append({"group_id": str(group["group_id"]), "member_count": int(group["member_count"]), "basis": group["basis"], "source_scope": group["source_scope"], "rotation_status": group["rotation_status"], "rotation_deg": float(group["rotation_deg"]), "geometry_eligible": bool(group["geometry_eligible"])})
         panels = []
         for panel in item["panels"]:
             if set(panel) != {"panel_id", "geometry", "basis"}: raise Checkpoint2PolicyViolation("invalid panel")
@@ -638,9 +853,10 @@ def _sanitize_body_full(raw: dict[str, Any]) -> dict[str, Any]:
                 raise Checkpoint2PolicyViolation("derived metric lacks measurement evidence")
         styles = []
         for style in item["style_roles"]:
-            if set(style) != {"fill_role", "stroke_role", "line_width_pt", "basis"}: raise Checkpoint2PolicyViolation("invalid body style role")
-            styles.append({"fill_role": style["fill_role"], "stroke_role": style["stroke_role"], "line_width_pt": float(style["line_width_pt"]), "basis": style["basis"]})
-        out["body_measurements"].append({"slide_id": str(item["slide_id"]), "measurement_basis": item["measurement_basis"], "objects": objects, "connectors": connectors, "groups": groups, "panels": panels, "metrics": {key: metrics[key] for key in metric_keys}, "style_roles": styles})
+            if set(style) != {"role", "fill_role", "stroke_role", "line_width_pt", "basis", "source_scope", "fill_color_evidence", "stroke_color_evidence"}: raise Checkpoint2PolicyViolation("invalid body style role")
+            styles.append({"role": style["role"], "fill_role": style["fill_role"], "stroke_role": style["stroke_role"], "line_width_pt": float(style["line_width_pt"]), "basis": style["basis"], "source_scope": style["source_scope"], "fill_color_evidence": _sanitize_color_evidence(style["fill_color_evidence"]), "stroke_color_evidence": _sanitize_color_evidence(style["stroke_color_evidence"])})
+        typography = [_sanitize_font_observation(value, shell=False) for value in item["typography_observations"]]
+        out["body_measurements"].append({"slide_id": str(item["slide_id"]), "measurement_basis": item["measurement_basis"], "objects": objects, "connectors": connectors, "groups": groups, "panels": panels, "metrics": {key: metrics[key] for key in metric_keys}, "style_roles": styles, "typography_observations": typography})
     _lexical_reject(out)
     errors = _schema_registry().errors("sanitized-body-structural-descriptors", {"schema_version": "1.0.0", "descriptor": out})
     if errors: raise Checkpoint2PolicyViolation("sanitized body descriptor schema failed: " + "; ".join(errors[:3]))
@@ -709,7 +925,28 @@ class Checkpoint2Run:
         observations = [observation for measurement in body_descriptor.get("body_measurements", []) for observation in measurement.get("metrics", {}).values()]
         checks.append({"check_id": "CP2-DQ-METRIC-OBSERVATIONS", "status": "pass" if observations and all(not (item.get("basis") == "derived" and (item.get("value") is None or not item.get("supporting_object_ids"))) for item in observations) else "fail"})
         checks.append({"check_id": "CP2-DQ-FAMILY-EVIDENCE", "status": "pass" if all(item.get("confidence") != "structurally_supported" or len(item.get("evidence_basis", [])) >= 2 for item in body_descriptor.get("candidate_families", [])) else "fail"})
-        checks.append({"check_id": "CP2-DQ-GROUP-GEOMETRY", "status": "pass" if all(-0.000001 <= coordinate <= 1.000001 for measurement in body_descriptor.get("body_measurements", []) for obj in measurement.get("objects", []) for coordinate in (obj["geometry"]["x"], obj["geometry"]["y"], obj["geometry"]["x"] + obj["geometry"]["w"], obj["geometry"]["y"] + obj["geometry"]["h"])) else "fail"})
+        shell_regions = [region for descriptor in shell_descriptors for region in descriptor.get("shell_regions", [])]
+        role_unique = all(len({region.get("role") for region in descriptor.get("shell_regions", [])}) == len(descriptor.get("shell_regions", [])) for descriptor in shell_descriptors)
+        recurrence_ok = all(region.get("occurrence_count", 0) >= region.get("source_container_count", 0) <= region.get("eligible_container_count", 0) and abs(region.get("coverage_ratio", -1) - region.get("source_container_count", 0) / max(1, region.get("eligible_container_count", 0))) < 1e-6 for region in shell_regions)
+        checks.append({"check_id": "CP2-DQ-SHELL-ROLE-CONSISTENCY", "status": "pass" if role_unique else "fail"})
+        checks.append({"check_id": "CP2-DQ-SHELL-RECURRENCE", "status": "pass" if recurrence_ok else "fail"})
+        primitives = [primitive for descriptor in shell_descriptors for primitive in descriptor.get("shell_primitives", [])]
+        primitive_recurrence = all(item.get("occurrence_count", 0) >= item.get("source_container_count", 0) <= item.get("eligible_container_count", 0) and abs(item.get("coverage_ratio", -1) - item.get("source_container_count", 0) / max(1, item.get("eligible_container_count", 0))) < 1e-6 for item in primitives)
+        checks.append({"check_id": "CP2-DQ-CONTAINER-COVERAGE", "status": "pass" if primitive_recurrence else "fail"})
+        colors = [style.get(key) for descriptor in shell_descriptors for style in descriptor.get("style_roles", []) for key in ("fill_color_evidence", "stroke_color_evidence")]
+        colors += [style.get(key) for measurement in body_descriptor.get("body_measurements", []) for style in measurement.get("style_roles", []) for key in ("fill_color_evidence", "stroke_color_evidence")]
+        color_ok = bool(colors) and all(item.get("transform_status") in {"supported", "unsupported", "unresolved"} and item.get("basis") in _BASIS and item.get("source_scope") in _SOURCE_SCOPES for item in colors)
+        checks.append({"check_id": "CP2-DQ-COLOR-RECONSTRUCTION", "status": "pass" if color_ok else "fail"})
+        fonts = [font for descriptor in shell_descriptors for font in descriptor.get("typography_roles", [])]
+        body_fonts = [font for measurement in body_descriptor.get("body_measurements", []) for font in measurement.get("typography_observations", [])]
+        font_ok = all(font.get("family") and font.get("family") != "other_approved" and font.get("basis") in _BASIS and font.get("source_scope") in _SOURCE_SCOPES for font in [*fonts, *body_fonts])
+        checks.append({"check_id": "CP2-DQ-FONT-FIDELITY", "status": "pass" if font_ok else "fail"})
+        rotation_ok = all((obj.get("rotation_status") == "unsupported") == (not obj.get("geometry_eligible", True)) and (obj.get("rotation_status") != "unsupported" or obj.get("geometry", {}).get("basis") != "measured") for measurement in body_descriptor.get("body_measurements", []) for obj in [*measurement.get("objects", []), *measurement.get("connectors", [])] + measurement.get("groups", []))
+        checks.append({"check_id": "CP2-DQ-ROTATION-TRUTH", "status": "pass" if rotation_ok else "fail"})
+        typography_ok = all("typography_observations" in measurement and all(font.get("source_scope") == "slide_recurrence_derived" for font in measurement.get("typography_observations", [])) for measurement in body_descriptor.get("body_measurements", []))
+        checks.append({"check_id": "CP2-DQ-BODY-TYPOGRAPHY", "status": "pass" if typography_ok else "fail"})
+        group_geometry_ok = all(-0.000001 <= coordinate <= 1.000001 for measurement in body_descriptor.get("body_measurements", []) for obj in measurement.get("objects", []) for coordinate in (obj["geometry"]["x"], obj["geometry"]["y"], obj["geometry"]["x"] + obj["geometry"]["w"], obj["geometry"]["y"] + obj["geometry"]["h"]))
+        checks.append({"check_id": "CP2-DQ-GROUP-GEOMETRY", "status": "pass" if group_geometry_ok else "fail"})
         self.evidence.descriptor_quality_checks = checks
 
     def qa_record(self) -> dict[str, Any]:

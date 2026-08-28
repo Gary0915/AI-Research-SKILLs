@@ -378,3 +378,85 @@ def test_scheme_color_is_retained_as_theme_role_and_unknown_is_not_none():
     assert _color_role(node, True) == "theme:accent1"
     unknown = ET.fromstring('<a:sp xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:solidFill><a:schemeClr val="mystery"/></a:solidFill></a:sp>')
     assert _color_role(unknown, True) == "unknown"
+
+
+def test_shell_regions_report_distinct_container_recurrence_without_overlap():
+    from thesis_deck_system.phase3_checkpoint2 import _shell_regions
+    slides = [
+        {"source_scope": "slide_layout", "source_container_id": "L001", "objects": [
+            {"object_class": "text", "geometry": {"x": .1, "y": .05, "w": .3, "h": .08}, "source_scope": "slide_layout", "source_container_id": "L001", "placeholder_type": "title"},
+            {"object_class": "text", "geometry": {"x": .1, "y": .05, "w": .3, "h": .08}, "source_scope": "slide_layout", "source_container_id": "L001", "placeholder_type": "header"},
+        ]},
+        {"source_scope": "slide_layout", "source_container_id": "L002", "objects": [
+            {"object_class": "text", "geometry": {"x": .1, "y": .05, "w": .3, "h": .08}, "source_scope": "slide_layout", "source_container_id": "L002", "placeholder_type": "title"},
+        ]},
+    ]
+    regions = _shell_regions(slides, 100, 100)
+    by_role = {item["role"]: item for item in regions}
+    assert by_role["title"]["occurrence_count"] == 2
+    assert by_role["title"]["source_container_count"] == 2
+    assert by_role["title"]["eligible_container_count"] == 2
+    assert by_role["title"]["coverage_ratio"] == pytest.approx(1.0)
+    assert "L001" in by_role["title"]["supporting_source_ids"]
+    assert "header" not in by_role or by_role["header"]["occurrence_count"] == 0
+
+
+def test_shell_region_placeholder_semantics_override_geometry_fallback():
+    from thesis_deck_system.phase3_checkpoint2 import _shell_regions
+    slides = [{"source_scope": "slide_master", "source_container_id": "M001", "objects": [
+        {"object_class": "text", "geometry": {"x": .1, "y": .03, "w": .3, "h": .05}, "source_scope": "slide_master", "source_container_id": "M001", "placeholder_type": "title"}
+    ]}]
+    regions = _shell_regions(slides, 100, 100)
+    assert {item["role"] for item in regions} == {"title"}
+    assert regions[0]["role_evidence"] == "placeholder_semantic"
+
+
+def test_color_evidence_preserves_distinct_rgb_and_theme_palette():
+    from thesis_deck_system.phase3_checkpoint2 import _color_evidence
+    from xml.etree import ElementTree as ET
+    a = ET.fromstring('<a:sp xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:solidFill><a:srgbClr val="112233"/></a:solidFill></a:sp>')
+    b = ET.fromstring('<a:sp xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:solidFill><a:srgbClr val="445566"/></a:solidFill></a:sp>')
+    theme = {"accent1": "AABBCC"}
+    assert _color_evidence(a, True, theme)["direct_rgb"] != _color_evidence(b, True, theme)["direct_rgb"]
+    themed = ET.fromstring('<a:sp xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:solidFill><a:schemeClr val="accent1"/></a:solidFill></a:sp>')
+    evidence = _color_evidence(themed, True, theme)
+    assert evidence["theme_token"] == "accent1"
+    assert evidence["resolved_rgb"] == "AABBCC"
+
+
+def test_unsupported_color_transform_is_explicit():
+    from thesis_deck_system.phase3_checkpoint2 import _color_evidence
+    from xml.etree import ElementTree as ET
+    node = ET.fromstring('<a:sp xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:solidFill><a:srgbClr val="112233"><a:gamma/></a:srgbClr></a:solidFill></a:sp>')
+    assert _color_evidence(node, True, {})["transform_status"] == "unsupported"
+
+
+def test_safe_non_default_font_survives_font_policy():
+    from thesis_deck_system.phase3_checkpoint2 import _font_family
+    assert _font_family("Yu Gothic") == "Yu Gothic"
+
+
+def test_rotated_geometry_is_explicitly_unsupported():
+    from thesis_deck_system.phase3_checkpoint2 import _rotation_state
+    assert _rotation_state({"rot": 600000}) == {"rotation_status": "unsupported", "rotation_deg": 1.0, "geometry_eligible": False}
+    assert _rotation_state({"rot": 0})["geometry_eligible"] is True
+
+
+def test_rotated_shape_cannot_be_measured_for_family_confidence():
+    family = _classify_structural_family(
+        objects=[{"object_id": "O001", "object_class": "picture", "geometry": {"x": .1, "y": .1, "w": .2, "h": .2}, "geometry_eligible": False}],
+        connectors=[], metrics={}, groups=[]
+    )
+    assert family["confidence"] == "insufficient_structural_evidence"
+
+
+def test_body_descriptor_preserves_typography_observation_without_text():
+    from thesis_deck_system.phase3_checkpoint2 import sanitize_body_descriptor
+    body = {
+        "alias_uri": ALIASES[1], "source_sha256": SHA, "profile_id": "P3-BODY-001",
+        "slide_size": {"width": 13.333, "height": 7.5, "basis": "measured"}, "slide_count": 1,
+        "candidate_families": [{"family": "other_insufficient_structural_evidence", "confidence": "insufficient_structural_evidence", "evidence_basis": ["insufficient"]}],
+        "body_measurements": [{"slide_id": "SL001", "measurement_basis": "measured", "objects": [], "connectors": [], "groups": [], "panels": [], "metrics": {key: {"value": None, "basis": "not_observable_structurally", "evidence_state": "unavailable", "supporting_object_ids": []} for key in ("text_area_ratio", "figure_area_ratio", "dominant_figure_ratio", "figure_text_ratio", "annotation_density", "whitespace_fraction", "comparison_symmetry", "matrix_rows", "matrix_columns", "panel_count", "caption_candidate_count", "callout_candidate_count", "photo_schematic_relation")}, "style_roles": [], "typography_observations": [{"observation_id": "T001", "role": "annotation", "role_confidence": "provisional", "family": "Yu Gothic", "theme_font_role": None, "size_pt": 11.0, "weight": "regular", "style": "normal", "basis": "measured", "source_scope": "slide_recurrence_derived", "supporting_object_id": "O001"}]}]
+    }
+    result = sanitize_body_descriptor(body)
+    assert result["body_measurements"][0]["typography_observations"][0]["family"] == "Yu Gothic"

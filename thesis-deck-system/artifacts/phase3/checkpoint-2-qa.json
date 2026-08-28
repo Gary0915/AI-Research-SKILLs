@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "checkpoint_id": "PHASE_3_CHECKPOINT_2",
   "execution_evidence_id": "CP2-EXEC-001",
-  "execution_evidence_sha256": "811b226c739bf4cf89c833ae5b339090851b9efd5d7243a4740065f564fc8c43",
+  "execution_evidence_sha256": "2f5c5c4af515712feb9997472d66db21574baf21c2026f29dfbf9dfcb908c033",
   "execution_evidence": {
     "schema_version": "1.0.0",
     "evidence_id": "CP2-EXEC-001",
@@ -52,7 +52,7 @@
         "closed": true,
         "outcome": "success",
         "source_sha256": "7705931669af2fab77722a7fdd1c8c3c14e26043355f24362f60720847fb2693",
-        "descriptor_count": 49
+        "descriptor_count": 46
       },
       "private://template_primary_3": {
         "session_id": "CP2-SES-003",
@@ -67,7 +67,7 @@
         "closed": true,
         "outcome": "success",
         "source_sha256": "13d95796d1cdeacaef352f72c190fc5a29eb0bf9c4ec0377cc66aada7fb0682f",
-        "descriptor_count": 49
+        "descriptor_count": 46
       }
     },
     "source_session_attempts": 3,
@@ -137,6 +137,34 @@
       },
       {
         "check_id": "CP2-DQ-FAMILY-EVIDENCE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-SHELL-ROLE-CONSISTENCY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-SHELL-RECURRENCE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-CONTAINER-COVERAGE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-COLOR-RECONSTRUCTION",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-FONT-FIDELITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-ROTATION-TRUTH",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-BODY-TYPOGRAPHY",
         "status": "pass"
       },
       {
