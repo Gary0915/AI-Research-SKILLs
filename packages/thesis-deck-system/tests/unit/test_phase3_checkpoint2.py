@@ -19,6 +19,13 @@ from thesis_deck_system.phase3_checkpoint2 import (
     sanitize_shell_descriptor,
     validate_checkpoint2_qa,
 )
+from thesis_deck_system.phase3_checkpoint2 import (
+    _classify_structural_family,
+    _color_role,
+    _compose_transform,
+    _connector_semantics,
+    _metric_observation,
+)
 from thesis_deck_system.phase3_contracts import (
     canonical_observation_catalogs,
     validate_observation_visual_binding,
@@ -167,7 +174,9 @@ def test_source_session_is_recorded_before_open_and_derives_hash_slide_count(tmp
     resolver = LocalPrivateAliasResolver(_alias_mapping(tmp_path), private_root=tmp_path / "raw", execution=run)
     session = resolver.resolve(ALIASES[0]).open_read_only()
     profile = session.profile_structurally("shell")
-    assert run.evidence.authorized_source_sessions == 1
+    assert run.evidence.authorized_source_sessions == 0
+    assert run.evidence.source_sessions[ALIASES[0]]["profiling_status"] == "pass"
+    assert run.evidence.source_sessions[ALIASES[0]]["sanitizer_handoff"] == "pending"
     assert profile["source_sha256"] == hashlib.sha256((tmp_path / "fixture-1.pptx").read_bytes()).hexdigest()
     assert profile["slide_count"] == 1
 
@@ -243,7 +252,8 @@ def test_shell_profile_contains_measured_topology_regions_and_basis(tmp_path: Pa
     assert profile["slide_layout_topology"]
     assert profile["shell_regions"]
     assert profile["safe_content_bounds"]["basis"] in {"measured", "derived", "not_observable_structurally"}
-    assert profile["safe_content_bounds"]["x"] != 0.05 or profile["safe_content_bounds"]["y"] != 0.12
+    assert profile["safe_content_bounds"]["source_scope"] in {"slide_master", "slide_layout", "not_observable_structurally"}
+    assert profile["safe_content_bounds"]["value"] is None or profile["safe_content_bounds"]["value"] != {"x": 0.0, "y": 0.0, "w": 1.0, "h": 1.0, "basis": "derived"}
 
 
 def test_body_profile_contains_structural_metrics_and_classification(tmp_path: Path):
@@ -303,3 +313,68 @@ def test_qa_rejects_inconsistent_session_counters():
     record["execution_evidence_sha256"] = hashlib.sha256(__import__("json").dumps(record["execution_evidence"], sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     record["aggregate_status"] = "pass"
     assert "CP2-QA-AGGREGATE-NONDERIVED" in validate_checkpoint2_qa(record)
+
+
+def test_group_transform_composes_translation_scaling_and_nested_coordinates():
+    parent = {"off": [100.0, 200.0], "ext": [400.0, 300.0], "ch_off": [10.0, 20.0], "ch_ext": [200.0, 100.0], "flip_h": False, "flip_v": False}
+    child = {"off": [60.0, 45.0], "ext": [40.0, 20.0], "ch_off": [0.0, 0.0], "ch_ext": [1.0, 1.0], "flip_h": False, "flip_v": False}
+    absolute = _compose_transform(parent, child)
+    assert absolute == pytest.approx((200.0, 275.0, 80.0, 60.0), abs=1e-6)
+
+
+@pytest.mark.parametrize(
+    ("flip_h", "flip_v", "head", "tail", "expected"),
+    [
+        (False, False, "triangle", "none", ("directed", [0.1, 0.2], [0.4, 0.6])),
+        (False, False, "none", "triangle", ("directed", [0.4, 0.6], [0.1, 0.2])),
+        (True, False, "triangle", "none", ("directed", [0.4, 0.2], [0.1, 0.6])),
+        (False, False, "none", "none", ("plain", [0.1, 0.2], [0.4, 0.6])),
+    ],
+)
+def test_connector_semantics_uses_arrowheads_and_flip_not_bbox_order(flip_h, flip_v, head, tail, expected):
+    value = _connector_semantics(0.1, 0.2, 0.3, 0.4, flip_h=flip_h, flip_v=flip_v, head_arrow=head, tail_arrow=tail)
+    assert (value["directedness"], value["start"], value["end"]) == expected
+
+
+def test_metric_observation_never_serializes_unmeasured_placeholder_zero():
+    unavailable = _metric_observation(None, basis="not_observable_structurally", evidence_ids=[])
+    assert unavailable == {"value": None, "basis": "not_observable_structurally", "evidence_state": "unavailable", "supporting_object_ids": []}
+    derived = _metric_observation(0.5, basis="derived", evidence_ids=["O001", "O002"])
+    assert derived["value"] == 0.5
+    assert derived["evidence_state"] == "derived"
+
+
+def test_family_classifier_requires_specific_signature_not_counts_alone():
+    unrelated = _classify_structural_family(
+        objects=[{"object_id": f"O{i:03d}", "object_class": "picture", "geometry": {"x": i * 0.2, "y": 0.1, "w": 0.1, "h": 0.1}} for i in range(4)],
+        connectors=[], metrics={}, groups=[],
+    )
+    assert unrelated["confidence"] != "structurally_supported"
+    flowchart = _classify_structural_family(
+        objects=[{"object_id": "O001", "object_class": "native_shape", "geometry": {"x": 0.1, "y": 0.1, "w": 0.1, "h": 0.1}}],
+        connectors=[{"object_id": f"O{i:03d}", "directedness": "directed"} for i in range(2, 5)], metrics={}, groups=[],
+    )
+    assert flowchart["family"] != "fishbone_research_map" or flowchart["confidence"] != "structurally_supported"
+
+
+def test_shell_measurements_are_master_layout_scoped_and_expose_placeholders(tmp_path: Path):
+    profile = LocalPrivateAliasResolver(_alias_mapping(tmp_path), private_root=tmp_path / "raw").resolve(ALIASES[0]).open_read_only().profile_structurally("shell")
+    assert all(item["source_scope"] in {"slide_master", "slide_layout", "theme", "not_observable_structurally"} for item in profile["shell_primitives"])
+    assert all(item["source_scope"] in {"slide_master", "slide_layout", "theme", "not_observable_structurally"} for item in profile["style_roles"])
+    assert all(item["source_scope"] in {"slide_master", "slide_layout", "theme", "not_observable_structurally"} for item in profile["typography_roles"])
+    assert "placeholder_measurements" in profile
+
+
+def test_metric_observation_rejects_arbitrary_relation_text():
+    body = {"alias_uri": ALIASES[1], "source_sha256": SHA, "profile_id": "BODY001", "slide_size": {"width": 13.333, "height": 7.5, "basis": "measured"}, "slide_count": 1, "candidate_families": [{"family": "other_insufficient_structural_evidence", "confidence": "insufficient_structural_evidence", "evidence_basis": []}], "body_measurements": [{"slide_id": "SL001", "measurement_basis": "measured", "objects": [], "connectors": [], "groups": [], "panels": [], "metrics": {key: {"value": None, "basis": "not_observable_structurally", "evidence_state": "unavailable", "supporting_object_ids": []} for key in ("text_area_ratio", "figure_area_ratio", "dominant_figure_ratio", "figure_text_ratio", "annotation_density", "whitespace_fraction", "comparison_symmetry", "matrix_rows", "matrix_columns", "panel_count", "caption_candidate_count", "callout_candidate_count", "photo_schematic_relation")}, "style_roles": []}]}
+    body["body_measurements"][0]["metrics"]["photo_schematic_relation"] = {"value": "private free text", "basis": "measured", "evidence_state": "measured", "supporting_object_ids": []}
+    with pytest.raises(Checkpoint2PolicyViolation):
+        sanitize_body_descriptor(body)
+
+
+def test_scheme_color_is_retained_as_theme_role_and_unknown_is_not_none():
+    from xml.etree import ElementTree as ET
+    node = ET.fromstring('<a:sp xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:solidFill><a:schemeClr val="accent1"/></a:solidFill></a:sp>')
+    assert _color_role(node, True) == "theme:accent1"
+    unknown = ET.fromstring('<a:sp xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:solidFill><a:schemeClr val="mystery"/></a:solidFill></a:sp>')
+    assert _color_role(unknown, True) == "unknown"

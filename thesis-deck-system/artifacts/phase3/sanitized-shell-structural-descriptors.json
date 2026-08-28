@@ -14,205 +14,244 @@
       "layout_count": 19,
       "slide_count": 19,
       "measurement_basis": {
-        "slide_size": "measured",
-        "topology": "measured",
+        "placeholders": "measured",
+        "primitives": "measured",
         "regions": "measured",
-        "typography": "measured",
+        "slide_size": "measured",
         "styles": "measured",
-        "primitives": "measured"
+        "topology": "measured",
+        "typography": "measured"
       },
       "layout_master_topology": [
         {
           "source_id": "L001",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L002",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L003",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L004",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L005",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L006",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L007",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L008",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L009",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L010",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L011",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L012",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L013",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L014",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L015",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L016",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L017",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L018",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L019",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         }
       ],
       "slide_layout_topology": [
         {
           "source_id": "D001",
           "target_id": "L001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D002",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D003",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D004",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D005",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D006",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D007",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D008",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D009",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D010",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D011",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D012",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D013",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D014",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D015",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D016",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D017",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D018",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D019",
           "target_id": "L008",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         }
       ],
       "shell_regions": [
@@ -220,147 +259,97 @@
           "region_id": "R001",
           "role": "title",
           "geometry": {
-            "x": 0.0,
-            "y": 0.001568,
-            "w": 0.132889,
-            "h": 0.090506,
+            "x": 0.06875,
+            "y": 0.040046,
+            "w": 0.652257,
+            "h": 0.151274,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 28
+          "source_scope": "slide_master",
+          "recurrence_count": 24
         },
         {
           "region_id": "R002",
           "role": "header",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.153545,
-            "h": 0.101006,
+            "x": 0.06888,
+            "y": 0.040046,
+            "w": 0.559028,
+            "h": 0.166667,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 29
+          "source_scope": "slide_master",
+          "recurrence_count": 25
         },
         {
           "region_id": "R003",
           "role": "footer",
           "geometry": {
-            "x": 0.168733,
-            "y": 0.947315,
-            "w": 0.398488,
-            "h": 0.051515,
+            "x": 0.46569,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 38
+          "source_scope": "slide_master",
+          "recurrence_count": 58
         },
         {
           "region_id": "R004",
           "role": "page_number",
           "geometry": {
-            "x": 0.966477,
-            "y": 0.948485,
-            "w": 0.033523,
-            "h": 0.051515,
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 16
+          "source_scope": "slide_layout",
+          "recurrence_count": 5
         },
         {
           "region_id": "R005",
           "role": "navigation",
           "geometry": {
-            "x": 0.012783,
-            "y": 0.948485,
-            "w": 0.446341,
-            "h": 0.051515,
+            "x": 0.507118,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 37
+          "source_scope": "slide_master",
+          "recurrence_count": 54
         }
       ],
       "safe_content_bounds": {
-        "x": 0.0,
-        "y": 0.0,
-        "w": 1.0,
-        "h": 1.0,
-        "basis": "derived"
+        "value": null,
+        "basis": "not_observable_structurally",
+        "source_scope": "not_observable_structurally",
+        "evidence_ids": []
       },
       "typography_roles": [
         {
-          "role": "body",
-          "family": "Times New Roman",
-          "size_pt": 13.0,
-          "weight": "bold",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "body",
-          "family": "Times New Roman",
-          "size_pt": 40.0,
-          "weight": "regular",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "body",
-          "family": "other_approved",
-          "size_pt": 13.0,
-          "weight": "bold",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "body",
-          "family": "other_approved",
-          "size_pt": 24.0,
-          "weight": "regular",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "footer",
-          "family": "other_approved",
+          "role": "title",
+          "family": "Arial",
           "size_pt": 18.0,
-          "weight": "regular",
+          "weight": "bold",
           "style": "normal",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "role": "title",
           "family": "Times New Roman",
-          "size_pt": 20.5,
+          "size_pt": 23.0,
           "weight": "bold",
           "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "title",
-          "family": "Times New Roman",
-          "size_pt": 32.0,
-          "weight": "regular",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "title",
-          "family": "other_approved",
-          "size_pt": 24.0,
-          "weight": "bold",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "title",
-          "family": "other_approved",
-          "size_pt": 24.0,
-          "weight": "regular",
-          "style": "normal",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         }
       ],
       "style_roles": [
@@ -369,915 +358,2287 @@
           "fill_role": "accent",
           "stroke_role": "none",
           "line_width_pt": 0.0,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "accent",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "role": "emphasis",
           "fill_role": "emphasis",
           "stroke_role": "none",
           "line_width_pt": 0.0,
-          "basis": "measured"
-        },
-        {
-          "role": "neutral",
-          "fill_role": "neutral",
-          "stroke_role": "none",
-          "line_width_pt": 0.0,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "role": "neutral",
           "fill_role": "none",
           "stroke_role": "none",
           "line_width_pt": 0.0,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "role": "neutral",
-          "fill_role": "none",
+          "fill_role": "theme:dk1",
           "stroke_role": "none",
-          "line_width_pt": 1.5,
-          "basis": "measured"
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "role": "neutral",
-          "fill_role": "none",
+          "fill_role": "theme:dk1",
           "stroke_role": "none",
-          "line_width_pt": 3.0,
-          "basis": "measured"
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "unknown",
+          "stroke_role": "unknown",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "theme:dk1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt1",
+          "stroke_role": "theme:lt1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk2",
+          "stroke_role": "theme:dk2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt2",
+          "stroke_role": "theme:lt2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent1",
+          "stroke_role": "theme:accent1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent2",
+          "stroke_role": "theme:accent2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent3",
+          "stroke_role": "theme:accent3",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent4",
+          "stroke_role": "theme:accent4",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent5",
+          "stroke_role": "theme:accent5",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent6",
+          "stroke_role": "theme:accent6",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:hlink",
+          "stroke_role": "theme:hlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:folhlink",
+          "stroke_role": "theme:folhlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "theme:dk1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt1",
+          "stroke_role": "theme:lt1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk2",
+          "stroke_role": "theme:dk2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt2",
+          "stroke_role": "theme:lt2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent1",
+          "stroke_role": "theme:accent1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent2",
+          "stroke_role": "theme:accent2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent3",
+          "stroke_role": "theme:accent3",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent4",
+          "stroke_role": "theme:accent4",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent5",
+          "stroke_role": "theme:accent5",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent6",
+          "stroke_role": "theme:accent6",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:hlink",
+          "stroke_role": "theme:hlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:folhlink",
+          "stroke_role": "theme:folhlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "theme:dk1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt1",
+          "stroke_role": "theme:lt1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk2",
+          "stroke_role": "theme:dk2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt2",
+          "stroke_role": "theme:lt2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent1",
+          "stroke_role": "theme:accent1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent2",
+          "stroke_role": "theme:accent2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent3",
+          "stroke_role": "theme:accent3",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent4",
+          "stroke_role": "theme:accent4",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent5",
+          "stroke_role": "theme:accent5",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent6",
+          "stroke_role": "theme:accent6",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:hlink",
+          "stroke_role": "theme:hlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:folhlink",
+          "stroke_role": "theme:folhlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "theme:dk1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt1",
+          "stroke_role": "theme:lt1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk2",
+          "stroke_role": "theme:dk2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt2",
+          "stroke_role": "theme:lt2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent1",
+          "stroke_role": "theme:accent1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent2",
+          "stroke_role": "theme:accent2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent3",
+          "stroke_role": "theme:accent3",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent4",
+          "stroke_role": "theme:accent4",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent5",
+          "stroke_role": "theme:accent5",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent6",
+          "stroke_role": "theme:accent6",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:hlink",
+          "stroke_role": "theme:hlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:folhlink",
+          "stroke_role": "theme:folhlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
         }
       ],
       "shell_primitives": [
         {
           "primitive_id": "S001",
-          "primitive_class": "connector",
+          "primitive_class": "native_shape",
           "geometry": {
-            "x": 0.19,
-            "y": 0.526,
-            "w": 0.043,
-            "h": 0.001,
+            "x": 0.425,
+            "y": 0.144,
+            "w": 0.506,
+            "h": 0.711,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S002",
-          "primitive_class": "connector",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.269,
-            "y": 0.208,
-            "w": 0.041,
-            "h": 0.258,
+            "x": 0.05,
+            "y": 0.04,
+            "w": 0.329,
+            "h": 0.169,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S003",
-          "primitive_class": "connector",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.346,
-            "y": 0.431,
-            "w": 0.123,
-            "h": 0.001,
+            "x": 0.05,
+            "y": 0.04,
+            "w": 0.9,
+            "h": 0.167,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 4,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S004",
-          "primitive_class": "connector",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.387,
-            "y": 0.525,
-            "w": 0.036,
-            "h": 0.001,
+            "x": 0.05,
+            "y": 0.04,
+            "w": 0.9,
+            "h": 0.167,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S005",
-          "primitive_class": "connector",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.466,
-            "y": 0.593,
-            "w": 0.035,
-            "h": 0.222,
+            "x": 0.05,
+            "y": 0.209,
+            "w": 0.329,
+            "h": 0.684,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S006",
-          "primitive_class": "connector",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.578,
-            "y": 0.525,
-            "w": 0.226,
-            "h": 0.001,
+            "x": 0.05,
+            "y": 0.224,
+            "w": 0.442,
+            "h": 0.093,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S007",
-          "primitive_class": "connector",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.646,
-            "y": 0.179,
-            "w": 0.042,
-            "h": 0.269,
+            "x": 0.05,
+            "y": 0.233,
+            "w": 0.442,
+            "h": 0.66,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S008",
-          "primitive_class": "picture",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.222,
-            "y": 0.562,
-            "w": 0.555,
-            "h": 0.368,
+            "x": 0.05,
+            "y": 0.233,
+            "w": 0.9,
+            "h": 0.66,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S009",
-          "primitive_class": "picture",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.241,
-            "y": 0.566,
-            "w": 0.517,
-            "h": 0.349,
+            "x": 0.05,
+            "y": 0.233,
+            "w": 0.9,
+            "h": 0.66,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S010",
-          "primitive_class": "picture",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.243,
-            "y": 0.626,
-            "w": 0.514,
-            "h": 0.321,
+            "x": 0.05,
+            "y": 0.317,
+            "w": 0.442,
+            "h": 0.576,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S011",
-          "primitive_class": "picture",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.268,
-            "y": 0.641,
-            "w": 0.465,
-            "h": 0.264,
+            "x": 0.052,
+            "y": 0.099,
+            "w": 0.923,
+            "h": 0.136,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S012",
-          "primitive_class": "picture",
+          "primitive_class": "text_region",
           "geometry": {
-            "x": 0.291,
-            "y": 0.505,
-            "w": 0.418,
-            "h": 0.4,
+            "x": 0.055,
+            "y": 0.265,
+            "w": 0.917,
+            "h": 0.005,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S013",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.071,
-            "h": 0.091,
+            "x": 0.068,
+            "y": 0.249,
+            "w": 0.863,
+            "h": 0.416,
             "basis": "measured"
           },
-          "recurrence_count": 8,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S014",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.084,
-            "h": 0.091,
+            "x": 0.068,
+            "y": 0.669,
+            "w": 0.863,
+            "h": 0.219,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S015",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.543,
-            "h": 1.0,
+            "x": 0.069,
+            "y": 0.053,
+            "w": 0.863,
+            "h": 0.193,
             "basis": "measured"
           },
           "recurrence_count": 5,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S016",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.567,
-            "h": 0.101,
+            "x": 0.069,
+            "y": 0.053,
+            "w": 0.863,
+            "h": 0.193,
             "basis": "measured"
           },
-          "recurrence_count": 2,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S017",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.008,
-            "w": 0.071,
-            "h": 0.091,
+            "x": 0.069,
+            "y": 0.067,
+            "w": 0.323,
+            "h": 0.233,
             "basis": "measured"
           },
-          "recurrence_count": 4,
-          "basis": "measured"
+          "recurrence_count": 2,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S018",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.247,
-            "w": 1.0,
-            "h": 0.506,
+            "x": 0.069,
+            "y": 0.245,
+            "w": 0.423,
+            "h": 0.12,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S019",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.382,
-            "w": 1.0,
-            "h": 0.236,
+            "x": 0.069,
+            "y": 0.266,
+            "w": 0.425,
+            "h": 0.634,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S020",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.946,
-            "w": 0.446,
-            "h": 0.054,
+            "x": 0.069,
+            "y": 0.266,
+            "w": 0.863,
+            "h": 0.634,
             "basis": "measured"
           },
-          "recurrence_count": 11,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S021",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.012,
-            "y": 0.967,
-            "w": 0.502,
-            "h": 0.023,
+            "x": 0.069,
+            "y": 0.266,
+            "w": 0.863,
+            "h": 0.634,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S022",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.013,
-            "y": 0.953,
-            "w": 0.505,
-            "h": 0.047,
+            "x": 0.069,
+            "y": 0.3,
+            "w": 0.323,
+            "h": 0.556,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 2,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S023",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.013,
-            "y": 0.957,
-            "w": 0.562,
-            "h": 0.043,
+            "x": 0.069,
+            "y": 0.365,
+            "w": 0.423,
+            "h": 0.537,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S024",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.016,
-            "y": 0.091,
-            "w": 0.381,
-            "h": 0.076,
+            "x": 0.075,
+            "y": 0.311,
+            "w": 0.85,
+            "h": 0.214,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S025",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.024,
-            "y": 0.4,
-            "w": 0.165,
-            "h": 0.256,
+            "x": 0.125,
+            "y": 0.164,
+            "w": 0.75,
+            "h": 0.348,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S026",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.001,
-            "w": 0.154,
-            "h": 0.101,
+            "x": 0.125,
+            "y": 0.525,
+            "w": 0.75,
+            "h": 0.241,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S027",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.001,
-            "w": 0.185,
-            "h": 0.101,
+            "x": 0.148,
+            "y": 0.0,
+            "w": 0.477,
+            "h": 1.0,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S028",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.002,
-            "w": 0.25,
-            "h": 0.101,
+            "x": 0.15,
+            "y": 0.567,
+            "w": 0.7,
+            "h": 0.256,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S029",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.002,
-            "w": 0.474,
-            "h": 0.101,
+            "x": 0.322,
+            "y": 0.0,
+            "w": 0.357,
+            "h": 1.0,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S030",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.002,
-            "w": 0.779,
-            "h": 0.101,
+            "x": 0.331,
+            "y": 0.927,
+            "w": 0.338,
+            "h": 0.053,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 11,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S031",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.078,
-            "y": 0.023,
-            "w": 0.154,
-            "h": 0.101,
+            "x": 0.331,
+            "y": 0.927,
+            "w": 0.338,
+            "h": 0.053,
             "basis": "measured"
           },
-          "recurrence_count": 3,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S032",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.087,
-            "y": 0.138,
-            "w": 0.337,
-            "h": 0.569,
+            "x": 0.391,
+            "y": 0.04,
+            "w": 0.559,
+            "h": 0.853,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S033",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.087,
-            "y": 0.138,
-            "w": 0.844,
-            "h": 0.327,
+            "x": 0.425,
+            "y": 0.144,
+            "w": 0.506,
+            "h": 0.711,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S034",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.087,
-            "y": 0.138,
-            "w": 0.844,
-            "h": 0.408,
+            "x": 0.506,
+            "y": 0.245,
+            "w": 0.425,
+            "h": 0.12,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S035",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.087,
-            "y": 0.138,
-            "w": 0.844,
-            "h": 0.489,
+            "x": 0.506,
+            "y": 0.266,
+            "w": 0.425,
+            "h": 0.634,
             "basis": "measured"
           },
-          "recurrence_count": 2,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S036",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.087,
-            "y": 0.138,
-            "w": 0.859,
-            "h": 0.569,
+            "x": 0.506,
+            "y": 0.365,
+            "w": 0.425,
+            "h": 0.537,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S037",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.108,
-            "y": 0.404,
-            "w": 0.327,
-            "h": 0.193,
+            "x": 0.508,
+            "y": 0.224,
+            "w": 0.442,
+            "h": 0.093,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S038",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.109,
-            "y": 0.448,
-            "w": 0.312,
-            "h": 0.103,
+            "x": 0.508,
+            "y": 0.233,
+            "w": 0.442,
+            "h": 0.66,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S039",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.124,
-            "y": 0.404,
-            "w": 0.246,
-            "h": 0.193,
+            "x": 0.508,
+            "y": 0.317,
+            "w": 0.442,
+            "h": 0.576,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S040",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.139,
-            "y": 0.448,
-            "w": 0.246,
-            "h": 0.103,
+            "x": 0.585,
+            "y": 0.285,
+            "w": 0.415,
+            "h": 0.383,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S041",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.148,
-            "y": 0.26,
-            "w": 0.142,
-            "h": 0.043,
+            "x": 0.672,
+            "y": 0.933,
+            "w": 0.325,
+            "h": 0.067,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S042",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.185,
-            "y": 0.163,
-            "w": 0.167,
-            "h": 0.045,
+            "x": 0.675,
+            "y": 0.933,
+            "w": 0.325,
+            "h": 0.067,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S043",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.22,
-            "y": 0.448,
-            "w": 0.102,
-            "h": 0.103,
+            "x": 0.675,
+            "y": 0.933,
+            "w": 0.325,
+            "h": 0.067,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S044",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.224,
-            "y": 0.346,
-            "w": 0.069,
-            "h": 0.043,
+            "x": 0.706,
+            "y": 0.927,
+            "w": 0.225,
+            "h": 0.053,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 11,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S045",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.232,
-            "y": 0.466,
-            "w": 0.155,
-            "h": 0.121,
+            "x": 0.706,
+            "y": 0.927,
+            "w": 0.225,
+            "h": 0.053,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S046",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.236,
-            "y": 0.466,
-            "w": 0.149,
-            "h": 0.076,
+            "x": 0.719,
+            "y": 0.927,
+            "w": 0.233,
+            "h": 0.053,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 5,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S047",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.24,
-            "y": 0.409,
-            "w": 0.52,
-            "h": 0.157,
+            "x": 0.898,
+            "y": 0.947,
+            "w": 0.102,
+            "h": 0.053,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 5,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S048",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.26,
-            "y": 0.564,
-            "w": 0.092,
-            "h": 0.067,
+            "x": 0.919,
+            "y": 0.0,
+            "w": 0.081,
+            "h": 0.053,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 6,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S049",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.264,
-            "y": 0.217,
-            "w": 0.154,
-            "h": 0.043,
+            "x": 0.919,
+            "y": 0.0,
+            "w": 0.081,
+            "h": 0.053,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
-        },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        }
+      ],
+      "placeholder_measurements": [
         {
-          "primitive_id": "S050",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
           "geometry": {
-            "x": 0.293,
-            "y": 0.307,
-            "w": 0.154,
-            "h": 0.043,
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
-          "primitive_id": "S051",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
           "geometry": {
-            "x": 0.315,
-            "y": 0.735,
-            "w": 0.101,
-            "h": 0.067,
+            "x": 0.05,
+            "y": 0.233333,
+            "w": 0.9,
+            "h": 0.659954,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
-          "primitive_id": "S052",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
           "geometry": {
-            "x": 0.325,
-            "y": 0.661,
-            "w": 0.351,
-            "h": 0.272,
+            "x": 0.675,
+            "y": 0.933333,
+            "w": 0.325,
+            "h": 0.066667,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
-          "primitive_id": "S053",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH004",
+          "placeholder_type": "dt",
           "geometry": {
-            "x": 0.352,
-            "y": 0.389,
-            "w": 0.125,
-            "h": 0.043,
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
-          "primitive_id": "S054",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
           "geometry": {
-            "x": 0.358,
-            "y": 0.625,
-            "w": 0.154,
-            "h": 0.043,
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
-          "primitive_id": "S055",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
           "geometry": {
-            "x": 0.389,
-            "y": 0.562,
-            "w": 0.092,
-            "h": 0.067,
+            "x": 0.06875,
+            "y": 0.266204,
+            "w": 0.8625,
+            "h": 0.634491,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
-          "primitive_id": "S056",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
           "geometry": {
-            "x": 0.389,
-            "y": 0.814,
-            "w": 0.154,
-            "h": 0.045,
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
-          "primitive_id": "S057",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
           "geometry": {
-            "x": 0.423,
-            "y": 0.458,
-            "w": 0.155,
-            "h": 0.134,
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
-          "primitive_id": "S058",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH001",
+          "placeholder_type": "ctrtitle",
           "geometry": {
-            "x": 0.507,
-            "y": 0.562,
-            "w": 0.092,
-            "h": 0.067,
+            "x": 0.075,
+            "y": 0.310648,
+            "w": 0.85,
+            "h": 0.214352,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S059",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH002",
+          "placeholder_type": "subtitle",
           "geometry": {
-            "x": 0.537,
-            "y": 0.243,
-            "w": 0.133,
-            "h": 0.043,
+            "x": 0.15,
+            "y": 0.566667,
+            "w": 0.7,
+            "h": 0.255556,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S060",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
           "geometry": {
-            "x": 0.545,
-            "y": 0.733,
-            "w": 0.118,
-            "h": 0.067,
+            "x": 0.675,
+            "y": 0.933333,
+            "w": 0.325,
+            "h": 0.066667,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S061",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
           "geometry": {
-            "x": 0.58,
-            "y": 0.134,
-            "w": 0.133,
-            "h": 0.045,
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S062",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
           "geometry": {
-            "x": 0.586,
-            "y": 0.159,
-            "w": 0.343,
-            "h": 0.732,
+            "x": 0.05,
+            "y": 0.233333,
+            "w": 0.9,
+            "h": 0.659954,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S063",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
           "geometry": {
-            "x": 0.615,
-            "y": 0.448,
-            "w": 0.147,
-            "h": 0.116,
+            "x": 0.671875,
+            "y": 0.933333,
+            "w": 0.325,
+            "h": 0.066667,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S064",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH004",
+          "placeholder_type": "dt",
           "geometry": {
-            "x": 0.642,
-            "y": 0.562,
-            "w": 0.092,
-            "h": 0.067,
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S065",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
           "geometry": {
-            "x": 0.671,
-            "y": 0.31,
-            "w": 0.133,
-            "h": 0.043,
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S066",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
           "geometry": {
-            "x": 0.804,
-            "y": 0.299,
-            "w": 0.155,
-            "h": 0.456,
+            "x": 0.05,
+            "y": 0.233333,
+            "w": 0.441667,
+            "h": 0.659954,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
-          "primitive_id": "S067",
-          "primitive_class": "text_region",
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
           "geometry": {
-            "x": 0.966,
-            "y": 0.948,
-            "w": 0.034,
-            "h": 0.052,
+            "x": 0.508333,
+            "y": 0.233333,
+            "w": 0.441667,
+            "h": 0.659954,
             "basis": "measured"
           },
-          "recurrence_count": 16,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH006",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.223843,
+            "w": 0.44184,
+            "h": 0.093287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.31713,
+            "w": 0.44184,
+            "h": 0.576157,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.507986,
+            "y": 0.223843,
+            "w": 0.442014,
+            "h": 0.093287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.507986,
+            "y": 0.31713,
+            "w": 0.442014,
+            "h": 0.576157,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH006",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH007",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH008",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.039815,
+            "w": 0.328993,
+            "h": 0.169444,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.390972,
+            "y": 0.039815,
+            "w": 0.559028,
+            "h": 0.853472,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.209259,
+            "w": 0.328993,
+            "h": 0.684028,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH006",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "ctrtitle",
+          "geometry": {
+            "x": 0.125,
+            "y": 0.163657,
+            "w": 0.75,
+            "h": 0.348148,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "subtitle",
+          "geometry": {
+            "x": 0.125,
+            "y": 0.525232,
+            "w": 0.75,
+            "h": 0.241435,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.266204,
+            "w": 0.8625,
+            "h": 0.634491,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.068229,
+            "y": 0.249306,
+            "w": 0.8625,
+            "h": 0.415972,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.068229,
+            "y": 0.669213,
+            "w": 0.8625,
+            "h": 0.21875,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.266204,
+            "w": 0.425,
+            "h": 0.634491,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.50625,
+            "y": 0.266204,
+            "w": 0.425,
+            "h": 0.634491,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.245139,
+            "w": 0.423047,
+            "h": 0.120139,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.365278,
+            "w": 0.423047,
+            "h": 0.537269,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.50625,
+            "y": 0.245139,
+            "w": 0.42513,
+            "h": 0.120139,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.50625,
+            "y": 0.365278,
+            "w": 0.42513,
+            "h": 0.537269,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH006",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH007",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.066667,
+            "w": 0.322526,
+            "h": 0.233333,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.42513,
+            "y": 0.143981,
+            "w": 0.50625,
+            "h": 0.710648,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.3,
+            "w": 0.322526,
+            "h": 0.555787,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.066667,
+            "w": 0.322526,
+            "h": 0.233333,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "unknown",
+          "geometry": {
+            "x": 0.42513,
+            "y": 0.143981,
+            "w": 0.50625,
+            "h": 0.710648,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.3,
+            "w": 0.322526,
+            "h": 0.555787,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.321549,
+            "y": 0.0,
+            "w": 0.356901,
+            "h": 1.0,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.585091,
+            "y": 0.285301,
+            "w": 0.414909,
+            "h": 0.383333,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.147591,
+            "y": 0.0,
+            "w": 0.476693,
+            "h": 1.0,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
         }
       ]
     },
@@ -1294,180 +2655,214 @@
       "layout_count": 18,
       "slide_count": 15,
       "measurement_basis": {
-        "slide_size": "measured",
-        "topology": "measured",
+        "placeholders": "measured",
+        "primitives": "measured",
         "regions": "measured",
-        "typography": "measured",
+        "slide_size": "measured",
         "styles": "measured",
-        "primitives": "measured"
+        "topology": "measured",
+        "typography": "measured"
       },
       "layout_master_topology": [
         {
           "source_id": "L001",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L002",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L003",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L004",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L005",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L006",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L007",
           "target_id": "M001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L008",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L009",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L010",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L011",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L012",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L013",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L014",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L015",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L016",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L017",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "source_id": "L018",
           "target_id": "M002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         }
       ],
       "slide_layout_topology": [
         {
           "source_id": "D001",
           "target_id": "L001",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D002",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D003",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D004",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D005",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D006",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D007",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D008",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D009",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D010",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D011",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D012",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D013",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D014",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         },
         {
           "source_id": "D015",
           "target_id": "L002",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_recurrence_derived"
         }
       ],
       "shell_regions": [
@@ -1475,123 +2870,97 @@
           "region_id": "R001",
           "role": "title",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.070874,
-            "h": 0.090506,
+            "x": 0.06875,
+            "y": 0.040046,
+            "w": 0.652257,
+            "h": 0.151274,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 17
+          "source_scope": "slide_master",
+          "recurrence_count": 24
         },
         {
           "region_id": "R002",
           "role": "header",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.153545,
-            "h": 0.101006,
+            "x": 0.06888,
+            "y": 0.040046,
+            "w": 0.559028,
+            "h": 0.166667,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 22
+          "source_scope": "slide_master",
+          "recurrence_count": 25
         },
         {
           "region_id": "R003",
           "role": "footer",
           "geometry": {
-            "x": 0.012783,
-            "y": 0.948485,
-            "w": 0.446341,
-            "h": 0.051515,
+            "x": 0.46569,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 31
+          "source_scope": "slide_master",
+          "recurrence_count": 58
         },
         {
           "region_id": "R004",
           "role": "page_number",
           "geometry": {
-            "x": 0.966477,
-            "y": 0.948485,
-            "w": 0.033523,
-            "h": 0.051515,
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 13
+          "source_scope": "slide_layout",
+          "recurrence_count": 5
         },
         {
           "region_id": "R005",
           "role": "navigation",
           "geometry": {
-            "x": 0.012783,
-            "y": 0.948485,
-            "w": 0.446341,
-            "h": 0.051515,
+            "x": 0.507118,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
             "basis": "measured"
           },
           "basis": "measured",
-          "recurrence_count": 31
+          "source_scope": "slide_master",
+          "recurrence_count": 54
         }
       ],
       "safe_content_bounds": {
-        "x": 0.0,
-        "y": 0.0,
-        "w": 1.0,
-        "h": 1.0,
-        "basis": "derived"
+        "value": null,
+        "basis": "not_observable_structurally",
+        "source_scope": "not_observable_structurally",
+        "evidence_ids": []
       },
       "typography_roles": [
         {
-          "role": "body",
-          "family": "Times New Roman",
-          "size_pt": 40.0,
-          "weight": "regular",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "body",
-          "family": "other_approved",
-          "size_pt": 24.0,
-          "weight": "regular",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "footer",
-          "family": "other_approved",
+          "role": "title",
+          "family": "Arial",
           "size_pt": 18.0,
-          "weight": "regular",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "title",
-          "family": "Times New Roman",
-          "size_pt": 32.0,
-          "weight": "regular",
-          "style": "normal",
-          "basis": "measured"
-        },
-        {
-          "role": "title",
-          "family": "other_approved",
-          "size_pt": 32.0,
           "weight": "bold",
           "style": "normal",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "role": "title",
-          "family": "other_approved",
-          "size_pt": 32.0,
-          "weight": "regular",
+          "family": "Times New Roman",
+          "size_pt": 23.0,
+          "weight": "bold",
           "style": "normal",
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         }
       ],
       "style_roles": [
@@ -1600,348 +2969,2287 @@
           "fill_role": "accent",
           "stroke_role": "none",
           "line_width_pt": 0.0,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "role": "neutral",
-          "fill_role": "neutral",
+          "fill_role": "accent",
           "stroke_role": "none",
           "line_width_pt": 0.0,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "role": "emphasis",
+          "fill_role": "emphasis",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "role": "neutral",
           "fill_role": "none",
           "stroke_role": "none",
           "line_width_pt": 0.0,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "unknown",
+          "stroke_role": "unknown",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "theme:dk1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt1",
+          "stroke_role": "theme:lt1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk2",
+          "stroke_role": "theme:dk2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt2",
+          "stroke_role": "theme:lt2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent1",
+          "stroke_role": "theme:accent1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent2",
+          "stroke_role": "theme:accent2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent3",
+          "stroke_role": "theme:accent3",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent4",
+          "stroke_role": "theme:accent4",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent5",
+          "stroke_role": "theme:accent5",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent6",
+          "stroke_role": "theme:accent6",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:hlink",
+          "stroke_role": "theme:hlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:folhlink",
+          "stroke_role": "theme:folhlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "theme:dk1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt1",
+          "stroke_role": "theme:lt1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk2",
+          "stroke_role": "theme:dk2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt2",
+          "stroke_role": "theme:lt2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent1",
+          "stroke_role": "theme:accent1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent2",
+          "stroke_role": "theme:accent2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent3",
+          "stroke_role": "theme:accent3",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent4",
+          "stroke_role": "theme:accent4",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent5",
+          "stroke_role": "theme:accent5",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent6",
+          "stroke_role": "theme:accent6",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:hlink",
+          "stroke_role": "theme:hlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:folhlink",
+          "stroke_role": "theme:folhlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "theme:dk1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt1",
+          "stroke_role": "theme:lt1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk2",
+          "stroke_role": "theme:dk2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt2",
+          "stroke_role": "theme:lt2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent1",
+          "stroke_role": "theme:accent1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent2",
+          "stroke_role": "theme:accent2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent3",
+          "stroke_role": "theme:accent3",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent4",
+          "stroke_role": "theme:accent4",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent5",
+          "stroke_role": "theme:accent5",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent6",
+          "stroke_role": "theme:accent6",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:hlink",
+          "stroke_role": "theme:hlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:folhlink",
+          "stroke_role": "theme:folhlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "theme:dk1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt1",
+          "stroke_role": "theme:lt1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk2",
+          "stroke_role": "theme:dk2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:lt2",
+          "stroke_role": "theme:lt2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent1",
+          "stroke_role": "theme:accent1",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent2",
+          "stroke_role": "theme:accent2",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent3",
+          "stroke_role": "theme:accent3",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent4",
+          "stroke_role": "theme:accent4",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent5",
+          "stroke_role": "theme:accent5",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:accent6",
+          "stroke_role": "theme:accent6",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:hlink",
+          "stroke_role": "theme:hlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
+        },
+        {
+          "role": "accent",
+          "fill_role": "theme:folhlink",
+          "stroke_role": "theme:folhlink",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "theme"
         }
       ],
       "shell_primitives": [
         {
           "primitive_id": "S001",
-          "primitive_class": "text_region",
+          "primitive_class": "native_shape",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.071,
-            "h": 0.091,
+            "x": 0.425,
+            "y": 0.144,
+            "w": 0.506,
+            "h": 0.711,
             "basis": "measured"
           },
-          "recurrence_count": 7,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S002",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.084,
-            "h": 0.091,
+            "x": 0.05,
+            "y": 0.04,
+            "w": 0.329,
+            "h": 0.169,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S003",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.543,
-            "h": 1.0,
+            "x": 0.05,
+            "y": 0.04,
+            "w": 0.9,
+            "h": 0.167,
             "basis": "measured"
           },
-          "recurrence_count": 5,
-          "basis": "measured"
+          "recurrence_count": 4,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S004",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 0.567,
-            "h": 0.101,
+            "x": 0.05,
+            "y": 0.04,
+            "w": 0.9,
+            "h": 0.167,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S005",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.008,
-            "w": 0.071,
-            "h": 0.091,
+            "x": 0.05,
+            "y": 0.209,
+            "w": 0.329,
+            "h": 0.684,
             "basis": "measured"
           },
-          "recurrence_count": 2,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S006",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.247,
-            "w": 1.0,
-            "h": 0.506,
+            "x": 0.05,
+            "y": 0.224,
+            "w": 0.442,
+            "h": 0.093,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S007",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.382,
-            "w": 1.0,
-            "h": 0.236,
+            "x": 0.05,
+            "y": 0.233,
+            "w": 0.442,
+            "h": 0.66,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S008",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.0,
-            "y": 0.946,
-            "w": 0.446,
-            "h": 0.054,
+            "x": 0.05,
+            "y": 0.233,
+            "w": 0.9,
+            "h": 0.66,
             "basis": "measured"
           },
-          "recurrence_count": 8,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S009",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.012,
-            "y": 0.967,
-            "w": 0.502,
-            "h": 0.023,
+            "x": 0.05,
+            "y": 0.233,
+            "w": 0.9,
+            "h": 0.66,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S010",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.013,
-            "y": 0.953,
-            "w": 0.505,
-            "h": 0.047,
+            "x": 0.05,
+            "y": 0.317,
+            "w": 0.442,
+            "h": 0.576,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S011",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.013,
-            "y": 0.957,
-            "w": 0.562,
-            "h": 0.043,
+            "x": 0.052,
+            "y": 0.099,
+            "w": 0.923,
+            "h": 0.136,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S012",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.001,
-            "w": 0.154,
-            "h": 0.101,
+            "x": 0.055,
+            "y": 0.265,
+            "w": 0.917,
+            "h": 0.005,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S013",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.001,
-            "w": 0.185,
-            "h": 0.101,
+            "x": 0.068,
+            "y": 0.249,
+            "w": 0.863,
+            "h": 0.416,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S014",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.002,
-            "w": 0.25,
-            "h": 0.101,
+            "x": 0.068,
+            "y": 0.669,
+            "w": 0.863,
+            "h": 0.219,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S015",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.002,
-            "w": 0.474,
-            "h": 0.101,
+            "x": 0.069,
+            "y": 0.053,
+            "w": 0.863,
+            "h": 0.193,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 5,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S016",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.076,
-            "y": 0.002,
-            "w": 0.779,
-            "h": 0.101,
+            "x": 0.069,
+            "y": 0.053,
+            "w": 0.863,
+            "h": 0.193,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S017",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.078,
-            "y": 0.023,
-            "w": 0.154,
-            "h": 0.101,
+            "x": 0.069,
+            "y": 0.067,
+            "w": 0.323,
+            "h": 0.233,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 2,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S018",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.108,
-            "y": 0.404,
-            "w": 0.327,
-            "h": 0.193,
+            "x": 0.069,
+            "y": 0.245,
+            "w": 0.423,
+            "h": 0.12,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S019",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.109,
-            "y": 0.448,
-            "w": 0.312,
-            "h": 0.103,
+            "x": 0.069,
+            "y": 0.266,
+            "w": 0.425,
+            "h": 0.634,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S020",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.124,
-            "y": 0.404,
-            "w": 0.246,
-            "h": 0.193,
+            "x": 0.069,
+            "y": 0.266,
+            "w": 0.863,
+            "h": 0.634,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S021",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.139,
-            "y": 0.448,
-            "w": 0.246,
-            "h": 0.103,
+            "x": 0.069,
+            "y": 0.266,
+            "w": 0.863,
+            "h": 0.634,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_master"
         },
         {
           "primitive_id": "S022",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.22,
-            "y": 0.448,
-            "w": 0.102,
-            "h": 0.103,
+            "x": 0.069,
+            "y": 0.3,
+            "w": 0.323,
+            "h": 0.556,
             "basis": "measured"
           },
-          "recurrence_count": 1,
-          "basis": "measured"
+          "recurrence_count": 2,
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S023",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.325,
-            "y": 0.661,
-            "w": 0.351,
-            "h": 0.272,
+            "x": 0.069,
+            "y": 0.365,
+            "w": 0.423,
+            "h": 0.537,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S024",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.586,
-            "y": 0.159,
-            "w": 0.343,
-            "h": 0.732,
+            "x": 0.075,
+            "y": 0.311,
+            "w": 0.85,
+            "h": 0.214,
             "basis": "measured"
           },
           "recurrence_count": 1,
-          "basis": "measured"
+          "basis": "measured",
+          "source_scope": "slide_layout"
         },
         {
           "primitive_id": "S025",
           "primitive_class": "text_region",
           "geometry": {
-            "x": 0.966,
-            "y": 0.948,
-            "w": 0.034,
-            "h": 0.052,
+            "x": 0.125,
+            "y": 0.164,
+            "w": 0.75,
+            "h": 0.348,
             "basis": "measured"
           },
-          "recurrence_count": 13,
-          "basis": "measured"
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S026",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.125,
+            "y": 0.525,
+            "w": 0.75,
+            "h": 0.241,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S027",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.148,
+            "y": 0.0,
+            "w": 0.477,
+            "h": 1.0,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S028",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.15,
+            "y": 0.567,
+            "w": 0.7,
+            "h": 0.256,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S029",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.322,
+            "y": 0.0,
+            "w": 0.357,
+            "h": 1.0,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S030",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.331,
+            "y": 0.927,
+            "w": 0.338,
+            "h": 0.053,
+            "basis": "measured"
+          },
+          "recurrence_count": 11,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S031",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.331,
+            "y": 0.927,
+            "w": 0.338,
+            "h": 0.053,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "primitive_id": "S032",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.391,
+            "y": 0.04,
+            "w": 0.559,
+            "h": 0.853,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S033",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.425,
+            "y": 0.144,
+            "w": 0.506,
+            "h": 0.711,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S034",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.506,
+            "y": 0.245,
+            "w": 0.425,
+            "h": 0.12,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S035",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.506,
+            "y": 0.266,
+            "w": 0.425,
+            "h": 0.634,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S036",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.506,
+            "y": 0.365,
+            "w": 0.425,
+            "h": 0.537,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S037",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.508,
+            "y": 0.224,
+            "w": 0.442,
+            "h": 0.093,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S038",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.508,
+            "y": 0.233,
+            "w": 0.442,
+            "h": 0.66,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S039",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.508,
+            "y": 0.317,
+            "w": 0.442,
+            "h": 0.576,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S040",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.585,
+            "y": 0.285,
+            "w": 0.415,
+            "h": 0.383,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S041",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.672,
+            "y": 0.933,
+            "w": 0.325,
+            "h": 0.067,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S042",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.675,
+            "y": 0.933,
+            "w": 0.325,
+            "h": 0.067,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S043",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.675,
+            "y": 0.933,
+            "w": 0.325,
+            "h": 0.067,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "primitive_id": "S044",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.706,
+            "y": 0.927,
+            "w": 0.225,
+            "h": 0.053,
+            "basis": "measured"
+          },
+          "recurrence_count": 11,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S045",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.706,
+            "y": 0.927,
+            "w": 0.225,
+            "h": 0.053,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "primitive_id": "S046",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.719,
+            "y": 0.927,
+            "w": 0.233,
+            "h": 0.053,
+            "basis": "measured"
+          },
+          "recurrence_count": 5,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S047",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.898,
+            "y": 0.947,
+            "w": 0.102,
+            "h": 0.053,
+            "basis": "measured"
+          },
+          "recurrence_count": 5,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S048",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.919,
+            "y": 0.0,
+            "w": 0.081,
+            "h": 0.053,
+            "basis": "measured"
+          },
+          "recurrence_count": 6,
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "primitive_id": "S049",
+          "primitive_class": "text_region",
+          "geometry": {
+            "x": 0.919,
+            "y": 0.0,
+            "w": 0.081,
+            "h": 0.053,
+            "basis": "measured"
+          },
+          "recurrence_count": 1,
+          "basis": "measured",
+          "source_scope": "slide_master"
+        }
+      ],
+      "placeholder_measurements": [
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.233333,
+            "w": 0.9,
+            "h": 0.659954,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.675,
+            "y": 0.933333,
+            "w": 0.325,
+            "h": 0.066667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.266204,
+            "w": 0.8625,
+            "h": 0.634491,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "ctrtitle",
+          "geometry": {
+            "x": 0.075,
+            "y": 0.310648,
+            "w": 0.85,
+            "h": 0.214352,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "subtitle",
+          "geometry": {
+            "x": 0.15,
+            "y": 0.566667,
+            "w": 0.7,
+            "h": 0.255556,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.675,
+            "y": 0.933333,
+            "w": 0.325,
+            "h": 0.066667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.233333,
+            "w": 0.9,
+            "h": 0.659954,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.671875,
+            "y": 0.933333,
+            "w": 0.325,
+            "h": 0.066667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.233333,
+            "w": 0.441667,
+            "h": 0.659954,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.508333,
+            "y": 0.233333,
+            "w": 0.441667,
+            "h": 0.659954,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH006",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.223843,
+            "w": 0.44184,
+            "h": 0.093287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.31713,
+            "w": 0.44184,
+            "h": 0.576157,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.507986,
+            "y": 0.223843,
+            "w": 0.442014,
+            "h": 0.093287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.507986,
+            "y": 0.31713,
+            "w": 0.442014,
+            "h": 0.576157,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH006",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH007",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH008",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.040046,
+            "w": 0.9,
+            "h": 0.166667,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.039815,
+            "w": 0.328993,
+            "h": 0.169444,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.390972,
+            "y": 0.039815,
+            "w": 0.559028,
+            "h": 0.853472,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.05,
+            "y": 0.209259,
+            "w": 0.328993,
+            "h": 0.684028,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.898438,
+            "y": 0.946759,
+            "w": 0.101562,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.71875,
+            "y": 0.927084,
+            "w": 0.233333,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH006",
+          "placeholder_type": "dt",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "ctrtitle",
+          "geometry": {
+            "x": 0.125,
+            "y": 0.163657,
+            "w": 0.75,
+            "h": 0.348148,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "subtitle",
+          "geometry": {
+            "x": 0.125,
+            "y": 0.525232,
+            "w": 0.75,
+            "h": 0.241435,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.266204,
+            "w": 0.8625,
+            "h": 0.634491,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.068229,
+            "y": 0.249306,
+            "w": 0.8625,
+            "h": 0.415972,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.068229,
+            "y": 0.669213,
+            "w": 0.8625,
+            "h": 0.21875,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.266204,
+            "w": 0.425,
+            "h": 0.634491,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.50625,
+            "y": 0.266204,
+            "w": 0.425,
+            "h": 0.634491,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.245139,
+            "w": 0.423047,
+            "h": 0.120139,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.365278,
+            "w": 0.423047,
+            "h": 0.537269,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.50625,
+            "y": 0.245139,
+            "w": 0.42513,
+            "h": 0.120139,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.50625,
+            "y": 0.365278,
+            "w": 0.42513,
+            "h": 0.537269,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH006",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH007",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.066667,
+            "w": 0.322526,
+            "h": 0.233333,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.42513,
+            "y": 0.143981,
+            "w": 0.50625,
+            "h": 0.710648,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.3,
+            "w": 0.322526,
+            "h": 0.555787,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.066667,
+            "w": 0.322526,
+            "h": 0.233333,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "unknown",
+          "geometry": {
+            "x": 0.42513,
+            "y": 0.143981,
+            "w": 0.50625,
+            "h": 0.710648,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.06888,
+            "y": 0.3,
+            "w": 0.322526,
+            "h": 0.555787,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH005",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.06875,
+            "y": 0.053241,
+            "w": 0.8625,
+            "h": 0.193287,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.321549,
+            "y": 0.0,
+            "w": 0.356901,
+            "h": 1.0,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH001",
+          "placeholder_type": "title",
+          "geometry": {
+            "x": 0.585091,
+            "y": 0.285301,
+            "w": 0.414909,
+            "h": 0.383333,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH002",
+          "placeholder_type": "body",
+          "geometry": {
+            "x": 0.147591,
+            "y": 0.0,
+            "w": 0.476693,
+            "h": 1.0,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH003",
+          "placeholder_type": "ftr",
+          "geometry": {
+            "x": 0.33125,
+            "y": 0.926852,
+            "w": 0.3375,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
+        },
+        {
+          "placeholder_id": "PH004",
+          "placeholder_type": "sldnum",
+          "geometry": {
+            "x": 0.70625,
+            "y": 0.926852,
+            "w": 0.225,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "source_scope": "slide_layout"
         }
       ]
     }

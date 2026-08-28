@@ -62,7 +62,7 @@ class PrivateProfileStore:
     """Validates a local-only destination before a future profiler could open input."""
 
     def __init__(self, root: Path | str, *, repository_root: Path | str):
-        self.root = Path(root)
+        self.root = Path(root).resolve(strict=False)
         self.repository_root = Path(repository_root).resolve()
         self._validate_root()
 
