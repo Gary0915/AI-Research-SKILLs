@@ -1,25 +1,796 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sanitized-shell-structural-descriptors.schema.json",
-  "type": "object",
-  "additionalProperties": false,
-  "required": ["schema_version", "descriptors"],
-  "properties": {
-    "schema_version": {"const": "1.0.0"},
-    "descriptors": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/descriptor"}}
-  },
-  "$defs": {
-    "basis": {"enum": ["measured", "derived", "not_observable_structurally"]},
-    "source_scope": {"enum": ["slide_master", "slide_layout", "theme", "slide_recurrence_derived", "not_observable_structurally"]},
-    "geometry": {"type": "object", "additionalProperties": false, "required": ["x", "y", "w", "h", "basis"], "properties": {"x": {"type": "number", "minimum": 0, "maximum": 1}, "y": {"type": "number", "minimum": 0, "maximum": 1}, "w": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}, "h": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}, "basis": {"$ref": "#/$defs/basis"}}},
-    "color": {"type": "object", "additionalProperties": false, "required": ["source_kind", "direct_rgb", "theme_token", "resolved_rgb", "tint", "shade", "lum_mod", "lum_off", "transform_status", "source_scope", "basis"], "properties": {"source_kind": {"enum": ["none", "direct_rgb", "theme_role", "unknown"]}, "direct_rgb": {"type": ["string", "null"], "pattern": "^[0-9A-Fa-f]{6}$"}, "theme_token": {"type": ["string", "null"], "enum": [null, "accent1", "accent2", "accent3", "accent4", "accent5", "accent6", "dk1", "dk2", "lt1", "lt2", "hlink", "folhlink"]}, "resolved_rgb": {"type": ["string", "null"], "pattern": "^[0-9A-Fa-f]{6}$"}, "tint": {"type": ["number", "null"]}, "shade": {"type": ["number", "null"]}, "lum_mod": {"type": ["number", "null"]}, "lum_off": {"type": ["number", "null"]}, "transform_status": {"enum": ["supported", "unsupported", "unresolved"]}, "source_scope": {"$ref": "#/$defs/source_scope"}, "basis": {"$ref": "#/$defs/basis"}}},
-    "style": {"type": "object", "additionalProperties": false, "required": ["role", "fill_role", "stroke_role", "line_width_pt", "basis", "source_scope", "fill_color_evidence", "stroke_color_evidence"], "properties": {"role": {"enum": ["background", "neutral", "accent", "emphasis", "unknown"]}, "fill_role": {"type": "string", "pattern": "^(none|background|neutral|accent|emphasis|unknown|theme:(accent[1-6]|dk[12]|lt[12]|hlink|folhlink))$"}, "stroke_role": {"type": "string", "pattern": "^(none|background|neutral|accent|emphasis|unknown|theme:(accent[1-6]|dk[12]|lt[12]|hlink|folhlink))$"}, "line_width_pt": {"type": "number", "minimum": 0, "maximum": 20}, "basis": {"$ref": "#/$defs/basis"}, "source_scope": {"$ref": "#/$defs/source_scope"}, "fill_color_evidence": {"$ref": "#/$defs/color"}, "stroke_color_evidence": {"$ref": "#/$defs/color"}}},
-    "topology": {"type": "object", "additionalProperties": false, "required": ["source_id", "target_id", "basis", "source_scope"], "properties": {"source_id": {"type": "string", "pattern": "^[MLD][0-9]{3,}$"}, "target_id": {"type": "string", "pattern": "^[MLD][0-9]{3,}$"}, "basis": {"$ref": "#/$defs/basis"}, "source_scope": {"$ref": "#/$defs/source_scope"}}},
-    "region": {"type": "object", "additionalProperties": false, "required": ["region_id", "role", "geometry", "basis", "source_scope", "occurrence_count", "source_container_count", "eligible_container_count", "coverage_ratio", "supporting_source_ids", "role_evidence"], "properties": {"region_id": {"type": "string", "pattern": "^R[0-9]{3,}$"}, "role": {"enum": ["title", "subtitle", "header", "footer", "page_number", "navigation", "safe_content", "unknown"]}, "geometry": {"$ref": "#/$defs/geometry"}, "basis": {"$ref": "#/$defs/basis"}, "source_scope": {"$ref": "#/$defs/source_scope"}, "occurrence_count": {"type": "integer", "minimum": 1}, "source_container_count": {"type": "integer", "minimum": 1}, "eligible_container_count": {"type": "integer", "minimum": 1}, "coverage_ratio": {"type": "number", "minimum": 0, "maximum": 1}, "supporting_source_ids": {"type": "array", "items": {"type": "string", "pattern": "^[ML][0-9]{3,}$"}}, "role_evidence": {"enum": ["placeholder_semantic", "geometry_fallback"]}}},
-    "primitive": {"type": "object", "additionalProperties": false, "required": ["primitive_id", "primitive_class", "geometry", "occurrence_count", "source_container_count", "eligible_container_count", "coverage_ratio", "supporting_source_ids", "basis", "source_scope", "role_evidence"], "properties": {"primitive_id": {"type": "string", "pattern": "^S[0-9]{3,}$"}, "primitive_class": {"enum": ["text_region", "picture", "table_or_chart", "native_shape", "connector", "group", "unknown"]}, "geometry": {"$ref": "#/$defs/geometry"}, "occurrence_count": {"type": "integer", "minimum": 1}, "source_container_count": {"type": "integer", "minimum": 1}, "eligible_container_count": {"type": "integer", "minimum": 1}, "coverage_ratio": {"type": "number", "minimum": 0, "maximum": 1}, "supporting_source_ids": {"type": "array", "items": {"type": "string", "pattern": "^[ML][0-9]{3,}$"}}, "basis": {"$ref": "#/$defs/basis"}, "source_scope": {"$ref": "#/$defs/source_scope"}, "role_evidence": {"const": "source_container_recurrence"}}},
-    "font": {"type": "object", "additionalProperties": false, "required": ["role", "family", "theme_font_role", "size_pt", "weight", "style", "basis", "source_scope"], "properties": {"role": {"enum": ["title", "body", "caption", "footer", "unknown"]}, "family": {"type": "string", "pattern": "^(unknown|[A-Za-z][A-Za-z0-9 ._-]{0,63})$"}, "theme_font_role": {"type": ["string", "null"], "enum": [null, "major", "minor"]}, "size_pt": {"type": "number", "exclusiveMinimum": 0, "maximum": 200}, "weight": {"enum": ["regular", "bold", "unknown"]}, "style": {"enum": ["normal", "italic", "unknown"]}, "basis": {"$ref": "#/$defs/basis"}, "source_scope": {"$ref": "#/$defs/source_scope"}}},
-    "placeholder": {"type": "object", "additionalProperties": false, "required": ["placeholder_id", "placeholder_type", "geometry", "basis", "source_scope", "source_container_id"], "properties": {"placeholder_id": {"type": "string", "pattern": "^PH[0-9]{3,}$"}, "placeholder_type": {"enum": ["title", "ctrtitle", "subtitle", "body", "obj", "dt", "ftr", "sldnum", "hdr", "unknown"]}, "geometry": {"$ref": "#/$defs/geometry"}, "basis": {"$ref": "#/$defs/basis"}, "source_scope": {"$ref": "#/$defs/source_scope"}, "source_container_id": {"type": ["string", "null"], "pattern": "^[ML][0-9]{3,}$"}}},
-    "theme_entry": {"type": "object", "additionalProperties": false, "required": ["theme_token", "resolved_rgb", "basis", "source_scope"], "properties": {"theme_token": {"type": "string", "pattern": "^(accent[1-6]|dk[12]|lt[12]|hlink|folhlink)$"}, "resolved_rgb": {"type": "string", "pattern": "^[0-9A-Fa-f]{6}$"}, "basis": {"$ref": "#/$defs/basis"}, "source_scope": {"const": "theme"}}},
-    "descriptor": {"type": "object", "additionalProperties": false, "required": ["alias_uri", "source_sha256", "profile_id", "slide_size", "master_count", "layout_count", "shell_primitives", "slide_count", "measurement_basis", "layout_master_topology", "slide_layout_topology", "shell_regions", "safe_content_bounds", "typography_roles", "style_roles", "placeholder_measurements", "theme_palette"], "properties": {"alias_uri": {"type": "string", "enum": ["private://template_primary_1", "private://template_primary_3"]}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "profile_id": {"type": "string", "pattern": "^P3-[A-Z0-9-]+$"}, "slide_size": {"type": "object", "additionalProperties": false, "required": ["width", "height", "basis"], "properties": {"width": {"type": "number", "exclusiveMinimum": 0}, "height": {"type": "number", "exclusiveMinimum": 0}, "basis": {"$ref": "#/$defs/basis"}}}, "master_count": {"type": "integer", "minimum": 0}, "layout_count": {"type": "integer", "minimum": 0}, "slide_count": {"type": "integer", "minimum": 1}, "measurement_basis": {"type": "object", "additionalProperties": false, "required": ["slide_size", "topology", "regions", "typography", "styles", "primitives", "placeholders"], "properties": {"slide_size": {"$ref": "#/$defs/basis"}, "topology": {"$ref": "#/$defs/basis"}, "regions": {"$ref": "#/$defs/basis"}, "typography": {"$ref": "#/$defs/basis"}, "styles": {"$ref": "#/$defs/basis"}, "primitives": {"$ref": "#/$defs/basis"}, "placeholders": {"$ref": "#/$defs/basis"}}}, "layout_master_topology": {"type": "array", "items": {"$ref": "#/$defs/topology"}}, "slide_layout_topology": {"type": "array", "items": {"$ref": "#/$defs/topology"}}, "shell_regions": {"type": "array", "items": {"$ref": "#/$defs/region"}}, "safe_content_bounds": {"type": "object", "additionalProperties": false, "required": ["value", "basis", "source_scope", "evidence_ids"], "properties": {"value": {"anyOf": [{"$ref": "#/$defs/geometry"}, {"type": "null"}]}, "basis": {"$ref": "#/$defs/basis"}, "source_scope": {"$ref": "#/$defs/source_scope"}, "evidence_ids": {"type": "array", "items": {"type": "string", "pattern": "^[a-z_]+$"}}}}, "typography_roles": {"type": "array", "items": {"$ref": "#/$defs/font"}}, "style_roles": {"type": "array", "items": {"$ref": "#/$defs/style"}}, "shell_primitives": {"type": "array", "items": {"$ref": "#/$defs/primitive"}}, "placeholder_measurements": {"type": "array", "items": {"$ref": "#/$defs/placeholder"}}, "theme_palette": {"type": "array", "items": {"$ref": "#/$defs/theme_entry"}}}}
-  }
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "sanitized-shell-structural-descriptors.schema.json",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "schema_version",
+        "descriptors"
+    ],
+    "properties": {
+        "schema_version": {
+            "const": "1.0.0"
+        },
+        "descriptors": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+                "$ref": "#/$defs/descriptor"
+            }
+        }
+    },
+    "$defs": {
+        "basis": {
+            "enum": [
+                "measured",
+                "derived",
+                "not_observable_structurally"
+            ]
+        },
+        "source_scope": {
+            "enum": [
+                "slide_master",
+                "slide_layout",
+                "theme",
+                "slide_body",
+                "slide_content",
+                "slide_recurrence_derived",
+                "not_observable_structurally"
+            ]
+        },
+        "geometry": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "x",
+                "y",
+                "w",
+                "h",
+                "basis"
+            ],
+            "properties": {
+                "x": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "y": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "w": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 1
+                },
+                "h": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 1
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                }
+            }
+        },
+        "color": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "source_kind",
+                "direct_rgb",
+                "theme_token",
+                "resolved_rgb",
+                "tint",
+                "shade",
+                "lum_mod",
+                "lum_off",
+                "transform_status",
+                "theme_profile_id",
+                "source_scope",
+                "basis"
+            ],
+            "properties": {
+                "source_kind": {
+                    "enum": [
+                        "none",
+                        "direct_rgb",
+                        "theme_role",
+                        "unknown"
+                    ]
+                },
+                "direct_rgb": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^[0-9A-Fa-f]{6}$"
+                },
+                "theme_token": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "enum": [
+                        null,
+                        "accent1",
+                        "accent2",
+                        "accent3",
+                        "accent4",
+                        "accent5",
+                        "accent6",
+                        "dk1",
+                        "dk2",
+                        "lt1",
+                        "lt2",
+                        "hlink",
+                        "folhlink"
+                    ]
+                },
+                "resolved_rgb": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^[0-9A-Fa-f]{6}$"
+                },
+                "tint": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "shade": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "lum_mod": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "lum_off": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "transform_status": {
+                    "enum": [
+                        "supported",
+                        "unsupported",
+                        "unresolved"
+                    ]
+                },
+                "theme_profile_id": {
+                    "type": ["string", "null"],
+                    "pattern": "^T[0-9]{3,}$"
+                },
+                "source_scope": {
+                    "$ref": "#/$defs/source_scope"
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                }
+            }
+        },
+        "style": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "role",
+                "fill_role",
+                "stroke_role",
+                "line_width_pt",
+                "basis",
+                "source_scope",
+                "fill_color_evidence",
+                "stroke_color_evidence"
+            ],
+            "properties": {
+                "role": {
+                    "enum": [
+                        "background",
+                        "neutral",
+                        "accent",
+                        "emphasis",
+                        "unknown"
+                    ]
+                },
+                "fill_role": {
+                    "type": "string",
+                    "pattern": "^(none|background|neutral|accent|emphasis|unknown|theme:(accent[1-6]|dk[12]|lt[12]|hlink|folhlink))$"
+                },
+                "stroke_role": {
+                    "type": "string",
+                    "pattern": "^(none|background|neutral|accent|emphasis|unknown|theme:(accent[1-6]|dk[12]|lt[12]|hlink|folhlink))$"
+                },
+                "line_width_pt": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 20
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                },
+                "source_scope": {
+                    "$ref": "#/$defs/source_scope"
+                },
+                "fill_color_evidence": {
+                    "$ref": "#/$defs/color"
+                },
+                "stroke_color_evidence": {
+                    "$ref": "#/$defs/color"
+                }
+            }
+        },
+        "topology": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "source_id",
+                "target_id",
+                "basis",
+                "source_scope"
+            ],
+            "properties": {
+                "source_id": {
+                    "type": "string",
+                    "pattern": "^[MLD][0-9]{3,}$"
+                },
+                "target_id": {
+                    "type": "string",
+                    "pattern": "^[MLDT][0-9]{3,}$"
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                },
+                "source_scope": {
+                    "$ref": "#/$defs/source_scope"
+                }
+            }
+        },
+        "scope_support": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "source_scope",
+                "occurrence_count",
+                "source_container_count",
+                "eligible_container_count",
+                "coverage_ratio",
+                "supporting_source_ids"
+            ],
+            "properties": {
+                "source_scope": {
+                    "enum": [
+                        "slide_master",
+                        "slide_layout"
+                    ]
+                },
+                "occurrence_count": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "source_container_count": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "eligible_container_count": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "coverage_ratio": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "supporting_source_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[ML][0-9]{3,}$"
+                    }
+                }
+            }
+        },
+        "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "region_id",
+                "role",
+                "geometry",
+                "basis",
+                "support_by_scope",
+                "role_evidence"
+            ],
+            "properties": {
+                "region_id": {
+                    "type": "string",
+                    "pattern": "^R[0-9]{3,}$"
+                },
+                "role": {
+                    "enum": [
+                        "title",
+                        "subtitle",
+                        "header",
+                        "footer",
+                        "page_number",
+                        "date_time",
+                        "navigation",
+                        "safe_content",
+                        "unknown"
+                    ]
+                },
+                "geometry": {
+                    "$ref": "#/$defs/geometry"
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                },
+                "support_by_scope": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/$defs/scope_support"
+                    }
+                },
+                "role_evidence": {
+                    "enum": [
+                        "placeholder_semantic",
+                        "geometry_fallback"
+                    ]
+                }
+            }
+        },
+        "primitive": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "primitive_id",
+                "primitive_class",
+                "geometry",
+                "occurrence_count",
+                "source_container_count",
+                "eligible_container_count",
+                "coverage_ratio",
+                "supporting_source_ids",
+                "basis",
+                "source_scope",
+                "role_evidence"
+            ],
+            "properties": {
+                "primitive_id": {
+                    "type": "string",
+                    "pattern": "^S[0-9]{3,}$"
+                },
+                "primitive_class": {
+                    "enum": [
+                        "text_region",
+                        "picture",
+                        "table_or_chart",
+                        "native_shape",
+                        "connector",
+                        "group",
+                        "unknown"
+                    ]
+                },
+                "geometry": {
+                    "$ref": "#/$defs/geometry"
+                },
+                "occurrence_count": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "source_container_count": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "eligible_container_count": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "coverage_ratio": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "supporting_source_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[ML][0-9]{3,}$"
+                    }
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                },
+                "source_scope": {
+                    "$ref": "#/$defs/source_scope"
+                },
+                "role_evidence": {
+                    "const": "source_container_recurrence"
+                }
+            }
+        },
+        "font": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "role",
+                "family",
+                "theme_font_role",
+                "script_role",
+                "font_evidence_state",
+                "size_pt",
+                "weight",
+                "style",
+                "basis",
+                "source_scope"
+            ],
+            "properties": {
+                "role": {
+                    "enum": [
+                        "title",
+                        "body",
+                        "caption",
+                        "footer",
+                        "unknown"
+                    ]
+                },
+                "family": {
+                    "type": "string",
+                    "pattern": "^.{1,64}$"
+                },
+                "theme_font_role": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "enum": [
+                        null,
+                        "major",
+                        "minor"
+                    ]
+                },
+                "script_role": {
+                    "enum": [
+                        "latin",
+                        "east_asian",
+                        "complex_script"
+                    ]
+                },
+                "font_evidence_state": {
+                    "enum": [
+                        "explicit_font",
+                        "theme_font_resolved",
+                        "theme_font_unresolved",
+                        "inherited_unresolved",
+                        "unknown"
+                    ]
+                },
+                "size_pt": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 200
+                },
+                "weight": {
+                    "enum": [
+                        "regular",
+                        "bold",
+                        "unknown"
+                    ]
+                },
+                "style": {
+                    "enum": [
+                        "normal",
+                        "italic",
+                        "unknown"
+                    ]
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                },
+                "source_scope": {
+                    "$ref": "#/$defs/source_scope"
+                }
+            }
+        },
+        "placeholder": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "placeholder_id",
+                "placeholder_type",
+                "geometry",
+                "basis",
+                "source_scope",
+                "source_container_id"
+            ],
+            "properties": {
+                "placeholder_id": {
+                    "type": "string",
+                    "pattern": "^PH[0-9]{3,}$"
+                },
+                "placeholder_type": {
+                    "enum": [
+                        "title",
+                        "ctrtitle",
+                        "subtitle",
+                        "body",
+                        "obj",
+                        "dt",
+                        "ftr",
+                        "sldnum",
+                        "hdr",
+                        "unknown"
+                    ]
+                },
+                "geometry": {
+                    "$ref": "#/$defs/geometry"
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                },
+                "source_scope": {
+                    "$ref": "#/$defs/source_scope"
+                },
+                "source_container_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^[ML][0-9]{3,}$"
+                }
+            }
+        },
+        "theme_entry": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "theme_token",
+                "resolved_rgb",
+                "basis",
+                "source_scope"
+            ],
+            "properties": {
+                "theme_token": {
+                    "type": "string",
+                    "pattern": "^(accent[1-6]|dk[12]|lt[12]|hlink|folhlink)$"
+                },
+                "resolved_rgb": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{6}$"
+                },
+                "basis": {
+                    "$ref": "#/$defs/basis"
+                },
+                "source_scope": {
+                    "const": "theme"
+                }
+            }
+        },
+        "theme_profile": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["theme_profile_id", "palette", "font_scheme"],
+            "properties": {
+                "theme_profile_id": {"type": "string", "pattern": "^T[0-9]{3,}$"},
+                "palette": {"type": "array", "items": {"$ref": "#/$defs/theme_entry"}},
+                "font_scheme": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["major", "minor"],
+                    "properties": {
+                        "major": {"type": "object", "additionalProperties": false, "properties": {"latin": {"type": "string", "pattern": "^.{1,64}$"}, "east_asian": {"type": "string", "pattern": "^.{1,64}$"}, "complex_script": {"type": "string", "pattern": "^.{1,64}$"}}},
+                        "minor": {"type": "object", "additionalProperties": false, "properties": {"latin": {"type": "string", "pattern": "^.{1,64}$"}, "east_asian": {"type": "string", "pattern": "^.{1,64}$"}, "complex_script": {"type": "string", "pattern": "^.{1,64}$"}}}
+                    }
+                }
+            }
+        },
+        "descriptor": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "alias_uri",
+                "source_sha256",
+                "profile_id",
+                "slide_size",
+                "master_count",
+                "layout_count",
+                "shell_primitives",
+                "slide_count",
+                "measurement_basis",
+                "layout_master_topology",
+                "slide_layout_topology",
+                "master_theme_topology",
+                "shell_regions",
+                "safe_content_bounds",
+                "typography_roles",
+                "style_roles",
+                "placeholder_measurements",
+                "theme_profiles"
+            ],
+            "properties": {
+                "alias_uri": {
+                    "type": "string",
+                    "enum": [
+                        "private://template_primary_1",
+                        "private://template_primary_3"
+                    ]
+                },
+                "source_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                },
+                "profile_id": {
+                    "type": "string",
+                    "pattern": "^P3-[A-Z0-9-]+$"
+                },
+                "slide_size": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "width",
+                        "height",
+                        "basis"
+                    ],
+                    "properties": {
+                        "width": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                        },
+                        "height": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                        },
+                        "basis": {
+                            "$ref": "#/$defs/basis"
+                        }
+                    }
+                },
+                "master_count": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "layout_count": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "slide_count": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "measurement_basis": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "slide_size",
+                        "topology",
+                        "regions",
+                        "typography",
+                        "styles",
+                        "primitives",
+                        "placeholders"
+                    ],
+                    "properties": {
+                        "slide_size": {
+                            "$ref": "#/$defs/basis"
+                        },
+                        "topology": {
+                            "$ref": "#/$defs/basis"
+                        },
+                        "regions": {
+                            "$ref": "#/$defs/basis"
+                        },
+                        "typography": {
+                            "$ref": "#/$defs/basis"
+                        },
+                        "styles": {
+                            "$ref": "#/$defs/basis"
+                        },
+                        "primitives": {
+                            "$ref": "#/$defs/basis"
+                        },
+                        "placeholders": {
+                            "$ref": "#/$defs/basis"
+                        }
+                    }
+                },
+                "layout_master_topology": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/topology"
+                    }
+                },
+                "slide_layout_topology": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/topology"
+                    }
+                },
+                "master_theme_topology": {
+                    "type": "array",
+                    "items": {"$ref": "#/$defs/topology"}
+                },
+                "shell_regions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/region"
+                    }
+                },
+                "safe_content_bounds": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "value",
+                        "basis",
+                        "source_scope",
+                        "evidence_ids"
+                    ],
+                    "properties": {
+                        "value": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/$defs/geometry"
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ]
+                        },
+                        "basis": {
+                            "$ref": "#/$defs/basis"
+                        },
+                        "source_scope": {
+                            "$ref": "#/$defs/source_scope"
+                        },
+                        "evidence_ids": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^[a-z_]+$"
+                            }
+                        }
+                    }
+                },
+                "typography_roles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/font"
+                    }
+                },
+                "style_roles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/style"
+                    }
+                },
+                "shell_primitives": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/primitive"
+                    }
+                },
+                "placeholder_measurements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/placeholder"
+                    }
+                },
+                "theme_profiles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/theme_profile"
+                    }
+                }
+            }
+        }
+    }
 }

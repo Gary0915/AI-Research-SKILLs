@@ -393,11 +393,12 @@ def test_shell_regions_report_distinct_container_recurrence_without_overlap():
     ]
     regions = _shell_regions(slides, 100, 100)
     by_role = {item["role"]: item for item in regions}
-    assert by_role["title"]["occurrence_count"] == 2
-    assert by_role["title"]["source_container_count"] == 2
-    assert by_role["title"]["eligible_container_count"] == 2
-    assert by_role["title"]["coverage_ratio"] == pytest.approx(1.0)
-    assert "L001" in by_role["title"]["supporting_source_ids"]
+    support = by_role["title"]["support_by_scope"][0]
+    assert support["occurrence_count"] == 2
+    assert support["source_container_count"] == 2
+    assert support["eligible_container_count"] == 2
+    assert support["coverage_ratio"] == pytest.approx(1.0)
+    assert "L001" in support["supporting_source_ids"]
     assert "header" not in by_role or by_role["header"]["occurrence_count"] == 0
 
 
@@ -456,7 +457,80 @@ def test_body_descriptor_preserves_typography_observation_without_text():
         "alias_uri": ALIASES[1], "source_sha256": SHA, "profile_id": "P3-BODY-001",
         "slide_size": {"width": 13.333, "height": 7.5, "basis": "measured"}, "slide_count": 1,
         "candidate_families": [{"family": "other_insufficient_structural_evidence", "confidence": "insufficient_structural_evidence", "evidence_basis": ["insufficient"]}],
-        "body_measurements": [{"slide_id": "SL001", "measurement_basis": "measured", "objects": [], "connectors": [], "groups": [], "panels": [], "metrics": {key: {"value": None, "basis": "not_observable_structurally", "evidence_state": "unavailable", "supporting_object_ids": []} for key in ("text_area_ratio", "figure_area_ratio", "dominant_figure_ratio", "figure_text_ratio", "annotation_density", "whitespace_fraction", "comparison_symmetry", "matrix_rows", "matrix_columns", "panel_count", "caption_candidate_count", "callout_candidate_count", "photo_schematic_relation")}, "style_roles": [], "typography_observations": [{"observation_id": "T001", "role": "annotation", "role_confidence": "provisional", "family": "Yu Gothic", "theme_font_role": None, "size_pt": 11.0, "weight": "regular", "style": "normal", "basis": "measured", "source_scope": "slide_recurrence_derived", "supporting_object_id": "O001"}]}]
+        "body_measurements": [{"slide_id": "SL001", "measurement_basis": "measured", "objects": [], "connectors": [], "groups": [], "panels": [], "metrics": {key: {"value": None, "basis": "not_observable_structurally", "evidence_state": "unavailable", "supporting_object_ids": []} for key in ("text_area_ratio", "figure_area_ratio", "dominant_figure_ratio", "figure_text_ratio", "annotation_density", "whitespace_fraction", "comparison_symmetry", "matrix_rows", "matrix_columns", "panel_count", "caption_candidate_count", "callout_candidate_count", "photo_schematic_relation")}, "style_roles": [], "typography_observations": [{"observation_id": "T001", "role": "annotation", "role_confidence": "provisional", "family": "Yu Gothic", "theme_font_role": None, "script_role": "latin", "font_evidence_state": "explicit_font", "size_pt": 11.0, "weight": "regular", "style": "normal", "basis": "measured", "source_scope": "slide_body", "supporting_object_id": "O001"}]}],
+        "theme_profiles": [], "slide_theme_topology": []
     }
     result = sanitize_body_descriptor(body)
     assert result["body_measurements"][0]["typography_observations"][0]["family"] == "Yu Gothic"
+
+
+def test_date_time_placeholder_never_becomes_navigation_and_keeps_semantic_role():
+    from thesis_deck_system.phase3_checkpoint2 import _shell_regions
+    slides = [{"source_scope": "slide_layout", "source_container_id": "L001", "objects": [
+        {"object_class": "text", "geometry": {"x": .1, "y": .9, "w": .2, "h": .04}, "source_scope": "slide_layout", "source_container_id": "L001", "placeholder_type": "dt"}
+    ]}]
+    regions = _shell_regions(slides, 100, 100)
+    assert {region["role"] for region in regions} == {"date_time"}
+    assert "navigation" not in {region["role"] for region in regions}
+
+
+def test_shell_region_support_is_scope_aware_and_coverage_is_not_cross_scope():
+    from thesis_deck_system.phase3_checkpoint2 import _shell_regions
+    slides = [
+        {"source_scope": "slide_master", "source_container_id": "M001", "objects": [
+            {"object_class": "text", "geometry": {"x": .1, "y": .02, "w": .3, "h": .05}, "source_scope": "slide_master", "source_container_id": "M001", "placeholder_type": "title"}
+        ]},
+        {"source_scope": "slide_layout", "source_container_id": "L001", "objects": [
+            {"object_class": "text", "geometry": {"x": .1, "y": .02, "w": .3, "h": .05}, "source_scope": "slide_layout", "source_container_id": "L001", "placeholder_type": "title"}
+        ]},
+        {"source_scope": "slide_layout", "source_container_id": "L002", "objects": []},
+    ]
+    title = next(region for region in _shell_regions(slides, 100, 100) if region["role"] == "title")
+    by_scope = {item["source_scope"]: item for item in title["support_by_scope"]}
+    assert by_scope["slide_master"]["coverage_ratio"] == pytest.approx(1.0)
+    assert by_scope["slide_layout"]["coverage_ratio"] == pytest.approx(0.5)
+    assert title["support_by_scope"] == sorted(title["support_by_scope"], key=lambda value: value["source_scope"])
+
+
+def test_navigation_requires_explicit_independent_role_evidence():
+    from thesis_deck_system.phase3_checkpoint2 import _shell_regions
+    slides = [{"source_scope": "slide_layout", "source_container_id": "L001", "objects": [
+        {"object_class": "text", "geometry": {"x": .1, "y": .9, "w": .2, "h": .04}, "source_scope": "slide_layout", "source_container_id": "L001", "placeholder_type": "dt"}
+    ]}]
+    assert "navigation" not in {region["role"] for region in _shell_regions(slides, 100, 100)}
+
+
+def test_theme_color_resolution_is_bound_to_the_observations_master_theme():
+    from thesis_deck_system.phase3_checkpoint2 import resolve_theme_color
+    themes = {
+        "T001": {"palette": {"accent1": "AAAAAA"}},
+        "T002": {"palette": {"accent1": "BBBBBB"}},
+    }
+    master_theme = {"M001": "T001", "M002": "T002"}
+    assert resolve_theme_color("accent1", master_id="M001", master_theme=master_theme, theme_profiles=themes) == "AAAAAA"
+    assert resolve_theme_color("accent1", master_id="M002", master_theme=master_theme, theme_profiles=themes) == "BBBBBB"
+
+
+@pytest.mark.parametrize(
+    ("token", "expected_role", "expected_script"),
+    [("+mj-lt", "major", "latin"), ("+mn-lt", "minor", "latin"), ("+mj-ea", "major", "east_asian"), ("+mn-ea", "minor", "east_asian"), ("+mj-cs", "major", "complex_script")],
+)
+def test_theme_font_tokens_are_typed_as_role_and_script(token, expected_role, expected_script):
+    from thesis_deck_system.phase3_checkpoint2 import _theme_font_token
+    assert _theme_font_token(token) == (expected_role, expected_script)
+
+
+def test_east_asian_unicode_font_is_safe_but_private_like_font_is_rejected():
+    from thesis_deck_system.phase3_checkpoint2 import _font_family
+    assert _font_family("微軟正黑體") == "微軟正黑體"
+    assert _font_family("D:/private-font") == "unknown"
+    assert _font_family("https://unsafe-font") == "unknown"
+
+
+def test_unknown_typography_cannot_satisfy_font_fidelity_owning_gate(tmp_path: Path):
+    run = Checkpoint2Run.start(pre_open_passed=True, private_root=tmp_path / "raw")
+    shell = {"alias_uri": ALIASES[0], "source_sha256": SHA, "profile_id": "P3-SHELL-001", "slide_size": {"width": 13.333, "height": 7.5, "basis": "measured"}, "master_count": 1, "layout_count": 1, "slide_count": 1, "measurement_basis": {key: "measured" for key in ("slide_size", "topology", "regions", "typography", "styles", "primitives", "placeholders")}, "layout_master_topology": [], "slide_layout_topology": [], "shell_regions": [], "safe_content_bounds": {"value": None, "basis": "not_observable_structurally", "source_scope": "not_observable_structurally", "evidence_ids": []}, "typography_roles": [], "style_roles": [], "shell_primitives": [], "placeholder_measurements": [], "theme_palette": []}
+    body = {"alias_uri": ALIASES[1], "source_sha256": SHA, "profile_id": "P3-BODY-001", "slide_size": {"width": 13.333, "height": 7.5, "basis": "measured"}, "slide_count": 1, "candidate_families": [{"family": "other_insufficient_structural_evidence", "confidence": "insufficient_structural_evidence", "evidence_basis": ["insufficient"]}], "body_measurements": [{"slide_id": "SL001", "measurement_basis": "measured", "objects": [], "connectors": [], "groups": [], "panels": [], "metrics": {key: {"value": None, "basis": "not_observable_structurally", "evidence_state": "unavailable", "supporting_object_ids": []} for key in ("text_area_ratio", "figure_area_ratio", "dominant_figure_ratio", "figure_text_ratio", "annotation_density", "whitespace_fraction", "comparison_symmetry", "matrix_rows", "matrix_columns", "panel_count", "caption_candidate_count", "callout_candidate_count", "photo_schematic_relation")}, "style_roles": [], "typography_observations": [{"observation_id": "T001", "role": "unknown", "role_confidence": "unknown", "family": "unknown", "theme_font_role": None, "script_role": "latin", "font_evidence_state": "unknown", "size_pt": 11.0, "weight": "regular", "style": "normal", "basis": "measured", "source_scope": "slide_body", "supporting_object_id": "O001"}]}]}
+    registry = SchemaRegistry(SCHEMAS, include_phase3=True)
+    run.set_descriptor_quality([shell, {**shell, "alias_uri": ALIASES[2], "profile_id": "P3-SHELL-003"}], body, registry)
+    assert next(item for item in run.evidence.descriptor_quality_checks if item["check_id"] == "CP2-DQ-FONT-FIDELITY")["status"] == "fail"

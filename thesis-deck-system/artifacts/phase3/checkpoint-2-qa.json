@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "checkpoint_id": "PHASE_3_CHECKPOINT_2",
   "execution_evidence_id": "CP2-EXEC-001",
-  "execution_evidence_sha256": "2f5c5c4af515712feb9997472d66db21574baf21c2026f29dfbf9dfcb908c033",
+  "execution_evidence_sha256": "5fab97bac6685ef240591c144fcf0f72d4498160c6473b17e42ab94c940f82ba",
   "execution_evidence": {
     "schema_version": "1.0.0",
     "evidence_id": "CP2-EXEC-001",
@@ -98,6 +98,29 @@
       }
     ],
     "unexcepted_findings": 0,
+    "typography_resolution_counts": {
+      "latin": {
+        "explicit_font": 4,
+        "theme_font_resolved": 0,
+        "theme_font_unresolved": 0,
+        "inherited_unresolved": 209,
+        "unknown": 0
+      },
+      "east_asian": {
+        "explicit_font": 0,
+        "theme_font_resolved": 0,
+        "theme_font_unresolved": 0,
+        "inherited_unresolved": 0,
+        "unknown": 0
+      },
+      "complex_script": {
+        "explicit_font": 2,
+        "theme_font_resolved": 0,
+        "theme_font_unresolved": 0,
+        "inherited_unresolved": 0,
+        "unknown": 0
+      }
+    },
     "descriptor_quality_checks": [
       {
         "check_id": "CP2-DQ-SHELL-COMPLETENESS",
@@ -148,6 +171,14 @@
         "status": "pass"
       },
       {
+        "check_id": "CP2-DQ-PLACEHOLDER-SEMANTICS",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-SCOPE-AWARE-SUPPORT",
+        "status": "pass"
+      },
+      {
         "check_id": "CP2-DQ-CONTAINER-COVERAGE",
         "status": "pass"
       },
@@ -156,7 +187,19 @@
         "status": "pass"
       },
       {
+        "check_id": "CP2-DQ-MASTER-THEME-TOPOLOGY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-THEME-BOUND-COLOR",
+        "status": "pass"
+      },
+      {
         "check_id": "CP2-DQ-FONT-FIDELITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-TYPOGRAPHY-EVIDENCE-STATES",
         "status": "pass"
       },
       {

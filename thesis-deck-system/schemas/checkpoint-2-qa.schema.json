@@ -1,14 +1,424 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "checkpoint-2-qa.schema.json",
-  "type": "object", "additionalProperties": false,
-  "required": ["schema_version", "checkpoint_id", "execution_evidence_id", "execution_evidence_sha256", "execution_evidence", "aggregate_status"],
-  "properties": {"schema_version": {"const": "1.0.0"}, "checkpoint_id": {"const": "PHASE_3_CHECKPOINT_2"}, "execution_evidence_id": {"const": "CP2-EXEC-001"}, "execution_evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "execution_evidence": {"$ref": "#/$defs/evidence"}, "aggregate_status": {"enum": ["pass", "fail"]}},
-  "$defs": {
-    "gate_map": {"type": "object", "additionalProperties": false, "required": ["CP2-PRE-1", "CP2-PRE-2"], "properties": {"CP2-PRE-1": {"enum": ["pass", "fail"]}, "CP2-PRE-2": {"enum": ["pass", "fail"]}}},
-    "session": {"type": "object", "additionalProperties": false, "required": ["session_id", "alias_uri", "started", "event_order", "regular_file_validation", "ooxml_validation", "hash_status", "profiling_status", "sanitizer_handoff", "closed", "outcome"], "properties": {"session_id": {"type": "string", "pattern": "^CP2-SES-[0-9]{3,}$"}, "alias_uri": {"type": "string", "enum": ["private://template_primary_1", "private://layout_exemplar_2", "private://template_primary_3"]}, "started": {"const": true}, "event_order": {"type": "integer", "minimum": 1}, "regular_file_validation": {"enum": ["pending", "pass", "fail"]}, "ooxml_validation": {"enum": ["pending", "pass", "fail"]}, "hash_status": {"enum": ["pending", "pass", "fail"]}, "profiling_status": {"enum": ["pending", "pass", "fail"]}, "sanitizer_handoff": {"enum": ["pending", "pass", "fail"]}, "closed": {"type": "boolean"}, "outcome": {"enum": ["started", "success", "failed"]}, "descriptor_count": {"type": "integer", "minimum": 0}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
-    "exports": {"type": "object", "additionalProperties": false, "required": ["private_screenshots_committed", "private_source_files_committed", "private_text_exports_committed", "notes_exports_committed", "media_exports_committed"], "properties": {"private_screenshots_committed": {"type": "integer", "minimum": 0}, "private_source_files_committed": {"type": "integer", "minimum": 0}, "private_text_exports_committed": {"type": "integer", "minimum": 0}, "notes_exports_committed": {"type": "integer", "minimum": 0}, "media_exports_committed": {"type": "integer", "minimum": 0}}},
-    "exception": {"type": "object", "additionalProperties": false, "required": ["exception_id", "repository_relative_path", "reviewed_blob_sha", "privacy_rule_id", "status"], "properties": {"exception_id": {"const": "CP2-PRE-1-LEGACY-D3-2"}, "repository_relative_path": {"const": "thesis-deck-system/reviews/PHASE_3_DESIGN_REVIEW.md"}, "reviewed_blob_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "privacy_rule_id": {"const": "forbidden_private_basename"}, "status": {"const": "applied_legacy_exception"}}},
-    "check": {"type": "object", "additionalProperties": false, "required": ["check_id", "status"], "properties": {"check_id": {"type": "string", "pattern": "^CP2-DQ-[A-Z-]+$"}, "status": {"enum": ["pass", "fail"]}}},
-    "evidence": {"type": "object", "additionalProperties": false, "required": ["schema_version", "evidence_id", "pre_open_gates", "alias_attempts", "alias_results", "source_sessions", "source_session_attempts", "successful_closed_sessions", "failed_sessions", "unauthorized_attempts", "private_renders_created", "private_renders_deleted", "private_renders_retained", "private_qualitative_review_status", "forbidden_export_counts", "privacy_scan_status", "private_root_status", "privacy_scan_total_findings", "approved_legacy_exceptions", "unexcepted_findings", "descriptor_quality_checks"], "properties": {"schema_version": {"const": "1.0.0"}, "evidence_id": {"const": "CP2-EXEC-001"}, "pre_open_gates": {"$ref": "#/$defs/gate_map"}, "alias_attempts": {"type": "array", "items": {"type": "string", "enum": ["private://template_primary_1", "private://layout_exemplar_2", "private://template_primary_3", "open:private://template_primary_1", "open:private://layout_exemplar_2", "open:private://template_primary_3"]}}, "alias_results": {"type": "object", "additionalProperties": false, "properties": {"private://template_primary_1": {"enum": ["resolved", "failed"]}, "private://layout_exemplar_2": {"enum": ["resolved", "failed"]}, "private://template_primary_3": {"enum": ["resolved", "failed"]}}}, "source_sessions": {"type": "object", "additionalProperties": false, "properties": {"private://template_primary_1": {"$ref": "#/$defs/session"}, "private://layout_exemplar_2": {"$ref": "#/$defs/session"}, "private://template_primary_3": {"$ref": "#/$defs/session"}}, "minProperties": 0, "maxProperties": 3}, "source_session_attempts": {"type": "integer", "minimum": 0}, "successful_closed_sessions": {"type": "integer", "minimum": 0}, "failed_sessions": {"type": "integer", "minimum": 0}, "unauthorized_attempts": {"type": "integer", "minimum": 0}, "private_renders_created": {"type": "integer", "minimum": 0}, "private_renders_deleted": {"type": "integer", "minimum": 0}, "private_renders_retained": {"type": "integer", "minimum": 0}, "private_qualitative_review_status": {"enum": ["blocked_visual_review", "not_run", "reviewed_ephemerally"]}, "forbidden_export_counts": {"$ref": "#/$defs/exports"}, "privacy_scan_status": {"enum": ["pass", "fail", "missing"]}, "private_root_status": {"enum": ["pass", "fail", "missing"]}, "privacy_scan_total_findings": {"type": "integer", "minimum": 0}, "approved_legacy_exceptions": {"type": "array", "items": {"$ref": "#/$defs/exception"}}, "unexcepted_findings": {"type": "integer", "minimum": 0}, "descriptor_quality_checks": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/check"}}}}
-  }
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "checkpoint-2-qa.schema.json",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "schema_version",
+        "checkpoint_id",
+        "execution_evidence_id",
+        "execution_evidence_sha256",
+        "execution_evidence",
+        "aggregate_status"
+    ],
+    "properties": {
+        "schema_version": {
+            "const": "1.0.0"
+        },
+        "checkpoint_id": {
+            "const": "PHASE_3_CHECKPOINT_2"
+        },
+        "execution_evidence_id": {
+            "const": "CP2-EXEC-001"
+        },
+        "execution_evidence_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+        },
+        "execution_evidence": {
+            "$ref": "#/$defs/evidence"
+        },
+        "aggregate_status": {
+            "enum": [
+                "pass",
+                "fail"
+            ]
+        }
+    },
+    "$defs": {
+        "gate_map": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "CP2-PRE-1",
+                "CP2-PRE-2"
+            ],
+            "properties": {
+                "CP2-PRE-1": {
+                    "enum": [
+                        "pass",
+                        "fail"
+                    ]
+                },
+                "CP2-PRE-2": {
+                    "enum": [
+                        "pass",
+                        "fail"
+                    ]
+                }
+            }
+        },
+        "session": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "session_id",
+                "alias_uri",
+                "started",
+                "event_order",
+                "regular_file_validation",
+                "ooxml_validation",
+                "hash_status",
+                "profiling_status",
+                "sanitizer_handoff",
+                "closed",
+                "outcome"
+            ],
+            "properties": {
+                "session_id": {
+                    "type": "string",
+                    "pattern": "^CP2-SES-[0-9]{3,}$"
+                },
+                "alias_uri": {
+                    "type": "string",
+                    "enum": [
+                        "private://template_primary_1",
+                        "private://layout_exemplar_2",
+                        "private://template_primary_3"
+                    ]
+                },
+                "started": {
+                    "const": true
+                },
+                "event_order": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "regular_file_validation": {
+                    "enum": [
+                        "pending",
+                        "pass",
+                        "fail"
+                    ]
+                },
+                "ooxml_validation": {
+                    "enum": [
+                        "pending",
+                        "pass",
+                        "fail"
+                    ]
+                },
+                "hash_status": {
+                    "enum": [
+                        "pending",
+                        "pass",
+                        "fail"
+                    ]
+                },
+                "profiling_status": {
+                    "enum": [
+                        "pending",
+                        "pass",
+                        "fail"
+                    ]
+                },
+                "sanitizer_handoff": {
+                    "enum": [
+                        "pending",
+                        "pass",
+                        "fail"
+                    ]
+                },
+                "closed": {
+                    "type": "boolean"
+                },
+                "outcome": {
+                    "enum": [
+                        "started",
+                        "success",
+                        "failed"
+                    ]
+                },
+                "descriptor_count": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "source_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                }
+            }
+        },
+        "exports": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "private_screenshots_committed",
+                "private_source_files_committed",
+                "private_text_exports_committed",
+                "notes_exports_committed",
+                "media_exports_committed"
+            ],
+            "properties": {
+                "private_screenshots_committed": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "private_source_files_committed": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "private_text_exports_committed": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "notes_exports_committed": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "media_exports_committed": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            }
+        },
+        "exception": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "exception_id",
+                "repository_relative_path",
+                "reviewed_blob_sha",
+                "privacy_rule_id",
+                "status"
+            ],
+            "properties": {
+                "exception_id": {
+                    "const": "CP2-PRE-1-LEGACY-D3-2"
+                },
+                "repository_relative_path": {
+                    "const": "thesis-deck-system/reviews/PHASE_3_DESIGN_REVIEW.md"
+                },
+                "reviewed_blob_sha": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{40}$"
+                },
+                "privacy_rule_id": {
+                    "const": "forbidden_private_basename"
+                },
+                "status": {
+                    "const": "applied_legacy_exception"
+                }
+            }
+        },
+        "check": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "check_id",
+                "status"
+            ],
+            "properties": {
+                "check_id": {
+                    "type": "string",
+                    "pattern": "^CP2-DQ-[A-Z-]+$"
+                },
+                "status": {
+                    "enum": [
+                        "pass",
+                        "fail"
+                    ]
+                }
+            }
+        },
+        "typography_counts": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["explicit_font", "theme_font_resolved", "theme_font_unresolved", "inherited_unresolved", "unknown"],
+            "properties": {
+                "explicit_font": {"type": "integer", "minimum": 0},
+                "theme_font_resolved": {"type": "integer", "minimum": 0},
+                "theme_font_unresolved": {"type": "integer", "minimum": 0},
+                "inherited_unresolved": {"type": "integer", "minimum": 0},
+                "unknown": {"type": "integer", "minimum": 0}
+            }
+        },
+        "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "schema_version",
+                "evidence_id",
+                "pre_open_gates",
+                "alias_attempts",
+                "alias_results",
+                "source_sessions",
+                "source_session_attempts",
+                "successful_closed_sessions",
+                "failed_sessions",
+                "unauthorized_attempts",
+                "private_renders_created",
+                "private_renders_deleted",
+                "private_renders_retained",
+                "private_qualitative_review_status",
+                "forbidden_export_counts",
+                "privacy_scan_status",
+                "private_root_status",
+                "privacy_scan_total_findings",
+                "approved_legacy_exceptions",
+                "unexcepted_findings",
+                "typography_resolution_counts",
+                "descriptor_quality_checks"
+            ],
+            "properties": {
+                "schema_version": {
+                    "const": "1.0.0"
+                },
+                "evidence_id": {
+                    "const": "CP2-EXEC-001"
+                },
+                "pre_open_gates": {
+                    "$ref": "#/$defs/gate_map"
+                },
+                "alias_attempts": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "private://template_primary_1",
+                            "private://layout_exemplar_2",
+                            "private://template_primary_3",
+                            "open:private://template_primary_1",
+                            "open:private://layout_exemplar_2",
+                            "open:private://template_primary_3"
+                        ]
+                    }
+                },
+                "alias_results": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "private://template_primary_1": {
+                            "enum": [
+                                "resolved",
+                                "failed"
+                            ]
+                        },
+                        "private://layout_exemplar_2": {
+                            "enum": [
+                                "resolved",
+                                "failed"
+                            ]
+                        },
+                        "private://template_primary_3": {
+                            "enum": [
+                                "resolved",
+                                "failed"
+                            ]
+                        }
+                    }
+                },
+                "source_sessions": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "private://template_primary_1": {
+                            "$ref": "#/$defs/session"
+                        },
+                        "private://layout_exemplar_2": {
+                            "$ref": "#/$defs/session"
+                        },
+                        "private://template_primary_3": {
+                            "$ref": "#/$defs/session"
+                        }
+                    },
+                    "minProperties": 0,
+                    "maxProperties": 3
+                },
+                "source_session_attempts": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "successful_closed_sessions": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "failed_sessions": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "unauthorized_attempts": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "private_renders_created": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "private_renders_deleted": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "private_renders_retained": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "private_qualitative_review_status": {
+                    "enum": [
+                        "blocked_visual_review",
+                        "not_run",
+                        "reviewed_ephemerally"
+                    ]
+                },
+                "forbidden_export_counts": {
+                    "$ref": "#/$defs/exports"
+                },
+                "privacy_scan_status": {
+                    "enum": [
+                        "pass",
+                        "fail",
+                        "missing"
+                    ]
+                },
+                "private_root_status": {
+                    "enum": [
+                        "pass",
+                        "fail",
+                        "missing"
+                    ]
+                },
+                "privacy_scan_total_findings": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "approved_legacy_exceptions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/exception"
+                    }
+                },
+                "unexcepted_findings": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "typography_resolution_counts": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["latin", "east_asian", "complex_script"],
+                    "properties": {
+                        "latin": {"$ref": "#/$defs/typography_counts"},
+                        "east_asian": {"$ref": "#/$defs/typography_counts"},
+                        "complex_script": {"$ref": "#/$defs/typography_counts"}
+                    }
+                },
+                "descriptor_quality_checks": {
+                    "type": "array",
+                    "minItems": 7,
+                    "items": {
+                        "$ref": "#/$defs/check"
+                    }
+                }
+            }
+        }
+    }
 }

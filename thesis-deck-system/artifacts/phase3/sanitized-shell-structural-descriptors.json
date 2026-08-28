@@ -254,9 +254,63 @@
           "source_scope": "slide_recurrence_derived"
         }
       ],
+      "master_theme_topology": [
+        {
+          "source_id": "M001",
+          "target_id": "T001",
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "source_id": "M002",
+          "target_id": "T002",
+          "basis": "measured",
+          "source_scope": "slide_master"
+        }
+      ],
       "shell_regions": [
         {
           "region_id": "R001",
+          "role": "date_time",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 6,
+              "source_container_count": 6,
+              "eligible_container_count": 19,
+              "coverage_ratio": 0.315789,
+              "supporting_source_ids": [
+                "L002",
+                "L003",
+                "L004",
+                "L005",
+                "L006",
+                "L007"
+              ]
+            },
+            {
+              "source_scope": "slide_master",
+              "occurrence_count": 1,
+              "source_container_count": 1,
+              "eligible_container_count": 2,
+              "coverage_ratio": 0.5,
+              "supporting_source_ids": [
+                "M001"
+              ]
+            }
+          ],
+          "role_evidence": "placeholder_semantic"
+        },
+        {
+          "region_id": "R002",
           "role": "footer",
           "geometry": {
             "x": 0.33125,
@@ -266,56 +320,42 @@
             "basis": "measured"
           },
           "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 17,
-          "source_container_count": 17,
-          "eligible_container_count": 21,
-          "coverage_ratio": 0.809524,
-          "supporting_source_ids": [
-            "L003",
-            "L004",
-            "L005",
-            "L006",
-            "L007",
-            "L009",
-            "L010",
-            "L011",
-            "L012",
-            "L013",
-            "L014",
-            "L015",
-            "L016",
-            "L017",
-            "L018",
-            "L019",
-            "M002"
-          ],
-          "role_evidence": "placeholder_semantic"
-        },
-        {
-          "region_id": "R002",
-          "role": "navigation",
-          "geometry": {
-            "x": 0.918557,
-            "y": 0.0,
-            "w": 0.081443,
-            "h": 0.053241,
-            "basis": "measured"
-          },
-          "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 7,
-          "source_container_count": 7,
-          "eligible_container_count": 21,
-          "coverage_ratio": 0.333333,
-          "supporting_source_ids": [
-            "L002",
-            "L003",
-            "L004",
-            "L005",
-            "L006",
-            "L007",
-            "M001"
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 16,
+              "source_container_count": 16,
+              "eligible_container_count": 19,
+              "coverage_ratio": 0.842105,
+              "supporting_source_ids": [
+                "L003",
+                "L004",
+                "L005",
+                "L006",
+                "L007",
+                "L009",
+                "L010",
+                "L011",
+                "L012",
+                "L013",
+                "L014",
+                "L015",
+                "L016",
+                "L017",
+                "L018",
+                "L019"
+              ]
+            },
+            {
+              "source_scope": "slide_master",
+              "occurrence_count": 1,
+              "source_container_count": 1,
+              "eligible_container_count": 2,
+              "coverage_ratio": 0.5,
+              "supporting_source_ids": [
+                "M002"
+              ]
+            }
           ],
           "role_evidence": "placeholder_semantic"
         },
@@ -330,32 +370,45 @@
             "basis": "measured"
           },
           "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 20,
-          "source_container_count": 20,
-          "eligible_container_count": 21,
-          "coverage_ratio": 0.952381,
-          "supporting_source_ids": [
-            "L001",
-            "L002",
-            "L003",
-            "L004",
-            "L005",
-            "L006",
-            "L007",
-            "L009",
-            "L010",
-            "L011",
-            "L012",
-            "L013",
-            "L014",
-            "L015",
-            "L016",
-            "L017",
-            "L018",
-            "L019",
-            "M001",
-            "M002"
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 18,
+              "source_container_count": 18,
+              "eligible_container_count": 19,
+              "coverage_ratio": 0.947368,
+              "supporting_source_ids": [
+                "L001",
+                "L002",
+                "L003",
+                "L004",
+                "L005",
+                "L006",
+                "L007",
+                "L009",
+                "L010",
+                "L011",
+                "L012",
+                "L013",
+                "L014",
+                "L015",
+                "L016",
+                "L017",
+                "L018",
+                "L019"
+              ]
+            },
+            {
+              "source_scope": "slide_master",
+              "occurrence_count": 2,
+              "source_container_count": 2,
+              "eligible_container_count": 2,
+              "coverage_ratio": 1.0,
+              "supporting_source_ids": [
+                "M001",
+                "M002"
+              ]
+            }
           ],
           "role_evidence": "placeholder_semantic"
         },
@@ -370,14 +423,18 @@
             "basis": "measured"
           },
           "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 2,
-          "source_container_count": 2,
-          "eligible_container_count": 21,
-          "coverage_ratio": 0.095238,
-          "supporting_source_ids": [
-            "L001",
-            "L009"
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 2,
+              "source_container_count": 2,
+              "eligible_container_count": 19,
+              "coverage_ratio": 0.105263,
+              "supporting_source_ids": [
+                "L001",
+                "L009"
+              ]
+            }
           ],
           "role_evidence": "placeholder_semantic"
         },
@@ -392,30 +449,43 @@
             "basis": "measured"
           },
           "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 18,
-          "source_container_count": 18,
-          "eligible_container_count": 21,
-          "coverage_ratio": 0.857143,
-          "supporting_source_ids": [
-            "L001",
-            "L002",
-            "L003",
-            "L004",
-            "L005",
-            "L007",
-            "L009",
-            "L010",
-            "L011",
-            "L012",
-            "L013",
-            "L014",
-            "L016",
-            "L017",
-            "L018",
-            "L019",
-            "M001",
-            "M002"
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 16,
+              "source_container_count": 16,
+              "eligible_container_count": 19,
+              "coverage_ratio": 0.842105,
+              "supporting_source_ids": [
+                "L001",
+                "L002",
+                "L003",
+                "L004",
+                "L005",
+                "L007",
+                "L009",
+                "L010",
+                "L011",
+                "L012",
+                "L013",
+                "L014",
+                "L016",
+                "L017",
+                "L018",
+                "L019"
+              ]
+            },
+            {
+              "source_scope": "slide_master",
+              "occurrence_count": 2,
+              "source_container_count": 2,
+              "eligible_container_count": 2,
+              "coverage_ratio": 1.0,
+              "supporting_source_ids": [
+                "M001",
+                "M002"
+              ]
+            }
           ],
           "role_evidence": "placeholder_semantic"
         }
@@ -430,7 +500,9 @@
         {
           "basis": "measured",
           "family": "Arial",
+          "font_evidence_state": "explicit_font",
           "role": "title",
+          "script_role": "latin",
           "size_pt": 18.0,
           "source_scope": "slide_layout",
           "style": "normal",
@@ -440,7 +512,9 @@
         {
           "basis": "measured",
           "family": "Times New Roman",
+          "font_evidence_state": "explicit_font",
           "role": "title",
+          "script_role": "latin",
           "size_pt": 23.0,
           "source_scope": "slide_layout",
           "style": "normal",
@@ -465,6 +539,7 @@
             "shade": null,
             "source_kind": "direct_rgb",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -478,6 +553,43 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          }
+        },
+        {
+          "role": "neutral",
+          "fill_role": "accent",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout",
+          "fill_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": "888888",
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": "888888",
+            "shade": null,
+            "source_kind": "direct_rgb",
+            "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          },
+          "stroke_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": null,
+            "shade": null,
+            "source_kind": "none",
+            "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -499,6 +611,7 @@
             "shade": null,
             "source_kind": "direct_rgb",
             "source_scope": "slide_master",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -512,6 +625,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_master",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -533,6 +647,7 @@
             "shade": null,
             "source_kind": "direct_rgb",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -546,6 +661,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -567,6 +683,7 @@
             "shade": null,
             "source_kind": "theme_role",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": "dk1",
             "tint": null,
             "transform_status": "supported"
@@ -580,6 +697,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -601,6 +719,7 @@
             "shade": null,
             "source_kind": "theme_role",
             "source_scope": "slide_master",
+            "theme_profile_id": "T001",
             "theme_token": "dk1",
             "tint": null,
             "transform_status": "supported"
@@ -614,6 +733,43 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_master",
+            "theme_profile_id": "T001",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          }
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_master",
+          "fill_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": "000000",
+            "shade": null,
+            "source_kind": "theme_role",
+            "source_scope": "slide_master",
+            "theme_profile_id": "T002",
+            "theme_token": "dk1",
+            "tint": null,
+            "transform_status": "supported"
+          },
+          "stroke_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": null,
+            "shade": null,
+            "source_kind": "none",
+            "source_scope": "slide_master",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -635,6 +791,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -648,6 +805,43 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          }
+        },
+        {
+          "role": "neutral",
+          "fill_role": "none",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout",
+          "fill_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": null,
+            "shade": null,
+            "source_kind": "none",
+            "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          },
+          "stroke_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": null,
+            "shade": null,
+            "source_kind": "none",
+            "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -669,6 +863,7 @@
             "shade": null,
             "source_kind": "unknown",
             "source_scope": "not_observable_structurally",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "unresolved"
@@ -682,6 +877,7 @@
             "shade": null,
             "source_kind": "unknown",
             "source_scope": "not_observable_structurally",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "unresolved"
@@ -703,6 +899,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -716,1503 +913,8 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
             "theme_token": null,
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk1",
-          "stroke_role": "theme:dk1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt1",
-          "stroke_role": "theme:lt1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk2",
-          "stroke_role": "theme:dk2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt2",
-          "stroke_role": "theme:lt2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent1",
-          "stroke_role": "theme:accent1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent2",
-          "stroke_role": "theme:accent2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent3",
-          "stroke_role": "theme:accent3",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent4",
-          "stroke_role": "theme:accent4",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent5",
-          "stroke_role": "theme:accent5",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent6",
-          "stroke_role": "theme:accent6",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:hlink",
-          "stroke_role": "theme:hlink",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk1",
-          "stroke_role": "theme:dk1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt1",
-          "stroke_role": "theme:lt1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk2",
-          "stroke_role": "theme:dk2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt2",
-          "stroke_role": "theme:lt2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent1",
-          "stroke_role": "theme:accent1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent2",
-          "stroke_role": "theme:accent2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent3",
-          "stroke_role": "theme:accent3",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent4",
-          "stroke_role": "theme:accent4",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent5",
-          "stroke_role": "theme:accent5",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent6",
-          "stroke_role": "theme:accent6",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:hlink",
-          "stroke_role": "theme:hlink",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk1",
-          "stroke_role": "theme:dk1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt1",
-          "stroke_role": "theme:lt1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk2",
-          "stroke_role": "theme:dk2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt2",
-          "stroke_role": "theme:lt2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent1",
-          "stroke_role": "theme:accent1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent2",
-          "stroke_role": "theme:accent2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent3",
-          "stroke_role": "theme:accent3",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent4",
-          "stroke_role": "theme:accent4",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent5",
-          "stroke_role": "theme:accent5",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent6",
-          "stroke_role": "theme:accent6",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:hlink",
-          "stroke_role": "theme:hlink",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk1",
-          "stroke_role": "theme:dk1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt1",
-          "stroke_role": "theme:lt1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk2",
-          "stroke_role": "theme:dk2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt2",
-          "stroke_role": "theme:lt2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent1",
-          "stroke_role": "theme:accent1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent2",
-          "stroke_role": "theme:accent2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent3",
-          "stroke_role": "theme:accent3",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent4",
-          "stroke_role": "theme:accent4",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent5",
-          "stroke_role": "theme:accent5",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent6",
-          "stroke_role": "theme:accent6",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:hlink",
-          "stroke_role": "theme:hlink",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
             "tint": null,
             "transform_status": "supported"
           }
@@ -4476,78 +3178,346 @@
           "source_container_id": "L019"
         }
       ],
-      "theme_palette": [
+      "theme_profiles": [
         {
-          "theme_token": "accent1",
-          "resolved_rgb": "4F81BD",
-          "basis": "measured",
-          "source_scope": "theme"
+          "theme_profile_id": "T001",
+          "palette": [
+            {
+              "theme_token": "accent1",
+              "resolved_rgb": "4F81BD",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent2",
+              "resolved_rgb": "C0504D",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent3",
+              "resolved_rgb": "9BBB59",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent4",
+              "resolved_rgb": "8064A2",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent5",
+              "resolved_rgb": "4BACC6",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent6",
+              "resolved_rgb": "F79646",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk1",
+              "resolved_rgb": "000000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk2",
+              "resolved_rgb": "1F497D",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "folhlink",
+              "resolved_rgb": "800080",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "hlink",
+              "resolved_rgb": "0000FF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt1",
+              "resolved_rgb": "FFFFFF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt2",
+              "resolved_rgb": "EEECE1",
+              "basis": "measured",
+              "source_scope": "theme"
+            }
+          ],
+          "font_scheme": {
+            "major": {
+              "latin": "Arial"
+            },
+            "minor": {
+              "latin": "Arial"
+            }
+          }
         },
         {
-          "theme_token": "accent2",
-          "resolved_rgb": "C0504D",
-          "basis": "measured",
-          "source_scope": "theme"
+          "theme_profile_id": "T002",
+          "palette": [
+            {
+              "theme_token": "accent1",
+              "resolved_rgb": "4472C4",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent2",
+              "resolved_rgb": "ED7D31",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent3",
+              "resolved_rgb": "A5A5A5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent4",
+              "resolved_rgb": "FFC000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent5",
+              "resolved_rgb": "5B9BD5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent6",
+              "resolved_rgb": "70AD47",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk1",
+              "resolved_rgb": "000000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk2",
+              "resolved_rgb": "44546A",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "folhlink",
+              "resolved_rgb": "954F72",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "hlink",
+              "resolved_rgb": "0563C1",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt1",
+              "resolved_rgb": "FFFFFF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt2",
+              "resolved_rgb": "E7E6E6",
+              "basis": "measured",
+              "source_scope": "theme"
+            }
+          ],
+          "font_scheme": {
+            "major": {
+              "latin": "Arial"
+            },
+            "minor": {
+              "latin": "Arial"
+            }
+          }
         },
         {
-          "theme_token": "accent3",
-          "resolved_rgb": "9BBB59",
-          "basis": "measured",
-          "source_scope": "theme"
+          "theme_profile_id": "T003",
+          "palette": [
+            {
+              "theme_token": "accent1",
+              "resolved_rgb": "4472C4",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent2",
+              "resolved_rgb": "ED7D31",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent3",
+              "resolved_rgb": "A5A5A5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent4",
+              "resolved_rgb": "FFC000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent5",
+              "resolved_rgb": "5B9BD5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent6",
+              "resolved_rgb": "70AD47",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk1",
+              "resolved_rgb": "000000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk2",
+              "resolved_rgb": "44546A",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "folhlink",
+              "resolved_rgb": "954F72",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "hlink",
+              "resolved_rgb": "0563C1",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt1",
+              "resolved_rgb": "FFFFFF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt2",
+              "resolved_rgb": "E7E6E6",
+              "basis": "measured",
+              "source_scope": "theme"
+            }
+          ],
+          "font_scheme": {
+            "major": {
+              "latin": "Arial"
+            },
+            "minor": {
+              "latin": "Arial"
+            }
+          }
         },
         {
-          "theme_token": "accent4",
-          "resolved_rgb": "8064A2",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "accent5",
-          "resolved_rgb": "4BACC6",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "accent6",
-          "resolved_rgb": "F79646",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "dk1",
-          "resolved_rgb": "000000",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "dk2",
-          "resolved_rgb": "1F497D",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "folhlink",
-          "resolved_rgb": "800080",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "hlink",
-          "resolved_rgb": "0000FF",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "lt1",
-          "resolved_rgb": "FFFFFF",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "lt2",
-          "resolved_rgb": "EEECE1",
-          "basis": "measured",
-          "source_scope": "theme"
+          "theme_profile_id": "T004",
+          "palette": [
+            {
+              "theme_token": "accent1",
+              "resolved_rgb": "156082",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent2",
+              "resolved_rgb": "E97132",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent3",
+              "resolved_rgb": "196B24",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent4",
+              "resolved_rgb": "0F9ED5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent5",
+              "resolved_rgb": "A02B93",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent6",
+              "resolved_rgb": "4EA72E",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk1",
+              "resolved_rgb": "000000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk2",
+              "resolved_rgb": "0E2841",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "folhlink",
+              "resolved_rgb": "96607D",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "hlink",
+              "resolved_rgb": "467886",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt1",
+              "resolved_rgb": "FFFFFF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt2",
+              "resolved_rgb": "E8E8E8",
+              "basis": "measured",
+              "source_scope": "theme"
+            }
+          ],
+          "font_scheme": {
+            "major": {
+              "latin": "Aptos Display"
+            },
+            "minor": {
+              "latin": "Aptos"
+            }
+          }
         }
       ]
     },
@@ -4774,9 +3744,63 @@
           "source_scope": "slide_recurrence_derived"
         }
       ],
+      "master_theme_topology": [
+        {
+          "source_id": "M001",
+          "target_id": "T001",
+          "basis": "measured",
+          "source_scope": "slide_master"
+        },
+        {
+          "source_id": "M002",
+          "target_id": "T002",
+          "basis": "measured",
+          "source_scope": "slide_master"
+        }
+      ],
       "shell_regions": [
         {
           "region_id": "R001",
+          "role": "date_time",
+          "geometry": {
+            "x": 0.918557,
+            "y": 0.0,
+            "w": 0.081443,
+            "h": 0.053241,
+            "basis": "measured"
+          },
+          "basis": "measured",
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 6,
+              "source_container_count": 6,
+              "eligible_container_count": 18,
+              "coverage_ratio": 0.333333,
+              "supporting_source_ids": [
+                "L002",
+                "L003",
+                "L004",
+                "L005",
+                "L006",
+                "L007"
+              ]
+            },
+            {
+              "source_scope": "slide_master",
+              "occurrence_count": 1,
+              "source_container_count": 1,
+              "eligible_container_count": 2,
+              "coverage_ratio": 0.5,
+              "supporting_source_ids": [
+                "M001"
+              ]
+            }
+          ],
+          "role_evidence": "placeholder_semantic"
+        },
+        {
+          "region_id": "R002",
           "role": "footer",
           "geometry": {
             "x": 0.33125,
@@ -4786,56 +3810,42 @@
             "basis": "measured"
           },
           "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 17,
-          "source_container_count": 17,
-          "eligible_container_count": 20,
-          "coverage_ratio": 0.85,
-          "supporting_source_ids": [
-            "L003",
-            "L004",
-            "L005",
-            "L006",
-            "L007",
-            "L008",
-            "L009",
-            "L010",
-            "L011",
-            "L012",
-            "L013",
-            "L014",
-            "L015",
-            "L016",
-            "L017",
-            "L018",
-            "M002"
-          ],
-          "role_evidence": "placeholder_semantic"
-        },
-        {
-          "region_id": "R002",
-          "role": "navigation",
-          "geometry": {
-            "x": 0.918557,
-            "y": 0.0,
-            "w": 0.081443,
-            "h": 0.053241,
-            "basis": "measured"
-          },
-          "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 7,
-          "source_container_count": 7,
-          "eligible_container_count": 20,
-          "coverage_ratio": 0.35,
-          "supporting_source_ids": [
-            "L002",
-            "L003",
-            "L004",
-            "L005",
-            "L006",
-            "L007",
-            "M001"
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 16,
+              "source_container_count": 16,
+              "eligible_container_count": 18,
+              "coverage_ratio": 0.888889,
+              "supporting_source_ids": [
+                "L003",
+                "L004",
+                "L005",
+                "L006",
+                "L007",
+                "L008",
+                "L009",
+                "L010",
+                "L011",
+                "L012",
+                "L013",
+                "L014",
+                "L015",
+                "L016",
+                "L017",
+                "L018"
+              ]
+            },
+            {
+              "source_scope": "slide_master",
+              "occurrence_count": 1,
+              "source_container_count": 1,
+              "eligible_container_count": 2,
+              "coverage_ratio": 0.5,
+              "supporting_source_ids": [
+                "M002"
+              ]
+            }
           ],
           "role_evidence": "placeholder_semantic"
         },
@@ -4850,32 +3860,45 @@
             "basis": "measured"
           },
           "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 20,
-          "source_container_count": 20,
-          "eligible_container_count": 20,
-          "coverage_ratio": 1.0,
-          "supporting_source_ids": [
-            "L001",
-            "L002",
-            "L003",
-            "L004",
-            "L005",
-            "L006",
-            "L007",
-            "L008",
-            "L009",
-            "L010",
-            "L011",
-            "L012",
-            "L013",
-            "L014",
-            "L015",
-            "L016",
-            "L017",
-            "L018",
-            "M001",
-            "M002"
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 18,
+              "source_container_count": 18,
+              "eligible_container_count": 18,
+              "coverage_ratio": 1.0,
+              "supporting_source_ids": [
+                "L001",
+                "L002",
+                "L003",
+                "L004",
+                "L005",
+                "L006",
+                "L007",
+                "L008",
+                "L009",
+                "L010",
+                "L011",
+                "L012",
+                "L013",
+                "L014",
+                "L015",
+                "L016",
+                "L017",
+                "L018"
+              ]
+            },
+            {
+              "source_scope": "slide_master",
+              "occurrence_count": 2,
+              "source_container_count": 2,
+              "eligible_container_count": 2,
+              "coverage_ratio": 1.0,
+              "supporting_source_ids": [
+                "M001",
+                "M002"
+              ]
+            }
           ],
           "role_evidence": "placeholder_semantic"
         },
@@ -4890,14 +3913,18 @@
             "basis": "measured"
           },
           "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 2,
-          "source_container_count": 2,
-          "eligible_container_count": 20,
-          "coverage_ratio": 0.1,
-          "supporting_source_ids": [
-            "L001",
-            "L008"
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 2,
+              "source_container_count": 2,
+              "eligible_container_count": 18,
+              "coverage_ratio": 0.111111,
+              "supporting_source_ids": [
+                "L001",
+                "L008"
+              ]
+            }
           ],
           "role_evidence": "placeholder_semantic"
         },
@@ -4912,30 +3939,43 @@
             "basis": "measured"
           },
           "basis": "measured",
-          "source_scope": "slide_layout",
-          "occurrence_count": 18,
-          "source_container_count": 18,
-          "eligible_container_count": 20,
-          "coverage_ratio": 0.9,
-          "supporting_source_ids": [
-            "L001",
-            "L002",
-            "L003",
-            "L004",
-            "L005",
-            "L007",
-            "L008",
-            "L009",
-            "L010",
-            "L011",
-            "L012",
-            "L013",
-            "L015",
-            "L016",
-            "L017",
-            "L018",
-            "M001",
-            "M002"
+          "support_by_scope": [
+            {
+              "source_scope": "slide_layout",
+              "occurrence_count": 16,
+              "source_container_count": 16,
+              "eligible_container_count": 18,
+              "coverage_ratio": 0.888889,
+              "supporting_source_ids": [
+                "L001",
+                "L002",
+                "L003",
+                "L004",
+                "L005",
+                "L007",
+                "L008",
+                "L009",
+                "L010",
+                "L011",
+                "L012",
+                "L013",
+                "L015",
+                "L016",
+                "L017",
+                "L018"
+              ]
+            },
+            {
+              "source_scope": "slide_master",
+              "occurrence_count": 2,
+              "source_container_count": 2,
+              "eligible_container_count": 2,
+              "coverage_ratio": 1.0,
+              "supporting_source_ids": [
+                "M001",
+                "M002"
+              ]
+            }
           ],
           "role_evidence": "placeholder_semantic"
         }
@@ -4950,7 +3990,9 @@
         {
           "basis": "measured",
           "family": "Arial",
+          "font_evidence_state": "explicit_font",
           "role": "title",
+          "script_role": "latin",
           "size_pt": 18.0,
           "source_scope": "slide_layout",
           "style": "normal",
@@ -4960,7 +4002,9 @@
         {
           "basis": "measured",
           "family": "Times New Roman",
+          "font_evidence_state": "explicit_font",
           "role": "title",
+          "script_role": "latin",
           "size_pt": 23.0,
           "source_scope": "slide_layout",
           "style": "normal",
@@ -4985,6 +4029,7 @@
             "shade": null,
             "source_kind": "direct_rgb",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -4998,6 +4043,43 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          }
+        },
+        {
+          "role": "neutral",
+          "fill_role": "accent",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout",
+          "fill_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": "888888",
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": "888888",
+            "shade": null,
+            "source_kind": "direct_rgb",
+            "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          },
+          "stroke_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": null,
+            "shade": null,
+            "source_kind": "none",
+            "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5019,6 +4101,7 @@
             "shade": null,
             "source_kind": "direct_rgb",
             "source_scope": "slide_master",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5032,6 +4115,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_master",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5053,6 +4137,7 @@
             "shade": null,
             "source_kind": "direct_rgb",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5066,6 +4151,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5087,6 +4173,7 @@
             "shade": null,
             "source_kind": "theme_role",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": "dk1",
             "tint": null,
             "transform_status": "supported"
@@ -5100,6 +4187,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5121,6 +4209,7 @@
             "shade": null,
             "source_kind": "theme_role",
             "source_scope": "slide_master",
+            "theme_profile_id": "T001",
             "theme_token": "dk1",
             "tint": null,
             "transform_status": "supported"
@@ -5134,6 +4223,43 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_master",
+            "theme_profile_id": "T001",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          }
+        },
+        {
+          "role": "neutral",
+          "fill_role": "theme:dk1",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_master",
+          "fill_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": "000000",
+            "shade": null,
+            "source_kind": "theme_role",
+            "source_scope": "slide_master",
+            "theme_profile_id": "T002",
+            "theme_token": "dk1",
+            "tint": null,
+            "transform_status": "supported"
+          },
+          "stroke_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": null,
+            "shade": null,
+            "source_kind": "none",
+            "source_scope": "slide_master",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5155,6 +4281,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5168,6 +4295,43 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T001",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          }
+        },
+        {
+          "role": "neutral",
+          "fill_role": "none",
+          "stroke_role": "none",
+          "line_width_pt": 0.0,
+          "basis": "measured",
+          "source_scope": "slide_layout",
+          "fill_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": null,
+            "shade": null,
+            "source_kind": "none",
+            "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
+            "theme_token": null,
+            "tint": null,
+            "transform_status": "supported"
+          },
+          "stroke_color_evidence": {
+            "basis": "measured",
+            "direct_rgb": null,
+            "lum_mod": null,
+            "lum_off": null,
+            "resolved_rgb": null,
+            "shade": null,
+            "source_kind": "none",
+            "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5189,6 +4353,7 @@
             "shade": null,
             "source_kind": "unknown",
             "source_scope": "not_observable_structurally",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "unresolved"
@@ -5202,6 +4367,7 @@
             "shade": null,
             "source_kind": "unknown",
             "source_scope": "not_observable_structurally",
+            "theme_profile_id": "T001",
             "theme_token": null,
             "tint": null,
             "transform_status": "unresolved"
@@ -5223,6 +4389,7 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
             "theme_token": null,
             "tint": null,
             "transform_status": "supported"
@@ -5236,1503 +4403,8 @@
             "shade": null,
             "source_kind": "none",
             "source_scope": "slide_layout",
+            "theme_profile_id": "T002",
             "theme_token": null,
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk1",
-          "stroke_role": "theme:dk1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt1",
-          "stroke_role": "theme:lt1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk2",
-          "stroke_role": "theme:dk2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt2",
-          "stroke_role": "theme:lt2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent1",
-          "stroke_role": "theme:accent1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent2",
-          "stroke_role": "theme:accent2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent3",
-          "stroke_role": "theme:accent3",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent4",
-          "stroke_role": "theme:accent4",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent5",
-          "stroke_role": "theme:accent5",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent6",
-          "stroke_role": "theme:accent6",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:hlink",
-          "stroke_role": "theme:hlink",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk1",
-          "stroke_role": "theme:dk1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt1",
-          "stroke_role": "theme:lt1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk2",
-          "stroke_role": "theme:dk2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt2",
-          "stroke_role": "theme:lt2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent1",
-          "stroke_role": "theme:accent1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent2",
-          "stroke_role": "theme:accent2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent3",
-          "stroke_role": "theme:accent3",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent4",
-          "stroke_role": "theme:accent4",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent5",
-          "stroke_role": "theme:accent5",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent6",
-          "stroke_role": "theme:accent6",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:hlink",
-          "stroke_role": "theme:hlink",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk1",
-          "stroke_role": "theme:dk1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt1",
-          "stroke_role": "theme:lt1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk2",
-          "stroke_role": "theme:dk2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt2",
-          "stroke_role": "theme:lt2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent1",
-          "stroke_role": "theme:accent1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent2",
-          "stroke_role": "theme:accent2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent3",
-          "stroke_role": "theme:accent3",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent4",
-          "stroke_role": "theme:accent4",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent5",
-          "stroke_role": "theme:accent5",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent6",
-          "stroke_role": "theme:accent6",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:hlink",
-          "stroke_role": "theme:hlink",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk1",
-          "stroke_role": "theme:dk1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "000000",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt1",
-          "stroke_role": "theme:lt1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "FFFFFF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:dk2",
-          "stroke_role": "theme:dk2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "1F497D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "dk2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "neutral",
-          "fill_role": "theme:lt2",
-          "stroke_role": "theme:lt2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "EEECE1",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "lt2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent1",
-          "stroke_role": "theme:accent1",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4F81BD",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent1",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent2",
-          "stroke_role": "theme:accent2",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "C0504D",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent2",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent3",
-          "stroke_role": "theme:accent3",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "9BBB59",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent3",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent4",
-          "stroke_role": "theme:accent4",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "8064A2",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent4",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent5",
-          "stroke_role": "theme:accent5",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "4BACC6",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent5",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:accent6",
-          "stroke_role": "theme:accent6",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "F79646",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "accent6",
-            "tint": null,
-            "transform_status": "supported"
-          }
-        },
-        {
-          "role": "accent",
-          "fill_role": "theme:hlink",
-          "stroke_role": "theme:hlink",
-          "line_width_pt": 0.0,
-          "basis": "measured",
-          "source_scope": "theme",
-          "fill_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
-            "tint": null,
-            "transform_status": "supported"
-          },
-          "stroke_color_evidence": {
-            "basis": "measured",
-            "direct_rgb": null,
-            "lum_mod": null,
-            "lum_off": null,
-            "resolved_rgb": "0000FF",
-            "shade": null,
-            "source_kind": "theme_role",
-            "source_scope": "theme",
-            "theme_token": "hlink",
             "tint": null,
             "transform_status": "supported"
           }
@@ -8996,78 +6668,346 @@
           "source_container_id": "L018"
         }
       ],
-      "theme_palette": [
+      "theme_profiles": [
         {
-          "theme_token": "accent1",
-          "resolved_rgb": "4F81BD",
-          "basis": "measured",
-          "source_scope": "theme"
+          "theme_profile_id": "T001",
+          "palette": [
+            {
+              "theme_token": "accent1",
+              "resolved_rgb": "4F81BD",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent2",
+              "resolved_rgb": "C0504D",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent3",
+              "resolved_rgb": "9BBB59",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent4",
+              "resolved_rgb": "8064A2",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent5",
+              "resolved_rgb": "4BACC6",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent6",
+              "resolved_rgb": "F79646",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk1",
+              "resolved_rgb": "000000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk2",
+              "resolved_rgb": "1F497D",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "folhlink",
+              "resolved_rgb": "800080",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "hlink",
+              "resolved_rgb": "0000FF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt1",
+              "resolved_rgb": "FFFFFF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt2",
+              "resolved_rgb": "EEECE1",
+              "basis": "measured",
+              "source_scope": "theme"
+            }
+          ],
+          "font_scheme": {
+            "major": {
+              "latin": "Arial"
+            },
+            "minor": {
+              "latin": "Arial"
+            }
+          }
         },
         {
-          "theme_token": "accent2",
-          "resolved_rgb": "C0504D",
-          "basis": "measured",
-          "source_scope": "theme"
+          "theme_profile_id": "T002",
+          "palette": [
+            {
+              "theme_token": "accent1",
+              "resolved_rgb": "4472C4",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent2",
+              "resolved_rgb": "ED7D31",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent3",
+              "resolved_rgb": "A5A5A5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent4",
+              "resolved_rgb": "FFC000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent5",
+              "resolved_rgb": "5B9BD5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent6",
+              "resolved_rgb": "70AD47",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk1",
+              "resolved_rgb": "000000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk2",
+              "resolved_rgb": "44546A",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "folhlink",
+              "resolved_rgb": "954F72",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "hlink",
+              "resolved_rgb": "0563C1",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt1",
+              "resolved_rgb": "FFFFFF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt2",
+              "resolved_rgb": "E7E6E6",
+              "basis": "measured",
+              "source_scope": "theme"
+            }
+          ],
+          "font_scheme": {
+            "major": {
+              "latin": "Arial"
+            },
+            "minor": {
+              "latin": "Arial"
+            }
+          }
         },
         {
-          "theme_token": "accent3",
-          "resolved_rgb": "9BBB59",
-          "basis": "measured",
-          "source_scope": "theme"
+          "theme_profile_id": "T003",
+          "palette": [
+            {
+              "theme_token": "accent1",
+              "resolved_rgb": "4472C4",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent2",
+              "resolved_rgb": "ED7D31",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent3",
+              "resolved_rgb": "A5A5A5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent4",
+              "resolved_rgb": "FFC000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent5",
+              "resolved_rgb": "5B9BD5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent6",
+              "resolved_rgb": "70AD47",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk1",
+              "resolved_rgb": "000000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk2",
+              "resolved_rgb": "44546A",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "folhlink",
+              "resolved_rgb": "954F72",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "hlink",
+              "resolved_rgb": "0563C1",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt1",
+              "resolved_rgb": "FFFFFF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt2",
+              "resolved_rgb": "E7E6E6",
+              "basis": "measured",
+              "source_scope": "theme"
+            }
+          ],
+          "font_scheme": {
+            "major": {
+              "latin": "Arial"
+            },
+            "minor": {
+              "latin": "Arial"
+            }
+          }
         },
         {
-          "theme_token": "accent4",
-          "resolved_rgb": "8064A2",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "accent5",
-          "resolved_rgb": "4BACC6",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "accent6",
-          "resolved_rgb": "F79646",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "dk1",
-          "resolved_rgb": "000000",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "dk2",
-          "resolved_rgb": "1F497D",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "folhlink",
-          "resolved_rgb": "800080",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "hlink",
-          "resolved_rgb": "0000FF",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "lt1",
-          "resolved_rgb": "FFFFFF",
-          "basis": "measured",
-          "source_scope": "theme"
-        },
-        {
-          "theme_token": "lt2",
-          "resolved_rgb": "EEECE1",
-          "basis": "measured",
-          "source_scope": "theme"
+          "theme_profile_id": "T004",
+          "palette": [
+            {
+              "theme_token": "accent1",
+              "resolved_rgb": "156082",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent2",
+              "resolved_rgb": "E97132",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent3",
+              "resolved_rgb": "196B24",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent4",
+              "resolved_rgb": "0F9ED5",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent5",
+              "resolved_rgb": "A02B93",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "accent6",
+              "resolved_rgb": "4EA72E",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk1",
+              "resolved_rgb": "000000",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "dk2",
+              "resolved_rgb": "0E2841",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "folhlink",
+              "resolved_rgb": "96607D",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "hlink",
+              "resolved_rgb": "467886",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt1",
+              "resolved_rgb": "FFFFFF",
+              "basis": "measured",
+              "source_scope": "theme"
+            },
+            {
+              "theme_token": "lt2",
+              "resolved_rgb": "E8E8E8",
+              "basis": "measured",
+              "source_scope": "theme"
+            }
+          ],
+          "font_scheme": {
+            "major": {
+              "latin": "Aptos Display"
+            },
+            "minor": {
+              "latin": "Aptos"
+            }
+          }
         }
       ]
     }
