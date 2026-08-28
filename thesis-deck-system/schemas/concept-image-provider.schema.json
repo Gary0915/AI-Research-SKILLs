@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "concept-image-provider.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["provider_id", "image_capable", "generation_provenance_required", "allowed_evidence_statuses"],
+  "properties": {
+    "provider_id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{2,63}$"},
+    "image_capable": {"type": "boolean"},
+    "generation_provenance_required": {"const": true},
+    "allowed_evidence_statuses": {"type": "array", "const": ["non_evidence"]}
+  }
+}

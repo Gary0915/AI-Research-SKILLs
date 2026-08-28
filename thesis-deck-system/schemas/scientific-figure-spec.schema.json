@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scientific-figure-spec.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "figure_id", "figure_type", "scientific_purpose", "evidence_status", "source_refs", "claim_refs", "hypothesis_layer_ref", "research_block_refs", "director_skill", "renderer", "style_profile_ref", "canvas", "components", "connections", "annotations", "labels", "visual_states", "provenance", "output_targets", "qa_requirements"],
+  "properties": {
+    "schema_version": {"const": "3.0.0"}, "figure_id": {"type": "string", "pattern": "^FIG[0-9]{3,}$"},
+    "figure_type": {"type": "string", "enum": ["vector_diagram", "scientific_plot", "real_photo", "literature_figure", "concept_illustration", "native_shape_figure"]},
+    "scientific_purpose": {"type": "string", "minLength": 1, "maxLength": 160}, "evidence_status": {"type": "string", "enum": ["empirical", "synthetic_test_evidence", "literature_evidence", "non_evidence"]},
+    "source_refs": {"type": "array", "items": {"type": "string", "pattern": "^[EA][0-9]{3,}$"}, "uniqueItems": true}, "claim_refs": {"type": "array", "items": {"type": "string", "pattern": "^C[0-9]{3,}$"}, "uniqueItems": true},
+    "hypothesis_layer_ref": {"type": "string", "pattern": "^H[0-9]{3,}$"}, "research_block_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^B[0-9]{3,}$"}, "uniqueItems": true},
+    "director_skill": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"}, "renderer": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"}, "style_profile_ref": {"type": "string", "pattern": "^VSP[0-9]{3,}$"},
+    "canvas": {"type": "object", "additionalProperties": false, "required": ["width", "height"], "properties": {"width": {"type": "number", "exclusiveMinimum": 0}, "height": {"type": "number", "exclusiveMinimum": 0}}},
+    "components": {"type": "array"}, "connections": {"type": "array"}, "annotations": {"type": "array"}, "labels": {"type": "array"}, "visual_states": {"type": "array"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_cursor"], "properties": {"source_cursor": {"type": "integer", "minimum": 1}}}, "output_targets": {"type": "array", "minItems": 1, "items": {"type": "string", "enum": ["svg_vector", "pdf_vector", "native_shape_plan", "source_evidence_asset", "extracted_source_figure", "generated_non_evidence_substrate"]}}, "qa_requirements": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z0-9_-]+$"}}
+  },
+  "allOf": [{"if": {"properties": {"figure_type": {"const": "concept_illustration"}}, "required": ["figure_type"]}, "then": {"properties": {"evidence_status": {"const": "non_evidence"}, "claim_refs": {"maxItems": 0}, "output_targets": {"contains": {"const": "generated_non_evidence_substrate"}}}}}]
+}

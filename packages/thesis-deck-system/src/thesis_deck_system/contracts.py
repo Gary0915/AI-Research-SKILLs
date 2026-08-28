@@ -37,6 +37,20 @@ PHASE2_SCHEMA_NAMES = (
     "layout-plan",
 )
 
+PHASE3_SCHEMA_NAMES = (
+    "image-review-provider",
+    "concept-image-provider",
+    "figure-production-plan",
+    "scientific-figure-spec",
+    "figure-output-manifest",
+    "figure-critic-report",
+    "visual-style-profile",
+    "observation-visual-binding",
+    "fabrication-process",
+    "skill-routing",
+    "checkpoint-qa",
+)
+
 SCHEMA_BY_COLLECTION = {
     "research_blocks": "research-block",
     "stages": "scientific-stage",
@@ -63,9 +77,13 @@ class Finding:
 
 
 class SchemaRegistry:
-    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False):
+    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False):
         self.schema_dir = Path(schema_dir)
-        schema_names = REQUIRED_SCHEMA_NAMES + (PHASE2_SCHEMA_NAMES if include_phase2 else ())
+        schema_names = (
+            REQUIRED_SCHEMA_NAMES
+            + (PHASE2_SCHEMA_NAMES if include_phase2 else ())
+            + (PHASE3_SCHEMA_NAMES if include_phase3 else ())
+        )
         self._schemas = {
             name: json.loads((self.schema_dir / f"{name}.schema.json").read_text(encoding="utf-8"))
             for name in schema_names

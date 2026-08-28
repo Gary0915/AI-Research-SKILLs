@@ -1355,7 +1355,7 @@ rg --files
 git log -12 --date=short --pretty=format:'%h %ad %s'
 rg --files -g '*.pptx' -g '*.pptm' -g '*.potx' -g '*.potm' -g '*.ppt' -g '*.odp'
 rg -n -i "PptxGenJS|python-pptx|OpenXML|slide master|slide layout|PowerPoint|pptx|LibreOffice|render.*slide|montage|NCKU|AMPL" --glob '!thesis-deck-system/TASK_PHASE_0.md' --glob '!thesis-deck-system/REVIEW_PROTOCOL.md' --glob '!*.lock' .
-& 'D:\Program Files\Git\bin\bash.exe' 'scripts/check-inventory.sh'
+<SYSTEM_GIT_BASH> scripts/check-inventory.sh
 python -c "from pathlib import Path; import yaml; t=Path(r'thesis-deck-system/reports/PHASE_0_IMPLEMENTATION_REPORT.md').read_text(encoding='utf-8'); c=yaml.safe_load(t[t.rfind('codex_report:'):].split('\n```',1)[0])['codex_report']; assert c['phase']=='PHASE_0' and c['status']=='awaiting_review' and c['branch']=='codex/thesis-deck-system' and c['commit_sha'] is None and c['files_added']==[] and c['files_modified']==['thesis-deck-system/reports/PHASE_0_IMPLEMENTATION_REPORT.md'] and c['files_deleted']==[] and c['next_action_requested']=='REVIEW'"
 git diff --check
 git diff --cached --check
@@ -1417,7 +1417,7 @@ codex_report:
   render_previews: []
   tests_run:
     - "git pull --rebase origin codex/thesis-deck-system"
-    - "D:/Program Files/Git/bin/bash.exe scripts/check-inventory.sh"
+    - "<SYSTEM_GIT_BASH> scripts/check-inventory.sh"
     - "Phase 0 report required-heading/order validation"
     - "Phase 0 codex_report footer field/value validation"
     - "Architecture reviewer R1-R10 coverage and canonical-pipeline validation"
@@ -1434,7 +1434,7 @@ codex_report:
     - "git scope validation"
   tests_failed:
     - "Initial revision structure-check invocation: expected an incorrect Section 1 heading and stopped before content assertions; corrected full harness passed"
-    - "Inventory invocation via stale C:/Program Files/Git/bin/bash.exe path: executable unavailable; identical check rerun via resolved D: path passed"
+    - "Inventory invocation via stale system Git Bash path: executable unavailable; identical check rerun via resolved system command passed"
   known_failures: []
   deviations: []
   reviewer_questions:

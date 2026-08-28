@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "fabrication-process.schema.json", "type": "object", "additionalProperties": false,
+  "required": ["process_id", "process_kind", "provenance_refs", "steps"],
+  "properties": {
+    "process_id": {"type": "string", "pattern": "^FP[0-9]{3,}$"}, "process_kind": {"const": "fabrication_process"},
+    "provenance_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^E[0-9]{3,}$"}, "uniqueItems": true},
+    "steps": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["ordinal", "operation", "material_refs", "state_before", "state_after", "conditions"], "properties": {"ordinal": {"type": "integer", "minimum": 1}, "operation": {"type": "string", "enum": ["prepare", "mix", "degas", "mold", "cure", "crosslink", "wash", "swell", "coat", "integrate_electrode", "assemble"]}, "material_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^M[0-9]{3,}$"}, "uniqueItems": true}, "state_before": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"}, "state_after": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"}, "conditions": {"type": "object", "additionalProperties": false, "required": ["temperature_c", "duration_min"], "properties": {"temperature_c": {"oneOf": [{"type": "number"}, {"const": "unknown"}]}, "duration_min": {"oneOf": [{"type": "number", "minimum": 0}, {"const": "unknown"}]}}}}}}
+  }
+}

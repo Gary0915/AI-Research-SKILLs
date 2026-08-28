@@ -1,0 +1,13 @@
+{
+  "schema_version": "3.0.0",
+  "checkpoint_id": "PHASE_3_CHECKPOINT_1",
+  "private_source_open_attempts": 0,
+  "real_private_alias_resolution_attempts": 0,
+  "privacy_root_status": "pass",
+  "sanitizer_scanner_status": "pass",
+  "provider_authorization_status": "pass",
+  "figure_contract_status": "pass",
+  "observation_evidence_status": "pass",
+  "fabrication_contract_status": "pass",
+  "phase1_phase2_regression_status": "pass"
+}

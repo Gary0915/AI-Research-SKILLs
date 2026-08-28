@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "figure-critic-report.schema.json", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "report_id", "figure_id", "output_manifest_ref", "executed_checks", "findings", "status"],
+  "properties": {"schema_version": {"const": "3.0.0"}, "report_id": {"type": "string", "pattern": "^FCR[0-9]{3,}$"}, "figure_id": {"type": "string", "pattern": "^FIG[0-9]{3,}$"}, "output_manifest_ref": {"type": "string", "pattern": "^FOM[0-9]{3,}$"}, "executed_checks": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[a-z0-9_-]+$"}}, "findings": {"type": "array", "items": {"type": "object"}}, "status": {"type": "string", "enum": ["APPROVED_FIGURE", "FAIL", "BLOCKED"]}}
+}

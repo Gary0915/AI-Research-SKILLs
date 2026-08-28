@@ -104,3 +104,4 @@ output/
 thesis-deck-system/examples/private-fixtures.local.json
 thesis-deck-system/private-fixtures/
 thesis-deck-system/artifacts/private/
+.private/

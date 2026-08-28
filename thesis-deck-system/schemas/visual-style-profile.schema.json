@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "visual-style-profile.schema.json", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "style_profile_id", "status", "token_provenance", "material_tokens", "arrow_tokens", "emphasis_tokens", "annotation_tokens"],
+  "properties": {"schema_version": {"const": "3.0.0"}, "style_profile_id": {"type": "string", "pattern": "^VSP[0-9]{3,}$"}, "status": {"type": "string", "enum": ["synthetic_checkpoint", "calibrated", "blocked_fixture"]}, "token_provenance": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["token_id", "source_role"], "properties": {"token_id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"}, "source_role": {"type": "string", "enum": ["synthetic_checkpoint", "formal_shell", "body_composition"]}}}}, "material_tokens": {"type": "object"}, "arrow_tokens": {"type": "object"}, "emphasis_tokens": {"type": "object"}, "annotation_tokens": {"type": "object"}}
+}

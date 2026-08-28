@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "figure-output-manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "figure_output_id", "figure_id", "figure_type", "primary_artifact_kind", "renderer", "source_spec_sha256", "provenance_refs", "style_profile_ref", "evidence_status", "primary_artifact", "output_part_lineage"],
+  "properties": {
+    "schema_version": {"const": "3.0.0"},
+    "figure_output_id": {"type": "string", "pattern": "^FOM[0-9]{3,}$"},
+    "figure_id": {"type": "string", "pattern": "^FIG[0-9]{3,}$"},
+    "figure_type": {"type": "string", "enum": ["vector_diagram", "scientific_plot", "real_photo", "literature_figure", "concept_illustration", "native_shape_figure"]},
+    "primary_artifact_kind": {"type": "string", "enum": ["svg_vector", "pdf_vector", "source_evidence_asset", "extracted_source_figure", "generated_non_evidence_substrate", "native_shape_plan"]},
+    "renderer": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"},
+    "source_spec_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "provenance_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[EA][0-9]{3,}$"}, "uniqueItems": true},
+    "style_profile_ref": {"type": "string", "pattern": "^VSP[0-9]{3,}$"},
+    "evidence_status": {"type": "string", "enum": ["empirical", "synthetic_test_evidence", "literature_evidence", "non_evidence"]},
+    "primary_artifact": {"type": "object"},
+    "output_part_lineage": {"type": "array", "minItems": 1, "items": {"type": "string", "enum": ["generated", "source_evidence", "extracted_source", "native_plan"]}, "uniqueItems": true}
+  },
+  "$defs": {
+    "repo_path": {"type": "string", "pattern": "^(?!/)(?![A-Za-z]:)(?!\\\\)(?!.*\\\\).+"},
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "oneOf": [
+    {"properties": {"figure_type": {"const": "vector_diagram"}, "primary_artifact_kind": {"const": "svg_vector"}, "evidence_status": {"const": "non_evidence"}, "primary_artifact": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/repo_path"}, "sha256": {"$ref": "#/$defs/sha"}}}}, "required": ["figure_type", "primary_artifact_kind", "primary_artifact"]},
+    {"properties": {"figure_type": {"const": "scientific_plot"}, "primary_artifact_kind": {"enum": ["svg_vector", "pdf_vector"]}, "evidence_status": {"enum": ["empirical", "synthetic_test_evidence"]}, "primary_artifact": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "data_provenance_refs"], "properties": {"path": {"$ref": "#/$defs/repo_path"}, "sha256": {"$ref": "#/$defs/sha"}, "data_provenance_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^E[0-9]{3,}$"}}}}}, "required": ["figure_type", "primary_artifact_kind", "primary_artifact"]},
+    {"properties": {"figure_type": {"const": "real_photo"}, "primary_artifact_kind": {"const": "source_evidence_asset"}, "evidence_status": {"const": "empirical"}, "output_part_lineage": {"const": ["source_evidence"]}, "primary_artifact": {"type": "object", "additionalProperties": false, "required": ["asset_id", "source_sha256", "evidence_card_ref"], "properties": {"asset_id": {"type": "string", "pattern": "^A[0-9]{3,}$"}, "source_sha256": {"$ref": "#/$defs/sha"}, "evidence_card_ref": {"type": "string", "pattern": "^E[0-9]{3,}$"}}}}, "required": ["figure_type", "primary_artifact_kind", "primary_artifact"]},
+    {"properties": {"figure_type": {"const": "literature_figure"}, "primary_artifact_kind": {"const": "extracted_source_figure"}, "evidence_status": {"const": "literature_evidence"}, "output_part_lineage": {"const": ["extracted_source"]}, "primary_artifact": {"type": "object", "additionalProperties": false, "required": ["asset_id", "source_sha256", "evidence_card_ref", "citation_ref"], "properties": {"asset_id": {"type": "string", "pattern": "^A[0-9]{3,}$"}, "source_sha256": {"$ref": "#/$defs/sha"}, "evidence_card_ref": {"type": "string", "pattern": "^E[0-9]{3,}$"}, "citation_ref": {"type": "string", "pattern": "^E[0-9]{3,}$"}}}}, "required": ["figure_type", "primary_artifact_kind", "primary_artifact"]},
+    {"properties": {"figure_type": {"const": "concept_illustration"}, "primary_artifact_kind": {"const": "generated_non_evidence_substrate"}, "evidence_status": {"const": "non_evidence"}, "primary_artifact": {"type": "object", "additionalProperties": false, "required": ["asset_id", "generation_provenance_ref"], "properties": {"asset_id": {"type": "string", "pattern": "^A[0-9]{3,}$"}, "generation_provenance_ref": {"type": "string", "pattern": "^GEN[0-9]{3,}$"}}}}, "required": ["figure_type", "primary_artifact_kind", "primary_artifact"]},
+    {"properties": {"figure_type": {"const": "native_shape_figure"}, "primary_artifact_kind": {"const": "native_shape_plan"}, "evidence_status": {"const": "non_evidence"}, "primary_artifact": {"type": "object", "additionalProperties": false, "required": ["plan_id", "geometry_manifest_path", "geometry_manifest_sha256"], "properties": {"plan_id": {"type": "string", "pattern": "^NSP[0-9]{3,}$"}, "geometry_manifest_path": {"$ref": "#/$defs/repo_path"}, "geometry_manifest_sha256": {"$ref": "#/$defs/sha"}}}}, "required": ["figure_type", "primary_artifact_kind", "primary_artifact"]}
+  ]
+}

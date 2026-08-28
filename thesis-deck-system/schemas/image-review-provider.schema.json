@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "image-review-provider.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["provider_id", "image_capable", "hash_binding_supported", "private_content_allowed", "approved_for_private_exemplars", "egress_mode", "retention_class", "supported_input_forms"],
+  "properties": {
+    "provider_id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{2,63}$"},
+    "image_capable": {"type": "boolean"},
+    "hash_binding_supported": {"type": "boolean"},
+    "private_content_allowed": {"type": "boolean"},
+    "approved_for_private_exemplars": {"type": "boolean"},
+    "egress_mode": {"type": "string", "enum": ["local_only", "approved_private_enclave", "external_network", "unknown"]},
+    "retention_class": {"type": "string", "enum": ["ephemeral", "approved_private_retention", "persistent", "unknown"]},
+    "supported_input_forms": {"type": "array", "minItems": 1, "items": {"type": "string", "enum": ["repository_relative_path", "local_private_handle"]}, "uniqueItems": true}
+  }
+}
