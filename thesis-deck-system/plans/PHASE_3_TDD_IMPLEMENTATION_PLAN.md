@@ -149,12 +149,20 @@ overlay. It is forbidden for experimental photos, microscopy, instrument
 output, measured samples, quantitative plots, literature figures, and
 pseudo-evidence.
 
-`ImageReviewProvider` is also abstract. Capability preflight records provider
-ID, capability level, supported input/path form, and render-SHA binding support.
-A Codex image viewer may be an adapter at runtime, but contracts cannot name it
-as a repository invariant. If unavailable, non-image-capable, stale, or unable
-to bind hashes, `qualitative_visual_review=blocked_visual_review`; metadata or
-pixel heuristics never create a qualitative PASS.
+`ImageReviewProvider` is also abstract. Its typed capability contract requires
+`provider_id`, `image_capable`, `hash_binding_supported`,
+`private_content_allowed`, `approved_for_private_exemplars`, `egress_mode`, and
+`retention_class`. Private-reference preflight passes only when the provider is
+image-capable, hash-bound, explicitly private-content allowed, explicitly
+approved for private exemplars, uses an allowed egress class, and has a
+compatible retention class. A capable but private-unauthorized provider may
+inspect sanitized public/generated renders only; it must never receive a private
+exemplar render. Its private-reference comparison and any required
+professor-fidelity dimension are `blocked_visual_review`, not PASS. A Codex
+image viewer may be an adapter at runtime, but contracts cannot name it as a
+repository invariant. If unavailable, non-image-capable, stale, unable to bind
+hashes, or privacy-ineligible, `qualitative_visual_review=blocked_visual_review`;
+metadata or pixel heuristics never create a qualitative PASS.
 
 ## 4. Future contracts and evidence
 
@@ -190,11 +198,28 @@ instrumentation, inputs/outputs, measurement points, controls, and variables.
 
 ### 4.2 Output, critic, and style contracts
 
-`figure-output-manifest` requires figure/spec refs, renderer, source-spec hash,
-canonical SVG path/hash, optional PNG path/hash, optional native-shape-plan ref,
-provenance refs, style grammar ref, critic status, privacy status, evidence
-status, and output-part lineage. PNG cannot be the sole canonical output where
-SVG/vector is required.
+`figure-output-manifest` is a discriminated contract with exactly one
+`primary_artifact_kind`; it carries figure/spec refs, renderer, source-spec
+hash, provenance refs, style grammar ref, critic/privacy/evidence status, and
+output-part lineage. It selects one typed primary-artifact variant rather than
+forcing all evidence into SVG:
+
+| `figure_type` | `primary_artifact_kind` and required primary lineage | Optional, separately typed outputs |
+| --- | --- | --- |
+| `vector_diagram` | `svg_vector`: SVG repository-relative path + SHA-256 | native shape plan; PNG fallback |
+| `scientific_plot` | `svg_vector` or `pdf_vector`: vector path + SHA-256; reproducible data/plot provenance | PNG fallback |
+| `real_photo` | `source_evidence_asset`: immutable real source asset ID + source SHA-256 + evidence-card provenance | deterministic SVG/native annotation overlay; composed preview |
+| `literature_figure` | `extracted_source_figure`: extracted source asset ID + source SHA-256 + citation/provenance | deterministic annotation overlay |
+| `concept_illustration` | `generated_non_evidence_substrate`: generated asset ID + generation provenance + `evidence_status=non_evidence` | deterministic annotation overlay |
+| `native_shape_figure` | `native_shape_plan`: native plan ID + geometry-manifest path + SHA-256 | SVG or render preview |
+
+The schema uses `oneOf`/const discriminators so required fields are typed by
+variant. SVG/vector is mandatory only for `vector_diagram` and
+`scientific_plot`; PNG cannot be the sole canonical output for either. A real
+photo or literature figure retains its true immutable source identity, and a
+concept illustration can never assert scientific evidence. Cross-class
+masquerading—for example, declaring raster experimental evidence as generated
+SVG—is a schema and provenance failure before FigureCritic.
 
 `figure-critic-report` binds output hashes to executed checks, findings,
 correction refs, and `APPROVED_FIGURE|FAIL|BLOCKED`.
@@ -252,12 +277,12 @@ geometry, hierarchy, typography/style, and layout mapping may change.
 | --- | --- | --- | --- |
 | A01/A02 | shell 1/3; body 2 problem balance | native governed text/layout | question/hypothesis/falsifier; Problem separate |
 | A03 | shell 1/3 + figure grammar | fishbone director → SVG builder | revision/focus/branch history |
-| A04 | body 2 observation grammar | real photo annotation or approved concept | observation/question/evidence binding |
+| A04 | body 2 observation grammar | real evidence route: photo annotation, microscopy/instrument output, measurement plot, or source-derived visual; concept only as separately bound auxiliary | empirical observation/question/evidence binding; generated concept is `non_evidence` and cannot satisfy `observation_evidence_ref`, `evidence_refs`, or an equivalent empirical slot |
 | A05 | body 2 | literature extraction + mechanism director | synthesis/citation provenance |
-| A06 | body 2 | mechanism director → SVG/native decision | mechanism/strategy/criterion |
-| A07 | body 2 | photo annotation + experiment schematic | photo and annotations co-exist |
+| A06 | body 2 | mechanism director, or fabrication-process director when the claim is preparation chronology | mechanism/strategy/criterion; process order/conditions stay provenance-bound |
+| A07 | body 2 | photo annotation + experiment schematic; fabrication-process director when preparation transitions are visible | photo and annotations co-exist; process cannot be silently replaced by a measurement schematic |
 | A08 | body 2 | comparison director | fair Control/Proposed distinction |
-| A09 | body 2 | experiment schematic + native table | IV/controls/N/method/prediction/rule |
+| A09 | body 2 | experiment schematic + native table; fabrication-process director for preparation workflow | IV/controls/N/method/prediction/rule; fabrication chronology remains separately provenance-bound |
 | A10 | body 2 | plot director or real photo | evidence/metric/uncertainty/units |
 | A11 | body 2 | plot + comparison director | distinct results/fair scales |
 | A12 | body 2 | image-matrix director | order/identity/captions/scales |
@@ -288,6 +313,7 @@ behavior, failure modes, blocked states, handoff target, and QA owner.
 | `fishbone-director` | versioned Fishbone spec | alter graph/history | vector builder; Fishbone QA |
 | `mechanism-diagram-director` | causal mechanism spec | imply certainty for unknowns | vector builder; critic |
 | `experiment-schematic-director` | stack/instrument spec | omit controls/replace photos | vector builder; critic |
+| `fabrication-process-director` | chronological material/sample/device preparation spec | invent missing conditions; replace process with mechanism or measurement schematic | native/simple or vector builder; FigureCritic/provenance QA |
 | `scientific-plot-director` | data plot spec | AI/raster-only plot | plotter; provenance QA |
 | `photo-annotation-director` | source photo overlay plan | replace source image | overlay; provenance QA |
 | `literature-figure-director` | extracted/cited figure plan | AI recreation | critic; provenance QA |
@@ -320,6 +346,10 @@ real experimental photo → scientific-figure-router → photo-annotation-direct
 organic conceptual illustration → scientific-figure-router
 → concept-illustration-director → ConceptImageProvider → deterministic overlay
 → figure-critic → layout-director
+
+fabrication/process request → scientific-figure-router
+→ fabrication-process-director → native-shape decision or vector-figure-builder
+→ figure-critic → layout-director
 ```
 
 Routing tests reject giant all-purpose bypasses, unauthorized generation, and
@@ -334,10 +364,10 @@ planning revision creates none of them.
 | --- | --- | --- |
 | `packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py` | ignored-root guard, allowlist, scans, retention policy | `test_phase3_privacy.py` |
 | `private_fixtures.py`, `phase3_profiler.py`, `phase3_profiles.py` | alias/OOXML validation, minimal local profile, sanitizer/resolvers | `test_phase3_profiler.py`, `test_phase3_resolvers.py` |
-| `image_review.py`, `concept_images.py` | provider preflight and provider boundaries | `test_phase3_visual_review.py`, `test_phase3_concept_images.py` |
-| `figure_routing.py`, `figure_contracts.py` | FigureProductionPlan, Figure Spec, routing policy | `test_phase3_figure_router.py`, `test_phase3_figure_contracts.py` |
+| `image_review.py`, `concept_images.py` | provider preflight/privacy authorization and provider boundaries | `test_phase3_visual_review.py`, `test_phase3_concept_images.py` |
+| `figure_routing.py`, `figure_contracts.py` | FigureProductionPlan, discriminated Figure Output Manifest, Figure Spec, routing policy | `test_phase3_figure_router.py`, `test_phase3_figure_contracts.py` |
 | `visual_primitives.py`, `visual_style.py`, `vector_figures.py` | shared primitives, governed tokens, deterministic SVG/native plans | `test_phase3_vector_figures.py`, `test_phase3_style_governor.py` |
-| `mechanism_diagrams.py`, `experiment_schematics.py`, `comparison_figures.py`, `image_matrices.py` | specialist scientific figure specs | dedicated director test modules |
+| `mechanism_diagrams.py`, `experiment_schematics.py`, `fabrication_processes.py`, `comparison_figures.py`, `image_matrices.py` | bounded mechanism, measurement-schematic, fabrication-process, comparison, and matrix specs | dedicated director test modules including `test_phase3_fabrication_processes.py` |
 | `scientific_plots.py`, `photo_annotation.py`, `literature_figures.py` | plot/photo/literature source workflows | `test_phase3_plot.py`, `test_phase3_photo.py`, `test_phase3_literature.py` |
 | `figure_critic.py` | pre-layout FigureCritic decision/evidence | `test_phase3_figure_critic.py` |
 | `phase3_calibration.py`, `fishbone.py`, `layout.py` | calibrated A01–A18/Fishbone/Layout consumption | `test_phase3_calibration.py` |
@@ -369,6 +399,7 @@ input refs, source cursor, and provenance chain.
 | fishbone-director | historical Fishbone role; not unversioned map | canonical Fishbone revision/focus → style-applied spec | vector builder; no graph/history mutation | Fishbone spec; revision hash; missing revision blocks → critic; Fishbone QA |
 | mechanism-diagram-director | mechanism/alternative/unknown visual; not data plot | causal nodes/edges/confidence → typed spec | vector builder; no certainty invention | mechanism spec; claim/evidence refs; missing unknown/label fails → critic; FigureCritic |
 | experiment-schematic-director | experiment design/stack; not photo replacement | variables/controls/method/instrumentation → schematic spec | vector builder; no omitted controls | schematic spec; stage refs; incomplete stack blocks → critic; FigureCritic |
+| fabrication-process-director | preparation/device assembly chronology; not causal explanation or measurement apparatus | ordered material identity refs, known conditions/timing/temperature, and sample-state transitions → structured process spec | VisualStyleGovernor + native simple plan or vector builder; never invent a parameter, merge into mechanism, or substitute a measurement schematic | style-governed process spec + typed step/state/provenance refs; missing required known condition remains `unknown` and blocks a claimed condition; order/provenance failure blocks → FigureCritic; provenance QA |
 | scientific-plot-director | quantitative data result; not conceptual request | verified dataset/units/replicates → reproducible plot spec | plotting adapter; no AI/raster-only canonical | plot spec+SVG manifest; missing data blocks → critic; provenance QA |
 | photo-annotation-director | real experimental image; not synthetic substitute | source asset/physical interfaces → overlay plan | vector overlay; no source replacement/AI | source+overlay manifest; source mismatch blocks → critic; provenance QA |
 | literature-figure-director | cited literature figure; not mechanism recreation | citation/source extraction rights → extraction plan | extractor/critic; no AI recreation | extracted source manifest; missing citation/source blocks → critic; provenance QA |
@@ -448,25 +479,27 @@ progress; requirements are never weakened.
 
 | Phase | Future work | RED cases | Stop/go evidence |
 | --- | --- | ---: | --- |
-| A | contracts, privacy, provider preflight | 32 | sanitizer/provider QA; no private open |
+| A | contracts, privacy, provider preflight | 36 | sanitizer/provider QA; no private open |
 | B | minimized profiler + streaming classification | 17 | ingestion/retention QA |
 | C | shell/body/figure grammar, conflicts, tiers | 24 | resolver QA; conflict stop |
-| D | style governor + figure router | 30 | routing/plan QA |
-| E | vector stack: mechanism/experiment/fishbone/comparison/matrix | 42 | SVG/native plans + critic QA |
-| F | plot, real-photo, literature workflows | 27 | provenance/output QA |
+| D | style governor + figure router | 33 | routing/plan QA |
+| E | vector stack: mechanism/experiment/fabrication/fishbone/comparison/matrix | 47 | SVG/native plans + critic QA |
+| F | plot, artifact-type outputs, real-photo, literature workflows | 34 | provenance/output QA |
 | G | ConceptImageProvider boundary | 12 | non-evidence QA |
 | H | A01–A18/Fishbone calibration + template reconstruction | 31 | package-lineage QA |
 | I | representative/stress and figure benchmarks | 29 | benchmark QA |
 | J | ledger-derived acceptance deck | 17 | replay/structural/SVG QA |
 | K | FigureCritic integration, visual/Professor/report gates | 24 | owning QA/status truth |
-| **Total** |  | **285** | `32+17+24+30+42+27+12+31+29+17+24=285` |
+| **Total** |  | **304** | `36+17+24+33+47+34+12+31+29+17+24=304` |
 
-### Phase A — contracts, privacy, providers (32)
+### Phase A — contracts, privacy, providers (36)
 
 RED: all schema/type/format failures; ignored-root and scanner corpus;
 absent/non-image/hash-unbound/stale `ImageReviewProvider`; wrong path form;
-preflight evidence; blocked review propagation. GREEN adds only typed contracts,
-scanners, and provider interfaces. No alias opens.
+preflight evidence; blocked review propagation; capable-but-private-unauthorized
+provider; incompatible retention policy; disallowed egress mode; and
+sanitized-only review that cannot certify private reconstruction fidelity. GREEN
+adds only typed contracts, scanners, and provider interfaces. No alias opens.
 
 ### Phase B — profiler and minimized classification (17)
 
@@ -483,30 +516,44 @@ descriptor grouping/outlier retention; all four tiers; one-descriptor non-
 recurrence; external-waiver-only validation; scoped statuses. GREEN has no
 scientific mutations.
 
-### Phase D — governor and router (30)
+### Phase D — governor and router (33)
 
 RED: quantitative→plot, photo→annotation, literature→extraction,
-mechanism→SVG/native decision, experiment→schematic, organic→concept; AI
-rejection for experimental/literature/plot evidence; SVG-first/native rule;
-Figure Spec requirements; token consistency/drift; source provenance; no giant
-bypass; Layout's finished-assets-only rule. GREEN produces routing contracts.
+mechanism→SVG/native decision, experiment→schematic, fabrication→process
+director, organic→concept; AI rejection for experimental/literature/plot
+evidence; SVG-first/native rule; Figure Spec requirements; token
+consistency/drift; source provenance; no giant bypass; Layout's finished-assets-
+only rule; generated concept rejected as `observation_evidence_ref` or empirical
+`evidence_refs`; Observation with required empirical evidence but no real source
+fails; separately bound `non_evidence` auxiliary concept coexists without
+satisfying Observation. GREEN produces routing contracts.
 
-### Phase E — vector figure stack (42)
+### Phase E — vector figure stack (47)
 
 RED: deterministic SVG/geometry manifest/no invention/style tokens; mechanism
 causal direction, unknowns, observation/hypothesis distinction, labels;
-experiment stack, locations, I/O, controls, variables; Fishbone history/stable
-positions; fair comparison and labels; matrix ordering/scales/captions; critic
-tests for misleading arrow, missing uncertainty, unreadable labels, excess
-decor, and failed figure blocking Layout. GREEN implements specialist directors
-and vector builder only after routes exist.
+experiment stack, locations, I/O, controls, variables; fabrication process
+order, material identity refs, known conditions, timing/temperature, intermediate
+sample-state transitions, and no invented parameter; a mechanism director cannot
+absorb fabrication responsibility; a measurement schematic cannot replace a
+fabrication process; fabrication output without provenance fails; Fishbone
+history/stable positions; fair comparison and labels; matrix ordering/scales/
+captions; critic tests for misleading arrow, missing uncertainty, unreadable
+labels, excess decor, and failed figure blocking Layout. GREEN implements
+specialist directors and vector builder only after routes exist.
 
-### Phase F — plot/photo/literature (27)
+### Phase F — plot, artifact-type outputs, photo/literature (34)
 
-RED: data provenance, SVG canonical/PNG fallback, units, replicate/error;
-source-photo preservation/separate overlay/interface binding/no AI replacement;
-literature citation/extraction/AI-recreation rejection; output hashes and
-failure propagation. GREEN uses reproducible plots and genuine sources.
+RED: discriminated manifest: vector diagram requires an SVG vector artifact;
+scientific plot requires SVG or PDF vector canonical output; real photo retains
+immutable source evidence asset; literature figure retains extracted-source
+citation/provenance; concept illustration is non-evidence; native shape figure
+is canonical with a native plan/geometry manifest and no SVG; cross-class
+masquerading fails. Also test data provenance, vector plot PNG fallback, units,
+replicate/error; source-photo preservation/separate overlay/interface binding/no
+AI replacement; literature citation/extraction/AI-recreation rejection; output
+hashes and failure propagation. GREEN uses reproducible plots and genuine
+sources.
 
 ### Phase G — concepts (12)
 
@@ -623,6 +670,10 @@ pass. Native PowerPoint unavailable means `blocked_environment`.
 | P3-PLAN-B4 | §8.1, 9H fresh lineage/non-reuse |
 | P3-PLAN-B5 | §2.1, 9B streaming retention |
 | P3-PLAN-B6 | §10, 9C/K independent statuses |
+| P3-PLAN-C1 | §§3.1, 4.2, 9F discriminated output variants and cross-class RED cases |
+| P3-PLAN-C2 | §§4.1, 6, 9D empirical Observation route and semantic-negative RED cases |
+| P3-PLAN-C3 | §§2.1, 3.3, 9A/K private-authorized image-review preflight and blocked-fidelity tests |
+| P3-PLAN-C4 | §§3.1, 6–7, 9D/E fabrication-process contract, routing, A06/A07/A09 handoffs, and RED cases |
 
 ## 12. Risks and stop conditions
 
@@ -631,15 +682,22 @@ pass. Native PowerPoint unavailable means `blocked_environment`.
 - Weak direct evidence yields provisional/insufficient status, not fabricated
   recurring grammar.
 - Font metrics may differ across profiling, LibreOffice, and native PowerPoint.
-- Image review may be unavailable/hash-unbound; qualitative review then blocks.
+- A private-safe image reviewer may be unavailable, privacy-unauthorized, or
+  incompatible with required egress/retention; private-reference qualitative
+  review and professor-fidelity PASS then block even if sanitized review passes.
+- Some real fabrication records may omit a condition. The process director must
+  preserve it as unknown and cannot infer it from a mechanism or measurement
+  schematic.
 - `python-pptx` master/layout limitations may require adapter-owned OOXML, but
   a second backend is prohibited.
 - Native PowerPoint and a permitted real scientific fixture may remain blocked;
   production readiness must remain false.
 
-Before delivery, verify every design section, P3P-1–P3P-8, P3-PLAN-B1–B6, all
-twenty Skill contracts, deterministic routing, SVG-first policy, narrow
-generation boundary, FigureCritic-before-Layout, render minimization, status
-separation, and RED arithmetic. Confirm no private path/content or production
-file changed, run `git diff --check`, push, verify the remote plan blob, then
-stop for reviewer approval.
+Before delivery, verify every design section, P3P-1–P3P-8, P3-PLAN-B1–B6, and
+P3-PLAN-C1–C4; all twenty-one Skill contracts; discriminated figure artifacts;
+empirical Observation boundary; private-authorized image review; fabrication
+routing; deterministic routing; SVG-first policy; narrow generation boundary;
+FigureCritic-before-Layout; render minimization; status separation; and RED
+arithmetic. Confirm no private path/content or production file changed, run
+`git diff --check`, push, verify the remote plan blob, then stop for reviewer
+approval.
