@@ -144,7 +144,8 @@ cannot prove them.
 
 - Focused CP2 suite: **46 passed**.
 - Checkpoint 1 + Checkpoint 2 suites: **110 passed**.
-- Complete Phase 1–2 + CP1 + CP2 suite: **210 passed, 0 failed**.
+- Complete Phase 1–2 + CP1 + CP2 suite in a disposable detached worktree:
+  **210 passed, 0 failed**.
 - Four committed CP2 JSON artifacts validated with Draft 2020-12 schemas and
   `FormatChecker`: **0 errors**.
 - Recursive `additionalProperties: false` audit for shell, body, and QA
