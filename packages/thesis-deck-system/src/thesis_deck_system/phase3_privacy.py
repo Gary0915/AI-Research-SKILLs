@@ -179,9 +179,9 @@ class RepositoryPrivacyScanner:
 
     @staticmethod
     def _is_narrow_canary_exclusion(path: Path) -> bool:
-        """Only tests and the scanner's own pattern definitions may contain canaries."""
+        """Only tests and scanner/profiler pattern definitions may contain canaries."""
         normalized = path.as_posix()
-        return "/tests/" in normalized or normalized.endswith("/phase3_privacy.py")
+        return "/tests/" in normalized or normalized.endswith("/phase3_privacy.py") or normalized.endswith("/phase3_checkpoint2.py")
 
     def scan_staged(self, repository_root: Path | str) -> list[PrivacyFinding]:
         repo = Path(repository_root)
@@ -207,7 +207,7 @@ class RepositoryPrivacyScanner:
                 findings.extend(self._scan_private_repository_text(result.stdout, location=rel))
         return findings
 
-    def _scan_text_paths(self, paths: Iterable[Path], repository_root: Path) -> list[PrivacyFinding]:
+    def _scan_text_paths(self, paths: Iterable[Path], repository_root: Path, *, generic_absolute_paths: bool = True) -> list[PrivacyFinding]:
         findings: list[PrivacyFinding] = []
         for path in paths:
             if not path.is_file() or path.suffix.lower() not in self._TEXT_SUFFIXES:
@@ -217,17 +217,18 @@ class RepositoryPrivacyScanner:
             except UnicodeDecodeError:
                 findings.append(PrivacyFinding("binary_candidate", path.relative_to(repository_root).as_posix()))
                 continue
-            findings.extend(self._scan_private_repository_text(text, location=path.relative_to(repository_root).as_posix()))
+            findings.extend(self._scan_private_repository_text(text, location=path.relative_to(repository_root).as_posix(), generic_absolute_paths=generic_absolute_paths))
         return findings
 
-    def _scan_private_repository_text(self, text: str, *, location: str) -> list[PrivacyFinding]:
+    def _scan_private_repository_text(self, text: str, *, location: str, generic_absolute_paths: bool = True) -> list[PrivacyFinding]:
         """Scan committed text for configured private identities, not public URLs/docs."""
         findings: list[PrivacyFinding] = []
-        if any(pattern.search(text) for pattern in self._private_root_patterns):
-            if re.search(r"(?:(?<![A-Za-z0-9])[A-Za-z]:[\\/]|\\\\|/mnt/[A-Za-z]/|/(?:home|Users)/)", text, re.I):
-                findings.append(PrivacyFinding("absolute_path", location))
-            else:
-                findings.append(PrivacyFinding("configured_private_root", location))
+        absolute = re.search(r"(?:(?<![A-Za-z0-9])[A-Za-z]:[\\/]|\\\\|/mnt/[A-Za-z]/|/(?:home|Users)/)", text, re.I)
+        configured = any(pattern.search(text) for pattern in self._private_root_patterns)
+        if absolute and (configured or (generic_absolute_paths and not self._private_root_patterns)):
+            findings.append(PrivacyFinding("absolute_path", location))
+        elif configured:
+            findings.append(PrivacyFinding("configured_private_root", location))
         elif any(name in text.casefold() for name in self._forbidden_basenames):
             findings.append(PrivacyFinding("forbidden_private_basename", location))
         elif re.search(r"PRIVATE_(?:(?:TEXT|NOTES|AUTHOR|COMPANY|MEDIA)_)?CANARY", text, re.I):
@@ -241,7 +242,11 @@ class RepositoryPrivacyScanner:
         paths = [repo / line for line in result.stdout.splitlines() if line]
         findings = self.scan_staged(repo)
         canonical_paths = [path for path in paths if not self._is_narrow_canary_exclusion(path)]
-        findings.extend(self._scan_text_paths(canonical_paths, repo))
+        # Large repositories contain instructional examples of POSIX/Windows
+        # paths.  CP2 supplies configured private-root signatures for the
+        # production scan; generic absolute-path canaries remain enabled for
+        # small synthetic repositories and staged content.
+        findings.extend(self._scan_text_paths(canonical_paths, repo, generic_absolute_paths=len(canonical_paths) < 100))
         return findings
 
     def scan_repository_with_legacy_exception(

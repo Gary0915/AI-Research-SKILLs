@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "checkpoint_id": "PHASE_3_CHECKPOINT_2",
   "execution_evidence_id": "CP2-EXEC-001",
-  "execution_evidence_sha256": "b221f01bc4f15c3283d83474baf2aed8003d0b5fc9a9c2e5f46cab7b9c7210c4",
+  "execution_evidence_sha256": "7a1fc6240cb777a01dd4a80190ca4578bedf6c1db96ed4e311fcf39e049c2863",
   "execution_evidence": {
     "schema_version": "1.0.0",
     "evidence_id": "CP2-EXEC-001",
@@ -25,24 +25,54 @@
     },
     "source_sessions": {
       "private://layout_exemplar_2": {
-        "ooxml_valid": true,
+        "session_id": "CP2-SES-002",
+        "alias_uri": "private://layout_exemplar_2",
+        "started": true,
+        "event_order": 2,
+        "regular_file_validation": "pass",
+        "ooxml_validation": "pass",
+        "hash_status": "pass",
+        "profiling_status": "pass",
+        "sanitizer_handoff": "pass",
+        "closed": true,
+        "outcome": "success",
         "source_sha256": "01534bae45e3ea3db13f0a7b90a906c7bd5385f0b301fa2ff427c7892d168623",
-        "slide_count": 13,
         "descriptor_count": 13
       },
       "private://template_primary_1": {
-        "ooxml_valid": true,
+        "session_id": "CP2-SES-001",
+        "alias_uri": "private://template_primary_1",
+        "started": true,
+        "event_order": 1,
+        "regular_file_validation": "pass",
+        "ooxml_validation": "pass",
+        "hash_status": "pass",
+        "profiling_status": "pass",
+        "sanitizer_handoff": "pass",
+        "closed": true,
+        "outcome": "success",
         "source_sha256": "7705931669af2fab77722a7fdd1c8c3c14e26043355f24362f60720847fb2693",
-        "slide_count": 19,
-        "descriptor_count": 19
+        "descriptor_count": 67
       },
       "private://template_primary_3": {
-        "ooxml_valid": true,
+        "session_id": "CP2-SES-003",
+        "alias_uri": "private://template_primary_3",
+        "started": true,
+        "event_order": 3,
+        "regular_file_validation": "pass",
+        "ooxml_validation": "pass",
+        "hash_status": "pass",
+        "profiling_status": "pass",
+        "sanitizer_handoff": "pass",
+        "closed": true,
+        "outcome": "success",
         "source_sha256": "13d95796d1cdeacaef352f72c190fc5a29eb0bf9c4ec0377cc66aada7fb0682f",
-        "slide_count": 15,
-        "descriptor_count": 15
+        "descriptor_count": 25
       }
     },
+    "source_session_attempts": 3,
+    "successful_closed_sessions": 3,
+    "failed_sessions": 0,
     "unauthorized_attempts": 0,
     "private_renders_created": 0,
     "private_renders_deleted": 0,
@@ -67,7 +97,37 @@
         "status": "applied_legacy_exception"
       }
     ],
-    "unexcepted_findings": 0
+    "unexcepted_findings": 0,
+    "descriptor_quality_checks": [
+      {
+        "check_id": "CP2-DQ-SHELL-COMPLETENESS",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-BODY-COMPLETENESS",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-MEASUREMENT-BASIS",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-NESTED-SCHEMA-CLOSURE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-AUTHORITY-SEPARATION",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-SLIDE-DESCRIPTOR-COVERAGE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-PROHIBITED-FIELDS",
+        "status": "pass"
+      }
+    ]
   },
   "aggregate_status": "pass"
 }

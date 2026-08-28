@@ -1,98 +1,123 @@
-# Phase 3 Checkpoint 2 — Implementation Report
+# Phase 3 Checkpoint 2 — Implementation Report (CP2-B revision)
 
 ## 1. Objective completed
 
-Implemented only the bounded Checkpoint 2 scope: repository privacy pre-open hardening, the reviewer-authorized exact legacy exception, guarded resolution of the three stable private aliases, read-only OOXML structural profiling, fail-closed sanitized descriptors, optional-render blocking evidence, retention evidence, and execution-derived QA. No resolver/calibration, template reconstruction, figure production, acceptance deck, Phase 4 work, or public Skill registration was performed.
+Corrected only CP2-B1–CP2-B5: measured structural descriptors, a nested
+fail-closed sanitizer, typed private-session lifecycle evidence, honest private
+render status, and execution-owned descriptor-quality QA. The resolver,
+calibration, template reconstruction, production Figure Skills, benchmarks,
+acceptance deck, Phase 4, and public Skill registration remain out of scope.
 
 ## 2. Architecture decisions
 
-- Stable `private://` aliases are the only committed identities. Local paths are accepted only by the runtime alias map and never serialized.
-- CP2-PRE-1 scans tracked and staged text/code/config/document files. The sole exception is blob-bound to `thesis-deck-system/reviews/PHASE_3_DESIGN_REVIEW.md`, reviewed blob `1808c054cc2ad5a618a9f19907ef57da79c39973`, rule `forbidden_private_basename`, and the existing D3-2 occurrence. It is recorded, not hidden.
-- CP2-PRE-2 uses an explicit production Observation allowlist; synthetic and simulation evidence remains fixture-only.
-- `ReadOnlyPrivateSourceSession` exposes only sanitized structural measurements. It does not expose a generic private file handle to downstream components.
-- Exemplar 1 and Exemplar 3 are shell-authority descriptors; Exemplar 2 is body-composition authority and cannot emit shell tokens.
-- Raw profiles and retention data remain under the ignored local private root. Committed output contains only allowlisted structural measurements and source whole-file hashes.
+- Shell evidence is measured separately for `private://template_primary_1` and
+  `private://template_primary_3`; body evidence is measured only for
+  `private://layout_exemplar_2`.
+- Geometry, topology, region, typography, style, and composition records carry
+  a controlled `basis`: `measured`, `derived`, or
+  `not_observable_structurally`. No universal professor rectangle is used.
+- Sanitization constructs a new typed object and validates it against the
+  canonical Draft 2020-12 schema before writing. Nested objects reject unknown
+  keys, free text, paths, URLs, XML, package identifiers, and invalid geometry.
+- A source session is opened only after a structured start record exists. A
+  failed session remains visible and is not counted as a successful closed
+  session.
+- Provider capability alone cannot certify a private visual review. Because no
+  provider supplied a real render/hash/review/delete lifecycle, render counts
+  remain zero and private qualitative review is `blocked_visual_review`.
 
 ## 3. Files changed
 
-Added:
+Modified:
 
 - `packages/thesis-deck-system/src/thesis_deck_system/phase3_checkpoint2.py`
 - `packages/thesis-deck-system/tests/unit/test_phase3_checkpoint2.py`
 - `thesis-deck-system/schemas/checkpoint-2-qa.schema.json`
-- `thesis-deck-system/schemas/sanitized-exemplar-manifest.schema.json`
 - `thesis-deck-system/schemas/sanitized-shell-structural-descriptors.schema.json`
 - `thesis-deck-system/schemas/sanitized-body-structural-descriptors.schema.json`
 - `thesis-deck-system/artifacts/phase3/checkpoint-2-qa.json`
-- `thesis-deck-system/artifacts/phase3/sanitized-exemplar-manifest.json`
 - `thesis-deck-system/artifacts/phase3/sanitized-shell-structural-descriptors.json`
 - `thesis-deck-system/artifacts/phase3/sanitized-body-structural-descriptors.json`
 - `thesis-deck-system/reports/PHASE_3_CHECKPOINT_2_IMPLEMENTATION_REPORT.md`
 
-Modified:
-
-- `packages/thesis-deck-system/src/thesis_deck_system/contracts.py`
-- `packages/thesis-deck-system/src/thesis_deck_system/phase3_contracts.py`
-- `packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py`
-
-Deleted: none.
+Added: none. Deleted: none.
 
 ## 4. Behavior and evidence
 
-`checkpoint-2-qa.json` is generated from `CP2-EXEC-001` execution evidence. It records both pre-open gates as pass, one approved legacy exception, zero unexcepted findings, three authorized source sessions, OOXML validity, whole-source hashes, slide counts, descriptor counts, zero unauthorized attempts, zero private renders retained, and aggregate `pass`. The private qualitative review is `blocked_visual_review` because no private-authorized image provider was used; this does not block structural profiling.
+The committed QA record is derived from `CP2-EXEC-001`, including its
+execution-evidence hash, gate results, source-session lifecycle records,
+descriptor-quality owning checks, retention counters, and aggregate status.
+All three authorized aliases were processed through the guarded read-only
+session API. No private source path, basename, slide text, notes, URLs, media,
+raw XML, private render, or package-part hash crosses the sanitizer boundary.
 
 Source validation by stable alias:
 
-| alias | whole-source SHA-256 | OOXML | slides | descriptors |
+| alias | whole-source SHA-256 | OOXML | slides | sanitized descriptors |
 | --- | --- | --- | ---: | ---: |
-| `private://template_primary_1` | `7705931669af2fab77722a7fdd1c8c3c14e26043355f24362f60720847fb2693` | valid | 19 | 19 |
-| `private://layout_exemplar_2` | `01534bae45e3ea3db13f0a7b90a906c7bd5385f0b301fa2ff427c7892d168623` | valid | 13 | 13 |
-| `private://template_primary_3` | `13d95796d1cdeacaef352f72c190fc5a29eb0bf9c4ec0377cc66aada7fb0682f` | valid | 15 | 15 |
+| `private://template_primary_1` | `7705931669af2fab77722a7fdd1c8c3c14e26043355f24362f60720847fb2693` | valid | 19 | 67 shell primitives |
+| `private://layout_exemplar_2` | `01534bae45e3ea3db13f0a7b90a906c7bd5385f0b301fa2ff427c7892d168623` | valid | 13 | 13 body measurements |
+| `private://template_primary_3` | `13d95796d1cdeacaef352f72c190fc5a29eb0bf9c4ec0377cc66aada7fb0682f` | valid | 15 | 25 shell primitives |
 
-No private text, notes, URLs, media, raw XML, private render, private screenshot, package-part hash, source path, or source basename is in committed output. Raw local profiles are retained only in the ignored local private root for the next authorized checkpoint.
+Shell descriptors contain measured layout/master and slide/layout topology,
+five recurring shell-region records per source, measured safe bounds derived
+from observed extents, typography/style-role measurements where observable,
+and recurrence-counted shell primitives. Body descriptors contain 295 measured
+objects, 91 connector records, and 29 group records, plus per-slide metrics (panel count, matrix
+candidates, symmetry, figure/text ratios, annotation density, callout and
+caption candidates, whitespace, and photo/schematic relation), and controlled
+candidate-family confidence states.
 
 ## 5. CP2-PRE and CP2 traceability
 
-| requirement | implementation / tests / evidence | status |
+| requirement | implementation / evidence | status |
 | --- | --- | --- |
-| CP2-PRE-1 | `RepositoryPrivacyScanner`, exact reviewed blob exception, staged-index scan, ordinary-source leak tests, exception mutation/path/duplicate tests; QA records total findings, approved exceptions, and unexcepted findings | pass |
-| CP2-PRE-2 | production `evidence_policy` allowlist plus synthetic/simulation rejection and fixture-mode positive tests | pass |
-| CP2-1 | `LocalPrivateAliasResolver` stable-alias-only guard, pre-open ordering, sanitized alias result | pass |
-| CP2-2 | `ResolvedPrivateAlias.open_read_only` records before validation, validates OOXML, hashes full source, and returns constrained session | pass |
-| CP2-3 | structural-only XML profiler, no content extraction, ignored local raw profile | pass |
-| CP2-4 | typed sanitizer plus four committed descriptor contracts; unknown/forbidden fields fail closed | pass |
-| CP2-5 | geometry/object-class structural classification without rendering | pass |
-| CP2-6 | provider preflight; unapproved private review produces zero render and `blocked_visual_review`; synthetic lifecycle test covers create/delete | pass |
-| CP2-7 | execution counters and local raw-root lifecycle; committed retained render count is zero | pass |
-| CP2-8 | hash-bound `checkpoint-2-qa.json`, exact three-alias completeness and aggregate derivation | pass |
+| CP2-PRE-1 | Existing exact blob-bound legacy exception, repository/staged scan, and pre-open gate retained | pass |
+| CP2-PRE-2 | Production empirical Observation allowlist retained and executed before alias access | pass |
+| CP2-B1 | Measured shell topology/regions/bounds/typography/style/primitives plus body object/connector/group/panel/ratio/classification descriptors; no fixed default evidence | pass |
+| CP2-B2 | Strict nested schemas (`additionalProperties: false`), explicit recursive construction, FormatChecker-backed validation, and nested negative tests | pass |
+| CP2-B3 | Session start precedes file checks; regular-file, OOXML, hash, profiling, sanitizer handoff, close/outcome are persisted; failed sessions remain visible | pass |
+| CP2-B4 | Capability-only provider path returns `blocked_visual_review`; counters remain zero unless actual render/hash/review/delete evidence is supplied | pass |
+| CP2-B5 | Seven execution-owned descriptor-quality checks are required for aggregate PASS: shell, body, basis, schema closure, authority, coverage, prohibited fields | pass |
 
-## 6. Commands and test results
+## 6. Commands/tests run
 
-- `python -m pytest tests/unit/test_phase3_checkpoint1.py tests/unit/test_phase3_checkpoint2.py -q` — 81 passed.
-- `python -m pytest packages/thesis-deck-system/tests -q` with `PYTHONPATH=packages/thesis-deck-system/src` — 181 passed, 0 failed.
-- Real bounded CP2 build using the locally supplied alias map — aggregate `pass`, three sessions, one approved exception, zero unexcepted findings, zero retained private renders.
-- Schema validation for all four CP2 committed artifacts — zero errors.
-- `validate_checkpoint2_qa` — zero errors.
-- Repository and staged privacy scans — pass; exception evidence contains only sanitized path/blob/rule/status fields.
-- `git diff --check` and staged diff check — pass.
+- `python -m pytest packages/thesis-deck-system/tests/unit/test_phase3_checkpoint2.py -q` — 28 passed.
+- `python -m pytest packages/thesis-deck-system/tests/unit/test_phase3_checkpoint1.py packages/thesis-deck-system/tests/unit/test_phase3_checkpoint2.py -q` — 92 passed.
+- `python -m pytest packages/thesis-deck-system/tests -q` — 192 passed, 0 failed.
+- Bounded production-private rebuild through the three guarded aliases — aggregate `pass`, three successful closed sessions, zero failed sessions.
+- All four CP2 schema validations with `FormatChecker` — zero errors.
+- Nested-schema/additional-properties audit — pass.
+- Descriptor-quality and QA-consistency validation — zero errors.
+- Repository/staged privacy scan and ignored raw-root verification — pass.
+- `git diff --check` — pass.
 
 ## 7. Visual and scientific/provenance QA
 
-Private rendering was intentionally not performed because no provider was authorized for private exemplar content. Therefore no private render paths, hashes, screenshots, or montages exist. Structural profiling is geometry/object-type only and does not claim professor visual grammar. Source hashes and OOXML validity are execution-derived; no scientific content was exported.
+No private render was created. The private visual review status is honestly
+`blocked_visual_review`; structural profiling does not claim professor visual
+grammar. Source hashes, package validity, descriptor counts, and all owning
+checks are execution-derived. No scientific content was exported.
 
 ## 8. Known failures / technical debt
 
-- Private qualitative review is `blocked_visual_review`; a later separately authorized checkpoint may provide a private-authorized provider.
-- Native PowerPoint acceptance, template reconstruction, calibration, resolver work, and acceptance-deck generation remain not authorized and not run.
-- The ignored local raw profile root requires cleanup at final Phase 3 close.
+- Private qualitative review remains `blocked_visual_review` because an actual
+  private render/hash-bound inspection/delete lifecycle was not authorized or
+  available in this checkpoint.
+- Resolver/calibration, template reconstruction, A01–A18 calibration,
+  production Figure Skills, reconstruction benchmarks, acceptance deck, native
+  PowerPoint acceptance, and Phase 4 remain not authorized.
+- Ignored local raw structural profiles require cleanup at final Phase 3 close.
 
 ## 9. Questions requiring reviewer decision
 
-- None for Checkpoint 2. Proceed to the resolver/calibration checkpoint only after explicit reviewer approval.
+None for CP2-B1–B5. Await approval before starting the resolver/calibration
+checkpoint.
 
 ## 10. Recommended next phase
 
-Stop at Checkpoint 2 and await review. Do not begin resolver/calibration, template reconstruction, acceptance-deck generation, or Phase 4.
+Stop at Checkpoint 2 and await review. Do not begin Professor Visual Grammar
+resolution or any later Phase 3/4 work.
 
 ```yaml
 codex_report:
@@ -100,22 +125,17 @@ codex_report:
   status: awaiting_review
   branch: codex/thesis-deck-system
   commit_sha: <sha-or-null>
-  files_added:
+  files_added: []
+  files_modified:
     - packages/thesis-deck-system/src/thesis_deck_system/phase3_checkpoint2.py
     - packages/thesis-deck-system/tests/unit/test_phase3_checkpoint2.py
     - thesis-deck-system/schemas/checkpoint-2-qa.schema.json
-    - thesis-deck-system/schemas/sanitized-exemplar-manifest.schema.json
     - thesis-deck-system/schemas/sanitized-shell-structural-descriptors.schema.json
     - thesis-deck-system/schemas/sanitized-body-structural-descriptors.schema.json
     - thesis-deck-system/artifacts/phase3/checkpoint-2-qa.json
-    - thesis-deck-system/artifacts/phase3/sanitized-exemplar-manifest.json
     - thesis-deck-system/artifacts/phase3/sanitized-shell-structural-descriptors.json
     - thesis-deck-system/artifacts/phase3/sanitized-body-structural-descriptors.json
     - thesis-deck-system/reports/PHASE_3_CHECKPOINT_2_IMPLEMENTATION_REPORT.md
-  files_modified:
-    - packages/thesis-deck-system/src/thesis_deck_system/contracts.py
-    - packages/thesis-deck-system/src/thesis_deck_system/phase3_contracts.py
-    - packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py
   files_deleted: []
   artifacts:
     - thesis-deck-system/artifacts/phase3/checkpoint-2-qa.json
@@ -124,17 +144,19 @@ codex_report:
     - thesis-deck-system/artifacts/phase3/sanitized-body-structural-descriptors.json
   render_previews: []
   tests_run:
-    - python -m pytest tests/unit/test_phase3_checkpoint1.py tests/unit/test_phase3_checkpoint2.py -q
-    - python -m pytest packages/thesis-deck-system/tests -q
-    - CP2 schema/privacy/QA consistency checks
+    - focused Checkpoint 2 suite
+    - Checkpoint 1 plus Checkpoint 2 suite
+    - full repository regression suite
+    - schema, sanitizer, descriptor-quality, privacy, and QA consistency checks
     - git diff --check
   tests_passed:
-    - 81 focused tests
-    - 181 full regression tests
+    - 28 focused tests
+    - 92 Checkpoint 1–2 tests
+    - 192 full regression tests
   tests_failed: []
   known_failures:
     - private qualitative review blocked_visual_review
-    - native PowerPoint not run (not authorized)
+    - native PowerPoint and later Phase 3 stages not authorized
   deviations: []
   reviewer_questions: []
   next_action_requested: REVIEW
