@@ -36,6 +36,28 @@ class PrivacyFinding:
     location: str
 
 
+LEGACY_EXCEPTION_PATH = "thesis-deck-system/reviews/PHASE_3_DESIGN_REVIEW.md"
+LEGACY_EXCEPTION_BLOB_SHA = "1808c054cc2ad5a618a9f19907ef57da79c39973"
+
+
+@dataclass(frozen=True)
+class LegacyExceptionEvidence:
+    exception_id: str
+    repository_relative_path: str
+    reviewed_blob_sha: str
+    privacy_rule_id: str
+    status: str
+
+    def as_dict(self) -> dict[str, str]:
+        return {
+            "exception_id": self.exception_id,
+            "repository_relative_path": self.repository_relative_path,
+            "reviewed_blob_sha": self.reviewed_blob_sha,
+            "privacy_rule_id": self.privacy_rule_id,
+            "status": self.status,
+        }
+
+
 class PrivateProfileStore:
     """Validates a local-only destination before a future profiler could open input."""
 
@@ -153,17 +175,25 @@ class RepositoryPrivacyScanner:
                 findings.append(PrivacyFinding("private_render_candidate", location))
         return findings
 
+    _TEXT_SUFFIXES = {".json", ".yaml", ".yml", ".md", ".py", ".txt", ".toml", ".ini", ".cfg"}
+
+    @staticmethod
+    def _is_narrow_canary_exclusion(path: Path) -> bool:
+        """Only tests and the scanner's own pattern definitions may contain canaries."""
+        normalized = path.as_posix()
+        return "/tests/" in normalized or normalized.endswith("/phase3_privacy.py")
+
     def scan_staged(self, repository_root: Path | str) -> list[PrivacyFinding]:
         repo = Path(repository_root)
         result = subprocess.run(["git", "diff", "--cached", "--name-only"], cwd=repo, check=False, capture_output=True, text=True, encoding="utf-8", errors="strict")
         paths = [repo / line for line in result.stdout.splitlines() if line]
-        content_paths = [path for path in paths if "/tests/" not in path.as_posix() and "/schemas/" not in path.as_posix() and path.name != "phase3_privacy.py"]
+        content_paths = [path for path in paths if not self._is_narrow_canary_exclusion(path)]
         return self.scan_paths(paths, location_root=repo) + self._scan_staged_text_paths(content_paths, repo)
 
     def _scan_staged_text_paths(self, paths: Iterable[Path], repository_root: Path) -> list[PrivacyFinding]:
         findings: list[PrivacyFinding] = []
         for path in paths:
-            if path.suffix.lower() not in {".json", ".yaml", ".yml", ".md", ".py"}:
+            if path.suffix.lower() not in self._TEXT_SUFFIXES:
                 continue
             rel = path.relative_to(repository_root).as_posix()
             try:
@@ -174,20 +204,34 @@ class RepositoryPrivacyScanner:
             if result.returncode != 0:
                 findings.append(PrivacyFinding("staged_blob_unreadable", rel))
             else:
-                findings.extend(self.scan_mapping(result.stdout, location=rel))
+                findings.extend(self._scan_private_repository_text(result.stdout, location=rel))
         return findings
 
     def _scan_text_paths(self, paths: Iterable[Path], repository_root: Path) -> list[PrivacyFinding]:
         findings: list[PrivacyFinding] = []
         for path in paths:
-            if not path.is_file() or path.suffix.lower() not in {".json", ".yaml", ".yml", ".md", ".py"}:
+            if not path.is_file() or path.suffix.lower() not in self._TEXT_SUFFIXES:
                 continue
             try:
                 text = path.read_text(encoding="utf-8")
             except UnicodeDecodeError:
                 findings.append(PrivacyFinding("binary_candidate", path.relative_to(repository_root).as_posix()))
                 continue
-            findings.extend(self.scan_mapping(text, location=path.relative_to(repository_root).as_posix()))
+            findings.extend(self._scan_private_repository_text(text, location=path.relative_to(repository_root).as_posix()))
+        return findings
+
+    def _scan_private_repository_text(self, text: str, *, location: str) -> list[PrivacyFinding]:
+        """Scan committed text for configured private identities, not public URLs/docs."""
+        findings: list[PrivacyFinding] = []
+        if any(pattern.search(text) for pattern in self._private_root_patterns):
+            if re.search(r"(?:(?<![A-Za-z0-9])[A-Za-z]:[\\/]|\\\\|/mnt/[A-Za-z]/|/(?:home|Users)/)", text, re.I):
+                findings.append(PrivacyFinding("absolute_path", location))
+            else:
+                findings.append(PrivacyFinding("configured_private_root", location))
+        elif any(name in text.casefold() for name in self._forbidden_basenames):
+            findings.append(PrivacyFinding("forbidden_private_basename", location))
+        elif re.search(r"PRIVATE_(?:(?:TEXT|NOTES|AUTHOR|COMPANY|MEDIA)_)?CANARY", text, re.I):
+            findings.append(PrivacyFinding("private_text_canary", location))
         return findings
 
     def scan_repository(self, repository_root: Path | str) -> list[PrivacyFinding]:
@@ -196,10 +240,61 @@ class RepositoryPrivacyScanner:
         result = subprocess.run(["git", "ls-files", "--cached"], cwd=repo, check=False, capture_output=True, text=True, encoding="utf-8", errors="strict")
         paths = [repo / line for line in result.stdout.splitlines() if line]
         findings = self.scan_staged(repo)
-        artifact_roots = (repo / "thesis-deck-system" / "artifacts", repo / "thesis-deck-system" / "profiles", repo / "thesis-deck-system" / "reports")
-        canonical_paths = [path for path in paths if path.suffix.lower() in {".json", ".yaml", ".yml", ".md"} and "/schemas/" not in path.as_posix() and any(path.is_relative_to(root) for root in artifact_roots)]
+        canonical_paths = [path for path in paths if not self._is_narrow_canary_exclusion(path)]
         findings.extend(self._scan_text_paths(canonical_paths, repo))
         return findings
+
+    def scan_repository_with_legacy_exception(
+        self, repository_root: Path | str, *, forbidden_basenames: Iterable[str]
+    ) -> tuple[list[PrivacyFinding], list[dict[str, str]]]:
+        """Apply only the reviewer-authorized, blob-bound historical exception."""
+        repo = Path(repository_root)
+        findings = self.scan_repository(repo)
+        exceptions: list[dict[str, str]] = []
+        target = repo / LEGACY_EXCEPTION_PATH
+        target_findings = [item for item in findings if item.location == LEGACY_EXCEPTION_PATH]
+        if target_findings:
+            blob_result = subprocess.run(
+                ["git", "rev-parse", f"HEAD:{LEGACY_EXCEPTION_PATH}"], cwd=repo,
+                check=False, capture_output=True, text=True, encoding="utf-8", errors="strict",
+            )
+            blob_sha = blob_result.stdout.strip() if blob_result.returncode == 0 else ""
+            authorized = bool(target.is_file()) and blob_sha == LEGACY_EXCEPTION_BLOB_SHA
+            authorized = authorized and all(item.classification == "forbidden_private_basename" for item in target_findings)
+            section = ""
+            if authorized:
+                content = target.read_text(encoding="utf-8")
+                start_marker = "## D3-2 — Private exemplar roles remain asymmetric"
+                start = content.find(start_marker)
+                end = content.find("\n## ", start + len(start_marker)) if start >= 0 else -1
+                section = content[start:end if end >= 0 else len(content)] if start >= 0 else ""
+                reviewed_content = subprocess.run(
+                    ["git", "show", f"HEAD:{LEGACY_EXCEPTION_PATH}"], cwd=repo,
+                    check=False, capture_output=True, text=True, encoding="utf-8", errors="strict",
+                ).stdout
+                reviewed_start = reviewed_content.find(start_marker)
+                reviewed_end = reviewed_content.find("\n## ", reviewed_start + len(start_marker)) if reviewed_start >= 0 else -1
+                reviewed_section = reviewed_content[reviewed_start:reviewed_end if reviewed_end >= 0 else len(reviewed_content)] if reviewed_start >= 0 else ""
+                for basename in forbidden_basenames:
+                    token = str(basename).casefold()
+                    if token not in content.casefold():
+                        continue
+                    section_count = section.casefold().count(token)
+                    outside_count = content.casefold().count(token) - section_count
+                    reviewed_count = reviewed_section.casefold().count(token)
+                    if section_count != reviewed_count or outside_count or reviewed_count < 1:
+                        authorized = False
+                        break
+            if authorized:
+                findings = [item for item in findings if item.location != LEGACY_EXCEPTION_PATH]
+                exceptions.append(LegacyExceptionEvidence(
+                    exception_id="CP2-PRE-1-LEGACY-D3-2",
+                    repository_relative_path=LEGACY_EXCEPTION_PATH,
+                    reviewed_blob_sha=LEGACY_EXCEPTION_BLOB_SHA,
+                    privacy_rule_id="forbidden_private_basename",
+                    status="applied_legacy_exception",
+                ).as_dict())
+        return findings, exceptions
 
 
 def sanitize_profile(raw: dict[str, Any]) -> dict[str, Any]:

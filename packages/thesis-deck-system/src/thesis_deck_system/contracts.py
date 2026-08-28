@@ -49,6 +49,10 @@ PHASE3_SCHEMA_NAMES = (
     "fabrication-process",
     "skill-routing",
     "checkpoint-qa",
+    "sanitized-exemplar-manifest",
+    "sanitized-shell-structural-descriptors",
+    "sanitized-body-structural-descriptors",
+    "checkpoint-2-qa",
 )
 
 SCHEMA_BY_COLLECTION = {

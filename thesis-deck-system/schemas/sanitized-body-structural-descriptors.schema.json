@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "sanitized-body-structural-descriptors.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "descriptor"],
+  "properties": {"schema_version": {"const": "1.0.0"}, "descriptor": {"type": "object", "additionalProperties": false, "required": ["alias_uri", "source_sha256", "profile_id", "slide_size", "slide_count", "candidate_families", "body_measurements"], "properties": {"alias_uri": {"const": "private://layout_exemplar_2"}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "profile_id": {"type": "string", "pattern": "^P3-[A-Z0-9-]+$"}, "slide_size": {"type": "object", "additionalProperties": false, "required": ["width", "height"], "properties": {"width": {"type": "number", "exclusiveMinimum": 0}, "height": {"type": "number", "exclusiveMinimum": 0}}}, "slide_count": {"type": "integer", "minimum": 1}, "candidate_families": {"type": "array"}, "body_measurements": {"type": "array"}}}}
+}

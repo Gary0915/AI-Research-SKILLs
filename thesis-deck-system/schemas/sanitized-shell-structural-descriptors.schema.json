@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "sanitized-shell-structural-descriptors.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "descriptors"],
+  "properties": {"schema_version": {"const": "1.0.0"}, "descriptors": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["alias_uri", "source_sha256", "profile_id", "slide_size", "master_count", "layout_count", "shell_primitives", "slide_count"], "properties": {"alias_uri": {"type": "string", "enum": ["private://template_primary_1", "private://template_primary_3"]}, "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "profile_id": {"type": "string", "pattern": "^P3-[A-Z0-9-]+$"}, "slide_size": {"type": "object", "additionalProperties": false, "required": ["width", "height"], "properties": {"width": {"type": "number", "exclusiveMinimum": 0}, "height": {"type": "number", "exclusiveMinimum": 0}}}, "master_count": {"type": "integer", "minimum": 0}, "layout_count": {"type": "integer", "minimum": 0}, "shell_primitives": {"type": "array"}, "slide_count": {"type": "integer", "minimum": 1}}}}}
+}

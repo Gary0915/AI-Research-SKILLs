@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_id": "SEM001",
+  "exemplars": [
+    {
+      "alias_uri": "private://template_primary_1",
+      "source_sha256": "7705931669af2fab77722a7fdd1c8c3c14e26043355f24362f60720847fb2693",
+      "profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "authority": "shell"
+    },
+    {
+      "alias_uri": "private://template_primary_3",
+      "source_sha256": "13d95796d1cdeacaef352f72c190fc5a29eb0bf9c4ec0377cc66aada7fb0682f",
+      "profile_id": "P3-TEMPLATE-PRIMARY-3",
+      "authority": "shell"
+    },
+    {
+      "alias_uri": "private://layout_exemplar_2",
+      "source_sha256": "01534bae45e3ea3db13f0a7b90a906c7bd5385f0b301fa2ff427c7892d168623",
+      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
+      "authority": "body_composition"
+    }
+  ]
+}

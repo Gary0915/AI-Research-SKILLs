@@ -1,0 +1,373 @@
+{
+  "schema_version": "1.0.0",
+  "descriptors": [
+    {
+      "alias_uri": "private://template_primary_1",
+      "source_sha256": "7705931669af2fab77722a7fdd1c8c3c14e26043355f24362f60720847fb2693",
+      "profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "slide_size": {
+        "width": 13.333333,
+        "height": 7.5
+      },
+      "slide_count": 19,
+      "master_count": 2,
+      "layout_count": 19,
+      "shell_primitives": [
+        {
+          "primitive_id": "SHELL-001",
+          "shape_count": 2,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-002",
+          "shape_count": 3,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-003",
+          "shape_count": 8,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-004",
+          "shape_count": 10,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-005",
+          "shape_count": 5,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-006",
+          "shape_count": 3,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-007",
+          "shape_count": 6,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-008",
+          "shape_count": 3,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-009",
+          "shape_count": 5,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-010",
+          "shape_count": 2,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-011",
+          "shape_count": 1,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-012",
+          "shape_count": 4,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-013",
+          "shape_count": 5,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-014",
+          "shape_count": 5,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-015",
+          "shape_count": 6,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-016",
+          "shape_count": 6,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-017",
+          "shape_count": 36,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-018",
+          "shape_count": 3,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-019",
+          "shape_count": 4,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        }
+      ]
+    },
+    {
+      "alias_uri": "private://template_primary_3",
+      "source_sha256": "13d95796d1cdeacaef352f72c190fc5a29eb0bf9c4ec0377cc66aada7fb0682f",
+      "profile_id": "P3-TEMPLATE-PRIMARY-3",
+      "slide_size": {
+        "width": 13.333333,
+        "height": 7.5
+      },
+      "slide_count": 15,
+      "master_count": 2,
+      "layout_count": 18,
+      "shell_primitives": [
+        {
+          "primitive_id": "SHELL-001",
+          "shape_count": 1,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-002",
+          "shape_count": 4,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-003",
+          "shape_count": 3,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-004",
+          "shape_count": 4,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-005",
+          "shape_count": 3,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-006",
+          "shape_count": 5,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-007",
+          "shape_count": 2,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-008",
+          "shape_count": 4,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-009",
+          "shape_count": 5,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-010",
+          "shape_count": 5,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-011",
+          "shape_count": 4,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-012",
+          "shape_count": 5,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-013",
+          "shape_count": 3,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-014",
+          "shape_count": 4,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        },
+        {
+          "primitive_id": "SHELL-015",
+          "shape_count": 3,
+          "safe_content_bounds": {
+            "x": 0.05,
+            "y": 0.12,
+            "w": 0.9,
+            "h": 0.78
+          }
+        }
+      ]
+    }
+  ]
+}

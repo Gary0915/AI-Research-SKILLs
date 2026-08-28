@@ -10,6 +10,9 @@ _EMPIRICAL_EVIDENCE_KINDS = {
     "microscopy_image", "simulation_output",
 }
 _EMPIRICAL_OUTPUT_TYPES = {"scientific_plot", "real_photo"}
+_PRODUCTION_EMPIRICAL_EVIDENCE_KINDS = {
+    "experimental_measurement", "observation_photo", "microscopy_image",
+}
 
 
 def canonical_observation_catalogs(registry: Any, evidence_cards: list[dict], output_manifests: list[dict]) -> dict:
@@ -27,7 +30,7 @@ def canonical_observation_catalogs(registry: Any, evidence_cards: list[dict], ou
     return {"evidence": evidence_by_id, "outputs": outputs}
 
 
-def validate_observation_visual_binding(binding: dict, *, catalog: dict | None = None) -> list[str]:
+def validate_observation_visual_binding(binding: dict, *, catalog: dict | None = None, evidence_policy: str = "fixture") -> list[str]:
     """Require canonical empirical Evidence + FigureOutput provenance for Observation."""
     findings: list[str] = []
     if binding.get("empirical_evidence_required"):
@@ -39,6 +42,10 @@ def validate_observation_visual_binding(binding: dict, *, catalog: dict | None =
             findings.append("P3-OBSERVATION-EMPIRICAL-EVIDENCE-MISSING")
         elif evidence.get("kind") not in _EMPIRICAL_EVIDENCE_KINDS or output.get("figure_type") not in _EMPIRICAL_OUTPUT_TYPES:
             findings.append("P3-OBSERVATION-GENERATED-AS-EVIDENCE")
+        elif evidence_policy == "production" and (evidence.get("kind") not in _PRODUCTION_EMPIRICAL_EVIDENCE_KINDS or evidence.get("verification", {}).get("status") != "verified"):
+            findings.append("P3-OBSERVATION-PRODUCTION-EMPIRICAL-POLICY")
+        elif evidence_policy not in {"fixture", "production"}:
+            findings.append("P3-OBSERVATION-EVIDENCE-POLICY")
         elif evidence_ref not in output.get("provenance_refs", []) or output.get("evidence_status") == "non_evidence":
             findings.append("P3-OBSERVATION-PROVENANCE-MISMATCH")
         elif output.get("figure_type") == "scientific_plot" and evidence_ref not in output.get("primary_artifact", {}).get("data_provenance_refs", []):
