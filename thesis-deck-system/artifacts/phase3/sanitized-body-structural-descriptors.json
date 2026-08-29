@@ -234,6 +234,12 @@
         "groups": [],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 2.0,
             "basis": "derived",
@@ -242,12 +248,6 @@
               "O001",
               "O002"
             ]
-          },
-          "figure_area_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           },
           "whitespace_fraction": {
             "value": 0.762145,
@@ -258,7 +258,7 @@
               "O002"
             ]
           },
-          "figure_text_ratio": {
+          "dominant_figure_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -270,7 +270,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "caption_candidate_count": {
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -282,13 +288,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "comparison_symmetry": {
+          "figure_area_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "dominant_figure_ratio": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -303,19 +309,13 @@
               "O002"
             ]
           },
-          "panel_count": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -401,7 +401,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T001001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -2318,6 +2318,12 @@
         "groups": [],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 31.0,
             "basis": "derived",
@@ -2355,12 +2361,6 @@
               "O029",
               "O030"
             ]
-          },
-          "figure_area_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           },
           "whitespace_fraction": {
             "value": 0.570021,
@@ -2400,7 +2400,7 @@
               "O031"
             ]
           },
-          "figure_text_ratio": {
+          "dominant_figure_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -2412,7 +2412,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "caption_candidate_count": {
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -2424,13 +2430,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "comparison_symmetry": {
+          "figure_area_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "dominant_figure_ratio": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -2464,19 +2470,13 @@
               "O030"
             ]
           },
-          "panel_count": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -3606,7 +3606,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T002001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -3621,7 +3621,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T002002",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3636,7 +3636,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T002003",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3651,7 +3651,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T004",
+            "observation_id": "T002004",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3666,7 +3666,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T005",
+            "observation_id": "T002005",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3681,7 +3681,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T006",
+            "observation_id": "T002006",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3696,7 +3696,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T007",
+            "observation_id": "T002007",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3711,7 +3711,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T008",
+            "observation_id": "T002008",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3726,7 +3726,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T009",
+            "observation_id": "T002009",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3741,7 +3741,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T010",
+            "observation_id": "T002010",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3756,7 +3756,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T011",
+            "observation_id": "T002011",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3771,7 +3771,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T012",
+            "observation_id": "T002012",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3786,7 +3786,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T013",
+            "observation_id": "T002013",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3801,7 +3801,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T014",
+            "observation_id": "T002014",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3816,7 +3816,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T015",
+            "observation_id": "T002015",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3831,7 +3831,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T016",
+            "observation_id": "T002016",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3846,7 +3846,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T017",
+            "observation_id": "T002017",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3861,7 +3861,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T018",
+            "observation_id": "T002018",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3876,7 +3876,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T019",
+            "observation_id": "T002019",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3891,7 +3891,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T020",
+            "observation_id": "T002020",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3906,7 +3906,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T021",
+            "observation_id": "T002021",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3921,7 +3921,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T022",
+            "observation_id": "T002022",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3936,7 +3936,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T023",
+            "observation_id": "T002023",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3951,7 +3951,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T024",
+            "observation_id": "T002024",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3966,7 +3966,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T025",
+            "observation_id": "T002025",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3981,7 +3981,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T026",
+            "observation_id": "T002026",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -3996,7 +3996,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T027",
+            "observation_id": "T002027",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4011,7 +4011,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T028",
+            "observation_id": "T002028",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4026,7 +4026,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T029",
+            "observation_id": "T002029",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4041,7 +4041,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T030",
+            "observation_id": "T002030",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4056,7 +4056,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T031",
+            "observation_id": "T002031",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4071,7 +4071,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T032",
+            "observation_id": "T002032",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4086,7 +4086,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T033",
+            "observation_id": "T002033",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4101,7 +4101,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T034",
+            "observation_id": "T002034",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4116,7 +4116,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T035",
+            "observation_id": "T002035",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4131,7 +4131,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T036",
+            "observation_id": "T002036",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4146,7 +4146,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T037",
+            "observation_id": "T002037",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4161,7 +4161,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T038",
+            "observation_id": "T002038",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4176,7 +4176,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T039",
+            "observation_id": "T002039",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4191,7 +4191,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T040",
+            "observation_id": "T002040",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4206,7 +4206,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T041",
+            "observation_id": "T002041",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4221,7 +4221,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T042",
+            "observation_id": "T002042",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4236,7 +4236,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T043",
+            "observation_id": "T002043",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4251,7 +4251,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T044",
+            "observation_id": "T002044",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4266,7 +4266,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T045",
+            "observation_id": "T002045",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4281,7 +4281,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T046",
+            "observation_id": "T002046",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4296,7 +4296,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T047",
+            "observation_id": "T002047",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4311,7 +4311,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T048",
+            "observation_id": "T002048",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4326,7 +4326,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T049",
+            "observation_id": "T002049",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4341,7 +4341,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T050",
+            "observation_id": "T002050",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4356,7 +4356,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T051",
+            "observation_id": "T002051",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4371,7 +4371,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T052",
+            "observation_id": "T002052",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4386,7 +4386,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T053",
+            "observation_id": "T002053",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4401,7 +4401,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T054",
+            "observation_id": "T002054",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4416,7 +4416,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T055",
+            "observation_id": "T002055",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4431,7 +4431,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T056",
+            "observation_id": "T002056",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4446,7 +4446,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T057",
+            "observation_id": "T002057",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4461,7 +4461,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T058",
+            "observation_id": "T002058",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4476,7 +4476,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T059",
+            "observation_id": "T002059",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4491,7 +4491,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T060",
+            "observation_id": "T002060",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4506,7 +4506,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T061",
+            "observation_id": "T002061",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4521,7 +4521,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T062",
+            "observation_id": "T002062",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4536,7 +4536,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T063",
+            "observation_id": "T002063",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4551,7 +4551,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T064",
+            "observation_id": "T002064",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4566,7 +4566,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T065",
+            "observation_id": "T002065",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4581,7 +4581,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T066",
+            "observation_id": "T002066",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4596,7 +4596,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T067",
+            "observation_id": "T002067",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4611,7 +4611,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T068",
+            "observation_id": "T002068",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4626,7 +4626,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T069",
+            "observation_id": "T002069",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4641,7 +4641,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T070",
+            "observation_id": "T002070",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4656,7 +4656,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T071",
+            "observation_id": "T002071",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4671,7 +4671,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T072",
+            "observation_id": "T002072",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4686,7 +4686,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T073",
+            "observation_id": "T002073",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4701,7 +4701,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T074",
+            "observation_id": "T002074",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4716,7 +4716,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T075",
+            "observation_id": "T002075",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4731,7 +4731,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T076",
+            "observation_id": "T002076",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4746,7 +4746,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T077",
+            "observation_id": "T002077",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4761,7 +4761,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T078",
+            "observation_id": "T002078",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4776,7 +4776,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T079",
+            "observation_id": "T002079",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4791,7 +4791,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T080",
+            "observation_id": "T002080",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4806,7 +4806,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T081",
+            "observation_id": "T002081",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4821,7 +4821,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T082",
+            "observation_id": "T002082",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4836,7 +4836,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T083",
+            "observation_id": "T002083",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4851,7 +4851,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T084",
+            "observation_id": "T002084",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4866,7 +4866,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T085",
+            "observation_id": "T002085",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4881,7 +4881,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T086",
+            "observation_id": "T002086",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -4896,7 +4896,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T087",
+            "observation_id": "T002087",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4911,7 +4911,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T088",
+            "observation_id": "T002088",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4926,7 +4926,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T089",
+            "observation_id": "T002089",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4941,7 +4941,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T090",
+            "observation_id": "T002090",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -4956,7 +4956,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T091",
+            "observation_id": "T002091",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -5302,6 +5302,12 @@
         "groups": [],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 5.0,
             "basis": "derived",
@@ -5312,14 +5318,6 @@
               "O004",
               "O005",
               "O006"
-            ]
-          },
-          "figure_area_ratio": {
-            "value": 0.173457,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O002"
             ]
           },
           "whitespace_fraction": {
@@ -5335,8 +5333,8 @@
               "O006"
             ]
           },
-          "figure_text_ratio": {
-            "value": 1.106831,
+          "dominant_figure_ratio": {
+            "value": 1.0,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -5351,13 +5349,17 @@
               "O006"
             ]
           },
-          "caption_candidate_count": {
-            "value": 1,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O004"
-            ]
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "photo_schematic_relation": {
             "value": "separate",
@@ -5367,14 +5369,16 @@
               "O002"
             ]
           },
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "figure_area_ratio": {
+            "value": 0.173457,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O002"
+            ]
           },
-          "dominant_figure_ratio": {
-            "value": 1.0,
+          "figure_text_ratio": {
+            "value": 1.106831,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -5393,19 +5397,15 @@
               "O006"
             ]
           },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "caption_candidate_count": {
+            "value": 1,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O004"
+            ]
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -5635,7 +5635,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T003001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -5650,7 +5650,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T003002",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -5665,7 +5665,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T003003",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -6620,6 +6620,12 @@
         ],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 15.0,
             "basis": "derived",
@@ -6642,12 +6648,6 @@
               "O021"
             ]
           },
-          "figure_area_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
           "whitespace_fraction": {
             "value": 0.591584,
             "basis": "derived",
@@ -6669,7 +6669,7 @@
               "O021"
             ]
           },
-          "figure_text_ratio": {
+          "dominant_figure_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -6684,7 +6684,13 @@
               "O020"
             ]
           },
-          "caption_candidate_count": {
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -6696,13 +6702,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "comparison_symmetry": {
+          "figure_area_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "dominant_figure_ratio": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -6729,19 +6735,13 @@
               "O021"
             ]
           },
-          "panel_count": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -7331,7 +7331,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T004001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -7346,7 +7346,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T004002",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -7361,7 +7361,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T004003",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -7376,7 +7376,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T004",
+            "observation_id": "T004004",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -7391,7 +7391,7 @@
             "basis": "measured",
             "family": "Calibri",
             "font_evidence_state": "explicit_font",
-            "observation_id": "T005",
+            "observation_id": "T004005",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "complex_script",
@@ -7406,7 +7406,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T006",
+            "observation_id": "T004006",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -7421,7 +7421,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T007",
+            "observation_id": "T004007",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -7436,7 +7436,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T008",
+            "observation_id": "T004008",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -7451,7 +7451,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T009",
+            "observation_id": "T004009",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -7466,7 +7466,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T010",
+            "observation_id": "T004010",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -7481,7 +7481,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T011",
+            "observation_id": "T004011",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -7496,7 +7496,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T012",
+            "observation_id": "T004012",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -7511,7 +7511,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T013",
+            "observation_id": "T004013",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -7526,7 +7526,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T014",
+            "observation_id": "T004014",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -7541,7 +7541,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T015",
+            "observation_id": "T004015",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -7556,7 +7556,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T016",
+            "observation_id": "T004016",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -7571,7 +7571,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T017",
+            "observation_id": "T004017",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -7586,7 +7586,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T018",
+            "observation_id": "T004018",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -8028,6 +8028,12 @@
         ],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 7.0,
             "basis": "derived",
@@ -8041,12 +8047,6 @@
               "O008",
               "O009"
             ]
-          },
-          "figure_area_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           },
           "whitespace_fraction": {
             "value": 0.798326,
@@ -8062,7 +8062,7 @@
               "O009"
             ]
           },
-          "figure_text_ratio": {
+          "dominant_figure_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -8077,7 +8077,13 @@
               "O008"
             ]
           },
-          "caption_candidate_count": {
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -8089,13 +8095,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "comparison_symmetry": {
+          "figure_area_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "dominant_figure_ratio": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -8114,19 +8120,13 @@
               "O009"
             ]
           },
-          "panel_count": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -8392,7 +8392,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T005001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -8407,7 +8407,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T005002",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -9798,6 +9798,12 @@
         ],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 24.0,
             "basis": "derived",
@@ -9827,14 +9833,6 @@
               "O025",
               "O026",
               "O027"
-            ]
-          },
-          "figure_area_ratio": {
-            "value": 0.011139,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O024"
             ]
           },
           "whitespace_fraction": {
@@ -9869,8 +9867,8 @@
               "O027"
             ]
           },
-          "figure_text_ratio": {
-            "value": 0.046539,
+          "dominant_figure_ratio": {
+            "value": 1.000014,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -9883,15 +9881,17 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "caption_candidate_count": {
-            "value": 3,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O003",
-              "O017",
-              "O022"
-            ]
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "photo_schematic_relation": {
             "value": "separate",
@@ -9901,14 +9901,16 @@
               "O024"
             ]
           },
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "figure_area_ratio": {
+            "value": 0.011139,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O024"
+            ]
           },
-          "dominant_figure_ratio": {
-            "value": 1.000014,
+          "figure_text_ratio": {
+            "value": 0.046539,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -9946,19 +9948,17 @@
               "O027"
             ]
           },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "caption_candidate_count": {
+            "value": 3,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O003",
+              "O017",
+              "O022"
+            ]
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -10872,7 +10872,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T006001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -10887,7 +10887,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T006002",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -10902,7 +10902,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T006003",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -10917,7 +10917,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T004",
+            "observation_id": "T006004",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -10932,7 +10932,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T005",
+            "observation_id": "T006005",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -10947,7 +10947,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T006",
+            "observation_id": "T006006",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -10962,7 +10962,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T007",
+            "observation_id": "T006007",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -10977,7 +10977,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T008",
+            "observation_id": "T006008",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -10992,7 +10992,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T009",
+            "observation_id": "T006009",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11007,7 +11007,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T010",
+            "observation_id": "T006010",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11022,7 +11022,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T011",
+            "observation_id": "T006011",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11037,7 +11037,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T012",
+            "observation_id": "T006012",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11052,7 +11052,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T013",
+            "observation_id": "T006013",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11067,7 +11067,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T014",
+            "observation_id": "T006014",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11082,7 +11082,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T015",
+            "observation_id": "T006015",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11097,7 +11097,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T016",
+            "observation_id": "T006016",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11112,7 +11112,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T017",
+            "observation_id": "T006017",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11127,7 +11127,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T018",
+            "observation_id": "T006018",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11142,7 +11142,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T019",
+            "observation_id": "T006019",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11157,7 +11157,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T020",
+            "observation_id": "T006020",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11172,7 +11172,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T021",
+            "observation_id": "T006021",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11187,7 +11187,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T022",
+            "observation_id": "T006022",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11202,7 +11202,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T023",
+            "observation_id": "T006023",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11217,7 +11217,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T024",
+            "observation_id": "T006024",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11232,7 +11232,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T025",
+            "observation_id": "T006025",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -11247,7 +11247,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T026",
+            "observation_id": "T006026",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11262,7 +11262,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T027",
+            "observation_id": "T006027",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11277,7 +11277,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T028",
+            "observation_id": "T006028",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11292,7 +11292,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T029",
+            "observation_id": "T006029",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -11307,7 +11307,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T030",
+            "observation_id": "T006030",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -11322,7 +11322,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T031",
+            "observation_id": "T006031",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -11337,7 +11337,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T032",
+            "observation_id": "T006032",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -11352,7 +11352,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T033",
+            "observation_id": "T006033",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -11367,7 +11367,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T034",
+            "observation_id": "T006034",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -11382,7 +11382,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T035",
+            "observation_id": "T006035",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -14220,6 +14220,12 @@
         ],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 42.0,
             "basis": "derived",
@@ -14268,12 +14274,6 @@
               "O032",
               "O033"
             ]
-          },
-          "figure_area_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           },
           "whitespace_fraction": {
             "value": 0.829487,
@@ -14324,7 +14324,7 @@
               "O044"
             ]
           },
-          "figure_text_ratio": {
+          "dominant_figure_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -14338,7 +14338,13 @@
               "O009"
             ]
           },
-          "caption_candidate_count": {
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -14350,13 +14356,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "comparison_symmetry": {
+          "figure_area_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "dominant_figure_ratio": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -14387,19 +14393,13 @@
               "O033"
             ]
           },
-          "panel_count": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -15925,7 +15925,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T007001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -15940,7 +15940,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T007002",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -15955,7 +15955,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T007003",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -15970,7 +15970,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T004",
+            "observation_id": "T007004",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -22503,6 +22503,12 @@
         ],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 98.0,
             "basis": "derived",
@@ -22606,14 +22612,6 @@
               "O104",
               "O105",
               "O106"
-            ]
-          },
-          "figure_area_ratio": {
-            "value": 0.01965,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O025"
             ]
           },
           "whitespace_fraction": {
@@ -22722,8 +22720,8 @@
               "O106"
             ]
           },
-          "figure_text_ratio": {
-            "value": 0.095708,
+          "dominant_figure_ratio": {
+            "value": 1.000024,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -22738,19 +22736,17 @@
               "O057"
             ]
           },
-          "caption_candidate_count": {
-            "value": 7,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O026",
-              "O062",
-              "O063",
-              "O064",
-              "O065",
-              "O066",
-              "O067"
-            ]
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "photo_schematic_relation": {
             "value": "separate",
@@ -22760,14 +22756,16 @@
               "O025"
             ]
           },
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "figure_area_ratio": {
+            "value": 0.01965,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O025"
+            ]
           },
-          "dominant_figure_ratio": {
-            "value": 1.000024,
+          "figure_text_ratio": {
+            "value": 0.095708,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -22829,19 +22827,21 @@
               "O106"
             ]
           },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "caption_candidate_count": {
+            "value": 7,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O026",
+              "O062",
+              "O063",
+              "O064",
+              "O065",
+              "O066",
+              "O067"
+            ]
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -26419,7 +26419,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T008001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -26434,7 +26434,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T008002",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -26449,7 +26449,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T008003",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -26464,7 +26464,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T004",
+            "observation_id": "T008004",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -26479,7 +26479,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T005",
+            "observation_id": "T008005",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -26494,7 +26494,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T006",
+            "observation_id": "T008006",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -26509,7 +26509,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T007",
+            "observation_id": "T008007",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -26524,7 +26524,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T008",
+            "observation_id": "T008008",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -27712,6 +27712,12 @@
         ],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 20.0,
             "basis": "derived",
@@ -27739,12 +27745,6 @@
               "O022"
             ]
           },
-          "figure_area_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
           "whitespace_fraction": {
             "value": 0.792234,
             "basis": "derived",
@@ -27769,7 +27769,7 @@
               "O022"
             ]
           },
-          "figure_text_ratio": {
+          "dominant_figure_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -27785,7 +27785,13 @@
               "O020"
             ]
           },
-          "caption_candidate_count": {
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -27797,13 +27803,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "comparison_symmetry": {
+          "figure_area_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "dominant_figure_ratio": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -27833,19 +27839,13 @@
               "O022"
             ]
           },
-          "panel_count": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -28579,7 +28579,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T009001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -28594,7 +28594,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T009002",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28609,7 +28609,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T009003",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28624,7 +28624,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T004",
+            "observation_id": "T009004",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28639,7 +28639,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T005",
+            "observation_id": "T009005",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28654,7 +28654,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T006",
+            "observation_id": "T009006",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28669,7 +28669,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T007",
+            "observation_id": "T009007",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28684,7 +28684,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T008",
+            "observation_id": "T009008",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28699,7 +28699,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T009",
+            "observation_id": "T009009",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28714,7 +28714,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T010",
+            "observation_id": "T009010",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -28729,7 +28729,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T011",
+            "observation_id": "T009011",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -29454,6 +29454,12 @@
         ],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 11.0,
             "basis": "derived",
@@ -29470,14 +29476,6 @@
               "O013",
               "O014",
               "O018"
-            ]
-          },
-          "figure_area_ratio": {
-            "value": 0.184423,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O004"
             ]
           },
           "whitespace_fraction": {
@@ -29499,8 +29497,8 @@
               "O018"
             ]
           },
-          "figure_text_ratio": {
-            "value": 0.44183,
+          "dominant_figure_ratio": {
+            "value": 1.000001,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -29515,7 +29513,13 @@
               "O010"
             ]
           },
-          "caption_candidate_count": {
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -29529,14 +29533,16 @@
               "O004"
             ]
           },
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "figure_area_ratio": {
+            "value": 0.184423,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O004"
+            ]
           },
-          "dominant_figure_ratio": {
-            "value": 1.000001,
+          "figure_text_ratio": {
+            "value": 0.44183,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -29561,19 +29567,13 @@
               "O018"
             ]
           },
-          "panel_count": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -30019,7 +30019,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T010001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -30034,7 +30034,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T010002",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -30049,7 +30049,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T010003",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -30064,7 +30064,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T004",
+            "observation_id": "T010004",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -30079,7 +30079,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T005",
+            "observation_id": "T010005",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -30094,7 +30094,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T006",
+            "observation_id": "T010006",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -30109,7 +30109,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T007",
+            "observation_id": "T010007",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -30124,7 +30124,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T008",
+            "observation_id": "T010008",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -30139,7 +30139,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T009",
+            "observation_id": "T010009",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -30154,7 +30154,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T010",
+            "observation_id": "T010010",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -30169,7 +30169,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T011",
+            "observation_id": "T010011",
             "role": "unknown",
             "role_confidence": "unknown",
             "script_role": "latin",
@@ -30184,7 +30184,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T012",
+            "observation_id": "T010012",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -30199,7 +30199,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T013",
+            "observation_id": "T010013",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -30214,7 +30214,7 @@
             "basis": "measured",
             "family": "Calibri",
             "font_evidence_state": "explicit_font",
-            "observation_id": "T014",
+            "observation_id": "T010014",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "complex_script",
@@ -31575,6 +31575,15 @@
           }
         ],
         "metrics": {
+          "comparison_symmetry": {
+            "value": 1.0,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O014",
+              "O016"
+            ]
+          },
           "annotation_density": {
             "value": 2.285714,
             "basis": "derived",
@@ -31596,20 +31605,6 @@
               "O021",
               "O023",
               "O025"
-            ]
-          },
-          "figure_area_ratio": {
-            "value": 0.323105,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O003",
-              "O014",
-              "O016",
-              "O018",
-              "O020",
-              "O022",
-              "O024"
             ]
           },
           "whitespace_fraction": {
@@ -31642,8 +31637,8 @@
               "O025"
             ]
           },
-          "figure_text_ratio": {
-            "value": 0.824037,
+          "dominant_figure_ratio": {
+            "value": 0.535007,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -31664,20 +31659,25 @@
               "O012"
             ]
           },
-          "caption_candidate_count": {
-            "value": 8,
+          "panel_count": {
+            "value": 7,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O006",
-              "O010",
-              "O015",
-              "O017",
-              "O019",
-              "O021",
-              "O023",
-              "O025"
+              "P001",
+              "P002",
+              "P003",
+              "P004",
+              "P005",
+              "P006",
+              "P007"
             ]
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "photo_schematic_relation": {
             "value": "separate",
@@ -31693,17 +31693,22 @@
               "O024"
             ]
           },
-          "comparison_symmetry": {
-            "value": 1.0,
+          "figure_area_ratio": {
+            "value": 0.323105,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
+              "O003",
               "O014",
-              "O016"
+              "O016",
+              "O018",
+              "O020",
+              "O022",
+              "O024"
             ]
           },
-          "dominant_figure_ratio": {
-            "value": 0.535007,
+          "figure_text_ratio": {
+            "value": 0.824037,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -31739,27 +31744,22 @@
               "O025"
             ]
           },
-          "panel_count": {
-            "value": 7,
+          "caption_candidate_count": {
+            "value": 8,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "P001",
-              "P002",
-              "P003",
-              "P004",
-              "P005",
-              "P006",
-              "P007"
+              "O006",
+              "O010",
+              "O015",
+              "O017",
+              "O019",
+              "O021",
+              "O023",
+              "O025"
             ]
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -32601,7 +32601,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T011001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -32616,7 +32616,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T011002",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -32631,7 +32631,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T003",
+            "observation_id": "T011003",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -32646,7 +32646,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T004",
+            "observation_id": "T011004",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -32661,7 +32661,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T005",
+            "observation_id": "T011005",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32676,7 +32676,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T006",
+            "observation_id": "T011006",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32691,7 +32691,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T007",
+            "observation_id": "T011007",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32706,7 +32706,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T008",
+            "observation_id": "T011008",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32721,7 +32721,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T009",
+            "observation_id": "T011009",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32736,7 +32736,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T010",
+            "observation_id": "T011010",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32751,7 +32751,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T011",
+            "observation_id": "T011011",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32766,7 +32766,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T012",
+            "observation_id": "T011012",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32781,7 +32781,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T013",
+            "observation_id": "T011013",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32796,7 +32796,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T014",
+            "observation_id": "T011014",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32811,7 +32811,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T015",
+            "observation_id": "T011015",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32826,7 +32826,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T016",
+            "observation_id": "T011016",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32841,7 +32841,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T017",
+            "observation_id": "T011017",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32856,7 +32856,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T018",
+            "observation_id": "T011018",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32871,7 +32871,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T019",
+            "observation_id": "T011019",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -32886,7 +32886,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T020",
+            "observation_id": "T011020",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -33449,6 +33449,12 @@
         ],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 3.5,
             "basis": "derived",
@@ -33461,15 +33467,6 @@
               "O007",
               "O009",
               "O010"
-            ]
-          },
-          "figure_area_ratio": {
-            "value": 0.188339,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O002",
-              "O003"
             ]
           },
           "whitespace_fraction": {
@@ -33488,8 +33485,8 @@
               "O010"
             ]
           },
-          "figure_text_ratio": {
-            "value": 1.085972,
+          "dominant_figure_ratio": {
+            "value": 0.796032,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -33508,15 +33505,17 @@
               "O009"
             ]
           },
-          "caption_candidate_count": {
-            "value": 3,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O007",
-              "O009",
-              "O010"
-            ]
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "photo_schematic_relation": {
             "value": "separate",
@@ -33527,14 +33526,17 @@
               "O003"
             ]
           },
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "figure_area_ratio": {
+            "value": 0.188339,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O002",
+              "O003"
+            ]
           },
-          "dominant_figure_ratio": {
-            "value": 0.796032,
+          "figure_text_ratio": {
+            "value": 1.085972,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -33554,19 +33556,17 @@
               "O010"
             ]
           },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "caption_candidate_count": {
+            "value": 3,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O007",
+              "O009",
+              "O010"
+            ]
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -33904,7 +33904,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T012001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -33919,7 +33919,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T012002",
             "role": "body",
             "role_confidence": "provisional",
             "script_role": "latin",
@@ -34103,21 +34103,18 @@
         "groups": [],
         "panels": [],
         "metrics": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
           "annotation_density": {
             "value": 0.5,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
               "O002"
-            ]
-          },
-          "figure_area_ratio": {
-            "value": 0.446961,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O003"
             ]
           },
           "whitespace_fraction": {
@@ -34130,8 +34127,8 @@
               "O003"
             ]
           },
-          "figure_text_ratio": {
-            "value": 6.639547,
+          "dominant_figure_ratio": {
+            "value": 0.518366,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -34145,7 +34142,13 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "caption_candidate_count": {
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -34160,14 +34163,17 @@
               "O003"
             ]
           },
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "figure_area_ratio": {
+            "value": 0.446961,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O001",
+              "O003"
+            ]
           },
-          "dominant_figure_ratio": {
-            "value": 0.518366,
+          "figure_text_ratio": {
+            "value": 6.639547,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -34183,19 +34189,13 @@
               "O002"
             ]
           },
-          "panel_count": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
           "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -34317,7 +34317,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T001",
+            "observation_id": "T013001",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -34332,7 +34332,7 @@
             "basis": "measured",
             "family": "unknown",
             "font_evidence_state": "inherited_unresolved",
-            "observation_id": "T002",
+            "observation_id": "T013002",
             "role": "title",
             "role_confidence": "structurally_supported",
             "script_role": "latin",
@@ -34432,7 +34432,8 @@
             "east_asian": "標楷體",
             "latin": "Times New Roman"
           }
-        }
+        },
+        "supplemental_fonts": []
       },
       {
         "theme_profile_id": "T002",
@@ -34517,7 +34518,279 @@
           "minor": {
             "latin": "Aptos"
           }
-        }
+        },
+        "supplemental_fonts": [
+          {
+            "theme_font_role": "major",
+            "script_code": "Arab",
+            "family": "Times New Roman"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Armn",
+            "family": "Arial"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Beng",
+            "family": "Vrinda"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Cans",
+            "family": "Euphemia"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Cher",
+            "family": "Plantagenet Cherokee"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Deva",
+            "family": "Mangal"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Ethi",
+            "family": "Nyala"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Geor",
+            "family": "Sylfaen"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Gujr",
+            "family": "Shruti"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Guru",
+            "family": "Raavi"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Hang",
+            "family": "맑은 고딕"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Hans",
+            "family": "等线 Light"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Hant",
+            "family": "新細明體"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Hebr",
+            "family": "Times New Roman"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Jpan",
+            "family": "游ゴシック Light"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Khmr",
+            "family": "MoolBoran"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Knda",
+            "family": "Tunga"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Laoo",
+            "family": "DokChampa"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Mlym",
+            "family": "Kartika"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Mymr",
+            "family": "Myanmar Text"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Orya",
+            "family": "Kalinga"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Sinh",
+            "family": "Iskoola Pota"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Taml",
+            "family": "Latha"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Telu",
+            "family": "Gautami"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Thai",
+            "family": "Angsana New"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Tibt",
+            "family": "Microsoft Himalaya"
+          },
+          {
+            "theme_font_role": "major",
+            "script_code": "Yiii",
+            "family": "Microsoft Yi Baiti"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Arab",
+            "family": "Arial"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Armn",
+            "family": "Arial"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Beng",
+            "family": "Vrinda"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Cans",
+            "family": "Euphemia"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Cher",
+            "family": "Plantagenet Cherokee"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Deva",
+            "family": "Mangal"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Ethi",
+            "family": "Nyala"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Geor",
+            "family": "Sylfaen"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Gujr",
+            "family": "Shruti"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Guru",
+            "family": "Raavi"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Hang",
+            "family": "맑은 고딕"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Hans",
+            "family": "等线"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Hant",
+            "family": "新細明體"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Hebr",
+            "family": "Arial"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Jpan",
+            "family": "游ゴシック"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Khmr",
+            "family": "DaunPenh"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Knda",
+            "family": "Tunga"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Laoo",
+            "family": "DokChampa"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Mlym",
+            "family": "Kartika"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Mymr",
+            "family": "Myanmar Text"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Orya",
+            "family": "Kalinga"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Sinh",
+            "family": "Iskoola Pota"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Taml",
+            "family": "Latha"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Telu",
+            "family": "Gautami"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Thai",
+            "family": "Cordia New"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Tibt",
+            "family": "Microsoft Himalaya"
+          },
+          {
+            "theme_font_role": "minor",
+            "script_code": "Yiii",
+            "family": "Microsoft Yi Baiti"
+          }
+        ]
       }
     ],
     "slide_theme_topology": [

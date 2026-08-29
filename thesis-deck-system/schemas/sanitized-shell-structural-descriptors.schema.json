@@ -579,7 +579,7 @@
         "theme_profile": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["theme_profile_id", "palette", "font_scheme"],
+            "required": ["theme_profile_id", "palette", "font_scheme", "supplemental_fonts"],
             "properties": {
                 "theme_profile_id": {"type": "string", "pattern": "^T[0-9]{3,}$"},
                 "palette": {"type": "array", "items": {"$ref": "#/$defs/theme_entry"}},
@@ -590,6 +590,19 @@
                     "properties": {
                         "major": {"type": "object", "additionalProperties": false, "properties": {"latin": {"type": "string", "pattern": "^.{1,64}$"}, "east_asian": {"type": "string", "pattern": "^.{1,64}$"}, "complex_script": {"type": "string", "pattern": "^.{1,64}$"}}},
                         "minor": {"type": "object", "additionalProperties": false, "properties": {"latin": {"type": "string", "pattern": "^.{1,64}$"}, "east_asian": {"type": "string", "pattern": "^.{1,64}$"}, "complex_script": {"type": "string", "pattern": "^.{1,64}$"}}}
+                    }
+                },
+                "supplemental_fonts": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["theme_font_role", "script_code", "family"],
+                        "properties": {
+                            "theme_font_role": {"enum": ["major", "minor"]},
+                            "script_code": {"enum": ["Arab", "Armn", "Beng", "Cans", "Cher", "Deva", "Ethi", "Geor", "Gujr", "Guru", "Hang", "Hans", "Hant", "Hebr", "Jpan", "Khmr", "Knda", "Laoo", "Mlym", "Mymr", "Orya", "Sinh", "Taml", "Telu", "Thai", "Tibt", "Yiii"]},
+                            "family": {"type": "string", "pattern": "^.{1,64}$"}
+                        }
                     }
                 }
             }

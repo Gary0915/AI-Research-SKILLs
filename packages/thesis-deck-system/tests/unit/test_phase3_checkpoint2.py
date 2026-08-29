@@ -527,6 +527,145 @@ def test_east_asian_unicode_font_is_safe_but_private_like_font_is_rejected():
     assert _font_family("https://unsafe-font") == "unknown"
 
 
+def _typography_slide(font_nodes: str) -> object:
+    """Synthetic text shape with deliberately multi-script run properties."""
+    from xml.etree import ElementTree as ET
+
+    return ET.fromstring(
+        """<p:sld xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"
+           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <p:cSld><p:spTree><p:sp><p:nvSpPr/>
+            <p:spPr><a:xfrm><a:off x="100" y="300"/><a:ext cx="600" cy="100"/></a:xfrm></p:spPr>
+            <p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:rPr sz="1200">"""
+        + font_nodes
+        + """</a:rPr><a:t>synthetic</a:t></a:r></a:p></p:txBody>
+          </p:sp></p:spTree></p:cSld></p:sld>"""
+    )
+
+
+def test_one_run_with_latin_and_east_asian_fonts_emits_two_script_observations():
+    from thesis_deck_system.phase3_checkpoint2 import ReadOnlyPrivateSourceSession
+
+    profile = ReadOnlyPrivateSourceSession._slide_profile(
+        _typography_slide('<a:latin typeface="Arial"/><a:ea typeface="微軟正黑體"/>'),
+        1000,
+        1000,
+        1,
+        source_scope="slide_body",
+    )
+    observations = profile["typography_observations"]
+    assert [(item["script_role"], item["family"]) for item in observations] == [
+        ("latin", "Arial"),
+        ("east_asian", "微軟正黑體"),
+    ]
+    assert len({item["observation_id"] for item in observations}) == 2
+    assert {item["supporting_object_id"] for item in observations} == {"O001"}
+
+
+def test_one_run_with_all_three_script_fonts_emits_three_observations():
+    from thesis_deck_system.phase3_checkpoint2 import ReadOnlyPrivateSourceSession
+
+    profile = ReadOnlyPrivateSourceSession._slide_profile(
+        _typography_slide('<a:latin typeface="Arial"/><a:ea typeface="微軟正黑體"/><a:cs typeface="Calibri"/>'),
+        1000,
+        1000,
+        1,
+        source_scope="slide_body",
+    )
+    assert [item["script_role"] for item in profile["typography_observations"]] == [
+        "latin",
+        "east_asian",
+        "complex_script",
+    ]
+
+
+def test_theme_font_tokens_resolve_independently_for_each_script():
+    from thesis_deck_system.phase3_checkpoint2 import ReadOnlyPrivateSourceSession
+
+    profile = ReadOnlyPrivateSourceSession._slide_profile(
+        _typography_slide('<a:latin typeface="+mn-lt"/><a:ea typeface="+mj-ea"/><a:cs typeface="+mn-cs"/>'),
+        1000,
+        1000,
+        1,
+        source_scope="slide_body",
+        theme_font_scheme={
+            "major": {"east_asian": "微軟正黑體"},
+            "minor": {"latin": "Arial", "complex_script": "Calibri"},
+        },
+    )
+    assert [(item["script_role"], item["theme_font_role"], item["family"], item["font_evidence_state"]) for item in profile["typography_observations"]] == [
+        ("latin", "minor", "Arial", "theme_font_resolved"),
+        ("east_asian", "major", "微軟正黑體", "theme_font_resolved"),
+        ("complex_script", "minor", "Calibri", "theme_font_resolved"),
+    ]
+
+
+def test_supplemental_theme_cjk_font_mappings_are_sanitized_as_controlled_metadata():
+    from thesis_deck_system.phase3_checkpoint2 import _sanitize_theme_profile
+
+    result = _sanitize_theme_profile({
+        "theme_profile_id": "T001", "palette": [],
+        "font_scheme": {"major": {}, "minor": {}},
+        "supplemental_fonts": [
+            {"theme_font_role": "major", "script_code": code, "family": "微軟正黑體"}
+            for code in ("Hans", "Hant", "Jpan", "Hang")
+        ],
+    })
+    assert [item["script_code"] for item in result["supplemental_fonts"]] == ["Hang", "Hans", "Hant", "Jpan"]
+
+
+@pytest.mark.parametrize(
+    "supplemental",
+    [
+        {"theme_font_role": "major", "script_code": "Hant", "family": "D:/unsafe"},
+        {"theme_font_role": "major", "script_code": "UnknownScript", "family": "Arial"},
+    ],
+)
+def test_unsafe_or_unapproved_supplemental_theme_font_is_rejected(supplemental: dict):
+    from thesis_deck_system.phase3_checkpoint2 import _sanitize_theme_profile
+
+    with pytest.raises(Checkpoint2PolicyViolation):
+        _sanitize_theme_profile({"theme_profile_id": "T001", "palette": [], "font_scheme": {"major": {}, "minor": {}}, "supplemental_fonts": [supplemental]})
+
+
+def test_supplemental_mapping_does_not_fabricate_east_asian_run_resolution():
+    from thesis_deck_system.phase3_checkpoint2 import ReadOnlyPrivateSourceSession
+
+    profile = ReadOnlyPrivateSourceSession._slide_profile(
+        _typography_slide(''), 1000, 1000, 1, source_scope="slide_body",
+        theme_font_scheme={"major": {}, "minor": {}, "supplemental_fonts": {"Hant": "微軟正黑體"}},
+    )
+    assert [(item["script_role"], item["font_evidence_state"], item["family"]) for item in profile["typography_observations"]] == [
+        ("latin", "inherited_unresolved", "unknown"),
+    ]
+
+
+def test_descriptor_local_theme_ids_do_not_collide_across_descriptors():
+    from thesis_deck_system.phase3_checkpoint2 import resolve_descriptor_theme_color
+
+    descriptors = {
+        "P3-TEMPLATE-PRIMARY-1": {"T001": {"palette": {"accent1": "AAAAAA"}}},
+        "P3-TEMPLATE-PRIMARY-3": {"T001": {"palette": {"accent1": "BBBBBB"}}},
+    }
+    assert resolve_descriptor_theme_color("accent1", profile_id="P3-TEMPLATE-PRIMARY-1", theme_profile_id="T001", descriptor_theme_profiles=descriptors) == "AAAAAA"
+    assert resolve_descriptor_theme_color("accent1", profile_id="P3-TEMPLATE-PRIMARY-3", theme_profile_id="T001", descriptor_theme_profiles=descriptors) == "BBBBBB"
+
+
+def test_typography_resolution_counts_reconcile_each_persisted_observation():
+    from thesis_deck_system.phase3_checkpoint2 import typography_resolution_counts
+
+    observations = [
+        {"script_role": "latin", "font_evidence_state": "explicit_font"},
+        {"script_role": "east_asian", "font_evidence_state": "theme_font_resolved"},
+        {"script_role": "complex_script", "font_evidence_state": "inherited_unresolved"},
+    ]
+    counts = typography_resolution_counts(observations)
+    assert counts["latin"]["explicit_font"] == 1
+    assert counts["east_asian"]["theme_font_resolved"] == 1
+    assert counts["complex_script"]["inherited_unresolved"] == 1
+    assert sum(sum(states.values()) for states in counts.values()) == len(observations)
+
+
 def test_unknown_typography_cannot_satisfy_font_fidelity_owning_gate(tmp_path: Path):
     run = Checkpoint2Run.start(pre_open_passed=True, private_root=tmp_path / "raw")
     shell = {"alias_uri": ALIASES[0], "source_sha256": SHA, "profile_id": "P3-SHELL-001", "slide_size": {"width": 13.333, "height": 7.5, "basis": "measured"}, "master_count": 1, "layout_count": 1, "slide_count": 1, "measurement_basis": {key: "measured" for key in ("slide_size", "topology", "regions", "typography", "styles", "primitives", "placeholders")}, "layout_master_topology": [], "slide_layout_topology": [], "shell_regions": [], "safe_content_bounds": {"value": None, "basis": "not_observable_structurally", "source_scope": "not_observable_structurally", "evidence_ids": []}, "typography_roles": [], "style_roles": [], "shell_primitives": [], "placeholder_measurements": [], "theme_palette": []}

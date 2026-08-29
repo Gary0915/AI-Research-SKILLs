@@ -28,6 +28,12 @@ _SOURCE_SCOPES = {"slide_master", "slide_layout", "theme", "slide_body", "slide_
 _COLOR_TOKENS = {"accent1", "accent2", "accent3", "accent4", "accent5", "accent6", "dk1", "dk2", "lt1", "lt2", "hlink", "folhlink"}
 _SAFE_FONT_NAMES = {"Arial", "Calibri", "Times New Roman", "Aptos", "Noto Sans CJK", "Microsoft JhengHei", "Yu Gothic", "Meiryo", "Segoe UI", "Cambria", "Georgia", "微軟正黑體"}
 _FONT_TOKEN_SCRIPTS = {"lt": "latin", "ea": "east_asian", "cs": "complex_script"}
+_SUPPLEMENTAL_THEME_SCRIPT_CODES = {
+    "Arab", "Armn", "Beng", "Cans", "Cher", "Deva", "Ethi", "Geor",
+    "Gujr", "Guru", "Hang", "Hans", "Hant", "Hebr", "Jpan", "Khmr",
+    "Knda", "Laoo", "Mlym", "Mymr", "Orya", "Sinh", "Taml", "Telu",
+    "Thai", "Tibt", "Yiii",
+}
 
 
 class Checkpoint2PolicyViolation(RuntimeError):
@@ -298,6 +304,33 @@ def resolve_theme_color(token: str, *, master_id: str, master_theme: dict[str, s
     return value.upper() if isinstance(value, str) and re.fullmatch(r"[0-9A-Fa-f]{6}", value) else None
 
 
+def resolve_descriptor_theme_color(token: str, *, profile_id: str, theme_profile_id: str, descriptor_theme_profiles: dict[str, dict[str, dict[str, Any]]]) -> str | None:
+    """Resolve a theme token through a descriptor-qualified identity only.
+
+    Theme IDs are intentionally local to a sanitized descriptor.  ``T001`` in
+    two distinct exemplars must never be treated as one global palette.
+    """
+    profile = descriptor_theme_profiles.get(profile_id, {}).get(theme_profile_id)
+    if token not in _COLOR_TOKENS or not isinstance(profile, dict):
+        return None
+    palette = profile.get("palette", {})
+    value = palette.get(token) if isinstance(palette, dict) else None
+    return value.upper() if isinstance(value, str) and re.fullmatch(r"[0-9A-Fa-f]{6}", value) else None
+
+
+def typography_resolution_counts(observations: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
+    """Count every persisted script observation exactly once by evidence state."""
+    scripts = ("latin", "east_asian", "complex_script")
+    states = ("explicit_font", "theme_font_resolved", "theme_font_unresolved", "inherited_unresolved", "unknown")
+    counts = {script: {state: 0 for state in states} for script in scripts}
+    for observation in observations:
+        script, state = observation.get("script_role"), observation.get("font_evidence_state")
+        if script not in counts or state not in counts[script]:
+            raise Checkpoint2PolicyViolation("invalid persisted typography observation")
+        counts[script][state] += 1
+    return counts
+
+
 def _font_roles(slides: list[dict[str, Any]]) -> list[dict[str, Any]]:
     observations: dict[tuple[str, str, str, str, str, str, str, str], list[float]] = {}
     for slide in slides:
@@ -333,6 +366,7 @@ def _theme_profiles(package: zipfile.ZipFile, names: list[str]) -> dict[str, dic
             if rgb and re.fullmatch(r"[0-9A-Fa-f]{6}", rgb):
                 palette[token] = rgb.upper()
         font_scheme: dict[str, dict[str, str]] = {}
+        supplemental_fonts: list[dict[str, str]] = []
         for family_role, element_name in (("major", "majorFont"), ("minor", "minorFont")):
             font_element = root.find(f".//a:{element_name}", _NS)
             scripts: dict[str, str] = {}
@@ -342,8 +376,17 @@ def _theme_profiles(package: zipfile.ZipFile, names: list[str]) -> dict[str, dic
                     family = _font_family(node.get("typeface") if node is not None else None)
                     if family != "unknown":
                         scripts[script] = family
+                for node in font_element.findall("a:font", _NS):
+                    code, family = node.get("script"), _font_family(node.get("typeface"))
+                    if code in _SUPPLEMENTAL_THEME_SCRIPT_CODES and family != "unknown":
+                        supplemental_fonts.append({"theme_font_role": family_role, "script_code": code, "family": family})
             font_scheme[family_role] = scripts
-        profiles[name] = {"theme_profile_id": f"T{len(profiles)+1:03d}", "palette": palette, "font_scheme": font_scheme}
+        profiles[name] = {
+            "theme_profile_id": f"T{len(profiles)+1:03d}",
+            "palette": palette,
+            "font_scheme": font_scheme,
+            "supplemental_fonts": sorted(supplemental_fonts, key=lambda item: (item["theme_font_role"], item["script_code"], item["family"])),
+        }
     return profiles
 
 
@@ -553,7 +596,7 @@ class ReadOnlyPrivateSourceSession:
                 layout_profiles = [self._slide_profile(ET.fromstring(value), width, height, index + 1, source_scope="slide_layout", theme_palette=theme_profiles_by_id.get(master_theme.get(layout_master.get(f"L{index + 1:03d}", ""), ""), {}).get("palette", {}), theme_profile_id=master_theme.get(layout_master.get(f"L{index + 1:03d}", "")), theme_font_scheme=theme_profiles_by_id.get(master_theme.get(layout_master.get(f"L{index + 1:03d}", ""), ""), {}).get("font_scheme", {})) for index, value in enumerate(layout_xml)]
                 shell_profiles = [*master_profiles, *layout_profiles]
                 typography = _font_roles(shell_profiles)
-                profile = {**base, "master_count": len(masters), "layout_count": len(layouts), "measurement_basis": {"slide_size": "measured", "topology": "measured", "regions": "measured" if shell_profiles else "not_observable_structurally", "typography": "measured" if typography else "not_observable_structurally", "styles": "measured" if shell_profiles else "not_observable_structurally", "primitives": "measured" if shell_profiles else "not_observable_structurally", "placeholders": "measured" if any(profile.get("placeholders") for profile in shell_profiles) else "not_observable_structurally"}, "layout_master_topology": topology["layout_master"], "slide_layout_topology": topology["slide_layout"], "master_theme_topology": master_theme_topology, "shell_regions": self._shell_regions(shell_profiles, width, height), "safe_content_bounds": self._safe_bounds(shell_profiles), "typography_roles": typography, "style_roles": self._style_roles(shell_profiles), "shell_primitives": self._shell_primitives(shell_profiles), "placeholder_measurements": [placeholder for profile in shell_profiles for placeholder in profile.get("placeholders", [])], "theme_profiles": [{"theme_profile_id": profile["theme_profile_id"], "palette": [{"theme_token": key, "resolved_rgb": value, "basis": "measured", "source_scope": "theme"} for key, value in sorted(profile["palette"].items())], "font_scheme": profile["font_scheme"]} for profile in theme_profiles_by_part.values()]}
+                profile = {**base, "master_count": len(masters), "layout_count": len(layouts), "measurement_basis": {"slide_size": "measured", "topology": "measured", "regions": "measured" if shell_profiles else "not_observable_structurally", "typography": "measured" if typography else "not_observable_structurally", "styles": "measured" if shell_profiles else "not_observable_structurally", "primitives": "measured" if shell_profiles else "not_observable_structurally", "placeholders": "measured" if any(profile.get("placeholders") for profile in shell_profiles) else "not_observable_structurally"}, "layout_master_topology": topology["layout_master"], "slide_layout_topology": topology["slide_layout"], "master_theme_topology": master_theme_topology, "shell_regions": self._shell_regions(shell_profiles, width, height), "safe_content_bounds": self._safe_bounds(shell_profiles), "typography_roles": typography, "style_roles": self._style_roles(shell_profiles), "shell_primitives": self._shell_primitives(shell_profiles), "placeholder_measurements": [placeholder for profile in shell_profiles for placeholder in profile.get("placeholders", [])], "theme_profiles": [{"theme_profile_id": profile["theme_profile_id"], "palette": [{"theme_token": key, "resolved_rgb": value, "basis": "measured", "source_scope": "theme"} for key, value in sorted(profile["palette"].items())], "font_scheme": profile["font_scheme"], "supplemental_fonts": profile["supplemental_fonts"]} for profile in theme_profiles_by_part.values()]}
             else:
                 # Font observations are local-only profiler input and never cross
                 # the sanitizer boundary in the body descriptor.
@@ -563,7 +606,7 @@ class ReadOnlyPrivateSourceSession:
                     measurement["objects"] = [{key: value for key, value in obj.items() if key not in {"source_container_id", "placeholder_type"}} for obj in measurement.get("objects", [])]
                     measurement["typography_observations"] = list(slide.get("typography_observations", []))
                     body_measurements.append(measurement)
-                profile = {**base, "candidate_families": [self._classify_slide(slide) for slide in slide_profiles], "body_measurements": body_measurements, "theme_profiles": [{"theme_profile_id": item["theme_profile_id"], "palette": [{"theme_token": key, "resolved_rgb": value, "basis": "measured", "source_scope": "theme"} for key, value in sorted(item["palette"].items())], "font_scheme": item["font_scheme"]} for item in theme_profiles_by_part.values()], "slide_theme_topology": [{"source_id": f"SL{index + 1:03d}", "target_id": master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), ""), "T000"), "basis": "measured" if master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), "")) else "not_observable_structurally", "source_scope": "slide_body"} for index in range(len(slides))]}
+                profile = {**base, "candidate_families": [self._classify_slide(slide) for slide in slide_profiles], "body_measurements": body_measurements, "theme_profiles": [{"theme_profile_id": item["theme_profile_id"], "palette": [{"theme_token": key, "resolved_rgb": value, "basis": "measured", "source_scope": "theme"} for key, value in sorted(item["palette"].items())], "font_scheme": item["font_scheme"], "supplemental_fonts": item["supplemental_fonts"]} for item in theme_profiles_by_part.values()], "slide_theme_topology": [{"source_id": f"SL{index + 1:03d}", "target_id": master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), ""), "T000"), "basis": "measured" if master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), "")) else "not_observable_structurally", "source_scope": "slide_body"} for index in range(len(slides))]}
             self._private_root.mkdir(parents=True, exist_ok=True)
             (self._private_root / f"{_safe_id(self.alias_uri).lower()}-raw.json").write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
             if self._execution:
@@ -677,15 +720,22 @@ class ReadOnlyPrivateSourceSession:
                     if props is None: continue
                     size = float(props.get("sz", 0) or 0) / 100
                     if size <= 0: continue
-                    font_nodes = (("latin", "a:latin"), ("east_asian", "a:ea"), ("complex_script", "a:cs"))
-                    script_role, typeface = next(((script, node.get("typeface")) for script, xpath in font_nodes for node in props.findall(f".//{xpath}", _NS) if node.get("typeface")), ("latin", None))
-                    theme = _theme_font_token(typeface)
-                    resolved_theme_family = (theme_font_scheme or {}).get(theme[0], {}).get(theme[1]) if theme else None
-                    family = _font_family(typeface) if theme is None else _font_family(resolved_theme_family)
-                    evidence_state = "theme_font_resolved" if theme and family != "unknown" else "theme_font_unresolved" if theme else "explicit_font" if family != "unknown" else "inherited_unresolved"
                     role = "title" if y < 0.20 else "unknown" if y > 0.88 else "body"
                     role_confidence = "structurally_supported" if y < 0.20 else "unknown" if y > 0.88 else "provisional"
-                    fonts.append({"observation_id": f"T{len(fonts)+1:03d}", "role": role, "role_confidence": role_confidence, "family": family, "theme_font_role": theme[0] if theme else None, "script_role": theme[1] if theme else script_role, "font_evidence_state": evidence_state, "size_pt": size, "weight": "bold" if props.get("b") in {"1", "true"} else "regular", "style": "italic" if props.get("i") in {"1", "true"} else "normal", "source_scope": source_scope, "basis": "measured", "supporting_object_id": oid})
+                    font_nodes = (("latin", "latin"), ("east_asian", "ea"), ("complex_script", "cs"))
+                    present_nodes = [(script, props.find(f"a:{node_name}", _NS)) for script, node_name in font_nodes]
+                    present_nodes = [(script, node) for script, node in present_nodes if node is not None and node.get("typeface")]
+                    # A run can carry independent Latin, East-Asian, and complex
+                    # script evidence.  Preserve each direct child exactly once;
+                    # never let the first script node suppress the others.
+                    candidates = present_nodes or [("latin", None)]
+                    for script_role, node in candidates:
+                        typeface = node.get("typeface") if node is not None else None
+                        theme = _theme_font_token(typeface)
+                        resolved_theme_family = (theme_font_scheme or {}).get(theme[0], {}).get(theme[1]) if theme else None
+                        family = _font_family(typeface) if theme is None else _font_family(resolved_theme_family)
+                        evidence_state = "theme_font_resolved" if theme and family != "unknown" else "theme_font_unresolved" if theme else "explicit_font" if family != "unknown" else "inherited_unresolved"
+                        fonts.append({"observation_id": f"T{ordinal:03d}{len(fonts)+1:03d}", "role": role, "role_confidence": role_confidence, "family": family, "theme_font_role": theme[0] if theme else None, "script_role": theme[1] if theme else script_role, "font_evidence_state": evidence_state, "size_pt": size, "weight": "bold" if props.get("b") in {"1", "true"} else "regular", "style": "italic" if props.get("i") in {"1", "true"} else "normal", "source_scope": source_scope, "basis": "measured", "supporting_object_id": oid})
         for child in list(slide): walk(child)
         eligible_shapes = [item for item in shapes if item.get("geometry_eligible", True)]
         text_shapes = [item for item in eligible_shapes if item["object_class"] == "text"]
@@ -848,6 +898,36 @@ def _sanitize_font_observation(value: dict[str, Any], *, shell: bool = False) ->
     return {key: value[key] for key in sorted(required)}
 
 
+def _sanitize_theme_profile(item: dict[str, Any]) -> dict[str, Any]:
+    """Construct a closed, descriptor-local theme record from controlled data."""
+    required = {"theme_profile_id", "palette", "font_scheme", "supplemental_fonts"}
+    if set(item) != required or not re.fullmatch(r"T[0-9]{3,}", str(item["theme_profile_id"])) or not isinstance(item["palette"], list) or not isinstance(item["font_scheme"], dict) or not isinstance(item["supplemental_fonts"], list):
+        raise Checkpoint2PolicyViolation("invalid sanitized theme profile")
+    palette = []
+    for color in item["palette"]:
+        if set(color) != {"theme_token", "resolved_rgb", "basis", "source_scope"} or color["theme_token"] not in _COLOR_TOKENS or not re.fullmatch(r"[0-9A-Fa-f]{6}", str(color["resolved_rgb"])) or color["basis"] not in _BASIS or color["source_scope"] != "theme":
+            raise Checkpoint2PolicyViolation("invalid theme palette evidence")
+        palette.append({"theme_token": color["theme_token"], "resolved_rgb": color["resolved_rgb"].upper(), "basis": color["basis"], "source_scope": "theme"})
+    if set(item["font_scheme"]) != {"major", "minor"}:
+        raise Checkpoint2PolicyViolation("invalid theme font scheme")
+    scheme: dict[str, dict[str, str]] = {}
+    for role, scripts in item["font_scheme"].items():
+        if not isinstance(scripts, dict) or not set(scripts).issubset({"latin", "east_asian", "complex_script"}) or any(not _safe_font_name(value) for value in scripts.values()):
+            raise Checkpoint2PolicyViolation("invalid theme font scheme font")
+        scheme[role] = {key: scripts[key] for key in sorted(scripts)}
+    supplemental = []
+    for value in item["supplemental_fonts"]:
+        if set(value) != {"theme_font_role", "script_code", "family"} or value["theme_font_role"] not in {"major", "minor"} or value["script_code"] not in _SUPPLEMENTAL_THEME_SCRIPT_CODES or not _safe_font_name(value["family"]):
+            raise Checkpoint2PolicyViolation("invalid supplemental theme font")
+        supplemental.append({"theme_font_role": value["theme_font_role"], "script_code": value["script_code"], "family": value["family"]})
+    return {
+        "theme_profile_id": item["theme_profile_id"],
+        "palette": sorted(palette, key=lambda value: value["theme_token"]),
+        "font_scheme": {role: scheme[role] for role in sorted(scheme)},
+        "supplemental_fonts": sorted(supplemental, key=lambda value: (value["theme_font_role"], value["script_code"], value["family"])),
+    }
+
+
 def _sanitize_shell_full(raw: dict[str, Any]) -> dict[str, Any]:
     allowed = {"alias_uri", "source_sha256", "profile_id", "slide_size", "master_count", "layout_count", "shell_primitives", "slide_count", "measurement_basis", "layout_master_topology", "slide_layout_topology", "master_theme_topology", "shell_regions", "safe_content_bounds", "typography_roles", "style_roles", "placeholder_measurements", "theme_profiles"}
     if set(raw) != allowed: raise Checkpoint2PolicyViolation("unknown or incomplete shell descriptor fields")
@@ -894,17 +974,7 @@ def _sanitize_shell_full(raw: dict[str, Any]) -> dict[str, Any]:
             raise Checkpoint2PolicyViolation("invalid placeholder measurement")
         out["placeholder_measurements"].append({"placeholder_id": str(item["placeholder_id"]), "placeholder_type": item["placeholder_type"], "geometry": _sanitize_geometry(item["geometry"]), "basis": item["basis"], "source_scope": item["source_scope"], "source_container_id": item["source_container_id"]})
     for item in raw["theme_profiles"]:
-        if set(item) != {"theme_profile_id", "palette", "font_scheme"} or not re.fullmatch(r"T[0-9]{3,}", str(item["theme_profile_id"])) or not isinstance(item["palette"], list) or not isinstance(item["font_scheme"], dict): raise Checkpoint2PolicyViolation("invalid sanitized theme profile")
-        palette = []
-        for color in item["palette"]:
-            if set(color) != {"theme_token", "resolved_rgb", "basis", "source_scope"} or color["theme_token"] not in _COLOR_TOKENS or not re.fullmatch(r"[0-9A-Fa-f]{6}", str(color["resolved_rgb"])) or color["basis"] not in _BASIS or color["source_scope"] != "theme": raise Checkpoint2PolicyViolation("invalid theme palette evidence")
-            palette.append({"theme_token": color["theme_token"], "resolved_rgb": color["resolved_rgb"].upper(), "basis": color["basis"], "source_scope": "theme"})
-        scheme: dict[str, dict[str, str]] = {}
-        if set(item["font_scheme"]) != {"major", "minor"}: raise Checkpoint2PolicyViolation("invalid theme font scheme")
-        for role, scripts in item["font_scheme"].items():
-            if not isinstance(scripts, dict) or not set(scripts).issubset({"latin", "east_asian", "complex_script"}) or any(not _safe_font_name(value) for value in scripts.values()): raise Checkpoint2PolicyViolation("invalid theme font scheme font")
-            scheme[role] = {key: scripts[key] for key in sorted(scripts)}
-        out["theme_profiles"].append({"theme_profile_id": item["theme_profile_id"], "palette": sorted(palette, key=lambda value: value["theme_token"]), "font_scheme": scheme})
+        out["theme_profiles"].append(_sanitize_theme_profile(item))
     _lexical_reject(out)
     errors = _schema_registry().errors("sanitized-shell-structural-descriptors", {"schema_version": "1.0.0", "descriptors": [out, out]})
     if errors: raise Checkpoint2PolicyViolation("sanitized shell descriptor schema failed: " + "; ".join(errors[:3]))
@@ -957,14 +1027,7 @@ def _sanitize_body_full(raw: dict[str, Any]) -> dict[str, Any]:
         typography = [_sanitize_font_observation(value, shell=False) for value in item["typography_observations"]]
         out["body_measurements"].append({"slide_id": str(item["slide_id"]), "measurement_basis": item["measurement_basis"], "objects": objects, "connectors": connectors, "groups": groups, "panels": panels, "metrics": {key: metrics[key] for key in metric_keys}, "style_roles": styles, "typography_observations": typography})
     for item in raw["theme_profiles"]:
-        if set(item) != {"theme_profile_id", "palette", "font_scheme"} or not re.fullmatch(r"T[0-9]{3,}", str(item["theme_profile_id"])) or not isinstance(item["palette"], list) or not isinstance(item["font_scheme"], dict): raise Checkpoint2PolicyViolation("invalid body theme profile")
-        palette = []
-        for color in item["palette"]:
-            if set(color) != {"theme_token", "resolved_rgb", "basis", "source_scope"} or color["theme_token"] not in _COLOR_TOKENS or not re.fullmatch(r"[0-9A-Fa-f]{6}", str(color["resolved_rgb"])) or color["basis"] not in _BASIS or color["source_scope"] != "theme": raise Checkpoint2PolicyViolation("invalid body theme palette")
-            palette.append({"theme_token": color["theme_token"], "resolved_rgb": color["resolved_rgb"].upper(), "basis": color["basis"], "source_scope": "theme"})
-        scheme = item["font_scheme"]
-        if set(scheme) != {"major", "minor"} or any(not isinstance(values, dict) or not set(values).issubset({"latin", "east_asian", "complex_script"}) or any(not _safe_font_name(value) for value in values.values()) for values in scheme.values()): raise Checkpoint2PolicyViolation("invalid body theme font scheme")
-        out["theme_profiles"].append({"theme_profile_id": item["theme_profile_id"], "palette": sorted(palette, key=lambda value: value["theme_token"]), "font_scheme": {role: {key: value for key, value in sorted(values.items())} for role, values in sorted(scheme.items())}})
+        out["theme_profiles"].append(_sanitize_theme_profile(item))
     profile_ids = {item["theme_profile_id"] for item in out["theme_profiles"]}
     for edge in raw["slide_theme_topology"]:
         if set(edge) != {"source_id", "target_id", "basis", "source_scope"} or not re.fullmatch(r"SL[0-9]{3,}", str(edge["source_id"])) or edge["source_scope"] != "slide_body" or edge["basis"] not in _BASIS or (edge["basis"] == "measured" and edge["target_id"] not in profile_ids): raise Checkpoint2PolicyViolation("invalid body slide theme topology")
@@ -1054,25 +1117,53 @@ class Checkpoint2Run:
         colors += [style.get(key) for measurement in body_descriptor.get("body_measurements", []) for style in measurement.get("style_roles", []) for key in ("fill_color_evidence", "stroke_color_evidence")]
         color_ok = bool(colors) and all(item.get("transform_status") in {"supported", "unsupported", "unresolved"} and item.get("basis") in _BASIS and item.get("source_scope") in _SOURCE_SCOPES for item in colors)
         checks.append({"check_id": "CP2-DQ-COLOR-RECONSTRUCTION", "status": "pass" if color_ok else "fail"})
-        theme_profiles = {profile.get("theme_profile_id"): {entry.get("theme_token"): entry.get("resolved_rgb") for entry in profile.get("palette", [])} for descriptor in shell_descriptors for profile in descriptor.get("theme_profiles", [])}
-        master_theme_edges = [edge for descriptor in shell_descriptors for edge in descriptor.get("master_theme_topology", [])]
-        topology_ok = bool(theme_profiles) and all(edge.get("source_id", "").startswith("M") and edge.get("target_id") in theme_profiles for edge in master_theme_edges)
+        all_descriptors = [*shell_descriptors, body_descriptor]
+        descriptor_theme_profiles = {
+            descriptor.get("profile_id"): {
+                profile.get("theme_profile_id"): {entry.get("theme_token"): entry.get("resolved_rgb") for entry in profile.get("palette", [])}
+                for profile in descriptor.get("theme_profiles", [])
+            }
+            for descriptor in all_descriptors
+        }
+        master_theme_edges = [(descriptor.get("profile_id"), edge) for descriptor in shell_descriptors for edge in descriptor.get("master_theme_topology", [])]
+        topology_ok = bool(descriptor_theme_profiles) and all(profile_id in descriptor_theme_profiles and edge.get("source_id", "").startswith("M") and edge.get("target_id") in descriptor_theme_profiles[profile_id] for profile_id, edge in master_theme_edges)
         checks.append({"check_id": "CP2-DQ-MASTER-THEME-TOPOLOGY", "status": "pass" if topology_ok else "fail"})
-        shell_colors = [style.get(key) for descriptor in shell_descriptors for style in descriptor.get("style_roles", []) for key in ("fill_color_evidence", "stroke_color_evidence")]
-        binding_ok = all(color.get("theme_token") is None or (color.get("theme_profile_id") in theme_profiles and theme_profiles[color["theme_profile_id"]].get(color["theme_token"]) == color.get("resolved_rgb")) for color in shell_colors)
+        shell_colors = [(descriptor.get("profile_id"), style.get(key)) for descriptor in shell_descriptors for style in descriptor.get("style_roles", []) for key in ("fill_color_evidence", "stroke_color_evidence")]
+        binding_ok = all(color.get("theme_token") is None or (color.get("theme_profile_id") in descriptor_theme_profiles.get(profile_id, {}) and descriptor_theme_profiles[profile_id][color["theme_profile_id"]].get(color["theme_token"]) == color.get("resolved_rgb")) for profile_id, color in shell_colors)
         checks.append({"check_id": "CP2-DQ-THEME-BOUND-COLOR", "status": "pass" if binding_ok else "fail"})
         fonts = [font for descriptor in shell_descriptors for font in descriptor.get("typography_roles", [])]
         body_fonts = [font for measurement in body_descriptor.get("body_measurements", []) for font in measurement.get("typography_observations", [])]
         font_states = ("explicit_font", "theme_font_resolved", "theme_font_unresolved", "inherited_unresolved", "unknown")
-        self.evidence.typography_resolution_counts = {
-            script: {state: sum(1 for font in [*fonts, *body_fonts] if font.get("script_role") == script and font.get("font_evidence_state") == state) for state in font_states}
-            for script in ("latin", "east_asian", "complex_script")
-        }
+        self.evidence.typography_resolution_counts = typography_resolution_counts([*fonts, *body_fonts])
         meaningful_fonts = [font for font in [*fonts, *body_fonts] if font.get("font_evidence_state") in {"explicit_font", "theme_font_resolved"} and font.get("family") not in {None, "unknown", "other_approved"}]
         all_fonts = [*fonts, *body_fonts]
         font_ok = (not all_fonts or bool(meaningful_fonts)) and all(font.get("basis") in _BASIS and font.get("source_scope") in _SOURCE_SCOPES and font.get("script_role") in {"latin", "east_asian", "complex_script"} for font in meaningful_fonts)
         checks.append({"check_id": "CP2-DQ-FONT-FIDELITY", "status": "pass" if font_ok else "fail"})
         checks.append({"check_id": "CP2-DQ-TYPOGRAPHY-EVIDENCE-STATES", "status": "pass" if all(sum(values.values()) >= 0 for values in self.evidence.typography_resolution_counts.values()) and (not all_fonts or bool(meaningful_fonts)) else "fail"})
+        body_observation_ids = [font.get("observation_id") for font in body_fonts]
+        per_script_ok = len(body_observation_ids) == len(set(body_observation_ids)) and all(font.get("script_role") in {"latin", "east_asian", "complex_script"} and (font.get("theme_font_role") is None or font.get("font_evidence_state") in {"theme_font_resolved", "theme_font_unresolved"}) for font in all_fonts)
+        checks.append({"check_id": "CP2-DQ-PER-SCRIPT-TYPOGRAPHY", "status": "pass" if per_script_ok else "fail"})
+        reconciliation_ok = sum(sum(states.values()) for states in self.evidence.typography_resolution_counts.values()) == len(all_fonts)
+        checks.append({"check_id": "CP2-DQ-TYPOGRAPHY-COUNT-RECONCILIATION", "status": "pass" if reconciliation_ok else "fail"})
+        supplemental_ok = all(
+            item.get("theme_font_role") in {"major", "minor"}
+            and item.get("script_code") in _SUPPLEMENTAL_THEME_SCRIPT_CODES
+            and _safe_font_name(item.get("family", ""))
+            for descriptor in all_descriptors
+            for profile in descriptor.get("theme_profiles", [])
+            for item in profile.get("supplemental_fonts", [])
+        )
+        checks.append({"check_id": "CP2-DQ-SUPPLEMENTAL-THEME-FONT-CLOSURE", "status": "pass" if supplemental_ok else "fail"})
+        local_theme_identity_ok = all(
+            len(themes) == len(set(themes))
+            for themes in (list(profiles) for profiles in descriptor_theme_profiles.values())
+        ) and all(
+            edge.get("target_id") in descriptor_theme_profiles.get(descriptor.get("profile_id"), {})
+            for descriptor in all_descriptors
+            for edge in descriptor.get("slide_theme_topology", [])
+            if edge.get("basis") == "measured"
+        )
+        checks.append({"check_id": "CP2-DQ-DESCRIPTOR-LOCAL-THEME-IDENTITY", "status": "pass" if local_theme_identity_ok else "fail"})
         rotation_ok = all((obj.get("rotation_status") == "unsupported") == (not obj.get("geometry_eligible", True)) and (obj.get("rotation_status") != "unsupported" or obj.get("geometry", {}).get("basis") != "measured") for measurement in body_descriptor.get("body_measurements", []) for obj in [*measurement.get("objects", []), *measurement.get("connectors", [])] + measurement.get("groups", []))
         checks.append({"check_id": "CP2-DQ-ROTATION-TRUTH", "status": "pass" if rotation_ok else "fail"})
         typography_ok = all("typography_observations" in measurement and all(font.get("source_scope") in {"slide_body", "slide_content"} for font in measurement.get("typography_observations", [])) for measurement in body_descriptor.get("body_measurements", []))

@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "checkpoint_id": "PHASE_3_CHECKPOINT_2",
   "execution_evidence_id": "CP2-EXEC-001",
-  "execution_evidence_sha256": "5fab97bac6685ef240591c144fcf0f72d4498160c6473b17e42ab94c940f82ba",
+  "execution_evidence_sha256": "f96900b49375312e389b4abe8860e390b96b55cb8e1404b6e4d03e4e227cd6d5",
   "execution_evidence": {
     "schema_version": "1.0.0",
     "evidence_id": "CP2-EXEC-001",
@@ -107,14 +107,14 @@
         "unknown": 0
       },
       "east_asian": {
-        "explicit_font": 0,
+        "explicit_font": 4,
         "theme_font_resolved": 0,
         "theme_font_unresolved": 0,
         "inherited_unresolved": 0,
         "unknown": 0
       },
       "complex_script": {
-        "explicit_font": 2,
+        "explicit_font": 6,
         "theme_font_resolved": 0,
         "theme_font_unresolved": 0,
         "inherited_unresolved": 0,
@@ -200,6 +200,22 @@
       },
       {
         "check_id": "CP2-DQ-TYPOGRAPHY-EVIDENCE-STATES",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-PER-SCRIPT-TYPOGRAPHY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-TYPOGRAPHY-COUNT-RECONCILIATION",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-SUPPLEMENTAL-THEME-FONT-CLOSURE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP2-DQ-DESCRIPTOR-LOCAL-THEME-IDENTITY",
         "status": "pass"
       },
       {

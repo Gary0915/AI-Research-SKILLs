@@ -502,8 +502,56 @@
           "family": "Arial",
           "font_evidence_state": "explicit_font",
           "role": "title",
+          "script_role": "complex_script",
+          "size_pt": 18.0,
+          "source_scope": "slide_layout",
+          "style": "normal",
+          "theme_font_role": null,
+          "weight": "bold"
+        },
+        {
+          "basis": "measured",
+          "family": "Arial",
+          "font_evidence_state": "explicit_font",
+          "role": "title",
+          "script_role": "east_asian",
+          "size_pt": 18.0,
+          "source_scope": "slide_layout",
+          "style": "normal",
+          "theme_font_role": null,
+          "weight": "bold"
+        },
+        {
+          "basis": "measured",
+          "family": "Arial",
+          "font_evidence_state": "explicit_font",
+          "role": "title",
           "script_role": "latin",
           "size_pt": 18.0,
+          "source_scope": "slide_layout",
+          "style": "normal",
+          "theme_font_role": null,
+          "weight": "bold"
+        },
+        {
+          "basis": "measured",
+          "family": "Times New Roman",
+          "font_evidence_state": "explicit_font",
+          "role": "title",
+          "script_role": "complex_script",
+          "size_pt": 23.0,
+          "source_scope": "slide_layout",
+          "style": "normal",
+          "theme_font_role": null,
+          "weight": "bold"
+        },
+        {
+          "basis": "measured",
+          "family": "Times New Roman",
+          "font_evidence_state": "explicit_font",
+          "role": "title",
+          "script_role": "east_asian",
+          "size_pt": 23.0,
           "source_scope": "slide_layout",
           "style": "normal",
           "theme_font_role": null,
@@ -3262,7 +3310,259 @@
             "minor": {
               "latin": "Arial"
             }
-          }
+          },
+          "supplemental_fonts": [
+            {
+              "theme_font_role": "major",
+              "script_code": "Arab",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hebr",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Khmr",
+              "family": "MoolBoran"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Thai",
+              "family": "Angsana New"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Arab",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hebr",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Khmr",
+              "family": "DaunPenh"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Thai",
+              "family": "Cordia New"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            }
+          ]
         },
         {
           "theme_profile_id": "T002",
@@ -3347,7 +3647,259 @@
             "minor": {
               "latin": "Arial"
             }
-          }
+          },
+          "supplemental_fonts": [
+            {
+              "theme_font_role": "major",
+              "script_code": "Arab",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hebr",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Khmr",
+              "family": "MoolBoran"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Thai",
+              "family": "Angsana New"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Arab",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hebr",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Khmr",
+              "family": "DaunPenh"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Thai",
+              "family": "Cordia New"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            }
+          ]
         },
         {
           "theme_profile_id": "T003",
@@ -3432,7 +3984,259 @@
             "minor": {
               "latin": "Arial"
             }
-          }
+          },
+          "supplemental_fonts": [
+            {
+              "theme_font_role": "major",
+              "script_code": "Arab",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hebr",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Khmr",
+              "family": "MoolBoran"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Thai",
+              "family": "Angsana New"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Arab",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hebr",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Khmr",
+              "family": "DaunPenh"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Thai",
+              "family": "Cordia New"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            }
+          ]
         },
         {
           "theme_profile_id": "T004",
@@ -3517,7 +4321,279 @@
             "minor": {
               "latin": "Aptos"
             }
-          }
+          },
+          "supplemental_fonts": [
+            {
+              "theme_font_role": "major",
+              "script_code": "Arab",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Armn",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hans",
+              "family": "等线 Light"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hebr",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Jpan",
+              "family": "游ゴシック Light"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Khmr",
+              "family": "MoolBoran"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mymr",
+              "family": "Myanmar Text"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Thai",
+              "family": "Angsana New"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Arab",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Armn",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hans",
+              "family": "等线"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hebr",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Jpan",
+              "family": "游ゴシック"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Khmr",
+              "family": "DaunPenh"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mymr",
+              "family": "Myanmar Text"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Thai",
+              "family": "Cordia New"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            }
+          ]
         }
       ]
     },
@@ -3992,8 +5068,56 @@
           "family": "Arial",
           "font_evidence_state": "explicit_font",
           "role": "title",
+          "script_role": "complex_script",
+          "size_pt": 18.0,
+          "source_scope": "slide_layout",
+          "style": "normal",
+          "theme_font_role": null,
+          "weight": "bold"
+        },
+        {
+          "basis": "measured",
+          "family": "Arial",
+          "font_evidence_state": "explicit_font",
+          "role": "title",
+          "script_role": "east_asian",
+          "size_pt": 18.0,
+          "source_scope": "slide_layout",
+          "style": "normal",
+          "theme_font_role": null,
+          "weight": "bold"
+        },
+        {
+          "basis": "measured",
+          "family": "Arial",
+          "font_evidence_state": "explicit_font",
+          "role": "title",
           "script_role": "latin",
           "size_pt": 18.0,
+          "source_scope": "slide_layout",
+          "style": "normal",
+          "theme_font_role": null,
+          "weight": "bold"
+        },
+        {
+          "basis": "measured",
+          "family": "Times New Roman",
+          "font_evidence_state": "explicit_font",
+          "role": "title",
+          "script_role": "complex_script",
+          "size_pt": 23.0,
+          "source_scope": "slide_layout",
+          "style": "normal",
+          "theme_font_role": null,
+          "weight": "bold"
+        },
+        {
+          "basis": "measured",
+          "family": "Times New Roman",
+          "font_evidence_state": "explicit_font",
+          "role": "title",
+          "script_role": "east_asian",
+          "size_pt": 23.0,
           "source_scope": "slide_layout",
           "style": "normal",
           "theme_font_role": null,
@@ -6752,7 +7876,259 @@
             "minor": {
               "latin": "Arial"
             }
-          }
+          },
+          "supplemental_fonts": [
+            {
+              "theme_font_role": "major",
+              "script_code": "Arab",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hebr",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Khmr",
+              "family": "MoolBoran"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Thai",
+              "family": "Angsana New"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Arab",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hebr",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Khmr",
+              "family": "DaunPenh"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Thai",
+              "family": "Cordia New"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            }
+          ]
         },
         {
           "theme_profile_id": "T002",
@@ -6837,7 +8213,259 @@
             "minor": {
               "latin": "Arial"
             }
-          }
+          },
+          "supplemental_fonts": [
+            {
+              "theme_font_role": "major",
+              "script_code": "Arab",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hebr",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Khmr",
+              "family": "MoolBoran"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Thai",
+              "family": "Angsana New"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Arab",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hebr",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Khmr",
+              "family": "DaunPenh"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Thai",
+              "family": "Cordia New"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            }
+          ]
         },
         {
           "theme_profile_id": "T003",
@@ -6922,7 +8550,259 @@
             "minor": {
               "latin": "Arial"
             }
-          }
+          },
+          "supplemental_fonts": [
+            {
+              "theme_font_role": "major",
+              "script_code": "Arab",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hebr",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Khmr",
+              "family": "MoolBoran"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Thai",
+              "family": "Angsana New"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Arab",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hans",
+              "family": "宋体"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hebr",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Jpan",
+              "family": "ＭＳ Ｐゴシック"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Khmr",
+              "family": "DaunPenh"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Thai",
+              "family": "Cordia New"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            }
+          ]
         },
         {
           "theme_profile_id": "T004",
@@ -7007,7 +8887,279 @@
             "minor": {
               "latin": "Aptos"
             }
-          }
+          },
+          "supplemental_fonts": [
+            {
+              "theme_font_role": "major",
+              "script_code": "Arab",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Armn",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hans",
+              "family": "等线 Light"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Hebr",
+              "family": "Times New Roman"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Jpan",
+              "family": "游ゴシック Light"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Khmr",
+              "family": "MoolBoran"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Mymr",
+              "family": "Myanmar Text"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Thai",
+              "family": "Angsana New"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "major",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Arab",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Armn",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Beng",
+              "family": "Vrinda"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cans",
+              "family": "Euphemia"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Cher",
+              "family": "Plantagenet Cherokee"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Deva",
+              "family": "Mangal"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Ethi",
+              "family": "Nyala"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Geor",
+              "family": "Sylfaen"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Gujr",
+              "family": "Shruti"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Guru",
+              "family": "Raavi"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hang",
+              "family": "맑은 고딕"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hans",
+              "family": "等线"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hant",
+              "family": "新細明體"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Hebr",
+              "family": "Arial"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Jpan",
+              "family": "游ゴシック"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Khmr",
+              "family": "DaunPenh"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Knda",
+              "family": "Tunga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Laoo",
+              "family": "DokChampa"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mlym",
+              "family": "Kartika"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Mymr",
+              "family": "Myanmar Text"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Orya",
+              "family": "Kalinga"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Sinh",
+              "family": "Iskoola Pota"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Taml",
+              "family": "Latha"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Telu",
+              "family": "Gautami"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Thai",
+              "family": "Cordia New"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Tibt",
+              "family": "Microsoft Himalaya"
+            },
+            {
+              "theme_font_role": "minor",
+              "script_code": "Yiii",
+              "family": "Microsoft Yi Baiti"
+            }
+          ]
         }
       ]
     }
