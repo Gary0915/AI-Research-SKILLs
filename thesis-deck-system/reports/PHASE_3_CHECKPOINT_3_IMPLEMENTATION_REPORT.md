@@ -1,132 +1,97 @@
-# Phase 3 Checkpoint 3 — Implementation Report
+# Phase 3 Checkpoint 3 — Implementation Report (Revision)
 
 ## 1. Objective completed
 
-Implemented only the sanitized-domain Professor Visual Grammar resolver and
-Visual Style Governor calibration boundary. No private source access, A01–A18
-calibration, PPTX/template reconstruction, production figure work, benchmark,
-or acceptance deck was started.
+Corrected Checkpoint 3 only: the sanitized-domain Professor Visual Grammar
+Resolver and Visual Style Governor. No private alias was resolved; no private
+source, raw profile, render, PPTX, acceptance deck, A01–A18 calibration, or
+Phase 4 work was accessed or produced.
 
 ## 2. Architecture decisions
 
-- `phase3_checkpoint3.py` is a pure resolver: it accepts only the four
-  committed CP2 JSON inputs and exposes no private-fixture API.
-- Fixed asymmetric authority is encoded by token family: Primary 1 governs
-  content/history shell, Primary 3 governs cover/divider/footer/page number,
-  and Exemplar 2 supplies body-only composition evidence.
-- Structural existence is not preference: only active topology-referenced
-  themes and explicit/resolved typography can yield professor-derived tokens.
-- Unknown metrics, material-specific colours, unreviewed visual claims, native
-  acceptance, A01–A18, and deck fidelity remain explicitly unresolved/not run.
+- The resolver remains pure over the four committed CP2 artifacts.
+- CP3 QA now serializes execution-derived check evidence rather than a list of
+  literal PASS values.
+- Body metrics are resolved per compatible family, while package-wide metrics
+  are audit-only.
+- Referenced themes remain metadata unless actual authorized structural usage
+  supports a semantic style role. No theme palette is automatically promoted.
+- Safe content bounds are `insufficient_evidence` when CP2 did not provide two
+  defensible bounds; no fallback geometry is invented.
 
 ## 3. Files changed
 
-Added:
+Modified:
 
 - `packages/thesis-deck-system/src/thesis_deck_system/phase3_checkpoint3.py`
 - `packages/thesis-deck-system/tests/unit/test_phase3_checkpoint3.py`
-- `thesis-deck-system/schemas/professor-template-resolved.schema.json`
-- `thesis-deck-system/schemas/body-composition-profile.schema.json`
-- `thesis-deck-system/schemas/professor-visual-grammar-v3.schema.json`
-- `thesis-deck-system/schemas/resolver-evidence.schema.json`
-- `thesis-deck-system/schemas/checkpoint-3-qa.schema.json`
-- six CP3 resolver/grammar/QA artifacts under `thesis-deck-system/artifacts/phase3/`
+- six authorized CP3 artifacts under `thesis-deck-system/artifacts/phase3/`
+- six CP3 resolver/QA schemas under `thesis-deck-system/schemas/`
 - this report.
 
-Modified:
-
-- `packages/thesis-deck-system/src/thesis_deck_system/contracts.py`
-- `thesis-deck-system/schemas/visual-style-profile.schema.json`
-
-Deleted: none.
+Added: none. Deleted: none.
 
 ## 4. Behavior implemented
 
-### CP3-1
+### CP3-B1
 
-Added fail-closed resolver artifact contracts, CP3 execution evidence, and
-Checkpoint QA with zero private-access counters.
+Nineteen owning validators now execute against actual resolver inputs and
+outputs. Each serialized check contains typed facts (counts, identifiers, or
+statuses); aggregate status derives from their results. The QA schema accepts
+honest failure states.
 
-### CP3-2
+### CP3-B2
 
-The resolver rejects body descriptors containing shell fields and applies the
-fixed Primary-1 / Primary-3 / Exemplar-2 authority matrix.
+Closed nested schemas define typed arrays and values for shell tokens, variants,
+conflicts, family metrics, theme metadata, typography, figure grammar, governor
+tokens, and owning-check evidence. Mutation tests reject unexpected nested
+fields, malformed conflicts, and malformed typed values.
 
-### CP3-3
+### CP3-B3
 
-All resolved shell/body/style tokens include controlled evidence tier and
-provenance; provisional body evidence cannot upgrade itself to recurring.
+`body-composition-profile.json` has family-local distributions, ranges, robust
+centers, deterministic preferred descriptor IDs, outlier IDs, unavailable
+metrics, and audit-only global summaries. `other_insufficient_structural_evidence`
+is never reusable grammar.
 
-### CP3-4
+### CP3-B4
 
-Shell selection is deterministic and emits winner/loser/rule conflict records.
-Canvas incompatibility blocks resolution; colors remain separate tokens.
+Active themes are persisted as five descriptor-qualified metadata records and
+zero automatically promoted theme style tokens. Exemplar 2 remains body-only;
+it cannot create formal-shell palette authority.
 
-### CP3-5
+### CP3-B5
 
-Only descriptor-qualified active themes and explicit/resolved typography enter
-active grammar. Reference-only themes, supplemental mapping, unspecified,
-unknown, and inherited typography do not become preference.
+The Governor is now `partial_structural_calibration`, includes valid typography
+and family-scoped scientific-visual tokens, and carries origin, tier, authority,
+scope, supporting IDs, and resolver rule for every token. Coverage separates
+recurring/provisional professor-derived, fallback, unresolved, and reference-only
+metadata counts.
 
-### CP3-6
+### CP3-B6
 
-Body grammar preserves family support counts, confidence, observed metric
-ranges, medians, sample counts, and unavailable values without zero-imputation.
-
-### CP3-7
-
-The structural figure layer exposes only generic measured composition metrics.
-Hydrogel, electrode, heater, sensor, and interface colors are unresolved.
-
-### CP3-8
-
-Visual Style Governor tokens distinguish `professor_derived`, implementation
-fallback, and unresolved origins; fallback values do not increase coverage.
-
-### CP3-9
-
-Focused mutation/determinism tests cover shell/body isolation, source order,
-hard conflicts, tier promotion, theme/font exclusion, unavailable metrics,
-color non-blending, and fallback coverage.
-
-### CP3-10
-
-Persisted QA reports all status dimensions independently. Private qualitative
-review remains `blocked_visual_review`; acceptance deck, archetype calibration,
-and native PowerPoint acceptance remain `not_run`; production readiness is
-false.
-
-### CP3-11
-
-Fifteen owning checks are serialized in the execution evidence and determine
-aggregate status rather than prefilled PASS fields.
-
-### CP3-12
-
-CP3 never resolves, opens, hashes, or renders a private source. The committed
-outputs include stable aliases only through their existing sanitized inputs.
+Shell tokens preserve CP2 `support_by_scope`, container counts, variants, and
+supporting IDs. The resolved profile carries Exemplar-1 content layout→master
+topology, typed conflict loss evidence, and a safe-bounds result. Hypothesis /
+history remains insufficient without a direct motif.
 
 ## 5. Commands/tests run
 
-- RED: `python -m pytest packages/thesis-deck-system/tests/unit/test_phase3_checkpoint3.py -q` — 9 expected failures before module creation.
-- GREEN: same command — 9 passed.
-- CP1+CP2+CP3: `python -m pytest packages/thesis-deck-system/tests/unit/test_phase3_checkpoint1.py packages/thesis-deck-system/tests/unit/test_phase3_checkpoint2.py packages/thesis-deck-system/tests/unit/test_phase3_checkpoint3.py -q` — 144 passed.
-- CP3 artifacts were rebuilt from committed CP2 JSON and validated with Draft 2020-12 `FormatChecker`: 6 artifacts, 0 errors.
-- Disposable detached-worktree complete regression: `python -m pytest packages/thesis-deck-system/tests -q` — **244 passed, 0 failed**.
+- RED: `python -m pytest packages/thesis-deck-system/tests/unit/test_phase3_checkpoint3.py -q` — 15 new behavior failures against the prior implementation.
+- GREEN focused CP3: same command — **25 passed**.
+- CP1 + CP2 + CP3: `python -m pytest ...test_phase3_checkpoint1.py ...test_phase3_checkpoint2.py ...test_phase3_checkpoint3.py -q` — **160 passed**.
+- Rebuilt six CP3 artifacts from committed sanitized CP2 JSON only.
+- Draft 2020-12 `FormatChecker` validation — **6 artifacts passed**.
+- Disposable detached-worktree full regression: `python -m pytest packages/thesis-deck-system/tests -q` — **260 passed in 123.83s**.
+- `git diff --check`, repository/privacy scan, recursive schema-closure audit.
 
-### Regression artifact cleanup
+## 6. Test results
 
-- Previous reviewed allowlist size: **38**.
-- Phase 1 paths detected: **19 deleted + 19 modified**.
-- Deleted outside allowlist: **0**; modified outside allowlist: **0**; overlap: **0**.
-- Dirty Phase 1 union: **38**, an exact prior-allowlist match.
-- Restored from HEAD: **38** exact generated paths.
-- CP3 checkpoint was created before restore; CP3 changed-file set, hashes, and
-  tracked-text patch were preserved.
-- The complete regression ran in a disposable detached worktree, not this
-  implementation workspace.
+- Focused CP3: 25 passed, 0 failed.
+- CP1 + CP2 + CP3: 160 passed, 0 failed.
+- Full disposable regression: 260 passed, 0 failed.
 
-## 6. Artifacts produced
+## 7. Artifacts produced
 
 - `professor-template-resolved.json`
 - `body-composition-profile.json`
@@ -135,30 +100,22 @@ outputs include stable aliases only through their existing sanitized inputs.
 - `resolver-evidence.json`
 - `checkpoint-3-qa.json`
 
-## 7. Visual QA evidence
+## 8. Visual QA evidence
 
-No PPTX or render was produced. Private visual review remains
-`blocked_visual_review`; the resolver makes no qualitative PASS claim.
+No PPTX or render is authorized in Checkpoint 3. Private qualitative review is
+`blocked_visual_review`; acceptance deck visual fidelity is `not_run`.
 
-## 8. Scientific/provenance QA evidence
+## 9. Scientific/provenance QA evidence
 
-The resolver consumes no scientific source object, does not alter the Ledger,
-and does not introduce evidence, plots, images, claims, or citations.
-
-## 9. Resolver/QA evidence
-
-- Private alias-resolution/source-open/render attempts: **0 / 0 / 0**.
-- Shell conflicts are resolver records; incompatible canvases fail closed.
-- Active themes are descriptor-qualified and reference-only themes are excluded.
-- Material semantic colors: five unresolved tokens; no scientific meaning inferred.
-- The disposable regression candidate was the exact 16-file CP3 local change
-  set captured in the local-only checkpoint.
+CP3 introduced no scientific objects and does not read the Ledger. All source
+information is restricted to already committed sanitized structural descriptors.
+Private alias resolution/source-open/render attempts are **0 / 0 / 0**.
 
 ## 10. Known failures / technical debt
 
-- Private qualitative image review is blocked.
-- No A01–A18 calibration, reconstructed native template, PPTX, benchmark, or
-  acceptance deck exists; these are intentionally out of scope.
+Private qualitative review, A01–A18 calibration, native-template reconstruction,
+benchmarks, acceptance deck, and native PowerPoint acceptance remain deliberately
+out of scope. Safe content bounds remain insufficient rather than guessed.
 
 ## 11. Deviations from reviewer prompt
 
@@ -170,8 +127,8 @@ None.
 
 ## 13. Recommended next phase
 
-Stop at Checkpoint 3 and await reviewer approval before any calibration or
-template reconstruction checkpoint.
+Stop at Checkpoint 3 and await reviewer approval. Do not start calibration,
+template reconstruction, figure production, or acceptance-deck assembly.
 
 ```yaml
 codex_report:
@@ -179,24 +136,23 @@ codex_report:
   status: awaiting_review
   branch: codex/thesis-deck-system
   commit_sha: <sha-or-null>
-  files_added:
+  files_added: []
+  files_modified:
     - packages/thesis-deck-system/src/thesis_deck_system/phase3_checkpoint3.py
     - packages/thesis-deck-system/tests/unit/test_phase3_checkpoint3.py
-    - thesis-deck-system/schemas/professor-template-resolved.schema.json
+    - thesis-deck-system/artifacts/phase3/body-composition-profile.json
+    - thesis-deck-system/artifacts/phase3/checkpoint-3-qa.json
+    - thesis-deck-system/artifacts/phase3/professor-template-resolved.json
+    - thesis-deck-system/artifacts/phase3/professor-visual-grammar-v3.json
+    - thesis-deck-system/artifacts/phase3/resolver-evidence.json
+    - thesis-deck-system/artifacts/phase3/visual-style-profile.json
     - thesis-deck-system/schemas/body-composition-profile.schema.json
+    - thesis-deck-system/schemas/checkpoint-3-qa.schema.json
+    - thesis-deck-system/schemas/professor-template-resolved.schema.json
     - thesis-deck-system/schemas/professor-visual-grammar-v3.schema.json
     - thesis-deck-system/schemas/resolver-evidence.schema.json
-    - thesis-deck-system/schemas/checkpoint-3-qa.schema.json
-    - thesis-deck-system/artifacts/phase3/professor-template-resolved.json
-    - thesis-deck-system/artifacts/phase3/body-composition-profile.json
-    - thesis-deck-system/artifacts/phase3/professor-visual-grammar-v3.json
-    - thesis-deck-system/artifacts/phase3/visual-style-profile.json
-    - thesis-deck-system/artifacts/phase3/resolver-evidence.json
-    - thesis-deck-system/artifacts/phase3/checkpoint-3-qa.json
-    - thesis-deck-system/reports/PHASE_3_CHECKPOINT_3_IMPLEMENTATION_REPORT.md
-  files_modified:
-    - packages/thesis-deck-system/src/thesis_deck_system/contracts.py
     - thesis-deck-system/schemas/visual-style-profile.schema.json
+    - thesis-deck-system/reports/PHASE_3_CHECKPOINT_3_IMPLEMENTATION_REPORT.md
   files_deleted: []
   artifacts:
     - thesis-deck-system/artifacts/phase3/professor-template-resolved.json
@@ -210,13 +166,12 @@ codex_report:
     - focused CP3
     - CP1 plus CP2 plus CP3
     - complete disposable-worktree regression
-    - schema and FormatChecker validation
-    - repository privacy scan
-    - recursive schema closure audit
+    - schemas plus FormatChecker
+    - privacy scan and schema closure audit
   tests_passed:
-    - 9 focused CP3 tests
-    - 144 CP1 plus CP2 plus CP3 tests
-    - 244 complete regression tests
+    - 25 focused CP3 tests
+    - 160 CP1 plus CP2 plus CP3 tests
+    - 260 complete regression tests
   tests_failed: []
   known_failures:
     - private qualitative review blocked_visual_review

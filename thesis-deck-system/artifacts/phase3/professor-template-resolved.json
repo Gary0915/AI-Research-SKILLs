@@ -1,7 +1,129 @@
 {
   "conflicts": [],
+  "content_master_layout_topology": [
+    {
+      "basis": "measured",
+      "source_id": "L001",
+      "source_scope": "slide_layout",
+      "target_id": "M001"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L002",
+      "source_scope": "slide_layout",
+      "target_id": "M001"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L003",
+      "source_scope": "slide_layout",
+      "target_id": "M001"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L004",
+      "source_scope": "slide_layout",
+      "target_id": "M001"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L005",
+      "source_scope": "slide_layout",
+      "target_id": "M001"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L006",
+      "source_scope": "slide_layout",
+      "target_id": "M001"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L007",
+      "source_scope": "slide_layout",
+      "target_id": "M001"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L008",
+      "source_scope": "slide_layout",
+      "target_id": "M001"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L009",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L010",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L011",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L012",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L013",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L014",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L015",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L016",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L017",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L018",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    },
+    {
+      "basis": "measured",
+      "source_id": "L019",
+      "source_scope": "slide_layout",
+      "target_id": "M002"
+    }
+  ],
   "profile_id": "P3-RESOLVED-SHELL-001",
-  "schema_version": "1.0.0",
+  "safe_content_bounds": {
+    "resolver_rule_id": "CP3-SHELL-SAFE-BOUNDS-INTERSECTION",
+    "status": "insufficient_evidence",
+    "supporting_ids": [],
+    "value": null
+  },
+  "schema_version": "2.0.0",
   "shell_tokens": [
     {
       "authority_family": "formal_shell",
@@ -10,7 +132,8 @@
       "profile_id": "P3-TEMPLATE-PRIMARY-1",
       "resolver_rule_id": "CP3-SHELL-CANVAS-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "support_count": 1,
+      "support_by_scope": [],
+      "support_count": 19,
       "supporting_ids": [
         "P3-TEMPLATE-PRIMARY-1"
       ],
@@ -18,113 +141,487 @@
       "token_id": "shell-canvas",
       "value": {
         "height": 7.5,
+        "kind": "canvas",
         "width": 13.333333
-      }
+      },
+      "variants": []
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
       "profile_id": "P3-TEMPLATE-PRIMARY-1",
       "resolver_rule_id": "CP3-SHELL-CONTENT-TITLE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "support_count": 1,
+      "support_by_scope": [
+        {
+          "coverage_ratio": 0.842105,
+          "eligible_container_count": 19,
+          "occurrence_count": 16,
+          "source_container_count": 16,
+          "source_scope": "slide_layout",
+          "supporting_source_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L007",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L016",
+            "L017",
+            "L018",
+            "L019"
+          ]
+        },
+        {
+          "coverage_ratio": 1.0,
+          "eligible_container_count": 2,
+          "occurrence_count": 2,
+          "source_container_count": 2,
+          "source_scope": "slide_master",
+          "supporting_source_ids": [
+            "M001",
+            "M002"
+          ]
+        }
+      ],
+      "support_count": 18,
       "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-1"
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L007",
+        "L009",
+        "L010",
+        "L011",
+        "L012",
+        "L013",
+        "L014",
+        "L016",
+        "L017",
+        "L018",
+        "L019",
+        "M001",
+        "M002",
+        "R005"
       ],
       "token_family": "content_title",
       "token_id": "shell-content_title",
       "value": {
-        "basis": "measured",
-        "h": 0.193287,
-        "w": 0.8625,
-        "x": 0.06875,
-        "y": 0.053241
-      }
+        "geometry": {
+          "h": 0.193287,
+          "w": 0.8625,
+          "x": 0.06875,
+          "y": 0.053241
+        },
+        "kind": "geometry"
+      },
+      "variants": [
+        {
+          "region_id": "R005",
+          "supporting_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L007",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L016",
+            "L017",
+            "L018",
+            "L019",
+            "M001",
+            "M002",
+            "R005"
+          ],
+          "value": {
+            "geometry": {
+              "h": 0.193287,
+              "w": 0.8625,
+              "x": 0.06875,
+              "y": 0.053241
+            },
+            "kind": "geometry"
+          }
+        }
+      ]
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
+      "evidence_tier": "insufficient_evidence",
+      "origin": "unresolved",
       "profile_id": "P3-TEMPLATE-PRIMARY-1",
       "resolver_rule_id": "CP3-SHELL-HISTORY-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "support_count": 1,
-      "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-1"
-      ],
+      "support_by_scope": [],
+      "support_count": 0,
+      "supporting_ids": [],
       "token_family": "hypothesis_history",
       "token_id": "shell-hypothesis_history",
       "value": {
-        "basis": "measured",
-        "h": 0.248496,
-        "w": 0.725,
-        "x": 0.1375,
-        "y": 0.54595
-      }
+        "kind": "unavailable",
+        "value": null
+      },
+      "variants": []
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
       "resolver_rule_id": "CP3-SHELL-COVER-DIVIDER-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "support_count": 1,
+      "support_by_scope": [
+        {
+          "coverage_ratio": 0.888889,
+          "eligible_container_count": 18,
+          "occurrence_count": 16,
+          "source_container_count": 16,
+          "source_scope": "slide_layout",
+          "supporting_source_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L015",
+            "L016",
+            "L017",
+            "L018"
+          ]
+        },
+        {
+          "coverage_ratio": 1.0,
+          "eligible_container_count": 2,
+          "occurrence_count": 2,
+          "source_container_count": 2,
+          "source_scope": "slide_master",
+          "supporting_source_ids": [
+            "M001",
+            "M002"
+          ]
+        }
+      ],
+      "support_count": 18,
       "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-3"
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L007",
+        "L008",
+        "L009",
+        "L010",
+        "L011",
+        "L012",
+        "L013",
+        "L015",
+        "L016",
+        "L017",
+        "L018",
+        "M001",
+        "M002",
+        "R005"
       ],
       "token_family": "cover_divider_title",
       "token_id": "shell-cover_divider_title",
       "value": {
-        "basis": "measured",
-        "h": 0.193287,
-        "w": 0.8625,
-        "x": 0.06875,
-        "y": 0.053241
-      }
+        "geometry": {
+          "h": 0.193287,
+          "w": 0.8625,
+          "x": 0.06875,
+          "y": 0.053241
+        },
+        "kind": "geometry"
+      },
+      "variants": [
+        {
+          "region_id": "R005",
+          "supporting_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L015",
+            "L016",
+            "L017",
+            "L018",
+            "M001",
+            "M002",
+            "R005"
+          ],
+          "value": {
+            "geometry": {
+              "h": 0.193287,
+              "w": 0.8625,
+              "x": 0.06875,
+              "y": 0.053241
+            },
+            "kind": "geometry"
+          }
+        }
+      ]
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
       "resolver_rule_id": "CP3-SHELL-FOOTER-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "support_count": 1,
+      "support_by_scope": [
+        {
+          "coverage_ratio": 0.888889,
+          "eligible_container_count": 18,
+          "occurrence_count": 16,
+          "source_container_count": 16,
+          "source_scope": "slide_layout",
+          "supporting_source_ids": [
+            "L003",
+            "L004",
+            "L005",
+            "L006",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L015",
+            "L016",
+            "L017",
+            "L018"
+          ]
+        },
+        {
+          "coverage_ratio": 0.5,
+          "eligible_container_count": 2,
+          "occurrence_count": 1,
+          "source_container_count": 1,
+          "source_scope": "slide_master",
+          "supporting_source_ids": [
+            "M002"
+          ]
+        }
+      ],
+      "support_count": 17,
       "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-3"
+        "L003",
+        "L004",
+        "L005",
+        "L006",
+        "L007",
+        "L008",
+        "L009",
+        "L010",
+        "L011",
+        "L012",
+        "L013",
+        "L014",
+        "L015",
+        "L016",
+        "L017",
+        "L018",
+        "M002",
+        "R002"
       ],
       "token_family": "footer",
       "token_id": "shell-footer",
       "value": {
-        "basis": "measured",
-        "h": 0.053241,
-        "w": 0.3375,
-        "x": 0.33125,
-        "y": 0.926852
-      }
+        "geometry": {
+          "h": 0.053241,
+          "w": 0.3375,
+          "x": 0.33125,
+          "y": 0.926852
+        },
+        "kind": "geometry"
+      },
+      "variants": [
+        {
+          "region_id": "R002",
+          "supporting_ids": [
+            "L003",
+            "L004",
+            "L005",
+            "L006",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L015",
+            "L016",
+            "L017",
+            "L018",
+            "M002",
+            "R002"
+          ],
+          "value": {
+            "geometry": {
+              "h": 0.053241,
+              "w": 0.3375,
+              "x": 0.33125,
+              "y": 0.926852
+            },
+            "kind": "geometry"
+          }
+        }
+      ]
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
       "resolver_rule_id": "CP3-SHELL-PAGE-NUMBER-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "support_count": 1,
+      "support_by_scope": [
+        {
+          "coverage_ratio": 1.0,
+          "eligible_container_count": 18,
+          "occurrence_count": 18,
+          "source_container_count": 18,
+          "source_scope": "slide_layout",
+          "supporting_source_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L006",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L015",
+            "L016",
+            "L017",
+            "L018"
+          ]
+        },
+        {
+          "coverage_ratio": 1.0,
+          "eligible_container_count": 2,
+          "occurrence_count": 2,
+          "source_container_count": 2,
+          "source_scope": "slide_master",
+          "supporting_source_ids": [
+            "M001",
+            "M002"
+          ]
+        }
+      ],
+      "support_count": 20,
       "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-3"
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L006",
+        "L007",
+        "L008",
+        "L009",
+        "L010",
+        "L011",
+        "L012",
+        "L013",
+        "L014",
+        "L015",
+        "L016",
+        "L017",
+        "L018",
+        "M001",
+        "M002",
+        "R003"
       ],
       "token_family": "page_number",
       "token_id": "shell-page_number",
       "value": {
-        "basis": "measured",
-        "h": 0.053241,
-        "w": 0.225,
-        "x": 0.70625,
-        "y": 0.926852
-      }
+        "geometry": {
+          "h": 0.053241,
+          "w": 0.225,
+          "x": 0.70625,
+          "y": 0.926852
+        },
+        "kind": "geometry"
+      },
+      "variants": [
+        {
+          "region_id": "R003",
+          "supporting_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L006",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L015",
+            "L016",
+            "L017",
+            "L018",
+            "M001",
+            "M002",
+            "R003"
+          ],
+          "value": {
+            "geometry": {
+              "h": 0.053241,
+              "w": 0.225,
+              "x": 0.70625,
+              "y": 0.926852
+            },
+            "kind": "geometry"
+          }
+        }
+      ]
     },
     {
       "authority_family": "formal_shell",
@@ -133,11 +630,16 @@
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
       "resolver_rule_id": "CP3-SHELL-NAVIGATION-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "support_by_scope": [],
       "support_count": 0,
       "supporting_ids": [],
       "token_family": "navigation",
       "token_id": "shell-navigation",
-      "value": null
+      "value": {
+        "kind": "unavailable",
+        "value": null
+      },
+      "variants": []
     }
   ],
   "status": "pass"

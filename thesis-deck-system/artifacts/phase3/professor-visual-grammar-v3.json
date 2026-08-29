@@ -1,823 +1,1227 @@
 {
-  "active_theme_tokens": [
+  "active_theme_metadata": [
     {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
+      "authority_state": "active_professor_style",
+      "metadata_id": "theme-meta-p3-layout-exemplar-2-t001",
+      "palette": [
+        {
+          "resolved_rgb": "156082",
+          "theme_token": "accent1"
+        },
+        {
+          "resolved_rgb": "E97132",
+          "theme_token": "accent2"
+        },
+        {
+          "resolved_rgb": "196B24",
+          "theme_token": "accent3"
+        },
+        {
+          "resolved_rgb": "0F9ED5",
+          "theme_token": "accent4"
+        },
+        {
+          "resolved_rgb": "A02B93",
+          "theme_token": "accent5"
+        },
+        {
+          "resolved_rgb": "4EA72E",
+          "theme_token": "accent6"
+        },
+        {
+          "resolved_rgb": "000000",
+          "theme_token": "dk1"
+        },
+        {
+          "resolved_rgb": "0E2841",
+          "theme_token": "dk2"
+        },
+        {
+          "resolved_rgb": "96607D",
+          "theme_token": "folhlink"
+        },
+        {
+          "resolved_rgb": "467886",
+          "theme_token": "hlink"
+        },
+        {
+          "resolved_rgb": "FFFFFF",
+          "theme_token": "lt1"
+        },
+        {
+          "resolved_rgb": "E8E8E8",
+          "theme_token": "lt2"
+        }
+      ],
       "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
+      "status": "reference_metadata",
       "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-accent1",
-      "value": "156082"
+      "usage_state": "referenced"
     },
     {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-accent2",
-      "value": "E97132"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-accent3",
-      "value": "196B24"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-accent4",
-      "value": "0F9ED5"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-accent5",
-      "value": "A02B93"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-accent6",
-      "value": "4EA72E"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-dk1",
-      "value": "000000"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-dk2",
-      "value": "0E2841"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-folhlink",
-      "value": "96607D"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-hlink",
-      "value": "467886"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-lt1",
-      "value": "FFFFFF"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-layout-exemplar-2-t001-lt2",
-      "value": "E8E8E8"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
+      "authority_state": "active_professor_style",
+      "metadata_id": "theme-meta-p3-template-primary-1-t001",
+      "palette": [
+        {
+          "resolved_rgb": "4F81BD",
+          "theme_token": "accent1"
+        },
+        {
+          "resolved_rgb": "C0504D",
+          "theme_token": "accent2"
+        },
+        {
+          "resolved_rgb": "9BBB59",
+          "theme_token": "accent3"
+        },
+        {
+          "resolved_rgb": "8064A2",
+          "theme_token": "accent4"
+        },
+        {
+          "resolved_rgb": "4BACC6",
+          "theme_token": "accent5"
+        },
+        {
+          "resolved_rgb": "F79646",
+          "theme_token": "accent6"
+        },
+        {
+          "resolved_rgb": "000000",
+          "theme_token": "dk1"
+        },
+        {
+          "resolved_rgb": "1F497D",
+          "theme_token": "dk2"
+        },
+        {
+          "resolved_rgb": "800080",
+          "theme_token": "folhlink"
+        },
+        {
+          "resolved_rgb": "0000FF",
+          "theme_token": "hlink"
+        },
+        {
+          "resolved_rgb": "FFFFFF",
+          "theme_token": "lt1"
+        },
+        {
+          "resolved_rgb": "EEECE1",
+          "theme_token": "lt2"
+        }
+      ],
       "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
+      "status": "reference_metadata",
       "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-accent1",
-      "value": "4F81BD"
+      "usage_state": "referenced"
     },
     {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
+      "authority_state": "active_professor_style",
+      "metadata_id": "theme-meta-p3-template-primary-1-t002",
+      "palette": [
+        {
+          "resolved_rgb": "4472C4",
+          "theme_token": "accent1"
+        },
+        {
+          "resolved_rgb": "ED7D31",
+          "theme_token": "accent2"
+        },
+        {
+          "resolved_rgb": "A5A5A5",
+          "theme_token": "accent3"
+        },
+        {
+          "resolved_rgb": "FFC000",
+          "theme_token": "accent4"
+        },
+        {
+          "resolved_rgb": "5B9BD5",
+          "theme_token": "accent5"
+        },
+        {
+          "resolved_rgb": "70AD47",
+          "theme_token": "accent6"
+        },
+        {
+          "resolved_rgb": "000000",
+          "theme_token": "dk1"
+        },
+        {
+          "resolved_rgb": "44546A",
+          "theme_token": "dk2"
+        },
+        {
+          "resolved_rgb": "954F72",
+          "theme_token": "folhlink"
+        },
+        {
+          "resolved_rgb": "0563C1",
+          "theme_token": "hlink"
+        },
+        {
+          "resolved_rgb": "FFFFFF",
+          "theme_token": "lt1"
+        },
+        {
+          "resolved_rgb": "E7E6E6",
+          "theme_token": "lt2"
+        }
+      ],
       "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
+      "status": "reference_metadata",
+      "theme_profile_id": "T002",
+      "usage_state": "referenced"
+    },
+    {
+      "authority_state": "active_professor_style",
+      "metadata_id": "theme-meta-p3-template-primary-3-t001",
+      "palette": [
+        {
+          "resolved_rgb": "4F81BD",
+          "theme_token": "accent1"
+        },
+        {
+          "resolved_rgb": "C0504D",
+          "theme_token": "accent2"
+        },
+        {
+          "resolved_rgb": "9BBB59",
+          "theme_token": "accent3"
+        },
+        {
+          "resolved_rgb": "8064A2",
+          "theme_token": "accent4"
+        },
+        {
+          "resolved_rgb": "4BACC6",
+          "theme_token": "accent5"
+        },
+        {
+          "resolved_rgb": "F79646",
+          "theme_token": "accent6"
+        },
+        {
+          "resolved_rgb": "000000",
+          "theme_token": "dk1"
+        },
+        {
+          "resolved_rgb": "1F497D",
+          "theme_token": "dk2"
+        },
+        {
+          "resolved_rgb": "800080",
+          "theme_token": "folhlink"
+        },
+        {
+          "resolved_rgb": "0000FF",
+          "theme_token": "hlink"
+        },
+        {
+          "resolved_rgb": "FFFFFF",
+          "theme_token": "lt1"
+        },
+        {
+          "resolved_rgb": "EEECE1",
+          "theme_token": "lt2"
+        }
+      ],
+      "profile_id": "P3-TEMPLATE-PRIMARY-3",
+      "status": "reference_metadata",
       "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-accent2",
-      "value": "C0504D"
+      "usage_state": "referenced"
     },
     {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-accent3",
-      "value": "9BBB59"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-accent4",
-      "value": "8064A2"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-accent5",
-      "value": "4BACC6"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-accent6",
-      "value": "F79646"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-dk1",
-      "value": "000000"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-dk2",
-      "value": "1F497D"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-folhlink",
-      "value": "800080"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-hlink",
-      "value": "0000FF"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-lt1",
-      "value": "FFFFFF"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-1-t001-lt2",
-      "value": "EEECE1"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-accent1",
-      "value": "4472C4"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-accent2",
-      "value": "ED7D31"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-accent3",
-      "value": "A5A5A5"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-accent4",
-      "value": "FFC000"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-accent5",
-      "value": "5B9BD5"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-accent6",
-      "value": "70AD47"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-dk1",
-      "value": "000000"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-dk2",
-      "value": "44546A"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-folhlink",
-      "value": "954F72"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-hlink",
-      "value": "0563C1"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-lt1",
-      "value": "FFFFFF"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-1",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-1-t002-lt2",
-      "value": "E7E6E6"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
+      "authority_state": "active_professor_style",
+      "metadata_id": "theme-meta-p3-template-primary-3-t002",
+      "palette": [
+        {
+          "resolved_rgb": "4472C4",
+          "theme_token": "accent1"
+        },
+        {
+          "resolved_rgb": "ED7D31",
+          "theme_token": "accent2"
+        },
+        {
+          "resolved_rgb": "A5A5A5",
+          "theme_token": "accent3"
+        },
+        {
+          "resolved_rgb": "FFC000",
+          "theme_token": "accent4"
+        },
+        {
+          "resolved_rgb": "5B9BD5",
+          "theme_token": "accent5"
+        },
+        {
+          "resolved_rgb": "70AD47",
+          "theme_token": "accent6"
+        },
+        {
+          "resolved_rgb": "000000",
+          "theme_token": "dk1"
+        },
+        {
+          "resolved_rgb": "44546A",
+          "theme_token": "dk2"
+        },
+        {
+          "resolved_rgb": "954F72",
+          "theme_token": "folhlink"
+        },
+        {
+          "resolved_rgb": "0563C1",
+          "theme_token": "hlink"
+        },
+        {
+          "resolved_rgb": "FFFFFF",
+          "theme_token": "lt1"
+        },
+        {
+          "resolved_rgb": "E7E6E6",
+          "theme_token": "lt2"
+        }
+      ],
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-accent1",
-      "value": "4F81BD"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-accent2",
-      "value": "C0504D"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-accent3",
-      "value": "9BBB59"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-accent4",
-      "value": "8064A2"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-accent5",
-      "value": "4BACC6"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-accent6",
-      "value": "F79646"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-dk1",
-      "value": "000000"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-dk2",
-      "value": "1F497D"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-folhlink",
-      "value": "800080"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-hlink",
-      "value": "0000FF"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-lt1",
-      "value": "FFFFFF"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T001",
-      "token_id": "theme-p3-template-primary-3-t001-lt2",
-      "value": "EEECE1"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
+      "status": "reference_metadata",
       "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-accent1",
-      "value": "4472C4"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-accent2",
-      "value": "ED7D31"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-accent3",
-      "value": "A5A5A5"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-accent4",
-      "value": "FFC000"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-accent5",
-      "value": "5B9BD5"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-accent6",
-      "value": "70AD47"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-dk1",
-      "value": "000000"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-dk2",
-      "value": "44546A"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-folhlink",
-      "value": "954F72"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-hlink",
-      "value": "0563C1"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-lt1",
-      "value": "FFFFFF"
-    },
-    {
-      "evidence_tier": "recurring_pattern",
-      "origin": "professor_derived",
-      "profile_id": "P3-TEMPLATE-PRIMARY-3",
-      "theme_authority": "active_professor_style",
-      "theme_profile_id": "T002",
-      "token_id": "theme-p3-template-primary-3-t002-lt2",
-      "value": "E7E6E6"
+      "usage_state": "referenced"
     }
   ],
+  "active_theme_tokens": [],
   "body_composition_rules": [
     {
       "evidence_tier": "single_example_provisional",
       "family": "image_matrix",
       "family_id": "body-image_matrix",
+      "metric_distributions": [
+        {
+          "availability": "available",
+          "metric": "annotation_density",
+          "observed_range": [
+            2.285714,
+            2.285714
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 2.285714,
+          "sample_count": 1
+        },
+        {
+          "availability": "available",
+          "metric": "callout_candidate_count",
+          "observed_range": [
+            1.0,
+            1.0
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 1.0,
+          "sample_count": 1
+        },
+        {
+          "availability": "available",
+          "metric": "caption_candidate_count",
+          "observed_range": [
+            8.0,
+            8.0
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 8.0,
+          "sample_count": 1
+        },
+        {
+          "availability": "available",
+          "metric": "comparison_symmetry",
+          "observed_range": [
+            1.0,
+            1.0
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 1.0,
+          "sample_count": 1
+        },
+        {
+          "availability": "available",
+          "metric": "dominant_figure_ratio",
+          "observed_range": [
+            0.535007,
+            0.535007
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 0.535007,
+          "sample_count": 1
+        },
+        {
+          "availability": "available",
+          "metric": "figure_area_ratio",
+          "observed_range": [
+            0.323105,
+            0.323105
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 0.323105,
+          "sample_count": 1
+        },
+        {
+          "availability": "available",
+          "metric": "figure_text_ratio",
+          "observed_range": [
+            0.824037,
+            0.824037
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 0.824037,
+          "sample_count": 1
+        },
+        {
+          "availability": "unavailable",
+          "metric": "matrix_columns",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "matrix_rows",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "available",
+          "metric": "panel_count",
+          "observed_range": [
+            7.0,
+            7.0
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 7.0,
+          "sample_count": 1
+        },
+        {
+          "availability": "unavailable",
+          "metric": "photo_schematic_relation",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "available",
+          "metric": "text_area_ratio",
+          "observed_range": [
+            0.3921,
+            0.3921
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 0.3921,
+          "sample_count": 1
+        },
+        {
+          "availability": "available",
+          "metric": "whitespace_fraction",
+          "observed_range": [
+            0.457658,
+            0.457658
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL011",
+          "robust_center": 0.457658,
+          "sample_count": 1
+        }
+      ],
+      "outlier_descriptor_ids": [],
+      "preferred_descriptor_id": "SL011",
       "sample_count": 1,
       "source_confidence": "structurally_supported",
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
       "status": "provisional",
       "supporting_descriptor_ids": [
-        "P3-LAYOUT-EXEMPLAR-2-SL011"
+        "SL011"
+      ],
+      "unavailable_metrics": [
+        "matrix_columns",
+        "matrix_rows",
+        "photo_schematic_relation"
       ]
     },
     {
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "insufficient_evidence",
       "family": "other_insufficient_structural_evidence",
       "family_id": "body-other_insufficient_structural_evidence",
+      "metric_distributions": [
+        {
+          "availability": "available",
+          "metric": "annotation_density",
+          "observed_range": [
+            2.0,
+            42.0
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL004",
+          "robust_center": 17.5,
+          "sample_count": 6
+        },
+        {
+          "availability": "available",
+          "metric": "callout_candidate_count",
+          "observed_range": [
+            1.0,
+            3.0
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL004",
+          "robust_center": 2.0,
+          "sample_count": 4
+        },
+        {
+          "availability": "unavailable",
+          "metric": "caption_candidate_count",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "comparison_symmetry",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "dominant_figure_ratio",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "figure_area_ratio",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "figure_text_ratio",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "matrix_columns",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "matrix_rows",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "panel_count",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "photo_schematic_relation",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "available",
+          "metric": "text_area_ratio",
+          "observed_range": [
+            0.169675,
+            0.408416
+          ],
+          "outlier_descriptor_ids": [
+            "SL002",
+            "SL004"
+          ],
+          "preferred_descriptor_id": "SL001",
+          "robust_center": 0.22281050000000002,
+          "sample_count": 6
+        },
+        {
+          "availability": "available",
+          "metric": "whitespace_fraction",
+          "observed_range": [
+            0.570021,
+            0.829487
+          ],
+          "outlier_descriptor_ids": [
+            "SL002",
+            "SL004"
+          ],
+          "preferred_descriptor_id": "SL001",
+          "robust_center": 0.7771895,
+          "sample_count": 6
+        }
+      ],
+      "outlier_descriptor_ids": [
+        "SL002",
+        "SL004"
+      ],
+      "preferred_descriptor_id": "SL004",
       "sample_count": 6,
-      "source_confidence": "provisional",
+      "source_confidence": "insufficient_structural_evidence",
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
-      "status": "provisional",
+      "status": "insufficient",
       "supporting_descriptor_ids": [
-        "P3-LAYOUT-EXEMPLAR-2-SL001",
-        "P3-LAYOUT-EXEMPLAR-2-SL002",
-        "P3-LAYOUT-EXEMPLAR-2-SL004",
-        "P3-LAYOUT-EXEMPLAR-2-SL005",
-        "P3-LAYOUT-EXEMPLAR-2-SL007",
-        "P3-LAYOUT-EXEMPLAR-2-SL009"
+        "SL001",
+        "SL002",
+        "SL004",
+        "SL005",
+        "SL007",
+        "SL009"
+      ],
+      "unavailable_metrics": [
+        "caption_candidate_count",
+        "comparison_symmetry",
+        "dominant_figure_ratio",
+        "figure_area_ratio",
+        "figure_text_ratio",
+        "matrix_columns",
+        "matrix_rows",
+        "panel_count",
+        "photo_schematic_relation"
       ]
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "result_single",
       "family_id": "body-result_single",
+      "metric_distributions": [
+        {
+          "availability": "available",
+          "metric": "annotation_density",
+          "observed_range": [
+            0.5,
+            98.0
+          ],
+          "outlier_descriptor_ids": [
+            "SL008"
+          ],
+          "preferred_descriptor_id": "SL003",
+          "robust_center": 8.0,
+          "sample_count": 6
+        },
+        {
+          "availability": "available",
+          "metric": "callout_candidate_count",
+          "observed_range": [
+            1.0,
+            4.0
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL003",
+          "robust_center": 1.0,
+          "sample_count": 4
+        },
+        {
+          "availability": "available",
+          "metric": "caption_candidate_count",
+          "observed_range": [
+            1.0,
+            7.0
+          ],
+          "outlier_descriptor_ids": [
+            "SL008"
+          ],
+          "preferred_descriptor_id": "SL006",
+          "robust_center": 3.0,
+          "sample_count": 4
+        },
+        {
+          "availability": "unavailable",
+          "metric": "comparison_symmetry",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "available",
+          "metric": "dominant_figure_ratio",
+          "observed_range": [
+            0.518366,
+            1.000024
+          ],
+          "outlier_descriptor_ids": [
+            "SL012",
+            "SL013"
+          ],
+          "preferred_descriptor_id": "SL010",
+          "robust_center": 1.0000005,
+          "sample_count": 6
+        },
+        {
+          "availability": "available",
+          "metric": "figure_area_ratio",
+          "observed_range": [
+            0.011139,
+            0.446961
+          ],
+          "outlier_descriptor_ids": [
+            "SL013"
+          ],
+          "preferred_descriptor_id": "SL003",
+          "robust_center": 0.17894,
+          "sample_count": 6
+        },
+        {
+          "availability": "available",
+          "metric": "figure_text_ratio",
+          "observed_range": [
+            0.046539,
+            6.639547
+          ],
+          "outlier_descriptor_ids": [
+            "SL013"
+          ],
+          "preferred_descriptor_id": "SL010",
+          "robust_center": 0.7639009999999999,
+          "sample_count": 6
+        },
+        {
+          "availability": "unavailable",
+          "metric": "matrix_columns",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "matrix_rows",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "panel_count",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "unavailable",
+          "metric": "photo_schematic_relation",
+          "observed_range": null,
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": null,
+          "robust_center": null,
+          "sample_count": 0
+        },
+        {
+          "availability": "available",
+          "metric": "text_area_ratio",
+          "observed_range": [
+            0.067318,
+            0.417407
+          ],
+          "outlier_descriptor_ids": [
+            "SL010"
+          ],
+          "preferred_descriptor_id": "SL008",
+          "robust_center": 0.189371,
+          "sample_count": 6
+        },
+        {
+          "availability": "available",
+          "metric": "whitespace_fraction",
+          "observed_range": [
+            0.485721,
+            0.772726
+          ],
+          "outlier_descriptor_ids": [],
+          "preferred_descriptor_id": "SL003",
+          "robust_center": 0.645755,
+          "sample_count": 6
+        }
+      ],
+      "outlier_descriptor_ids": [
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "preferred_descriptor_id": "SL010",
       "sample_count": 6,
       "source_confidence": "provisional",
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
       "status": "provisional",
       "supporting_descriptor_ids": [
-        "P3-LAYOUT-EXEMPLAR-2-SL003",
-        "P3-LAYOUT-EXEMPLAR-2-SL006",
-        "P3-LAYOUT-EXEMPLAR-2-SL008",
-        "P3-LAYOUT-EXEMPLAR-2-SL010",
-        "P3-LAYOUT-EXEMPLAR-2-SL012",
-        "P3-LAYOUT-EXEMPLAR-2-SL013"
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "unavailable_metrics": [
+        "comparison_symmetry",
+        "matrix_columns",
+        "matrix_rows",
+        "panel_count",
+        "photo_schematic_relation"
       ]
     }
   ],
   "figure_grammar": [
     {
-      "availability": "available",
-      "evidence_tier": "recurring_pattern",
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
       "metric": "annotation_density",
-      "observed_range": [
-        0.5,
-        98.0
-      ],
       "origin": "professor_derived",
-      "sample_count": 13,
-      "supporting_descriptor_ids": [
-        "SL001",
-        "SL002",
-        "SL003",
-        "SL004",
-        "SL005",
-        "SL006",
-        "SL007",
-        "SL008",
-        "SL009",
-        "SL010",
-        "SL011",
-        "SL012",
-        "SL013"
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL011"
       ],
-      "token_id": "body-metric-annotation_density",
-      "value": 11.0
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-annotation_density",
+      "value": {
+        "center": 2.285714,
+        "kind": "range",
+        "maximum": 2.285714,
+        "minimum": 2.285714
+      }
     },
     {
-      "availability": "available",
-      "evidence_tier": "recurring_pattern",
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
       "metric": "callout_candidate_count",
-      "observed_range": [
-        1.0,
-        4.0
-      ],
       "origin": "professor_derived",
-      "sample_count": 9,
-      "supporting_descriptor_ids": [
-        "SL003",
-        "SL004",
-        "SL005",
-        "SL007",
-        "SL008",
-        "SL009",
-        "SL010",
-        "SL011",
-        "SL012"
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL011"
       ],
-      "token_id": "body-metric-callout_candidate_count",
-      "value": 1.0
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-callout_candidate_count",
+      "value": {
+        "center": 1.0,
+        "kind": "range",
+        "maximum": 1.0,
+        "minimum": 1.0
+      }
     },
     {
-      "availability": "available",
-      "evidence_tier": "recurring_pattern",
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
       "metric": "caption_candidate_count",
-      "observed_range": [
-        1.0,
-        8.0
-      ],
       "origin": "professor_derived",
-      "sample_count": 5,
-      "supporting_descriptor_ids": [
-        "SL003",
-        "SL006",
-        "SL008",
-        "SL011",
-        "SL012"
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL011"
       ],
-      "token_id": "body-metric-caption_candidate_count",
-      "value": 3.0
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-caption_candidate_count",
+      "value": {
+        "center": 8.0,
+        "kind": "range",
+        "maximum": 8.0,
+        "minimum": 8.0
+      }
     },
     {
-      "availability": "available",
       "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
       "metric": "comparison_symmetry",
-      "observed_range": [
-        1.0,
-        1.0
-      ],
       "origin": "professor_derived",
-      "sample_count": 1,
-      "supporting_descriptor_ids": [
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
         "SL011"
       ],
-      "token_id": "body-metric-comparison_symmetry",
-      "value": 1.0
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-comparison_symmetry",
+      "value": {
+        "center": 1.0,
+        "kind": "range",
+        "maximum": 1.0,
+        "minimum": 1.0
+      }
     },
     {
-      "availability": "available",
-      "evidence_tier": "recurring_pattern",
-      "metric": "dominant_figure_ratio",
-      "observed_range": [
-        0.518366,
-        1.000024
-      ],
-      "origin": "professor_derived",
-      "sample_count": 7,
-      "supporting_descriptor_ids": [
-        "SL003",
-        "SL006",
-        "SL008",
-        "SL010",
-        "SL011",
-        "SL012",
-        "SL013"
-      ],
-      "token_id": "body-metric-dominant_figure_ratio",
-      "value": 1.0
-    },
-    {
-      "availability": "available",
-      "evidence_tier": "recurring_pattern",
-      "metric": "figure_area_ratio",
-      "observed_range": [
-        0.011139,
-        0.446961
-      ],
-      "origin": "professor_derived",
-      "sample_count": 7,
-      "supporting_descriptor_ids": [
-        "SL003",
-        "SL006",
-        "SL008",
-        "SL010",
-        "SL011",
-        "SL012",
-        "SL013"
-      ],
-      "token_id": "body-metric-figure_area_ratio",
-      "value": 0.184423
-    },
-    {
-      "availability": "available",
-      "evidence_tier": "recurring_pattern",
-      "metric": "figure_text_ratio",
-      "observed_range": [
-        0.046539,
-        6.639547
-      ],
-      "origin": "professor_derived",
-      "sample_count": 7,
-      "supporting_descriptor_ids": [
-        "SL003",
-        "SL006",
-        "SL008",
-        "SL010",
-        "SL011",
-        "SL012",
-        "SL013"
-      ],
-      "token_id": "body-metric-figure_text_ratio",
-      "value": 0.824037
-    },
-    {
-      "availability": "available",
       "evidence_tier": "single_example_provisional",
-      "metric": "panel_count",
-      "observed_range": [
-        7.0,
-        7.0
-      ],
+      "family": "image_matrix",
+      "metric": "dominant_figure_ratio",
       "origin": "professor_derived",
-      "sample_count": 1,
-      "supporting_descriptor_ids": [
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
         "SL011"
       ],
-      "token_id": "body-metric-panel_count",
-      "value": 7.0
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-dominant_figure_ratio",
+      "value": {
+        "center": 0.535007,
+        "kind": "range",
+        "maximum": 0.535007,
+        "minimum": 0.535007
+      }
     },
     {
-      "availability": "available",
-      "evidence_tier": "recurring_pattern",
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
+      "metric": "figure_area_ratio",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL011"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-figure_area_ratio",
+      "value": {
+        "center": 0.323105,
+        "kind": "range",
+        "maximum": 0.323105,
+        "minimum": 0.323105
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
+      "metric": "figure_text_ratio",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL011"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-figure_text_ratio",
+      "value": {
+        "center": 0.824037,
+        "kind": "range",
+        "maximum": 0.824037,
+        "minimum": 0.824037
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
+      "metric": "panel_count",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL011"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-panel_count",
+      "value": {
+        "center": 7.0,
+        "kind": "range",
+        "maximum": 7.0,
+        "minimum": 7.0
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
       "metric": "text_area_ratio",
-      "observed_range": [
-        0.067318,
-        0.417407
-      ],
       "origin": "professor_derived",
-      "sample_count": 13,
-      "supporting_descriptor_ids": [
-        "SL001",
-        "SL002",
-        "SL003",
-        "SL004",
-        "SL005",
-        "SL006",
-        "SL007",
-        "SL008",
-        "SL009",
-        "SL010",
-        "SL011",
-        "SL012",
-        "SL013"
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL011"
       ],
-      "token_id": "body-metric-text_area_ratio",
-      "value": 0.207766
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-text_area_ratio",
+      "value": {
+        "center": 0.3921,
+        "kind": "range",
+        "maximum": 0.3921,
+        "minimum": 0.3921
+      }
     },
     {
-      "availability": "available",
-      "evidence_tier": "recurring_pattern",
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
       "metric": "whitespace_fraction",
-      "observed_range": [
-        0.457658,
-        0.829487
-      ],
       "origin": "professor_derived",
-      "sample_count": 13,
-      "supporting_descriptor_ids": [
-        "SL001",
-        "SL002",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL011"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-image_matrix-whitespace_fraction",
+      "value": {
+        "center": 0.457658,
+        "kind": "range",
+        "maximum": 0.457658,
+        "minimum": 0.457658
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "metric": "annotation_density",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
         "SL003",
-        "SL004",
-        "SL005",
         "SL006",
-        "SL007",
         "SL008",
-        "SL009",
         "SL010",
-        "SL011",
         "SL012",
         "SL013"
       ],
-      "token_id": "body-metric-whitespace_fraction",
-      "value": 0.669828
+      "token_family": "figure_metric",
+      "token_id": "figure-result_single-annotation_density",
+      "value": {
+        "center": 8.0,
+        "kind": "range",
+        "maximum": 98.0,
+        "minimum": 0.5
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "metric": "callout_candidate_count",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-result_single-callout_candidate_count",
+      "value": {
+        "center": 1.0,
+        "kind": "range",
+        "maximum": 4.0,
+        "minimum": 1.0
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "metric": "caption_candidate_count",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-result_single-caption_candidate_count",
+      "value": {
+        "center": 3.0,
+        "kind": "range",
+        "maximum": 7.0,
+        "minimum": 1.0
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "metric": "dominant_figure_ratio",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-result_single-dominant_figure_ratio",
+      "value": {
+        "center": 1.0000005,
+        "kind": "range",
+        "maximum": 1.000024,
+        "minimum": 0.518366
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "metric": "figure_area_ratio",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-result_single-figure_area_ratio",
+      "value": {
+        "center": 0.17894,
+        "kind": "range",
+        "maximum": 0.446961,
+        "minimum": 0.011139
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "metric": "figure_text_ratio",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-result_single-figure_text_ratio",
+      "value": {
+        "center": 0.7639009999999999,
+        "kind": "range",
+        "maximum": 6.639547,
+        "minimum": 0.046539
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "metric": "text_area_ratio",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-result_single-text_area_ratio",
+      "value": {
+        "center": 0.189371,
+        "kind": "range",
+        "maximum": 0.417407,
+        "minimum": 0.067318
+      }
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "metric": "whitespace_fraction",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-FIGURE-FAMILY-METRIC",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL012",
+        "SL013"
+      ],
+      "token_family": "figure_metric",
+      "token_id": "figure-result_single-whitespace_fraction",
+      "value": {
+        "center": 0.645755,
+        "kind": "range",
+        "maximum": 0.772726,
+        "minimum": 0.485721
+      }
     }
   ],
   "formal_shell_rules": [
@@ -828,7 +1232,8 @@
       "profile_id": "P3-TEMPLATE-PRIMARY-1",
       "resolver_rule_id": "CP3-SHELL-CANVAS-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "support_count": 1,
+      "support_by_scope": [],
+      "support_count": 19,
       "supporting_ids": [
         "P3-TEMPLATE-PRIMARY-1"
       ],
@@ -836,113 +1241,487 @@
       "token_id": "shell-canvas",
       "value": {
         "height": 7.5,
+        "kind": "canvas",
         "width": 13.333333
-      }
+      },
+      "variants": []
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
       "profile_id": "P3-TEMPLATE-PRIMARY-1",
       "resolver_rule_id": "CP3-SHELL-CONTENT-TITLE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "support_count": 1,
+      "support_by_scope": [
+        {
+          "coverage_ratio": 0.842105,
+          "eligible_container_count": 19,
+          "occurrence_count": 16,
+          "source_container_count": 16,
+          "source_scope": "slide_layout",
+          "supporting_source_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L007",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L016",
+            "L017",
+            "L018",
+            "L019"
+          ]
+        },
+        {
+          "coverage_ratio": 1.0,
+          "eligible_container_count": 2,
+          "occurrence_count": 2,
+          "source_container_count": 2,
+          "source_scope": "slide_master",
+          "supporting_source_ids": [
+            "M001",
+            "M002"
+          ]
+        }
+      ],
+      "support_count": 18,
       "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-1"
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L007",
+        "L009",
+        "L010",
+        "L011",
+        "L012",
+        "L013",
+        "L014",
+        "L016",
+        "L017",
+        "L018",
+        "L019",
+        "M001",
+        "M002",
+        "R005"
       ],
       "token_family": "content_title",
       "token_id": "shell-content_title",
       "value": {
-        "basis": "measured",
-        "h": 0.193287,
-        "w": 0.8625,
-        "x": 0.06875,
-        "y": 0.053241
-      }
+        "geometry": {
+          "h": 0.193287,
+          "w": 0.8625,
+          "x": 0.06875,
+          "y": 0.053241
+        },
+        "kind": "geometry"
+      },
+      "variants": [
+        {
+          "region_id": "R005",
+          "supporting_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L007",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L016",
+            "L017",
+            "L018",
+            "L019",
+            "M001",
+            "M002",
+            "R005"
+          ],
+          "value": {
+            "geometry": {
+              "h": 0.193287,
+              "w": 0.8625,
+              "x": 0.06875,
+              "y": 0.053241
+            },
+            "kind": "geometry"
+          }
+        }
+      ]
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
+      "evidence_tier": "insufficient_evidence",
+      "origin": "unresolved",
       "profile_id": "P3-TEMPLATE-PRIMARY-1",
       "resolver_rule_id": "CP3-SHELL-HISTORY-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "support_count": 1,
-      "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-1"
-      ],
+      "support_by_scope": [],
+      "support_count": 0,
+      "supporting_ids": [],
       "token_family": "hypothesis_history",
       "token_id": "shell-hypothesis_history",
       "value": {
-        "basis": "measured",
-        "h": 0.248496,
-        "w": 0.725,
-        "x": 0.1375,
-        "y": 0.54595
-      }
+        "kind": "unavailable",
+        "value": null
+      },
+      "variants": []
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
       "resolver_rule_id": "CP3-SHELL-COVER-DIVIDER-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "support_count": 1,
+      "support_by_scope": [
+        {
+          "coverage_ratio": 0.888889,
+          "eligible_container_count": 18,
+          "occurrence_count": 16,
+          "source_container_count": 16,
+          "source_scope": "slide_layout",
+          "supporting_source_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L015",
+            "L016",
+            "L017",
+            "L018"
+          ]
+        },
+        {
+          "coverage_ratio": 1.0,
+          "eligible_container_count": 2,
+          "occurrence_count": 2,
+          "source_container_count": 2,
+          "source_scope": "slide_master",
+          "supporting_source_ids": [
+            "M001",
+            "M002"
+          ]
+        }
+      ],
+      "support_count": 18,
       "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-3"
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L007",
+        "L008",
+        "L009",
+        "L010",
+        "L011",
+        "L012",
+        "L013",
+        "L015",
+        "L016",
+        "L017",
+        "L018",
+        "M001",
+        "M002",
+        "R005"
       ],
       "token_family": "cover_divider_title",
       "token_id": "shell-cover_divider_title",
       "value": {
-        "basis": "measured",
-        "h": 0.193287,
-        "w": 0.8625,
-        "x": 0.06875,
-        "y": 0.053241
-      }
+        "geometry": {
+          "h": 0.193287,
+          "w": 0.8625,
+          "x": 0.06875,
+          "y": 0.053241
+        },
+        "kind": "geometry"
+      },
+      "variants": [
+        {
+          "region_id": "R005",
+          "supporting_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L015",
+            "L016",
+            "L017",
+            "L018",
+            "M001",
+            "M002",
+            "R005"
+          ],
+          "value": {
+            "geometry": {
+              "h": 0.193287,
+              "w": 0.8625,
+              "x": 0.06875,
+              "y": 0.053241
+            },
+            "kind": "geometry"
+          }
+        }
+      ]
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
       "resolver_rule_id": "CP3-SHELL-FOOTER-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "support_count": 1,
+      "support_by_scope": [
+        {
+          "coverage_ratio": 0.888889,
+          "eligible_container_count": 18,
+          "occurrence_count": 16,
+          "source_container_count": 16,
+          "source_scope": "slide_layout",
+          "supporting_source_ids": [
+            "L003",
+            "L004",
+            "L005",
+            "L006",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L015",
+            "L016",
+            "L017",
+            "L018"
+          ]
+        },
+        {
+          "coverage_ratio": 0.5,
+          "eligible_container_count": 2,
+          "occurrence_count": 1,
+          "source_container_count": 1,
+          "source_scope": "slide_master",
+          "supporting_source_ids": [
+            "M002"
+          ]
+        }
+      ],
+      "support_count": 17,
       "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-3"
+        "L003",
+        "L004",
+        "L005",
+        "L006",
+        "L007",
+        "L008",
+        "L009",
+        "L010",
+        "L011",
+        "L012",
+        "L013",
+        "L014",
+        "L015",
+        "L016",
+        "L017",
+        "L018",
+        "M002",
+        "R002"
       ],
       "token_family": "footer",
       "token_id": "shell-footer",
       "value": {
-        "basis": "measured",
-        "h": 0.053241,
-        "w": 0.3375,
-        "x": 0.33125,
-        "y": 0.926852
-      }
+        "geometry": {
+          "h": 0.053241,
+          "w": 0.3375,
+          "x": 0.33125,
+          "y": 0.926852
+        },
+        "kind": "geometry"
+      },
+      "variants": [
+        {
+          "region_id": "R002",
+          "supporting_ids": [
+            "L003",
+            "L004",
+            "L005",
+            "L006",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L015",
+            "L016",
+            "L017",
+            "L018",
+            "M002",
+            "R002"
+          ],
+          "value": {
+            "geometry": {
+              "h": 0.053241,
+              "w": 0.3375,
+              "x": 0.33125,
+              "y": 0.926852
+            },
+            "kind": "geometry"
+          }
+        }
+      ]
     },
     {
       "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
+      "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
       "resolver_rule_id": "CP3-SHELL-PAGE-NUMBER-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "support_count": 1,
+      "support_by_scope": [
+        {
+          "coverage_ratio": 1.0,
+          "eligible_container_count": 18,
+          "occurrence_count": 18,
+          "source_container_count": 18,
+          "source_scope": "slide_layout",
+          "supporting_source_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L006",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L015",
+            "L016",
+            "L017",
+            "L018"
+          ]
+        },
+        {
+          "coverage_ratio": 1.0,
+          "eligible_container_count": 2,
+          "occurrence_count": 2,
+          "source_container_count": 2,
+          "source_scope": "slide_master",
+          "supporting_source_ids": [
+            "M001",
+            "M002"
+          ]
+        }
+      ],
+      "support_count": 20,
       "supporting_ids": [
-        "P3-TEMPLATE-PRIMARY-3"
+        "L001",
+        "L002",
+        "L003",
+        "L004",
+        "L005",
+        "L006",
+        "L007",
+        "L008",
+        "L009",
+        "L010",
+        "L011",
+        "L012",
+        "L013",
+        "L014",
+        "L015",
+        "L016",
+        "L017",
+        "L018",
+        "M001",
+        "M002",
+        "R003"
       ],
       "token_family": "page_number",
       "token_id": "shell-page_number",
       "value": {
-        "basis": "measured",
-        "h": 0.053241,
-        "w": 0.225,
-        "x": 0.70625,
-        "y": 0.926852
-      }
+        "geometry": {
+          "h": 0.053241,
+          "w": 0.225,
+          "x": 0.70625,
+          "y": 0.926852
+        },
+        "kind": "geometry"
+      },
+      "variants": [
+        {
+          "region_id": "R003",
+          "supporting_ids": [
+            "L001",
+            "L002",
+            "L003",
+            "L004",
+            "L005",
+            "L006",
+            "L007",
+            "L008",
+            "L009",
+            "L010",
+            "L011",
+            "L012",
+            "L013",
+            "L014",
+            "L015",
+            "L016",
+            "L017",
+            "L018",
+            "M001",
+            "M002",
+            "R003"
+          ],
+          "value": {
+            "geometry": {
+              "h": 0.053241,
+              "w": 0.225,
+              "x": 0.70625,
+              "y": 0.926852
+            },
+            "kind": "geometry"
+          }
+        }
+      ]
     },
     {
       "authority_family": "formal_shell",
@@ -951,11 +1730,16 @@
       "profile_id": "P3-TEMPLATE-PRIMARY-3",
       "resolver_rule_id": "CP3-SHELL-NAVIGATION-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "support_by_scope": [],
       "support_count": 0,
       "supporting_ids": [],
       "token_family": "navigation",
       "token_id": "shell-navigation",
-      "value": null
+      "value": {
+        "kind": "unavailable",
+        "value": null
+      },
+      "variants": []
     }
   ],
   "grammar_id": "PVG003",
@@ -991,7 +1775,7 @@
       "token_id": "material-contact_interface"
     }
   ],
-  "schema_version": "3.0.0",
+  "schema_version": "3.1.0",
   "status": "structural_resolution_only",
   "typography_tokens": [
     {
@@ -999,154 +1783,224 @@
       "family": "Calibri",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "body",
       "script_role": "complex_script",
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
-      "token_id": "type-P3-LAYOUT-EXEMPLAR-2-T004005"
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "O006"
+      ],
+      "token_id": "type-p3-layout-exemplar-2-body-complex_script-099"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Calibri",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "body",
       "script_role": "complex_script",
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
-      "token_id": "type-P3-LAYOUT-EXEMPLAR-2-T010014"
+      "source_scope": "slide_body",
+      "supporting_ids": [
+        "O018"
+      ],
+      "token_id": "type-p3-layout-exemplar-2-body-complex_script-186"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "complex_script",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-1-title-complex_script"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE000"
+      ],
+      "token_id": "type-p3-template-primary-1-title-complex_script-000"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "complex_script",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-1-title-complex_script"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE003"
+      ],
+      "token_id": "type-p3-template-primary-1-title-complex_script-003"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "east_asian",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-1-title-east_asian"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE001"
+      ],
+      "token_id": "type-p3-template-primary-1-title-east_asian-001"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "east_asian",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-1-title-east_asian"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE004"
+      ],
+      "token_id": "type-p3-template-primary-1-title-east_asian-004"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "latin",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-1-title-latin"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE002"
+      ],
+      "token_id": "type-p3-template-primary-1-title-latin-002"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "latin",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-1-title-latin"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE005"
+      ],
+      "token_id": "type-p3-template-primary-1-title-latin-005"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "complex_script",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-3-title-complex_script"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE000"
+      ],
+      "token_id": "type-p3-template-primary-3-title-complex_script-000"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "complex_script",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-3-title-complex_script"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE003"
+      ],
+      "token_id": "type-p3-template-primary-3-title-complex_script-003"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "east_asian",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-3-title-east_asian"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE001"
+      ],
+      "token_id": "type-p3-template-primary-3-title-east_asian-001"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "east_asian",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-3-title-east_asian"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE004"
+      ],
+      "token_id": "type-p3-template-primary-3-title-east_asian-004"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "latin",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-3-title-latin"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE002"
+      ],
+      "token_id": "type-p3-template-primary-3-title-latin-002"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
       "font_evidence_state": "explicit_font",
       "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
       "role": "title",
       "script_role": "latin",
       "source_profile_id": "P3-TEMPLATE-PRIMARY-3",
       "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "token_id": "type-P3-TEMPLATE-PRIMARY-3-title-latin"
+      "source_scope": "slide_layout",
+      "supporting_ids": [
+        "TYPE005"
+      ],
+      "token_id": "type-p3-template-primary-3-title-latin-005"
     }
   ]
 }

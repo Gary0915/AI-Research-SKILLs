@@ -9,67 +9,296 @@
   "owning_checks": [
     {
       "check_id": "CP3-INPUT-VALIDATION",
+      "evidence": {
+        "facts": [
+          {
+            "identifier": "pass",
+            "kind": "controlled_id",
+            "name": "cp2_status"
+          },
+          {
+            "integer": 4,
+            "kind": "integer",
+            "name": "input_hash_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-EXEMPLAR-IDENTITIES",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 3,
+            "kind": "integer",
+            "name": "alias_count"
+          },
+          {
+            "identifiers": [
+              "P3-LAYOUT-EXEMPLAR-2",
+              "P3-TEMPLATE-PRIMARY-1",
+              "P3-TEMPLATE-PRIMARY-3"
+            ],
+            "kind": "identifier_list",
+            "name": "profile_ids"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-NO-PRIVATE-ACCESS",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "private_alias_resolution_attempts"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "private_render_attempts"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "private_source_open_attempts"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-AUTHORITY",
+      "evidence": {
+        "facts": [
+          {
+            "identifiers": [
+              "P3-TEMPLATE-PRIMARY-1",
+              "P3-TEMPLATE-PRIMARY-3"
+            ],
+            "kind": "identifier_list",
+            "name": "shell_source_roles"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-SHELL-CONTAMINATION",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "forbidden_field_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-CONFLICTS",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "conflict_count"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "hard_conflict_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-EVIDENCE-TIERS",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 42,
+            "kind": "integer",
+            "name": "checked_token_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
-      "check_id": "CP3-ACTIVE-THEMES",
+      "check_id": "CP3-RECURRING-SUPPORT",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "recurring_family_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-ACTIVE-THEME-AUTHORITY",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 5,
+            "kind": "integer",
+            "name": "active_metadata_count"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "resolved_theme_token_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-THEME-IDENTITY",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 5,
+            "kind": "integer",
+            "name": "qualified_theme_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-TYPOGRAPHY-TRUTH",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 14,
+            "kind": "integer",
+            "name": "resolved_typography_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-BODY-RANGE",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 3,
+            "kind": "integer",
+            "name": "family_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-UNAVAILABLE-METRICS",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 17,
+            "kind": "integer",
+            "name": "unavailable_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-FIGURE-NON-INVENTION",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 5,
+            "kind": "integer",
+            "name": "unresolved_material_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-STYLE-PROVENANCE",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 40,
+            "kind": "integer",
+            "name": "style_token_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
-      "check_id": "CP3-DETERMINISM",
+      "check_id": "CP3-FALLBACK-SEPARATION",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 37,
+            "kind": "integer",
+            "name": "derived_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
-      "check_id": "CP3-PRIVACY-SCAN",
+      "check_id": "CP3-SHELL-SUPPORT",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 7,
+            "kind": "integer",
+            "name": "shell_token_count"
+          }
+        ]
+      },
       "status": "pass"
     },
     {
       "check_id": "CP3-SCHEMA-CLOSURE",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 6,
+            "kind": "integer",
+            "name": "array_item_contracts"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "schema_open_object_nodes"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-PRIVACY-SCAN",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "unexcepted_finding_count"
+          }
+        ]
+      },
       "status": "pass"
     }
   ],
   "private_alias_resolution_attempts": 0,
   "private_render_attempts": 0,
   "private_source_open_attempts": 0,
-  "schema_version": "1.0.0"
+  "schema_version": "2.0.0"
 }
