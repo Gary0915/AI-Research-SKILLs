@@ -2,8 +2,26 @@
   "aggregate_status": "pass",
   "checkpoint_id": "PHASE_3_CHECKPOINT_3",
   "execution_evidence_id": "CP3-EXEC-001",
-  "execution_evidence_sha256": "64c68c8a18b11004653490201b296677eb88799cd8477b418407f413dca0dfa7",
+  "execution_evidence_sha256": "64d99ebd79557dd79c707b656e8894308bf89a2dfeb0e476f7ed824086a51c2c",
   "owning_checks": [
+    {
+      "check_id": "CP3-CP2-SCHEMAS",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "schema_error_count"
+          },
+          {
+            "integer": 4,
+            "kind": "integer",
+            "name": "validated_input_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
     {
       "check_id": "CP3-INPUT-VALIDATION",
       "evidence": {
@@ -12,7 +30,15 @@
             "identifier": "pass",
             "kind": "controlled_id",
             "name": "cp2_status"
-          },
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-INPUT-HASHES",
+      "evidence": {
+        "facts": [
           {
             "integer": 4,
             "kind": "integer",
@@ -119,7 +145,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 42,
+            "integer": 62,
             "kind": "integer",
             "name": "checked_token_count"
           }
@@ -176,9 +202,48 @@
       "evidence": {
         "facts": [
           {
-            "integer": 14,
+            "integer": 8,
             "kind": "integer",
             "name": "resolved_typography_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-TYPOGRAPHY-AUTHORITY",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 8,
+            "kind": "integer",
+            "name": "authority_valid_typography_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-SUPPLEMENTAL-FONT-EXCLUSION",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "supplemental_promoted_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-BODY-BINDINGS",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 3,
+            "kind": "integer",
+            "name": "binding_family_count"
           }
         ]
       },
@@ -224,11 +289,24 @@
       "status": "pass"
     },
     {
+      "check_id": "CP3-USAGE-BACKED-STYLE",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 25,
+            "kind": "integer",
+            "name": "usage_backed_style_token_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
       "check_id": "CP3-STYLE-PROVENANCE",
       "evidence": {
         "facts": [
           {
-            "integer": 40,
+            "integer": 60,
             "kind": "integer",
             "name": "style_token_count"
           }
@@ -241,7 +319,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 37,
+            "integer": 57,
             "kind": "integer",
             "name": "derived_count"
           }
@@ -281,13 +359,64 @@
       "status": "pass"
     },
     {
-      "check_id": "CP3-PRIVACY-SCAN",
+      "check_id": "CP3-DETERMINISM",
+      "evidence": {
+        "facts": [
+          {
+            "identifier": "971d671f4c752b0ee1a38e9d3843f97ea90e34a2bd8ca3e8c1df8c310a7eb415",
+            "kind": "controlled_id",
+            "name": "resolver_input_hash"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-REPOSITORY-STAGED-PRIVACY",
       "evidence": {
         "facts": [
           {
             "integer": 0,
             "kind": "integer",
-            "name": "unexcepted_finding_count"
+            "name": "approved_legacy_exception_count"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "repository_unexcepted_finding_count"
+          },
+          {
+            "boolean": true,
+            "kind": "boolean",
+            "name": "staged_scan_bound"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-DISPOSABLE-REGRESSION",
+      "evidence": {
+        "facts": [
+          {
+            "identifier": "c14fbfc541be6d53a3997dccfaf90e0574ca942fc9f66b2fb5fe8a7379fce62a",
+            "kind": "controlled_id",
+            "name": "candidate_state_binding"
+          },
+          {
+            "boolean": true,
+            "kind": "boolean",
+            "name": "disposable_worktree"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "tests_failed"
+          },
+          {
+            "integer": 267,
+            "kind": "integer",
+            "name": "tests_passed"
           }
         ]
       },

@@ -265,6 +265,12 @@
       ],
       "outlier_descriptor_ids": [],
       "preferred_descriptor_id": "SL011",
+      "representative_method": {
+        "comparable_metric_count": 0,
+        "method_id": "CP3-NORMALIZED-PAIRWISE-MEDOID-V1",
+        "missing_data_penalty": 1.0,
+        "outlier_method_id": "CP3-MAD-OUTLIER-V1"
+      },
       "sample_count": 1,
       "source_confidence": "structurally_supported",
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
@@ -292,7 +298,7 @@
             42.0
           ],
           "outlier_descriptor_ids": [],
-          "preferred_descriptor_id": "SL004",
+          "preferred_descriptor_id": "SL005",
           "robust_center": 17.5,
           "sample_count": 6
         },
@@ -304,7 +310,7 @@
             3.0
           ],
           "outlier_descriptor_ids": [],
-          "preferred_descriptor_id": "SL004",
+          "preferred_descriptor_id": "SL005",
           "robust_center": 2.0,
           "sample_count": 4
         },
@@ -400,7 +406,7 @@
             "SL002",
             "SL004"
           ],
-          "preferred_descriptor_id": "SL001",
+          "preferred_descriptor_id": "SL005",
           "robust_center": 0.22281050000000002,
           "sample_count": 6
         },
@@ -415,7 +421,7 @@
             "SL002",
             "SL004"
           ],
-          "preferred_descriptor_id": "SL001",
+          "preferred_descriptor_id": "SL005",
           "robust_center": 0.7771895,
           "sample_count": 6
         }
@@ -424,7 +430,13 @@
         "SL002",
         "SL004"
       ],
-      "preferred_descriptor_id": "SL004",
+      "preferred_descriptor_id": "SL005",
+      "representative_method": {
+        "comparable_metric_count": 4,
+        "method_id": "CP3-NORMALIZED-PAIRWISE-MEDOID-V1",
+        "missing_data_penalty": 1.0,
+        "outlier_method_id": "CP3-MAD-OUTLIER-V1"
+      },
       "sample_count": 6,
       "source_confidence": "insufficient_structural_evidence",
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
@@ -491,7 +503,7 @@
           "outlier_descriptor_ids": [
             "SL008"
           ],
-          "preferred_descriptor_id": "SL006",
+          "preferred_descriptor_id": "SL003",
           "robust_center": 3.0,
           "sample_count": 4
         },
@@ -515,7 +527,7 @@
             "SL012",
             "SL013"
           ],
-          "preferred_descriptor_id": "SL010",
+          "preferred_descriptor_id": "SL003",
           "robust_center": 1.0000005,
           "sample_count": 6
         },
@@ -543,7 +555,7 @@
           "outlier_descriptor_ids": [
             "SL013"
           ],
-          "preferred_descriptor_id": "SL010",
+          "preferred_descriptor_id": "SL003",
           "robust_center": 0.7639009999999999,
           "sample_count": 6
         },
@@ -593,7 +605,7 @@
           "outlier_descriptor_ids": [
             "SL010"
           ],
-          "preferred_descriptor_id": "SL008",
+          "preferred_descriptor_id": "SL003",
           "robust_center": 0.189371,
           "sample_count": 6
         },
@@ -616,7 +628,13 @@
         "SL012",
         "SL013"
       ],
-      "preferred_descriptor_id": "SL010",
+      "preferred_descriptor_id": "SL003",
+      "representative_method": {
+        "comparable_metric_count": 8,
+        "method_id": "CP3-NORMALIZED-PAIRWISE-MEDOID-V1",
+        "missing_data_penalty": 1.0,
+        "outlier_method_id": "CP3-MAD-OUTLIER-V1"
+      },
       "sample_count": 6,
       "source_confidence": "provisional",
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",

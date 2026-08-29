@@ -33,7 +33,8 @@ def test_cp3_resolver_consumes_only_sanitized_inputs_and_records_zero_private_ac
     assert qa["private_alias_resolution_attempts"] == 0
     assert qa["private_source_open_attempts"] == 0
     assert qa["private_render_attempts"] == 0
-    assert qa["aggregate_status"] == "pass"
+    assert qa["aggregate_status"] == "fail"
+    assert next(check for check in qa["owning_checks"] if check["check_id"] == "CP3-DISPOSABLE-REGRESSION")["status"] == "fail"
 
 
 def test_layout_exemplar_cannot_contaminate_shell_authority():
@@ -295,3 +296,79 @@ def test_hypothesis_history_remains_insufficient_without_direct_motif_evidence()
 
     token = next(token for token in resolve_checkpoint3(*_inputs())["template"]["shell_tokens"] if token["token_family"] == "hypothesis_history")
     assert token["evidence_tier"] == "insufficient_evidence"
+
+
+def test_typography_authority_preserves_measured_hierarchy_and_rejects_cross_authority():
+    from thesis_deck_system.phase3_checkpoint3 import resolve_checkpoint3
+
+    outputs = resolve_checkpoint3(*_inputs())
+    tokens = outputs["grammar"]["typography_tokens"]
+    assert tokens
+    assert all(token["size_pt"] is not None and token["weight"] and token["style"] for token in tokens)
+    assert all(
+        (token["source_role"] == "P3-TEMPLATE-PRIMARY-1" and token["role"] in {"title", "hypothesis_history", "content"})
+        or (token["source_role"] == "P3-TEMPLATE-PRIMARY-3" and token["role"] in {"cover", "divider", "footer", "page_number", "navigation"})
+        or (token["source_role"] == "P3-LAYOUT-EXEMPLAR-2" and token["role"] in {"body", "caption", "annotation", "panel_label", "unknown"})
+        for token in tokens
+    )
+
+
+def test_typography_duplicate_records_in_one_container_do_not_become_recurring():
+    from thesis_deck_system.phase3_checkpoint3 import resolve_checkpoint3
+
+    shell, body, manifest, qa = _inputs()
+    shell = copy.deepcopy(shell)
+    shell["descriptors"][0]["typography_roles"] *= 3
+    tokens = resolve_checkpoint3(shell, body, manifest, qa)["grammar"]["typography_tokens"]
+    assert all(token["evidence_tier"] != "recurring_pattern" for token in tokens)
+
+
+def test_usage_backed_color_line_and_connector_grammar_excludes_unused_or_rotated_evidence():
+    from thesis_deck_system.phase3_checkpoint3 import resolve_checkpoint3
+
+    outputs = resolve_checkpoint3(*_inputs())
+    figures = outputs["grammar"]["figure_grammar"]
+    assert any(token["token_family"] == "style_color" and token["value"]["kind"] == "color" for token in figures)
+    assert any(token["token_family"] == "connector" and token["value"]["kind"] == "connector" for token in figures)
+    assert all(token.get("semantic_material") is None for token in figures)
+    assert all(token["value"].get("rotation_eligible", True) for token in figures if token["token_family"] == "connector")
+
+
+def test_body_candidate_measurement_binding_fails_closed_on_independent_reorder():
+    from thesis_deck_system.phase3_checkpoint3 import Checkpoint3ResolutionError, resolve_body_grammar
+
+    _, body, _, _ = _inputs()
+    descriptor = copy.deepcopy(body["descriptor"])
+    descriptor["body_measurements"].reverse()
+    with pytest.raises(Checkpoint3ResolutionError, match="candidate.*binding"):
+        resolve_body_grammar(descriptor)
+
+
+def test_normalized_medoid_has_persisted_method_and_missingness_penalty():
+    from thesis_deck_system.phase3_checkpoint3 import resolve_body_grammar
+
+    _, body, _, _ = _inputs()
+    grammar = resolve_body_grammar(body["descriptor"])
+    reusable = [family for family in grammar["families"] if family["status"] != "insufficient"]
+    assert reusable
+    assert all(family["representative_method"]["method_id"] == "CP3-NORMALIZED-PAIRWISE-MEDOID-V1" for family in reusable)
+    assert all(family["representative_method"]["comparable_metric_count"] >= 0 for family in reusable)
+    assert all(family["representative_method"]["missing_data_penalty"] > 0 for family in reusable)
+
+
+def test_execution_owned_qa_binds_schema_integrity_determinism_scanner_and_regression_evidence():
+    from thesis_deck_system.phase3_checkpoint3 import resolve_checkpoint3
+
+    checks = {item["check_id"]: item for item in resolve_checkpoint3(*_inputs())["evidence"]["owning_checks"]}
+    required = {"CP3-CP2-SCHEMAS", "CP3-INPUT-HASHES", "CP3-DETERMINISM", "CP3-SUPPLEMENTAL-FONT-EXCLUSION", "CP3-REPOSITORY-STAGED-PRIVACY", "CP3-DISPOSABLE-REGRESSION"}
+    assert required <= set(checks)
+    assert all(checks[identifier]["evidence"]["facts"] for identifier in required)
+
+
+def test_category_coverage_is_routing_useful_and_provisional_is_not_fully_calibrated():
+    from thesis_deck_system.phase3_checkpoint3 import resolve_checkpoint3
+
+    categories = resolve_checkpoint3(*_inputs())["style"]["coverage"]["categories"]
+    required = {"shell_geometry", "typography_hierarchy", "body_composition", "scientific_figure_metrics", "connector_arrow_grammar", "line_style_grammar", "color_emphasis_grammar", "unresolved_fallback_reference"}
+    assert required <= set(categories)
+    assert all(categories[name]["reusable_coverage_status"] != "fully_calibrated" for name in required if categories[name]["professor_derived_recurring"] == 0)

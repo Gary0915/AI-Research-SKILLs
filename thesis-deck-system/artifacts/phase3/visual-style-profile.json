@@ -1,10 +1,76 @@
 {
   "coverage": {
+    "categories": {
+      "body_composition": {
+        "fallback": 0,
+        "professor_derived_provisional": 19,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 0,
+        "reusable_coverage_status": "provisional_only",
+        "unresolved": 0
+      },
+      "color_emphasis_grammar": {
+        "fallback": 0,
+        "professor_derived_provisional": 14,
+        "professor_derived_recurring": 6,
+        "reference_only_metadata": 0,
+        "reusable_coverage_status": "fully_calibrated",
+        "unresolved": 0
+      },
+      "connector_arrow_grammar": {
+        "fallback": 0,
+        "professor_derived_provisional": 2,
+        "professor_derived_recurring": 3,
+        "reference_only_metadata": 0,
+        "reusable_coverage_status": "fully_calibrated",
+        "unresolved": 0
+      },
+      "line_style_grammar": {
+        "fallback": 0,
+        "professor_derived_provisional": 1,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 0,
+        "reusable_coverage_status": "provisional_only",
+        "unresolved": 0
+      },
+      "scientific_figure_metrics": {
+        "fallback": 0,
+        "professor_derived_provisional": 19,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 0,
+        "reusable_coverage_status": "provisional_only",
+        "unresolved": 0
+      },
+      "shell_geometry": {
+        "fallback": 0,
+        "professor_derived_provisional": 0,
+        "professor_derived_recurring": 5,
+        "reference_only_metadata": 0,
+        "reusable_coverage_status": "fully_calibrated",
+        "unresolved": 2
+      },
+      "typography_hierarchy": {
+        "fallback": 1,
+        "professor_derived_provisional": 8,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 0,
+        "reusable_coverage_status": "provisional_only",
+        "unresolved": 0
+      },
+      "unresolved_fallback_reference": {
+        "fallback": 1,
+        "professor_derived_provisional": 0,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 5,
+        "reusable_coverage_status": "unresolved",
+        "unresolved": 2
+      }
+    },
     "fallback": 1,
     "fallback_token_count": 3,
-    "professor_derived_provisional": 32,
-    "professor_derived_recurring": 5,
-    "professor_derived_token_count": 37,
+    "professor_derived_provisional": 43,
+    "professor_derived_recurring": 14,
+    "professor_derived_token_count": 57,
     "reference_only_metadata": 5,
     "unresolved": 2,
     "unresolved_token_count": 2
@@ -13,6 +79,200 @@
   "status": "partial_structural_calibration",
   "style_profile_id": "VSP003",
   "tokens": [
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "O005",
+        "O006",
+        "O011",
+        "O015",
+        "O016",
+        "O022",
+        "O041",
+        "O042",
+        "SL002",
+        "SL007",
+        "SL008"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "connector-1e17aa270f",
+      "value": {
+        "directedness": "directed",
+        "head_marker": "none",
+        "kind": "connector",
+        "orientation": "diagonal",
+        "rotation_eligible": true,
+        "tail_marker": "triangle"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "O003",
+        "O010",
+        "O014",
+        "O021",
+        "O027",
+        "O031",
+        "SL002"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "connector-2cf3092675",
+      "value": {
+        "directedness": "directed",
+        "head_marker": "none",
+        "kind": "connector",
+        "orientation": "horizontal",
+        "rotation_eligible": true,
+        "tail_marker": "triangle"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "O005",
+        "O008",
+        "O020",
+        "O026",
+        "O045",
+        "SL002",
+        "SL005",
+        "SL008"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "connector-7e0eddd7d4",
+      "value": {
+        "directedness": "directed",
+        "head_marker": "none",
+        "kind": "connector",
+        "orientation": "vertical",
+        "rotation_eligible": true,
+        "tail_marker": "triangle"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "O006",
+        "SL012"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "connector-8b9dfc6f33",
+      "value": {
+        "directedness": "plain",
+        "head_marker": "none",
+        "kind": "connector",
+        "orientation": "horizontal",
+        "rotation_eligible": true,
+        "tail_marker": "none"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "O004",
+        "O005",
+        "O006",
+        "O007",
+        "O008",
+        "O009",
+        "O010",
+        "O011",
+        "O012",
+        "O013",
+        "O014",
+        "O020",
+        "O021",
+        "O022",
+        "O023",
+        "O024",
+        "O025",
+        "O026",
+        "O027",
+        "O028",
+        "O029",
+        "O030",
+        "O031",
+        "O032",
+        "O033",
+        "O034",
+        "O035",
+        "O036",
+        "O037",
+        "O038",
+        "O039",
+        "O040",
+        "O041",
+        "O042",
+        "O043",
+        "O044",
+        "O077",
+        "O078",
+        "O079",
+        "O080",
+        "O081",
+        "O082",
+        "O083",
+        "O084",
+        "O085",
+        "O086",
+        "O087",
+        "O093",
+        "O094",
+        "O095",
+        "O096",
+        "O097",
+        "O098",
+        "O099",
+        "O100",
+        "O101",
+        "O102",
+        "O103",
+        "SL007",
+        "SL008",
+        "SL012"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "connector-b769284b98",
+      "value": {
+        "directedness": "plain",
+        "head_marker": "none",
+        "kind": "connector",
+        "orientation": "diagonal",
+        "rotation_eligible": true,
+        "tail_marker": "none"
+      }
+    },
     {
       "authority_family": "implementation",
       "evidence_tier": "insufficient_evidence",
@@ -430,6 +690,26 @@
       }
     },
     {
+      "authority_family": "body_composition",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-LINE-WIDTH",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL005"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "line_width-1f347cb146",
+      "value": {
+        "center": 2.0,
+        "kind": "range",
+        "maximum": 2.0,
+        "minimum": 2.0
+      }
+    },
+    {
       "authority_family": "formal_shell",
       "evidence_tier": "recurring_pattern",
       "origin": "professor_derived",
@@ -646,10 +926,431 @@
       }
     },
     {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "source_scope": "slide_master",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-3"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-04bee35503",
+      "value": {
+        "kind": "color",
+        "rgb": "000000",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL003",
+        "SL004",
+        "SL005",
+        "SL007",
+        "SL008",
+        "SL009",
+        "SL010",
+        "SL011",
+        "SL012"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-04c6610b40",
+      "value": {
+        "kind": "color",
+        "rgb": "FF0000",
+        "rotation_eligible": true,
+        "semantic_role": "emphasis"
+      }
+    },
+    {
       "authority_family": "body_composition",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL009"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-085181297b",
+      "value": {
+        "kind": "color",
+        "rgb": "83CBEB",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL008"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-2b6cf06b58",
+      "value": {
+        "kind": "color",
+        "rgb": "E97132",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL004",
+        "SL010",
+        "SL011"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-4f20e16624",
+      "value": {
+        "kind": "color",
+        "rgb": "0F9ED5",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL008",
+        "SL010",
+        "SL011"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-66b316bca1",
+      "value": {
+        "kind": "color",
+        "rgb": "D1D1D1",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "source_scope": "slide_master",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-3"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-6fd94d2ef6",
+      "value": {
+        "kind": "color",
+        "rgb": "888888",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_master",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-1"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-71dad4de15",
+      "value": {
+        "kind": "color",
+        "rgb": "888888",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-1"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-7602cae5f2",
+      "value": {
+        "kind": "color",
+        "rgb": "C00000",
+        "rotation_eligible": true,
+        "semantic_role": "emphasis"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL004",
+        "SL010",
+        "SL011"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-91e01b86ac",
+      "value": {
+        "kind": "color",
+        "rgb": "CAEEFB",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-1"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-937c64c5f6",
+      "value": {
+        "kind": "color",
+        "rgb": "000000",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-3"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-a0fc4cbe15",
+      "value": {
+        "kind": "color",
+        "rgb": "C00000",
+        "rotation_eligible": true,
+        "semantic_role": "emphasis"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL004",
+        "SL006",
+        "SL007",
+        "SL008",
+        "SL009",
+        "SL010",
+        "SL011"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-ad01ea9da5",
+      "value": {
+        "kind": "color",
+        "rgb": "FFC000",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-3"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-d93ab974ea",
+      "value": {
+        "kind": "color",
+        "rgb": "000000",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL009"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-dec70f6598",
+      "value": {
+        "kind": "color",
+        "rgb": "BFBFBF",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_master",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-1"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-ee201ab856",
+      "value": {
+        "kind": "color",
+        "rgb": "000000",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL009"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-ef34e493fb",
+      "value": {
+        "kind": "color",
+        "rgb": "156082",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-1"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-f148b42c05",
+      "value": {
+        "kind": "color",
+        "rgb": "888888",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "supporting_ids": [
+        "SL007",
+        "SL008"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-f6d2cef10a",
+      "value": {
+        "kind": "color",
+        "rgb": "A21D02",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-3"
+      ],
+      "token_family": "scientific_visual",
+      "token_id": "style_color-ff73937f02",
+      "value": {
+        "kind": "color",
+        "rgb": "888888",
+        "rotation_eligible": true,
+        "semantic_role": "neutral"
+      }
+    },
+    {
+      "authority_family": "body_composition",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
       "source_scope": "slide_body",
       "status": "resolved",
@@ -661,14 +1362,18 @@
       "value": {
         "family": "Calibri",
         "kind": "typography",
-        "size_pt": null
+        "role": "body",
+        "script_role": "complex_script",
+        "size_pt": 12.0,
+        "style": "normal",
+        "weight": "regular"
       }
     },
     {
       "authority_family": "body_composition",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
       "source_scope": "slide_body",
       "status": "resolved",
@@ -680,14 +1385,18 @@
       "value": {
         "family": "Calibri",
         "kind": "typography",
-        "size_pt": null
+        "role": "body",
+        "script_role": "complex_script",
+        "size_pt": 12.0,
+        "style": "normal",
+        "weight": "regular"
       }
     },
     {
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
@@ -699,14 +1408,18 @@
       "value": {
         "family": "Arial",
         "kind": "typography",
-        "size_pt": null
+        "role": "title",
+        "script_role": "complex_script",
+        "size_pt": 18.0,
+        "style": "normal",
+        "weight": "bold"
       }
     },
     {
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
@@ -718,14 +1431,18 @@
       "value": {
         "family": "Times New Roman",
         "kind": "typography",
-        "size_pt": null
+        "role": "title",
+        "script_role": "complex_script",
+        "size_pt": 23.0,
+        "style": "normal",
+        "weight": "bold"
       }
     },
     {
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
@@ -737,14 +1454,18 @@
       "value": {
         "family": "Arial",
         "kind": "typography",
-        "size_pt": null
+        "role": "title",
+        "script_role": "east_asian",
+        "size_pt": 18.0,
+        "style": "normal",
+        "weight": "bold"
       }
     },
     {
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
@@ -756,14 +1477,18 @@
       "value": {
         "family": "Times New Roman",
         "kind": "typography",
-        "size_pt": null
+        "role": "title",
+        "script_role": "east_asian",
+        "size_pt": 23.0,
+        "style": "normal",
+        "weight": "bold"
       }
     },
     {
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
@@ -775,14 +1500,18 @@
       "value": {
         "family": "Arial",
         "kind": "typography",
-        "size_pt": null
+        "role": "title",
+        "script_role": "latin",
+        "size_pt": 18.0,
+        "style": "normal",
+        "weight": "bold"
       }
     },
     {
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
@@ -794,121 +1523,11 @@
       "value": {
         "family": "Times New Roman",
         "kind": "typography",
-        "size_pt": null
-      }
-    },
-    {
-      "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
-      "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "source_scope": "slide_layout",
-      "status": "resolved",
-      "supporting_ids": [
-        "TYPE000"
-      ],
-      "token_family": "typography",
-      "token_id": "type-p3-template-primary-3-title-complex_script-000",
-      "value": {
-        "family": "Arial",
-        "kind": "typography",
-        "size_pt": null
-      }
-    },
-    {
-      "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
-      "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "source_scope": "slide_layout",
-      "status": "resolved",
-      "supporting_ids": [
-        "TYPE003"
-      ],
-      "token_family": "typography",
-      "token_id": "type-p3-template-primary-3-title-complex_script-003",
-      "value": {
-        "family": "Times New Roman",
-        "kind": "typography",
-        "size_pt": null
-      }
-    },
-    {
-      "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
-      "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "source_scope": "slide_layout",
-      "status": "resolved",
-      "supporting_ids": [
-        "TYPE001"
-      ],
-      "token_family": "typography",
-      "token_id": "type-p3-template-primary-3-title-east_asian-001",
-      "value": {
-        "family": "Arial",
-        "kind": "typography",
-        "size_pt": null
-      }
-    },
-    {
-      "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
-      "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "source_scope": "slide_layout",
-      "status": "resolved",
-      "supporting_ids": [
-        "TYPE004"
-      ],
-      "token_family": "typography",
-      "token_id": "type-p3-template-primary-3-title-east_asian-004",
-      "value": {
-        "family": "Times New Roman",
-        "kind": "typography",
-        "size_pt": null
-      }
-    },
-    {
-      "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
-      "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "source_scope": "slide_layout",
-      "status": "resolved",
-      "supporting_ids": [
-        "TYPE002"
-      ],
-      "token_family": "typography",
-      "token_id": "type-p3-template-primary-3-title-latin-002",
-      "value": {
-        "family": "Arial",
-        "kind": "typography",
-        "size_pt": null
-      }
-    },
-    {
-      "authority_family": "formal_shell",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-EXPLICIT-ONLY",
-      "source_role": "P3-TEMPLATE-PRIMARY-3",
-      "source_scope": "slide_layout",
-      "status": "resolved",
-      "supporting_ids": [
-        "TYPE005"
-      ],
-      "token_family": "typography",
-      "token_id": "type-p3-template-primary-3-title-latin-005",
-      "value": {
-        "family": "Times New Roman",
-        "kind": "typography",
-        "size_pt": null
+        "role": "title",
+        "script_role": "latin",
+        "size_pt": 23.0,
+        "style": "normal",
+        "weight": "bold"
       }
     }
   ]
