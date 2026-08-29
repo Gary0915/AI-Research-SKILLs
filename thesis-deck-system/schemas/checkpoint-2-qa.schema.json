@@ -404,11 +404,12 @@
                 "typography_resolution_counts": {
                     "type": "object",
                     "additionalProperties": false,
-                    "required": ["latin", "east_asian", "complex_script"],
+                    "required": ["latin", "east_asian", "complex_script", "unspecified"],
                     "properties": {
                         "latin": {"$ref": "#/$defs/typography_counts"},
                         "east_asian": {"$ref": "#/$defs/typography_counts"},
-                        "complex_script": {"$ref": "#/$defs/typography_counts"}
+                        "complex_script": {"$ref": "#/$defs/typography_counts"},
+                        "unspecified": {"$ref": "#/$defs/typography_counts"}
                     }
                 },
                 "descriptor_quality_checks": {

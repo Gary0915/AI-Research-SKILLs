@@ -463,7 +463,8 @@
                     "enum": [
                         "latin",
                         "east_asian",
-                        "complex_script"
+                        "complex_script",
+                        "unspecified"
                     ]
                 },
                 "font_evidence_state": {
@@ -579,9 +580,13 @@
         "theme_profile": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["theme_profile_id", "palette", "font_scheme", "supplemental_fonts"],
+            "required": ["theme_profile_id", "usage_state", "authority_state", "supporting_master_ids", "supporting_slide_ids", "palette", "font_scheme", "supplemental_fonts"],
             "properties": {
                 "theme_profile_id": {"type": "string", "pattern": "^T[0-9]{3,}$"},
+                "usage_state": {"enum": ["referenced", "unreferenced"]},
+                "authority_state": {"enum": ["active_professor_style", "reference_only"]},
+                "supporting_master_ids": {"type": "array", "items": {"type": "string", "pattern": "^M[0-9]{3,}$"}},
+                "supporting_slide_ids": {"type": "array", "items": {"type": "string", "pattern": "^(SL|D)[0-9]{3,}$"}},
                 "palette": {"type": "array", "items": {"$ref": "#/$defs/theme_entry"}},
                 "font_scheme": {
                     "type": "object",
@@ -597,11 +602,12 @@
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
-                        "required": ["theme_font_role", "script_code", "family"],
+                        "required": ["theme_font_role", "script_code", "family", "authority_state"],
                         "properties": {
                             "theme_font_role": {"enum": ["major", "minor"]},
                             "script_code": {"enum": ["Arab", "Armn", "Beng", "Cans", "Cher", "Deva", "Ethi", "Geor", "Gujr", "Guru", "Hang", "Hans", "Hant", "Hebr", "Jpan", "Khmr", "Knda", "Laoo", "Mlym", "Mymr", "Orya", "Sinh", "Taml", "Telu", "Thai", "Tibt", "Yiii"]},
-                            "family": {"type": "string", "pattern": "^.{1,64}$"}
+                            "family": {"type": "string", "pattern": "^.{1,64}$"},
+                            "authority_state": {"enum": ["active_professor_style", "reference_only"]}
                         }
                     }
                 }

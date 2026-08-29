@@ -604,10 +604,10 @@ def test_supplemental_theme_cjk_font_mappings_are_sanitized_as_controlled_metada
     from thesis_deck_system.phase3_checkpoint2 import _sanitize_theme_profile
 
     result = _sanitize_theme_profile({
-        "theme_profile_id": "T001", "palette": [],
+        "theme_profile_id": "T001", "usage_state": "unreferenced", "authority_state": "reference_only", "supporting_master_ids": [], "supporting_slide_ids": [], "palette": [],
         "font_scheme": {"major": {}, "minor": {}},
         "supplemental_fonts": [
-            {"theme_font_role": "major", "script_code": code, "family": "微軟正黑體"}
+            {"theme_font_role": "major", "script_code": code, "family": "微軟正黑體", "authority_state": "reference_only"}
             for code in ("Hans", "Hant", "Jpan", "Hang")
         ],
     })
@@ -617,15 +617,15 @@ def test_supplemental_theme_cjk_font_mappings_are_sanitized_as_controlled_metada
 @pytest.mark.parametrize(
     "supplemental",
     [
-        {"theme_font_role": "major", "script_code": "Hant", "family": "D:/unsafe"},
-        {"theme_font_role": "major", "script_code": "UnknownScript", "family": "Arial"},
+        {"theme_font_role": "major", "script_code": "Hant", "family": "D:/unsafe", "authority_state": "reference_only"},
+        {"theme_font_role": "major", "script_code": "UnknownScript", "family": "Arial", "authority_state": "reference_only"},
     ],
 )
 def test_unsafe_or_unapproved_supplemental_theme_font_is_rejected(supplemental: dict):
     from thesis_deck_system.phase3_checkpoint2 import _sanitize_theme_profile
 
     with pytest.raises(Checkpoint2PolicyViolation):
-        _sanitize_theme_profile({"theme_profile_id": "T001", "palette": [], "font_scheme": {"major": {}, "minor": {}}, "supplemental_fonts": [supplemental]})
+        _sanitize_theme_profile({"theme_profile_id": "T001", "usage_state": "unreferenced", "authority_state": "reference_only", "supporting_master_ids": [], "supporting_slide_ids": [], "palette": [], "font_scheme": {"major": {}, "minor": {}}, "supplemental_fonts": [supplemental]})
 
 
 def test_supplemental_mapping_does_not_fabricate_east_asian_run_resolution():
@@ -636,7 +636,7 @@ def test_supplemental_mapping_does_not_fabricate_east_asian_run_resolution():
         theme_font_scheme={"major": {}, "minor": {}, "supplemental_fonts": {"Hant": "微軟正黑體"}},
     )
     assert [(item["script_role"], item["font_evidence_state"], item["family"]) for item in profile["typography_observations"]] == [
-        ("latin", "inherited_unresolved", "unknown"),
+        ("unspecified", "inherited_unresolved", "unknown"),
     ]
 
 
@@ -664,6 +664,74 @@ def test_typography_resolution_counts_reconcile_each_persisted_observation():
     assert counts["east_asian"]["theme_font_resolved"] == 1
     assert counts["complex_script"]["inherited_unresolved"] == 1
     assert sum(sum(states.values()) for states in counts.values()) == len(observations)
+
+
+def test_absent_script_nodes_emit_unspecified_inherited_typography_not_latin():
+    from thesis_deck_system.phase3_checkpoint2 import ReadOnlyPrivateSourceSession
+
+    profile = ReadOnlyPrivateSourceSession._slide_profile(
+        _typography_slide(""), 1000, 1000, 1, source_scope="slide_body"
+    )
+    assert [(item["script_role"], item["font_evidence_state"], item["family"])
+            for item in profile["typography_observations"]] == [
+        ("unspecified", "inherited_unresolved", "unknown"),
+    ]
+
+
+def test_typography_counts_reconcile_unspecified_observations_separately():
+    from thesis_deck_system.phase3_checkpoint2 import typography_resolution_counts
+
+    counts = typography_resolution_counts([
+        {"script_role": "latin", "font_evidence_state": "explicit_font"},
+        {"script_role": "unspecified", "font_evidence_state": "inherited_unresolved"},
+    ])
+    assert counts["latin"]["explicit_font"] == 1
+    assert counts["unspecified"]["inherited_unresolved"] == 1
+    assert sum(sum(states.values()) for states in counts.values()) == 2
+
+
+def test_theme_usage_is_derived_from_topology_and_orphans_are_reference_only():
+    from thesis_deck_system.phase3_checkpoint2 import classify_theme_usage
+
+    profiles = [
+        {"theme_profile_id": "T001", "palette": {}, "font_scheme": {"major": {}, "minor": {}}, "supplemental_fonts": []},
+        {"theme_profile_id": "T002", "palette": {}, "font_scheme": {"major": {}, "minor": {}}, "supplemental_fonts": [{"theme_font_role": "major", "script_code": "Hant", "family": "微軟正黑體"}]},
+    ]
+    result = classify_theme_usage(
+        profiles,
+        master_theme_topology=[{"source_id": "M001", "target_id": "T001", "basis": "measured", "source_scope": "slide_master"}],
+        slide_theme_topology=[],
+    )
+    assert result[0]["usage_state"] == "referenced"
+    assert result[0]["authority_state"] == "active_professor_style"
+    assert result[0]["supporting_master_ids"] == ["M001"]
+    assert result[1]["usage_state"] == "unreferenced"
+    assert result[1]["authority_state"] == "reference_only"
+    assert result[1]["supplemental_fonts"][0]["authority_state"] == "reference_only"
+
+
+def test_unknown_theme_topology_target_fails_closed():
+    from thesis_deck_system.phase3_checkpoint2 import classify_theme_usage
+
+    with pytest.raises(Checkpoint2PolicyViolation):
+        classify_theme_usage(
+            [{"theme_profile_id": "T001", "palette": {}, "font_scheme": {"major": {}, "minor": {}}, "supplemental_fonts": []}],
+            master_theme_topology=[{"source_id": "M001", "target_id": "T999", "basis": "measured", "source_scope": "slide_master"}],
+            slide_theme_topology=[],
+        )
+
+
+def test_active_theme_lookup_excludes_unreferenced_palette_and_supplemental_fonts():
+    from thesis_deck_system.phase3_checkpoint2 import resolve_active_descriptor_theme_color
+
+    descriptors = {
+        "P3-TEMPLATE-PRIMARY-1": {
+            "T001": {"usage_state": "referenced", "palette": {"accent1": "AAAAAA"}},
+            "T002": {"usage_state": "unreferenced", "palette": {"accent1": "BBBBBB"}},
+        }
+    }
+    assert resolve_active_descriptor_theme_color("accent1", profile_id="P3-TEMPLATE-PRIMARY-1", theme_profile_id="T001", descriptor_theme_profiles=descriptors) == "AAAAAA"
+    assert resolve_active_descriptor_theme_color("accent1", profile_id="P3-TEMPLATE-PRIMARY-1", theme_profile_id="T002", descriptor_theme_profiles=descriptors) is None
 
 
 def test_unknown_typography_cannot_satisfy_font_fidelity_owning_gate(tmp_path: Path):

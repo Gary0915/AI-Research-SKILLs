@@ -234,20 +234,26 @@
         "groups": [],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "annotation_density": {
-            "value": 2.0,
+          "text_area_ratio": {
+            "value": 0.237855,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
               "O001",
               "O002"
             ]
+          },
+          "callout_candidate_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "whitespace_fraction": {
             "value": 0.762145,
@@ -264,7 +270,34 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "callout_candidate_count": {
+          "figure_text_ratio": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "figure_area_ratio": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "annotation_density": {
+            "value": 2.0,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O001",
+              "O002"
+            ]
+          },
+          "matrix_rows": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -283,39 +316,6 @@
             "supporting_object_ids": []
           },
           "photo_schematic_relation": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "figure_area_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "figure_text_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "text_area_ratio": {
-            "value": 0.237855,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O002"
-            ]
-          },
-          "caption_candidate_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_rows": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -404,7 +404,7 @@
             "observation_id": "T001001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 40.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -2318,27 +2318,17 @@
         "groups": [],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "annotation_density": {
-            "value": 31.0,
+          "text_area_ratio": {
+            "value": 0.405247,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O003",
-              "O006",
-              "O008",
-              "O010",
-              "O014",
-              "O020",
-              "O021",
-              "O026",
-              "O027",
-              "O031",
               "O001",
               "O002",
               "O004",
@@ -2361,6 +2351,12 @@
               "O029",
               "O030"
             ]
+          },
+          "callout_candidate_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "whitespace_fraction": {
             "value": 0.570021,
@@ -2406,25 +2402,7 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "callout_candidate_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "photo_schematic_relation": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -2436,17 +2414,21 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "figure_text_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "text_area_ratio": {
-            "value": 0.405247,
+          "annotation_density": {
+            "value": 31.0,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
+              "O003",
+              "O006",
+              "O008",
+              "O010",
+              "O014",
+              "O020",
+              "O021",
+              "O026",
+              "O027",
+              "O031",
               "O001",
               "O002",
               "O004",
@@ -2470,13 +2452,31 @@
               "O030"
             ]
           },
-          "caption_candidate_count": {
+          "matrix_rows": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "matrix_rows": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "photo_schematic_relation": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -3609,7 +3609,7 @@
             "observation_id": "T002001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3624,7 +3624,7 @@
             "observation_id": "T002002",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3639,7 +3639,7 @@
             "observation_id": "T002003",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3654,7 +3654,7 @@
             "observation_id": "T002004",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3669,7 +3669,7 @@
             "observation_id": "T002005",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3684,7 +3684,7 @@
             "observation_id": "T002006",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3699,7 +3699,7 @@
             "observation_id": "T002007",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3714,7 +3714,7 @@
             "observation_id": "T002008",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3729,7 +3729,7 @@
             "observation_id": "T002009",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3744,7 +3744,7 @@
             "observation_id": "T002010",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3759,7 +3759,7 @@
             "observation_id": "T002011",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3774,7 +3774,7 @@
             "observation_id": "T002012",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3789,7 +3789,7 @@
             "observation_id": "T002013",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3804,7 +3804,7 @@
             "observation_id": "T002014",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3819,7 +3819,7 @@
             "observation_id": "T002015",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3834,7 +3834,7 @@
             "observation_id": "T002016",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3849,7 +3849,7 @@
             "observation_id": "T002017",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3864,7 +3864,7 @@
             "observation_id": "T002018",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3879,7 +3879,7 @@
             "observation_id": "T002019",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3894,7 +3894,7 @@
             "observation_id": "T002020",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3909,7 +3909,7 @@
             "observation_id": "T002021",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3924,7 +3924,7 @@
             "observation_id": "T002022",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3939,7 +3939,7 @@
             "observation_id": "T002023",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3954,7 +3954,7 @@
             "observation_id": "T002024",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3969,7 +3969,7 @@
             "observation_id": "T002025",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3984,7 +3984,7 @@
             "observation_id": "T002026",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -3999,7 +3999,7 @@
             "observation_id": "T002027",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4014,7 +4014,7 @@
             "observation_id": "T002028",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4029,7 +4029,7 @@
             "observation_id": "T002029",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4044,7 +4044,7 @@
             "observation_id": "T002030",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4059,7 +4059,7 @@
             "observation_id": "T002031",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4074,7 +4074,7 @@
             "observation_id": "T002032",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4089,7 +4089,7 @@
             "observation_id": "T002033",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4104,7 +4104,7 @@
             "observation_id": "T002034",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4119,7 +4119,7 @@
             "observation_id": "T002035",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4134,7 +4134,7 @@
             "observation_id": "T002036",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4149,7 +4149,7 @@
             "observation_id": "T002037",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4164,7 +4164,7 @@
             "observation_id": "T002038",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4179,7 +4179,7 @@
             "observation_id": "T002039",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4194,7 +4194,7 @@
             "observation_id": "T002040",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4209,7 +4209,7 @@
             "observation_id": "T002041",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4224,7 +4224,7 @@
             "observation_id": "T002042",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4239,7 +4239,7 @@
             "observation_id": "T002043",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4254,7 +4254,7 @@
             "observation_id": "T002044",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4269,7 +4269,7 @@
             "observation_id": "T002045",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4284,7 +4284,7 @@
             "observation_id": "T002046",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4299,7 +4299,7 @@
             "observation_id": "T002047",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4314,7 +4314,7 @@
             "observation_id": "T002048",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4329,7 +4329,7 @@
             "observation_id": "T002049",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4344,7 +4344,7 @@
             "observation_id": "T002050",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4359,7 +4359,7 @@
             "observation_id": "T002051",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4374,7 +4374,7 @@
             "observation_id": "T002052",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4389,7 +4389,7 @@
             "observation_id": "T002053",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4404,7 +4404,7 @@
             "observation_id": "T002054",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4419,7 +4419,7 @@
             "observation_id": "T002055",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4434,7 +4434,7 @@
             "observation_id": "T002056",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4449,7 +4449,7 @@
             "observation_id": "T002057",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4464,7 +4464,7 @@
             "observation_id": "T002058",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4479,7 +4479,7 @@
             "observation_id": "T002059",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4494,7 +4494,7 @@
             "observation_id": "T002060",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4509,7 +4509,7 @@
             "observation_id": "T002061",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4524,7 +4524,7 @@
             "observation_id": "T002062",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4539,7 +4539,7 @@
             "observation_id": "T002063",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4554,7 +4554,7 @@
             "observation_id": "T002064",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4569,7 +4569,7 @@
             "observation_id": "T002065",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4584,7 +4584,7 @@
             "observation_id": "T002066",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4599,7 +4599,7 @@
             "observation_id": "T002067",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4614,7 +4614,7 @@
             "observation_id": "T002068",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4629,7 +4629,7 @@
             "observation_id": "T002069",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4644,7 +4644,7 @@
             "observation_id": "T002070",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4659,7 +4659,7 @@
             "observation_id": "T002071",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4674,7 +4674,7 @@
             "observation_id": "T002072",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4689,7 +4689,7 @@
             "observation_id": "T002073",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4704,7 +4704,7 @@
             "observation_id": "T002074",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4719,7 +4719,7 @@
             "observation_id": "T002075",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4734,7 +4734,7 @@
             "observation_id": "T002076",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4749,7 +4749,7 @@
             "observation_id": "T002077",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4764,7 +4764,7 @@
             "observation_id": "T002078",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4779,7 +4779,7 @@
             "observation_id": "T002079",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4794,7 +4794,7 @@
             "observation_id": "T002080",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4809,7 +4809,7 @@
             "observation_id": "T002081",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4824,7 +4824,7 @@
             "observation_id": "T002082",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4839,7 +4839,7 @@
             "observation_id": "T002083",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4854,7 +4854,7 @@
             "observation_id": "T002084",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4869,7 +4869,7 @@
             "observation_id": "T002085",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4884,7 +4884,7 @@
             "observation_id": "T002086",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4899,7 +4899,7 @@
             "observation_id": "T002087",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4914,7 +4914,7 @@
             "observation_id": "T002088",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4929,7 +4929,7 @@
             "observation_id": "T002089",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4944,7 +4944,7 @@
             "observation_id": "T002090",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -4959,7 +4959,7 @@
             "observation_id": "T002091",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -5302,14 +5302,16 @@
         "groups": [],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "caption_candidate_count": {
+            "value": 1,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O004"
+            ]
           },
-          "annotation_density": {
-            "value": 5.0,
+          "text_area_ratio": {
+            "value": 0.156715,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -5317,6 +5319,14 @@
               "O003",
               "O004",
               "O005",
+              "O006"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 1,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
               "O006"
             ]
           },
@@ -5341,13 +5351,45 @@
               "O002"
             ]
           },
-          "callout_candidate_count": {
-            "value": 1,
+          "figure_text_ratio": {
+            "value": 1.106831,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
+              "O002"
+            ]
+          },
+          "figure_area_ratio": {
+            "value": 0.173457,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O002"
+            ]
+          },
+          "annotation_density": {
+            "value": 5.0,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O001",
+              "O003",
+              "O004",
+              "O005",
               "O006"
             ]
+          },
+          "matrix_rows": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "panel_count": {
             "value": null,
@@ -5368,48 +5410,6 @@
             "supporting_object_ids": [
               "O002"
             ]
-          },
-          "figure_area_ratio": {
-            "value": 0.173457,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O002"
-            ]
-          },
-          "figure_text_ratio": {
-            "value": 1.106831,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O002"
-            ]
-          },
-          "text_area_ratio": {
-            "value": 0.156715,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O003",
-              "O004",
-              "O005",
-              "O006"
-            ]
-          },
-          "caption_candidate_count": {
-            "value": 1,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O004"
-            ]
-          },
-          "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           }
         },
         "style_roles": [
@@ -5638,7 +5638,7 @@
             "observation_id": "T003001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -5653,7 +5653,7 @@
             "observation_id": "T003002",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -5668,7 +5668,7 @@
             "observation_id": "T003003",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -6620,18 +6620,17 @@
         ],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "annotation_density": {
-            "value": 15.0,
+          "text_area_ratio": {
+            "value": 0.408416,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O016",
               "O001",
               "O006",
               "O008",
@@ -6646,6 +6645,15 @@
               "O018",
               "O020",
               "O021"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 2,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O008",
+              "O020"
             ]
           },
           "whitespace_fraction": {
@@ -6675,28 +6683,7 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "callout_candidate_count": {
-            "value": 2,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O008",
-              "O020"
-            ]
-          },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "photo_schematic_relation": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -6708,17 +6695,12 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "figure_text_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "text_area_ratio": {
-            "value": 0.408416,
+          "annotation_density": {
+            "value": 15.0,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
+              "O016",
               "O001",
               "O006",
               "O008",
@@ -6735,13 +6717,31 @@
               "O021"
             ]
           },
-          "caption_candidate_count": {
+          "matrix_rows": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "matrix_rows": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "photo_schematic_relation": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -7334,7 +7334,7 @@
             "observation_id": "T004001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7349,7 +7349,7 @@
             "observation_id": "T004002",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7364,7 +7364,7 @@
             "observation_id": "T004003",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7379,7 +7379,7 @@
             "observation_id": "T004004",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7409,7 +7409,7 @@
             "observation_id": "T004006",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7424,7 +7424,7 @@
             "observation_id": "T004007",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7439,7 +7439,7 @@
             "observation_id": "T004008",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7454,7 +7454,7 @@
             "observation_id": "T004009",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7469,7 +7469,7 @@
             "observation_id": "T004010",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7484,7 +7484,7 @@
             "observation_id": "T004011",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7499,7 +7499,7 @@
             "observation_id": "T004012",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7514,7 +7514,7 @@
             "observation_id": "T004013",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7529,7 +7529,7 @@
             "observation_id": "T004014",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7544,7 +7544,7 @@
             "observation_id": "T004015",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7559,7 +7559,7 @@
             "observation_id": "T004016",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7574,7 +7574,7 @@
             "observation_id": "T004017",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -7589,7 +7589,7 @@
             "observation_id": "T004018",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -8028,24 +8028,32 @@
         ],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "annotation_density": {
-            "value": 7.0,
+          "text_area_ratio": {
+            "value": 0.201673,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O005",
               "O001",
               "O003",
               "O006",
               "O007",
               "O008",
               "O009"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 2,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O005",
+              "O008"
             ]
           },
           "whitespace_fraction": {
@@ -8068,14 +8076,43 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "callout_candidate_count": {
-            "value": 2,
+          "figure_text_ratio": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "figure_area_ratio": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "annotation_density": {
+            "value": 7.0,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
               "O005",
-              "O008"
+              "O001",
+              "O003",
+              "O006",
+              "O007",
+              "O008",
+              "O009"
             ]
+          },
+          "matrix_rows": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "panel_count": {
             "value": null,
@@ -8090,43 +8127,6 @@
             "supporting_object_ids": []
           },
           "photo_schematic_relation": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "figure_area_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "figure_text_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "text_area_ratio": {
-            "value": 0.201673,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O003",
-              "O006",
-              "O007",
-              "O008",
-              "O009"
-            ]
-          },
-          "caption_candidate_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_rows": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -8395,7 +8395,7 @@
             "observation_id": "T005001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -8410,7 +8410,7 @@
             "observation_id": "T005002",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -9798,14 +9798,18 @@
         ],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
+          "caption_candidate_count": {
+            "value": 3,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O003",
+              "O017",
+              "O022"
+            ]
           },
-          "annotation_density": {
-            "value": 24.0,
+          "text_area_ratio": {
+            "value": 0.239346,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -9834,6 +9838,12 @@
               "O026",
               "O027"
             ]
+          },
+          "callout_candidate_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "whitespace_fraction": {
             "value": 0.749514,
@@ -9875,26 +9885,8 @@
               "O024"
             ]
           },
-          "callout_candidate_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "photo_schematic_relation": {
-            "value": "separate",
+          "figure_text_ratio": {
+            "value": 0.046539,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -9909,16 +9901,8 @@
               "O024"
             ]
           },
-          "figure_text_ratio": {
-            "value": 0.046539,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O024"
-            ]
-          },
-          "text_area_ratio": {
-            "value": 0.239346,
+          "annotation_density": {
+            "value": 24.0,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -9948,21 +9932,37 @@
               "O027"
             ]
           },
-          "caption_candidate_count": {
-            "value": 3,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O003",
-              "O017",
-              "O022"
-            ]
-          },
           "matrix_rows": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "photo_schematic_relation": {
+            "value": "separate",
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O024"
+            ]
           }
         },
         "style_roles": [
@@ -10875,7 +10875,7 @@
             "observation_id": "T006001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -10890,7 +10890,7 @@
             "observation_id": "T006002",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -10905,7 +10905,7 @@
             "observation_id": "T006003",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -10920,7 +10920,7 @@
             "observation_id": "T006004",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -10935,7 +10935,7 @@
             "observation_id": "T006005",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -10950,7 +10950,7 @@
             "observation_id": "T006006",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -10965,7 +10965,7 @@
             "observation_id": "T006007",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -10980,7 +10980,7 @@
             "observation_id": "T006008",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -10995,7 +10995,7 @@
             "observation_id": "T006009",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11010,7 +11010,7 @@
             "observation_id": "T006010",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11025,7 +11025,7 @@
             "observation_id": "T006011",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11040,7 +11040,7 @@
             "observation_id": "T006012",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11055,7 +11055,7 @@
             "observation_id": "T006013",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11070,7 +11070,7 @@
             "observation_id": "T006014",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11085,7 +11085,7 @@
             "observation_id": "T006015",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11100,7 +11100,7 @@
             "observation_id": "T006016",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11115,7 +11115,7 @@
             "observation_id": "T006017",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11130,7 +11130,7 @@
             "observation_id": "T006018",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11145,7 +11145,7 @@
             "observation_id": "T006019",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11160,7 +11160,7 @@
             "observation_id": "T006020",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11175,7 +11175,7 @@
             "observation_id": "T006021",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11190,7 +11190,7 @@
             "observation_id": "T006022",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11205,7 +11205,7 @@
             "observation_id": "T006023",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11220,7 +11220,7 @@
             "observation_id": "T006024",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11235,7 +11235,7 @@
             "observation_id": "T006025",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11250,7 +11250,7 @@
             "observation_id": "T006026",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11265,7 +11265,7 @@
             "observation_id": "T006027",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11280,7 +11280,7 @@
             "observation_id": "T006028",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11295,7 +11295,7 @@
             "observation_id": "T006029",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11310,7 +11310,7 @@
             "observation_id": "T006030",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11325,7 +11325,7 @@
             "observation_id": "T006031",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11340,7 +11340,7 @@
             "observation_id": "T006032",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11355,7 +11355,7 @@
             "observation_id": "T006033",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11370,7 +11370,7 @@
             "observation_id": "T006034",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -11385,7 +11385,7 @@
             "observation_id": "T006035",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -14220,41 +14220,17 @@
         ],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "annotation_density": {
-            "value": 42.0,
+          "text_area_ratio": {
+            "value": 0.169675,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O005",
-              "O011",
-              "O020",
-              "O021",
-              "O022",
-              "O023",
-              "O024",
-              "O025",
-              "O026",
-              "O027",
-              "O028",
-              "O029",
-              "O030",
-              "O034",
-              "O035",
-              "O036",
-              "O037",
-              "O038",
-              "O039",
-              "O040",
-              "O041",
-              "O042",
-              "O043",
-              "O044",
               "O001",
               "O002",
               "O003",
@@ -14273,6 +14249,14 @@
               "O031",
               "O032",
               "O033"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 1,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O009"
             ]
           },
           "whitespace_fraction": {
@@ -14330,27 +14314,7 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "callout_candidate_count": {
-            "value": 1,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O009"
-            ]
-          },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "photo_schematic_relation": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -14362,17 +14326,35 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "figure_text_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "text_area_ratio": {
-            "value": 0.169675,
+          "annotation_density": {
+            "value": 42.0,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
+              "O005",
+              "O011",
+              "O020",
+              "O021",
+              "O022",
+              "O023",
+              "O024",
+              "O025",
+              "O026",
+              "O027",
+              "O028",
+              "O029",
+              "O030",
+              "O034",
+              "O035",
+              "O036",
+              "O037",
+              "O038",
+              "O039",
+              "O040",
+              "O041",
+              "O042",
+              "O043",
+              "O044",
               "O001",
               "O002",
               "O003",
@@ -14393,13 +14375,31 @@
               "O033"
             ]
           },
-          "caption_candidate_count": {
+          "matrix_rows": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "matrix_rows": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "photo_schematic_relation": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -15928,7 +15928,7 @@
             "observation_id": "T007001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -15943,7 +15943,7 @@
             "observation_id": "T007002",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -15958,7 +15958,7 @@
             "observation_id": "T007003",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -15973,7 +15973,7 @@
             "observation_id": "T007004",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -22503,67 +22503,25 @@
         ],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "annotation_density": {
-            "value": 98.0,
+          "caption_candidate_count": {
+            "value": 7,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O004",
-              "O005",
-              "O006",
-              "O007",
-              "O008",
-              "O009",
-              "O010",
-              "O011",
-              "O012",
-              "O013",
-              "O014",
-              "O015",
-              "O016",
-              "O022",
-              "O030",
-              "O031",
-              "O032",
-              "O033",
-              "O034",
-              "O035",
-              "O036",
-              "O037",
-              "O038",
-              "O039",
-              "O040",
-              "O041",
-              "O042",
-              "O045",
-              "O077",
-              "O078",
-              "O079",
-              "O080",
-              "O081",
-              "O082",
-              "O083",
-              "O084",
-              "O085",
-              "O086",
-              "O087",
-              "O093",
-              "O094",
-              "O095",
-              "O096",
-              "O097",
-              "O098",
-              "O099",
-              "O100",
-              "O101",
-              "O102",
-              "O103",
+              "O026",
+              "O062",
+              "O063",
+              "O064",
+              "O065",
+              "O066",
+              "O067"
+            ]
+          },
+          "text_area_ratio": {
+            "value": 0.205313,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
               "O001",
               "O002",
               "O003",
@@ -22612,6 +22570,14 @@
               "O104",
               "O105",
               "O106"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 1,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O057"
             ]
           },
           "whitespace_fraction": {
@@ -22728,28 +22694,8 @@
               "O025"
             ]
           },
-          "callout_candidate_count": {
-            "value": 1,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O057"
-            ]
-          },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "photo_schematic_relation": {
-            "value": "separate",
+          "figure_text_ratio": {
+            "value": 0.095708,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -22764,19 +22710,61 @@
               "O025"
             ]
           },
-          "figure_text_ratio": {
-            "value": 0.095708,
+          "annotation_density": {
+            "value": 98.0,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O025"
-            ]
-          },
-          "text_area_ratio": {
-            "value": 0.205313,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
+              "O004",
+              "O005",
+              "O006",
+              "O007",
+              "O008",
+              "O009",
+              "O010",
+              "O011",
+              "O012",
+              "O013",
+              "O014",
+              "O015",
+              "O016",
+              "O022",
+              "O030",
+              "O031",
+              "O032",
+              "O033",
+              "O034",
+              "O035",
+              "O036",
+              "O037",
+              "O038",
+              "O039",
+              "O040",
+              "O041",
+              "O042",
+              "O045",
+              "O077",
+              "O078",
+              "O079",
+              "O080",
+              "O081",
+              "O082",
+              "O083",
+              "O084",
+              "O085",
+              "O086",
+              "O087",
+              "O093",
+              "O094",
+              "O095",
+              "O096",
+              "O097",
+              "O098",
+              "O099",
+              "O100",
+              "O101",
+              "O102",
+              "O103",
               "O001",
               "O002",
               "O003",
@@ -22827,25 +22815,37 @@
               "O106"
             ]
           },
-          "caption_candidate_count": {
-            "value": 7,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O026",
-              "O062",
-              "O063",
-              "O064",
-              "O065",
-              "O066",
-              "O067"
-            ]
-          },
           "matrix_rows": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "photo_schematic_relation": {
+            "value": "separate",
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O025"
+            ]
           }
         },
         "style_roles": [
@@ -26422,7 +26422,7 @@
             "observation_id": "T008001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -26437,7 +26437,7 @@
             "observation_id": "T008002",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -26452,7 +26452,7 @@
             "observation_id": "T008003",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -26467,7 +26467,7 @@
             "observation_id": "T008004",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -26482,7 +26482,7 @@
             "observation_id": "T008005",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -26497,7 +26497,7 @@
             "observation_id": "T008006",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -26512,7 +26512,7 @@
             "observation_id": "T008007",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -26527,7 +26527,7 @@
             "observation_id": "T008008",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -27712,20 +27712,17 @@
         ],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "annotation_density": {
-            "value": 20.0,
+          "text_area_ratio": {
+            "value": 0.207766,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O012",
-              "O014",
-              "O016",
               "O001",
               "O002",
               "O003",
@@ -27743,6 +27740,16 @@
               "O020",
               "O021",
               "O022"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 3,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O004",
+              "O005",
+              "O020"
             ]
           },
           "whitespace_fraction": {
@@ -27775,29 +27782,7 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "callout_candidate_count": {
-            "value": 3,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O004",
-              "O005",
-              "O020"
-            ]
-          },
-          "panel_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_columns": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "photo_schematic_relation": {
+          "figure_text_ratio": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -27809,17 +27794,14 @@
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "figure_text_ratio": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "text_area_ratio": {
-            "value": 0.207766,
+          "annotation_density": {
+            "value": 20.0,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
+              "O012",
+              "O014",
+              "O016",
               "O001",
               "O002",
               "O003",
@@ -27839,13 +27821,31 @@
               "O022"
             ]
           },
-          "caption_candidate_count": {
+          "matrix_rows": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "matrix_rows": {
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "panel_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "matrix_columns": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "photo_schematic_relation": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -28582,7 +28582,7 @@
             "observation_id": "T009001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28597,7 +28597,7 @@
             "observation_id": "T009002",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28612,7 +28612,7 @@
             "observation_id": "T009003",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28627,7 +28627,7 @@
             "observation_id": "T009004",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28642,7 +28642,7 @@
             "observation_id": "T009005",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28657,7 +28657,7 @@
             "observation_id": "T009006",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28672,7 +28672,7 @@
             "observation_id": "T009007",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28687,7 +28687,7 @@
             "observation_id": "T009008",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28702,7 +28702,7 @@
             "observation_id": "T009009",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28717,7 +28717,7 @@
             "observation_id": "T009010",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -28732,7 +28732,7 @@
             "observation_id": "T009011",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 14.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -29454,14 +29454,14 @@
         ],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "annotation_density": {
-            "value": 11.0,
+          "text_area_ratio": {
+            "value": 0.417407,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -29476,6 +29476,14 @@
               "O013",
               "O014",
               "O018"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 1,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O010"
             ]
           },
           "whitespace_fraction": {
@@ -29505,13 +29513,51 @@
               "O004"
             ]
           },
-          "callout_candidate_count": {
-            "value": 1,
+          "figure_text_ratio": {
+            "value": 0.44183,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O010"
+              "O004"
             ]
+          },
+          "figure_area_ratio": {
+            "value": 0.184423,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O004"
+            ]
+          },
+          "annotation_density": {
+            "value": 11.0,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O001",
+              "O005",
+              "O006",
+              "O007",
+              "O008",
+              "O010",
+              "O011",
+              "O012",
+              "O013",
+              "O014",
+              "O018"
+            ]
+          },
+          "matrix_rows": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "panel_count": {
             "value": null,
@@ -29532,52 +29578,6 @@
             "supporting_object_ids": [
               "O004"
             ]
-          },
-          "figure_area_ratio": {
-            "value": 0.184423,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O004"
-            ]
-          },
-          "figure_text_ratio": {
-            "value": 0.44183,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O004"
-            ]
-          },
-          "text_area_ratio": {
-            "value": 0.417407,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O005",
-              "O006",
-              "O007",
-              "O008",
-              "O010",
-              "O011",
-              "O012",
-              "O013",
-              "O014",
-              "O018"
-            ]
-          },
-          "caption_candidate_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           }
         },
         "style_roles": [
@@ -30022,7 +30022,7 @@
             "observation_id": "T010001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30037,7 +30037,7 @@
             "observation_id": "T010002",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30052,7 +30052,7 @@
             "observation_id": "T010003",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30067,7 +30067,7 @@
             "observation_id": "T010004",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30082,7 +30082,7 @@
             "observation_id": "T010005",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30097,7 +30097,7 @@
             "observation_id": "T010006",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30112,7 +30112,7 @@
             "observation_id": "T010007",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30127,7 +30127,7 @@
             "observation_id": "T010008",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30142,7 +30142,7 @@
             "observation_id": "T010009",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30157,7 +30157,7 @@
             "observation_id": "T010010",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30172,7 +30172,7 @@
             "observation_id": "T010011",
             "role": "unknown",
             "role_confidence": "unknown",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30187,7 +30187,7 @@
             "observation_id": "T010012",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -30202,7 +30202,7 @@
             "observation_id": "T010013",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -31575,17 +31575,23 @@
           }
         ],
         "metrics": {
-          "comparison_symmetry": {
-            "value": 1.0,
+          "caption_candidate_count": {
+            "value": 8,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O014",
-              "O016"
+              "O006",
+              "O010",
+              "O015",
+              "O017",
+              "O019",
+              "O021",
+              "O023",
+              "O025"
             ]
           },
-          "annotation_density": {
-            "value": 2.285714,
+          "text_area_ratio": {
+            "value": 0.3921,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
@@ -31605,6 +31611,14 @@
               "O021",
               "O023",
               "O025"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 1,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O012"
             ]
           },
           "whitespace_fraction": {
@@ -31651,12 +31665,70 @@
               "O024"
             ]
           },
-          "callout_candidate_count": {
-            "value": 1,
+          "figure_text_ratio": {
+            "value": 0.824037,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O012"
+              "O003",
+              "O014",
+              "O016",
+              "O018",
+              "O020",
+              "O022",
+              "O024"
+            ]
+          },
+          "figure_area_ratio": {
+            "value": 0.323105,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O003",
+              "O014",
+              "O016",
+              "O018",
+              "O020",
+              "O022",
+              "O024"
+            ]
+          },
+          "annotation_density": {
+            "value": 2.285714,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O001",
+              "O004",
+              "O005",
+              "O006",
+              "O007",
+              "O008",
+              "O009",
+              "O010",
+              "O012",
+              "O013",
+              "O015",
+              "O017",
+              "O019",
+              "O021",
+              "O023",
+              "O025"
+            ]
+          },
+          "matrix_rows": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
+            "value": 1.0,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O014",
+              "O016"
             ]
           },
           "panel_count": {
@@ -31692,78 +31764,6 @@
               "O022",
               "O024"
             ]
-          },
-          "figure_area_ratio": {
-            "value": 0.323105,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O003",
-              "O014",
-              "O016",
-              "O018",
-              "O020",
-              "O022",
-              "O024"
-            ]
-          },
-          "figure_text_ratio": {
-            "value": 0.824037,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O003",
-              "O014",
-              "O016",
-              "O018",
-              "O020",
-              "O022",
-              "O024"
-            ]
-          },
-          "text_area_ratio": {
-            "value": 0.3921,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O004",
-              "O005",
-              "O006",
-              "O007",
-              "O008",
-              "O009",
-              "O010",
-              "O012",
-              "O013",
-              "O015",
-              "O017",
-              "O019",
-              "O021",
-              "O023",
-              "O025"
-            ]
-          },
-          "caption_candidate_count": {
-            "value": 8,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O006",
-              "O010",
-              "O015",
-              "O017",
-              "O019",
-              "O021",
-              "O023",
-              "O025"
-            ]
-          },
-          "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           }
         },
         "style_roles": [
@@ -32604,7 +32604,7 @@
             "observation_id": "T011001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32619,7 +32619,7 @@
             "observation_id": "T011002",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32634,7 +32634,7 @@
             "observation_id": "T011003",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32649,7 +32649,7 @@
             "observation_id": "T011004",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32664,7 +32664,7 @@
             "observation_id": "T011005",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32679,7 +32679,7 @@
             "observation_id": "T011006",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32694,7 +32694,7 @@
             "observation_id": "T011007",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32709,7 +32709,7 @@
             "observation_id": "T011008",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32724,7 +32724,7 @@
             "observation_id": "T011009",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32739,7 +32739,7 @@
             "observation_id": "T011010",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 16.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32754,7 +32754,7 @@
             "observation_id": "T011011",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32769,7 +32769,7 @@
             "observation_id": "T011012",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32784,7 +32784,7 @@
             "observation_id": "T011013",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32799,7 +32799,7 @@
             "observation_id": "T011014",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32814,7 +32814,7 @@
             "observation_id": "T011015",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32829,7 +32829,7 @@
             "observation_id": "T011016",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32844,7 +32844,7 @@
             "observation_id": "T011017",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32859,7 +32859,7 @@
             "observation_id": "T011018",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32874,7 +32874,7 @@
             "observation_id": "T011019",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -32889,7 +32889,7 @@
             "observation_id": "T011020",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -33449,24 +33449,37 @@
         ],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "annotation_density": {
-            "value": 3.5,
+          "caption_candidate_count": {
+            "value": 3,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O005",
-              "O006",
+              "O007",
+              "O009",
+              "O010"
+            ]
+          },
+          "text_area_ratio": {
+            "value": 0.173429,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
               "O001",
               "O004",
               "O007",
               "O009",
               "O010"
+            ]
+          },
+          "callout_candidate_count": {
+            "value": 4,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O004",
+              "O005",
+              "O006",
+              "O009"
             ]
           },
           "whitespace_fraction": {
@@ -33494,16 +33507,49 @@
               "O003"
             ]
           },
-          "callout_candidate_count": {
-            "value": 4,
+          "figure_text_ratio": {
+            "value": 1.085972,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
-              "O004",
+              "O002",
+              "O003"
+            ]
+          },
+          "figure_area_ratio": {
+            "value": 0.188339,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O002",
+              "O003"
+            ]
+          },
+          "annotation_density": {
+            "value": 3.5,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
               "O005",
               "O006",
-              "O009"
+              "O001",
+              "O004",
+              "O007",
+              "O009",
+              "O010"
             ]
+          },
+          "matrix_rows": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "panel_count": {
             "value": null,
@@ -33525,52 +33571,6 @@
               "O002",
               "O003"
             ]
-          },
-          "figure_area_ratio": {
-            "value": 0.188339,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O002",
-              "O003"
-            ]
-          },
-          "figure_text_ratio": {
-            "value": 1.085972,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O002",
-              "O003"
-            ]
-          },
-          "text_area_ratio": {
-            "value": 0.173429,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O004",
-              "O007",
-              "O009",
-              "O010"
-            ]
-          },
-          "caption_candidate_count": {
-            "value": 3,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O007",
-              "O009",
-              "O010"
-            ]
-          },
-          "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           }
         },
         "style_roles": [
@@ -33907,7 +33907,7 @@
             "observation_id": "T012001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -33922,7 +33922,7 @@
             "observation_id": "T012002",
             "role": "body",
             "role_confidence": "provisional",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 12.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -34103,19 +34103,25 @@
         "groups": [],
         "panels": [],
         "metrics": {
-          "comparison_symmetry": {
+          "caption_candidate_count": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
             "supporting_object_ids": []
           },
-          "annotation_density": {
-            "value": 0.5,
+          "text_area_ratio": {
+            "value": 0.067318,
             "basis": "derived",
             "evidence_state": "derived",
             "supporting_object_ids": [
               "O002"
             ]
+          },
+          "callout_candidate_count": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
           },
           "whitespace_fraction": {
             "value": 0.485721,
@@ -34136,7 +34142,39 @@
               "O003"
             ]
           },
-          "callout_candidate_count": {
+          "figure_text_ratio": {
+            "value": 6.639547,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O001",
+              "O003"
+            ]
+          },
+          "figure_area_ratio": {
+            "value": 0.446961,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O001",
+              "O003"
+            ]
+          },
+          "annotation_density": {
+            "value": 0.5,
+            "basis": "derived",
+            "evidence_state": "derived",
+            "supporting_object_ids": [
+              "O002"
+            ]
+          },
+          "matrix_rows": {
+            "value": null,
+            "basis": "not_observable_structurally",
+            "evidence_state": "unavailable",
+            "supporting_object_ids": []
+          },
+          "comparison_symmetry": {
             "value": null,
             "basis": "not_observable_structurally",
             "evidence_state": "unavailable",
@@ -34162,44 +34200,6 @@
               "O001",
               "O003"
             ]
-          },
-          "figure_area_ratio": {
-            "value": 0.446961,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O003"
-            ]
-          },
-          "figure_text_ratio": {
-            "value": 6.639547,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O001",
-              "O003"
-            ]
-          },
-          "text_area_ratio": {
-            "value": 0.067318,
-            "basis": "derived",
-            "evidence_state": "derived",
-            "supporting_object_ids": [
-              "O002"
-            ]
-          },
-          "caption_candidate_count": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
-          },
-          "matrix_rows": {
-            "value": null,
-            "basis": "not_observable_structurally",
-            "evidence_state": "unavailable",
-            "supporting_object_ids": []
           }
         },
         "style_roles": [
@@ -34320,7 +34320,7 @@
             "observation_id": "T013001",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -34335,7 +34335,7 @@
             "observation_id": "T013002",
             "role": "title",
             "role_confidence": "structurally_supported",
-            "script_role": "latin",
+            "script_role": "unspecified",
             "size_pt": 24.0,
             "source_scope": "slide_body",
             "style": "normal",
@@ -34349,6 +34349,24 @@
     "theme_profiles": [
       {
         "theme_profile_id": "T001",
+        "usage_state": "referenced",
+        "authority_state": "active_professor_style",
+        "supporting_master_ids": [],
+        "supporting_slide_ids": [
+          "SL001",
+          "SL002",
+          "SL003",
+          "SL004",
+          "SL005",
+          "SL006",
+          "SL007",
+          "SL008",
+          "SL009",
+          "SL010",
+          "SL011",
+          "SL012",
+          "SL013"
+        ],
         "palette": [
           {
             "theme_token": "accent1",
@@ -34437,6 +34455,10 @@
       },
       {
         "theme_profile_id": "T002",
+        "usage_state": "unreferenced",
+        "authority_state": "reference_only",
+        "supporting_master_ids": [],
+        "supporting_slide_ids": [],
         "palette": [
           {
             "theme_token": "accent1",
@@ -34523,272 +34545,326 @@
           {
             "theme_font_role": "major",
             "script_code": "Arab",
-            "family": "Times New Roman"
+            "family": "Times New Roman",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Armn",
-            "family": "Arial"
+            "family": "Arial",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Beng",
-            "family": "Vrinda"
+            "family": "Vrinda",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Cans",
-            "family": "Euphemia"
+            "family": "Euphemia",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Cher",
-            "family": "Plantagenet Cherokee"
+            "family": "Plantagenet Cherokee",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Deva",
-            "family": "Mangal"
+            "family": "Mangal",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Ethi",
-            "family": "Nyala"
+            "family": "Nyala",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Geor",
-            "family": "Sylfaen"
+            "family": "Sylfaen",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Gujr",
-            "family": "Shruti"
+            "family": "Shruti",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Guru",
-            "family": "Raavi"
+            "family": "Raavi",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Hang",
-            "family": "맑은 고딕"
+            "family": "맑은 고딕",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Hans",
-            "family": "等线 Light"
+            "family": "等线 Light",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Hant",
-            "family": "新細明體"
+            "family": "新細明體",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Hebr",
-            "family": "Times New Roman"
+            "family": "Times New Roman",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Jpan",
-            "family": "游ゴシック Light"
+            "family": "游ゴシック Light",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Khmr",
-            "family": "MoolBoran"
+            "family": "MoolBoran",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Knda",
-            "family": "Tunga"
+            "family": "Tunga",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Laoo",
-            "family": "DokChampa"
+            "family": "DokChampa",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Mlym",
-            "family": "Kartika"
+            "family": "Kartika",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Mymr",
-            "family": "Myanmar Text"
+            "family": "Myanmar Text",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Orya",
-            "family": "Kalinga"
+            "family": "Kalinga",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Sinh",
-            "family": "Iskoola Pota"
+            "family": "Iskoola Pota",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Taml",
-            "family": "Latha"
+            "family": "Latha",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Telu",
-            "family": "Gautami"
+            "family": "Gautami",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Thai",
-            "family": "Angsana New"
+            "family": "Angsana New",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Tibt",
-            "family": "Microsoft Himalaya"
+            "family": "Microsoft Himalaya",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "major",
             "script_code": "Yiii",
-            "family": "Microsoft Yi Baiti"
+            "family": "Microsoft Yi Baiti",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Arab",
-            "family": "Arial"
+            "family": "Arial",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Armn",
-            "family": "Arial"
+            "family": "Arial",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Beng",
-            "family": "Vrinda"
+            "family": "Vrinda",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Cans",
-            "family": "Euphemia"
+            "family": "Euphemia",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Cher",
-            "family": "Plantagenet Cherokee"
+            "family": "Plantagenet Cherokee",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Deva",
-            "family": "Mangal"
+            "family": "Mangal",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Ethi",
-            "family": "Nyala"
+            "family": "Nyala",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Geor",
-            "family": "Sylfaen"
+            "family": "Sylfaen",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Gujr",
-            "family": "Shruti"
+            "family": "Shruti",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Guru",
-            "family": "Raavi"
+            "family": "Raavi",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Hang",
-            "family": "맑은 고딕"
+            "family": "맑은 고딕",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Hans",
-            "family": "等线"
+            "family": "等线",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Hant",
-            "family": "新細明體"
+            "family": "新細明體",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Hebr",
-            "family": "Arial"
+            "family": "Arial",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Jpan",
-            "family": "游ゴシック"
+            "family": "游ゴシック",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Khmr",
-            "family": "DaunPenh"
+            "family": "DaunPenh",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Knda",
-            "family": "Tunga"
+            "family": "Tunga",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Laoo",
-            "family": "DokChampa"
+            "family": "DokChampa",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Mlym",
-            "family": "Kartika"
+            "family": "Kartika",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Mymr",
-            "family": "Myanmar Text"
+            "family": "Myanmar Text",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Orya",
-            "family": "Kalinga"
+            "family": "Kalinga",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Sinh",
-            "family": "Iskoola Pota"
+            "family": "Iskoola Pota",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Taml",
-            "family": "Latha"
+            "family": "Latha",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Telu",
-            "family": "Gautami"
+            "family": "Gautami",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Thai",
-            "family": "Cordia New"
+            "family": "Cordia New",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Tibt",
-            "family": "Microsoft Himalaya"
+            "family": "Microsoft Himalaya",
+            "authority_state": "reference_only"
           },
           {
             "theme_font_role": "minor",
             "script_code": "Yiii",
-            "family": "Microsoft Yi Baiti"
+            "family": "Microsoft Yi Baiti",
+            "authority_state": "reference_only"
           }
         ]
       }

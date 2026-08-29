@@ -28,6 +28,7 @@ _SOURCE_SCOPES = {"slide_master", "slide_layout", "theme", "slide_body", "slide_
 _COLOR_TOKENS = {"accent1", "accent2", "accent3", "accent4", "accent5", "accent6", "dk1", "dk2", "lt1", "lt2", "hlink", "folhlink"}
 _SAFE_FONT_NAMES = {"Arial", "Calibri", "Times New Roman", "Aptos", "Noto Sans CJK", "Microsoft JhengHei", "Yu Gothic", "Meiryo", "Segoe UI", "Cambria", "Georgia", "微軟正黑體"}
 _FONT_TOKEN_SCRIPTS = {"lt": "latin", "ea": "east_asian", "cs": "complex_script"}
+_SCRIPT_ROLES = ("latin", "east_asian", "complex_script", "unspecified")
 _SUPPLEMENTAL_THEME_SCRIPT_CODES = {
     "Arab", "Armn", "Beng", "Cans", "Cher", "Deva", "Ethi", "Geor",
     "Gujr", "Guru", "Hang", "Hans", "Hant", "Hebr", "Jpan", "Khmr",
@@ -318,9 +319,26 @@ def resolve_descriptor_theme_color(token: str, *, profile_id: str, theme_profile
     return value.upper() if isinstance(value, str) and re.fullmatch(r"[0-9A-Fa-f]{6}", value) else None
 
 
+def resolve_active_descriptor_theme_color(token: str, *, profile_id: str, theme_profile_id: str, descriptor_theme_profiles: dict[str, dict[str, dict[str, Any]]]) -> str | None:
+    """Resolve only a topology-reachable theme for future professor grammar.
+
+    Theme IDs are local to a descriptor, and a package-resident orphan theme is
+    audit/reference metadata rather than visual-authority evidence.
+    """
+    profile = descriptor_theme_profiles.get(profile_id, {}).get(theme_profile_id)
+    if not isinstance(profile, dict) or profile.get("usage_state") != "referenced":
+        return None
+    return resolve_descriptor_theme_color(
+        token,
+        profile_id=profile_id,
+        theme_profile_id=theme_profile_id,
+        descriptor_theme_profiles=descriptor_theme_profiles,
+    )
+
+
 def typography_resolution_counts(observations: list[dict[str, Any]]) -> dict[str, dict[str, int]]:
     """Count every persisted script observation exactly once by evidence state."""
-    scripts = ("latin", "east_asian", "complex_script")
+    scripts = _SCRIPT_ROLES
     states = ("explicit_font", "theme_font_resolved", "theme_font_unresolved", "inherited_unresolved", "unknown")
     counts = {script: {state: 0 for state in states} for script in scripts}
     for observation in observations:
@@ -335,7 +353,7 @@ def _font_roles(slides: list[dict[str, Any]]) -> list[dict[str, Any]]:
     observations: dict[tuple[str, str, str, str, str, str, str, str], list[float]] = {}
     for slide in slides:
         for item in slide.get("font_observations", []):
-            key = (item["role"], item["family"], item["weight"], item.get("style", "normal"), item.get("source_scope", "not_observable_structurally"), item.get("theme_font_role") or "none", item.get("script_role", "latin"), item.get("font_evidence_state", "unknown"))
+            key = (item["role"], item["family"], item["weight"], item.get("style", "normal"), item.get("source_scope", "not_observable_structurally"), item.get("theme_font_role") or "none", item.get("script_role", "unspecified"), item.get("font_evidence_state", "unknown"))
             observations.setdefault(key, []).append(item["size_pt"])
     result = []
     for (role, family, weight, style, source_scope, theme_font_role, script_role, evidence_state), sizes in sorted(observations.items()):
@@ -388,6 +406,87 @@ def _theme_profiles(package: zipfile.ZipFile, names: list[str]) -> dict[str, dic
             "supplemental_fonts": sorted(supplemental_fonts, key=lambda item: (item["theme_font_role"], item["script_code"], item["family"])),
         }
     return profiles
+
+
+def classify_theme_usage(
+    theme_profiles: list[dict[str, Any]],
+    *,
+    master_theme_topology: list[dict[str, Any]],
+    slide_theme_topology: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Construct per-theme reachability evidence from actual topology only."""
+    by_id = {profile.get("theme_profile_id"): profile for profile in theme_profiles}
+    if len(by_id) != len(theme_profiles) or any(not re.fullmatch(r"T[0-9]{3,}", str(key)) for key in by_id):
+        raise Checkpoint2PolicyViolation("invalid descriptor-local theme identity")
+    master_support: dict[str, set[str]] = {theme_id: set() for theme_id in by_id}
+    slide_support: dict[str, set[str]] = {theme_id: set() for theme_id in by_id}
+    for edge in master_theme_topology:
+        if edge.get("basis") != "measured":
+            continue
+        target, source = edge.get("target_id"), edge.get("source_id")
+        if target not in by_id or not isinstance(source, str) or not re.fullmatch(r"M[0-9]{3,}", source):
+            raise Checkpoint2PolicyViolation("unknown Master theme topology target")
+        master_support[target].add(source)
+    for edge in slide_theme_topology:
+        if edge.get("basis") != "measured":
+            continue
+        target, source = edge.get("target_id"), edge.get("source_id")
+        if target not in by_id or not isinstance(source, str) or not re.fullmatch(r"(?:SL|D)[0-9]{3,}", source):
+            raise Checkpoint2PolicyViolation("unknown slide theme topology target")
+        slide_support[target].add(source)
+    result = []
+    for theme_id in sorted(by_id):
+        profile = by_id[theme_id]
+        referenced = bool(master_support[theme_id] or slide_support[theme_id])
+        usage_state = "referenced" if referenced else "unreferenced"
+        authority_state = "active_professor_style" if referenced else "reference_only"
+        supplemental = []
+        for item in profile.get("supplemental_fonts", []):
+            if not isinstance(item, dict):
+                raise Checkpoint2PolicyViolation("invalid supplemental theme font record")
+            supplemental.append({
+                "theme_font_role": item.get("theme_font_role"),
+                "script_code": item.get("script_code"),
+                "family": item.get("family"),
+                "authority_state": authority_state,
+            })
+        result.append({
+            "theme_profile_id": theme_id,
+            "usage_state": usage_state,
+            "authority_state": authority_state,
+            "supporting_master_ids": sorted(master_support[theme_id]),
+            "supporting_slide_ids": sorted(slide_support[theme_id]),
+            "palette": profile.get("palette", []),
+            "font_scheme": profile.get("font_scheme", {}),
+            "supplemental_fonts": supplemental,
+        })
+    return result
+
+
+def _theme_descriptor_profiles(
+    profiles_by_part: dict[str, dict[str, Any]],
+    *,
+    master_theme_topology: list[dict[str, Any]],
+    slide_theme_topology: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Convert local OOXML theme profiles into typed, reachability-aware input."""
+    themes = [
+        {
+            "theme_profile_id": profile["theme_profile_id"],
+            "palette": [
+                {"theme_token": key, "resolved_rgb": value, "basis": "measured", "source_scope": "theme"}
+                for key, value in sorted(profile["palette"].items())
+            ],
+            "font_scheme": profile["font_scheme"],
+            "supplemental_fonts": profile["supplemental_fonts"],
+        }
+        for profile in profiles_by_part.values()
+    ]
+    return classify_theme_usage(
+        themes,
+        master_theme_topology=master_theme_topology,
+        slide_theme_topology=slide_theme_topology,
+    )
 
 
 def _theme_palette(package: zipfile.ZipFile, names: list[str]) -> dict[str, str]:
@@ -587,6 +686,7 @@ class ReadOnlyPrivateSourceSession:
                 master_theme = {edge["source_id"]: edge["target_id"] for edge in master_theme_topology}
                 theme_profiles_by_id = {profile["theme_profile_id"]: profile for profile in theme_profiles_by_part.values()}
                 slide_profiles = [self._slide_profile(ET.fromstring(package.read(name)), width, height, index + 1, source_scope="slide_body", theme_palette=theme_profiles_by_id.get(master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), ""), ""), {}).get("palette", {}), theme_profile_id=master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), "")), theme_font_scheme=theme_profiles_by_id.get(master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), ""), ""), {}).get("font_scheme", {})) for index, name in enumerate(slides)]
+                slide_theme_topology = [{"source_id": f"SL{index + 1:03d}", "target_id": master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), ""), "T000"), "basis": "measured" if master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), "")) else "not_observable_structurally", "source_scope": "slide_body"} for index in range(len(slides))]
                 master_xml = [package.read(name) for name in masters]
                 layout_xml = [package.read(name) for name in layouts]
             slide_size = {"width": _round(width / 914400), "height": _round(height / 914400), "basis": "measured"}
@@ -596,7 +696,7 @@ class ReadOnlyPrivateSourceSession:
                 layout_profiles = [self._slide_profile(ET.fromstring(value), width, height, index + 1, source_scope="slide_layout", theme_palette=theme_profiles_by_id.get(master_theme.get(layout_master.get(f"L{index + 1:03d}", ""), ""), {}).get("palette", {}), theme_profile_id=master_theme.get(layout_master.get(f"L{index + 1:03d}", "")), theme_font_scheme=theme_profiles_by_id.get(master_theme.get(layout_master.get(f"L{index + 1:03d}", ""), ""), {}).get("font_scheme", {})) for index, value in enumerate(layout_xml)]
                 shell_profiles = [*master_profiles, *layout_profiles]
                 typography = _font_roles(shell_profiles)
-                profile = {**base, "master_count": len(masters), "layout_count": len(layouts), "measurement_basis": {"slide_size": "measured", "topology": "measured", "regions": "measured" if shell_profiles else "not_observable_structurally", "typography": "measured" if typography else "not_observable_structurally", "styles": "measured" if shell_profiles else "not_observable_structurally", "primitives": "measured" if shell_profiles else "not_observable_structurally", "placeholders": "measured" if any(profile.get("placeholders") for profile in shell_profiles) else "not_observable_structurally"}, "layout_master_topology": topology["layout_master"], "slide_layout_topology": topology["slide_layout"], "master_theme_topology": master_theme_topology, "shell_regions": self._shell_regions(shell_profiles, width, height), "safe_content_bounds": self._safe_bounds(shell_profiles), "typography_roles": typography, "style_roles": self._style_roles(shell_profiles), "shell_primitives": self._shell_primitives(shell_profiles), "placeholder_measurements": [placeholder for profile in shell_profiles for placeholder in profile.get("placeholders", [])], "theme_profiles": [{"theme_profile_id": profile["theme_profile_id"], "palette": [{"theme_token": key, "resolved_rgb": value, "basis": "measured", "source_scope": "theme"} for key, value in sorted(profile["palette"].items())], "font_scheme": profile["font_scheme"], "supplemental_fonts": profile["supplemental_fonts"]} for profile in theme_profiles_by_part.values()]}
+                profile = {**base, "master_count": len(masters), "layout_count": len(layouts), "measurement_basis": {"slide_size": "measured", "topology": "measured", "regions": "measured" if shell_profiles else "not_observable_structurally", "typography": "measured" if typography else "not_observable_structurally", "styles": "measured" if shell_profiles else "not_observable_structurally", "primitives": "measured" if shell_profiles else "not_observable_structurally", "placeholders": "measured" if any(profile.get("placeholders") for profile in shell_profiles) else "not_observable_structurally"}, "layout_master_topology": topology["layout_master"], "slide_layout_topology": topology["slide_layout"], "master_theme_topology": master_theme_topology, "shell_regions": self._shell_regions(shell_profiles, width, height), "safe_content_bounds": self._safe_bounds(shell_profiles), "typography_roles": typography, "style_roles": self._style_roles(shell_profiles), "shell_primitives": self._shell_primitives(shell_profiles), "placeholder_measurements": [placeholder for profile in shell_profiles for placeholder in profile.get("placeholders", [])], "theme_profiles": _theme_descriptor_profiles(theme_profiles_by_part, master_theme_topology=master_theme_topology, slide_theme_topology=[])}
             else:
                 # Font observations are local-only profiler input and never cross
                 # the sanitizer boundary in the body descriptor.
@@ -606,7 +706,7 @@ class ReadOnlyPrivateSourceSession:
                     measurement["objects"] = [{key: value for key, value in obj.items() if key not in {"source_container_id", "placeholder_type"}} for obj in measurement.get("objects", [])]
                     measurement["typography_observations"] = list(slide.get("typography_observations", []))
                     body_measurements.append(measurement)
-                profile = {**base, "candidate_families": [self._classify_slide(slide) for slide in slide_profiles], "body_measurements": body_measurements, "theme_profiles": [{"theme_profile_id": item["theme_profile_id"], "palette": [{"theme_token": key, "resolved_rgb": value, "basis": "measured", "source_scope": "theme"} for key, value in sorted(item["palette"].items())], "font_scheme": item["font_scheme"], "supplemental_fonts": item["supplemental_fonts"]} for item in theme_profiles_by_part.values()], "slide_theme_topology": [{"source_id": f"SL{index + 1:03d}", "target_id": master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), ""), "T000"), "basis": "measured" if master_theme.get(layout_master.get(slide_layout.get(f"D{index + 1:03d}", ""), "")) else "not_observable_structurally", "source_scope": "slide_body"} for index in range(len(slides))]}
+                profile = {**base, "candidate_families": [self._classify_slide(slide) for slide in slide_profiles], "body_measurements": body_measurements, "theme_profiles": _theme_descriptor_profiles(theme_profiles_by_part, master_theme_topology=[], slide_theme_topology=slide_theme_topology), "slide_theme_topology": slide_theme_topology}
             self._private_root.mkdir(parents=True, exist_ok=True)
             (self._private_root / f"{_safe_id(self.alias_uri).lower()}-raw.json").write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
             if self._execution:
@@ -728,7 +828,10 @@ class ReadOnlyPrivateSourceSession:
                     # A run can carry independent Latin, East-Asian, and complex
                     # script evidence.  Preserve each direct child exactly once;
                     # never let the first script node suppress the others.
-                    candidates = present_nodes or [("latin", None)]
+                    # No direct script node is not evidence for Latin.  Preserve
+                    # the unresolved inheritance truth with an explicit, finite
+                    # script state rather than fabricating a resolver input.
+                    candidates = present_nodes or [("unspecified", None)]
                     for script_role, node in candidates:
                         typeface = node.get("typeface") if node is not None else None
                         theme = _theme_font_token(typeface)
@@ -889,8 +992,10 @@ def _sanitize_font_observation(value: dict[str, Any], *, shell: bool = False) ->
         raise Checkpoint2PolicyViolation("unsafe font family")
     if value["theme_font_role"] is not None and value["theme_font_role"] not in {"major", "minor"}:
         raise Checkpoint2PolicyViolation("invalid theme font role")
-    if value["script_role"] not in {"latin", "east_asian", "complex_script"} or value["font_evidence_state"] not in {"explicit_font", "theme_font_resolved", "theme_font_unresolved", "inherited_unresolved", "unknown"}:
+    if value["script_role"] not in _SCRIPT_ROLES or value["font_evidence_state"] not in {"explicit_font", "theme_font_resolved", "theme_font_unresolved", "inherited_unresolved", "unknown"}:
         raise Checkpoint2PolicyViolation("invalid typography provenance")
+    if value["script_role"] == "unspecified" and (value["theme_font_role"] is not None or value["font_evidence_state"] != "inherited_unresolved" or family != "unknown"):
+        raise Checkpoint2PolicyViolation("unspecified script evidence must remain inherited and unresolved")
     if not isinstance(value["size_pt"], (int, float)) or value["size_pt"] <= 0 or value["size_pt"] > 200:
         raise Checkpoint2PolicyViolation("invalid font size")
     if not shell and (value["role_confidence"] not in {"structurally_supported", "provisional", "unknown"} or not re.fullmatch(r"O[0-9]{3,}", str(value["supporting_object_id"])) or not re.fullmatch(r"T[0-9]{3,}", str(value["observation_id"]))):
@@ -900,9 +1005,16 @@ def _sanitize_font_observation(value: dict[str, Any], *, shell: bool = False) ->
 
 def _sanitize_theme_profile(item: dict[str, Any]) -> dict[str, Any]:
     """Construct a closed, descriptor-local theme record from controlled data."""
-    required = {"theme_profile_id", "palette", "font_scheme", "supplemental_fonts"}
+    required = {"theme_profile_id", "usage_state", "authority_state", "supporting_master_ids", "supporting_slide_ids", "palette", "font_scheme", "supplemental_fonts"}
     if set(item) != required or not re.fullmatch(r"T[0-9]{3,}", str(item["theme_profile_id"])) or not isinstance(item["palette"], list) or not isinstance(item["font_scheme"], dict) or not isinstance(item["supplemental_fonts"], list):
         raise Checkpoint2PolicyViolation("invalid sanitized theme profile")
+    referenced = bool(item["supporting_master_ids"] or item["supporting_slide_ids"])
+    usage_state = "referenced" if referenced else "unreferenced"
+    authority_state = "active_professor_style" if referenced else "reference_only"
+    if item["usage_state"] != usage_state or item["authority_state"] != authority_state:
+        raise Checkpoint2PolicyViolation("theme usage is not topology-derived")
+    if any(not re.fullmatch(r"M[0-9]{3,}", str(value)) for value in item["supporting_master_ids"]) or any(not re.fullmatch(r"(?:SL|D)[0-9]{3,}", str(value)) for value in item["supporting_slide_ids"]):
+        raise Checkpoint2PolicyViolation("invalid theme usage support")
     palette = []
     for color in item["palette"]:
         if set(color) != {"theme_token", "resolved_rgb", "basis", "source_scope"} or color["theme_token"] not in _COLOR_TOKENS or not re.fullmatch(r"[0-9A-Fa-f]{6}", str(color["resolved_rgb"])) or color["basis"] not in _BASIS or color["source_scope"] != "theme":
@@ -917,11 +1029,15 @@ def _sanitize_theme_profile(item: dict[str, Any]) -> dict[str, Any]:
         scheme[role] = {key: scripts[key] for key in sorted(scripts)}
     supplemental = []
     for value in item["supplemental_fonts"]:
-        if set(value) != {"theme_font_role", "script_code", "family"} or value["theme_font_role"] not in {"major", "minor"} or value["script_code"] not in _SUPPLEMENTAL_THEME_SCRIPT_CODES or not _safe_font_name(value["family"]):
+        if set(value) != {"theme_font_role", "script_code", "family", "authority_state"} or value["theme_font_role"] not in {"major", "minor"} or value["script_code"] not in _SUPPLEMENTAL_THEME_SCRIPT_CODES or not _safe_font_name(value["family"]) or value["authority_state"] != authority_state:
             raise Checkpoint2PolicyViolation("invalid supplemental theme font")
-        supplemental.append({"theme_font_role": value["theme_font_role"], "script_code": value["script_code"], "family": value["family"]})
+        supplemental.append({"theme_font_role": value["theme_font_role"], "script_code": value["script_code"], "family": value["family"], "authority_state": authority_state})
     return {
         "theme_profile_id": item["theme_profile_id"],
+        "usage_state": usage_state,
+        "authority_state": authority_state,
+        "supporting_master_ids": sorted(item["supporting_master_ids"]),
+        "supporting_slide_ids": sorted(item["supporting_slide_ids"]),
         "palette": sorted(palette, key=lambda value: value["theme_token"]),
         "font_scheme": {role: scheme[role] for role in sorted(scheme)},
         "supplemental_fonts": sorted(supplemental, key=lambda value: (value["theme_font_role"], value["script_code"], value["family"])),
@@ -1137,12 +1253,13 @@ class Checkpoint2Run:
         self.evidence.typography_resolution_counts = typography_resolution_counts([*fonts, *body_fonts])
         meaningful_fonts = [font for font in [*fonts, *body_fonts] if font.get("font_evidence_state") in {"explicit_font", "theme_font_resolved"} and font.get("family") not in {None, "unknown", "other_approved"}]
         all_fonts = [*fonts, *body_fonts]
-        font_ok = (not all_fonts or bool(meaningful_fonts)) and all(font.get("basis") in _BASIS and font.get("source_scope") in _SOURCE_SCOPES and font.get("script_role") in {"latin", "east_asian", "complex_script"} for font in meaningful_fonts)
+        font_ok = (not all_fonts or bool(meaningful_fonts)) and all(font.get("basis") in _BASIS and font.get("source_scope") in _SOURCE_SCOPES and font.get("script_role") in _SCRIPT_ROLES for font in meaningful_fonts)
         checks.append({"check_id": "CP2-DQ-FONT-FIDELITY", "status": "pass" if font_ok else "fail"})
         checks.append({"check_id": "CP2-DQ-TYPOGRAPHY-EVIDENCE-STATES", "status": "pass" if all(sum(values.values()) >= 0 for values in self.evidence.typography_resolution_counts.values()) and (not all_fonts or bool(meaningful_fonts)) else "fail"})
         body_observation_ids = [font.get("observation_id") for font in body_fonts]
-        per_script_ok = len(body_observation_ids) == len(set(body_observation_ids)) and all(font.get("script_role") in {"latin", "east_asian", "complex_script"} and (font.get("theme_font_role") is None or font.get("font_evidence_state") in {"theme_font_resolved", "theme_font_unresolved"}) for font in all_fonts)
+        per_script_ok = len(body_observation_ids) == len(set(body_observation_ids)) and all(font.get("script_role") in _SCRIPT_ROLES and (font.get("script_role") != "unspecified" or (font.get("family") == "unknown" and font.get("theme_font_role") is None and font.get("font_evidence_state") == "inherited_unresolved")) and (font.get("theme_font_role") is None or font.get("font_evidence_state") in {"theme_font_resolved", "theme_font_unresolved"}) for font in all_fonts)
         checks.append({"check_id": "CP2-DQ-PER-SCRIPT-TYPOGRAPHY", "status": "pass" if per_script_ok else "fail"})
+        checks.append({"check_id": "CP2-DQ-SCRIPT-TRUTH", "status": "pass" if per_script_ok else "fail"})
         reconciliation_ok = sum(sum(states.values()) for states in self.evidence.typography_resolution_counts.values()) == len(all_fonts)
         checks.append({"check_id": "CP2-DQ-TYPOGRAPHY-COUNT-RECONCILIATION", "status": "pass" if reconciliation_ok else "fail"})
         supplemental_ok = all(
@@ -1164,6 +1281,29 @@ class Checkpoint2Run:
             if edge.get("basis") == "measured"
         )
         checks.append({"check_id": "CP2-DQ-DESCRIPTOR-LOCAL-THEME-IDENTITY", "status": "pass" if local_theme_identity_ok else "fail"})
+        theme_reachability_ok = True
+        active_theme_count = 0
+        for descriptor in all_descriptors:
+            themes = {profile.get("theme_profile_id"): profile for profile in descriptor.get("theme_profiles", [])}
+            master_edges = descriptor.get("master_theme_topology", [])
+            slide_edges = descriptor.get("slide_theme_topology", [])
+            for edge in [*master_edges, *slide_edges]:
+                if edge.get("basis") == "measured" and edge.get("target_id") not in themes:
+                    theme_reachability_ok = False
+            master_support = {theme_id: sorted(edge.get("source_id") for edge in master_edges if edge.get("basis") == "measured" and edge.get("target_id") == theme_id) for theme_id in themes}
+            slide_support = {theme_id: sorted(edge.get("source_id") for edge in slide_edges if edge.get("basis") == "measured" and edge.get("target_id") == theme_id) for theme_id in themes}
+            for theme_id, profile in themes.items():
+                referenced = bool(master_support[theme_id] or slide_support[theme_id])
+                expected_usage = "referenced" if referenced else "unreferenced"
+                expected_authority = "active_professor_style" if referenced else "reference_only"
+                if profile.get("usage_state") != expected_usage or profile.get("authority_state") != expected_authority or profile.get("supporting_master_ids") != master_support[theme_id] or profile.get("supporting_slide_ids") != slide_support[theme_id]:
+                    theme_reachability_ok = False
+                if any(item.get("authority_state") != expected_authority for item in profile.get("supplemental_fonts", [])):
+                    theme_reachability_ok = False
+                active_theme_count += int(referenced)
+        checks.append({"check_id": "CP2-DQ-THEME-REACHABILITY", "status": "pass" if theme_reachability_ok else "fail"})
+        checks.append({"check_id": "CP2-DQ-ACTIVE-THEME-CLASSIFICATION", "status": "pass" if theme_reachability_ok and active_theme_count > 0 else "fail"})
+        checks.append({"check_id": "CP2-DQ-SUPPLEMENTAL-FONT-AUTHORITY", "status": "pass" if theme_reachability_ok else "fail"})
         rotation_ok = all((obj.get("rotation_status") == "unsupported") == (not obj.get("geometry_eligible", True)) and (obj.get("rotation_status") != "unsupported" or obj.get("geometry", {}).get("basis") != "measured") for measurement in body_descriptor.get("body_measurements", []) for obj in [*measurement.get("objects", []), *measurement.get("connectors", [])] + measurement.get("groups", []))
         checks.append({"check_id": "CP2-DQ-ROTATION-TRUTH", "status": "pass" if rotation_ok else "fail"})
         typography_ok = all("typography_observations" in measurement and all(font.get("source_scope") in {"slide_body", "slide_content"} for font in measurement.get("typography_observations", [])) for measurement in body_descriptor.get("body_measurements", []))
