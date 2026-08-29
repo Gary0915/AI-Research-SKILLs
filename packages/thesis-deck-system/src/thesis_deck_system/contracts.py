@@ -53,6 +53,11 @@ PHASE3_SCHEMA_NAMES = (
     "sanitized-shell-structural-descriptors",
     "sanitized-body-structural-descriptors",
     "checkpoint-2-qa",
+    "professor-template-resolved",
+    "body-composition-profile",
+    "professor-visual-grammar-v3",
+    "resolver-evidence",
+    "checkpoint-3-qa",
 )
 
 SCHEMA_BY_COLLECTION = {

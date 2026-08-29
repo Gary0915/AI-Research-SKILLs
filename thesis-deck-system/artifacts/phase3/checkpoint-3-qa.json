@@ -1,0 +1,86 @@
+{
+  "aggregate_status": "pass",
+  "checkpoint_id": "PHASE_3_CHECKPOINT_3",
+  "execution_evidence_id": "CP3-EXEC-001",
+  "execution_evidence_sha256": "2956bc17b4498adbce3f031ee425e58bbe226b02d4da858bf01637a0b68715e1",
+  "owning_checks": [
+    {
+      "check_id": "CP3-INPUT-VALIDATION",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-EXEMPLAR-IDENTITIES",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-NO-PRIVATE-ACCESS",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-AUTHORITY",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-SHELL-CONTAMINATION",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-CONFLICTS",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-EVIDENCE-TIERS",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-ACTIVE-THEMES",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-TYPOGRAPHY-TRUTH",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-BODY-RANGE",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-FIGURE-NON-INVENTION",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-STYLE-PROVENANCE",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-DETERMINISM",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-PRIVACY-SCAN",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-SCHEMA-CLOSURE",
+      "status": "pass"
+    }
+  ],
+  "private_alias_resolution_attempts": 0,
+  "private_render_attempts": 0,
+  "private_source_open_attempts": 0,
+  "schema_version": "1.0.0",
+  "statuses": {
+    "acceptance_deck_visual_fidelity": "not_run",
+    "archetype_library_calibration_coverage": "not_run",
+    "body_composition_resolver_status": "pass",
+    "figure_grammar_structural_status": "pass",
+    "native_powerpoint_acceptance": "not_run",
+    "private_exemplar_ingestion": "pass",
+    "private_qualitative_visual_review": "blocked_visual_review",
+    "production_group_meeting_ready": false,
+    "professor_visual_grammar_structural_status": "pass",
+    "sanitized_structural_evidence": "pass",
+    "shell_resolver_status": "pass",
+    "visual_style_governor_status": "pass"
+  }
+}

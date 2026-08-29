@@ -1,0 +1,75 @@
+{
+  "evidence_id": "CP3-EXEC-001",
+  "input_hashes": {
+    "body": "34e37dbc35afbd2a961f78a56c452d9b7775c0e4511499d71658948a7cbdd5dd",
+    "checkpoint2_qa": "038097872efe9ef5f77a7bf2e5b3c5f69d6c00d871cbfa2a1a50f3b5643dd07e",
+    "manifest": "5cea3486fdcc230dda0c976f22b6307f70d8c71624f07536f99bbc33a07dbe4f",
+    "shell": "7808d73e95b4e9b26cf88c177df2253fe3ad602eb4b6a15a0c7828b310c905d4"
+  },
+  "owning_checks": [
+    {
+      "check_id": "CP3-INPUT-VALIDATION",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-EXEMPLAR-IDENTITIES",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-NO-PRIVATE-ACCESS",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-AUTHORITY",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-SHELL-CONTAMINATION",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-CONFLICTS",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-EVIDENCE-TIERS",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-ACTIVE-THEMES",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-TYPOGRAPHY-TRUTH",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-BODY-RANGE",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-FIGURE-NON-INVENTION",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-STYLE-PROVENANCE",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-DETERMINISM",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-PRIVACY-SCAN",
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-SCHEMA-CLOSURE",
+      "status": "pass"
+    }
+  ],
+  "private_alias_resolution_attempts": 0,
+  "private_render_attempts": 0,
+  "private_source_open_attempts": 0,
+  "schema_version": "1.0.0"
+}

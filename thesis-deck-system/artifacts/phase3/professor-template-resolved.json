@@ -1,0 +1,144 @@
+{
+  "conflicts": [],
+  "profile_id": "P3-RESOLVED-SHELL-001",
+  "schema_version": "1.0.0",
+  "shell_tokens": [
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "recurring_pattern",
+      "origin": "professor_derived",
+      "profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "resolver_rule_id": "CP3-SHELL-CANVAS-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "support_count": 1,
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-1"
+      ],
+      "token_family": "canvas",
+      "token_id": "shell-canvas",
+      "value": {
+        "height": 7.5,
+        "width": 13.333333
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "resolver_rule_id": "CP3-SHELL-CONTENT-TITLE-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "support_count": 1,
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-1"
+      ],
+      "token_family": "content_title",
+      "token_id": "shell-content_title",
+      "value": {
+        "basis": "measured",
+        "h": 0.193287,
+        "w": 0.8625,
+        "x": 0.06875,
+        "y": 0.053241
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "resolver_rule_id": "CP3-SHELL-HISTORY-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "support_count": 1,
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-1"
+      ],
+      "token_family": "hypothesis_history",
+      "token_id": "shell-hypothesis_history",
+      "value": {
+        "basis": "measured",
+        "h": 0.248496,
+        "w": 0.725,
+        "x": 0.1375,
+        "y": 0.54595
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "profile_id": "P3-TEMPLATE-PRIMARY-3",
+      "resolver_rule_id": "CP3-SHELL-COVER-DIVIDER-PRIMARY-3",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "support_count": 1,
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-3"
+      ],
+      "token_family": "cover_divider_title",
+      "token_id": "shell-cover_divider_title",
+      "value": {
+        "basis": "measured",
+        "h": 0.193287,
+        "w": 0.8625,
+        "x": 0.06875,
+        "y": 0.053241
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "profile_id": "P3-TEMPLATE-PRIMARY-3",
+      "resolver_rule_id": "CP3-SHELL-FOOTER-PRIMARY-3",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "support_count": 1,
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-3"
+      ],
+      "token_family": "footer",
+      "token_id": "shell-footer",
+      "value": {
+        "basis": "measured",
+        "h": 0.053241,
+        "w": 0.3375,
+        "x": 0.33125,
+        "y": 0.926852
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "single_example_provisional",
+      "origin": "professor_derived",
+      "profile_id": "P3-TEMPLATE-PRIMARY-3",
+      "resolver_rule_id": "CP3-SHELL-PAGE-NUMBER-PRIMARY-3",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "support_count": 1,
+      "supporting_ids": [
+        "P3-TEMPLATE-PRIMARY-3"
+      ],
+      "token_family": "page_number",
+      "token_id": "shell-page_number",
+      "value": {
+        "basis": "measured",
+        "h": 0.053241,
+        "w": 0.225,
+        "x": 0.70625,
+        "y": 0.926852
+      }
+    },
+    {
+      "authority_family": "formal_shell",
+      "evidence_tier": "insufficient_evidence",
+      "origin": "unresolved",
+      "profile_id": "P3-TEMPLATE-PRIMARY-3",
+      "resolver_rule_id": "CP3-SHELL-NAVIGATION-PRIMARY-3",
+      "source_role": "P3-TEMPLATE-PRIMARY-3",
+      "support_count": 0,
+      "supporting_ids": [],
+      "token_family": "navigation",
+      "token_id": "shell-navigation",
+      "value": null
+    }
+  ],
+  "status": "pass"
+}

@@ -1,0 +1,317 @@
+{
+  "families": [
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "image_matrix",
+      "family_id": "body-image_matrix",
+      "sample_count": 1,
+      "source_confidence": "structurally_supported",
+      "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "status": "provisional",
+      "supporting_descriptor_ids": [
+        "P3-LAYOUT-EXEMPLAR-2-SL011"
+      ]
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "other_insufficient_structural_evidence",
+      "family_id": "body-other_insufficient_structural_evidence",
+      "sample_count": 6,
+      "source_confidence": "provisional",
+      "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "status": "provisional",
+      "supporting_descriptor_ids": [
+        "P3-LAYOUT-EXEMPLAR-2-SL001",
+        "P3-LAYOUT-EXEMPLAR-2-SL002",
+        "P3-LAYOUT-EXEMPLAR-2-SL004",
+        "P3-LAYOUT-EXEMPLAR-2-SL005",
+        "P3-LAYOUT-EXEMPLAR-2-SL007",
+        "P3-LAYOUT-EXEMPLAR-2-SL009"
+      ]
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "result_single",
+      "family_id": "body-result_single",
+      "sample_count": 6,
+      "source_confidence": "provisional",
+      "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "status": "provisional",
+      "supporting_descriptor_ids": [
+        "P3-LAYOUT-EXEMPLAR-2-SL003",
+        "P3-LAYOUT-EXEMPLAR-2-SL006",
+        "P3-LAYOUT-EXEMPLAR-2-SL008",
+        "P3-LAYOUT-EXEMPLAR-2-SL010",
+        "P3-LAYOUT-EXEMPLAR-2-SL012",
+        "P3-LAYOUT-EXEMPLAR-2-SL013"
+      ]
+    }
+  ],
+  "metric_tokens": [
+    {
+      "availability": "available",
+      "evidence_tier": "recurring_pattern",
+      "metric": "annotation_density",
+      "observed_range": [
+        0.5,
+        98.0
+      ],
+      "origin": "professor_derived",
+      "sample_count": 13,
+      "supporting_descriptor_ids": [
+        "SL001",
+        "SL002",
+        "SL003",
+        "SL004",
+        "SL005",
+        "SL006",
+        "SL007",
+        "SL008",
+        "SL009",
+        "SL010",
+        "SL011",
+        "SL012",
+        "SL013"
+      ],
+      "token_id": "body-metric-annotation_density",
+      "value": 11.0
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "recurring_pattern",
+      "metric": "callout_candidate_count",
+      "observed_range": [
+        1.0,
+        4.0
+      ],
+      "origin": "professor_derived",
+      "sample_count": 9,
+      "supporting_descriptor_ids": [
+        "SL003",
+        "SL004",
+        "SL005",
+        "SL007",
+        "SL008",
+        "SL009",
+        "SL010",
+        "SL011",
+        "SL012"
+      ],
+      "token_id": "body-metric-callout_candidate_count",
+      "value": 1.0
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "recurring_pattern",
+      "metric": "caption_candidate_count",
+      "observed_range": [
+        1.0,
+        8.0
+      ],
+      "origin": "professor_derived",
+      "sample_count": 5,
+      "supporting_descriptor_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL011",
+        "SL012"
+      ],
+      "token_id": "body-metric-caption_candidate_count",
+      "value": 3.0
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "single_example_provisional",
+      "metric": "comparison_symmetry",
+      "observed_range": [
+        1.0,
+        1.0
+      ],
+      "origin": "professor_derived",
+      "sample_count": 1,
+      "supporting_descriptor_ids": [
+        "SL011"
+      ],
+      "token_id": "body-metric-comparison_symmetry",
+      "value": 1.0
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "recurring_pattern",
+      "metric": "dominant_figure_ratio",
+      "observed_range": [
+        0.518366,
+        1.000024
+      ],
+      "origin": "professor_derived",
+      "sample_count": 7,
+      "supporting_descriptor_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL011",
+        "SL012",
+        "SL013"
+      ],
+      "token_id": "body-metric-dominant_figure_ratio",
+      "value": 1.0
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "recurring_pattern",
+      "metric": "figure_area_ratio",
+      "observed_range": [
+        0.011139,
+        0.446961
+      ],
+      "origin": "professor_derived",
+      "sample_count": 7,
+      "supporting_descriptor_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL011",
+        "SL012",
+        "SL013"
+      ],
+      "token_id": "body-metric-figure_area_ratio",
+      "value": 0.184423
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "recurring_pattern",
+      "metric": "figure_text_ratio",
+      "observed_range": [
+        0.046539,
+        6.639547
+      ],
+      "origin": "professor_derived",
+      "sample_count": 7,
+      "supporting_descriptor_ids": [
+        "SL003",
+        "SL006",
+        "SL008",
+        "SL010",
+        "SL011",
+        "SL012",
+        "SL013"
+      ],
+      "token_id": "body-metric-figure_text_ratio",
+      "value": 0.824037
+    },
+    {
+      "availability": "unavailable",
+      "evidence_tier": "insufficient_evidence",
+      "metric": "matrix_columns",
+      "observed_range": null,
+      "origin": "unresolved",
+      "sample_count": 0,
+      "supporting_descriptor_ids": [],
+      "token_id": "body-metric-matrix_columns",
+      "value": null
+    },
+    {
+      "availability": "unavailable",
+      "evidence_tier": "insufficient_evidence",
+      "metric": "matrix_rows",
+      "observed_range": null,
+      "origin": "unresolved",
+      "sample_count": 0,
+      "supporting_descriptor_ids": [],
+      "token_id": "body-metric-matrix_rows",
+      "value": null
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "single_example_provisional",
+      "metric": "panel_count",
+      "observed_range": [
+        7.0,
+        7.0
+      ],
+      "origin": "professor_derived",
+      "sample_count": 1,
+      "supporting_descriptor_ids": [
+        "SL011"
+      ],
+      "token_id": "body-metric-panel_count",
+      "value": 7.0
+    },
+    {
+      "availability": "unavailable",
+      "evidence_tier": "insufficient_evidence",
+      "metric": "photo_schematic_relation",
+      "observed_range": null,
+      "origin": "unresolved",
+      "sample_count": 0,
+      "supporting_descriptor_ids": [],
+      "token_id": "body-metric-photo_schematic_relation",
+      "value": null
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "recurring_pattern",
+      "metric": "text_area_ratio",
+      "observed_range": [
+        0.067318,
+        0.417407
+      ],
+      "origin": "professor_derived",
+      "sample_count": 13,
+      "supporting_descriptor_ids": [
+        "SL001",
+        "SL002",
+        "SL003",
+        "SL004",
+        "SL005",
+        "SL006",
+        "SL007",
+        "SL008",
+        "SL009",
+        "SL010",
+        "SL011",
+        "SL012",
+        "SL013"
+      ],
+      "token_id": "body-metric-text_area_ratio",
+      "value": 0.207766
+    },
+    {
+      "availability": "available",
+      "evidence_tier": "recurring_pattern",
+      "metric": "whitespace_fraction",
+      "observed_range": [
+        0.457658,
+        0.829487
+      ],
+      "origin": "professor_derived",
+      "sample_count": 13,
+      "supporting_descriptor_ids": [
+        "SL001",
+        "SL002",
+        "SL003",
+        "SL004",
+        "SL005",
+        "SL006",
+        "SL007",
+        "SL008",
+        "SL009",
+        "SL010",
+        "SL011",
+        "SL012",
+        "SL013"
+      ],
+      "token_id": "body-metric-whitespace_fraction",
+      "value": 0.669828
+    }
+  ],
+  "profile_id": "P3-BODY-GRAMMAR-001",
+  "schema_version": "1.0.0",
+  "status": "pass"
+}
