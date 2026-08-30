@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "sprint_id": "CP5-BCD-INTEGRATED-SPRINT-001",
+  "branch": "codex/thesis-deck-system",
+  "reviewed_baseline_commit": "12f1860699b5d5a5b54be29d43b87596d8931dd5",
+  "review_mode": "single_external_review_after_cp5d",
+  "checkpoint_commits_required": true,
+  "durable_execution_evidence_required": true,
+  "baseline_cp5a": {
+    "focused_tests_passed": 87,
+    "focused_tests_failed": 0,
+    "full_disposable_regression_passed": 404,
+    "full_disposable_regression_failed": 0,
+    "candidate_hash": "e79ee15c2ced30c95e4e45706a23bdd3b8dd556926e89b242101d31c927b111a",
+    "owning_qa_count": 27,
+    "owning_qa_status": "pass",
+    "repository_privacy_findings": 0,
+    "staged_privacy_findings": 0,
+    "approved_historical_exceptions": 1,
+    "private_alias_resolution_attempts": 0,
+    "private_source_open_attempts": 0,
+    "private_render_attempts": 0,
+    "remaining_issue": "runner_allows_arbitrary_successful_callable_to_set_validation_executed"
+  },
+  "authorized_internal_gates": [
+    {
+      "gate_id": "A0",
+      "checkpoint": "CP5-A-FINAL",
+      "objective": "bind runner evidence to a registered real CP5-A validation operation",
+      "continue_without_external_review_on_pass": true
+    },
+    {
+      "gate_id": "B",
+      "checkpoint": "CP5-B",
+      "objective": "implement SVG Native Capability Registry and synthetic vector corpus",
+      "continue_without_external_review_on_pass": true
+    },
+    {
+      "gate_id": "C",
+      "checkpoint": "CP5-C",
+      "objective": "implement FigureOutputManifest, Static FigureCritic, and APPROVED_FIGURE gate",
+      "continue_without_external_review_on_pass": true
+    },
+    {
+      "gate_id": "D",
+      "checkpoint": "CP5-D",
+      "objective": "implement structured Scientific SVG directors for fishbone, mechanism, experiment schematic, fabrication/process, and fair comparison",
+      "continue_without_external_review_on_pass": false
+    }
+  ],
+  "required_cp5d_directors": [
+    "fishbone-director",
+    "mechanism-diagram-director",
+    "experiment-schematic-director",
+    "fabrication-process-director",
+    "comparison-figure-director"
+  ],
+  "required_shared_skills": [
+    "vector-figure-builder",
+    "visual-style-governor",
+    "figure-critic",
+    "provenance-qa"
+  ],
+  "accepted_style_profile_ref": "VSP003",
+  "private_access_authorized": false,
+  "private_source_render_authorized": false,
+  "pptx_authorized": false,
+  "drawingml_authorized": false,
+  "cp5e_through_cp5i_authorized": false,
+  "production_group_meeting_ready": false,
+  "final_expected_status": "awaiting_integrated_review"
+}
