@@ -603,6 +603,15 @@ def test_checkpoint_builder_executes_its_own_nonprivate_controls_before_writing(
     assert validate_checkpoint1_qa(record) == []
 
 
+def test_staged_privacy_scan_does_not_misclassify_public_url_as_windows_absolute_path(tmp_path: Path):
+    """A URL is handled by the URL policy, never as a Windows drive path."""
+    from thesis_deck_system.phase3_privacy import RepositoryPrivacyScanner
+
+    path = tmp_path / "public.json"
+    path.write_text('{"namespace":"http://www.w3.org/2000/svg"}', encoding="utf-8")
+    assert RepositoryPrivacyScanner()._scan_private_repository_text(path.read_text(encoding="utf-8"), location="public.json") == []
+
+
 def test_public_generic_executor_cannot_self_certify_canonical_pass_record():
     evidence = execute_checkpoint1_owning_checks({check_id: (lambda: None) for check_id in Checkpoint1ExecutionEvidence.required_check_ids()})
     with pytest.raises(ValueError, match="canonical owning builder"):

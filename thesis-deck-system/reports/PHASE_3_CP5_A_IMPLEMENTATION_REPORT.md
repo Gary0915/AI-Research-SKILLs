@@ -28,19 +28,29 @@ CP5-A establishes a closed, synthetic-only Scientific SVG visual-authoring IR. I
 | A18 RED coverage | focused suite exercises the required negative/mutation contracts | pass |
 | A19 status truth | later work remains explicitly not run; production readiness is false | pass |
 
+## CP5A-B1–B5 revision traceability
+
+| Revision | Corrected implementation | Status |
+| --- | --- | --- |
+| B1 profile authority | Profile-owned element/attribute contract, namespace policy, and registered path/points/transform grammar bindings; unknown bindings fail closed. | pass |
+| B2 namespaces and roles | Foreign element/attribute namespaces reject; root visual class binds to FigureSpec; local role visual-class, child, and addressability policies execute. | pass |
+| B3 exact geometry | Exact path command groups, transform arity, arc flags, and polyline/polygon minimum-point rules replace count-only parsing. | pass |
+| B4 execution-owned QA | Bound private-access record, expanded owning checks, and all CP4 plan/spec collection validation project final status dimensions. | pass |
+| B5 canonicalization | Canonical text preserves meaningful inter-`tspan` space while normalizing formatting-only whitespace; foreign namespaces cannot canonicalize as SVG. | pass |
+
 ## Execution recovery and regression evidence
 
 - Automatic stops encountered: 2; workspace preserved: yes; local recovery snapshot preserved: yes.
 - Authorized Phase 1 cleanup: 39 supplied textual lines, 38 unique paths, including one duplicate `thesis-deck-system/artifacts/phase1/render_revised/slide-1.png`; 19 modified + 19 deleted paths restored from `HEAD`; unreviewed paths: 0.
 - CP5-A draft preservation after cleanup: pass. The earlier snapshot remains retained locally; three CP5-A implementation files advanced after that snapshot during the same authorized session and are bound by the final candidate hash below.
-- Focused CP5-A suite: 39 passed / 0 failed.
+- Focused CP5-A revision suite: 54 passed / 0 failed.
 - Preliminary active-worktree regression: 353 passed / 0 failed; classification: `preliminary_only`; acceptance eligible: false because it ran in the active worktree and mutated unrelated generated artifacts.
-- Interrupted disposable regression: `completed_and_reused`; its complete log proves 355 passed / 0 failed in the disposable worktree.
-- Definitive disposable regression: 355 passed / 0 failed; tested candidate hash `272fe325659592e3f22f1fcc039829fdb48236baec97d5ba1c8f9b040e5446f7`; independently recomputed current candidate hash is identical; equality: pass.
+- Earlier disposable regression: `completed_and_reused`; it proved 355 passed / 0 failed for the pre-revision candidate.
+- Definitive CP5-A revision disposable regression: 371 passed / 0 failed; tested candidate hash `703e8562e077e121f3e8d7686a9a19645e9d9635f15591f235c86f7472c30d28`; independently recomputed current candidate hash is identical; equality: pass.
 
 ## Results
 
-- Profile: `SSVG-P001` / `1.0.0`; 15 allowed SVG elements and 34 local semantic roles.
+- Profile: `SSVG-P001` / `1.0.0`; 15 allowed SVG elements, profile-owned attribute contracts, three registered grammars, and 34 local semantic roles.
 - Semantic metadata is limited to profile/version, figure ID, object ID, local semantic role, and optional visual class. Scientific provenance is prohibited in SVG.
 - Metadata invisibility is static AST evidence only—not pixel or render equivalence.
 - Privacy scanner: repository and staged scans executed; unexcepted findings `0`; approved historical exceptions `1`.
@@ -68,7 +78,7 @@ codex_report:
   phase: PHASE_3_CP5_A
   status: awaiting_review
   branch: codex/thesis-deck-system
-  commit_sha: final_delivery_after_remote_verification
+  commit_sha: not_embedded_self_reference
   artifacts:
     - artifacts/phase3/scientific-svg-profile.json
     - artifacts/phase3/semantic-svg-role-registry.json
@@ -80,8 +90,8 @@ codex_report:
     - focused CP5-A suite
     - full disposable-worktree regression
   tests_passed:
-    focused_cp5a: 39
-    full_disposable_regression: 355
+    focused_cp5a: 54
+    full_disposable_regression: 371
   tests_failed:
     focused_cp5a: 0
     full_disposable_regression: 0

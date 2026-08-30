@@ -4,6 +4,12 @@
   "private_alias_resolution_attempts": 0,
   "private_source_open_attempts": 0,
   "private_render_attempts": 0,
+  "private_access_evidence": {
+    "execution_id": "CP5A-ACCESS-001",
+    "private_alias_resolution_attempts": 0,
+    "private_source_open_attempts": 0,
+    "private_render_attempts": 0
+  },
   "candidate_state": {
     "component_hashes": {
       "cp4:schema:figure-production-plan": "12494bc794fc9c0cdb6c64b402716d51bd74ff761a4abb1af7439599b34bfe30",
@@ -11,36 +17,37 @@
       "cp4:artifact:figure-production-plans": "66f7282cf894a3a38b6bf3a5081550bf64e61eb4dd06f5d2c06055ab27ad4a2b",
       "cp4:artifact:scientific-figure-specs": "2c20be513aa432a54872fd2ee8eee012ecb6e9b4ca89919d368d8cf0c459f2a6",
       "cp4:skill-routing": "7368eb06c8a1c6875a2e1def561a91789de5140cf8c8b59e1db76393ed29215a",
-      "cp5a:source": "c0602380d3e9b571eb5eb0a90832000c6ed63d167750239d42a98ede98c6c441",
+      "cp5a:source": "543bdf83464dd0f325f6e87b08d392784fad1da602ae6bc44850757f461d48e7",
       "cp5a:source:contracts": "39fe986fc546d6efb47a01579d938e4644bfa20856b2ffd46393defabf69920d",
-      "cp5a:test:scientific-svg": "7cc25ad07c06ebf9430484ab09168a3367fb5d3752f70c5fbd37d0af5511d949",
+      "cp5a:test:scientific-svg": "22ad84fb8ec51766c5e112e876253980a26c917eab8750199f85d76e10fdf0f5",
+      "cp5a:test:privacy-regression": "84a753d45a2d9f6b6782d47fe13f1131d091b68d981b42f07510db8788e87ab4",
       "cp5a:privacy:approved-scanner": "b20b51303aaba5c6cfb488cca293d8c73dce4ceaee751846457258c8402cd596",
       "cp5a:privacy:scanner": "7664531a8f21d4b00c70a23096a95c83e0aed889cc73c2fde9d7ed09c6f44a20",
-      "cp5a:profile": "482184dec89502daa0a669d843c835fd9bf3f587e7025b049cd01c9964ec250d",
+      "cp5a:profile": "5f09252f41fc866bb49a69a6545f42792387cb4819bf1f89c0765a047ce76fb9",
       "cp5a:roles": "143d19f94186716c7366e17c39b0a1e53c5081e35018dabc04598a43c3c2318e",
-      "cp5a:synthetic-corpus": "636573857243bc2a501ef6facef18d727763df15219b11036c763666d7923f14",
-      "cp5a:schema:scientific-svg-profile.schema.json": "4822f3721104a97885a48a95ca24bffde5fbafa9b22202720bef90fc2b4eadbc",
+      "cp5a:synthetic-corpus": "4322292fbeb15d1450539a90a8142e75ba6a5cc7ed4abc2db68d41de56abd001",
+      "cp5a:schema:scientific-svg-profile.schema.json": "eadf71673e9e41521e1c2da0b0d24217e9fe5c76fb2e61116675029e57d4cb3b",
       "cp5a:schema:semantic-svg-role-registry.schema.json": "d541ff17f1bbbc70caf60e2c330f3a8216a153dcb6693c4520165e2107a87ff0",
       "cp5a:schema:static-svg-qa-report.schema.json": "4a9f4639dff503c5d3ab36bbe458aa6e722514caff2a605a7e89ec5e84726d34",
       "cp5a:schema:scientific-svg-identity.schema.json": "ef3aa86c1369efe71d80ef6749df2a5ebee6482faa29d046dacd00fcf9488141",
-      "cp5a:schema:checkpoint-5a-execution-evidence.schema.json": "48aee672f61a9cf929681dd618d70049e0d319ef49377214a41a3a1a2c3c5cd4",
+      "cp5a:schema:checkpoint-5a-execution-evidence.schema.json": "eddcb671e85cefeb3b2e8b6cecf066c824755892c12aa7928f0baa0249d01392",
       "cp5a:schema:checkpoint-5a-qa.schema.json": "1262219ceef4ba97f962f90981e1235c15b0bbb9f2308a362eb6d1b917789e6d",
-      "cp5a:schema:scientific-svg-synthetic-corpus.schema.json": "0ee5ac1b4330a2bc207154337ef16c381ea492588eab5e3d314af1ca853df346",
+      "cp5a:schema:scientific-svg-synthetic-corpus.schema.json": "8af4a2845aeb1f34fa64b6562b16ee0ef4c2aa7a90834324f1d69e10425a4195",
       "cp5a:schema:checkpoint-5a-report-facts.schema.json": "c4a060c1eac45c2569749b36c4878e4d9ecbbd23c7ca9ee83f3cc7733f1735ef",
       "cp5a:skill:scientific-svg-authoring": "4bc915da020feb594da8dccb545bf42bd1ef2d7ee0810035a2578b4465bdb156",
       "cp5a:skill:semantic-svg-governor": "b1d305e90cec3fd5f1d3ba00896e860408f300663b25eb40e6f6cfaf50f7af0a"
     },
-    "current_candidate_hash": "272fe325659592e3f22f1fcc039829fdb48236baec97d5ba1c8f9b040e5446f7",
-    "tested_candidate_hash": "272fe325659592e3f22f1fcc039829fdb48236baec97d5ba1c8f9b040e5446f7",
+    "current_candidate_hash": "703e8562e077e121f3e8d7686a9a19645e9d9635f15591f235c86f7472c30d28",
+    "tested_candidate_hash": "703e8562e077e121f3e8d7686a9a19645e9d9635f15591f235c86f7472c30d28",
     "candidate_hash_equal": true,
     "disposable_worktree": true,
-    "tests_passed": 355,
+    "tests_passed": 371,
     "tests_failed": 0
   },
   "privacy_scan": {
     "scanner_id": "RepositoryPrivacyScanner",
     "scanner_version": "CP3-REPOSITORY-STAGED-V1",
-    "configuration_hash": "31dc4956fe4736e3d117c25873ed1e61ac2ab48b49bda48323bce7cb7da9f80e",
+    "configuration_hash": "f74ad66e4ba702157eb39c8db816b4bdcf6e1894ae6df341ec849cea592ceafb",
     "repository_findings": 0,
     "staged_findings": 0,
     "approved_legacy_exceptions": 1,
@@ -54,7 +61,83 @@
       "evidence": {
         "facts": [
           {
-            "name": "cp4_spec_valid",
+            "name": "cp4_plan_count",
+            "integer": 10
+          },
+          {
+            "name": "cp4_spec_count",
+            "integer": 10
+          },
+          {
+            "name": "cp4_inputs_valid",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-PROFILE-CODE-AUTHORITY",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "profile_element_contract_count",
+            "integer": 15
+          },
+          {
+            "name": "registered_grammar_count",
+            "integer": 3
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-SCHEMA-CLOSURE",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "profile_schema_valid",
+            "boolean": true
+          },
+          {
+            "name": "role_schema_valid",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-NAMESPACE-POLICY",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "foreign_namespace_rejected",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-GEOMETRY-GRAMMAR",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "malformed_path_rejected",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-RESOURCE-POLICY",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "remote_resource_rejected",
             "boolean": true
           }
         ]
@@ -89,6 +172,46 @@
       }
     },
     {
+      "check_id": "CP5A-CJK-EDITABLE-TEXT",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "cjk_text_preserved",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-CANONICALIZATION",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "formatting_normalization_deterministic",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-SYNTHETIC-CORPUS",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "fixture_binding_count",
+            "integer": 10
+          },
+          {
+            "name": "ambiguous_bindings",
+            "integer": 0
+          }
+        ]
+      }
+    },
+    {
       "check_id": "CP5A-REPOSITORY-STAGED-PRIVACY",
       "status": "pass",
       "evidence": {
@@ -111,7 +234,7 @@
           },
           {
             "name": "privacy_configuration_hash",
-            "hash": "31dc4956fe4736e3d117c25873ed1e61ac2ab48b49bda48323bce7cb7da9f80e"
+            "hash": "f74ad66e4ba702157eb39c8db816b4bdcf6e1894ae6df341ec849cea592ceafb"
           }
         ]
       }
@@ -141,6 +264,10 @@
       "status": "pass",
       "evidence": {
         "facts": [
+          {
+            "name": "execution_record_bound",
+            "boolean": true
+          },
           {
             "name": "private_alias_resolution_attempts",
             "integer": 0

@@ -136,9 +136,9 @@ def test_execution_evidence_is_candidate_hash_bound_and_private_safe():
 
     outputs = build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False)
     assert outputs["qa"]["aggregate_status"] == "fail"
-    assert outputs["execution"]["private_alias_resolution_attempts"] == 0
-    assert outputs["execution"]["private_source_open_attempts"] == 0
-    assert outputs["execution"]["private_render_attempts"] == 0
+    assert outputs["execution"]["private_alias_resolution_attempts"] is None
+    assert outputs["execution"]["private_source_open_attempts"] is None
+    assert outputs["execution"]["private_render_attempts"] is None
 
 
 def test_execution_evidence_fails_closed_without_an_executed_privacy_boundary():
@@ -213,3 +213,79 @@ def test_authoring_handoff_cannot_bypass_the_static_validator():
         author_svg_for_spec(_svg("<script id='obj-x' data-semantic-role='node'>x</script>"), _spec(), ROOT)
     result = author_svg_for_spec(_valid_svg(), _spec(), ROOT)
     assert result["qa"]["aggregate_status"] == "pass"
+
+
+def test_profile_is_the_executable_language_authority_and_unknown_grammar_fails_closed():
+    """A persisted attribute mutation cannot be silently ignored by code."""
+    from thesis_deck_system.phase3_cp5a_scientific_svg import ScientificSvgError, ScientificSvgValidator
+
+    validator = _validator()
+    profile = deepcopy(validator.profile)
+    profile["element_attribute_contract"]["rect"].remove("fill")
+    mutated = ScientificSvgValidator(ROOT, profile, validator.roles)
+    assert mutated.validate(_svg("<rect id='obj-panel' data-semantic-role='panel' x='0' y='0' width='1' height='1' fill='#fff'/"), figure_spec=_spec())["aggregate_status"] == "fail"
+    profile = deepcopy(validator.profile)
+    profile["grammar_bindings"]["path"] = "unregistered-path-v99"
+    with pytest.raises(ScientificSvgError):
+        ScientificSvgValidator(ROOT, profile, validator.roles)
+
+
+@pytest.mark.parametrize(
+    ("body", "rule"),
+    [
+        ("<evil:rect xmlns:evil='urn:evil' id='obj-panel' data-semantic-role='panel' x='0' y='0' width='1' height='1'/>", "CP5A-NAMESPACE"),
+        ("<rect xmlns:evil='urn:evil' id='obj-panel' data-semantic-role='panel' x='0' y='0' width='1' height='1' evil:fill='#fff'/>", "CP5A-NAMESPACE"),
+        ("<rect id='obj-control' data-semantic-role='control' x='0' y='0' width='1' height='1'/>", "CP5A-ROLE-VISUAL-CLASS"),
+        ("<line id='obj-flow' data-semantic-role='flow' x1='0' y1='0' x2='1' y2='1'><g/></line>", "CP5A-ROLE-CHILD-POLICY"),
+    ],
+)
+def test_namespace_and_role_policy_are_enforced(body: str, rule: str):
+    result = _validator().validate(_svg(body), figure_spec=_spec())
+    assert result["aggregate_status"] == "fail"
+    assert rule in {finding["rule_id"] for finding in result["findings"]}
+
+
+def test_root_visual_class_must_match_spec_and_corpus_bindings_are_explicit():
+    import json
+    from thesis_deck_system.phase3_cp5a_scientific_svg import validate_synthetic_corpus
+
+    mismatched = _svg("<rect id='obj-panel' data-semantic-role='panel' x='0' y='0' width='1' height='1'/>").replace(" data-thesis-figure-id=\"FIG001\"", " data-thesis-figure-id=\"FIG001\" data-visual-class='fair_comparison'", 1)
+    assert "CP5A-VISUAL-CLASS-BINDING" in {item["rule_id"] for item in _validator().validate(mismatched, figure_spec=_spec())["findings"]}
+    corpus = json.loads((ARTIFACTS / "scientific-svg-synthetic-corpus.json").read_text(encoding="utf-8"))
+    assert all({"fixture_id", "figure_id", "visual_class", "figure_spec_ref"} <= set(item["binding"]) for item in corpus["fixtures"])
+    assert validate_synthetic_corpus(ROOT, corpus)["aggregate_status"] == "pass"
+
+
+@pytest.mark.parametrize(
+    ("body", "rule"),
+    [
+        ("<path id='obj-branch' data-semantic-role='branch' d='M 0 0 L 10 10 20' fill='none'/>", "CP5A-PATH-GRAMMAR"),
+        ("<path id='obj-branch' data-semantic-role='branch' d='M 0 0 C 1 2 3 4 5' fill='none'/>", "CP5A-PATH-GRAMMAR"),
+        ("<path id='obj-branch' data-semantic-role='branch' d='M 0 0 A 1 1 0 2 0 4 4' fill='none'/>", "CP5A-PATH-GRAMMAR"),
+        ("<g id='obj-group' data-semantic-role='group' transform='matrix(1 0 0 1 0)'/>", "CP5A-TRANSFORM-GRAMMAR"),
+        ("<g id='obj-group' data-semantic-role='group' transform='rotate(1 2)'/>", "CP5A-TRANSFORM-GRAMMAR"),
+        ("<polyline id='obj-flow' data-semantic-role='flow' points='1,1' fill='none'/>", "CP5A-POINTS-GRAMMAR"),
+        ("<polygon id='obj-node' data-semantic-role='node' points='1,1 2,2' fill='none'/>", "CP5A-POINTS-GRAMMAR"),
+    ],
+)
+def test_exact_geometry_grammars_reject_unmatched_groups(body: str, rule: str):
+    result = _validator().validate(_svg(body), figure_spec=_spec())
+    assert rule in {finding["rule_id"] for finding in result["findings"]}
+
+
+def test_canonicalization_preserves_significant_tspan_whitespace_and_foreign_namespaces_cannot_be_normalized():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import ScientificSvgError, canonicalize_svg
+
+    source = _svg("<text id='obj-title' data-semantic-role='title' x='1' y='1'><tspan id='obj-a' data-semantic-role='label'>A</tspan> <tspan id='obj-b' data-semantic-role='label'>B</tspan></text>")
+    assert "</tspan> <tspan" in canonicalize_svg(source)["canonical_svg"]
+    with pytest.raises(ScientificSvgError):
+        canonicalize_svg(_svg("<evil:rect xmlns:evil='urn:evil'/>"))
+
+
+def test_execution_qa_requires_bound_private_access_evidence_and_projects_status_dimensions():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import build_cp5a_artifacts
+
+    outputs = build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=None)
+    checks = {item["check_id"]: item["status"] for item in outputs["execution"]["owning_checks"]}
+    assert checks["CP5A-PRIVATE-ACCESS"] == "fail"
+    assert outputs["qa"]["status_dimensions"]["resource_policy"] == "fail"
