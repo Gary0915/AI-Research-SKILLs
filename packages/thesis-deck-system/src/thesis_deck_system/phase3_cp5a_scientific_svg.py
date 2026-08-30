@@ -50,7 +50,23 @@ class Cp5aPrivateAccessSession:
 
     execution_id: str
     _counters: dict[str, int] = field(default_factory=lambda: {"private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0})
+    _run_id: str | None = None
+    _candidate_state_hash: str | None = None
+    _validation_completed: bool = False
     _sealed: bool = False
+
+    def bind_execution(self, run_id: str, candidate_state_hash: str) -> "Cp5aPrivateAccessSession":
+        if self._sealed or run_id != "CP5A-EXEC-001" or re.fullmatch(r"[a-f0-9]{64}", candidate_state_hash) is None:
+            raise ScientificSvgError("invalid CP5-A execution binding")
+        self._run_id = run_id
+        self._candidate_state_hash = candidate_state_hash
+        return self
+
+    def complete_validation(self) -> "Cp5aPrivateAccessSession":
+        if self._sealed or self._run_id is None or self._candidate_state_hash is None:
+            raise ScientificSvgError("CP5-A execution must bind before validation completes")
+        self._validation_completed = True
+        return self
 
     def guarded_attempt(self, operation: str) -> None:
         key = {"alias_resolution": "private_alias_resolution_attempts", "source_open": "private_source_open_attempts", "render": "private_render_attempts"}.get(operation)
@@ -62,13 +78,15 @@ class Cp5aPrivateAccessSession:
     def seal(self) -> "Cp5aPrivateAccessSession":
         if not re.fullmatch(r"CP5A-ACCESS-[0-9]{3}", self.execution_id):
             raise ScientificSvgError("invalid CP5-A private access execution identity")
+        if self._run_id is None or self._candidate_state_hash is None or not self._validation_completed:
+            raise ScientificSvgError("CP5-A private access evidence is not lifecycle-bound")
         self._sealed = True
         return self
 
     def evidence(self) -> dict[str, Any]:
         if not self._sealed:
             raise ScientificSvgError("private access session is not sealed")
-        payload = {"execution_id": self.execution_id, **self._counters, "record_type": "cp5a_guarded_private_access_v1", "sealed": True}
+        payload = {"execution_id": self.execution_id, "run_id": self._run_id, "candidate_state_hash": self._candidate_state_hash, "lifecycle_status": "completed", **self._counters, "record_type": "cp5a_guarded_private_access_v1", "sealed": True}
         return {**payload, "evidence_hash": _sha(json.dumps(payload, sort_keys=True, separators=(",", ":")))}
 
 
@@ -117,11 +135,11 @@ def _normalize_numbers(value: str) -> str:
     return NUMBER_RE.sub(lambda match: _format_number(match.group(0)), value)
 
 
-def _canonical_element(element: ET.Element) -> str:
+def _canonical_element(element: ET.Element, *, root: bool = False) -> str:
     if _namespace(element.tag) != SVG_NS:
         raise ScientificSvgError("foreign namespace cannot be canonicalized as Scientific SVG")
     tag = _tag(element)
-    attributes = []
+    attributes = [f' xmlns="{SVG_NS}"'] if root else []
     for key, value in sorted(element.attrib.items(), key=lambda item: item[0]):
         if _namespace(key) is not None:
             raise ScientificSvgError("foreign attribute namespace cannot be canonicalized as Scientific SVG")
@@ -150,7 +168,7 @@ def _canonical_tail(parent: ET.Element, child: ET.Element) -> str:
 def canonicalize_svg(source: str) -> dict[str, str]:
     """Produce the versioned canonical SVG identity without reordering children."""
     root = _parse(source)
-    canonical = '<?xml version="1.0" encoding="UTF-8"?>' + _canonical_element(root)
+    canonical = '<?xml version="1.0" encoding="UTF-8"?>' + _canonical_element(root, root=True)
     return {"source_sha256": _source_sha(source), "canonical_sha256": _sha(canonical), "canonical_svg": canonical, "canonicalization_version": CANONICALIZATION_VERSION}
 
 
@@ -168,7 +186,7 @@ def strip_semantic_metadata(source: str) -> str:
         for key in list(element.attrib):
             if key.rsplit("}", 1)[-1] in {"data-thesis-svg-version", "data-thesis-figure-id", "data-visual-class", "data-semantic-role"}:
                 del element.attrib[key]
-    return _canonical_element(root)
+    return _canonical_element(root, root=True)
 
 
 def presentation_ast_hash(source: str) -> str:
@@ -234,8 +252,8 @@ class ScientificSvgValidator:
         coordinate = profile["coordinate_policy"]
         if not coordinate["viewbox_required"] or coordinate["percent_geometry_allowed"] or not coordinate["finite_numbers_only"]:
             raise ScientificSvgError("unsupported coordinate policy")
-        self.positive_dimensions = set(coordinate["positive_dimension_attributes"]) | {"markerWidth", "markerHeight"}
-        if not set(coordinate["positive_dimension_attributes"]).issubset({"width", "height", "r", "rx", "ry"}):
+        self.positive_dimensions = set(coordinate["positive_dimension_attributes"])
+        if not self.positive_dimensions.issubset({"width", "height", "r", "rx", "ry", "markerWidth", "markerHeight"}):
             raise ScientificSvgError("unsupported positive dimension attribute")
         text_policy = profile["text_policy"]
         if not text_policy["utf8_required"] or set(text_policy["editable_elements"]) != {"text", "tspan"} or text_policy["unicode_normalization"] != "NFC" or text_policy["synthetic_font_prefix"] != "synthetic-":
@@ -292,7 +310,8 @@ class ScientificSvgValidator:
         return self._report(figure_id, source_hash, canonical, findings, metadata_equal)
 
     def _validate_viewbox(self, root: ET.Element, findings: list[dict[str, Any]]) -> None:
-        values = (root.get("viewBox") or "").replace(",", " ").split()
+        parsed = self._parse_number_sequence(root.get("viewBox") or "")
+        values = parsed[0] if parsed is not None and parsed[1] == len(root.get("viewBox") or "") else []
         if len(values) != 4 or any(_number(value) is None for value in values) or _number(values[2]) <= 0 or _number(values[3]) <= 0:
             findings.append(_finding("CP5A-VIEWBOX", "CP5A-NUMERIC-POLICY", "finite positive four-number viewBox required"))
 
@@ -475,18 +494,21 @@ class ScientificSvgValidator:
                     continue
                 target_id: str | None = None
                 if attr in {"marker-start", "marker-end", "clip-path"}:
-                    match = re.fullmatch(r"url\(#(obj-[a-z][a-z0-9-]{0,63})\)", reference)
+                    match = re.fullmatch(r"url\(#([^()\s]+)\)", reference)
                     if match is None:
                         findings.append(_finding("CP5A-LOCAL-REFERENCE", "CP5A-LOCAL-REFERENCE", f"invalid {attr} local reference", path=path))
                         continue
                     target_id = match.group(1)
+                    if self.object_id_re.fullmatch(target_id) is None:
+                        findings.append(_finding("CP5A-LOCAL-REFERENCE", "CP5A-LOCAL-REFERENCE", f"invalid {attr} local target identity", path=path))
+                        continue
                     target = targets.get(target_id)
                     expected = "marker" if attr.startswith("marker-") else "clipPath"
                     if target is None or _tag(target) != expected:
                         findings.append(_finding("CP5A-LOCAL-REFERENCE", "CP5A-LOCAL-REFERENCE", f"unresolved {attr} target", path=path))
                     continue
-                if "local_same_document_reference" in self.resource_modes and re.fullmatch(r"#(obj-[a-z][a-z0-9-]{0,63})", reference):
-                    if reference[1:] not in targets:
+                if "local_same_document_reference" in self.resource_modes and re.fullmatch(r"#([^\s#]+)", reference):
+                    if self.object_id_re.fullmatch(reference[1:]) is None or reference[1:] not in targets:
                         findings.append(_finding("CP5A-LOCAL-REFERENCE", "CP5A-LOCAL-REFERENCE", "unresolved href target", path=path))
                     continue
                 safe_bundle = "bundle_relative" in self.resource_modes and re.fullmatch(r"assets/[a-z0-9][a-z0-9._/-]*", reference or "") is not None and ".." not in reference
@@ -544,10 +566,14 @@ def author_svg_for_spec(source: str, figure_spec: dict[str, Any], root: Path | N
         registry.validate("scientific-figure-spec", figure_spec)
     except ValueError as exc:
         raise ScientificSvgError("ScientificFigureSpec authoring handoff requires schema-valid route input") from exc
-    result = ScientificSvgValidator.load_default(root).validate(source, figure_spec=figure_spec)
+    validator = ScientificSvgValidator.load_default(root)
+    result = validator.validate(source, figure_spec=figure_spec)
     if result["aggregate_status"] != "pass":
         raise ScientificSvgError("Scientific SVG authoring handoff blocked by static validator")
-    return {"canonical_svg": result["identity"]["canonical_svg"], "identity": result["identity"], "qa": result}
+    canonical_result = validator.validate(result["identity"]["canonical_svg"], figure_spec=figure_spec)
+    if canonical_result["aggregate_status"] != "pass":
+        raise ScientificSvgError("canonical Scientific SVG failed round-trip validation")
+    return {"canonical_svg": result["identity"]["canonical_svg"], "identity": result["identity"], "qa": canonical_result}
 
 
 def validate_synthetic_corpus(root: Path | None = None, corpus: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -588,7 +614,18 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
     except ScientificSvgError:
         access = None
     access_keys = ("private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts")
-    access_bound = access is not None and all(isinstance(access.get(key), int) and access[key] >= 0 for key in access_keys) and bool(access.get("execution_id")) and access.get("sealed") is True and access.get("record_type") == "cp5a_guarded_private_access_v1" and access.get("evidence_hash") == _sha(json.dumps({key: access[key] for key in ("execution_id", *access_keys)} | {"record_type": access["record_type"], "sealed": access["sealed"]}, sort_keys=True, separators=(",", ":")))
+    access_identity_keys = ("execution_id", "run_id", "candidate_state_hash", "lifecycle_status", *access_keys, "record_type", "sealed")
+    access_bound = (
+        access is not None
+        and all(isinstance(access.get(key), int) and access[key] >= 0 for key in access_keys)
+        and access.get("run_id") == "CP5A-EXEC-001"
+        and access.get("candidate_state_hash") == state["current_candidate_hash"]
+        and access.get("lifecycle_status") == "completed"
+        and bool(access.get("execution_id"))
+        and access.get("sealed") is True
+        and access.get("record_type") == "cp5a_guarded_private_access_v1"
+        and access.get("evidence_hash") == _sha(json.dumps({key: access[key] for key in access_identity_keys}, sort_keys=True, separators=(",", ":")))
+    )
     private_access_passed = bool(access_bound) and all(access[key] == 0 for key in access_keys)
     registry = SchemaRegistry(root / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True)
     plans = json.loads((root / "thesis-deck-system" / "artifacts" / "phase3" / "figure-production-plans.json").read_text(encoding="utf-8"))
@@ -614,6 +651,17 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
     resource_passed = resource_probe["aggregate_status"] == "fail"
     cjk_passed = "量測結果" in fixture_result["identity"]["canonical_svg"]
     canonical_passed = canonicalize_svg(fixture)["canonical_svg"] == canonicalize_svg(fixture.replace("><", ">\n<"))["canonical_svg"]
+    canonical_once = canonicalize_svg(fixture)
+    canonical_twice = canonicalize_svg(canonical_once["canonical_svg"])
+    canonical_roundtrip = validator.validate(canonical_once["canonical_svg"], figure_spec=spec)["aggregate_status"] == "pass"
+    canonical_idempotent = canonical_once["canonical_svg"] == canonical_twice["canonical_svg"] and canonical_once["canonical_sha256"] == canonical_twice["canonical_sha256"]
+    alternate_profile = deepcopy(validator.profile)
+    alternate_profile["id_policy"]["pattern"] = "^node-[0-9]{1,3}$"
+    alternate_validator = ScientificSvgValidator(root, alternate_profile, validator.roles)
+    alternate_reference = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" data-thesis-svg-version="1.0.0" data-thesis-figure-id="FIG001"><defs><marker id="node-1" data-semantic-role="arrow" markerWidth="1" markerHeight="1"/></defs><line id="node-2" data-semantic-role="arrow" x1="0" y1="0" x2="1" y2="1" marker-end="url(#node-1)"/></svg>'
+    object_reference_authority = alternate_validator.validate(alternate_reference, figure_spec=spec)["aggregate_status"] == "pass"
+    viewbox_probe = validator.validate('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,,0 1 1" data-thesis-svg-version="1.0.0" data-thesis-figure-id="FIG001"/>', figure_spec=spec)
+    viewbox_exact = viewbox_probe["aggregate_status"] == "fail" and any(item["rule_id"] == "CP5A-NUMERIC-POLICY" for item in viewbox_probe["findings"])
     checks = [
         ("CP5A-CP4-FREEZE", cp4_freeze_passed, [{"name":"cp4_plan_count","integer":len(plans)},{"name":"cp4_spec_count","integer":len(specs)},{"name":"cp4_inputs_valid","boolean":cp4_freeze_passed}]),
         ("CP5A-PROFILE-CODE-AUTHORITY", profile_authority, [{"name":"profile_element_contract_count","integer":len(validator.attributes)},{"name":"registered_grammar_count","integer":len(REGISTERED_GRAMMARS)}]),
@@ -631,6 +679,10 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
         ("CP5A-CJK-EDITABLE-TEXT", cjk_passed, [{"name":"cjk_text_preserved","boolean":cjk_passed}]),
         ("CP5A-SIGNIFICANT-WHITESPACE", whitespace_preserved, [{"name":"inter_tspan_space_preserved","boolean":whitespace_preserved}]),
         ("CP5A-CANONICALIZATION", canonical_passed, [{"name":"formatting_normalization_deterministic","boolean":canonical_passed}]),
+        ("CP5A-CANONICAL-ROUNDTRIP", canonical_roundtrip, [{"name":"canonical_revalidates","boolean":canonical_roundtrip},{"name":"canonical_svg_namespace","text":SVG_NS}]),
+        ("CP5A-CANONICAL-IDEMPOTENCE", canonical_idempotent, [{"name":"canonicalization_idempotent","boolean":canonical_idempotent},{"name":"second_canonical_hash","hash":canonical_twice["canonical_sha256"]}]),
+        ("CP5A-OBJECT-REFERENCE-ID-AUTHORITY", object_reference_authority, [{"name":"alternate_profile_reference_valid","boolean":object_reference_authority},{"name":"object_id_pattern","text":alternate_validator.object_id_re.pattern}]),
+        ("CP5A-VIEWBOX-GRAMMAR", viewbox_exact, [{"name":"repeated_comma_rejected","boolean":viewbox_exact}]),
         ("CP5A-FIGURE-SPEC-HANDOFF", handoff_invalid_rejected, [{"name":"invalid_figure_spec_rejected","boolean":handoff_invalid_rejected}]),
         ("CP5A-SYNTHETIC-CORPUS", corpus_result["aggregate_status"] == "pass" and corpus_result["binding_count"] == 10 and corpus_result["ambiguous_bindings"] == 0, [{"name":"fixture_binding_count","integer":corpus_result["binding_count"]},{"name":"ambiguous_bindings","integer":corpus_result["ambiguous_bindings"]}]),
         ("CP5A-REPOSITORY-STAGED-PRIVACY", privacy_passed, [{"name":"repository_scan_executed","boolean":privacy_evidence["repository_scan_executed"]},{"name":"staged_scan_executed","boolean":privacy_evidence["staged_scan_executed"]},{"name":"repository_findings","integer":privacy_evidence["repository_findings"]},{"name":"staged_findings","integer":privacy_evidence["staged_findings"]},{"name":"privacy_configuration_hash","hash":privacy_evidence["configuration_hash"]}]),
@@ -642,6 +694,7 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
             {"name": "private_source_open_attempts", "integer": access.get("private_source_open_attempts", -1) if access else -1},
             {"name": "private_render_attempts", "integer": access.get("private_render_attempts", -1) if access else -1},
         ]),
+        ("CP5A-PRIVATE-ACCESS-LIFECYCLE", private_access_passed, [{"name":"lifecycle_completed","boolean":bool(access and access.get("lifecycle_status") == "completed")},{"name":"candidate_bound","boolean":bool(access and access.get("candidate_state_hash") == state["current_candidate_hash"])}]),
     ]
     owning = [{"check_id": item[0], "status": "pass" if item[1] else "fail", "evidence": {"facts": item[2]}} for item in checks]
     aggregate = "pass" if all(item["status"] == "pass" for item in owning) else "fail"
@@ -649,6 +702,9 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
         key: access[key]
         for key in (
             "execution_id",
+            "run_id",
+            "candidate_state_hash",
+            "lifecycle_status",
             *access_keys,
             "record_type",
             "sealed",
@@ -658,7 +714,7 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
     execution = {"schema_version":"1.0.0","execution_id":"CP5A-EXEC-001","private_alias_resolution_attempts":access.get("private_alias_resolution_attempts") if access else None,"private_source_open_attempts":access.get("private_source_open_attempts") if access else None,"private_render_attempts":access.get("private_render_attempts") if access else None,"private_access_evidence":persisted_access,"candidate_state":{**state,"tested_candidate_hash":tested_candidate_hash,"candidate_hash_equal":equal,"disposable_worktree":tested_in_disposable_worktree,"tests_passed":tests_passed,"tests_failed":tests_failed},"privacy_scan":privacy_evidence,"owning_checks":owning}
     status_by_check = {item["check_id"]: item["status"] for item in owning}
     status = lambda *check_ids: "pass" if all(status_by_check[name] == "pass" for name in check_ids) else "fail"
-    qa = {"schema_version":"1.0.0","qa_id":"CP5A-QA-001","aggregate_status":aggregate,"owning_check_refs":[item["check_id"] for item in owning],"status_dimensions":{"scientific_svg_language":status("CP5A-PROFILE-CODE-AUTHORITY","CP5A-SCHEMA-CLOSURE","CP5A-FIGURE-SPEC-HANDOFF"),"static_svg_validator":status("CP5A-STATIC-VALIDATOR","CP5A-NAMESPACE-POLICY","CP5A-ELEMENT-ATTRIBUTE-POLICY","CP5A-GEOMETRY-GRAMMAR","CP5A-LOCAL-REFERENCE-POLICY"),"semantic_governance":status("CP5A-METADATA-INVISIBILITY","CP5A-ROLE-VISUAL-CLASS","CP5A-ROLE-CHILD-POLICY","CP5A-ROLE-ADDRESSABILITY"),"cjk_static_text":status("CP5A-CJK-EDITABLE-TEXT","CP5A-SIGNIFICANT-WHITESPACE"),"resource_policy":status("CP5A-RESOURCE-POLICY","CP5A-REPOSITORY-STAGED-PRIVACY","CP5A-LOCAL-REFERENCE-POLICY"),"canonicalization_hash":status("CP5A-CANONICALIZATION","CP5A-METADATA-INVISIBILITY","CP5A-SIGNIFICANT-WHITESPACE"),"synthetic_corpus":status("CP5A-SYNTHETIC-CORPUS"),"native_capability_registry":"not_run","static_figure_critic":"not_run","production_figure_rendering":"not_run","render_critic":"not_run","a01_a18_calibration":"not_run","drawingml_compiler":"not_run","template_reconstruction":"not_run","acceptance_deck":"not_run","production_group_meeting_ready":False}}
+    qa = {"schema_version":"1.0.0","qa_id":"CP5A-QA-001","aggregate_status":aggregate,"owning_check_refs":[item["check_id"] for item in owning],"status_dimensions":{"scientific_svg_language":status("CP5A-PROFILE-CODE-AUTHORITY","CP5A-SCHEMA-CLOSURE","CP5A-FIGURE-SPEC-HANDOFF","CP5A-PRIVATE-ACCESS-LIFECYCLE"),"static_svg_validator":status("CP5A-STATIC-VALIDATOR","CP5A-NAMESPACE-POLICY","CP5A-ELEMENT-ATTRIBUTE-POLICY","CP5A-GEOMETRY-GRAMMAR","CP5A-LOCAL-REFERENCE-POLICY","CP5A-CANONICAL-ROUNDTRIP","CP5A-VIEWBOX-GRAMMAR"),"semantic_governance":status("CP5A-METADATA-INVISIBILITY","CP5A-ROLE-VISUAL-CLASS","CP5A-ROLE-CHILD-POLICY","CP5A-ROLE-ADDRESSABILITY","CP5A-OBJECT-REFERENCE-ID-AUTHORITY"),"cjk_static_text":status("CP5A-CJK-EDITABLE-TEXT","CP5A-SIGNIFICANT-WHITESPACE","CP5A-CANONICAL-ROUNDTRIP"),"resource_policy":status("CP5A-RESOURCE-POLICY","CP5A-REPOSITORY-STAGED-PRIVACY","CP5A-LOCAL-REFERENCE-POLICY"),"canonicalization_hash":status("CP5A-CANONICALIZATION","CP5A-CANONICAL-IDEMPOTENCE","CP5A-CANONICAL-ROUNDTRIP","CP5A-METADATA-INVISIBILITY","CP5A-SIGNIFICANT-WHITESPACE"),"synthetic_corpus":status("CP5A-SYNTHETIC-CORPUS"),"native_capability_registry":"not_run","static_figure_critic":"not_run","production_figure_rendering":"not_run","render_critic":"not_run","a01_a18_calibration":"not_run","drawingml_compiler":"not_run","template_reconstruction":"not_run","acceptance_deck":"not_run","production_group_meeting_ready":False}}
     return {"execution": execution, "qa": qa, "fixture_qa": fixture_result, "corpus": corpus_result}
 
 

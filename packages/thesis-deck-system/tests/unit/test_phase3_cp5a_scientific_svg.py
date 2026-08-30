@@ -347,17 +347,67 @@ def test_private_access_evidence_must_be_a_sealed_execution_record():
     spoofed = {"execution_id": "CP5A-ACCESS-001", "private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0}
     assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=spoofed)["execution"]["owning_checks"][-1]["status"] == "fail"
     assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=Cp5aPrivateAccessSession("CP5A-ACCESS-001"))["execution"]["owning_checks"][-1]["status"] == "fail"
-    sealed = Cp5aPrivateAccessSession("CP5A-ACCESS-001").seal()
-    outputs = build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=sealed)
-    assert outputs["execution"]["owning_checks"][-1]["status"] == "pass"
-    persisted = outputs["execution"]["private_access_evidence"]
-    assert persisted["sealed"] is True
-    assert persisted["record_type"] == "cp5a_guarded_private_access_v1"
-    assert len(persisted["evidence_hash"]) == 64
+    # Sealing an arbitrary empty session is not proof it covered an execution.
+    with pytest.raises(Exception):
+        Cp5aPrivateAccessSession("CP5A-ACCESS-001").seal()
     attempted = Cp5aPrivateAccessSession("CP5A-ACCESS-001")
     with pytest.raises(Exception):
         attempted.guarded_attempt("source_open")
+    attempted.bind_execution("CP5A-EXEC-001", "0" * 64).complete_validation()
     assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=attempted.seal())["execution"]["owning_checks"][-1]["status"] == "fail"
+
+
+def test_canonical_svg_roundtrip_revalidates_is_idempotent_and_preserves_svg_namespace():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import author_svg_for_spec, canonicalize_svg
+
+    first = canonicalize_svg(_valid_svg())
+    second = canonicalize_svg(first["canonical_svg"])
+    assert 'xmlns="http://www.w3.org/2000/svg"' in first["canonical_svg"]
+    assert _validator().validate(first["canonical_svg"], figure_spec=_spec())["aggregate_status"] == "pass"
+    assert author_svg_for_spec(_valid_svg(), _spec(), ROOT)["qa"]["aggregate_status"] == "pass"
+    assert first["canonical_svg"] == second["canonical_svg"]
+    assert first["canonical_sha256"] == second["canonical_sha256"]
+
+
+def test_canonicalized_marker_clip_and_cjk_tspan_references_remain_valid():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import canonicalize_svg
+
+    source = _svg("<defs><marker id='obj-arrow' data-semantic-role='arrow' markerWidth='2' markerHeight='2'/><clipPath id='obj-clip' data-semantic-role='panel'><rect id='obj-clip-box' data-semantic-role='panel' x='0' y='0' width='1' height='1'/></clipPath></defs><text id='obj-title' data-semantic-role='title' x='1' y='1'><tspan id='obj-a' data-semantic-role='label'>水凝膠</tspan> <tspan id='obj-b' data-semantic-role='label'>/ Hydrogel</tspan></text><line id='obj-flow' data-semantic-role='arrow' x1='0' y1='0' x2='1' y2='1' marker-end='url(#obj-arrow)' clip-path='url(#obj-clip)'/>")
+    canonical = canonicalize_svg(source)["canonical_svg"]
+    assert "水凝膠" in canonical and "</tspan> <tspan" in canonical
+    assert _validator().validate(canonical, figure_spec=_spec())["aggregate_status"] == "pass"
+
+
+def test_local_references_use_the_active_profile_object_id_grammar():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import ScientificSvgValidator
+
+    validator = _validator()
+    profile = deepcopy(validator.profile)
+    profile["id_policy"]["pattern"] = "^node-[0-9]{1,3}$"
+    mutated = ScientificSvgValidator(ROOT, profile, validator.roles)
+    source = _svg("<defs><marker id='node-1' data-semantic-role='arrow' markerWidth='2' markerHeight='2'/></defs><line id='node-2' data-semantic-role='arrow' x1='0' y1='0' x2='1' y2='1' marker-end='url(#node-1)'/>")
+    assert mutated.validate(source, figure_spec=_spec())["aggregate_status"] == "pass"
+
+
+@pytest.mark.parametrize("viewbox", ["0,,0 10 10", "0 0 10", "0 0 10 10 garbage", "0 0 NaN 10", "0 0 0 10"])
+def test_viewbox_requires_exact_consuming_positive_four_number_grammar(viewbox: str):
+    source = _valid_svg().replace('viewBox="0 0 160 90"', f'viewBox="{viewbox}"')
+    assert "CP5A-NUMERIC-POLICY" in {item["rule_id"] for item in _validator().validate(source, figure_spec=_spec())["findings"]}
+
+
+def test_private_access_evidence_requires_completed_candidate_bound_lifecycle():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import Cp5aPrivateAccessSession, build_cp5a_artifacts, candidate_state
+
+    state = candidate_state(ROOT)
+    session = Cp5aPrivateAccessSession("CP5A-ACCESS-001")
+    session.bind_execution("CP5A-EXEC-001", state["current_candidate_hash"])
+    session.complete_validation()
+    outputs = build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=session.seal())
+    persisted = outputs["execution"]["private_access_evidence"]
+    assert outputs["execution"]["owning_checks"][-1]["status"] == "pass"
+    assert persisted["lifecycle_status"] == "completed"
+    assert persisted["candidate_state_hash"] == state["current_candidate_hash"]
+    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=Cp5aPrivateAccessSession("CP5A-ACCESS-001").bind_execution("CP5A-EXEC-001", "0" * 64).complete_validation().seal())["execution"]["owning_checks"][-1]["status"] == "fail"
 
 
 @pytest.mark.parametrize(
