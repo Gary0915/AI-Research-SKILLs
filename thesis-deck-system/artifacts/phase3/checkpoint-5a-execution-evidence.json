@@ -8,7 +8,10 @@
     "execution_id": "CP5A-ACCESS-001",
     "private_alias_resolution_attempts": 0,
     "private_source_open_attempts": 0,
-    "private_render_attempts": 0
+    "private_render_attempts": 0,
+    "record_type": "cp5a_guarded_private_access_v1",
+    "sealed": true,
+    "evidence_hash": "0aabc0c1fbdcde4f3ecbc1eab61851eb284526b1e21a84e3fb0181efa53417df"
   },
   "candidate_state": {
     "component_hashes": {
@@ -17,9 +20,9 @@
       "cp4:artifact:figure-production-plans": "66f7282cf894a3a38b6bf3a5081550bf64e61eb4dd06f5d2c06055ab27ad4a2b",
       "cp4:artifact:scientific-figure-specs": "2c20be513aa432a54872fd2ee8eee012ecb6e9b4ca89919d368d8cf0c459f2a6",
       "cp4:skill-routing": "7368eb06c8a1c6875a2e1def561a91789de5140cf8c8b59e1db76393ed29215a",
-      "cp5a:source": "543bdf83464dd0f325f6e87b08d392784fad1da602ae6bc44850757f461d48e7",
+      "cp5a:source": "4b92b97c5b32185c513d1acbec4c099d359fe65de340699f9b2d812f30b66585",
       "cp5a:source:contracts": "39fe986fc546d6efb47a01579d938e4644bfa20856b2ffd46393defabf69920d",
-      "cp5a:test:scientific-svg": "22ad84fb8ec51766c5e112e876253980a26c917eab8750199f85d76e10fdf0f5",
+      "cp5a:test:scientific-svg": "528f8be025fff79645008219d1a52d13f4cde2e5b31d5bc11994c28b3216271b",
       "cp5a:test:privacy-regression": "84a753d45a2d9f6b6782d47fe13f1131d091b68d981b42f07510db8788e87ab4",
       "cp5a:privacy:approved-scanner": "b20b51303aaba5c6cfb488cca293d8c73dce4ceaee751846457258c8402cd596",
       "cp5a:privacy:scanner": "7664531a8f21d4b00c70a23096a95c83e0aed889cc73c2fde9d7ed09c6f44a20",
@@ -30,24 +33,24 @@
       "cp5a:schema:semantic-svg-role-registry.schema.json": "d541ff17f1bbbc70caf60e2c330f3a8216a153dcb6693c4520165e2107a87ff0",
       "cp5a:schema:static-svg-qa-report.schema.json": "4a9f4639dff503c5d3ab36bbe458aa6e722514caff2a605a7e89ec5e84726d34",
       "cp5a:schema:scientific-svg-identity.schema.json": "ef3aa86c1369efe71d80ef6749df2a5ebee6482faa29d046dacd00fcf9488141",
-      "cp5a:schema:checkpoint-5a-execution-evidence.schema.json": "eddcb671e85cefeb3b2e8b6cecf066c824755892c12aa7928f0baa0249d01392",
+      "cp5a:schema:checkpoint-5a-execution-evidence.schema.json": "d37a55a8023197a78ef360ae72b7a4306177998b4b9884379e442c403e404d10",
       "cp5a:schema:checkpoint-5a-qa.schema.json": "1262219ceef4ba97f962f90981e1235c15b0bbb9f2308a362eb6d1b917789e6d",
       "cp5a:schema:scientific-svg-synthetic-corpus.schema.json": "8af4a2845aeb1f34fa64b6562b16ee0ef4c2aa7a90834324f1d69e10425a4195",
       "cp5a:schema:checkpoint-5a-report-facts.schema.json": "c4a060c1eac45c2569749b36c4878e4d9ecbbd23c7ca9ee83f3cc7733f1735ef",
       "cp5a:skill:scientific-svg-authoring": "4bc915da020feb594da8dccb545bf42bd1ef2d7ee0810035a2578b4465bdb156",
       "cp5a:skill:semantic-svg-governor": "b1d305e90cec3fd5f1d3ba00896e860408f300663b25eb40e6f6cfaf50f7af0a"
     },
-    "current_candidate_hash": "703e8562e077e121f3e8d7686a9a19645e9d9635f15591f235c86f7472c30d28",
-    "tested_candidate_hash": "703e8562e077e121f3e8d7686a9a19645e9d9635f15591f235c86f7472c30d28",
+    "current_candidate_hash": "3190717039e684053d7a3ab63017696ca06c8b82a621bd1e2a4a3e6977446baf",
+    "tested_candidate_hash": "3190717039e684053d7a3ab63017696ca06c8b82a621bd1e2a4a3e6977446baf",
     "candidate_hash_equal": true,
     "disposable_worktree": true,
-    "tests_passed": 371,
+    "tests_passed": 385,
     "tests_failed": 0
   },
   "privacy_scan": {
     "scanner_id": "RepositoryPrivacyScanner",
     "scanner_version": "CP3-REPOSITORY-STAGED-V1",
-    "configuration_hash": "f74ad66e4ba702157eb39c8db816b4bdcf6e1894ae6df341ec849cea592ceafb",
+    "configuration_hash": "92bbd8df31d4ec16cf241f77b3078bc13fd5134c4cc49f8a4668de8b8fec9fd6",
     "repository_findings": 0,
     "staged_findings": 0,
     "approved_legacy_exceptions": 1,
@@ -120,6 +123,58 @@
       }
     },
     {
+      "check_id": "CP5A-ELEMENT-ATTRIBUTE-POLICY",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "element_contract_count",
+            "integer": 15
+          },
+          {
+            "name": "closed_attribute_vocabulary",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-ROLE-VISUAL-CLASS",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "incompatible_role_rejected",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-ROLE-CHILD-POLICY",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "child_policy_rejected",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-ROLE-ADDRESSABILITY",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "addressability_rejected",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
       "check_id": "CP5A-GEOMETRY-GRAMMAR",
       "status": "pass",
       "evidence": {
@@ -138,6 +193,18 @@
         "facts": [
           {
             "name": "remote_resource_rejected",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-LOCAL-REFERENCE-POLICY",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "dangling_local_reference_rejected",
             "boolean": true
           }
         ]
@@ -184,12 +251,36 @@
       }
     },
     {
+      "check_id": "CP5A-SIGNIFICANT-WHITESPACE",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "inter_tspan_space_preserved",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
       "check_id": "CP5A-CANONICALIZATION",
       "status": "pass",
       "evidence": {
         "facts": [
           {
             "name": "formatting_normalization_deterministic",
+            "boolean": true
+          }
+        ]
+      }
+    },
+    {
+      "check_id": "CP5A-FIGURE-SPEC-HANDOFF",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "invalid_figure_spec_rejected",
             "boolean": true
           }
         ]
@@ -234,7 +325,7 @@
           },
           {
             "name": "privacy_configuration_hash",
-            "hash": "f74ad66e4ba702157eb39c8db816b4bdcf6e1894ae6df341ec849cea592ceafb"
+            "hash": "92bbd8df31d4ec16cf241f77b3078bc13fd5134c4cc49f8a4668de8b8fec9fd6"
           }
         ]
       }
@@ -267,6 +358,10 @@
           {
             "name": "execution_record_bound",
             "boolean": true
+          },
+          {
+            "name": "sealed_execution_evidence_hash",
+            "hash": "0aabc0c1fbdcde4f3ecbc1eab61851eb284526b1e21a84e3fb0181efa53417df"
           },
           {
             "name": "private_alias_resolution_attempts",

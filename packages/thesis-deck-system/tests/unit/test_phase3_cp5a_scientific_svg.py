@@ -289,3 +289,86 @@ def test_execution_qa_requires_bound_private_access_evidence_and_projects_status
     checks = {item["check_id"]: item["status"] for item in outputs["execution"]["owning_checks"]}
     assert checks["CP5A-PRIVATE-ACCESS"] == "fail"
     assert outputs["qa"]["status_dimensions"]["resource_policy"] == "fail"
+
+
+def test_profile_policy_mutations_cannot_be_silently_ignored():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import ScientificSvgError, ScientificSvgValidator
+
+    validator = _validator()
+    cases = (
+        (lambda profile: profile["id_policy"].update({"pattern": "^changed-[0-9]+$"}), _svg("<rect id='obj-panel' data-semantic-role='panel' x='0' y='0' width='1' height='1'/>")),
+        (lambda profile: profile["root_contract"].update({"required_attributes": ["viewBox", "style"]}), _valid_svg()),
+        (lambda profile: profile["transform_policy"].update({"allowed_functions": ["translate"]}), _svg("<g id='obj-group' data-semantic-role='group' transform='rotate(1)'/>")),
+        (lambda profile: profile["resource_policy"].update({"allowed_reference_modes": ["bundle_relative"]}), _svg("<image id='obj-image' data-semantic-role='image' x='0' y='0' width='1' height='1' href='data:image/png;base64,AAAA'/>")),
+        (lambda profile: profile["namespace_policy"].update({"approved_attribute_namespaces": [{"namespace_uri": "urn:future", "local_name": "x"}]}), _valid_svg()),
+        (lambda profile: profile["element_attribute_contract"]["rect"].append("style"), _valid_svg()),
+    )
+    for mutate, source in cases:
+        profile = deepcopy(validator.profile)
+        mutate(profile)
+        try:
+            mutated = ScientificSvgValidator(ROOT, profile, validator.roles)
+        except ScientificSvgError:
+            continue
+        assert mutated.validate(source, figure_spec=_spec())["aggregate_status"] == "fail"
+
+
+@pytest.mark.parametrize(
+    ("body", "rule"),
+    [
+        ("<path id='obj-branch' data-semantic-role='branch' d='L 0 0' fill='none'/>", "CP5A-PATH-GRAMMAR"),
+        ("<path id='obj-branch' data-semantic-role='branch' d='M 0 0 L 1e 2' fill='none'/>", "CP5A-PATH-GRAMMAR"),
+        ("<path id='obj-branch' data-semantic-role='branch' d='M 0 0 L 10 10 20' fill='none'/>", "CP5A-PATH-GRAMMAR"),
+        ("<path id='obj-branch' data-semantic-role='branch' d='M 0 0 A -1 1 0 0 1 4 4' fill='none'/>", "CP5A-PATH-GRAMMAR"),
+        ("<polyline id='obj-flow' data-semantic-role='flow' points='1,,2 3,4' fill='none'/>", "CP5A-POINTS-GRAMMAR"),
+        ("<polygon id='obj-node' data-semantic-role='node' points='1,2 3,4,' fill='none'/>", "CP5A-POINTS-GRAMMAR"),
+        ("<g id='obj-group' data-semantic-role='group' transform='translate(1,,2)'/>", "CP5A-TRANSFORM-GRAMMAR"),
+    ],
+)
+def test_exact_geometry_parsers_consume_every_character(body: str, rule: str):
+    result = _validator().validate(_svg(body), figure_spec=_spec())
+    assert rule in {finding["rule_id"] for finding in result["findings"]}
+
+
+def test_authoring_handoff_requires_schema_and_route_valid_figure_spec():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import ScientificSvgError, author_svg_for_spec
+
+    with pytest.raises(ScientificSvgError):
+        author_svg_for_spec(_valid_svg(), {"figure_id": "FIG001", "visual_class": "quantitative_measured_result"}, ROOT)
+    invalid = _spec()
+    invalid["director_skill"] = "photo-annotation-director"
+    with pytest.raises(ScientificSvgError):
+        author_svg_for_spec(_valid_svg(), invalid, ROOT)
+
+
+def test_private_access_evidence_must_be_a_sealed_execution_record():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import Cp5aPrivateAccessSession, build_cp5a_artifacts
+
+    spoofed = {"execution_id": "CP5A-ACCESS-001", "private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0}
+    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=spoofed)["execution"]["owning_checks"][-1]["status"] == "fail"
+    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=Cp5aPrivateAccessSession("CP5A-ACCESS-001"))["execution"]["owning_checks"][-1]["status"] == "fail"
+    sealed = Cp5aPrivateAccessSession("CP5A-ACCESS-001").seal()
+    outputs = build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=sealed)
+    assert outputs["execution"]["owning_checks"][-1]["status"] == "pass"
+    persisted = outputs["execution"]["private_access_evidence"]
+    assert persisted["sealed"] is True
+    assert persisted["record_type"] == "cp5a_guarded_private_access_v1"
+    assert len(persisted["evidence_hash"]) == 64
+    attempted = Cp5aPrivateAccessSession("CP5A-ACCESS-001")
+    with pytest.raises(Exception):
+        attempted.guarded_attempt("source_open")
+    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=attempted.seal())["execution"]["owning_checks"][-1]["status"] == "fail"
+
+
+@pytest.mark.parametrize(
+    ("body", "rule"),
+    [
+        ("<line id='obj-flow' data-semantic-role='arrow' x1='0' y1='0' x2='1' y2='1' marker-end='url(#obj-arrow)junk'/>", "CP5A-LOCAL-REFERENCE"),
+        ("<line id='obj-flow' data-semantic-role='arrow' x1='0' y1='0' x2='1' y2='1' marker-end='url(#obj-missing)'/>", "CP5A-LOCAL-REFERENCE"),
+        ("<rect id='obj-panel' data-semantic-role='panel' x='0' y='0' width='1' height='1'/><line id='obj-flow' data-semantic-role='arrow' x1='0' y1='0' x2='1' y2='1' marker-end='url(#obj-panel)'/>", "CP5A-LOCAL-REFERENCE"),
+        ("<rect id='obj-panel' data-semantic-role='panel' x='0' y='0' width='1' height='1' clip-path='url(#obj-missing)'/>", "CP5A-LOCAL-REFERENCE"),
+    ],
+)
+def test_local_references_require_exact_same_document_typed_targets(body: str, rule: str):
+    result = _validator().validate(_svg(body), figure_spec=_spec())
+    assert rule in {finding["rule_id"] for finding in result["findings"]}
