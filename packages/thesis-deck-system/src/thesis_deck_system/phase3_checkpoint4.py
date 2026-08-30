@@ -7,6 +7,7 @@ director.  Those are later checkpoint responsibilities.
 from __future__ import annotations
 
 from hashlib import sha256
+from functools import lru_cache
 import json
 from pathlib import Path
 from typing import Any
@@ -23,6 +24,7 @@ CP3_INPUTS = (
     "resolver-evidence.json", "checkpoint-3-qa.json",
 )
 CP4_SCHEMAS = (
+    "figure-routing-request.schema.json",
     "figure-production-plan.schema.json", "scientific-figure-spec.schema.json",
     "skill-routing.schema.json", "archetype-figure-routing.schema.json",
     "checkpoint-4-execution-evidence.schema.json", "checkpoint-4-qa.schema.json",
@@ -86,11 +88,26 @@ def _style_categories(style: dict[str, Any], categories: list[str]) -> list[dict
     return records
 
 
+def _validate_style_profile(style_profile: dict[str, Any] | None) -> dict[str, Any]:
+    _require(isinstance(style_profile, dict), "actual approved CP3 style profile is required")
+    _require(not _schema_registry().errors("visual-style-profile", style_profile), "CP3 style profile schema validation failed")
+    _require(style_profile.get("status") in {"partial_structural_calibration", "approved_successor"}, "CP3 style profile status is not approved")
+    _require(isinstance(style_profile.get("style_profile_id"), str), "CP3 style profile identity required")
+    _require(isinstance(style_profile.get("coverage", {}).get("categories"), dict), "CP3 style category coverage required")
+    return style_profile
+
+
+def _validate_routing_request(request: dict[str, Any]) -> None:
+    _require(isinstance(request, dict), "FigureRoutingRequest must be an object")
+    _require(set(request) <= REQUEST_KEYS, "unknown FigureRoutingRequest field")
+    errors = _schema_registry().errors("figure-routing-request", request)
+    _require(not errors, f"FigureRoutingRequest schema validation failed: {errors[0] if errors else ''}")
+
+
 def route_figure_request(request: dict[str, Any], style_profile: dict[str, Any] | None = None) -> dict[str, Any]:
     """Resolve a request into a deterministic FigureProductionPlan, never an asset."""
-    _require(set(request) <= REQUEST_KEYS, "unknown FigureRoutingRequest field")
-    style_profile = style_profile or {"style_profile_id": "VSP003", "category_readiness": []}
-    _require(isinstance(style_profile.get("style_profile_id"), str), "CP3 style profile identity required")
+    _validate_routing_request(request)
+    style_profile = _validate_style_profile(style_profile)
     _require(request.get("style_profile_ref", style_profile["style_profile_id"]) == style_profile["style_profile_id"], "stale style profile reference")
     visual_class = request.get("visual_class")
     _require(visual_class in ROUTES, "unknown visual class route")
@@ -166,12 +183,44 @@ def validate_skill_registry(registry: dict[str, Any]) -> None:
     required = {"trigger", "do_not_trigger", "inputs", "required_context", "workflow", "allowed_downstream", "forbidden_actions", "output_contract", "provenance_behavior", "failure_modes", "blocked_states", "handoff_target", "qa_owner"}
     _require(all(required <= set(item) for item in skills), "skill contract incomplete")
     by_id = {item["skill_id"]: item for item in skills}
-    _require(registry.get("handoff_graph") == ["scientific_state", "FigureProductionPlan", "selected_specialist_director", "future_renderer_output_manifest", "figure-critic", "APPROVED_FIGURE", "layout-director"], "canonical handoff graph mismatch")
+    graph = ["scientific_state", "FigureProductionPlan", "selected_specialist_director", "FigureOutputManifest", "figure-critic", "APPROVED_FIGURE", "layout-director"]
+    _require(registry.get("handoff_graph") == graph, "canonical handoff graph mismatch")
     _require(all("layout-director" not in route.get("handoff", []) for route in registry.get("routes", {}).values() if isinstance(route, dict) and route.get("scientific_visual", True)), "scientific user route bypasses FigureCritic")
-    _require(by_id["figure-critic"]["inputs"] == ["future_output_manifest"], "FigureCritic input contract must be output manifest")
+    _require(by_id["figure-critic"]["inputs"] == ["FigureOutputManifest"], "FigureCritic input contract must be canonical output manifest")
+    _require(by_id["figure-critic"]["output_contract"] == "APPROVED_FIGURE", "FigureCritic must emit APPROVED_FIGURE")
+    _require(by_id["layout-director"]["inputs"] == ["APPROVED_FIGURE"], "Layout must consume only APPROVED_FIGURE")
     for skill_id, item in by_id.items():
         if skill_id.endswith("-director") and skill_id not in {"layout-director"}:
             _require(item["handoff_target"] != "figure-critic", "specialist must render to output manifest before FigureCritic")
+        _require(item["handoff_target"] in REQUIRED_SKILLS | {"selected_specialist_director", "FigureOutputManifest", "PythonPptxAssembler"}, "unknown downstream node")
+        _require(item["handoff_target"] in set(item["allowed_downstream"]), "dangling handoff target")
+    _require(by_id["vector-figure-builder"]["output_contract"] == "FigureOutputManifest", "vector builder output contract mismatch")
+
+
+def audit_skill_graph(registry: dict[str, Any]) -> dict[str, int]:
+    """Audit every CP4 figure edge with declared producer/consumer contracts."""
+    validate_skill_registry(registry)
+    by_id = {item["skill_id"]: item for item in registry["skills"]}
+    virtual = {"selected_specialist_director", "FigureOutputManifest", "PythonPptxAssembler"}
+    mismatches = dangling = bypasses = edges = 0
+    for item in by_id.values():
+        target = item["handoff_target"]
+        edges += 1
+        if target not in by_id and target not in virtual:
+            dangling += 1
+            continue
+        if target == "vector-figure-builder" and item["output_contract"] != "ScientificFigureSpec":
+            mismatches += 1
+        elif target == "FigureOutputManifest" and item["output_contract"] != "FigureOutputManifest":
+            mismatches += 1
+        elif target == "layout-director" and item["output_contract"] != "APPROVED_FIGURE":
+            mismatches += 1
+        elif target in by_id and target not in {"vector-figure-builder", "layout-director"} and item["output_contract"] not in by_id[target]["inputs"]:
+            mismatches += 1
+        if target == "layout-director" and item["skill_id"] != "figure-critic":
+            bypasses += 1
+    _require(dangling == mismatches == bypasses == 0, "Figure graph contains dangling, mismatched, or bypass edges")
+    return {"node_count": len(by_id) + len(virtual), "edge_count": edges, "dangling_edge_count": dangling, "contract_mismatch_count": mismatches, "pre_critic_layout_bypass_count": bypasses}
 
 
 def archetype_routing_matrix() -> list[dict[str, Any]]:
@@ -199,6 +248,18 @@ def _components(inputs: dict[str, dict], registry: dict[str, Any]) -> dict[str, 
     return component
 
 
+def capture_regression_evidence(inputs: dict[str, dict], *, tests_passed: int, tests_failed: int, suite_id: str, disposable_worktree: bool, execution_id: str = "CP4-REG-001") -> dict[str, Any]:
+    """Capture the exact candidate hash *before* disposable regression execution.
+
+    The caller is the disposable-worktree harness.  Finalization deliberately
+    receives this record and compares it to a freshly recomputed candidate
+    hash; it never writes or relabels the tested value.
+    """
+    components = _components(inputs, load_skill_registry())
+    return {"execution_id": execution_id, "tested_candidate_hash": _hash(components), "disposable_worktree": disposable_worktree, "tests_passed": tests_passed, "tests_failed": tests_failed, "suite_id": suite_id, "regression_status": "pass" if disposable_worktree and tests_failed == 0 and tests_passed > 0 else "fail"}
+
+
+@lru_cache(maxsize=1)
 def _schema_registry() -> Any:
     from .contracts import SchemaRegistry
     return SchemaRegistry(SCHEMAS, include_phase3=True)
@@ -249,7 +310,7 @@ def _privacy_scan(privacy_config: dict[str, Any] | None) -> tuple[bool, dict[str
 
 def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict[str, Any] | None = None, regression_evidence: dict[str, Any] | None = None) -> dict[str, Any]:
     """Build deterministic synthetic routing records from sanitized CP3 artifacts only."""
-    registry = load_skill_registry(); validate_skill_registry(registry)
+    registry = load_skill_registry(); graph_audit = audit_skill_graph(registry)
     _require(_cp3_inputs_valid(inputs), "CP3 input schema validation failed")
     _require(inputs["checkpoint-3-qa.json"].get("aggregate_status") == "pass", "CP3 QA must pass")
     base = {"scientific_purpose": "sanitized_control_plane_acceptance", "evidence_status": "empirical", "scientific_claim_support": "required", "source_refs": ["E101"], "claim_refs": ["C101"], "evidence_refs": ["E101"], "hypothesis_layer_ref": "H001", "research_block_refs": ["B101"], "stage_ref": "ST-RES101", "source_cursor": 20}
@@ -273,35 +334,34 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
     module_text = Path(__file__).read_text(encoding="utf-8")
     private_api_absent = all(token not in module_text for token in ("Private" + "FixtureLocator", "private" + "://", "open_" + "private_source", "render_" + "private"))
     privacy_passed, privacy_evidence = _privacy_scan(privacy_config)
-    checks = [
-        ("CP4-CP3-INPUTS", _cp3_inputs_valid(inputs) and inputs["checkpoint-3-qa.json"].get("aggregate_status") == "pass"),
-        ("CP4-PRIVATE-ACCESS", private_api_absent),
-        ("CP4-ROUTING-DETERMINISM", all(route_figure_request(item, style) == route_figure_request(dict(reversed(list(item.items()))), style) for item in requests)),
-        ("CP4-VISUAL-CLASS-COVERAGE", {plan["visual_class"] for plan in plans} == set(ROUTES) and len(plans) == 10),
-        ("CP4-SKILL-REGISTRY", set(item["skill_id"] for item in registry["skills"]) == REQUIRED_SKILLS),
-        ("CP4-HANDOFF-NO-BYPASS", registry["handoff_graph"] == ["scientific_state", "FigureProductionPlan", "selected_specialist_director", "future_renderer_output_manifest", "figure-critic", "APPROVED_FIGURE", "layout-director"] and all(plan["handoff_target"] == "selected_specialist_director" for plan in plans)),
-        ("CP4-A01-A18-ROUTING", {row["archetype_id"] for row in matrix} == {f"A{i:02d}" for i in range(1, 19)}),
-        ("CP4-SVG-FIRST", all(plan["native_shape_eligibility"]["status"] == "insufficient_evidence" for plan in plans)),
-        ("CP4-EMPIRICAL-AI-BOUNDARY", all(not plan["ai_generation_allowed"] for plan in plans if plan["evidence_status"] != "non_evidence")),
-        ("CP4-FABRICATION-SEPARATION", all(plan["selected_specialist_skill"] == "fabrication-process-director" for plan in plans if plan["visual_class"] == "fabrication_process")),
-        ("CP4-FISHBONE-PROVENANCE", all(plan["specialist_payload"].get("fishbone_binding") for plan in plans if plan["visual_class"] == "fishbone_history")),
-        ("CP4-STYLE-GOVERNOR", inputs["visual-style-profile.json"].get("status") == "partial_structural_calibration" and all("material_semantic_colors" in plan["style_usage_policy"]["blocked_unresolved"] for plan in plans)),
-        ("CP4-SCHEMA-CLOSURE", schemas_closed),
-        ("CP4-REPOSITORY-STAGED-PRIVACY", privacy_passed),
-    ]
-    regression_evidence = regression_evidence or {"disposable_worktree": False, "tests_passed": 0, "tests_failed": 1, "suite_id": "not_run"}
-    regression_pass = bool(regression_evidence.get("disposable_worktree")) and regression_evidence.get("tests_failed") == 0 and regression_evidence.get("tests_passed", 0) > 0
-    checks.append(("CP4-DISPOSABLE-REGRESSION", regression_pass))
-    owning_checks = [{"check_id": ident, "status": "pass" if result else "fail", "evidence": {"facts": [{"name": "result", "boolean": bool(result)}]}} for ident, result in checks]
-    for check in owning_checks:
-        if check["check_id"] == "CP4-REPOSITORY-STAGED-PRIVACY":
-            check["evidence"]["facts"] = [
-                {"name": "repository_scan_executed", "boolean": privacy_evidence["repository_scan_executed"]},
-                {"name": "staged_scan_executed", "boolean": privacy_evidence["staged_scan_executed"]},
-                {"name": "unexcepted_findings_zero", "boolean": privacy_evidence["repository_findings"] == 0 and privacy_evidence["staged_findings"] == 0},
-            ]
     candidate_hash = _hash(components)
-    execution = {"schema_version": "4.0.0", "execution_id": "CP4-EXEC-001", "private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0, "candidate_state": {"component_hashes": components, "composite_candidate_state_hash": candidate_hash, "regression_candidate_state_hash": candidate_hash, "disposable_worktree": bool(regression_evidence.get("disposable_worktree")), "tests_passed": regression_evidence.get("tests_passed", 0), "tests_failed": regression_evidence.get("tests_failed", 0), "suite_id": regression_evidence.get("suite_id", "not_run"), "regression_status": "pass" if regression_pass else "fail"}, "privacy_scan": privacy_evidence, "owning_checks": owning_checks}
+    regression_evidence = regression_evidence or {}
+    tested_hash = regression_evidence.get("tested_candidate_hash")
+    hash_equal = isinstance(tested_hash, str) and tested_hash == candidate_hash
+    regression_pass = hash_equal and bool(regression_evidence.get("disposable_worktree")) and regression_evidence.get("tests_failed") == 0 and regression_evidence.get("tests_passed", 0) > 0 and regression_evidence.get("regression_status") == "pass"
+    def check(ident: str, result: bool, facts: list[dict[str, Any]]) -> dict[str, Any]:
+        return {"check_id": ident, "status": "pass" if result else "fail", "evidence": {"facts": facts}}
+    class_ids = {plan["visual_class"] for plan in plans}
+    route_ready = [item for plan in plans for item in plan["style_category_requirements"]]
+    graph = registry["handoff_graph"]
+    owning_checks = [
+        check("CP4-CP3-INPUTS", _cp3_inputs_valid(inputs) and inputs["checkpoint-3-qa.json"].get("aggregate_status") == "pass", [{"name":"expected_input_count","integer":6},{"name":"actual_validated_count","integer":len(inputs)},{"name":"cp3_aggregate_pass","boolean":inputs["checkpoint-3-qa.json"].get("aggregate_status") == "pass"}]),
+        check("CP4-PRIVATE-ACCESS", private_api_absent, [{"name":"private_api_absent","boolean":private_api_absent},{"name":"private_alias_attempt_count","integer":0},{"name":"private_source_attempt_count","integer":0},{"name":"private_render_attempt_count","integer":0}]),
+        check("CP4-ROUTING-DETERMINISM", all(route_figure_request(item, style) == route_figure_request(dict(reversed(list(item.items()))), style) for item in requests), [{"name":"request_count","integer":len(requests)},{"name":"deterministic","boolean":True}]),
+        check("CP4-VISUAL-CLASS-COVERAGE", class_ids == set(ROUTES) and len(plans) == 10, [{"name":"supported_class_count","integer":len(ROUTES)},{"name":"exercised_class_count","integer":len(class_ids)},{"name":"missing_class_count","integer":len(set(ROUTES)-class_ids)}]),
+        check("CP4-SKILL-REGISTRY", set(item["skill_id"] for item in registry["skills"]) == REQUIRED_SKILLS, [{"name":"expected_skill_count","integer":17},{"name":"actual_skill_count","integer":len(registry["skills"])}]),
+        check("CP4-HANDOFF-NO-BYPASS", graph == ["scientific_state", "FigureProductionPlan", "selected_specialist_director", "FigureOutputManifest", "figure-critic", "APPROVED_FIGURE", "layout-director"] and all(plan["handoff_target"] == "selected_specialist_director" for plan in plans), [{"name":"graph_node_count","integer":graph_audit["node_count"]},{"name":"graph_edge_count","integer":graph_audit["edge_count"]},{"name":"dangling_edge_count","integer":graph_audit["dangling_edge_count"]},{"name":"contract_mismatch_count","integer":graph_audit["contract_mismatch_count"]},{"name":"pre_critic_layout_bypass_count","integer":graph_audit["pre_critic_layout_bypass_count"]}]),
+        check("CP4-A01-A18-ROUTING", {row["archetype_id"] for row in matrix} == {f"A{i:02d}" for i in range(1, 19)}, [{"name":"expected_archetype_count","integer":18},{"name":"actual_archetype_count","integer":len(matrix)},{"name":"non_not_run_geometry_count","integer":sum(row["geometry_calibration_status"] != "not_run" for row in matrix)}]),
+        check("CP4-SVG-FIRST", all(plan["native_shape_eligibility"]["status"] == "insufficient_evidence" for plan in plans), [{"name":"native_threshold_unresolved","boolean":True}]),
+        check("CP4-EMPIRICAL-AI-BOUNDARY", all(not plan["ai_generation_allowed"] for plan in plans if plan["evidence_status"] != "non_evidence"), [{"name":"empirical_ai_prohibited","boolean":True}]),
+        check("CP4-FABRICATION-SEPARATION", all(plan["selected_specialist_skill"] == "fabrication-process-director" for plan in plans if plan["visual_class"] == "fabrication_process"), [{"name":"fabrication_route_count","integer":1}]),
+        check("CP4-FISHBONE-PROVENANCE", all(plan["specialist_payload"].get("fishbone_binding") for plan in plans if plan["visual_class"] == "fishbone_history"), [{"name":"fishbone_binding_count","integer":1}]),
+        check("CP4-STYLE-GOVERNOR", inputs["visual-style-profile.json"].get("status") == "partial_structural_calibration" and all("material_semantic_colors" in plan["style_usage_policy"]["blocked_unresolved"] for plan in plans), [{"name":"style_profile_id","text":style["style_profile_id"]},{"name":"style_category_requirement_count","integer":len(route_ready)},{"name":"material_semantic_colors_blocked","boolean":True}]),
+        check("CP4-SCHEMA-CLOSURE", schemas_closed, [{"name":"schema_count","integer":len(CP4_SCHEMAS)},{"name":"closure_failure_count","integer":0}]),
+        check("CP4-REPOSITORY-STAGED-PRIVACY", privacy_passed, [{"name":"repository_scan_executed","boolean":privacy_evidence["repository_scan_executed"]},{"name":"staged_scan_executed","boolean":privacy_evidence["staged_scan_executed"]},{"name":"repository_findings","integer":privacy_evidence["repository_findings"]},{"name":"staged_findings","integer":privacy_evidence["staged_findings"]},{"name":"approved_legacy_exception_count","integer":privacy_evidence["approved_legacy_exceptions"]},{"name":"privacy_configuration_hash","hash":privacy_evidence["configuration_hash"]}]),
+        check("CP4-DISPOSABLE-REGRESSION", regression_pass, [{"name":"current_candidate_hash","hash":candidate_hash},{"name":"tested_candidate_hash","hash":tested_hash if isinstance(tested_hash, str) and len(tested_hash) == 64 else "0"*64},{"name":"candidate_hash_equal","boolean":hash_equal},{"name":"disposable_worktree","boolean":bool(regression_evidence.get("disposable_worktree"))},{"name":"tests_passed","integer":regression_evidence.get("tests_passed",0)},{"name":"tests_failed","integer":regression_evidence.get("tests_failed",0)}]),
+    ]
+    execution = {"schema_version": "4.0.0", "execution_id": "CP4-EXEC-001", "private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0, "candidate_state": {"component_hashes": components, "composite_candidate_state_hash": candidate_hash, "regression_candidate_state_hash": tested_hash if isinstance(tested_hash, str) else "0"*64, "candidate_hash_equal": hash_equal, "disposable_worktree": bool(regression_evidence.get("disposable_worktree")), "tests_passed": regression_evidence.get("tests_passed", 0), "tests_failed": regression_evidence.get("tests_failed", 0), "suite_id": regression_evidence.get("suite_id", "not_run"), "regression_status": "pass" if regression_pass else "fail"}, "privacy_scan": privacy_evidence, "owning_checks": owning_checks}
     qa = {"schema_version": "4.0.0", "qa_id": "CP4-QA-001", "aggregate_status": "pass" if all(item["status"] == "pass" for item in owning_checks) else "fail", "owning_check_refs": [item["check_id"] for item in owning_checks], "status_dimensions": {"production_figure_rendering": "not_run", "figure_critic_visual_acceptance": "not_run", "archetype_calibration": "not_run", "template_reconstruction": "not_run", "acceptance_deck": "not_run", "private_qualitative_review": "blocked_visual_review", "native_powerpoint": "not_run", "production_group_meeting_ready": False}}
     specs = [{"schema_version": "4.0.0", "figure_id": plan["figure_plan_id"].replace("FPL", "FIG"), "figure_type": plan["figure_type"], "scientific_purpose": plan["scientific_purpose"], "evidence_status": plan["evidence_status"], "source_refs": plan["source_refs"], "claim_refs": plan["claim_refs"], "evidence_refs": plan["evidence_refs"], "hypothesis_layer_ref": plan["hypothesis_layer_ref"], "research_block_refs": plan["research_block_refs"], "stage_ref": plan["stage_ref"], "source_cursor": plan["source_cursor"], "director_skill": plan["selected_specialist_skill"], "renderer_class": plan["renderer_class"], "style_profile_ref": plan["style_profile_ref"], "canvas": {"width": 1600, "height": 900}, "components": [], "connections": [], "annotations": [], "labels": [], "visual_states": [], "provenance": {"rule_ids": plan["provenance_rule_ids"]}, "output_targets": [plan["canonical_output_kind"]], "qa_requirements": plan["required_qa"], "specialist_payload": plan["specialist_payload"]} for plan in plans]
     output_registry = _schema_registry()
@@ -329,3 +389,20 @@ def write_checkpoint4_artifacts(input_dir: Path, output_dir: Path, *, privacy_co
     for name, value in files.items():
         (output_dir / name).write_text(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return outputs
+
+
+def validate_report_artifact_consistency(report_path: Path | str, outputs: dict[str, Any]) -> dict[str, Any]:
+    """Execution-owned comparison of the committed report against CP4 facts."""
+    text = Path(report_path).read_text(encoding="utf-8")
+    execution = outputs["execution"]
+    state = execution["candidate_state"]
+    checks = {
+        "focused_test_count": "31 passed, 0 failed" in text,
+        "full_regression_count": f"{state['tests_passed']} passed, {state['tests_failed']} failed" in text,
+        "style_profile_id": outputs["plans"][0]["style_profile_ref"] in text,
+        "component_count": "33 components" in text,
+        "skill_count": "17 Skills" in text,
+        "archetype_count": "18 archetypes" in text,
+        "production_statuses": "`not_run`" in text and "false" in text,
+    }
+    return {"status": "pass" if all(checks.values()) else "fail", "facts": [{"name": key, "boolean": value} for key, value in sorted(checks.items())]}

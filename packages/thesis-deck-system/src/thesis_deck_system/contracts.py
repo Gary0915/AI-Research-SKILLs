@@ -40,6 +40,7 @@ PHASE2_SCHEMA_NAMES = (
 PHASE3_SCHEMA_NAMES = (
     "image-review-provider",
     "concept-image-provider",
+    "figure-routing-request",
     "figure-production-plan",
     "scientific-figure-spec",
     "figure-output-manifest",
@@ -109,10 +110,13 @@ class SchemaRegistry:
 
     def errors(self, name: str, value: Any) -> list[str]:
         validator = Draft202012Validator(self._schemas[name], format_checker=FormatChecker())
-        return [
+        errors = [
             f"{'/'.join(map(str, error.absolute_path)) or '$'}: {error.message}"
             for error in sorted(validator.iter_errors(value), key=lambda item: list(item.absolute_path))
         ]
+        if name in {"figure-production-plan", "scientific-figure-spec"}:
+            errors.extend(_figure_route_contract_errors(value, name))
+        return errors
 
     def validate(self, name: str, value: Any) -> None:
         errors = self.errors(name, value)
@@ -128,6 +132,40 @@ class SchemaRegistry:
         findings.extend(semantic_findings(bundle))
         return findings
 
+
+_FIGURE_ROUTES = {
+    "quantitative_measured_result": ("scientific_plot", "scientific-plot-director", "reproducible_plot", "svg_vector", "empirical", False),
+    "real_experiment_photo": ("real_photo", "photo-annotation-director", "real_evidence_overlay", "source_evidence_asset", "empirical", False),
+    "literature_figure": ("literature_figure", "literature-figure-director", "source_extraction_overlay", "extracted_source_figure", "literature_evidence", False),
+    "mechanism_explanation": ("mechanism_diagram", "mechanism-diagram-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
+    "experiment_setup": ("experiment_schematic", "experiment-schematic-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
+    "fabrication_process": ("fabrication_process_diagram", "fabrication-process-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
+    "fishbone_history": ("fishbone_diagram", "fishbone-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
+    "fair_comparison": ("comparison_diagram", "comparison-figure-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
+    "image_matrix": ("image_matrix_figure", "image-matrix-director", "source_evidence_matrix", "source_evidence_asset", "empirical", False),
+    "organic_concept": ("concept_illustration", "concept-illustration-director", "generated_non_evidence", "generated_non_evidence_substrate", "non_evidence", True),
+}
+
+
+def _figure_route_contract_errors(value: Any, name: str) -> list[str]:
+    """Registered, fail-closed v4 route discriminator across plan/spec fields."""
+    if not isinstance(value, dict) or value.get("schema_version") != "4.0.0":
+        return []
+    visual = value.get("visual_class")
+    if visual is None:  # Specs bind their route through their director/type pair.
+        candidates = [route for route in _FIGURE_ROUTES.values() if route[0] == value.get("figure_type") and route[1] == value.get("director_skill")]
+        if len(candidates) != 1:
+            return ["$: ScientificFigureSpec route discriminator is invalid"]
+        expected = candidates[0]
+        actual = (value.get("figure_type"), value.get("director_skill"), value.get("renderer_class"), (value.get("output_targets") or [None])[0], value.get("evidence_status"))
+    else:
+        expected = _FIGURE_ROUTES.get(visual)
+        if expected is None:
+            return ["visual_class: unsupported FigureProductionPlan route"]
+        actual = (value.get("figure_type"), value.get("selected_specialist_skill"), value.get("renderer_class"), value.get("canonical_output_kind"), value.get("evidence_status"))
+    expected_values = expected[:5]
+    labels = ("figure_type", "specialist", "renderer", "canonical_output", "evidence_status")
+    return [f"{label}: route discriminator mismatch" for label, got, want in zip(labels, actual, expected_values) if got != want] + (["ai_generation_allowed: route discriminator mismatch"] if visual is not None and value.get("ai_generation_allowed") != expected[5] else [])
 
 def _refs(items: Iterable[dict[str, Any]], field: str) -> set[str]:
     refs: set[str] = set()

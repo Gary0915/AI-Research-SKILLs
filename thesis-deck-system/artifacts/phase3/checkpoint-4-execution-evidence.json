@@ -1,5 +1,6 @@
 {
   "candidate_state": {
+    "candidate_hash_equal": true,
     "component_hashes": {
       "cp3:body-composition-profile.json": "2aff1b4dc0f1c58078220e69b400b67f4a47b42a320f155b7fecf90a82d8fe5c",
       "cp3:checkpoint-3-qa.json": "c439c655891084fe8c539eef37c34b047989e330f1bf7434151b33f28e05edd8",
@@ -7,15 +8,16 @@
       "cp3:professor-visual-grammar-v3.json": "44e95ce7906b3bf3bde422c213381c9e21e4a0f07c2450c927085ba207abd638",
       "cp3:resolver-evidence.json": "e10e4a8c8038c659a59b2fd1fc715163da6a84309d7f3060155211e5d6af01bd",
       "cp3:visual-style-profile.json": "01bcf516116c9895a8b44b0b5e720d04f22a2359ae7770df6d35fab1a53c12bb",
-      "cp4:contracts.py": "d7d21541b10a84931c6e002c63d9b26bae8efe375953e3b917c3e673399691e5",
-      "cp4:phase3_checkpoint4.py": "2fb6e2103442d4ccbc3e8478af4a52ea59fd6e2f103b51dd690e0029b443fd0f",
+      "cp4:contracts.py": "9b0fdc9c2a3b99e355bdc00e344cf5dec7bd76c91575108f230cfbdb016143c8",
+      "cp4:phase3_checkpoint4.py": "b06b454507b369b69a054ac860e9c47655864ea3a15019a6b495fc099b34b1e0",
       "schema:archetype-figure-routing.schema.json": "17a56c740b865d5b2ed4e71148e7c19835a95d4c4c8cfebc9d4a8a0f30c67fb6",
-      "schema:checkpoint-4-execution-evidence.schema.json": "7be9ca8cb2d336fc0396374d406d4f689eb5633c2b976096adca343dad2e57a4",
+      "schema:checkpoint-4-execution-evidence.schema.json": "57cc8fc0a1ebe20e3ed22b25f7c2ce0a503ea88cdc7887977664ae25c4d70e88",
       "schema:checkpoint-4-qa.schema.json": "71b661bd78a981b3dfd27ac100484544d7782815551bb71ec98ea60a9c16b445",
       "schema:figure-production-plan.schema.json": "fda345ac991ff38613b276e6a41184249e8ef3c66a325b819edd7d7967f78e8d",
+      "schema:figure-routing-request.schema.json": "f38e74027dc3858b9d55d2f97d7d1765b4faf0e2c7a5737cc5486275894ead0f",
       "schema:scientific-figure-spec.schema.json": "66b44b1f582b0255110a0395eb8c49a6e39e11cab8fc7eab8bab99bf4ea515e5",
-      "schema:skill-routing.schema.json": "35ef0b8d980e45e25d64745030987419c9012c4e18140122e085ecaf3f2fed58",
-      "skill-registry:skill-routing.yaml": "83009df19173e13cdbbe5349289b13765f029bb6ff060319c0369e5d2047491b",
+      "schema:skill-routing.schema.json": "8f2bec085ebbb437e6e37d75ddc3e5c37c80149c60f57231b32a4e8a4a88d024",
+      "skill-registry:skill-routing.yaml": "b257a3d4c9fc58a92a47244214e576f214946f993749f13dfb30a9afdd36dee9",
       "skill:comparison-figure-director": "d50b7093fe9e16ed053bb5735e204d8624d1e0150ec36c9e8b5783039abc3cf8",
       "skill:concept-illustration-director": "be3111ae9b22a267db39b1915da3be64fa2892f5083d38a14202bac8e31a3fcf",
       "skill:experiment-schematic-director": "b55b352c38151e119c22a9b40443e3755f83e9808fc131912ba334a24f14c3e0",
@@ -34,13 +36,13 @@
       "skill:vector-figure-builder": "c0a60fdcecf2fcfb9b7bc5f5ca64028fa5536c2122d2227b8fb97d4058f361ff",
       "skill:visual-style-governor": "b052bc8b21d3c0e3f21ad953ed4cf504056e1a06417b4e0437760777e898c01c"
     },
-    "composite_candidate_state_hash": "9bab2b85d951c1a6c2fac00b926ccac5e52b90a3223fd608b910a8973cf29fd7",
+    "composite_candidate_state_hash": "b61f1e39cc4c4046fda65f9965c68df9a2c85f50b623fda6f0abcd9dc9af7bdd",
     "disposable_worktree": true,
-    "regression_candidate_state_hash": "9bab2b85d951c1a6c2fac00b926ccac5e52b90a3223fd608b910a8973cf29fd7",
+    "regression_candidate_state_hash": "b61f1e39cc4c4046fda65f9965c68df9a2c85f50b623fda6f0abcd9dc9af7bdd",
     "regression_status": "pass",
     "suite_id": "packages-thesis-deck-system-tests",
     "tests_failed": 0,
-    "tests_passed": 302
+    "tests_passed": 311
   },
   "execution_id": "CP4-EXEC-001",
   "owning_checks": [
@@ -49,8 +51,16 @@
       "evidence": {
         "facts": [
           {
+            "integer": 6,
+            "name": "expected_input_count"
+          },
+          {
+            "integer": 6,
+            "name": "actual_validated_count"
+          },
+          {
             "boolean": true,
-            "name": "result"
+            "name": "cp3_aggregate_pass"
           }
         ]
       },
@@ -62,7 +72,19 @@
         "facts": [
           {
             "boolean": true,
-            "name": "result"
+            "name": "private_api_absent"
+          },
+          {
+            "integer": 0,
+            "name": "private_alias_attempt_count"
+          },
+          {
+            "integer": 0,
+            "name": "private_source_attempt_count"
+          },
+          {
+            "integer": 0,
+            "name": "private_render_attempt_count"
           }
         ]
       },
@@ -73,8 +95,12 @@
       "evidence": {
         "facts": [
           {
+            "integer": 10,
+            "name": "request_count"
+          },
+          {
             "boolean": true,
-            "name": "result"
+            "name": "deterministic"
           }
         ]
       },
@@ -85,8 +111,16 @@
       "evidence": {
         "facts": [
           {
-            "boolean": true,
-            "name": "result"
+            "integer": 10,
+            "name": "supported_class_count"
+          },
+          {
+            "integer": 10,
+            "name": "exercised_class_count"
+          },
+          {
+            "integer": 0,
+            "name": "missing_class_count"
           }
         ]
       },
@@ -97,8 +131,12 @@
       "evidence": {
         "facts": [
           {
-            "boolean": true,
-            "name": "result"
+            "integer": 17,
+            "name": "expected_skill_count"
+          },
+          {
+            "integer": 17,
+            "name": "actual_skill_count"
           }
         ]
       },
@@ -109,8 +147,24 @@
       "evidence": {
         "facts": [
           {
-            "boolean": true,
-            "name": "result"
+            "integer": 20,
+            "name": "graph_node_count"
+          },
+          {
+            "integer": 17,
+            "name": "graph_edge_count"
+          },
+          {
+            "integer": 0,
+            "name": "dangling_edge_count"
+          },
+          {
+            "integer": 0,
+            "name": "contract_mismatch_count"
+          },
+          {
+            "integer": 0,
+            "name": "pre_critic_layout_bypass_count"
           }
         ]
       },
@@ -121,8 +175,16 @@
       "evidence": {
         "facts": [
           {
-            "boolean": true,
-            "name": "result"
+            "integer": 18,
+            "name": "expected_archetype_count"
+          },
+          {
+            "integer": 18,
+            "name": "actual_archetype_count"
+          },
+          {
+            "integer": 0,
+            "name": "non_not_run_geometry_count"
           }
         ]
       },
@@ -134,7 +196,7 @@
         "facts": [
           {
             "boolean": true,
-            "name": "result"
+            "name": "native_threshold_unresolved"
           }
         ]
       },
@@ -146,7 +208,7 @@
         "facts": [
           {
             "boolean": true,
-            "name": "result"
+            "name": "empirical_ai_prohibited"
           }
         ]
       },
@@ -157,8 +219,8 @@
       "evidence": {
         "facts": [
           {
-            "boolean": true,
-            "name": "result"
+            "integer": 1,
+            "name": "fabrication_route_count"
           }
         ]
       },
@@ -169,8 +231,8 @@
       "evidence": {
         "facts": [
           {
-            "boolean": true,
-            "name": "result"
+            "integer": 1,
+            "name": "fishbone_binding_count"
           }
         ]
       },
@@ -181,8 +243,16 @@
       "evidence": {
         "facts": [
           {
+            "name": "style_profile_id",
+            "text": "VSP003"
+          },
+          {
+            "integer": 31,
+            "name": "style_category_requirement_count"
+          },
+          {
             "boolean": true,
-            "name": "result"
+            "name": "material_semantic_colors_blocked"
           }
         ]
       },
@@ -193,8 +263,12 @@
       "evidence": {
         "facts": [
           {
-            "boolean": true,
-            "name": "result"
+            "integer": 7,
+            "name": "schema_count"
+          },
+          {
+            "integer": 0,
+            "name": "closure_failure_count"
           }
         ]
       },
@@ -213,8 +287,20 @@
             "name": "staged_scan_executed"
           },
           {
-            "boolean": true,
-            "name": "unexcepted_findings_zero"
+            "integer": 0,
+            "name": "repository_findings"
+          },
+          {
+            "integer": 0,
+            "name": "staged_findings"
+          },
+          {
+            "integer": 1,
+            "name": "approved_legacy_exception_count"
+          },
+          {
+            "hash": "77d5d83455bf2428df529f4d7377251a17797ceb69350bf99621c4986633ce09",
+            "name": "privacy_configuration_hash"
           }
         ]
       },
@@ -225,8 +311,28 @@
       "evidence": {
         "facts": [
           {
+            "hash": "b61f1e39cc4c4046fda65f9965c68df9a2c85f50b623fda6f0abcd9dc9af7bdd",
+            "name": "current_candidate_hash"
+          },
+          {
+            "hash": "b61f1e39cc4c4046fda65f9965c68df9a2c85f50b623fda6f0abcd9dc9af7bdd",
+            "name": "tested_candidate_hash"
+          },
+          {
             "boolean": true,
-            "name": "result"
+            "name": "candidate_hash_equal"
+          },
+          {
+            "boolean": true,
+            "name": "disposable_worktree"
+          },
+          {
+            "integer": 311,
+            "name": "tests_passed"
+          },
+          {
+            "integer": 0,
+            "name": "tests_failed"
           }
         ]
       },
@@ -234,8 +340,8 @@
     }
   ],
   "privacy_scan": {
-    "approved_legacy_exceptions": 0,
-    "configuration_hash": "62192da8044f68024cc596b5673b9ee392ae6f37d7b775ef3f9ecf41fdffb9fa",
+    "approved_legacy_exceptions": 1,
+    "configuration_hash": "77d5d83455bf2428df529f4d7377251a17797ceb69350bf99621c4986633ce09",
     "repository_findings": 0,
     "repository_scan_executed": true,
     "scanner_id": "RepositoryPrivacyScanner",

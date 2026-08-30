@@ -20,7 +20,7 @@
       "required": ["skill_id", "trigger", "output_contract", "qa_owner"],
       "properties": {
         "skill_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"},
-        "trigger": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"},
+        "trigger": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_]+$"},
         "do_not_trigger": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"},
         "inputs": {"type": "array", "items": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_]+$"}},
         "required_context": {"type": "array", "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"}},
