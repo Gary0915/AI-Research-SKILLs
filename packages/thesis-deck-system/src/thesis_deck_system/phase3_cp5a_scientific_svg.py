@@ -14,7 +14,7 @@ import math
 from pathlib import Path
 import re
 import unicodedata
-from typing import Any
+from typing import Any, Callable
 from xml.etree import ElementTree as ET
 
 from .contracts import SchemaRegistry
@@ -44,29 +44,14 @@ class ScientificSvgError(ValueError):
     """A closed Scientific SVG contract cannot be satisfied."""
 
 
+_RUNNER_EVIDENCE_TOKEN = object()
+
+
 @dataclass
 class Cp5aPrivateAccessSession:
-    """Instrumented CP5-A boundary record; guard attempts are never opened."""
+    """Instrumented guard used only while a CP5-A runner owns an operation."""
 
-    execution_id: str
     _counters: dict[str, int] = field(default_factory=lambda: {"private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0})
-    _run_id: str | None = None
-    _candidate_state_hash: str | None = None
-    _validation_completed: bool = False
-    _sealed: bool = False
-
-    def bind_execution(self, run_id: str, candidate_state_hash: str) -> "Cp5aPrivateAccessSession":
-        if self._sealed or run_id != "CP5A-EXEC-001" or re.fullmatch(r"[a-f0-9]{64}", candidate_state_hash) is None:
-            raise ScientificSvgError("invalid CP5-A execution binding")
-        self._run_id = run_id
-        self._candidate_state_hash = candidate_state_hash
-        return self
-
-    def complete_validation(self) -> "Cp5aPrivateAccessSession":
-        if self._sealed or self._run_id is None or self._candidate_state_hash is None:
-            raise ScientificSvgError("CP5-A execution must bind before validation completes")
-        self._validation_completed = True
-        return self
 
     def guarded_attempt(self, operation: str) -> None:
         key = {"alias_resolution": "private_alias_resolution_attempts", "source_open": "private_source_open_attempts", "render": "private_render_attempts"}.get(operation)
@@ -75,19 +60,53 @@ class Cp5aPrivateAccessSession:
         self._counters[key] += 1
         raise ScientificSvgError("CP5-A private access is forbidden")
 
-    def seal(self) -> "Cp5aPrivateAccessSession":
-        if not re.fullmatch(r"CP5A-ACCESS-[0-9]{3}", self.execution_id):
-            raise ScientificSvgError("invalid CP5-A private access execution identity")
-        if self._run_id is None or self._candidate_state_hash is None or not self._validation_completed:
-            raise ScientificSvgError("CP5-A private access evidence is not lifecycle-bound")
-        self._sealed = True
-        return self
+
+class Cp5aPrivateAccessEvidence:
+    """Sealed runner-owned result; no session state transition is public."""
+
+    def __init__(self, token: object, payload: dict[str, Any]) -> None:
+        if token is not _RUNNER_EVIDENCE_TOKEN:
+            raise ScientificSvgError("private access evidence is runner-owned")
+        self._payload = json.dumps(payload, sort_keys=True, separators=(",", ":"))
 
     def evidence(self) -> dict[str, Any]:
-        if not self._sealed:
-            raise ScientificSvgError("private access session is not sealed")
-        payload = {"execution_id": self.execution_id, "run_id": self._run_id, "candidate_state_hash": self._candidate_state_hash, "lifecycle_status": "completed", **self._counters, "record_type": "cp5a_guarded_private_access_v1", "sealed": True}
-        return {**payload, "evidence_hash": _sha(json.dumps(payload, sort_keys=True, separators=(",", ":")))}
+        return json.loads(self._payload)
+
+
+class Cp5aExecutionRunner:
+    """Owns the only path that can finalize CP5-A private-access evidence."""
+
+    def __init__(self, candidate_state_hash: str, *, execution_id: str = "CP5A-ACCESS-001", run_id: str = "CP5A-EXEC-001") -> None:
+        if re.fullmatch(r"[a-f0-9]{64}", candidate_state_hash) is None:
+            raise ScientificSvgError("invalid CP5-A execution candidate identity")
+        if not re.fullmatch(r"CP5A-ACCESS-[0-9]{3}", execution_id) or run_id != "CP5A-EXEC-001":
+            raise ScientificSvgError("invalid CP5-A execution identity")
+        self.execution_id = execution_id
+        self.run_id = run_id
+        self.candidate_state_hash = candidate_state_hash
+
+    def run(self, validation_operation: Callable[[Cp5aPrivateAccessSession], None]) -> Cp5aPrivateAccessEvidence:
+        guard = Cp5aPrivateAccessSession()
+        try:
+            validation_operation(guard)
+        except Exception as exc:
+            raise ScientificSvgError("CP5-A runner-owned validation failed") from exc
+        if any(guard._counters.values()):
+            raise ScientificSvgError("CP5-A private access was attempted during validation")
+        payload = {
+            "execution_id": self.execution_id,
+            "run_id": self.run_id,
+            "candidate_state_hash": self.candidate_state_hash,
+            "lifecycle_status": "completed",
+            "runner_owned": True,
+            "validation_executed": True,
+            "candidate_bound": True,
+            **guard._counters,
+            "record_type": "cp5a_runner_owned_private_access_v1",
+            "sealed": True,
+        }
+        payload["evidence_hash"] = _sha(json.dumps(payload, sort_keys=True, separators=(",", ":")))
+        return Cp5aPrivateAccessEvidence(_RUNNER_EVIDENCE_TOKEN, payload)
 
 
 def _sha(value: str) -> str:
@@ -595,7 +614,7 @@ def validate_synthetic_corpus(root: Path | None = None, corpus: dict[str, Any] |
     return {"corpus_id": corpus["corpus_id"], "fixture_count": len(fixtures), "fixtures": fixtures, "binding_count": len(fixtures), "ambiguous_bindings": len(ids) - len(set(ids)), "aggregate_status": "pass" if all(item["status"] == "pass" and item["binding_status"] == "pass" for item in fixtures) and len(ids) == 10 and len(ids) == len(set(ids)) else "fail"}
 
 
-def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str | None, tested_in_disposable_worktree: bool, tests_passed: int = 0, tests_failed: int = 1, privacy_config: dict[str, Any] | None = None, private_access_evidence: Cp5aPrivateAccessSession | None = None) -> dict[str, Any]:
+def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str | None, tested_in_disposable_worktree: bool, tests_passed: int = 0, tests_failed: int = 1, privacy_config: dict[str, Any] | None = None, private_access_evidence: Cp5aPrivateAccessEvidence | None = None) -> dict[str, Any]:
     root = root or ROOT
     validator = ScientificSvgValidator.load_default(root)
     fixture = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" data-thesis-svg-version="1.0.0" data-thesis-figure-id="FIG001"><rect id="obj-panel" data-semantic-role="panel" x="1" y="1" width="8" height="8" fill="#eeeeee"/><text id="obj-title" data-semantic-role="title" x="2" y="5" font-family="synthetic-test-sans" font-size="2">量測結果 / Result</text></svg>'
@@ -610,20 +629,23 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
     from .phase3_checkpoint3 import _approved_privacy_scan
     privacy_passed, privacy_evidence = _approved_privacy_scan(privacy_config)
     try:
-        access = private_access_evidence.evidence() if isinstance(private_access_evidence, Cp5aPrivateAccessSession) else None
+        access = private_access_evidence.evidence() if isinstance(private_access_evidence, Cp5aPrivateAccessEvidence) else None
     except ScientificSvgError:
         access = None
     access_keys = ("private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts")
-    access_identity_keys = ("execution_id", "run_id", "candidate_state_hash", "lifecycle_status", *access_keys, "record_type", "sealed")
+    access_identity_keys = ("execution_id", "run_id", "candidate_state_hash", "lifecycle_status", "runner_owned", "validation_executed", "candidate_bound", *access_keys, "record_type", "sealed")
     access_bound = (
         access is not None
         and all(isinstance(access.get(key), int) and access[key] >= 0 for key in access_keys)
         and access.get("run_id") == "CP5A-EXEC-001"
         and access.get("candidate_state_hash") == state["current_candidate_hash"]
         and access.get("lifecycle_status") == "completed"
+        and access.get("runner_owned") is True
+        and access.get("validation_executed") is True
+        and access.get("candidate_bound") is True
         and bool(access.get("execution_id"))
         and access.get("sealed") is True
-        and access.get("record_type") == "cp5a_guarded_private_access_v1"
+        and access.get("record_type") == "cp5a_runner_owned_private_access_v1"
         and access.get("evidence_hash") == _sha(json.dumps({key: access[key] for key in access_identity_keys}, sort_keys=True, separators=(",", ":")))
     )
     private_access_passed = bool(access_bound) and all(access[key] == 0 for key in access_keys)
@@ -687,14 +709,18 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
         ("CP5A-SYNTHETIC-CORPUS", corpus_result["aggregate_status"] == "pass" and corpus_result["binding_count"] == 10 and corpus_result["ambiguous_bindings"] == 0, [{"name":"fixture_binding_count","integer":corpus_result["binding_count"]},{"name":"ambiguous_bindings","integer":corpus_result["ambiguous_bindings"]}]),
         ("CP5A-REPOSITORY-STAGED-PRIVACY", privacy_passed, [{"name":"repository_scan_executed","boolean":privacy_evidence["repository_scan_executed"]},{"name":"staged_scan_executed","boolean":privacy_evidence["staged_scan_executed"]},{"name":"repository_findings","integer":privacy_evidence["repository_findings"]},{"name":"staged_findings","integer":privacy_evidence["staged_findings"]},{"name":"privacy_configuration_hash","hash":privacy_evidence["configuration_hash"]}]),
         ("CP5A-CANDIDATE-REGRESSION", equal and tested_in_disposable_worktree and tests_failed == 0, [{"name":"candidate_hash_equal","boolean":equal},{"name":"disposable_worktree","boolean":tested_in_disposable_worktree},{"name":"tests_failed","integer":tests_failed}]),
+        ("CP5A-MARKER-DIMENSION-POLICY", {"markerWidth", "markerHeight"}.issubset(validator.positive_dimensions), [{"name":"profile_marker_dimension_count","integer":len({"markerWidth", "markerHeight"} & validator.positive_dimensions)}]),
         ("CP5A-PRIVATE-ACCESS", private_access_passed, [
             {"name": "execution_record_bound", "boolean": bool(access_bound)},
+            {"name": "runner_owned", "boolean": bool(access and access.get("runner_owned") is True)},
+            {"name": "validation_executed", "boolean": bool(access and access.get("validation_executed") is True)},
+            {"name": "candidate_bound", "boolean": bool(access and access.get("candidate_bound") is True)},
             {"name": "sealed_execution_evidence_hash", "hash": access.get("evidence_hash", "0" * 64) if access else "0" * 64},
             {"name": "private_alias_resolution_attempts", "integer": access.get("private_alias_resolution_attempts", -1) if access else -1},
             {"name": "private_source_open_attempts", "integer": access.get("private_source_open_attempts", -1) if access else -1},
             {"name": "private_render_attempts", "integer": access.get("private_render_attempts", -1) if access else -1},
         ]),
-        ("CP5A-PRIVATE-ACCESS-LIFECYCLE", private_access_passed, [{"name":"lifecycle_completed","boolean":bool(access and access.get("lifecycle_status") == "completed")},{"name":"candidate_bound","boolean":bool(access and access.get("candidate_state_hash") == state["current_candidate_hash"])}]),
+        ("CP5A-PRIVATE-ACCESS-LIFECYCLE", private_access_passed, [{"name":"lifecycle_completed","boolean":bool(access and access.get("lifecycle_status") == "completed")},{"name":"candidate_bound","boolean":bool(access and access.get("candidate_state_hash") == state["current_candidate_hash"])},{"name":"runner_owned","boolean":bool(access and access.get("runner_owned") is True)},{"name":"validation_executed","boolean":bool(access and access.get("validation_executed") is True)}]),
     ]
     owning = [{"check_id": item[0], "status": "pass" if item[1] else "fail", "evidence": {"facts": item[2]}} for item in checks]
     aggregate = "pass" if all(item["status"] == "pass" for item in owning) else "fail"
@@ -705,6 +731,9 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
             "run_id",
             "candidate_state_hash",
             "lifecycle_status",
+            "runner_owned",
+            "validation_executed",
+            "candidate_bound",
             *access_keys,
             "record_type",
             "sealed",
@@ -718,7 +747,7 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
     return {"execution": execution, "qa": qa, "fixture_qa": fixture_result, "corpus": corpus_result}
 
 
-def write_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str, tested_in_disposable_worktree: bool, tests_passed: int, tests_failed: int, privacy_config: dict[str, Any] | None = None, private_access_evidence: Cp5aPrivateAccessSession | None = None) -> dict[str, Any]:
+def write_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str, tested_in_disposable_worktree: bool, tests_passed: int, tests_failed: int, privacy_config: dict[str, Any] | None = None, private_access_evidence: Cp5aPrivateAccessEvidence | None = None) -> dict[str, Any]:
     """Persist only execution-derived CP5-A evidence, never a rendered figure."""
     root = root or ROOT
     outputs = build_cp5a_artifacts(

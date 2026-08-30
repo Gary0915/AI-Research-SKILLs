@@ -58,6 +58,13 @@ CP5-A establishes a closed, synthetic-only Scientific SVG visual-authoring IR. I
 | D3 private-access lifecycle | The sealed zero-attempt guard record is bound to the completed CP5-A execution/run/candidate identity and its evidence hash; dictionaries, unsealed/early sessions, mismatched bindings, mutations, and nonzero attempts fail closed. | pass |
 | D4 closed numeric/reference grammar | `viewBox` uses exact consuming numeric grammar; empty/repeated separators, incomplete values, junk, non-finite values, and non-positive dimensions reject. Positive marker dimensions remain profile/compatibility-bound. | pass |
 
+## CP5A-E1–E2 revision 4 traceability
+
+| Revision | Corrected implementation | Status |
+| --- | --- | --- |
+| E1 runner-owned private lifecycle | `Cp5aExecutionRunner` creates the guard internally, executes a real synthetic CP5-A corpus validation callback, then alone seals immutable run/candidate-bound evidence. Caller-created guards expose no completion/seal transition; callback failure, evidence mutation, wrong binding, and any guarded attempt fail closed. | pass |
+| E2 profile-owned marker dimensions | `markerWidth` and `markerHeight` are explicitly declared in the persisted profile and its closed schema. The validator uses that profile-owned set only; zero/negative marker values reject under `CP5A-NUMERIC-POLICY`, while a profile mutation does not receive a hidden code-side union. | pass |
+
 ## Execution recovery and regression evidence
 
 - Automatic usage-limit stop encountered: yes; automatic stops encountered: 2; workspace preserved: yes; local recovery snapshot preserved: yes.
@@ -71,6 +78,7 @@ CP5-A establishes a closed, synthetic-only Scientific SVG visual-authoring IR. I
 - Revision 3 recovery: workspace preserved; the earlier 77 passed / 0 failed focused run is `acceptance_eligible: false` because it predates the final authoring-handoff/test adjustments. The final focused Revision 3 suite is 77 passed / 0 failed.
 - Definitive Revision 3 disposable-worktree regression: 394 passed / 0 failed. Tested candidate hash `9125a492a1aa4fe1381f8ebe794d4c2cbf1329cecb891916efcd833c632fa5e5`; independently recomputed current candidate hash is identical; equality: pass.
 - Final privacy configuration: caller-supplied ephemeral dictionary constructed in-process; no loader or config file; one private-root signature and three forbidden basenames; raw values and nonce were not persisted. Repository/staged scans executed with 0 findings and 1 approved historical exception.
+- Revision 4 focused suite: 87 passed / 0 failed. Definitive Revision 4 disposable-worktree full collection: 404 passed / 0 failed. Tested candidate hash `e79ee15c2ced30c95e4e45706a23bdd3b8dd556926e89b242101d31c927b111a`; independently recomputed current candidate hash is identical; equality: pass. The first Revision 4 unit-only disposable run recorded 346 passed / 0 failed and was superseded by the complete collection. A prior full-run attempt with four failures was rejected as a disposable-worktree Git safe-directory environment failure; the accepted rerun used a process-local safe-directory override only.
 
 ## Results
 
@@ -79,7 +87,7 @@ CP5-A establishes a closed, synthetic-only Scientific SVG visual-authoring IR. I
 - Metadata invisibility is static AST evidence only—not pixel or render equivalence.
 - Privacy scanner: repository and staged scans executed; unexcepted findings `0`; approved historical exceptions `1`.
 - Private alias/source/render attempts: `0 / 0 / 0`.
-- CP5A Revision 3 owning QA: 26 execution-derived checks, aggregate `pass`; canonical round-trip/idempotence, profile-owned object/reference authority, exact `viewBox`, lifecycle-bound private evidence, candidate-bound disposable regression, and repository/staged scanner evidence all passed.
+- CP5A Revision 4 owning QA: 27 execution-derived checks, aggregate `pass`; canonical round-trip/idempotence, profile-owned object/reference authority, exact `viewBox`, runner-owned private evidence, profile-owned positive marker dimensions, candidate-bound disposable regression, and repository/staged scanner evidence all passed.
 
 ## Later checkpoint status
 
@@ -115,11 +123,11 @@ codex_report:
     - focused CP5-A suite
     - full disposable-worktree regression
   tests_passed:
-    focused_cp5a_revision_3: 77
-    full_disposable_regression_revision_3: 394
+    focused_cp5a_revision_4: 87
+    full_disposable_regression_revision_4: 404
   tests_failed:
-    focused_cp5a_revision_3: 0
-    full_disposable_regression_revision_3: 0
+    focused_cp5a_revision_4: 0
+    full_disposable_regression_revision_4: 0
   known_failures: []
   deviations: []
   reviewer_questions: []

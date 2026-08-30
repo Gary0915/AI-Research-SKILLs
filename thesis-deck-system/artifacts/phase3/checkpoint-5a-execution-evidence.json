@@ -7,14 +7,17 @@
   "private_access_evidence": {
     "execution_id": "CP5A-ACCESS-001",
     "run_id": "CP5A-EXEC-001",
-    "candidate_state_hash": "9125a492a1aa4fe1381f8ebe794d4c2cbf1329cecb891916efcd833c632fa5e5",
+    "candidate_state_hash": "e79ee15c2ced30c95e4e45706a23bdd3b8dd556926e89b242101d31c927b111a",
     "lifecycle_status": "completed",
+    "runner_owned": true,
+    "validation_executed": true,
+    "candidate_bound": true,
     "private_alias_resolution_attempts": 0,
     "private_source_open_attempts": 0,
     "private_render_attempts": 0,
-    "record_type": "cp5a_guarded_private_access_v1",
+    "record_type": "cp5a_runner_owned_private_access_v1",
     "sealed": true,
-    "evidence_hash": "3b8e06ad5c0dfb3d018fe99f3c4a57e12e3823338f44d6be53361a380cd3fbcd"
+    "evidence_hash": "ec841061d371cf9aa3d331c4c4a43359aeb563aab18ca7110193881763e16a95"
   },
   "candidate_state": {
     "component_hashes": {
@@ -23,37 +26,37 @@
       "cp4:artifact:figure-production-plans": "66f7282cf894a3a38b6bf3a5081550bf64e61eb4dd06f5d2c06055ab27ad4a2b",
       "cp4:artifact:scientific-figure-specs": "2c20be513aa432a54872fd2ee8eee012ecb6e9b4ca89919d368d8cf0c459f2a6",
       "cp4:skill-routing": "7368eb06c8a1c6875a2e1def561a91789de5140cf8c8b59e1db76393ed29215a",
-      "cp5a:source": "e40d68f75dd64af75b00d881664f1d20a02b495f9635fa5f52d452703839d9fb",
+      "cp5a:source": "fdd7163519fee2066dc675e6f0a744e1edb91574f1c2538b65f73b18a5a5627f",
       "cp5a:source:contracts": "39fe986fc546d6efb47a01579d938e4644bfa20856b2ffd46393defabf69920d",
-      "cp5a:test:scientific-svg": "af3a31057b85910072eb7a6e71ed629469463fc07a45e16af3399a9422e268ea",
+      "cp5a:test:scientific-svg": "1ca30b9bff2613f267bcf8a953c7aee43a119d52115ffd44c4fd24da19290192",
       "cp5a:test:privacy-regression": "84a753d45a2d9f6b6782d47fe13f1131d091b68d981b42f07510db8788e87ab4",
       "cp5a:privacy:approved-scanner": "b20b51303aaba5c6cfb488cca293d8c73dce4ceaee751846457258c8402cd596",
       "cp5a:privacy:scanner": "7664531a8f21d4b00c70a23096a95c83e0aed889cc73c2fde9d7ed09c6f44a20",
-      "cp5a:profile": "5f09252f41fc866bb49a69a6545f42792387cb4819bf1f89c0765a047ce76fb9",
+      "cp5a:profile": "21aa7a31329335029060d6548d9867dff91e7cf462ede8e9a2eee3d5b3762ee7",
       "cp5a:roles": "143d19f94186716c7366e17c39b0a1e53c5081e35018dabc04598a43c3c2318e",
       "cp5a:synthetic-corpus": "4322292fbeb15d1450539a90a8142e75ba6a5cc7ed4abc2db68d41de56abd001",
-      "cp5a:schema:scientific-svg-profile.schema.json": "eadf71673e9e41521e1c2da0b0d24217e9fe5c76fb2e61116675029e57d4cb3b",
+      "cp5a:schema:scientific-svg-profile.schema.json": "3dca56d9edfd368799a757394309a6aea2b18c84deff7d57631f025b6cac9fd2",
       "cp5a:schema:semantic-svg-role-registry.schema.json": "d541ff17f1bbbc70caf60e2c330f3a8216a153dcb6693c4520165e2107a87ff0",
       "cp5a:schema:static-svg-qa-report.schema.json": "4a9f4639dff503c5d3ab36bbe458aa6e722514caff2a605a7e89ec5e84726d34",
       "cp5a:schema:scientific-svg-identity.schema.json": "ef3aa86c1369efe71d80ef6749df2a5ebee6482faa29d046dacd00fcf9488141",
-      "cp5a:schema:checkpoint-5a-execution-evidence.schema.json": "dc9009eee03083724b2339aa4bea55cf2b9378e167281328bb42b44aceda4464",
+      "cp5a:schema:checkpoint-5a-execution-evidence.schema.json": "508c1104278d042a4959253fa3fff2dd39f763eb218bfe41685880300a9b0921",
       "cp5a:schema:checkpoint-5a-qa.schema.json": "1262219ceef4ba97f962f90981e1235c15b0bbb9f2308a362eb6d1b917789e6d",
       "cp5a:schema:scientific-svg-synthetic-corpus.schema.json": "8af4a2845aeb1f34fa64b6562b16ee0ef4c2aa7a90834324f1d69e10425a4195",
       "cp5a:schema:checkpoint-5a-report-facts.schema.json": "c4a060c1eac45c2569749b36c4878e4d9ecbbd23c7ca9ee83f3cc7733f1735ef",
       "cp5a:skill:scientific-svg-authoring": "4bc915da020feb594da8dccb545bf42bd1ef2d7ee0810035a2578b4465bdb156",
       "cp5a:skill:semantic-svg-governor": "b1d305e90cec3fd5f1d3ba00896e860408f300663b25eb40e6f6cfaf50f7af0a"
     },
-    "current_candidate_hash": "9125a492a1aa4fe1381f8ebe794d4c2cbf1329cecb891916efcd833c632fa5e5",
-    "tested_candidate_hash": "9125a492a1aa4fe1381f8ebe794d4c2cbf1329cecb891916efcd833c632fa5e5",
+    "current_candidate_hash": "e79ee15c2ced30c95e4e45706a23bdd3b8dd556926e89b242101d31c927b111a",
+    "tested_candidate_hash": "e79ee15c2ced30c95e4e45706a23bdd3b8dd556926e89b242101d31c927b111a",
     "candidate_hash_equal": true,
     "disposable_worktree": true,
-    "tests_passed": 394,
+    "tests_passed": 404,
     "tests_failed": 0
   },
   "privacy_scan": {
     "scanner_id": "RepositoryPrivacyScanner",
     "scanner_version": "CP3-REPOSITORY-STAGED-V1",
-    "configuration_hash": "a6e2445cc890089dd89f0fa9c972b56449bef3cd8b41ffd499f4e0389b9a7b28",
+    "configuration_hash": "42e5efd23ff9a6a62c87b0fe5dfaeb45ff0edb4b5bafedf6131b0d5fb4dff805",
     "repository_findings": 0,
     "staged_findings": 0,
     "approved_legacy_exceptions": 1,
@@ -388,7 +391,7 @@
           },
           {
             "name": "privacy_configuration_hash",
-            "hash": "a6e2445cc890089dd89f0fa9c972b56449bef3cd8b41ffd499f4e0389b9a7b28"
+            "hash": "42e5efd23ff9a6a62c87b0fe5dfaeb45ff0edb4b5bafedf6131b0d5fb4dff805"
           }
         ]
       }
@@ -414,6 +417,18 @@
       }
     },
     {
+      "check_id": "CP5A-MARKER-DIMENSION-POLICY",
+      "status": "pass",
+      "evidence": {
+        "facts": [
+          {
+            "name": "profile_marker_dimension_count",
+            "integer": 2
+          }
+        ]
+      }
+    },
+    {
       "check_id": "CP5A-PRIVATE-ACCESS",
       "status": "pass",
       "evidence": {
@@ -423,8 +438,20 @@
             "boolean": true
           },
           {
+            "name": "runner_owned",
+            "boolean": true
+          },
+          {
+            "name": "validation_executed",
+            "boolean": true
+          },
+          {
+            "name": "candidate_bound",
+            "boolean": true
+          },
+          {
             "name": "sealed_execution_evidence_hash",
-            "hash": "3b8e06ad5c0dfb3d018fe99f3c4a57e12e3823338f44d6be53361a380cd3fbcd"
+            "hash": "ec841061d371cf9aa3d331c4c4a43359aeb563aab18ca7110193881763e16a95"
           },
           {
             "name": "private_alias_resolution_attempts",
@@ -452,6 +479,14 @@
           },
           {
             "name": "candidate_bound",
+            "boolean": true
+          },
+          {
+            "name": "runner_owned",
+            "boolean": true
+          },
+          {
+            "name": "validation_executed",
             "boolean": true
           }
         ]

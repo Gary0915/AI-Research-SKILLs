@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import json
 from pathlib import Path
 
 import pytest
@@ -346,15 +347,13 @@ def test_private_access_evidence_must_be_a_sealed_execution_record():
 
     spoofed = {"execution_id": "CP5A-ACCESS-001", "private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0}
     assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=spoofed)["execution"]["owning_checks"][-1]["status"] == "fail"
-    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=Cp5aPrivateAccessSession("CP5A-ACCESS-001"))["execution"]["owning_checks"][-1]["status"] == "fail"
-    # Sealing an arbitrary empty session is not proof it covered an execution.
-    with pytest.raises(Exception):
-        Cp5aPrivateAccessSession("CP5A-ACCESS-001").seal()
-    attempted = Cp5aPrivateAccessSession("CP5A-ACCESS-001")
+    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=Cp5aPrivateAccessSession())["execution"]["owning_checks"][-1]["status"] == "fail"
+    # A caller-created guard has no public completion or sealing transition.
+    assert not hasattr(Cp5aPrivateAccessSession(), "seal")
+    attempted = Cp5aPrivateAccessSession()
     with pytest.raises(Exception):
         attempted.guarded_attempt("source_open")
-    attempted.bind_execution("CP5A-EXEC-001", "0" * 64).complete_validation()
-    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=attempted.seal())["execution"]["owning_checks"][-1]["status"] == "fail"
+    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=attempted)["execution"]["owning_checks"][-1]["status"] == "fail"
 
 
 def test_canonical_svg_roundtrip_revalidates_is_idempotent_and_preserves_svg_namespace():
@@ -396,18 +395,69 @@ def test_viewbox_requires_exact_consuming_positive_four_number_grammar(viewbox: 
 
 
 def test_private_access_evidence_requires_completed_candidate_bound_lifecycle():
-    from thesis_deck_system.phase3_cp5a_scientific_svg import Cp5aPrivateAccessSession, build_cp5a_artifacts, candidate_state
+    from thesis_deck_system.phase3_cp5a_scientific_svg import Cp5aExecutionRunner, build_cp5a_artifacts, candidate_state
 
     state = candidate_state(ROOT)
-    session = Cp5aPrivateAccessSession("CP5A-ACCESS-001")
-    session.bind_execution("CP5A-EXEC-001", state["current_candidate_hash"])
-    session.complete_validation()
-    outputs = build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=session.seal())
+    evidence = Cp5aExecutionRunner(state["current_candidate_hash"]).run(lambda _guard: None)
+    outputs = build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=evidence)
     persisted = outputs["execution"]["private_access_evidence"]
     assert outputs["execution"]["owning_checks"][-1]["status"] == "pass"
     assert persisted["lifecycle_status"] == "completed"
     assert persisted["candidate_state_hash"] == state["current_candidate_hash"]
-    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=Cp5aPrivateAccessSession("CP5A-ACCESS-001").bind_execution("CP5A-EXEC-001", "0" * 64).complete_validation().seal())["execution"]["owning_checks"][-1]["status"] == "fail"
+    wrong_candidate = Cp5aExecutionRunner("0" * 64).run(lambda _guard: None)
+    assert build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=wrong_candidate)["execution"]["owning_checks"][-1]["status"] == "fail"
+
+
+def test_private_access_completion_is_runner_owned_not_session_self_attested():
+    """A caller-created guard cannot promote itself to authoritative evidence."""
+    from thesis_deck_system.phase3_cp5a_scientific_svg import Cp5aExecutionRunner, Cp5aPrivateAccessSession, ScientificSvgError
+
+    assert not hasattr(Cp5aPrivateAccessSession(), "complete_validation")
+    runner = Cp5aExecutionRunner("0" * 64)
+    with pytest.raises(ScientificSvgError):
+        runner.run(lambda _guard: (_ for _ in ()).throw(RuntimeError("validation failed")))
+    evidence = runner.run(lambda _guard: None)
+    assert evidence.evidence()["runner_owned"] is True
+    assert evidence.evidence()["validation_executed"] is True
+
+
+@pytest.mark.parametrize("operation", ["alias_resolution", "source_open", "render"])
+def test_runner_rejects_any_guarded_private_attempt(operation: str):
+    from thesis_deck_system.phase3_cp5a_scientific_svg import Cp5aExecutionRunner, ScientificSvgError
+
+    with pytest.raises(ScientificSvgError):
+        Cp5aExecutionRunner("0" * 64).run(lambda guard: guard.guarded_attempt(operation))
+
+
+def test_runner_evidence_hash_mutation_fails_artifact_finalization():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import Cp5aExecutionRunner, build_cp5a_artifacts, candidate_state
+
+    evidence = Cp5aExecutionRunner(candidate_state(ROOT)["current_candidate_hash"]).run(lambda _guard: None)
+    payload = evidence.evidence()
+    payload["evidence_hash"] = "0" * 64
+    evidence._payload = json.dumps(payload, sort_keys=True, separators=(",", ":"))
+    outputs = build_cp5a_artifacts(ROOT, tested_candidate_hash=None, tested_in_disposable_worktree=False, private_access_evidence=evidence)
+    assert {check["check_id"]: check["status"] for check in outputs["execution"]["owning_checks"]}["CP5A-PRIVATE-ACCESS"] == "fail"
+
+
+@pytest.mark.parametrize(
+    "attribute,value",
+    [("markerWidth", "0"), ("markerWidth", "-1"), ("markerHeight", "0"), ("markerHeight", "-1")],
+)
+def test_marker_positive_dimensions_are_owned_by_the_profile(attribute: str, value: str):
+    source = _valid_svg().replace('markerWidth="6"', f'markerWidth="{value}"') if attribute == "markerWidth" else _valid_svg().replace('markerHeight="6"', f'markerHeight="{value}"')
+    assert "CP5A-NUMERIC-POLICY" in {item["rule_id"] for item in _validator().validate(source, figure_spec=_spec())["findings"]}
+
+
+def test_removed_marker_profile_declaration_does_not_get_a_hidden_code_union():
+    from thesis_deck_system.phase3_cp5a_scientific_svg import ScientificSvgValidator
+
+    validator = _validator()
+    profile = deepcopy(validator.profile)
+    profile["coordinate_policy"]["positive_dimension_attributes"].remove("markerWidth")
+    mutated = ScientificSvgValidator(ROOT, profile, validator.roles)
+    source = _valid_svg().replace('markerWidth="6"', 'markerWidth="0"')
+    assert "CP5A-NUMERIC-POLICY" not in {item["rule_id"] for item in mutated.validate(source, figure_spec=_spec())["findings"]}
 
 
 @pytest.mark.parametrize(
