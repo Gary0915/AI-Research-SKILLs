@@ -56,7 +56,7 @@
         "completed_families": [],
         "blocked_families": [],
         "status": "not_required",
-        "reason": "The optional browser/runtime experiment was not needed to establish the source-backed context, selection, comment, and HTML/PDF export boundary."
+        "reason": "The optional browser/runtime experiment was not needed to establish the source-backed context, selection, comment, HTML/PDF export, and raster/image-slide PPTX export classification."
       }
     }
   ],

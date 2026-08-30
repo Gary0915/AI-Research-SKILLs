@@ -109,6 +109,28 @@ record an upstream-declared mapping, but cannot promote a thesis entry to
 `NATIVE_EXACT` or `NATIVE_NORMALIZED`. A raster fallback is always explicit in
 the manifest and capability record; silent raster fallback is forbidden.
 
+### 4.1 Separate Scientific SVG IR support from native compilation
+
+These are intentionally independent future contract dimensions:
+
+| Dimension | Owner | Controlled state | Consequence |
+| --- | --- | --- | --- |
+| `svg_ir_support_state` | CP5-A Scientific SVG contract | `supported`, `unsupported`, `unknown_contract` | A director may author only `supported` IR features. `unsupported` or `unknown_contract` fails the canonical SVG route. |
+| `native_compilation_capability_state` | CP5-B capability registry | `NATIVE_EXACT`, `NATIVE_NORMALIZED`, `VECTOR_FALLBACK`, `RASTER_FALLBACK`, `UNSUPPORTED`, `UNKNOWN` | Records only the current DrawingML/native-compilation truth and its evidence level. |
+
+Thus `svg_ir_support_state: supported` together with
+`native_compilation_capability_state: UNKNOWN` is a legal canonical SVG. It may
+move through CP5-C, CP5-D/E, CP5-F, and CP5-G as SVG/render evidence. Likewise,
+legal SVG plus native `UNSUPPORTED` remains a valid SVG but cannot claim native
+DrawingML compilation. CP5-H, not the SVG route, owns that native consequence.
+
+CP5-C must fail or block for a missing registry identity/record, illegal or
+unknown-contract SVG feature, undeclared fallback, manifest mismatch,
+scientific/provenance failure, or failed static QA. A *declared* native state of
+`UNKNOWN` is not itself a static-critic failure. Native `UNSUPPORTED` likewise
+does not invalidate legal canonical SVG. Neither state permits a silent raster
+fallback.
+
 ## 5. CP5 dependency DAG
 
 ```text
@@ -126,10 +148,10 @@ checkpoint output. `cycle_count = 0`.
 | Checkpoint | Prerequisites | Input contracts | Output contracts | Blocked dependencies | Reviewer gate |
 | --- | --- | --- | --- | --- | --- |
 | CP5-A | CP4 freeze | CP4 Figure Plan/Spec authority | closed SVG IR + static SVG QA | none for synthetic contract tests | SVG ownership/metadata gate |
-| CP5-B | CP5-A | SVG IR | capability registry + synthetic vectors | native verification optional | capability-truth gate |
-| CP5-C | CP5-A, CP5-B | SVG, Spec, source/capability bindings | FigureOutputManifest + static critic + `APPROVED_FIGURE` | no render/human review required | static-gate approval |
-| CP5-D | CP5-C | structured CP4 specs + style requirements | structured SVG + manifest + static approval | unsupported primitive blocks route | director-boundary gate |
-| CP5-E | CP5-C | evidence-bound specs/assets | manifest/overlay/output + static approval | missing real/literature/data source blocks route | evidence-bound gate |
+| CP5-B | CP5-A | SVG IR + synthetic vector corpus | capability registry + synthetic vectors | native verification optional | capability-truth gate |
+| CP5-C | CP5-A, CP5-B | legal SVG, Spec, source/provenance bindings, registry identity/record | FigureOutputManifest + static critic + `APPROVED_FIGURE` | no render/human review required; declared native `UNKNOWN` is legal | static-gate approval |
+| CP5-D | CP5-C | structured CP4 specs + style requirements | structured SVG + manifest + static approval | illegal/unknown-contract SVG feature or missing scientific input blocks route; native `UNKNOWN`/`UNSUPPORTED` does not | director-boundary gate |
+| CP5-E | CP5-C | evidence-bound specs/assets | manifest/overlay/output + static approval | illegal/unknown-contract SVG feature or missing real/literature/data source blocks route; native `UNKNOWN`/`UNSUPPORTED` does not | evidence-bound gate |
 | CP5-F | CP5-D, CP5-E | approved outputs and safe review provider | render critic, CurrentSlideContext, ReviewAction | image provider may block qualitative review | review-contract gate |
 | CP5-G | CP5-F | canonical SVG/renders, professor grammar, sanitized profiles | A01–A18 calibration + SVG/render benchmarks | native PowerPoint is not a prerequisite | visual-calibration gate |
 | CP5-H | CP5-G | CP5-B registry vectors + CP5-D/E approved output + CP5-G calibration evidence | assembler-internal DrawingML adapter + native vectors | native environment may block native fidelity | single-backend/native gate |
@@ -163,9 +185,10 @@ checkpoint output. `cycle_count = 0`.
 - **Prerequisites / inputs:** CP5-A closed IR and synthetic vectors.
 - **Outputs:** registry records, vector contracts, explicit unknown/fallback
   decisions.
-- **RED tests:** feature without declaration; native claim without thesis
+- **RED tests:** missing registry identity/record; native claim without thesis
   evidence; source-inspected claim promoted to thesis verified; undeclared
-  fallback; silent raster; vector output invalidated by registry change.
+  fallback; silent raster; and illegal SVG feature distinguished from legal SVG
+  with native `UNKNOWN` or `UNSUPPORTED`.
 - **Blocked states:** absent native environment keeps native state `UNKNOWN` or
   `blocked_environment`, not failure of SVG work.
 - **Stop condition / gate:** every primitive has an honest registry state;
@@ -181,11 +204,14 @@ checkpoint output. `cycle_count = 0`.
 - **Prerequisites / inputs:** CP5-A SVG and CP5-B registry.
 - **Outputs:** validated manifest, static critic report, approved/failed/blocked
   gated figure identity.
-- **RED tests:** mismatched hashes; manifest/SVG ID mismatch; illegal
-  provenance binding; unknown capability; critic PASS without executed static
-  checks; raw output reaching Layout; unapproved figure reaching Layout.
-- **Blocked states:** missing source/provenance, capability declaration, or
-  static evidence yields `BLOCKED`/`FAIL`.
+- **RED tests:** mismatched hashes; manifest/SVG ID mismatch; illegal SVG IR
+  feature; missing registry identity/record; undeclared fallback; illegal
+  provenance binding; critic PASS without executed static checks; raw output
+  reaching Layout; unapproved figure reaching Layout. A declared native
+  `UNKNOWN` is explicitly non-failing.
+- **Blocked states:** missing source/provenance, registry identity/record, or
+  static evidence yields `BLOCKED`/`FAIL`; declared native `UNKNOWN` or
+  `UNSUPPORTED` alone does not.
 - **Stop condition / gate:** static critic exists before any director relies on
   its approval; reviewer approves pre-director gate before CP5-D/E.
 - **Forbidden:** image-capable review, live editor, actual scientific figures,
@@ -201,8 +227,10 @@ checkpoint output. `cycle_count = 0`.
 - **RED tests:** Fishbone revision/history/focus mutation; invented fabrication
   condition; mechanism absorbing fabrication chronology; experiment omitting
   controls; comparison side/scale mutation; unregistered SVG feature.
-- **Blocked states:** unknown conditions remain `UNKNOWN`; missing ordered
-  source requirements or unsupported capability blocks output.
+- **Blocked states:** unknown scientific conditions remain `UNKNOWN`; missing
+  ordered source requirements or an illegal/unknown-contract SVG IR feature
+  blocks output. Native `UNKNOWN`/`UNSUPPORTED` leaves native compilation
+  unresolved for CP5-H but does not block canonical SVG production.
 - **Stop condition / gate:** each output passes static critic; no slide/PPTX
   is built. Reviewer validates the directors’ scientific boundaries.
 - **Forbidden:** plot/photo/literature routes, concept generation, native
@@ -219,8 +247,10 @@ checkpoint output. `cycle_count = 0`.
 - **RED tests:** generated concept as Observation; plot without reproducible
   canonical data/vector; photo identity replacement; literature without source
   extraction/citation; image-matrix order loss; concept claim support.
-- **Blocked states:** missing real/literature/data source blocks the visual;
-  concept is never a substitute for evidence.
+- **Blocked states:** missing real/literature/data source or an
+  illegal/unknown-contract SVG IR feature blocks the visual; concept is never
+  a substitute for evidence. Native `UNKNOWN`/`UNSUPPORTED` does not block a
+  legal SVG route and cannot trigger an undeclared raster fallback.
 - **Stop condition / gate:** evidence identity and static critic evidence pass;
   reviewer validates empirical/literature protection.
 - **Forbidden:** generative recreation of evidence, live review, compiler,
@@ -232,14 +262,20 @@ checkpoint output. `cycle_count = 0`.
   immutable `ReviewAction`, temporary visual overrides, and local review loop.
 - **Prerequisites / inputs:** CP5-D/E approved figure outputs and an authorized
   image-review provider where qualitative review is requested.
-- **Outputs:** hash-bound render critic reports; contexts; review actions;
+- **Outputs:** four independent status-bearing outputs: `static_figure_critic_status`
+  (the CP5-C evidence it consumes), `render_critic_status`,
+  `image_capable_qualitative_review_status`, and `human_review_status`; plus
+  hash-bound render critic reports, contexts, review actions, and
   source-revision requests.
 - **RED tests:** clipping/overlap/legibility render mutation; stale context;
   object not in manifest; browser/comment direct mutation; private-unauthorized
   provider; metadata-only qualitative PASS; temporary override counted as
   calibration.
-- **Blocked states:** unavailable or unauthorized provider gives
-  `blocked_visual_review`; static approval remains distinct.
+- **Blocked states:** an unavailable or unauthorized image-capable provider
+  yields `image_capable_qualitative_review_status: blocked_visual_review` only.
+  It does not change static-critic, SVG-validity, render-critic, native, or
+  native-PowerPoint status unless a declared check explicitly depends on it.
+  Human review may independently be `not_run` or blocked.
 - **Stop condition / gate:** every change is traceable to a source revision;
   reviewer approves review interaction before CP5-G.
 - **Forbidden:** direct Ledger/Evidence/grammar mutation; native acceptance;
@@ -250,14 +286,19 @@ checkpoint output. `cycle_count = 0`.
 - **Scope:** A01–A18 geometry/style calibration and professor SVG/render
   benchmarks using canonical SVG, approved directors, professor grammar, and
   sanitized template/body evidence.
-- **Prerequisites / inputs:** CP5-F evidence and CP2/CP3 sanitized artifacts.
+- **Prerequisites / inputs:** CP5-F SVG/render evidence and CP2/CP3 sanitized
+  artifacts. Image-capable qualitative review is consumed when available, not
+  a prerequisite for geometry/composition calibration.
 - **Outputs:** calibration records, SVG/render benchmark metrics, visual
   readiness facts.
 - **RED tests:** uncalibrated archetype marked calibrated; body source
   contaminating shell; absent evidence changed to zero; historical cursor loss;
   fidelity PASS without render/human evidence.
 - **Blocked states:** weak descriptor evidence stays provisional/insufficient;
-  native PowerPoint may stay blocked without blocking this checkpoint.
+  native PowerPoint may stay blocked without blocking this checkpoint. A
+  blocked qualitative review permits authorized SVG/render, geometry, and
+  composition calibration but prevents a professor *qualitative* visual
+  acceptance claim.
 - **Stop condition / gate:** visual-calibration/benchmark evidence is honest;
   reviewer authorizes CP5-H independently.
 - **Forbidden:** native-fidelity PASS, native template reconstruction, PPTX

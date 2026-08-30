@@ -103,7 +103,12 @@ Readiness is deliberately split:
 
 Thus a native PowerPoint block prevents native/PPTX release but does not
 prevent Scientific SVG work, figure director work, static/render criticism, or
-A01–A18 SVG/render calibration.
+A01–A18 SVG/render calibration. Scientific SVG legality is separately owned by
+the future CP5-A `svg_ir_support_state` (`supported`, `unsupported`, or
+`unknown_contract`); the CP5-B native compilation state does not determine SVG
+legality. Legal SVG with native `UNKNOWN` or `UNSUPPORTED` remains valid
+canonical SVG and can proceed as SVG/render evidence through CP5-G, while its
+native compilation claim remains unresolved for CP5-H.
 
 ## open-slide export classification
 
@@ -139,9 +144,14 @@ Its required order is:
    and a production release decision.
 
 This ordering removes the former director/Critic cycle: the deterministic
-static critic exists at CP5-C before either director track starts. CP5-G is not
-native-gated. CP5-H and CP5-I alone carry native fidelity and production-release
-requirements. `cycle_count = 0`.
+static critic exists at CP5-C before either director track starts. CP5-F reports
+static-critic, render-critic, image-capable qualitative-review, and human-review
+statuses independently. A `blocked_visual_review` provider outcome blocks only
+qualitative acceptance; CP5-G may still perform authorized SVG/render and
+geometry/composition calibration, but cannot claim professor qualitative visual
+acceptance from those metrics alone. CP5-G is not native-gated. CP5-H and CP5-I
+alone carry native fidelity and production-release requirements. `cycle_count =
+0`.
 
 ## Technique disposition and reuse decision
 
@@ -184,8 +194,23 @@ codex_report:
     - thesis-deck-system/artifacts/phase3/external-repo-provenance.json
     - thesis-deck-system/artifacts/phase3/external-technique-assimilation-matrix.json
   render_previews: []
-  tests_run: []
-  tests_passed: []
+  tests_run:
+    - JSON structure and 24-record disposition-count validation
+    - repository privacy scan with the approved historical exception
+    - staged-index privacy scan with the approved historical exception
+    - targeted CP3 privacy-scanner pytest selection
+    - EAR traceability and CP4 freeze-scope audit
+    - absolute private-path scan
+    - git diff --cached --check
+    - remote SHA/tree/blob verification
+  tests_passed:
+    - JSON structure and disposition counts: PASS (ADOPT 6, ADAPT 8, REJECT 5, DEFER 5)
+    - repository and staged privacy scans: PASS (1 approved historical exception, 0 unexcepted findings)
+    - targeted CP3 privacy-scanner tests: 2 passed, 43 deselected
+    - EAR traceability / CP4 freeze-scope audit: PASS
+    - absolute private-path scan: PASS
+    - git diff --cached --check: PASS
+    - remote SHA/tree/blob verification: PASS
   tests_failed: []
   known_failures:
     - B01-B10 blocked_environment
