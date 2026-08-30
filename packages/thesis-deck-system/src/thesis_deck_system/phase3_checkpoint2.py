@@ -154,6 +154,36 @@ def _classify_structural_family(*, objects: list[dict[str, Any]], connectors: li
     return {"family": "other_insufficient_structural_evidence", "confidence": "insufficient_structural_evidence", "evidence_basis": ["insufficient"]}
 
 
+def _body_binding_fingerprint(candidate: dict[str, Any], measurement: dict[str, Any]) -> str:
+    """Hash the sanitized structural identity used to bind a candidate to a slide.
+
+    The fingerprint intentionally excludes all private text/media and does not
+    use array position or slide-local object IDs as a global identity.
+    """
+    geometry = lambda item: {key: item.get("geometry", {}).get(key) for key in ("x", "y", "w", "h")}
+    structural = {
+        "candidate_id": candidate["candidate_id"],
+        "bound_slide_id": candidate["bound_slide_id"],
+        "family": candidate["family"],
+        "confidence": candidate["confidence"],
+        "evidence_basis": sorted(candidate["evidence_basis"]),
+        "measurement": {
+            "slide_id": measurement["slide_id"],
+            "objects": sorted(
+                ({"object_id": item.get("object_id"), "object_class": item.get("object_class"), "primitive_type": item.get("primitive_type"), "geometry": geometry(item)} for item in measurement.get("objects", [])),
+                key=lambda item: (str(item["object_id"]), str(item["object_class"])),
+            ),
+            "connectors": sorted(
+                ({"object_id": item.get("object_id"), "orientation": item.get("orientation"), "start": item.get("start"), "end": item.get("end"), "head_arrow": item.get("head_arrow"), "tail_arrow": item.get("tail_arrow") } for item in measurement.get("connectors", [])),
+                key=lambda item: str(item["object_id"]),
+            ),
+            "panels": sorted(({"panel_id": item.get("panel_id"), "geometry": geometry(item)} for item in measurement.get("panels", [])), key=lambda item: str(item["panel_id"])),
+            "metrics": {key: {"value": value.get("value"), "basis": value.get("basis"), "evidence_state": value.get("evidence_state")} for key, value in sorted(measurement.get("metrics", {}).items())},
+        },
+    }
+    return hashlib.sha256(json.dumps(structural, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")).hexdigest()
+
+
 def _geometry(x: float, y: float, w: float, h: float, basis: str = "measured") -> dict[str, Any]:
     if not all(isinstance(v, (int, float)) for v in (x, y, w, h)) or w <= 0 or h <= 0:
         raise Checkpoint2PolicyViolation("invalid measured geometry")
@@ -706,7 +736,14 @@ class ReadOnlyPrivateSourceSession:
                     measurement["objects"] = [{key: value for key, value in obj.items() if key not in {"source_container_id", "placeholder_type"}} for obj in measurement.get("objects", [])]
                     measurement["typography_observations"] = list(slide.get("typography_observations", []))
                     body_measurements.append(measurement)
-                profile = {**base, "candidate_families": [self._classify_slide(slide) for slide in slide_profiles], "body_measurements": body_measurements, "theme_profiles": _theme_descriptor_profiles(theme_profiles_by_part, master_theme_topology=[], slide_theme_topology=slide_theme_topology), "slide_theme_topology": slide_theme_topology}
+                candidates = []
+                for index, (slide, measurement) in enumerate(zip(slide_profiles, body_measurements), start=1):
+                    candidate = self._classify_slide(slide)
+                    candidate["candidate_id"] = f"BC{index:03d}"
+                    candidate["bound_slide_id"] = measurement["slide_id"]
+                    candidate["binding_fingerprint"] = _body_binding_fingerprint(candidate, measurement)
+                    candidates.append(candidate)
+                profile = {**base, "candidate_families": candidates, "body_measurements": body_measurements, "theme_profiles": _theme_descriptor_profiles(theme_profiles_by_part, master_theme_topology=[], slide_theme_topology=slide_theme_topology), "slide_theme_topology": slide_theme_topology}
             self._private_root.mkdir(parents=True, exist_ok=True)
             (self._private_root / f"{_safe_id(self.alias_uri).lower()}-raw.json").write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
             if self._execution:
@@ -1102,8 +1139,9 @@ def _sanitize_body_full(raw: dict[str, Any]) -> dict[str, Any]:
     if raw["alias_uri"] != BODY_ALIAS or not isinstance(raw["source_sha256"], str) or not re.fullmatch(r"[0-9a-f]{64}", raw["source_sha256"]): raise Checkpoint2PolicyViolation("invalid body identity")
     out = {"alias_uri": raw["alias_uri"], "source_sha256": raw["source_sha256"], "profile_id": raw["profile_id"], "slide_size": {"width": float(raw["slide_size"]["width"]), "height": float(raw["slide_size"]["height"]), "basis": raw["slide_size"]["basis"]}, "slide_count": int(raw["slide_count"]), "candidate_families": [], "body_measurements": [], "theme_profiles": [], "slide_theme_topology": []}
     for item in raw["candidate_families"]:
-        if set(item) != {"family", "confidence", "evidence_basis"}: raise Checkpoint2PolicyViolation("invalid candidate family")
-        out["candidate_families"].append({"family": item["family"], "confidence": item["confidence"], "evidence_basis": list(item["evidence_basis"])})
+        if set(item) != {"candidate_id", "bound_slide_id", "binding_fingerprint", "family", "confidence", "evidence_basis"}: raise Checkpoint2PolicyViolation("invalid candidate family")
+        if not re.fullmatch(r"BC[0-9]{3,}", str(item["candidate_id"])) or not re.fullmatch(r"SL[0-9]{3,}", str(item["bound_slide_id"])) or not re.fullmatch(r"[0-9a-f]{64}", str(item["binding_fingerprint"])): raise Checkpoint2PolicyViolation("invalid candidate binding identity")
+        out["candidate_families"].append({"candidate_id": str(item["candidate_id"]), "bound_slide_id": str(item["bound_slide_id"]), "binding_fingerprint": str(item["binding_fingerprint"]), "family": item["family"], "confidence": item["confidence"], "evidence_basis": list(item["evidence_basis"])})
     for item in raw["body_measurements"]:
         required = {"slide_id", "measurement_basis", "objects", "connectors", "groups", "panels", "metrics", "style_roles", "typography_observations"}
         if set(item) != required: raise Checkpoint2PolicyViolation("invalid body measurement")
@@ -1142,6 +1180,12 @@ def _sanitize_body_full(raw: dict[str, Any]) -> dict[str, Any]:
             styles.append({"role": style["role"], "fill_role": style["fill_role"], "stroke_role": style["stroke_role"], "line_width_pt": float(style["line_width_pt"]), "basis": style["basis"], "source_scope": style["source_scope"], "fill_color_evidence": _sanitize_color_evidence(style["fill_color_evidence"]), "stroke_color_evidence": _sanitize_color_evidence(style["stroke_color_evidence"])})
         typography = [_sanitize_font_observation(value, shell=False) for value in item["typography_observations"]]
         out["body_measurements"].append({"slide_id": str(item["slide_id"]), "measurement_basis": item["measurement_basis"], "objects": objects, "connectors": connectors, "groups": groups, "panels": panels, "metrics": {key: metrics[key] for key in metric_keys}, "style_roles": styles, "typography_observations": typography})
+    if len({item["candidate_id"] for item in out["candidate_families"]}) != len(out["candidate_families"]) or len({item["bound_slide_id"] for item in out["candidate_families"]}) != len(out["candidate_families"]): raise Checkpoint2PolicyViolation("ambiguous candidate binding identity")
+    measurements_by_slide = {item["slide_id"]: item for item in out["body_measurements"]}
+    if len(measurements_by_slide) != len(out["body_measurements"]): raise Checkpoint2PolicyViolation("duplicate body measurement slide identity")
+    for candidate in out["candidate_families"]:
+        measurement = measurements_by_slide.get(candidate["bound_slide_id"])
+        if measurement is None or candidate["binding_fingerprint"] != _body_binding_fingerprint(candidate, measurement): raise Checkpoint2PolicyViolation("candidate binding fingerprint mismatch")
     for item in raw["theme_profiles"]:
         out["theme_profiles"].append(_sanitize_theme_profile(item))
     profile_ids = {item["theme_profile_id"] for item in out["theme_profiles"]}

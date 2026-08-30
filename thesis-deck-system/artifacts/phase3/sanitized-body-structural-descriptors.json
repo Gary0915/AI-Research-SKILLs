@@ -12,6 +12,9 @@
     "slide_count": 13,
     "candidate_families": [
       {
+        "candidate_id": "BC001",
+        "bound_slide_id": "SL001",
+        "binding_fingerprint": "bf82fbd33b5eb55b8cc32d6ceaddbc863538c938f856f4a2d806031a2da1a09a",
         "family": "other_insufficient_structural_evidence",
         "confidence": "insufficient_structural_evidence",
         "evidence_basis": [
@@ -19,6 +22,9 @@
         ]
       },
       {
+        "candidate_id": "BC002",
+        "bound_slide_id": "SL002",
+        "binding_fingerprint": "90e7e7bb5992916febe6d135663498cb1400cba1a139408a4b96c9bba5091ab0",
         "family": "other_insufficient_structural_evidence",
         "confidence": "insufficient_structural_evidence",
         "evidence_basis": [
@@ -26,6 +32,9 @@
         ]
       },
       {
+        "candidate_id": "BC003",
+        "bound_slide_id": "SL003",
+        "binding_fingerprint": "a601e8227b4413e96430a9d31c943291955d4b888c96f1ea3cc439460b6755e9",
         "family": "result_single",
         "confidence": "provisional",
         "evidence_basis": [
@@ -34,6 +43,9 @@
         ]
       },
       {
+        "candidate_id": "BC004",
+        "bound_slide_id": "SL004",
+        "binding_fingerprint": "7c52570ce0b5c182cb369b70b2af0d8146d0fef491cd68911e9266505e294268",
         "family": "other_insufficient_structural_evidence",
         "confidence": "insufficient_structural_evidence",
         "evidence_basis": [
@@ -41,6 +53,9 @@
         ]
       },
       {
+        "candidate_id": "BC005",
+        "bound_slide_id": "SL005",
+        "binding_fingerprint": "3e5bb1b016c9f4a5e705a23a2083d69aeefd704c39463fa9092dd21dabd8c152",
         "family": "other_insufficient_structural_evidence",
         "confidence": "insufficient_structural_evidence",
         "evidence_basis": [
@@ -48,6 +63,9 @@
         ]
       },
       {
+        "candidate_id": "BC006",
+        "bound_slide_id": "SL006",
+        "binding_fingerprint": "e9e452a1406ffc3ad055bf4cb9fa052932bd38b8ddcb5cfcf7a3b904d8a6c5fe",
         "family": "result_single",
         "confidence": "provisional",
         "evidence_basis": [
@@ -56,6 +74,9 @@
         ]
       },
       {
+        "candidate_id": "BC007",
+        "bound_slide_id": "SL007",
+        "binding_fingerprint": "146556c4c8e11892d4b3038bdcac3c4a8baf9be353f1323a62dadd37db4ef1d7",
         "family": "other_insufficient_structural_evidence",
         "confidence": "insufficient_structural_evidence",
         "evidence_basis": [
@@ -63,6 +84,9 @@
         ]
       },
       {
+        "candidate_id": "BC008",
+        "bound_slide_id": "SL008",
+        "binding_fingerprint": "c6471860a1c119a1dacfbbdd4db6d9595337315cdb80166aadd5296cb6405720",
         "family": "result_single",
         "confidence": "provisional",
         "evidence_basis": [
@@ -71,6 +95,9 @@
         ]
       },
       {
+        "candidate_id": "BC009",
+        "bound_slide_id": "SL009",
+        "binding_fingerprint": "5be54224001828a54a135ac9ecfc7852469f94db4b8ea2ad58a98b278452f3e9",
         "family": "other_insufficient_structural_evidence",
         "confidence": "insufficient_structural_evidence",
         "evidence_basis": [
@@ -78,6 +105,9 @@
         ]
       },
       {
+        "candidate_id": "BC010",
+        "bound_slide_id": "SL010",
+        "binding_fingerprint": "6c0c77f5d2b9d3b63936a95dc3c724f52f91099b948f0119bb51993fac552390",
         "family": "result_single",
         "confidence": "provisional",
         "evidence_basis": [
@@ -86,6 +116,9 @@
         ]
       },
       {
+        "candidate_id": "BC011",
+        "bound_slide_id": "SL011",
+        "binding_fingerprint": "0473531eb12a8ac913697f4cd6dcef82a20c39c31c0feef6e29ac21a34174a93",
         "family": "image_matrix",
         "confidence": "structurally_supported",
         "evidence_basis": [
@@ -100,6 +133,9 @@
         ]
       },
       {
+        "candidate_id": "BC012",
+        "bound_slide_id": "SL012",
+        "binding_fingerprint": "40ebf78855949738008f09a394986420d9c03ef12dc832b647b4179c98e0e2f4",
         "family": "result_single",
         "confidence": "provisional",
         "evidence_basis": [
@@ -108,6 +144,9 @@
         ]
       },
       {
+        "candidate_id": "BC013",
+        "bound_slide_id": "SL013",
+        "binding_fingerprint": "72c45295bcc15080d22b016ba249cdadcf3fb7ecc44eea7d21b8553f6183f21f",
         "family": "result_single",
         "confidence": "provisional",
         "evidence_basis": [

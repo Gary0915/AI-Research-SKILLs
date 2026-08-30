@@ -6,7 +6,16 @@
         "professor_derived_provisional": 19,
         "professor_derived_recurring": 0,
         "reference_only_metadata": 0,
+        "required_subcapabilities": [
+          "reusable_family",
+          "provisional_family",
+          "insufficient_family"
+        ],
         "reusable_coverage_status": "provisional_only",
+        "satisfied_subcapabilities": [
+          "insufficient_family",
+          "provisional_family"
+        ],
         "unresolved": 0
       },
       "color_emphasis_grammar": {
@@ -14,7 +23,18 @@
         "professor_derived_provisional": 14,
         "professor_derived_recurring": 6,
         "reference_only_metadata": 0,
-        "reusable_coverage_status": "fully_calibrated",
+        "required_subcapabilities": [
+          "usage_backed_color",
+          "generic_role",
+          "emphasis_role",
+          "semantic_role_coverage"
+        ],
+        "reusable_coverage_status": "partial_recurring",
+        "satisfied_subcapabilities": [
+          "emphasis_role",
+          "generic_role",
+          "usage_backed_color"
+        ],
         "unresolved": 0
       },
       "connector_arrow_grammar": {
@@ -22,7 +42,20 @@
         "professor_derived_provisional": 2,
         "professor_derived_recurring": 3,
         "reference_only_metadata": 0,
-        "reusable_coverage_status": "fully_calibrated",
+        "required_subcapabilities": [
+          "orientation",
+          "directedness",
+          "head_marker",
+          "tail_marker",
+          "flip_directional_semantics"
+        ],
+        "reusable_coverage_status": "partial_recurring",
+        "satisfied_subcapabilities": [
+          "directedness",
+          "head_marker",
+          "orientation",
+          "tail_marker"
+        ],
         "unresolved": 0
       },
       "line_style_grammar": {
@@ -30,7 +63,13 @@
         "professor_derived_provisional": 1,
         "professor_derived_recurring": 0,
         "reference_only_metadata": 0,
+        "required_subcapabilities": [
+          "measured_line_width"
+        ],
         "reusable_coverage_status": "provisional_only",
+        "satisfied_subcapabilities": [
+          "measured_line_width"
+        ],
         "unresolved": 0
       },
       "scientific_figure_metrics": {
@@ -38,7 +77,13 @@
         "professor_derived_provisional": 19,
         "professor_derived_recurring": 0,
         "reference_only_metadata": 0,
+        "required_subcapabilities": [
+          "family_metric"
+        ],
         "reusable_coverage_status": "provisional_only",
+        "satisfied_subcapabilities": [
+          "family_metric"
+        ],
         "unresolved": 0
       },
       "shell_geometry": {
@@ -46,15 +91,36 @@
         "professor_derived_provisional": 0,
         "professor_derived_recurring": 5,
         "reference_only_metadata": 0,
-        "reusable_coverage_status": "fully_calibrated",
+        "required_subcapabilities": [
+          "canvas",
+          "content_title",
+          "formal_shell_role",
+          "safe_bounds"
+        ],
+        "reusable_coverage_status": "partial_recurring",
+        "satisfied_subcapabilities": [
+          "canvas",
+          "content_title",
+          "formal_shell_role"
+        ],
         "unresolved": 2
       },
       "typography_hierarchy": {
         "fallback": 1,
-        "professor_derived_provisional": 8,
+        "professor_derived_provisional": 7,
         "professor_derived_recurring": 0,
         "reference_only_metadata": 0,
+        "required_subcapabilities": [
+          "authorized_role",
+          "size_hierarchy",
+          "weight_style",
+          "unresolved_roles_visible"
+        ],
         "reusable_coverage_status": "provisional_only",
+        "satisfied_subcapabilities": [
+          "authorized_role",
+          "unresolved_roles_visible"
+        ],
         "unresolved": 0
       },
       "unresolved_fallback_reference": {
@@ -62,15 +128,21 @@
         "professor_derived_provisional": 0,
         "professor_derived_recurring": 0,
         "reference_only_metadata": 5,
+        "required_subcapabilities": [
+          "fallback_or_reference"
+        ],
         "reusable_coverage_status": "unresolved",
+        "satisfied_subcapabilities": [
+          "fallback_or_reference"
+        ],
         "unresolved": 2
       }
     },
     "fallback": 1,
     "fallback_token_count": 3,
-    "professor_derived_provisional": 43,
+    "professor_derived_provisional": 42,
     "professor_derived_recurring": 14,
-    "professor_derived_token_count": 57,
+    "professor_derived_token_count": 56,
     "reference_only_metadata": 5,
     "unresolved": 2,
     "unresolved_token_count": 2
@@ -1350,38 +1422,16 @@
       "authority_family": "body_composition",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
       "source_scope": "slide_body",
       "status": "resolved",
       "supporting_ids": [
-        "O006"
+        "T004005",
+        "T010014"
       ],
       "token_family": "typography",
-      "token_id": "type-p3-layout-exemplar-2-body-complex_script-099",
-      "value": {
-        "family": "Calibri",
-        "kind": "typography",
-        "role": "body",
-        "script_role": "complex_script",
-        "size_pt": 12.0,
-        "style": "normal",
-        "weight": "regular"
-      }
-    },
-    {
-      "authority_family": "body_composition",
-      "evidence_tier": "single_example_provisional",
-      "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
-      "source_role": "P3-LAYOUT-EXEMPLAR-2",
-      "source_scope": "slide_body",
-      "status": "resolved",
-      "supporting_ids": [
-        "O018"
-      ],
-      "token_family": "typography",
-      "token_id": "type-p3-layout-exemplar-2-body-complex_script-186",
+      "token_id": "type-body-complex_script-d4210042e9",
       "value": {
         "family": "Calibri",
         "kind": "typography",
@@ -1396,15 +1446,15 @@
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
       "supporting_ids": [
-        "TYPE000"
+        "TS95590b220c19fd4b"
       ],
       "token_family": "typography",
-      "token_id": "type-p3-template-primary-1-title-complex_script-000",
+      "token_id": "type-title-complex_script-332c86a652",
       "value": {
         "family": "Arial",
         "kind": "typography",
@@ -1419,15 +1469,15 @@
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
       "supporting_ids": [
-        "TYPE003"
+        "TS95590b220c19fd4b"
       ],
       "token_family": "typography",
-      "token_id": "type-p3-template-primary-1-title-complex_script-003",
+      "token_id": "type-title-complex_script-4b895dbcbd",
       "value": {
         "family": "Times New Roman",
         "kind": "typography",
@@ -1442,15 +1492,15 @@
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
       "supporting_ids": [
-        "TYPE001"
+        "TS95590b220c19fd4b"
       ],
       "token_family": "typography",
-      "token_id": "type-p3-template-primary-1-title-east_asian-001",
+      "token_id": "type-title-east_asian-75c4822e89",
       "value": {
         "family": "Arial",
         "kind": "typography",
@@ -1465,15 +1515,15 @@
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
       "supporting_ids": [
-        "TYPE004"
+        "TS95590b220c19fd4b"
       ],
       "token_family": "typography",
-      "token_id": "type-p3-template-primary-1-title-east_asian-004",
+      "token_id": "type-title-east_asian-7f585c74f7",
       "value": {
         "family": "Times New Roman",
         "kind": "typography",
@@ -1488,21 +1538,21 @@
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
       "supporting_ids": [
-        "TYPE002"
+        "TS95590b220c19fd4b"
       ],
       "token_family": "typography",
-      "token_id": "type-p3-template-primary-1-title-latin-002",
+      "token_id": "type-title-latin-3799ec73f4",
       "value": {
-        "family": "Arial",
+        "family": "Times New Roman",
         "kind": "typography",
         "role": "title",
         "script_role": "latin",
-        "size_pt": 18.0,
+        "size_pt": 23.0,
         "style": "normal",
         "weight": "bold"
       }
@@ -1511,21 +1561,21 @@
       "authority_family": "formal_shell",
       "evidence_tier": "single_example_provisional",
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
       "status": "resolved",
       "supporting_ids": [
-        "TYPE005"
+        "TS95590b220c19fd4b"
       ],
       "token_family": "typography",
-      "token_id": "type-p3-template-primary-1-title-latin-005",
+      "token_id": "type-title-latin-976378703c",
       "value": {
-        "family": "Times New Roman",
+        "family": "Arial",
         "kind": "typography",
         "role": "title",
         "script_role": "latin",
-        "size_pt": 23.0,
+        "size_pt": 18.0,
         "style": "normal",
         "weight": "bold"
       }

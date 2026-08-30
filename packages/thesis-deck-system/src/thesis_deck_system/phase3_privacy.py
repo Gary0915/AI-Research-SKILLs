@@ -237,24 +237,26 @@ class RepositoryPrivacyScanner:
 
     def scan_repository(self, repository_root: Path | str) -> list[PrivacyFinding]:
         """Scan tracked files and staged candidates without returning any private content."""
+        return self.scan_staged(Path(repository_root)) + self.scan_tracked_repository(repository_root)
+
+    def scan_tracked_repository(self, repository_root: Path | str) -> list[PrivacyFinding]:
+        """Scan tracked repository content only; staged content is a distinct owning input."""
         repo = Path(repository_root)
         result = subprocess.run(["git", "ls-files", "--cached"], cwd=repo, check=False, capture_output=True, text=True, encoding="utf-8", errors="strict")
         paths = [repo / line for line in result.stdout.splitlines() if line]
-        findings = self.scan_staged(repo)
         canonical_paths = [path for path in paths if not self._is_narrow_canary_exclusion(path)]
         # Large repositories contain instructional examples of POSIX/Windows
         # paths.  CP2 supplies configured private-root signatures for the
         # production scan; generic absolute-path canaries remain enabled for
         # small synthetic repositories and staged content.
-        findings.extend(self._scan_text_paths(canonical_paths, repo, generic_absolute_paths=len(canonical_paths) < 100))
-        return findings
+        return self._scan_text_paths(canonical_paths, repo, generic_absolute_paths=len(canonical_paths) < 100)
 
     def scan_repository_with_legacy_exception(
-        self, repository_root: Path | str, *, forbidden_basenames: Iterable[str]
+        self, repository_root: Path | str, *, forbidden_basenames: Iterable[str], include_staged: bool = True
     ) -> tuple[list[PrivacyFinding], list[dict[str, str]]]:
         """Apply only the reviewer-authorized, blob-bound historical exception."""
         repo = Path(repository_root)
-        findings = self.scan_repository(repo)
+        findings = self.scan_repository(repo) if include_staged else self.scan_tracked_repository(repo)
         exceptions: list[dict[str, str]] = []
         target = repo / LEGACY_EXCEPTION_PATH
         target_findings = [item for item in findings if item.location == LEGACY_EXCEPTION_PATH]

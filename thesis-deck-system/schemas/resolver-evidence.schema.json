@@ -1,1 +1,668 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"resolver-evidence.schema.json","type":"object","additionalProperties":false,"required":["schema_version","evidence_id","input_hashes","private_alias_resolution_attempts","private_source_open_attempts","private_render_attempts","owning_checks"],"properties":{"schema_version":{"const":"2.0.0"},"evidence_id":{"const":"CP3-EXEC-001"},"input_hashes":{"type":"object","additionalProperties":false,"required":["shell","body","manifest","checkpoint2_qa"],"properties":{"shell":{"type":"string","pattern":"^[0-9a-f]{64}$"},"body":{"type":"string","pattern":"^[0-9a-f]{64}$"},"manifest":{"type":"string","pattern":"^[0-9a-f]{64}$"},"checkpoint2_qa":{"type":"string","pattern":"^[0-9a-f]{64}$"}}},"private_alias_resolution_attempts":{"const":0},"private_source_open_attempts":{"const":0},"private_render_attempts":{"const":0},"owning_checks":{"type":"array","minItems":19,"items":{"$ref":"#/$defs/check"}}},"$defs":{"fact":{"oneOf":[{"type":"object","additionalProperties":false,"required":["name","kind","boolean"],"properties":{"name":{"type":"string","pattern":"^[a-z][a-z0-9_]+$"},"kind":{"const":"boolean"},"boolean":{"type":"boolean"}}},{"type":"object","additionalProperties":false,"required":["name","kind","integer"],"properties":{"name":{"type":"string","pattern":"^[a-z][a-z0-9_]+$"},"kind":{"const":"integer"},"integer":{"type":"integer","minimum":0}}},{"type":"object","additionalProperties":false,"required":["name","kind","identifier"],"properties":{"name":{"type":"string","pattern":"^[a-z][a-z0-9_]+$"},"kind":{"const":"controlled_id"},"identifier":{"type":"string","maxLength":128}}},{"type":"object","additionalProperties":false,"required":["name","kind","identifiers"],"properties":{"name":{"type":"string","pattern":"^[a-z][a-z0-9_]+$"},"kind":{"const":"identifier_list"},"identifiers":{"type":"array","items":{"type":"string","maxLength":128}}}}]},"check":{"type":"object","additionalProperties":false,"required":["check_id","status","evidence"],"properties":{"check_id":{"type":"string","pattern":"^CP3-[A-Z0-9-]+$"},"status":{"enum":["pass","fail"]},"evidence":{"type":"object","additionalProperties":false,"required":["facts"],"properties":{"facts":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/fact"}}}}}}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resolver-evidence.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "input_hashes",
+    "private_alias_resolution_attempts",
+    "private_source_open_attempts",
+    "private_render_attempts",
+    "owning_checks",
+    "candidate_state",
+    "governed_report_facts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "2.0.0"
+    },
+    "evidence_id": {
+      "const": "CP3-EXEC-001"
+    },
+    "input_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shell",
+        "body",
+        "manifest",
+        "checkpoint2_qa"
+      ],
+      "properties": {
+        "shell": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "body": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "manifest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "checkpoint2_qa": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "private_alias_resolution_attempts": {
+      "const": 0
+    },
+    "private_source_open_attempts": {
+      "const": 0
+    },
+    "private_render_attempts": {
+      "const": 0
+    },
+    "owning_checks": {
+      "type": "array",
+      "minItems": 19,
+      "items": {
+        "$ref": "#/$defs/check"
+      }
+    },
+    "candidate_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_hashes",
+        "composite_candidate_state_hash"
+      ],
+      "properties": {
+        "component_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cp2:shell",
+            "cp2:body",
+            "cp2:manifest",
+            "cp2:checkpoint2_qa",
+            "resolver:phase3_checkpoint3.py",
+            "schema:professor-template-resolved.schema.json",
+            "schema:body-composition-profile.schema.json",
+            "schema:professor-visual-grammar-v3.schema.json",
+            "schema:visual-style-profile.schema.json",
+            "schema:resolver-evidence.schema.json",
+            "schema:checkpoint-3-qa.schema.json"
+          ],
+          "properties": {
+            "cp2:shell": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "cp2:body": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "cp2:manifest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "cp2:checkpoint2_qa": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "resolver:phase3_checkpoint3.py": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "schema:professor-template-resolved.schema.json": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "schema:body-composition-profile.schema.json": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "schema:professor-visual-grammar-v3.schema.json": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "schema:visual-style-profile.schema.json": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "schema:resolver-evidence.schema.json": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "schema:checkpoint-3-qa.schema.json": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        },
+        "composite_candidate_state_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "governed_report_facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category_statuses",
+        "category_counts",
+        "typography_count",
+        "binding_count",
+        "owning_check_count",
+        "regression_expected_component_count"
+      ],
+      "properties": {
+        "category_statuses": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "shell_geometry",
+            "typography_hierarchy",
+            "body_composition",
+            "scientific_figure_metrics",
+            "connector_arrow_grammar",
+            "line_style_grammar",
+            "color_emphasis_grammar",
+            "unresolved_fallback_reference"
+          ],
+          "properties": {
+            "shell_geometry": {
+              "enum": [
+                "fully_calibrated",
+                "partial_recurring",
+                "provisional_only",
+                "unresolved"
+              ]
+            },
+            "typography_hierarchy": {
+              "enum": [
+                "fully_calibrated",
+                "partial_recurring",
+                "provisional_only",
+                "unresolved"
+              ]
+            },
+            "body_composition": {
+              "enum": [
+                "fully_calibrated",
+                "partial_recurring",
+                "provisional_only",
+                "unresolved"
+              ]
+            },
+            "scientific_figure_metrics": {
+              "enum": [
+                "fully_calibrated",
+                "partial_recurring",
+                "provisional_only",
+                "unresolved"
+              ]
+            },
+            "connector_arrow_grammar": {
+              "enum": [
+                "fully_calibrated",
+                "partial_recurring",
+                "provisional_only",
+                "unresolved"
+              ]
+            },
+            "line_style_grammar": {
+              "enum": [
+                "fully_calibrated",
+                "partial_recurring",
+                "provisional_only",
+                "unresolved"
+              ]
+            },
+            "color_emphasis_grammar": {
+              "enum": [
+                "fully_calibrated",
+                "partial_recurring",
+                "provisional_only",
+                "unresolved"
+              ]
+            },
+            "unresolved_fallback_reference": {
+              "enum": [
+                "fully_calibrated",
+                "partial_recurring",
+                "provisional_only",
+                "unresolved"
+              ]
+            }
+          }
+        },
+        "category_counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "shell_geometry",
+            "typography_hierarchy",
+            "body_composition",
+            "scientific_figure_metrics",
+            "connector_arrow_grammar",
+            "line_style_grammar",
+            "color_emphasis_grammar",
+            "unresolved_fallback_reference"
+          ],
+          "properties": {
+            "shell_geometry": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "professor_derived_recurring",
+                "professor_derived_provisional",
+                "fallback",
+                "unresolved",
+                "reference_only_metadata"
+              ],
+              "properties": {
+                "professor_derived_recurring": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "professor_derived_provisional": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "fallback": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "unresolved": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "reference_only_metadata": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "typography_hierarchy": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "professor_derived_recurring",
+                "professor_derived_provisional",
+                "fallback",
+                "unresolved",
+                "reference_only_metadata"
+              ],
+              "properties": {
+                "professor_derived_recurring": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "professor_derived_provisional": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "fallback": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "unresolved": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "reference_only_metadata": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "body_composition": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "professor_derived_recurring",
+                "professor_derived_provisional",
+                "fallback",
+                "unresolved",
+                "reference_only_metadata"
+              ],
+              "properties": {
+                "professor_derived_recurring": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "professor_derived_provisional": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "fallback": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "unresolved": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "reference_only_metadata": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "scientific_figure_metrics": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "professor_derived_recurring",
+                "professor_derived_provisional",
+                "fallback",
+                "unresolved",
+                "reference_only_metadata"
+              ],
+              "properties": {
+                "professor_derived_recurring": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "professor_derived_provisional": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "fallback": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "unresolved": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "reference_only_metadata": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "connector_arrow_grammar": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "professor_derived_recurring",
+                "professor_derived_provisional",
+                "fallback",
+                "unresolved",
+                "reference_only_metadata"
+              ],
+              "properties": {
+                "professor_derived_recurring": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "professor_derived_provisional": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "fallback": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "unresolved": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "reference_only_metadata": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "line_style_grammar": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "professor_derived_recurring",
+                "professor_derived_provisional",
+                "fallback",
+                "unresolved",
+                "reference_only_metadata"
+              ],
+              "properties": {
+                "professor_derived_recurring": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "professor_derived_provisional": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "fallback": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "unresolved": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "reference_only_metadata": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "color_emphasis_grammar": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "professor_derived_recurring",
+                "professor_derived_provisional",
+                "fallback",
+                "unresolved",
+                "reference_only_metadata"
+              ],
+              "properties": {
+                "professor_derived_recurring": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "professor_derived_provisional": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "fallback": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "unresolved": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "reference_only_metadata": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "unresolved_fallback_reference": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "professor_derived_recurring",
+                "professor_derived_provisional",
+                "fallback",
+                "unresolved",
+                "reference_only_metadata"
+              ],
+              "properties": {
+                "professor_derived_recurring": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "professor_derived_provisional": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "fallback": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "unresolved": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "reference_only_metadata": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        },
+        "typography_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "binding_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "owning_check_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "regression_expected_component_count": {
+          "const": 11
+        }
+      }
+    }
+  },
+  "$defs": {
+    "fact": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "kind",
+            "boolean"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]+$"
+            },
+            "kind": {
+              "const": "boolean"
+            },
+            "boolean": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "kind",
+            "integer"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]+$"
+            },
+            "kind": {
+              "const": "integer"
+            },
+            "integer": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "kind",
+            "identifier"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]+$"
+            },
+            "kind": {
+              "const": "controlled_id"
+            },
+            "identifier": {
+              "type": "string",
+              "maxLength": 128
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "kind",
+            "identifiers"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]+$"
+            },
+            "kind": {
+              "const": "identifier_list"
+            },
+            "identifiers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 128
+              }
+            }
+          }
+        }
+      ]
+    },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "check_id",
+        "status",
+        "evidence"
+      ],
+      "properties": {
+        "check_id": {
+          "type": "string",
+          "pattern": "^CP3-[A-Z0-9-]+$"
+        },
+        "status": {
+          "enum": [
+            "pass",
+            "fail"
+          ]
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "facts"
+          ],
+          "properties": {
+            "facts": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/fact"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

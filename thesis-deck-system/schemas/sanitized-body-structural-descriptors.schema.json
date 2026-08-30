@@ -745,11 +745,26 @@
             "type": "object",
             "additionalProperties": false,
             "required": [
+                "candidate_id",
+                "bound_slide_id",
+                "binding_fingerprint",
                 "family",
                 "confidence",
                 "evidence_basis"
             ],
             "properties": {
+                "candidate_id": {
+                    "type": "string",
+                    "pattern": "^BC[0-9]{3,}$"
+                },
+                "bound_slide_id": {
+                    "type": "string",
+                    "pattern": "^SL[0-9]{3,}$"
+                },
+                "binding_fingerprint": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                },
                 "family": {
                     "enum": [
                         "formal_shell_divider",

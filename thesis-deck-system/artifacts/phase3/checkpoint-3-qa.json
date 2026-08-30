@@ -2,7 +2,7 @@
   "aggregate_status": "pass",
   "checkpoint_id": "PHASE_3_CHECKPOINT_3",
   "execution_evidence_id": "CP3-EXEC-001",
-  "execution_evidence_sha256": "64d99ebd79557dd79c707b656e8894308bf89a2dfeb0e476f7ed824086a51c2c",
+  "execution_evidence_sha256": "e10e4a8c8038c659a59b2fd1fc715163da6a84309d7f3060155211e5d6af01bd",
   "owning_checks": [
     {
       "check_id": "CP3-CP2-SCHEMAS",
@@ -145,7 +145,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 62,
+            "integer": 61,
             "kind": "integer",
             "name": "checked_token_count"
           }
@@ -202,7 +202,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 8,
+            "integer": 7,
             "kind": "integer",
             "name": "resolved_typography_count"
           }
@@ -215,7 +215,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 8,
+            "integer": 7,
             "kind": "integer",
             "name": "authority_valid_typography_count"
           }
@@ -241,9 +241,34 @@
       "evidence": {
         "facts": [
           {
-            "integer": 3,
+            "integer": 0,
             "kind": "integer",
-            "name": "binding_family_count"
+            "name": "ambiguous_binding_count"
+          },
+          {
+            "integer": 13,
+            "kind": "integer",
+            "name": "binding_count"
+          },
+          {
+            "identifier": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+            "kind": "controlled_id",
+            "name": "binding_method_id"
+          },
+          {
+            "integer": 13,
+            "kind": "integer",
+            "name": "unique_candidate_count"
+          },
+          {
+            "integer": 13,
+            "kind": "integer",
+            "name": "unique_slide_count"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "unresolved_binding_count"
           }
         ]
       },
@@ -306,7 +331,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 60,
+            "integer": 59,
             "kind": "integer",
             "name": "style_token_count"
           }
@@ -319,9 +344,42 @@
       "evidence": {
         "facts": [
           {
-            "integer": 57,
+            "integer": 56,
             "kind": "integer",
             "name": "derived_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-REPORT-ARTIFACT-CONSISTENCY",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 13,
+            "kind": "integer",
+            "name": "binding_count"
+          },
+          {
+            "identifier": "b6f73e21206cdca7c35b400944a430b173f139a611fd7879f47c501c8d9c53d6",
+            "kind": "controlled_id",
+            "name": "category_count_hash"
+          },
+          {
+            "identifier": "447dfb702557aba0b2dfc621d0a7a8ada8bda116bcfa3e3e7d06c76113c63175",
+            "kind": "controlled_id",
+            "name": "category_status_hash"
+          },
+          {
+            "integer": 28,
+            "kind": "integer",
+            "name": "owning_check_count"
+          },
+          {
+            "integer": 7,
+            "kind": "integer",
+            "name": "typography_count"
           }
         ]
       },
@@ -363,7 +421,7 @@
       "evidence": {
         "facts": [
           {
-            "identifier": "971d671f4c752b0ee1a38e9d3843f97ea90e34a2bd8ca3e8c1df8c310a7eb415",
+            "identifier": "ee33787ac3cc1f8930946a06344146df4e98d554a6ec43b8efa99498e263d67b",
             "kind": "controlled_id",
             "name": "resolver_input_hash"
           }
@@ -376,19 +434,44 @@
       "evidence": {
         "facts": [
           {
-            "integer": 0,
+            "integer": 1,
             "kind": "integer",
-            "name": "approved_legacy_exception_count"
+            "name": "approved_legacy_exceptions"
+          },
+          {
+            "identifier": "bba552a3d0cc7dd9a8ffe737d780a2a941591664c6c736cc85d83445801dd018",
+            "kind": "controlled_id",
+            "name": "configuration_hash"
           },
           {
             "integer": 0,
             "kind": "integer",
-            "name": "repository_unexcepted_finding_count"
+            "name": "repository_findings"
           },
           {
             "boolean": true,
             "kind": "boolean",
-            "name": "staged_scan_bound"
+            "name": "repository_scan_executed"
+          },
+          {
+            "identifier": "RepositoryPrivacyScanner",
+            "kind": "controlled_id",
+            "name": "scanner_id"
+          },
+          {
+            "identifier": "CP3-REPOSITORY-STAGED-V1",
+            "kind": "controlled_id",
+            "name": "scanner_version"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "staged_findings"
+          },
+          {
+            "boolean": true,
+            "kind": "boolean",
+            "name": "staged_scan_executed"
           }
         ]
       },
@@ -399,7 +482,12 @@
       "evidence": {
         "facts": [
           {
-            "identifier": "c14fbfc541be6d53a3997dccfaf90e0574ca942fc9f66b2fb5fe8a7379fce62a",
+            "integer": 11,
+            "kind": "integer",
+            "name": "candidate_component_count"
+          },
+          {
+            "identifier": "7aebc9dc10ce6c2f3a3640943d48a542c9b1c7af8fab6ab243f8862f3edfec25",
             "kind": "controlled_id",
             "name": "candidate_state_binding"
           },
@@ -414,7 +502,7 @@
             "name": "tests_failed"
           },
           {
-            "integer": 267,
+            "integer": 280,
             "kind": "integer",
             "name": "tests_passed"
           }

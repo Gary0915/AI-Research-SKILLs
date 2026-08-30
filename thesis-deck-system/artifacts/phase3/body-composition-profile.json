@@ -109,6 +109,216 @@
       "status": "audit_only"
     }
   ],
+  "candidate_slide_bindings": [
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "bf82fbd33b5eb55b8cc32d6ceaddbc863538c938f856f4a2d806031a2da1a09a",
+        "candidate_evidence_ids": [
+          "insufficient"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC001",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC001",
+      "confidence": "insufficient_structural_evidence",
+      "family": "other_insufficient_structural_evidence",
+      "slide_id": "SL001"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "90e7e7bb5992916febe6d135663498cb1400cba1a139408a4b96c9bba5091ab0",
+        "candidate_evidence_ids": [
+          "insufficient"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC002",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC002",
+      "confidence": "insufficient_structural_evidence",
+      "family": "other_insufficient_structural_evidence",
+      "slide_id": "SL002"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "a601e8227b4413e96430a9d31c943291955d4b888c96f1ea3cc439460b6755e9",
+        "candidate_evidence_ids": [
+          "O002",
+          "picture_geometry"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC003",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC003",
+      "confidence": "provisional",
+      "family": "result_single",
+      "slide_id": "SL003"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "7c52570ce0b5c182cb369b70b2af0d8146d0fef491cd68911e9266505e294268",
+        "candidate_evidence_ids": [
+          "insufficient"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC004",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC004",
+      "confidence": "insufficient_structural_evidence",
+      "family": "other_insufficient_structural_evidence",
+      "slide_id": "SL004"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "3e5bb1b016c9f4a5e705a23a2083d69aeefd704c39463fa9092dd21dabd8c152",
+        "candidate_evidence_ids": [
+          "insufficient"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC005",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC005",
+      "confidence": "insufficient_structural_evidence",
+      "family": "other_insufficient_structural_evidence",
+      "slide_id": "SL005"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "e9e452a1406ffc3ad055bf4cb9fa052932bd38b8ddcb5cfcf7a3b904d8a6c5fe",
+        "candidate_evidence_ids": [
+          "O024",
+          "picture_geometry"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC006",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC006",
+      "confidence": "provisional",
+      "family": "result_single",
+      "slide_id": "SL006"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "146556c4c8e11892d4b3038bdcac3c4a8baf9be353f1323a62dadd37db4ef1d7",
+        "candidate_evidence_ids": [
+          "insufficient"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC007",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC007",
+      "confidence": "insufficient_structural_evidence",
+      "family": "other_insufficient_structural_evidence",
+      "slide_id": "SL007"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "c6471860a1c119a1dacfbbdd4db6d9595337315cdb80166aadd5296cb6405720",
+        "candidate_evidence_ids": [
+          "O025",
+          "picture_geometry"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC008",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC008",
+      "confidence": "provisional",
+      "family": "result_single",
+      "slide_id": "SL008"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "5be54224001828a54a135ac9ecfc7852469f94db4b8ea2ad58a98b278452f3e9",
+        "candidate_evidence_ids": [
+          "insufficient"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC009",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC009",
+      "confidence": "insufficient_structural_evidence",
+      "family": "other_insufficient_structural_evidence",
+      "slide_id": "SL009"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "6c0c77f5d2b9d3b63936a95dc3c724f52f91099b948f0119bb51993fac552390",
+        "candidate_evidence_ids": [
+          "O004",
+          "picture_geometry"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC010",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC010",
+      "confidence": "provisional",
+      "family": "result_single",
+      "slide_id": "SL010"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "0473531eb12a8ac913697f4cd6dcef82a20c39c31c0feef6e29ac21a34174a93",
+        "candidate_evidence_ids": [
+          "O003",
+          "O014",
+          "O016",
+          "O018",
+          "O020",
+          "O022",
+          "O024",
+          "matrix_grid"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC011",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC011",
+      "confidence": "structurally_supported",
+      "family": "image_matrix",
+      "slide_id": "SL011"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "40ebf78855949738008f09a394986420d9c03ef12dc832b647b4179c98e0e2f4",
+        "candidate_evidence_ids": [
+          "O002",
+          "picture_geometry"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC012",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC012",
+      "confidence": "provisional",
+      "family": "result_single",
+      "slide_id": "SL012"
+    },
+    {
+      "binding_evidence": {
+        "binding_fingerprint": "72c45295bcc15080d22b016ba249cdadcf3fb7ecc44eea7d21b8553f6183f21f",
+        "candidate_evidence_ids": [
+          "O001",
+          "picture_geometry"
+        ]
+      },
+      "binding_id": "CP3-BIND-BC013",
+      "binding_method_id": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+      "binding_status": "resolved",
+      "candidate_id": "BC013",
+      "confidence": "provisional",
+      "family": "result_single",
+      "slide_id": "SL013"
+    }
+  ],
   "families": [
     {
       "evidence_tier": "single_example_provisional",

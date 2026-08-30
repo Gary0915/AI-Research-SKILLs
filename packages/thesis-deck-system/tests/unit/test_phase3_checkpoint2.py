@@ -11,6 +11,7 @@ from pptx import Presentation
 
 from thesis_deck_system.contracts import SchemaRegistry
 from thesis_deck_system.phase3_checkpoint2 import (
+    _body_binding_fingerprint,
     Checkpoint2PolicyViolation,
     Checkpoint2Run,
     LocalPrivateAliasResolver,
@@ -37,6 +38,15 @@ from thesis_deck_system.phase3_privacy import LEGACY_EXCEPTION_PATH, LEGACY_EXCE
 ROOT = Path(__file__).resolve().parents[4]
 SCHEMAS = ROOT / "thesis-deck-system" / "schemas"
 SHA = "a" * 64
+
+
+def _complete_body_candidate_bindings(body: dict) -> dict:
+    """Synthetic fixture helper for the explicit sanitized binding contract."""
+    for index, (candidate, measurement) in enumerate(zip(body["candidate_families"], body["body_measurements"]), start=1):
+        candidate["candidate_id"] = f"BC{index:03d}"
+        candidate["bound_slide_id"] = measurement["slide_id"]
+        candidate["binding_fingerprint"] = _body_binding_fingerprint(candidate, measurement)
+    return body
 ALIASES = (
     "private://template_primary_1",
     "private://layout_exemplar_2",
@@ -369,7 +379,7 @@ def test_metric_observation_rejects_arbitrary_relation_text():
     body = {"alias_uri": ALIASES[1], "source_sha256": SHA, "profile_id": "BODY001", "slide_size": {"width": 13.333, "height": 7.5, "basis": "measured"}, "slide_count": 1, "candidate_families": [{"family": "other_insufficient_structural_evidence", "confidence": "insufficient_structural_evidence", "evidence_basis": []}], "body_measurements": [{"slide_id": "SL001", "measurement_basis": "measured", "objects": [], "connectors": [], "groups": [], "panels": [], "metrics": {key: {"value": None, "basis": "not_observable_structurally", "evidence_state": "unavailable", "supporting_object_ids": []} for key in ("text_area_ratio", "figure_area_ratio", "dominant_figure_ratio", "figure_text_ratio", "annotation_density", "whitespace_fraction", "comparison_symmetry", "matrix_rows", "matrix_columns", "panel_count", "caption_candidate_count", "callout_candidate_count", "photo_schematic_relation")}, "style_roles": []}]}
     body["body_measurements"][0]["metrics"]["photo_schematic_relation"] = {"value": "private free text", "basis": "measured", "evidence_state": "measured", "supporting_object_ids": []}
     with pytest.raises(Checkpoint2PolicyViolation):
-        sanitize_body_descriptor(body)
+        sanitize_body_descriptor(_complete_body_candidate_bindings(body))
 
 
 def test_scheme_color_is_retained_as_theme_role_and_unknown_is_not_none():
@@ -460,7 +470,7 @@ def test_body_descriptor_preserves_typography_observation_without_text():
         "body_measurements": [{"slide_id": "SL001", "measurement_basis": "measured", "objects": [], "connectors": [], "groups": [], "panels": [], "metrics": {key: {"value": None, "basis": "not_observable_structurally", "evidence_state": "unavailable", "supporting_object_ids": []} for key in ("text_area_ratio", "figure_area_ratio", "dominant_figure_ratio", "figure_text_ratio", "annotation_density", "whitespace_fraction", "comparison_symmetry", "matrix_rows", "matrix_columns", "panel_count", "caption_candidate_count", "callout_candidate_count", "photo_schematic_relation")}, "style_roles": [], "typography_observations": [{"observation_id": "T001", "role": "annotation", "role_confidence": "provisional", "family": "Yu Gothic", "theme_font_role": None, "script_role": "latin", "font_evidence_state": "explicit_font", "size_pt": 11.0, "weight": "regular", "style": "normal", "basis": "measured", "source_scope": "slide_body", "supporting_object_id": "O001"}]}],
         "theme_profiles": [], "slide_theme_topology": []
     }
-    result = sanitize_body_descriptor(body)
+    result = sanitize_body_descriptor(_complete_body_candidate_bindings(body))
     assert result["body_measurements"][0]["typography_observations"][0]["family"] == "Yu Gothic"
 
 

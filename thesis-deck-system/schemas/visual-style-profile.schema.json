@@ -1,1 +1,570 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"visual-style-profile.schema.json","oneOf":[{"$ref":"#/$defs/cp3"},{"$ref":"#/$defs/legacy"}],"$defs":{"tier":{"enum":["recurring_pattern","single_example_provisional","indirect_supported","insufficient_evidence"]},"value":{"oneOf":[{"type":"object","additionalProperties":false,"required":["kind","value"],"properties":{"kind":{"const":"unavailable"},"value":{"type":"null"}}},{"type":"object","additionalProperties":false,"required":["kind","width","height"],"properties":{"kind":{"const":"canvas"},"width":{"type":"number"},"height":{"type":"number"}}},{"type":"object","additionalProperties":false,"required":["kind","geometry"],"properties":{"kind":{"const":"geometry"},"geometry":{"type":"object","additionalProperties":false,"required":["x","y","w","h"],"properties":{"x":{"type":"number"},"y":{"type":"number"},"w":{"type":"number"},"h":{"type":"number"}}}}},{"type":"object","additionalProperties":false,"required":["kind","minimum","maximum","center"],"properties":{"kind":{"const":"range"},"minimum":{"type":"number"},"maximum":{"type":"number"},"center":{"type":"number"}}},{"type":"object","additionalProperties":false,"required":["kind","family","size_pt","weight","style","script_role","role"],"properties":{"kind":{"const":"typography"},"family":{"type":"string","maxLength":128},"size_pt":{"type":"number"},"weight":{"type":"string"},"style":{"type":"string"},"script_role":{"enum":["latin","east_asian","complex_script"]},"role":{"type":"string"}}},{"type":"object","additionalProperties":false,"required":["kind","rgb","semantic_role","rotation_eligible"],"properties":{"kind":{"const":"color"},"rgb":{"type":"string","pattern":"^[0-9A-F]{6}$"},"semantic_role":{"enum":["neutral","accent","emphasis","unknown"]},"rotation_eligible":{"type":"boolean"}}},{"type":"object","additionalProperties":false,"required":["kind","orientation","directedness","head_marker","tail_marker","rotation_eligible"],"properties":{"kind":{"const":"connector"},"orientation":{"enum":["horizontal","vertical","diagonal","unknown"]},"directedness":{"enum":["directed","plain","unknown"]},"head_marker":{"enum":["none","triangle","unknown"]},"tail_marker":{"enum":["none","triangle","unknown"]},"rotation_eligible":{"const":true}}}]},"token":{"type":"object","additionalProperties":false,"required":["token_id","token_family","value","origin","evidence_tier","source_role","source_scope","supporting_ids","resolver_rule_id","authority_family","status"],"properties":{"token_id":{"type":"string","pattern":"^[a-z][a-z0-9_-]+$"},"token_family":{"enum":["shell","typography","scientific_visual"]},"value":{"$ref":"#/$defs/value"},"origin":{"enum":["professor_derived","phase2_fallback","implementation_fallback","unresolved"]},"evidence_tier":{"$ref":"#/$defs/tier"},"source_role":{"type":"string","pattern":"^[A-Za-z][A-Za-z0-9_-]{0,127}$"},"source_scope":{"type":"string","pattern":"^[a-z_]+$"},"supporting_ids":{"type":"array","items":{"type":"string","pattern":"^[A-Za-z][A-Za-z0-9_-]{0,127}$"}},"resolver_rule_id":{"type":"string","pattern":"^[A-Za-z][A-Za-z0-9_-]{0,127}$"},"authority_family":{"enum":["formal_shell","body_composition","implementation"]},"status":{"enum":["resolved","unresolved"]}}},"category":{"type":"object","additionalProperties":false,"required":["professor_derived_recurring","professor_derived_provisional","fallback","unresolved","reference_only_metadata","reusable_coverage_status"],"properties":{"professor_derived_recurring":{"type":"integer","minimum":0},"professor_derived_provisional":{"type":"integer","minimum":0},"fallback":{"type":"integer","minimum":0},"unresolved":{"type":"integer","minimum":0},"reference_only_metadata":{"type":"integer","minimum":0},"reusable_coverage_status":{"enum":["fully_calibrated","provisional_only","unresolved"]}}},"coverage":{"type":"object","additionalProperties":false,"required":["professor_derived_recurring","professor_derived_provisional","fallback","unresolved","reference_only_metadata","professor_derived_token_count","fallback_token_count","unresolved_token_count","categories"],"properties":{"professor_derived_recurring":{"type":"integer","minimum":0},"professor_derived_provisional":{"type":"integer","minimum":0},"fallback":{"type":"integer","minimum":0},"unresolved":{"type":"integer","minimum":0},"reference_only_metadata":{"type":"integer","minimum":0},"professor_derived_token_count":{"type":"integer","minimum":0},"fallback_token_count":{"type":"integer","minimum":0},"unresolved_token_count":{"type":"integer","minimum":0},"categories":{"type":"object","additionalProperties":false,"required":["shell_geometry","typography_hierarchy","body_composition","scientific_figure_metrics","connector_arrow_grammar","line_style_grammar","color_emphasis_grammar","unresolved_fallback_reference"],"properties":{"shell_geometry":{"$ref":"#/$defs/category"},"typography_hierarchy":{"$ref":"#/$defs/category"},"body_composition":{"$ref":"#/$defs/category"},"scientific_figure_metrics":{"$ref":"#/$defs/category"},"connector_arrow_grammar":{"$ref":"#/$defs/category"},"line_style_grammar":{"$ref":"#/$defs/category"},"color_emphasis_grammar":{"$ref":"#/$defs/category"},"unresolved_fallback_reference":{"$ref":"#/$defs/category"}}}}},"cp3":{"type":"object","additionalProperties":false,"required":["schema_version","style_profile_id","status","tokens","coverage"],"properties":{"schema_version":{"const":"3.0.0"},"style_profile_id":{"const":"VSP003"},"status":{"const":"partial_structural_calibration"},"tokens":{"type":"array","items":{"$ref":"#/$defs/token"}},"coverage":{"$ref":"#/$defs/coverage"}}},"legacy":{"type":"object","additionalProperties":false,"required":["schema_version","style_profile_id","status","token_provenance","material_tokens","arrow_tokens","emphasis_tokens","annotation_tokens"],"properties":{"schema_version":{"const":"3.0.0"},"style_profile_id":{"type":"string","pattern":"^VSP[0-9]{3,}$"},"status":{"enum":["synthetic_checkpoint","blocked_fixture"]},"token_provenance":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["token_id","source_role"],"properties":{"token_id":{"type":"string"},"source_role":{"enum":["synthetic_checkpoint","formal_shell","body_composition"]}}}},"material_tokens":{"type":"object","additionalProperties":false,"properties":{}},"arrow_tokens":{"type":"object","additionalProperties":false,"properties":{}},"emphasis_tokens":{"type":"object","additionalProperties":false,"properties":{}},"annotation_tokens":{"type":"object","additionalProperties":false,"properties":{}}}}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "visual-style-profile.schema.json",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/cp3"
+    },
+    {
+      "$ref": "#/$defs/legacy"
+    }
+  ],
+  "$defs": {
+    "tier": {
+      "enum": [
+        "recurring_pattern",
+        "single_example_provisional",
+        "indirect_supported",
+        "insufficient_evidence"
+      ]
+    },
+    "value": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "value"
+          ],
+          "properties": {
+            "kind": {
+              "const": "unavailable"
+            },
+            "value": {
+              "type": "null"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "width",
+            "height"
+          ],
+          "properties": {
+            "kind": {
+              "const": "canvas"
+            },
+            "width": {
+              "type": "number"
+            },
+            "height": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "geometry"
+          ],
+          "properties": {
+            "kind": {
+              "const": "geometry"
+            },
+            "geometry": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "x",
+                "y",
+                "w",
+                "h"
+              ],
+              "properties": {
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "w": {
+                  "type": "number"
+                },
+                "h": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "minimum",
+            "maximum",
+            "center"
+          ],
+          "properties": {
+            "kind": {
+              "const": "range"
+            },
+            "minimum": {
+              "type": "number"
+            },
+            "maximum": {
+              "type": "number"
+            },
+            "center": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "family",
+            "size_pt",
+            "weight",
+            "style",
+            "script_role",
+            "role"
+          ],
+          "properties": {
+            "kind": {
+              "const": "typography"
+            },
+            "family": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "size_pt": {
+              "type": "number"
+            },
+            "weight": {
+              "type": "string"
+            },
+            "style": {
+              "type": "string"
+            },
+            "script_role": {
+              "enum": [
+                "latin",
+                "east_asian",
+                "complex_script"
+              ]
+            },
+            "role": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "rgb",
+            "semantic_role",
+            "rotation_eligible"
+          ],
+          "properties": {
+            "kind": {
+              "const": "color"
+            },
+            "rgb": {
+              "type": "string",
+              "pattern": "^[0-9A-F]{6}$"
+            },
+            "semantic_role": {
+              "enum": [
+                "neutral",
+                "accent",
+                "emphasis",
+                "unknown"
+              ]
+            },
+            "rotation_eligible": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "orientation",
+            "directedness",
+            "head_marker",
+            "tail_marker",
+            "rotation_eligible"
+          ],
+          "properties": {
+            "kind": {
+              "const": "connector"
+            },
+            "orientation": {
+              "enum": [
+                "horizontal",
+                "vertical",
+                "diagonal",
+                "unknown"
+              ]
+            },
+            "directedness": {
+              "enum": [
+                "directed",
+                "plain",
+                "unknown"
+              ]
+            },
+            "head_marker": {
+              "enum": [
+                "none",
+                "triangle",
+                "unknown"
+              ]
+            },
+            "tail_marker": {
+              "enum": [
+                "none",
+                "triangle",
+                "unknown"
+              ]
+            },
+            "rotation_eligible": {
+              "const": true
+            }
+          }
+        }
+      ]
+    },
+    "token": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "token_id",
+        "token_family",
+        "value",
+        "origin",
+        "evidence_tier",
+        "source_role",
+        "source_scope",
+        "supporting_ids",
+        "resolver_rule_id",
+        "authority_family",
+        "status"
+      ],
+      "properties": {
+        "token_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]+$"
+        },
+        "token_family": {
+          "enum": [
+            "shell",
+            "typography",
+            "scientific_visual"
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/value"
+        },
+        "origin": {
+          "enum": [
+            "professor_derived",
+            "phase2_fallback",
+            "implementation_fallback",
+            "unresolved"
+          ]
+        },
+        "evidence_tier": {
+          "$ref": "#/$defs/tier"
+        },
+        "source_role": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "source_scope": {
+          "type": "string",
+          "pattern": "^[a-z_]+$"
+        },
+        "supporting_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+          }
+        },
+        "resolver_rule_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"
+        },
+        "authority_family": {
+          "enum": [
+            "formal_shell",
+            "body_composition",
+            "implementation"
+          ]
+        },
+        "status": {
+          "enum": [
+            "resolved",
+            "unresolved"
+          ]
+        }
+      }
+    },
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "professor_derived_recurring",
+        "professor_derived_provisional",
+        "fallback",
+        "unresolved",
+        "reference_only_metadata",
+        "reusable_coverage_status",
+        "required_subcapabilities",
+        "satisfied_subcapabilities"
+      ],
+      "properties": {
+        "professor_derived_recurring": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "professor_derived_provisional": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fallback": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reference_only_metadata": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reusable_coverage_status": {
+          "enum": [
+            "fully_calibrated",
+            "partial_recurring",
+            "provisional_only",
+            "unresolved"
+          ]
+        },
+        "required_subcapabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z_]+$"
+          },
+          "minItems": 1
+        },
+        "satisfied_subcapabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z_]+$"
+          }
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "professor_derived_recurring",
+        "professor_derived_provisional",
+        "fallback",
+        "unresolved",
+        "reference_only_metadata",
+        "professor_derived_token_count",
+        "fallback_token_count",
+        "unresolved_token_count",
+        "categories"
+      ],
+      "properties": {
+        "professor_derived_recurring": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "professor_derived_provisional": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fallback": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reference_only_metadata": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "professor_derived_token_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fallback_token_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved_token_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "categories": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "shell_geometry",
+            "typography_hierarchy",
+            "body_composition",
+            "scientific_figure_metrics",
+            "connector_arrow_grammar",
+            "line_style_grammar",
+            "color_emphasis_grammar",
+            "unresolved_fallback_reference"
+          ],
+          "properties": {
+            "shell_geometry": {
+              "$ref": "#/$defs/category"
+            },
+            "typography_hierarchy": {
+              "$ref": "#/$defs/category"
+            },
+            "body_composition": {
+              "$ref": "#/$defs/category"
+            },
+            "scientific_figure_metrics": {
+              "$ref": "#/$defs/category"
+            },
+            "connector_arrow_grammar": {
+              "$ref": "#/$defs/category"
+            },
+            "line_style_grammar": {
+              "$ref": "#/$defs/category"
+            },
+            "color_emphasis_grammar": {
+              "$ref": "#/$defs/category"
+            },
+            "unresolved_fallback_reference": {
+              "$ref": "#/$defs/category"
+            }
+          }
+        }
+      }
+    },
+    "cp3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "style_profile_id",
+        "status",
+        "tokens",
+        "coverage"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "3.0.0"
+        },
+        "style_profile_id": {
+          "const": "VSP003"
+        },
+        "status": {
+          "const": "partial_structural_calibration"
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/token"
+          }
+        },
+        "coverage": {
+          "$ref": "#/$defs/coverage"
+        }
+      }
+    },
+    "legacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "style_profile_id",
+        "status",
+        "token_provenance",
+        "material_tokens",
+        "arrow_tokens",
+        "emphasis_tokens",
+        "annotation_tokens"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": "3.0.0"
+        },
+        "style_profile_id": {
+          "type": "string",
+          "pattern": "^VSP[0-9]{3,}$"
+        },
+        "status": {
+          "enum": [
+            "synthetic_checkpoint",
+            "blocked_fixture"
+          ]
+        },
+        "token_provenance": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "token_id",
+              "source_role"
+            ],
+            "properties": {
+              "token_id": {
+                "type": "string"
+              },
+              "source_role": {
+                "enum": [
+                  "synthetic_checkpoint",
+                  "formal_shell",
+                  "body_composition"
+                ]
+              }
+            }
+          }
+        },
+        "material_tokens": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {}
+        },
+        "arrow_tokens": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {}
+        },
+        "emphasis_tokens": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {}
+        },
+        "annotation_tokens": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {}
+        }
+      }
+    }
+  }
+}

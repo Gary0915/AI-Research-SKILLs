@@ -2430,165 +2430,451 @@
   ],
   "schema_version": "3.1.0",
   "status": "structural_resolution_only",
+  "typography_role_grammar": [
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "Calibri",
+      "family_alternatives": [],
+      "font_evidence_state": "explicit_font",
+      "independent_support_count": 2,
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
+      "role": "body",
+      "role_confidence": "provisional",
+      "script_role": "complex_script",
+      "size_pt": 12.0,
+      "size_range": [
+        12.0,
+        12.0
+      ],
+      "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
+      "source_role": "P3-LAYOUT-EXEMPLAR-2",
+      "source_scope": "slide_body",
+      "status": "resolved",
+      "style": "normal",
+      "supporting_container_ids": [
+        "P3-LAYOUT-EXEMPLAR-2:slide_body:SL004",
+        "P3-LAYOUT-EXEMPLAR-2:slide_body:SL010"
+      ],
+      "supporting_ids": [
+        "T004005",
+        "T010014"
+      ],
+      "supporting_slide_ids": [
+        "SL004",
+        "SL010"
+      ],
+      "token_id": "type-body-complex_script-d4210042e9",
+      "weight": "regular"
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "Arial",
+      "family_alternatives": [],
+      "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
+      "role": "title",
+      "role_confidence": "structurally_supported",
+      "script_role": "complex_script",
+      "size_pt": 18.0,
+      "size_range": [
+        18.0,
+        18.0
+      ],
+      "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "style": "normal",
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
+      ],
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-complex_script-332c86a652",
+      "weight": "bold"
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "Times New Roman",
+      "family_alternatives": [],
+      "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
+      "role": "title",
+      "role_confidence": "structurally_supported",
+      "script_role": "complex_script",
+      "size_pt": 23.0,
+      "size_range": [
+        23.0,
+        23.0
+      ],
+      "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "style": "normal",
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
+      ],
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-complex_script-4b895dbcbd",
+      "weight": "bold"
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "Arial",
+      "family_alternatives": [],
+      "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
+      "role": "title",
+      "role_confidence": "structurally_supported",
+      "script_role": "east_asian",
+      "size_pt": 18.0,
+      "size_range": [
+        18.0,
+        18.0
+      ],
+      "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "style": "normal",
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
+      ],
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-east_asian-75c4822e89",
+      "weight": "bold"
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "Times New Roman",
+      "family_alternatives": [],
+      "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
+      "role": "title",
+      "role_confidence": "structurally_supported",
+      "script_role": "east_asian",
+      "size_pt": 23.0,
+      "size_range": [
+        23.0,
+        23.0
+      ],
+      "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "style": "normal",
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
+      ],
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-east_asian-7f585c74f7",
+      "weight": "bold"
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "Arial",
+      "family_alternatives": [],
+      "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
+      "role": "title",
+      "role_confidence": "structurally_supported",
+      "script_role": "latin",
+      "size_pt": 18.0,
+      "size_range": [
+        18.0,
+        18.0
+      ],
+      "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "style": "normal",
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
+      ],
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-latin-976378703c",
+      "weight": "bold"
+    },
+    {
+      "evidence_tier": "single_example_provisional",
+      "family": "Times New Roman",
+      "family_alternatives": [],
+      "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
+      "origin": "professor_derived",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
+      "role": "title",
+      "role_confidence": "structurally_supported",
+      "script_role": "latin",
+      "size_pt": 23.0,
+      "size_range": [
+        23.0,
+        23.0
+      ],
+      "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
+      "source_role": "P3-TEMPLATE-PRIMARY-1",
+      "source_scope": "slide_layout",
+      "status": "resolved",
+      "style": "normal",
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
+      ],
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-latin-3799ec73f4",
+      "weight": "bold"
+    }
+  ],
   "typography_tokens": [
     {
       "evidence_tier": "single_example_provisional",
       "family": "Calibri",
+      "family_alternatives": [],
       "font_evidence_state": "explicit_font",
+      "independent_support_count": 2,
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "role": "body",
       "role_confidence": "provisional",
       "script_role": "complex_script",
       "size_pt": 12.0,
+      "size_range": [
+        12.0,
+        12.0
+      ],
       "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
       "source_role": "P3-LAYOUT-EXEMPLAR-2",
       "source_scope": "slide_body",
+      "status": "resolved",
       "style": "normal",
-      "supporting_ids": [
-        "O006"
+      "supporting_container_ids": [
+        "P3-LAYOUT-EXEMPLAR-2:slide_body:SL004",
+        "P3-LAYOUT-EXEMPLAR-2:slide_body:SL010"
       ],
-      "token_id": "type-p3-layout-exemplar-2-body-complex_script-099",
-      "weight": "regular"
-    },
-    {
-      "evidence_tier": "single_example_provisional",
-      "family": "Calibri",
-      "font_evidence_state": "explicit_font",
-      "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
-      "role": "body",
-      "role_confidence": "provisional",
-      "script_role": "complex_script",
-      "size_pt": 12.0,
-      "source_profile_id": "P3-LAYOUT-EXEMPLAR-2",
-      "source_role": "P3-LAYOUT-EXEMPLAR-2",
-      "source_scope": "slide_body",
-      "style": "normal",
       "supporting_ids": [
-        "O018"
+        "T004005",
+        "T010014"
       ],
-      "token_id": "type-p3-layout-exemplar-2-body-complex_script-186",
+      "supporting_slide_ids": [
+        "SL004",
+        "SL010"
+      ],
+      "token_id": "type-body-complex_script-d4210042e9",
       "weight": "regular"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
+      "family_alternatives": [],
       "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "role": "title",
       "role_confidence": "structurally_supported",
       "script_role": "complex_script",
       "size_pt": 18.0,
+      "size_range": [
+        18.0,
+        18.0
+      ],
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
+      "status": "resolved",
       "style": "normal",
-      "supporting_ids": [
-        "TYPE000"
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
       ],
-      "token_id": "type-p3-template-primary-1-title-complex_script-000",
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-complex_script-332c86a652",
       "weight": "bold"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
+      "family_alternatives": [],
       "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "role": "title",
       "role_confidence": "structurally_supported",
       "script_role": "complex_script",
       "size_pt": 23.0,
+      "size_range": [
+        23.0,
+        23.0
+      ],
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
+      "status": "resolved",
       "style": "normal",
-      "supporting_ids": [
-        "TYPE003"
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
       ],
-      "token_id": "type-p3-template-primary-1-title-complex_script-003",
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-complex_script-4b895dbcbd",
       "weight": "bold"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
+      "family_alternatives": [],
       "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "role": "title",
       "role_confidence": "structurally_supported",
       "script_role": "east_asian",
       "size_pt": 18.0,
+      "size_range": [
+        18.0,
+        18.0
+      ],
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
+      "status": "resolved",
       "style": "normal",
-      "supporting_ids": [
-        "TYPE001"
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
       ],
-      "token_id": "type-p3-template-primary-1-title-east_asian-001",
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-east_asian-75c4822e89",
       "weight": "bold"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
+      "family_alternatives": [],
       "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "role": "title",
       "role_confidence": "structurally_supported",
       "script_role": "east_asian",
       "size_pt": 23.0,
+      "size_range": [
+        23.0,
+        23.0
+      ],
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
+      "status": "resolved",
       "style": "normal",
-      "supporting_ids": [
-        "TYPE004"
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
       ],
-      "token_id": "type-p3-template-primary-1-title-east_asian-004",
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-east_asian-7f585c74f7",
       "weight": "bold"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Arial",
+      "family_alternatives": [],
       "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "role": "title",
       "role_confidence": "structurally_supported",
       "script_role": "latin",
       "size_pt": 18.0,
+      "size_range": [
+        18.0,
+        18.0
+      ],
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
+      "status": "resolved",
       "style": "normal",
-      "supporting_ids": [
-        "TYPE002"
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
       ],
-      "token_id": "type-p3-template-primary-1-title-latin-002",
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-latin-976378703c",
       "weight": "bold"
     },
     {
       "evidence_tier": "single_example_provisional",
       "family": "Times New Roman",
+      "family_alternatives": [],
       "font_evidence_state": "explicit_font",
+      "independent_support_count": 1,
       "origin": "professor_derived",
-      "resolver_rule_id": "CP3-TYPOGRAPHY-AUTHORITY-ROLE",
+      "resolver_rule_id": "CP3-TYPOGRAPHY-ROLE-GRAMMAR-V1",
       "role": "title",
       "role_confidence": "structurally_supported",
       "script_role": "latin",
       "size_pt": 23.0,
+      "size_range": [
+        23.0,
+        23.0
+      ],
       "source_profile_id": "P3-TEMPLATE-PRIMARY-1",
       "source_role": "P3-TEMPLATE-PRIMARY-1",
       "source_scope": "slide_layout",
+      "status": "resolved",
       "style": "normal",
-      "supporting_ids": [
-        "TYPE005"
+      "supporting_container_ids": [
+        "P3-TEMPLATE-PRIMARY-1:slide_layout:TS95590b220c19fd4b"
       ],
-      "token_id": "type-p3-template-primary-1-title-latin-005",
+      "supporting_ids": [
+        "TS95590b220c19fd4b"
+      ],
+      "supporting_slide_ids": [],
+      "token_id": "type-title-latin-3799ec73f4",
       "weight": "bold"
     }
   ]

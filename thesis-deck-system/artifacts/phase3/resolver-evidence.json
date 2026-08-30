@@ -1,7 +1,97 @@
 {
+  "candidate_state": {
+    "component_hashes": {
+      "cp2:body": "c69a3d4a77d2ebeccee657a5edb67d55cea06376ada6a715775ed09f7e4cbeba",
+      "cp2:checkpoint2_qa": "038097872efe9ef5f77a7bf2e5b3c5f69d6c00d871cbfa2a1a50f3b5643dd07e",
+      "cp2:manifest": "5cea3486fdcc230dda0c976f22b6307f70d8c71624f07536f99bbc33a07dbe4f",
+      "cp2:shell": "7808d73e95b4e9b26cf88c177df2253fe3ad602eb4b6a15a0c7828b310c905d4",
+      "resolver:phase3_checkpoint3.py": "b20b51303aaba5c6cfb488cca293d8c73dce4ceaee751846457258c8402cd596",
+      "schema:body-composition-profile.schema.json": "4b9eb2f5ba7b84ba49852b60c6f7a506213a9a65153b34eaaf166e0daea77be7",
+      "schema:checkpoint-3-qa.schema.json": "17042323f4baade71ca61a91632f1c493fc2146c834ba41965f2871359fbdb85",
+      "schema:professor-template-resolved.schema.json": "bd8590ce5af2cf6780fffb70a05bcc409852d4b2f5b579f8fa3792261d7cc539",
+      "schema:professor-visual-grammar-v3.schema.json": "ca2c70fa5618eddaa8cc8821beac7a8fee2834678db02dc78d993ccc916eecac",
+      "schema:resolver-evidence.schema.json": "5821f04283faa35b3f161ab60c7c0b38eca38e434dfa5cc70cf45b9592ee56cd",
+      "schema:visual-style-profile.schema.json": "2142cedab55b365ee02d72cb4718c9bf837ae96efeaec17f001247801492c85f"
+    },
+    "composite_candidate_state_hash": "7aebc9dc10ce6c2f3a3640943d48a542c9b1c7af8fab6ab243f8862f3edfec25"
+  },
   "evidence_id": "CP3-EXEC-001",
+  "governed_report_facts": {
+    "binding_count": 13,
+    "category_counts": {
+      "body_composition": {
+        "fallback": 0,
+        "professor_derived_provisional": 19,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 0,
+        "unresolved": 0
+      },
+      "color_emphasis_grammar": {
+        "fallback": 0,
+        "professor_derived_provisional": 14,
+        "professor_derived_recurring": 6,
+        "reference_only_metadata": 0,
+        "unresolved": 0
+      },
+      "connector_arrow_grammar": {
+        "fallback": 0,
+        "professor_derived_provisional": 2,
+        "professor_derived_recurring": 3,
+        "reference_only_metadata": 0,
+        "unresolved": 0
+      },
+      "line_style_grammar": {
+        "fallback": 0,
+        "professor_derived_provisional": 1,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 0,
+        "unresolved": 0
+      },
+      "scientific_figure_metrics": {
+        "fallback": 0,
+        "professor_derived_provisional": 19,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 0,
+        "unresolved": 0
+      },
+      "shell_geometry": {
+        "fallback": 0,
+        "professor_derived_provisional": 0,
+        "professor_derived_recurring": 5,
+        "reference_only_metadata": 0,
+        "unresolved": 2
+      },
+      "typography_hierarchy": {
+        "fallback": 1,
+        "professor_derived_provisional": 7,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 0,
+        "unresolved": 0
+      },
+      "unresolved_fallback_reference": {
+        "fallback": 1,
+        "professor_derived_provisional": 0,
+        "professor_derived_recurring": 0,
+        "reference_only_metadata": 5,
+        "unresolved": 2
+      }
+    },
+    "category_statuses": {
+      "body_composition": "provisional_only",
+      "color_emphasis_grammar": "partial_recurring",
+      "connector_arrow_grammar": "partial_recurring",
+      "line_style_grammar": "provisional_only",
+      "scientific_figure_metrics": "provisional_only",
+      "shell_geometry": "partial_recurring",
+      "typography_hierarchy": "provisional_only",
+      "unresolved_fallback_reference": "unresolved"
+    },
+    "owning_check_count": 28,
+    "regression_expected_component_count": 11,
+    "typography_count": 7
+  },
   "input_hashes": {
-    "body": "34e37dbc35afbd2a961f78a56c452d9b7775c0e4511499d71658948a7cbdd5dd",
+    "body": "c69a3d4a77d2ebeccee657a5edb67d55cea06376ada6a715775ed09f7e4cbeba",
     "checkpoint2_qa": "038097872efe9ef5f77a7bf2e5b3c5f69d6c00d871cbfa2a1a50f3b5643dd07e",
     "manifest": "5cea3486fdcc230dda0c976f22b6307f70d8c71624f07536f99bbc33a07dbe4f",
     "shell": "7808d73e95b4e9b26cf88c177df2253fe3ad602eb4b6a15a0c7828b310c905d4"
@@ -148,7 +238,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 62,
+            "integer": 61,
             "kind": "integer",
             "name": "checked_token_count"
           }
@@ -205,7 +295,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 8,
+            "integer": 7,
             "kind": "integer",
             "name": "resolved_typography_count"
           }
@@ -218,7 +308,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 8,
+            "integer": 7,
             "kind": "integer",
             "name": "authority_valid_typography_count"
           }
@@ -244,9 +334,34 @@
       "evidence": {
         "facts": [
           {
-            "integer": 3,
+            "integer": 0,
             "kind": "integer",
-            "name": "binding_family_count"
+            "name": "ambiguous_binding_count"
+          },
+          {
+            "integer": 13,
+            "kind": "integer",
+            "name": "binding_count"
+          },
+          {
+            "identifier": "CP3-EXPLICIT-CP2-CANDIDATE-SLIDE-BINDING-V1",
+            "kind": "controlled_id",
+            "name": "binding_method_id"
+          },
+          {
+            "integer": 13,
+            "kind": "integer",
+            "name": "unique_candidate_count"
+          },
+          {
+            "integer": 13,
+            "kind": "integer",
+            "name": "unique_slide_count"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "unresolved_binding_count"
           }
         ]
       },
@@ -309,7 +424,7 @@
       "evidence": {
         "facts": [
           {
-            "integer": 60,
+            "integer": 59,
             "kind": "integer",
             "name": "style_token_count"
           }
@@ -322,9 +437,42 @@
       "evidence": {
         "facts": [
           {
-            "integer": 57,
+            "integer": 56,
             "kind": "integer",
             "name": "derived_count"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP3-REPORT-ARTIFACT-CONSISTENCY",
+      "evidence": {
+        "facts": [
+          {
+            "integer": 13,
+            "kind": "integer",
+            "name": "binding_count"
+          },
+          {
+            "identifier": "b6f73e21206cdca7c35b400944a430b173f139a611fd7879f47c501c8d9c53d6",
+            "kind": "controlled_id",
+            "name": "category_count_hash"
+          },
+          {
+            "identifier": "447dfb702557aba0b2dfc621d0a7a8ada8bda116bcfa3e3e7d06c76113c63175",
+            "kind": "controlled_id",
+            "name": "category_status_hash"
+          },
+          {
+            "integer": 28,
+            "kind": "integer",
+            "name": "owning_check_count"
+          },
+          {
+            "integer": 7,
+            "kind": "integer",
+            "name": "typography_count"
           }
         ]
       },
@@ -366,7 +514,7 @@
       "evidence": {
         "facts": [
           {
-            "identifier": "971d671f4c752b0ee1a38e9d3843f97ea90e34a2bd8ca3e8c1df8c310a7eb415",
+            "identifier": "ee33787ac3cc1f8930946a06344146df4e98d554a6ec43b8efa99498e263d67b",
             "kind": "controlled_id",
             "name": "resolver_input_hash"
           }
@@ -379,19 +527,44 @@
       "evidence": {
         "facts": [
           {
-            "integer": 0,
+            "integer": 1,
             "kind": "integer",
-            "name": "approved_legacy_exception_count"
+            "name": "approved_legacy_exceptions"
+          },
+          {
+            "identifier": "bba552a3d0cc7dd9a8ffe737d780a2a941591664c6c736cc85d83445801dd018",
+            "kind": "controlled_id",
+            "name": "configuration_hash"
           },
           {
             "integer": 0,
             "kind": "integer",
-            "name": "repository_unexcepted_finding_count"
+            "name": "repository_findings"
           },
           {
             "boolean": true,
             "kind": "boolean",
-            "name": "staged_scan_bound"
+            "name": "repository_scan_executed"
+          },
+          {
+            "identifier": "RepositoryPrivacyScanner",
+            "kind": "controlled_id",
+            "name": "scanner_id"
+          },
+          {
+            "identifier": "CP3-REPOSITORY-STAGED-V1",
+            "kind": "controlled_id",
+            "name": "scanner_version"
+          },
+          {
+            "integer": 0,
+            "kind": "integer",
+            "name": "staged_findings"
+          },
+          {
+            "boolean": true,
+            "kind": "boolean",
+            "name": "staged_scan_executed"
           }
         ]
       },
@@ -402,7 +575,12 @@
       "evidence": {
         "facts": [
           {
-            "identifier": "c14fbfc541be6d53a3997dccfaf90e0574ca942fc9f66b2fb5fe8a7379fce62a",
+            "integer": 11,
+            "kind": "integer",
+            "name": "candidate_component_count"
+          },
+          {
+            "identifier": "7aebc9dc10ce6c2f3a3640943d48a542c9b1c7af8fab6ab243f8862f3edfec25",
             "kind": "controlled_id",
             "name": "candidate_state_binding"
           },
@@ -417,7 +595,7 @@
             "name": "tests_failed"
           },
           {
-            "integer": 267,
+            "integer": 280,
             "kind": "integer",
             "name": "tests_passed"
           }
