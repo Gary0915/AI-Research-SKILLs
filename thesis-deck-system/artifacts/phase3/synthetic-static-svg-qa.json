@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "qa_id": "SSVG-QA-001",
+  "figure_id": "FIG001",
+  "aggregate_status": "pass",
+  "findings": [],
+  "identity": {
+    "schema_version": "1.0.0",
+    "figure_id": "FIG001",
+    "profile_id": "SSVG-P001",
+    "profile_version": "1.0.0",
+    "canonicalization_version": "1.0.0",
+    "source_sha256": "23ddaa48d7431909a59864ab8eddde86e5e0439e454241cad0cd55b5c8df1d6d",
+    "canonical_sha256": "c0788e31de853dc219af33d05e2e5574ab28a95db8a523e36d570d1bd80591a7",
+    "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg data-thesis-figure-id=\"FIG001\" data-thesis-svg-version=\"1.0.0\" viewBox=\"0 0 10 10\"><rect data-semantic-role=\"panel\" fill=\"#eeeeee\" height=\"8\" id=\"obj-panel\" width=\"8\" x=\"1\" y=\"1\"/><text data-semantic-role=\"title\" font-family=\"synthetic-test-sans\" font-size=\"2\" id=\"obj-title\" x=\"2\" y=\"5\">量測結果 / Result</text></svg>"
+  },
+  "metadata_invisibility": {
+    "status": "pass",
+    "method": "static_presentation_ast_comparison",
+    "presentation_ast_equal": true
+  }
+}

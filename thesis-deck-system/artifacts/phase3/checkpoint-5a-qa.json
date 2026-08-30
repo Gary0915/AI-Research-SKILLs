@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "qa_id": "CP5A-QA-001",
+  "aggregate_status": "pass",
+  "owning_check_refs": [
+    "CP5A-CP4-FREEZE",
+    "CP5A-STATIC-VALIDATOR",
+    "CP5A-METADATA-INVISIBILITY",
+    "CP5A-REPOSITORY-STAGED-PRIVACY",
+    "CP5A-CANDIDATE-REGRESSION",
+    "CP5A-PRIVATE-ACCESS"
+  ],
+  "status_dimensions": {
+    "scientific_svg_language": "pass",
+    "static_svg_validator": "pass",
+    "semantic_governance": "pass",
+    "cjk_static_text": "pass",
+    "resource_policy": "pass",
+    "canonicalization_hash": "pass",
+    "synthetic_corpus": "pass",
+    "native_capability_registry": "not_run",
+    "static_figure_critic": "not_run",
+    "production_figure_rendering": "not_run",
+    "render_critic": "not_run",
+    "a01_a18_calibration": "not_run",
+    "drawingml_compiler": "not_run",
+    "template_reconstruction": "not_run",
+    "acceptance_deck": "not_run",
+    "production_group_meeting_ready": false
+  }
+}

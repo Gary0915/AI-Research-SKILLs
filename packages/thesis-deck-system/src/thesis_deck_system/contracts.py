@@ -64,6 +64,17 @@ PHASE3_SCHEMA_NAMES = (
     "checkpoint-4-qa",
 )
 
+CP5A_SCHEMA_NAMES = (
+    "scientific-svg-profile",
+    "semantic-svg-role-registry",
+    "static-svg-qa-report",
+    "scientific-svg-identity",
+    "checkpoint-5a-execution-evidence",
+    "checkpoint-5a-qa",
+    "scientific-svg-synthetic-corpus",
+    "checkpoint-5a-report-facts",
+)
+
 SCHEMA_BY_COLLECTION = {
     "research_blocks": "research-block",
     "stages": "scientific-stage",
@@ -90,12 +101,13 @@ class Finding:
 
 
 class SchemaRegistry:
-    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False):
+    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False, include_cp5a: bool = False):
         self.schema_dir = Path(schema_dir)
         schema_names = (
             REQUIRED_SCHEMA_NAMES
             + (PHASE2_SCHEMA_NAMES if include_phase2 else ())
             + (PHASE3_SCHEMA_NAMES if include_phase3 else ())
+            + (CP5A_SCHEMA_NAMES if include_cp5a else ())
         )
         self._schemas = {
             name: json.loads((self.schema_dir / f"{name}.schema.json").read_text(encoding="utf-8"))
