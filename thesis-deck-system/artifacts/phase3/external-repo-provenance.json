@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "P3-EXTERNAL-REPO-PROVENANCE-001",
+  "inspection_date": "2026-08-30",
+  "scope": "read_only_external_architecture_reconnaissance",
+  "private_access_counters": {
+    "private_alias_resolution_attempts": 0,
+    "private_source_open_attempts": 0,
+    "private_render_attempts": 0
+  },
+  "repositories": [
+    {
+      "project_id": "ppt_master",
+      "repository_url": "https://github.com/hugohe3/ppt-master",
+      "default_branch": "main",
+      "baseline_commit": "e5a05edebe24c7c00c589dbed4f4777cb9855c91",
+      "pinned_commit": "e5a05edebe24c7c00c589dbed4f4777cb9855c91",
+      "upstream_advanced_from_baseline": false,
+      "license": "MIT",
+      "runtime_footprint": ["Python >=3.10", "OOXML/ZIP tooling", "SVG validation/compiler modules", "optional office rendering tools"],
+      "source_inspection": {
+        "files_modules_inspected": 25,
+        "evidence": ["README", "LICENSE", "technical design", "SVG/PPTX mapping", "template architecture", "routing/generation/visual-review workflows", "SVG contract/checker", "DrawingML converter/elements/paths/text", "round-trip and editor modules", "checker tests"]
+      },
+      "benchmark_execution": {
+        "attempted_families": ["B01", "B02", "B03", "B04", "B05", "B06", "B07", "B08", "B09", "B10"],
+        "completed_families": [],
+        "blocked_families": ["B01", "B02", "B03", "B04", "B05", "B06", "B07", "B08", "B09", "B10"],
+        "status": "blocked_environment",
+        "reason": "Pinned public source documentation and selected modules were inspectable in temporary storage, but a complete executable checkout/dependency closure was not available in the throwaway environment. No benchmark result is inferred from source inspection."
+      }
+    },
+    {
+      "project_id": "open_slide",
+      "repository_url": "https://github.com/1weiho/open-slide",
+      "default_branch": "main",
+      "baseline_commit": "90bb86172f7e390c29bbf2f33067c7b05c646b70",
+      "pinned_commit": "90bb86172f7e390c29bbf2f33067c7b05c646b70",
+      "upstream_advanced_from_baseline": false,
+      "license": "MIT",
+      "runtime_footprint": ["Node >=18", "pnpm 10", "React 18", "Vite", "TypeScript", "Playwright for e2e"],
+      "source_inspection": {
+        "files_modules_inspected": 19,
+        "evidence": ["README", "LICENSE", "root/core package manifests", "five requested Skills", "comment persistence and tests", "inspector selection/editor/comment hooks", "inspector provider/overlay", "PPTX/PDF/HTML export modules", "inspector e2e listing"]
+      },
+      "benchmark_execution": {
+        "attempted_families": [],
+        "completed_families": [],
+        "blocked_families": [],
+        "status": "not_required",
+        "reason": "The optional browser/runtime experiment was not needed to establish the source-backed context, selection, comment, and HTML/PDF export boundary."
+      }
+    }
+  ],
+  "direct_code_reuse": {
+    "performed": false,
+    "external_source_copied_into_repository": false,
+    "recommendation": "defer"
+  }
+}
