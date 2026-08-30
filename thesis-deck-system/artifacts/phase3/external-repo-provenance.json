@@ -41,7 +41,15 @@
       "runtime_footprint": ["Node >=18", "pnpm 10", "React 18", "Vite", "TypeScript", "Playwright for e2e"],
       "source_inspection": {
         "files_modules_inspected": 19,
-        "evidence": ["README", "LICENSE", "root/core package manifests", "five requested Skills", "comment persistence and tests", "inspector selection/editor/comment hooks", "inspector provider/overlay", "PPTX/PDF/HTML export modules", "inspector e2e listing"]
+        "evidence": ["README", "LICENSE", "root/core package manifests", "five requested Skills", "comment persistence and tests", "inspector selection/editor/comment hooks", "inspector provider/overlay", "PPTX/PDF/HTML export modules", "inspector e2e listing"],
+        "pptx_export_classification": {
+          "source_path": "packages/core/src/app/lib/export-pptx.ts",
+          "pinned_commit": "90bb86172f7e390c29bbf2f33067c7b05c646b70",
+          "pipeline": "React slide -> html-to-image page PNG -> one PNG slide surface in PPTX",
+          "classification": "raster_image_slide_pptx_export",
+          "canonical_editable_thesis_backend": false,
+          "evidence_level": "source_inspected"
+        }
       },
       "benchmark_execution": {
         "attempted_families": [],
