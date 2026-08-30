@@ -1,0 +1,167 @@
+"""Checkpoint 4 control-plane contracts are test-first and renderer-free."""
+from __future__ import annotations
+
+import copy
+from pathlib import Path
+
+import pytest
+import yaml
+
+
+ROOT = Path(__file__).resolve().parents[4]
+ARTIFACTS = ROOT / "thesis-deck-system" / "artifacts" / "phase3"
+
+
+def _cp3_inputs() -> dict[str, dict]:
+    import json
+    names = (
+        "professor-template-resolved.json", "body-composition-profile.json",
+        "professor-visual-grammar-v3.json", "visual-style-profile.json",
+        "resolver-evidence.json", "checkpoint-3-qa.json",
+    )
+    return {name: json.loads((ARTIFACTS / name).read_text(encoding="utf-8")) for name in names}
+
+
+def _request(**overrides: object) -> dict:
+    value = {
+        "figure_plan_id": "FPL001", "visual_class": "quantitative_measured_result",
+        "scientific_purpose": "result_display", "evidence_status": "empirical",
+        "scientific_claim_support": "required", "source_refs": ["E101"], "claim_refs": ["C101"],
+        "evidence_refs": ["E101"], "hypothesis_layer_ref": "H001", "research_block_refs": ["B101"],
+        "stage_ref": "ST-RES101", "source_cursor": 20, "requested_archetype": "A10",
+        "provenance_rule_ids": ["CP4-ROUTE-QUANTITATIVE"],
+    }
+    value.update(overrides)
+    return value
+
+
+def test_quantitative_routes_to_vector_plot_and_is_deterministic_under_input_reorder():
+    from thesis_deck_system.phase3_checkpoint4 import route_figure_request
+
+    first = route_figure_request(_request())
+    reversed_request = _request(source_refs=["E101"], claim_refs=["C101"], evidence_refs=["E101"])
+    second = route_figure_request(reversed_request)
+    assert first["selected_specialist_skill"] == "scientific-plot-director"
+    assert first["canonical_output_kind"] in {"svg_vector", "pdf_vector"}
+    assert first == second
+
+
+@pytest.mark.parametrize(
+    ("visual_class", "expected"),
+    [
+        ("real_experiment_photo", "photo-annotation-director"),
+        ("literature_figure", "literature-figure-director"),
+        ("mechanism_explanation", "mechanism-diagram-director"),
+        ("experiment_setup", "experiment-schematic-director"),
+        ("fabrication_process", "fabrication-process-director"),
+        ("fishbone_history", "fishbone-director"),
+        ("fair_comparison", "comparison-figure-director"),
+        ("image_matrix", "image-matrix-director"),
+        ("organic_concept", "concept-illustration-director"),
+    ],
+)
+def test_router_selects_the_bounded_specialist(visual_class: str, expected: str):
+    from thesis_deck_system.phase3_checkpoint4 import route_figure_request
+
+    value = _request(visual_class=visual_class)
+    if visual_class == "organic_concept":
+        value.update(evidence_status="non_evidence", scientific_claim_support="forbidden", claim_refs=[], evidence_refs=[], source_refs=[])
+    if visual_class == "fabrication_process":
+        value["fabrication_steps"] = [{"ordinal": 1, "condition_state": "unknown"}]
+    if visual_class == "fishbone_history":
+        value["fishbone_binding"] = {"fishbone_revision_ref": "FB001-R001", "focus_ref": "BR001", "history_ref": "H001"}
+    assert route_figure_request(value)["selected_specialist_skill"] == expected
+
+
+def test_empirical_and_literature_requests_reject_ai_or_concept_masquerading():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, route_figure_request
+
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(_request(visual_class="organic_concept"))
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(_request(visual_class="literature_figure", ai_generation_requested=True))
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(_request(visual_class="real_experiment_photo", source_refs=[]))
+
+
+def test_fabrication_is_never_absorbed_and_unknown_condition_is_preserved():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, route_figure_request
+
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(_request(visual_class="mechanism_explanation", fabrication_steps=[{"ordinal": 1, "condition_state": "unknown"}]))
+    plan = route_figure_request(_request(visual_class="fabrication_process", fabrication_steps=[{"ordinal": 1, "condition_state": "unknown"}]))
+    assert plan["selected_specialist_skill"] == "fabrication-process-director"
+    assert plan["specialist_payload"]["steps"][0]["condition_state"] == "unknown"
+
+
+def test_svg_first_and_native_shape_threshold_fail_closed():
+    from thesis_deck_system.phase3_checkpoint4 import route_figure_request
+
+    plan = route_figure_request(_request(visual_class="mechanism_explanation", structured_edges=2))
+    assert plan["renderer_class"] == "deterministic_svg_vector"
+    assert plan["native_shape_eligibility"]["status"] == "insufficient_evidence"
+
+
+def test_layout_rejects_raw_or_unapproved_figure():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, validate_layout_figure_handoff
+
+    with pytest.raises(Checkpoint4Error):
+        validate_layout_figure_handoff({"artifact_kind": "scientific_figure_spec", "status": "draft"})
+    with pytest.raises(Checkpoint4Error):
+        validate_layout_figure_handoff({"artifact_kind": "figure_output_manifest", "status": "unapproved"})
+
+
+def test_routing_matrix_covers_all_archetypes_and_unknown_skill_fails_closed():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, archetype_routing_matrix, validate_skill_registry
+
+    matrix = archetype_routing_matrix()
+    assert {item["archetype_id"] for item in matrix} == {f"A{i:02d}" for i in range(1, 19)}
+    registry = yaml.safe_load((ROOT / "thesis-deck-system" / "skill-routing.yaml").read_text(encoding="utf-8"))
+    registry = copy.deepcopy(registry)
+    registry["skills"].append({"skill_id": "unknown-route"})
+    with pytest.raises(Checkpoint4Error):
+        validate_skill_registry(registry)
+
+
+def test_cp4_build_is_sanitized_only_and_binds_cp3_inputs_registry_and_schemas():
+    from thesis_deck_system.phase3_checkpoint4 import build_checkpoint4_artifacts
+
+    outputs = build_checkpoint4_artifacts(
+        _cp3_inputs(),
+        privacy_config={
+            "config_id": "CP4-TEST-PRIVACY",
+            "private_root_signatures": ["synthetic-private-root"],
+            "forbidden_basenames": ["synthetic-private-source.pptx"],
+        },
+    )
+    assert outputs["qa"]["aggregate_status"] == "pass"
+    assert outputs["execution"]["private_alias_resolution_attempts"] == 0
+    assert outputs["execution"]["private_source_open_attempts"] == 0
+    assert outputs["execution"]["private_render_attempts"] == 0
+    keys = outputs["execution"]["candidate_state"]["component_hashes"]
+    assert any(key.startswith("cp3:") for key in keys)
+    assert any(key.startswith("skill-registry:") for key in keys)
+    privacy = next(item for item in outputs["execution"]["owning_checks"] if item["check_id"] == "CP4-REPOSITORY-STAGED-PRIVACY")
+    assert privacy["status"] == "pass"
+    facts = {fact["name"]: fact["boolean"] for fact in privacy["evidence"]["facts"]}
+    assert facts["repository_scan_executed"] is True
+    assert facts["staged_scan_executed"] is True
+
+
+def test_cp4_schema_closure_rejects_untyped_nested_plan_data():
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_checkpoint4 import route_figure_request
+
+    plan = route_figure_request(_request())
+    plan["specialist_payload"]["unexpected"] = {"private": "no"}
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True)
+    assert registry.errors("figure-production-plan", plan)
+
+
+def test_every_registry_skill_has_a_complete_repo_local_contract_document():
+    from thesis_deck_system.phase3_checkpoint4 import load_skill_registry
+
+    required_sections = ("Triggers", "Do-not-trigger", "Required inputs", "Workflow", "Allowed downstream", "Forbidden actions", "Output contract", "Provenance", "Failure", "Blocked", "Handoff", "QA owner")
+    for item in load_skill_registry()["skills"]:
+        text = (ROOT / "thesis-deck-system" / "skills" / item["skill_id"] / "SKILL.md").read_text(encoding="utf-8")
+        assert all(section in text for section in required_sections), item["skill_id"]

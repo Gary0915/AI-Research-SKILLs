@@ -1,0 +1,153 @@
+[
+  {
+    "archetype_id": "A01",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "thesis-deck-router"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A02",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "thesis-deck-router"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A03",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "fishbone-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A04",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "photo-annotation-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A05",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "literature-figure-director",
+      "mechanism-diagram-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A06",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "mechanism-diagram-director",
+      "fabrication-process-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A07",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "photo-annotation-director",
+      "experiment-schematic-director",
+      "fabrication-process-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A08",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "comparison-figure-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A09",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "experiment-schematic-director",
+      "fabrication-process-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A10",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "scientific-plot-director",
+      "photo-annotation-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A11",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "scientific-plot-director",
+      "comparison-figure-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A12",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "image-matrix-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A13",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "scientific-plot-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A14",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "thesis-deck-router"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A15",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "thesis-deck-router"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A16",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "mechanism-diagram-director"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A17",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "thesis-deck-router"
+    ],
+    "routing_only": true
+  },
+  {
+    "archetype_id": "A18",
+    "geometry_calibration_status": "not_run",
+    "route_skills": [
+      "thesis-deck-router"
+    ],
+    "routing_only": true
+  }
+]

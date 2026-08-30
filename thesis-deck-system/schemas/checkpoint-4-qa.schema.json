@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "checkpoint-4-qa.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "qa_id", "aggregate_status", "owning_check_refs", "status_dimensions"],
+  "properties": {
+    "schema_version": {"const": "4.0.0"}, "qa_id": {"type": "string", "pattern": "^CP4-QA-[0-9]{3,}$"}, "aggregate_status": {"enum": ["pass", "fail", "blocked"]},
+    "owning_check_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^CP4-[A-Z0-9-]+$"}},
+    "status_dimensions": {"type": "object", "additionalProperties": false, "required": ["production_figure_rendering", "figure_critic_visual_acceptance", "archetype_calibration", "template_reconstruction", "acceptance_deck", "private_qualitative_review", "native_powerpoint", "production_group_meeting_ready"], "properties": {"production_figure_rendering": {"const": "not_run"}, "figure_critic_visual_acceptance": {"const": "not_run"}, "archetype_calibration": {"const": "not_run"}, "template_reconstruction": {"const": "not_run"}, "acceptance_deck": {"const": "not_run"}, "private_qualitative_review": {"const": "blocked_visual_review"}, "native_powerpoint": {"const": "not_run"}, "production_group_meeting_ready": {"const": false}}}
+  }
+}

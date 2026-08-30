@@ -1,0 +1,193 @@
+[
+  {
+    "ai_generation_allowed": false,
+    "canonical_output_kind": "svg_vector",
+    "claim_refs": [
+      "C101"
+    ],
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_plan_id": "FPL001",
+    "handoff_target": "selected_specialist_director",
+    "hypothesis_layer_ref": "H001",
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
+    "provenance_rule_ids": [
+      "CP4-ROUTE-QUANTITATIVE"
+    ],
+    "renderer_class": "reproducible_plot",
+    "requested_archetype": "A10",
+    "required_qa": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "required_style_categories": [
+      "body_composition",
+      "line_style_grammar",
+      "color_emphasis_grammar"
+    ],
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
+    "scientific_purpose": "result_display",
+    "selected_specialist_skill": "scientific-plot-director",
+    "source_asset_required": false,
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "quantitative_measured_result"
+    },
+    "stage_ref": "ST-RES101",
+    "status": "routed_not_rendered",
+    "style_profile_ref": "VSP001",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "quantitative_measured_result"
+  },
+  {
+    "ai_generation_allowed": false,
+    "canonical_output_kind": "svg_vector",
+    "claim_refs": [
+      "C101"
+    ],
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_plan_id": "FPL002",
+    "handoff_target": "selected_specialist_director",
+    "hypothesis_layer_ref": "H001",
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
+    "provenance_rule_ids": [
+      "CP4-ROUTE-FISHBONE"
+    ],
+    "renderer_class": "deterministic_svg_vector",
+    "requested_archetype": "A03",
+    "required_qa": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "required_style_categories": [
+      "body_composition",
+      "line_style_grammar",
+      "color_emphasis_grammar"
+    ],
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
+    "scientific_purpose": "research_history",
+    "selected_specialist_skill": "fishbone-director",
+    "source_asset_required": false,
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "fishbone_binding": {
+        "fishbone_revision_ref": "FB001-R001",
+        "focus_ref": "BR001",
+        "history_ref": "H001"
+      },
+      "kind": "fishbone_history"
+    },
+    "stage_ref": "ST-RES101",
+    "status": "routed_not_rendered",
+    "style_profile_ref": "VSP001",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "fishbone_history"
+  },
+  {
+    "ai_generation_allowed": false,
+    "canonical_output_kind": "svg_vector",
+    "claim_refs": [
+      "C101"
+    ],
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_plan_id": "FPL003",
+    "handoff_target": "selected_specialist_director",
+    "hypothesis_layer_ref": "H001",
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
+    "provenance_rule_ids": [
+      "CP4-ROUTE-FABRICATION"
+    ],
+    "renderer_class": "deterministic_svg_vector",
+    "requested_archetype": "A09",
+    "required_qa": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "required_style_categories": [
+      "body_composition",
+      "line_style_grammar",
+      "color_emphasis_grammar"
+    ],
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
+    "scientific_purpose": "process_chronology",
+    "selected_specialist_skill": "fabrication-process-director",
+    "source_asset_required": false,
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "fabrication_process",
+      "steps": [
+        {
+          "condition_state": "unknown",
+          "ordinal": 1
+        }
+      ]
+    },
+    "stage_ref": "ST-RES101",
+    "status": "routed_not_rendered",
+    "style_profile_ref": "VSP001",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "fabrication_process"
+  }
+]

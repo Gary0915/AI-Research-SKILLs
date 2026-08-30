@@ -36,3 +36,22 @@ Block on missing profile, unexecuted check, failed falsifier, future reference, 
 
 ## Handoff conditions
 Handoff to release only when all required checks execute and pass; otherwise return actionable blockers.
+
+## Allowed downstream Skills/tools
+Release gates only after owning checks pass.
+## Forbidden actions
+Do not certify qualitative review, figures, or private fidelity without their owning evidence.
+## Output contract
+Hash-bound professor QA report.
+## Provenance behavior
+Reference materialized state, Slide Specs, and persisted inspection records.
+## Failure modes
+Missing profile, unexecuted check, or open critical finding.
+## Blocked states
+blocked_missing_provenance.
+## Handoff
+Release gate.
+## QA owner
+professor-qa.
+## Workflow
+Execute the declared contract only after its input validation passes.

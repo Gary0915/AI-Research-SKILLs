@@ -36,3 +36,22 @@ Block on cycle, orphan, duplicate, unknown focus, overflow, or historical hash c
 
 ## Handoff conditions
 Handoff when hierarchy and stability checks pass.
+
+## Allowed downstream Skills/tools
+vector-figure-builder and figure-critic.
+## Forbidden actions
+Do not render outside authorization, mutate historical graph data, or bypass FigureCritic.
+## Output contract
+Typed Fishbone Figure Spec with revision, focus, and history refs.
+## Provenance behavior
+Preserve ledger cursor and revision binding.
+## Failure modes
+Cycle, orphan, duplicate, unknown focus, or history mismatch.
+## Blocked states
+blocked_missing_provenance.
+## Handoff
+vector-figure-builder then figure-critic.
+## QA owner
+provenance-qa.
+## Workflow
+Execute the declared contract only after its input validation passes.

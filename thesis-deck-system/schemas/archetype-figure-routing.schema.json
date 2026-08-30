@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "archetype-figure-routing.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["archetype_id", "route_skills", "geometry_calibration_status", "routing_only"],
+  "properties": {
+    "archetype_id": {"type": "string", "pattern": "^A(0[1-9]|1[0-8])$"},
+    "route_skills": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"}},
+    "geometry_calibration_status": {"const": "not_run"}, "routing_only": {"const": true}
+  }
+}

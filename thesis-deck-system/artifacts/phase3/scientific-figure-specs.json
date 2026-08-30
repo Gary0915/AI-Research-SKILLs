@@ -1,0 +1,160 @@
+[
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "scientific-plot-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_id": "FIG001",
+    "figure_type": "scientific_plot",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "svg_vector"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-QUANTITATIVE"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "reproducible_plot",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "result_display",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "quantitative_measured_result"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP001",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "fishbone-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_id": "FIG002",
+    "figure_type": "vector_diagram",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "svg_vector"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-FISHBONE"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "deterministic_svg_vector",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "research_history",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "fishbone_binding": {
+        "fishbone_revision_ref": "FB001-R001",
+        "focus_ref": "BR001",
+        "history_ref": "H001"
+      },
+      "kind": "fishbone_history"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP001",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "fabrication-process-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_id": "FIG003",
+    "figure_type": "vector_diagram",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "svg_vector"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-FABRICATION"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "deterministic_svg_vector",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "process_chronology",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "fabrication_process",
+      "steps": [
+        {
+          "condition_state": "unknown",
+          "ordinal": 1
+        }
+      ]
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP001",
+    "visual_states": []
+  }
+]

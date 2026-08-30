@@ -36,3 +36,22 @@ Block on identity mismatch, missing required slot, out-of-bounds geometry, unres
 
 ## Handoff conditions
 Handoff only after plan schema validation and conformance tests pass.
+
+## Allowed downstream Skills/tools
+PythonPptxAssembler after APPROVED_FIGURE only.
+## Forbidden actions
+Do not create, repair, or approve scientific figures.
+## Output contract
+Layout Plan containing only approved figure asset bindings.
+## Provenance behavior
+Require FigureCritic approval and provenance for every scientific asset.
+## Failure modes
+Raw spec, unapproved asset, missing provenance, or unresolved split.
+## Blocked states
+blocked_figure_critic.
+## Handoff
+PythonPptxAssembler.
+## QA owner
+provenance-qa.
+## Workflow
+Execute the declared contract only after its input validation passes.

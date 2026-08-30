@@ -1,0 +1,30 @@
+{
+  "aggregate_status": "pass",
+  "owning_check_refs": [
+    "CP4-CP3-INPUTS",
+    "CP4-PRIVATE-ACCESS",
+    "CP4-ROUTING-DETERMINISM",
+    "CP4-SKILL-REGISTRY",
+    "CP4-HANDOFF-NO-BYPASS",
+    "CP4-A01-A18-ROUTING",
+    "CP4-SVG-FIRST",
+    "CP4-EMPIRICAL-AI-BOUNDARY",
+    "CP4-FABRICATION-SEPARATION",
+    "CP4-FISHBONE-PROVENANCE",
+    "CP4-STYLE-GOVERNOR",
+    "CP4-SCHEMA-CLOSURE",
+    "CP4-REPOSITORY-STAGED-PRIVACY"
+  ],
+  "qa_id": "CP4-QA-001",
+  "schema_version": "4.0.0",
+  "status_dimensions": {
+    "acceptance_deck": "not_run",
+    "archetype_calibration": "not_run",
+    "figure_critic_visual_acceptance": "not_run",
+    "native_powerpoint": "not_run",
+    "private_qualitative_review": "blocked_visual_review",
+    "production_figure_rendering": "not_run",
+    "production_group_meeting_ready": false,
+    "template_reconstruction": "not_run"
+  }
+}

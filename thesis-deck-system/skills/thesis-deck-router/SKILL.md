@@ -35,3 +35,22 @@ Block on ambiguous route, missing ledger cursor, dangling references, or unavail
 
 ## Handoff conditions
 Handoff only after route and input contract validation; return final QA/release status to the requester.
+
+## Allowed downstream Skills/tools
+scientific-figure-router, planners, layout-director, and professor-qa.
+## Forbidden actions
+Do not draw figures, create assets, or bypass FigureCritic.
+## Output contract
+Cursor-bound route record.
+## Provenance behavior
+Use only materialized ledger state and stable refs.
+## Failure modes
+Ambiguous route, missing cursor, or dangling reference.
+## Blocked states
+blocked_missing_provenance.
+## Handoff
+scientific-figure-router for scientific visual requests.
+## QA owner
+provenance-qa.
+## Workflow
+Execute the declared contract only after its input validation passes.

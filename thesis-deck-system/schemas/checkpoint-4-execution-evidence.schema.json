@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "checkpoint-4-execution-evidence.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "execution_id", "private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts", "candidate_state", "privacy_scan", "owning_checks"],
+  "properties": {
+    "schema_version": {"const": "4.0.0"}, "execution_id": {"type": "string", "pattern": "^CP4-EXEC-[0-9]{3,}$"},
+    "private_alias_resolution_attempts": {"type": "integer", "minimum": 0}, "private_source_open_attempts": {"type": "integer", "minimum": 0}, "private_render_attempts": {"type": "integer", "minimum": 0},
+    "candidate_state": {"type": "object", "additionalProperties": false, "required": ["component_hashes", "composite_candidate_state_hash"], "properties": {"component_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}, "composite_candidate_state_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "privacy_scan": {"type": "object", "additionalProperties": false, "required": ["scanner_id", "scanner_version", "configuration_hash", "repository_findings", "staged_findings", "approved_legacy_exceptions", "repository_scan_executed", "staged_scan_executed"], "properties": {"scanner_id": {"const": "RepositoryPrivacyScanner"}, "scanner_version": {"type": "string", "pattern": "^CP3-REPOSITORY-STAGED-V[0-9]+$"}, "configuration_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "repository_findings": {"type": "integer", "minimum": 0}, "staged_findings": {"type": "integer", "minimum": 0}, "approved_legacy_exceptions": {"type": "integer", "minimum": 0}, "repository_scan_executed": {"type": "boolean"}, "staged_scan_executed": {"type": "boolean"}}},
+    "owning_checks": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["check_id", "status", "evidence"], "properties": {"check_id": {"type": "string", "pattern": "^CP4-[A-Z0-9-]+$"}, "status": {"enum": ["pass", "fail", "blocked"]}, "evidence": {"type": "object", "additionalProperties": false, "required": ["facts"], "properties": {"facts": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["name", "boolean"], "properties": {"name": {"type": "string", "pattern": "^[a-z][a-z0-9_]+$"}, "boolean": {"type": "boolean"}}}}}}}}}
+  }
+}

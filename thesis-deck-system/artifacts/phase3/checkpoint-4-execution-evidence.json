@@ -1,0 +1,202 @@
+{
+  "candidate_state": {
+    "component_hashes": {
+      "cp3:body-composition-profile.json": "2aff1b4dc0f1c58078220e69b400b67f4a47b42a320f155b7fecf90a82d8fe5c",
+      "cp3:checkpoint-3-qa.json": "c439c655891084fe8c539eef37c34b047989e330f1bf7434151b33f28e05edd8",
+      "cp3:professor-template-resolved.json": "c84f4ac2f6db18917f0ecd3f677cd575a470a253cc8d8a4ccdaf01a47a5629b8",
+      "cp3:professor-visual-grammar-v3.json": "44e95ce7906b3bf3bde422c213381c9e21e4a0f07c2450c927085ba207abd638",
+      "cp3:resolver-evidence.json": "e10e4a8c8038c659a59b2fd1fc715163da6a84309d7f3060155211e5d6af01bd",
+      "cp3:visual-style-profile.json": "01bcf516116c9895a8b44b0b5e720d04f22a2359ae7770df6d35fab1a53c12bb",
+      "cp4:phase3_checkpoint4.py": "111d0856b548e8ba59d4adcced1d1560f6b7c10f972262d28b89134f523b6f48",
+      "schema:archetype-figure-routing.schema.json": "17a56c740b865d5b2ed4e71148e7c19835a95d4c4c8cfebc9d4a8a0f30c67fb6",
+      "schema:checkpoint-4-execution-evidence.schema.json": "38ca30eb34ea1c3a523cbd7b0f858face38939bef82cbe5d1d5b0a56db147a23",
+      "schema:checkpoint-4-qa.schema.json": "71b661bd78a981b3dfd27ac100484544d7782815551bb71ec98ea60a9c16b445",
+      "schema:figure-production-plan.schema.json": "da40bd4a2cce8709a1348db63e43250263c7ad705b73d10ce7734ef7fd324f9e",
+      "schema:scientific-figure-spec.schema.json": "8d82a00282f8f60a21a9ae8bee2fc8a59436120d00919620c888749ad0edf34a",
+      "schema:skill-routing.schema.json": "35ef0b8d980e45e25d64745030987419c9012c4e18140122e085ecaf3f2fed58",
+      "skill-registry:skill-routing.yaml": "e1b786d93ed010eb8b041d1b442136c6e7ece52f93c9c901404e560d8cbd11e1"
+    },
+    "composite_candidate_state_hash": "7f75a13f3f26f774db12a6d3a7621a323142b637994f273235f6786ec2d28dec"
+  },
+  "execution_id": "CP4-EXEC-001",
+  "owning_checks": [
+    {
+      "check_id": "CP4-CP3-INPUTS",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-PRIVATE-ACCESS",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-ROUTING-DETERMINISM",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-SKILL-REGISTRY",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-HANDOFF-NO-BYPASS",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-A01-A18-ROUTING",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-SVG-FIRST",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-EMPIRICAL-AI-BOUNDARY",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-FABRICATION-SEPARATION",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-FISHBONE-PROVENANCE",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-STYLE-GOVERNOR",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-SCHEMA-CLOSURE",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "result"
+          }
+        ]
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "CP4-REPOSITORY-STAGED-PRIVACY",
+      "evidence": {
+        "facts": [
+          {
+            "boolean": true,
+            "name": "repository_scan_executed"
+          },
+          {
+            "boolean": true,
+            "name": "staged_scan_executed"
+          },
+          {
+            "boolean": true,
+            "name": "unexcepted_findings_zero"
+          }
+        ]
+      },
+      "status": "pass"
+    }
+  ],
+  "privacy_scan": {
+    "approved_legacy_exceptions": 1,
+    "configuration_hash": "ce19dc506ab5aec7deceb8af69d0bbcf6d9a8182131df863b89854df8a4c9dfa",
+    "repository_findings": 0,
+    "repository_scan_executed": true,
+    "scanner_id": "RepositoryPrivacyScanner",
+    "scanner_version": "CP3-REPOSITORY-STAGED-V1",
+    "staged_findings": 0,
+    "staged_scan_executed": true
+  },
+  "private_alias_resolution_attempts": 0,
+  "private_render_attempts": 0,
+  "private_source_open_attempts": 0,
+  "schema_version": "4.0.0"
+}

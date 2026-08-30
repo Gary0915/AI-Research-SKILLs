@@ -58,6 +58,9 @@ PHASE3_SCHEMA_NAMES = (
     "professor-visual-grammar-v3",
     "resolver-evidence",
     "checkpoint-3-qa",
+    "archetype-figure-routing",
+    "checkpoint-4-execution-evidence",
+    "checkpoint-4-qa",
 )
 
 SCHEMA_BY_COLLECTION = {
