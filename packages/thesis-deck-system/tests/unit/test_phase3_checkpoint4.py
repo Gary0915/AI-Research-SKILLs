@@ -69,6 +69,8 @@ def test_router_selects_the_bounded_specialist(visual_class: str, expected: str)
     from thesis_deck_system.phase3_checkpoint4 import route_figure_request
 
     value = _request(visual_class=visual_class)
+    if visual_class == "literature_figure":
+        value["evidence_status"] = "literature_evidence"
     if visual_class == "organic_concept":
         value.update(evidence_status="non_evidence", scientific_claim_support="forbidden", claim_refs=[], evidence_refs=[], source_refs=[])
     if visual_class == "fabrication_process":
@@ -233,6 +235,8 @@ def test_every_route_rejects_cross_route_plan_discriminator_mutation(field: str)
     registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True)
     for visual_class in ROUTES:
         request = _request(visual_class=visual_class)
+        if visual_class == "literature_figure":
+            request["evidence_status"] = "literature_evidence"
         if visual_class == "organic_concept":
             request.update(evidence_status="non_evidence", scientific_claim_support="forbidden", source_refs=[], claim_refs=[], evidence_refs=[])
         if visual_class == "fabrication_process":
@@ -270,6 +274,72 @@ def test_report_artifact_consistency_uses_executed_cp4_facts():
     from thesis_deck_system.phase3_checkpoint4 import build_checkpoint4_artifacts, capture_regression_evidence, validate_report_artifact_consistency
 
     inputs = _cp3_inputs()
-    outputs = build_checkpoint4_artifacts(inputs, privacy_config={"config_id":"CP4-TEST-PRIVACY","private_root_signatures":["synthetic-private-root"],"forbidden_basenames":["synthetic-private-source.pptx"]}, regression_evidence=capture_regression_evidence(inputs, disposable_worktree=True, tests_passed=311, tests_failed=0, suite_id="unit"))
+    outputs = build_checkpoint4_artifacts(inputs, privacy_config={"config_id":"CP4-TEST-PRIVACY","private_root_signatures":["synthetic-private-root"],"forbidden_basenames":["synthetic-private-source.pptx"]}, regression_evidence=capture_regression_evidence(inputs, disposable_worktree=True, tests_passed=316, tests_failed=0, suite_id="unit"))
     report = ROOT / "thesis-deck-system" / "reports" / "PHASE_3_CHECKPOINT_4_IMPLEMENTATION_REPORT.md"
     assert validate_report_artifact_consistency(report, outputs)["status"] == "pass"
+
+
+def test_revision3_router_rejects_invalid_evidence_at_its_public_boundary():
+    """A direct call must not leak a later-contract-invalid plan."""
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, route_figure_request
+
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(_request(visual_class="literature_figure"), _style())
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(_request(visual_class="quantitative_measured_result", evidence_status="literature_evidence"), _style())
+
+
+def test_revision3_evidence_policy_allows_documented_mechanism_alternative_only():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, route_figure_request
+
+    plan = route_figure_request(_request(visual_class="mechanism_explanation", evidence_status="literature_evidence"), _style())
+    assert plan["selected_specialist_skill"] == "mechanism-diagram-director"
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(_request(visual_class="mechanism_explanation", evidence_status="non_evidence"), _style())
+
+
+def test_revision3_plan_source_requirement_is_typed_and_route_bound():
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_checkpoint4 import route_figure_request
+
+    plan = route_figure_request(_request(), _style())
+    assert plan["source_requirement"] == "canonical_data"
+    plan["source_requirement"] = "literature_source"
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True)
+    assert registry.errors("figure-production-plan", plan)
+
+
+def test_revision3_specs_losslessly_bind_their_resolved_plan_policy():
+    from thesis_deck_system.phase3_checkpoint4 import (
+        Checkpoint4Error,
+        build_checkpoint4_artifacts,
+        capture_regression_evidence,
+        validate_plan_spec_policy_bindings,
+    )
+
+    inputs = _cp3_inputs()
+    outputs = build_checkpoint4_artifacts(
+        inputs,
+        privacy_config={"config_id":"CP4-TEST-PRIVACY","private_root_signatures":["synthetic-private-root"],"forbidden_basenames":["synthetic-private-source.pptx"]},
+        regression_evidence=capture_regression_evidence(inputs, disposable_worktree=True, tests_passed=1, tests_failed=0, suite_id="unit"),
+    )
+    audit = validate_plan_spec_policy_bindings(outputs["plans"], outputs["specs"])
+    assert audit["policy_mismatch_count"] == 0
+    assert audit["exact_policy_binding_count"] == 10
+    outputs["specs"][0]["source_requirement"] = "literature_source"
+    with pytest.raises(Checkpoint4Error):
+        validate_plan_spec_policy_bindings(outputs["plans"], outputs["specs"])
+
+
+def test_revision3_graph_audits_every_declared_downstream_edge():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, audit_skill_graph, load_skill_registry
+
+    registry = copy.deepcopy(load_skill_registry())
+    registry["skills"][0]["allowed_downstream"].append("unknown-contract-node")
+    with pytest.raises(Checkpoint4Error):
+        audit_skill_graph(registry)
+
+    registry = copy.deepcopy(load_skill_registry())
+    registry["skills"][0]["allowed_downstream"].append("layout-director")
+    with pytest.raises(Checkpoint4Error):
+        audit_skill_graph(registry)

@@ -1,5 +1,6 @@
 [
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -16,9 +17,15 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG001",
+    "figure_plan_ref": "FPL001",
     "figure_type": "scientific_plot",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "svg_vector"
     ],
@@ -32,23 +39,73 @@
       "figure_critic"
     ],
     "renderer_class": "reproducible_plot",
+    "requested_archetype": "A10",
+    "required_style_categories": [
+      "typography_hierarchy",
+      "body_composition",
+      "scientific_figure_metrics",
+      "line_style_grammar"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "result_display",
+    "source_asset_required": false,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "canonical_data",
     "specialist_payload": {
       "kind": "quantitative_measured_result"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "typography_hierarchy",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "body_composition",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "scientific_figure_metrics",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "line_style_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "quantitative_measured_result",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -65,9 +122,15 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG002",
+    "figure_plan_ref": "FPL002",
     "figure_type": "fishbone_diagram",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "svg_vector"
     ],
@@ -81,15 +144,24 @@
       "figure_critic"
     ],
     "renderer_class": "deterministic_svg_vector",
+    "requested_archetype": "A03",
+    "required_style_categories": [
+      "connector_arrow_grammar",
+      "line_style_grammar",
+      "color_emphasis_grammar"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "research_history",
+    "source_asset_required": false,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "fishbone_binding": {
         "fishbone_revision_ref": "FB001-R001",
@@ -99,10 +171,43 @@
       "kind": "fishbone_history"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "connector_arrow_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "line_style_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": "material_semantic_colors_unresolved",
+        "category_id": "color_emphasis_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "fishbone_history",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -119,9 +224,15 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG003",
+    "figure_plan_ref": "FPL003",
     "figure_type": "fabrication_process_diagram",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "svg_vector"
     ],
@@ -135,15 +246,24 @@
       "figure_critic"
     ],
     "renderer_class": "deterministic_svg_vector",
+    "requested_archetype": "A09",
+    "required_style_categories": [
+      "connector_arrow_grammar",
+      "line_style_grammar",
+      "body_composition"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "process_chronology",
+    "source_asset_required": false,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "kind": "fabrication_process",
       "steps": [
@@ -154,10 +274,43 @@
       ]
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "connector_arrow_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "line_style_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "body_composition",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "fabrication_process",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -174,9 +327,15 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG004",
+    "figure_plan_ref": "FPL004",
     "figure_type": "real_photo",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "source_evidence_asset"
     ],
@@ -190,23 +349,65 @@
       "figure_critic"
     ],
     "renderer_class": "real_evidence_overlay",
+    "requested_archetype": "A04",
+    "required_style_categories": [
+      "typography_hierarchy",
+      "body_composition",
+      "color_emphasis_grammar"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_asset_required": true,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "real_evidence",
     "specialist_payload": {
       "kind": "real_experiment_photo"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "typography_hierarchy",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "body_composition",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": "material_semantic_colors_unresolved",
+        "category_id": "color_emphasis_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "real_experiment_photo",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -223,9 +424,15 @@
     ],
     "evidence_status": "literature_evidence",
     "figure_id": "FIG005",
+    "figure_plan_ref": "FPL005",
     "figure_type": "literature_figure",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "extracted_source_figure"
     ],
@@ -239,23 +446,65 @@
       "figure_critic"
     ],
     "renderer_class": "source_extraction_overlay",
+    "requested_archetype": "A05",
+    "required_style_categories": [
+      "typography_hierarchy",
+      "body_composition",
+      "color_emphasis_grammar"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_asset_required": true,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "literature_source",
     "specialist_payload": {
       "kind": "literature_figure"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "typography_hierarchy",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "body_composition",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": "material_semantic_colors_unresolved",
+        "category_id": "color_emphasis_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "literature_figure",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -272,9 +521,15 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG006",
+    "figure_plan_ref": "FPL006",
     "figure_type": "mechanism_diagram",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "svg_vector"
     ],
@@ -288,23 +543,73 @@
       "figure_critic"
     ],
     "renderer_class": "deterministic_svg_vector",
+    "requested_archetype": "A06",
+    "required_style_categories": [
+      "connector_arrow_grammar",
+      "line_style_grammar",
+      "color_emphasis_grammar",
+      "scientific_figure_metrics"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_asset_required": false,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "kind": "mechanism_explanation"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "connector_arrow_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "line_style_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": "material_semantic_colors_unresolved",
+        "category_id": "color_emphasis_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "scientific_figure_metrics",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "mechanism_explanation",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -321,9 +626,15 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG007",
+    "figure_plan_ref": "FPL007",
     "figure_type": "experiment_schematic",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "svg_vector"
     ],
@@ -337,23 +648,65 @@
       "figure_critic"
     ],
     "renderer_class": "deterministic_svg_vector",
+    "requested_archetype": "A09",
+    "required_style_categories": [
+      "connector_arrow_grammar",
+      "line_style_grammar",
+      "body_composition"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_asset_required": false,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "kind": "experiment_setup"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "connector_arrow_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "line_style_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "body_composition",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "experiment_setup",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -370,9 +723,15 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG008",
+    "figure_plan_ref": "FPL008",
     "figure_type": "comparison_diagram",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "svg_vector"
     ],
@@ -386,23 +745,65 @@
       "figure_critic"
     ],
     "renderer_class": "deterministic_svg_vector",
+    "requested_archetype": "A08",
+    "required_style_categories": [
+      "body_composition",
+      "scientific_figure_metrics",
+      "color_emphasis_grammar"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_asset_required": false,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "kind": "fair_comparison"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "body_composition",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "scientific_figure_metrics",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": "material_semantic_colors_unresolved",
+        "category_id": "color_emphasis_grammar",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "partial_recurring",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "fair_comparison",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": false,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -419,9 +820,15 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG009",
+    "figure_plan_ref": "FPL009",
     "figure_type": "image_matrix_figure",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "source_evidence_asset"
     ],
@@ -435,23 +842,65 @@
       "figure_critic"
     ],
     "renderer_class": "source_evidence_matrix",
+    "requested_archetype": "A12",
+    "required_style_categories": [
+      "body_composition",
+      "typography_hierarchy",
+      "scientific_figure_metrics"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "required",
     "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_asset_required": true,
     "source_cursor": 20,
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "real_evidence",
     "specialist_payload": {
       "kind": "image_matrix"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "body_composition",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "typography_hierarchy",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "scientific_figure_metrics",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "image_matrix",
     "visual_states": []
   },
   {
+    "ai_generation_allowed": true,
     "annotations": [],
     "canvas": {
       "height": 900,
@@ -464,9 +913,15 @@
     "evidence_refs": [],
     "evidence_status": "non_evidence",
     "figure_id": "FIG010",
+    "figure_plan_ref": "FPL010",
     "figure_type": "concept_illustration",
     "hypothesis_layer_ref": "H001",
     "labels": [],
+    "native_shape_eligibility": {
+      "reason": "no_cp3_measured_native_eligibility_threshold",
+      "rule_id": "CP4-SVG-FIRST-UNMEASURED-NATIVE-THRESHOLD",
+      "status": "insufficient_evidence"
+    },
     "output_targets": [
       "generated_non_evidence_substrate"
     ],
@@ -480,18 +935,51 @@
       "figure_critic"
     ],
     "renderer_class": "generated_non_evidence",
+    "requested_archetype": "A16",
+    "required_style_categories": [
+      "body_composition",
+      "typography_hierarchy"
+    ],
     "research_block_refs": [
       "B101"
     ],
     "schema_version": "4.0.0",
+    "scientific_claim_support": "forbidden",
     "scientific_purpose": "auxiliary_non_evidence_context",
+    "source_asset_required": false,
     "source_cursor": 20,
     "source_refs": [],
+    "source_requirement": "non_evidence_only",
     "specialist_payload": {
       "kind": "organic_concept"
     },
     "stage_ref": "ST-RES101",
+    "style_category_requirements": [
+      {
+        "blocking_state": null,
+        "category_id": "body_composition",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      },
+      {
+        "blocking_state": null,
+        "category_id": "typography_hierarchy",
+        "consumption_mode": "professor_provisional_with_flag",
+        "cp3_readiness_status": "provisional_only",
+        "source_profile_ref": "VSP003"
+      }
+    ],
     "style_profile_ref": "VSP003",
+    "style_usage_policy": {
+      "blocked_unresolved": [
+        "material_semantic_colors"
+      ],
+      "fallback_required": true,
+      "professor_provisional_allowed_with_flag": true,
+      "professor_recurring_allowed": true
+    },
+    "visual_class": "organic_concept",
     "visual_states": []
   }
 ]

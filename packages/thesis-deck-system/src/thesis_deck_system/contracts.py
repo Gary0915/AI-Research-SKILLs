@@ -134,16 +134,16 @@ class SchemaRegistry:
 
 
 _FIGURE_ROUTES = {
-    "quantitative_measured_result": ("scientific_plot", "scientific-plot-director", "reproducible_plot", "svg_vector", "empirical", False),
-    "real_experiment_photo": ("real_photo", "photo-annotation-director", "real_evidence_overlay", "source_evidence_asset", "empirical", False),
-    "literature_figure": ("literature_figure", "literature-figure-director", "source_extraction_overlay", "extracted_source_figure", "literature_evidence", False),
-    "mechanism_explanation": ("mechanism_diagram", "mechanism-diagram-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
-    "experiment_setup": ("experiment_schematic", "experiment-schematic-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
-    "fabrication_process": ("fabrication_process_diagram", "fabrication-process-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
-    "fishbone_history": ("fishbone_diagram", "fishbone-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
-    "fair_comparison": ("comparison_diagram", "comparison-figure-director", "deterministic_svg_vector", "svg_vector", "empirical", False),
-    "image_matrix": ("image_matrix_figure", "image-matrix-director", "source_evidence_matrix", "source_evidence_asset", "empirical", False),
-    "organic_concept": ("concept_illustration", "concept-illustration-director", "generated_non_evidence", "generated_non_evidence_substrate", "non_evidence", True),
+    "quantitative_measured_result": ("scientific_plot", "scientific-plot-director", "reproducible_plot", "svg_vector", {"empirical"}, False, "canonical_data"),
+    "real_experiment_photo": ("real_photo", "photo-annotation-director", "real_evidence_overlay", "source_evidence_asset", {"empirical"}, False, "real_evidence"),
+    "literature_figure": ("literature_figure", "literature-figure-director", "source_extraction_overlay", "extracted_source_figure", {"literature_evidence"}, False, "literature_source"),
+    "mechanism_explanation": ("mechanism_diagram", "mechanism-diagram-director", "deterministic_svg_vector", "svg_vector", {"empirical", "literature_evidence"}, False, "structured_spec"),
+    "experiment_setup": ("experiment_schematic", "experiment-schematic-director", "deterministic_svg_vector", "svg_vector", {"empirical", "literature_evidence"}, False, "structured_spec"),
+    "fabrication_process": ("fabrication_process_diagram", "fabrication-process-director", "deterministic_svg_vector", "svg_vector", {"empirical", "literature_evidence"}, False, "structured_spec"),
+    "fishbone_history": ("fishbone_diagram", "fishbone-director", "deterministic_svg_vector", "svg_vector", {"empirical", "literature_evidence"}, False, "structured_spec"),
+    "fair_comparison": ("comparison_diagram", "comparison-figure-director", "deterministic_svg_vector", "svg_vector", {"empirical", "literature_evidence"}, False, "structured_spec"),
+    "image_matrix": ("image_matrix_figure", "image-matrix-director", "source_evidence_matrix", "source_evidence_asset", {"empirical"}, False, "real_evidence"),
+    "organic_concept": ("concept_illustration", "concept-illustration-director", "generated_non_evidence", "generated_non_evidence_substrate", {"non_evidence"}, True, "non_evidence_only"),
 }
 
 
@@ -152,7 +152,7 @@ def _figure_route_contract_errors(value: Any, name: str) -> list[str]:
     if not isinstance(value, dict) or value.get("schema_version") != "4.0.0":
         return []
     visual = value.get("visual_class")
-    if visual is None:  # Specs bind their route through their director/type pair.
+    if name == "scientific-figure-spec":
         candidates = [route for route in _FIGURE_ROUTES.values() if route[0] == value.get("figure_type") and route[1] == value.get("director_skill")]
         if len(candidates) != 1:
             return ["$: ScientificFigureSpec route discriminator is invalid"]
@@ -163,9 +163,18 @@ def _figure_route_contract_errors(value: Any, name: str) -> list[str]:
         if expected is None:
             return ["visual_class: unsupported FigureProductionPlan route"]
         actual = (value.get("figure_type"), value.get("selected_specialist_skill"), value.get("renderer_class"), value.get("canonical_output_kind"), value.get("evidence_status"))
-    expected_values = expected[:5]
-    labels = ("figure_type", "specialist", "renderer", "canonical_output", "evidence_status")
-    return [f"{label}: route discriminator mismatch" for label, got, want in zip(labels, actual, expected_values) if got != want] + (["ai_generation_allowed: route discriminator mismatch"] if visual is not None and value.get("ai_generation_allowed") != expected[5] else [])
+    expected_values = expected[:4]
+    labels = ("figure_type", "specialist", "renderer", "canonical_output")
+    errors = [f"{label}: route discriminator mismatch" for label, got, want in zip(labels, actual[:4], expected_values) if got != want]
+    if actual[4] not in expected[4]:
+        errors.append("evidence_status: route discriminator mismatch")
+    if visual is not None and value.get("ai_generation_allowed") != expected[5]:
+        errors.append("ai_generation_allowed: route discriminator mismatch")
+    if value.get("source_requirement") != expected[6]:
+        errors.append("source_requirement: route discriminator mismatch")
+    if name in {"figure-production-plan", "scientific-figure-spec"} and value.get("source_asset_required") != (expected[6] in {"real_evidence", "literature_source"}):
+        errors.append("source_asset_required: source requirement mismatch")
+    return errors
 
 def _refs(items: Iterable[dict[str, Any]], field: str) -> set[str]:
     refs: set[str] = set()

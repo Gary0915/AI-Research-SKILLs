@@ -45,6 +45,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "canonical_data",
     "specialist_payload": {
       "kind": "quantitative_measured_result"
     },
@@ -136,6 +137,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "fishbone_binding": {
         "fishbone_revision_ref": "FB001-R001",
@@ -225,6 +227,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "kind": "fabrication_process",
       "steps": [
@@ -315,6 +318,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "real_evidence",
     "specialist_payload": {
       "kind": "real_experiment_photo"
     },
@@ -399,6 +403,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "literature_source",
     "specialist_payload": {
       "kind": "literature_figure"
     },
@@ -484,6 +489,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "kind": "mechanism_explanation"
     },
@@ -575,6 +581,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "kind": "experiment_setup"
     },
@@ -659,6 +666,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "structured_spec",
     "specialist_payload": {
       "kind": "fair_comparison"
     },
@@ -743,6 +751,7 @@
     "source_refs": [
       "E101"
     ],
+    "source_requirement": "real_evidence",
     "specialist_payload": {
       "kind": "image_matrix"
     },
@@ -820,6 +829,7 @@
     "source_asset_required": false,
     "source_cursor": 20,
     "source_refs": [],
+    "source_requirement": "non_evidence_only",
     "specialist_payload": {
       "kind": "organic_concept"
     },

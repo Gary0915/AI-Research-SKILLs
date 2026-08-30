@@ -52,6 +52,22 @@ ROUTES = {
     "organic_concept": ("concept-illustration-director", "generated_non_evidence", "generated_non_evidence_substrate", True, "non_evidence_only", "concept_illustration", ["body_composition", "typography_hierarchy"]),
 }
 
+# Evidence provenance is an independent control dimension.  A mechanism or a
+# fair comparison can be anchored in either measured evidence or literature;
+# that does not change which bounded specialist owns the visual class.
+EVIDENCE_POLICY = {
+    "quantitative_measured_result": {"empirical"},
+    "real_experiment_photo": {"empirical"},
+    "literature_figure": {"literature_evidence"},
+    "mechanism_explanation": {"empirical", "literature_evidence"},
+    "experiment_setup": {"empirical", "literature_evidence"},
+    "fabrication_process": {"empirical", "literature_evidence"},
+    "fishbone_history": {"empirical", "literature_evidence"},
+    "fair_comparison": {"empirical", "literature_evidence"},
+    "image_matrix": {"empirical"},
+    "organic_concept": {"non_evidence"},
+}
+
 
 class Checkpoint4Error(ValueError):
     """A routing/input boundary cannot be safely satisfied."""
@@ -63,6 +79,11 @@ def _canonical(value: Any) -> str:
 
 def _hash(value: Any) -> str:
     return sha256(_canonical(value).encode("utf-8")).hexdigest()
+
+
+def _candidate_file_hash(path: Path) -> str:
+    """Hash the canonical text state, not checkout-specific newline bytes."""
+    return sha256(path.read_text(encoding="utf-8").replace("\r\n", "\n").encode("utf-8")).hexdigest()
 
 
 def _require(condition: bool, message: str) -> None:
@@ -121,6 +142,7 @@ def route_figure_request(request: dict[str, Any], style_profile: dict[str, Any] 
     _require(request.get("hypothesis_layer_ref") and request.get("research_block_refs") and request.get("stage_ref"), "scientific binding required")
     _require(isinstance(request.get("source_cursor"), int) and request["source_cursor"] > 0, "source cursor required")
     _require(request.get("provenance_rule_ids"), "routing provenance required")
+    _require(evidence_status in EVIDENCE_POLICY[visual_class], "evidence provenance is not allowed for visual class")
     if visual_class == "organic_concept":
         _require(evidence_status == "non_evidence" and support == "forbidden" and not claims and not evidence, "concept must remain non-evidence without claim/evidence binding")
         _require(not any(request.get(key) for key in ("observation_evidence_ref", "experimental_evidence_slot_refs", "quantitative_result_evidence_slot_refs", "literature_figure_evidence_slot_refs")), "concept cannot bind empirical evidence slots")
@@ -145,14 +167,14 @@ def route_figure_request(request: dict[str, Any], style_profile: dict[str, Any] 
         payload["steps"] = [{"ordinal": item["ordinal"], "condition_state": item.get("condition_state", "unknown")} for item in request["fabrication_steps"]]
     if visual_class == "fishbone_history":
         payload["fishbone_binding"] = {key: request["fishbone_binding"][key] for key in ("fishbone_revision_ref", "focus_ref", "history_ref")}
-    return {
+    plan = {
         "schema_version": "4.0.0", "figure_plan_id": request["figure_plan_id"], "visual_class": visual_class,
         "scientific_purpose": request["scientific_purpose"], "evidence_status": evidence_status,
         "scientific_claim_support": support, "source_refs": sources, "claim_refs": claims, "evidence_refs": evidence,
         "hypothesis_layer_ref": request["hypothesis_layer_ref"], "research_block_refs": sorted(set(request["research_block_refs"])),
         "stage_ref": request["stage_ref"], "source_cursor": request["source_cursor"],
         "selected_specialist_skill": director, "renderer_class": renderer, "canonical_output_kind": output,
-        "source_asset_required": source_requirement in {"real_evidence", "literature_source"}, "ai_generation_allowed": ai_allowed,
+        "source_requirement": source_requirement, "source_asset_required": source_requirement in {"real_evidence", "literature_source"}, "ai_generation_allowed": ai_allowed,
         "native_shape_eligibility": native, "style_profile_ref": style_profile["style_profile_id"], "figure_type": figure_type,
         "required_style_categories": categories, "style_category_requirements": _style_categories(style_profile, categories),
         "style_usage_policy": {"professor_recurring_allowed": True, "professor_provisional_allowed_with_flag": True, "fallback_required": True, "blocked_unresolved": ["material_semantic_colors"]},
@@ -160,6 +182,9 @@ def route_figure_request(request: dict[str, Any], style_profile: dict[str, Any] 
         "status": "routed_not_rendered", "provenance_rule_ids": sorted(set(request["provenance_rule_ids"])),
         "specialist_payload": payload, "requested_archetype": request.get("requested_archetype"),
     }
+    errors = _schema_registry().errors("figure-production-plan", plan)
+    _require(not errors, f"router produced invalid FigureProductionPlan: {errors[0] if errors else ''}")
+    return plan
 
 
 def validate_layout_figure_handoff(candidate: dict[str, Any]) -> None:
@@ -192,7 +217,7 @@ def validate_skill_registry(registry: dict[str, Any]) -> None:
     for skill_id, item in by_id.items():
         if skill_id.endswith("-director") and skill_id not in {"layout-director"}:
             _require(item["handoff_target"] != "figure-critic", "specialist must render to output manifest before FigureCritic")
-        _require(item["handoff_target"] in REQUIRED_SKILLS | {"selected_specialist_director", "FigureOutputManifest", "PythonPptxAssembler"}, "unknown downstream node")
+        _require(item["handoff_target"] in REQUIRED_SKILLS | {"selected_specialist_director", "FigureOutputManifest", "PythonPptxAssembler", "style-resolution-consumer"}, "unknown downstream node")
         _require(item["handoff_target"] in set(item["allowed_downstream"]), "dangling handoff target")
     _require(by_id["vector-figure-builder"]["output_contract"] == "FigureOutputManifest", "vector builder output contract mismatch")
 
@@ -201,26 +226,30 @@ def audit_skill_graph(registry: dict[str, Any]) -> dict[str, int]:
     """Audit every CP4 figure edge with declared producer/consumer contracts."""
     validate_skill_registry(registry)
     by_id = {item["skill_id"]: item for item in registry["skills"]}
-    virtual = {"selected_specialist_director", "FigureOutputManifest", "PythonPptxAssembler"}
-    mismatches = dangling = bypasses = edges = 0
+    virtual_inputs = {
+        "selected_specialist_director": {"FigureProductionPlan"},
+        "FigureOutputManifest": {"FigureOutputManifest"},
+        "PythonPptxAssembler": {"layout_plan"},
+        "style-resolution-consumer": {"style_resolution"},
+    }
+    mismatches = dangling = bypasses = edges = handoff_edges = 0
     for item in by_id.values():
+        for target in item["allowed_downstream"]:
+            edges += 1
+            if target not in by_id and target not in virtual_inputs:
+                dangling += 1
+                continue
+            accepted = by_id[target]["inputs"] if target in by_id else virtual_inputs[target]
+            if item["output_contract"] not in accepted:
+                mismatches += 1
+            if target == "layout-director" and item["skill_id"] != "figure-critic":
+                bypasses += 1
         target = item["handoff_target"]
-        edges += 1
-        if target not in by_id and target not in virtual:
+        handoff_edges += 1
+        if target not in item["allowed_downstream"]:
             dangling += 1
-            continue
-        if target == "vector-figure-builder" and item["output_contract"] != "ScientificFigureSpec":
-            mismatches += 1
-        elif target == "FigureOutputManifest" and item["output_contract"] != "FigureOutputManifest":
-            mismatches += 1
-        elif target == "layout-director" and item["output_contract"] != "APPROVED_FIGURE":
-            mismatches += 1
-        elif target in by_id and target not in {"vector-figure-builder", "layout-director"} and item["output_contract"] not in by_id[target]["inputs"]:
-            mismatches += 1
-        if target == "layout-director" and item["skill_id"] != "figure-critic":
-            bypasses += 1
     _require(dangling == mismatches == bypasses == 0, "Figure graph contains dangling, mismatched, or bypass edges")
-    return {"node_count": len(by_id) + len(virtual), "edge_count": edges, "dangling_edge_count": dangling, "contract_mismatch_count": mismatches, "pre_critic_layout_bypass_count": bypasses}
+    return {"node_count": len(by_id) + len(virtual_inputs), "declared_edge_count": edges, "handoff_edge_count": handoff_edges, "edge_count": edges, "dangling_edge_count": dangling, "contract_mismatch_count": mismatches, "pre_critic_layout_bypass_count": bypasses}
 
 
 def archetype_routing_matrix() -> list[dict[str, Any]]:
@@ -239,12 +268,12 @@ def archetype_routing_matrix() -> list[dict[str, Any]]:
 def _components(inputs: dict[str, dict], registry: dict[str, Any]) -> dict[str, str]:
     _require(set(inputs) == set(CP3_INPUTS), "exact CP3 input set required")
     component = {f"cp3:{key}": _hash(value) for key, value in sorted(inputs.items())}
-    component["cp4:phase3_checkpoint4.py"] = sha256(Path(__file__).read_bytes()).hexdigest()
-    component["cp4:contracts.py"] = sha256((Path(__file__).parent / "contracts.py").read_bytes()).hexdigest()
-    component["skill-registry:skill-routing.yaml"] = sha256(ROUTING_PATH.read_bytes()).hexdigest()
-    component.update({f"schema:{name}": sha256((SCHEMAS / name).read_bytes()).hexdigest() for name in CP4_SCHEMAS})
+    component["cp4:phase3_checkpoint4.py"] = _candidate_file_hash(Path(__file__))
+    component["cp4:contracts.py"] = _candidate_file_hash(Path(__file__).parent / "contracts.py")
+    component["skill-registry:skill-routing.yaml"] = _candidate_file_hash(ROUTING_PATH)
+    component.update({f"schema:{name}": _candidate_file_hash(SCHEMAS / name) for name in CP4_SCHEMAS})
     for skill_id in sorted(REQUIRED_SKILLS):
-        component[f"skill:{skill_id}"] = sha256((ROOT / "thesis-deck-system" / "skills" / skill_id / "SKILL.md").read_bytes()).hexdigest()
+        component[f"skill:{skill_id}"] = _candidate_file_hash(ROOT / "thesis-deck-system" / "skills" / skill_id / "SKILL.md")
     return component
 
 
@@ -308,6 +337,52 @@ def _privacy_scan(privacy_config: dict[str, Any] | None) -> tuple[bool, dict[str
     return result, {key: evidence[key] for key in sorted(required)}
 
 
+_PLAN_SPEC_POLICY_FIELDS = (
+    "visual_class", "figure_type", "scientific_purpose", "evidence_status",
+    "scientific_claim_support", "source_requirement", "source_asset_required",
+    "ai_generation_allowed", "native_shape_eligibility", "source_refs",
+    "claim_refs", "evidence_refs", "hypothesis_layer_ref", "research_block_refs",
+    "stage_ref", "source_cursor", "style_profile_ref", "required_style_categories",
+    "style_category_requirements", "style_usage_policy", "specialist_payload",
+    "requested_archetype",
+)
+
+
+def project_plan_to_spec(plan: dict[str, Any]) -> dict[str, Any]:
+    """Create the sole deterministic specialist-input projection for a plan."""
+    spec = {
+        "schema_version": "4.0.0", "figure_id": plan["figure_plan_id"].replace("FPL", "FIG"),
+        "figure_plan_ref": plan["figure_plan_id"], "director_skill": plan["selected_specialist_skill"],
+        "renderer_class": plan["renderer_class"], "canvas": {"width": 1600, "height": 900},
+        "components": [], "connections": [], "annotations": [], "labels": [], "visual_states": [],
+        "provenance": {"rule_ids": plan["provenance_rule_ids"]},
+        "output_targets": [plan["canonical_output_kind"]], "qa_requirements": plan["required_qa"],
+    }
+    spec.update({field: plan[field] for field in _PLAN_SPEC_POLICY_FIELDS})
+    return spec
+
+
+def validate_plan_spec_policy_bindings(plans: list[dict[str, Any]], specs: list[dict[str, Any]]) -> dict[str, int]:
+    """Fail closed unless every specialist spec exactly carries its plan policy."""
+    plan_by_id = {plan.get("figure_plan_id"): plan for plan in plans}
+    spec_refs = [spec.get("figure_plan_ref") for spec in specs]
+    orphan_specs = sum(ref not in plan_by_id for ref in spec_refs)
+    orphan_plans = sum(plan_id not in set(spec_refs) for plan_id in plan_by_id)
+    duplicate_refs = len(spec_refs) - len(set(spec_refs))
+    mismatches = 0
+    for spec in specs:
+        plan = plan_by_id.get(spec.get("figure_plan_ref"))
+        if plan is None:
+            continue
+        mismatches += sum(spec.get(field) != plan.get(field) for field in _PLAN_SPEC_POLICY_FIELDS)
+        mismatches += int(spec.get("director_skill") != plan.get("selected_specialist_skill"))
+        mismatches += int(spec.get("renderer_class") != plan.get("renderer_class"))
+        mismatches += int(spec.get("output_targets") != [plan.get("canonical_output_kind")])
+    audit = {"plan_count": len(plans), "spec_count": len(specs), "exact_policy_binding_count": len(specs) if not (orphan_specs or orphan_plans or duplicate_refs or mismatches) else 0, "policy_mismatch_count": mismatches, "orphan_spec_count": orphan_specs, "orphan_plan_count": orphan_plans, "duplicate_plan_ref_count": duplicate_refs}
+    _require(not any((orphan_specs, orphan_plans, duplicate_refs, mismatches)) and len(plans) == len(specs), "FigureProductionPlan to ScientificFigureSpec policy binding failed")
+    return audit
+
+
 def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict[str, Any] | None = None, regression_evidence: dict[str, Any] | None = None) -> dict[str, Any]:
     """Build deterministic synthetic routing records from sanitized CP3 artifacts only."""
     registry = load_skill_registry(); graph_audit = audit_skill_graph(registry)
@@ -328,6 +403,8 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
     ]
     style = inputs["visual-style-profile.json"]
     plans = [route_figure_request(item, style) for item in requests]
+    specs = [project_plan_to_spec(plan) for plan in plans]
+    policy_audit = validate_plan_spec_policy_bindings(plans, specs)
     matrix = archetype_routing_matrix(); _require(len(matrix) == 18, "archetype routing incomplete")
     components = _components(inputs, registry)
     schemas_closed = all(_schema_closed(json.loads((SCHEMAS / name).read_text(encoding="utf-8"))) for name in CP4_SCHEMAS)
@@ -342,6 +419,8 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
     def check(ident: str, result: bool, facts: list[dict[str, Any]]) -> dict[str, Any]:
         return {"check_id": ident, "status": "pass" if result else "fail", "evidence": {"facts": facts}}
     class_ids = {plan["visual_class"] for plan in plans}
+    evidence_modes = {plan["visual_class"]: plan["evidence_status"] for plan in plans}
+    source_requirements = {key: sum(plan["source_requirement"] == key for plan in plans) for key in ("canonical_data", "real_evidence", "literature_source", "structured_spec", "non_evidence_only")}
     route_ready = [item for plan in plans for item in plan["style_category_requirements"]]
     graph = registry["handoff_graph"]
     owning_checks = [
@@ -349,8 +428,12 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
         check("CP4-PRIVATE-ACCESS", private_api_absent, [{"name":"private_api_absent","boolean":private_api_absent},{"name":"private_alias_attempt_count","integer":0},{"name":"private_source_attempt_count","integer":0},{"name":"private_render_attempt_count","integer":0}]),
         check("CP4-ROUTING-DETERMINISM", all(route_figure_request(item, style) == route_figure_request(dict(reversed(list(item.items()))), style) for item in requests), [{"name":"request_count","integer":len(requests)},{"name":"deterministic","boolean":True}]),
         check("CP4-VISUAL-CLASS-COVERAGE", class_ids == set(ROUTES) and len(plans) == 10, [{"name":"supported_class_count","integer":len(ROUTES)},{"name":"exercised_class_count","integer":len(class_ids)},{"name":"missing_class_count","integer":len(set(ROUTES)-class_ids)}]),
+        check("CP4-ROUTER-OUTPUT-SELF-VALIDATION", all(not _schema_registry().errors("figure-production-plan", plan) for plan in plans), [{"name":"router_validated_plan_count","integer":len(plans)},{"name":"router_invalid_plan_count","integer":0}]),
+        check("CP4-EVIDENCE-POLICY-MATRIX", all(evidence_modes[visual] in EVIDENCE_POLICY[visual] for visual in evidence_modes), [{"name":"validated_evidence_mode_count","integer":len(evidence_modes)},{"name":"allowed_evidence_policy_class_count","integer":len(EVIDENCE_POLICY)}]),
+        check("CP4-SOURCE-REQUIREMENT-RECONCILIATION", sum(source_requirements.values()) == len(plans), [{"name":"canonical_data_count","integer":source_requirements["canonical_data"]},{"name":"real_evidence_count","integer":source_requirements["real_evidence"]},{"name":"literature_source_count","integer":source_requirements["literature_source"]},{"name":"structured_spec_count","integer":source_requirements["structured_spec"]},{"name":"non_evidence_only_count","integer":source_requirements["non_evidence_only"]}]),
+        check("CP4-PLAN-SPEC-POLICY-BINDING", policy_audit["exact_policy_binding_count"] == len(plans), [{"name":"plan_count","integer":policy_audit["plan_count"]},{"name":"spec_count","integer":policy_audit["spec_count"]},{"name":"exact_policy_binding_count","integer":policy_audit["exact_policy_binding_count"]},{"name":"policy_mismatch_count","integer":policy_audit["policy_mismatch_count"]},{"name":"orphan_spec_count","integer":policy_audit["orphan_spec_count"]},{"name":"orphan_plan_count","integer":policy_audit["orphan_plan_count"]}]),
         check("CP4-SKILL-REGISTRY", set(item["skill_id"] for item in registry["skills"]) == REQUIRED_SKILLS, [{"name":"expected_skill_count","integer":17},{"name":"actual_skill_count","integer":len(registry["skills"])}]),
-        check("CP4-HANDOFF-NO-BYPASS", graph == ["scientific_state", "FigureProductionPlan", "selected_specialist_director", "FigureOutputManifest", "figure-critic", "APPROVED_FIGURE", "layout-director"] and all(plan["handoff_target"] == "selected_specialist_director" for plan in plans), [{"name":"graph_node_count","integer":graph_audit["node_count"]},{"name":"graph_edge_count","integer":graph_audit["edge_count"]},{"name":"dangling_edge_count","integer":graph_audit["dangling_edge_count"]},{"name":"contract_mismatch_count","integer":graph_audit["contract_mismatch_count"]},{"name":"pre_critic_layout_bypass_count","integer":graph_audit["pre_critic_layout_bypass_count"]}]),
+        check("CP4-HANDOFF-NO-BYPASS", graph == ["scientific_state", "FigureProductionPlan", "selected_specialist_director", "FigureOutputManifest", "figure-critic", "APPROVED_FIGURE", "layout-director"] and all(plan["handoff_target"] == "selected_specialist_director" for plan in plans), [{"name":"graph_node_count","integer":graph_audit["node_count"]},{"name":"declared_edge_count","integer":graph_audit["declared_edge_count"]},{"name":"handoff_edge_count","integer":graph_audit["handoff_edge_count"]},{"name":"dangling_edge_count","integer":graph_audit["dangling_edge_count"]},{"name":"contract_mismatch_count","integer":graph_audit["contract_mismatch_count"]},{"name":"pre_critic_layout_bypass_count","integer":graph_audit["pre_critic_layout_bypass_count"]}]),
         check("CP4-A01-A18-ROUTING", {row["archetype_id"] for row in matrix} == {f"A{i:02d}" for i in range(1, 19)}, [{"name":"expected_archetype_count","integer":18},{"name":"actual_archetype_count","integer":len(matrix)},{"name":"non_not_run_geometry_count","integer":sum(row["geometry_calibration_status"] != "not_run" for row in matrix)}]),
         check("CP4-SVG-FIRST", all(plan["native_shape_eligibility"]["status"] == "insufficient_evidence" for plan in plans), [{"name":"native_threshold_unresolved","boolean":True}]),
         check("CP4-EMPIRICAL-AI-BOUNDARY", all(not plan["ai_generation_allowed"] for plan in plans if plan["evidence_status"] != "non_evidence"), [{"name":"empirical_ai_prohibited","boolean":True}]),
@@ -363,7 +446,6 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
     ]
     execution = {"schema_version": "4.0.0", "execution_id": "CP4-EXEC-001", "private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0, "candidate_state": {"component_hashes": components, "composite_candidate_state_hash": candidate_hash, "regression_candidate_state_hash": tested_hash if isinstance(tested_hash, str) else "0"*64, "candidate_hash_equal": hash_equal, "disposable_worktree": bool(regression_evidence.get("disposable_worktree")), "tests_passed": regression_evidence.get("tests_passed", 0), "tests_failed": regression_evidence.get("tests_failed", 0), "suite_id": regression_evidence.get("suite_id", "not_run"), "regression_status": "pass" if regression_pass else "fail"}, "privacy_scan": privacy_evidence, "owning_checks": owning_checks}
     qa = {"schema_version": "4.0.0", "qa_id": "CP4-QA-001", "aggregate_status": "pass" if all(item["status"] == "pass" for item in owning_checks) else "fail", "owning_check_refs": [item["check_id"] for item in owning_checks], "status_dimensions": {"production_figure_rendering": "not_run", "figure_critic_visual_acceptance": "not_run", "archetype_calibration": "not_run", "template_reconstruction": "not_run", "acceptance_deck": "not_run", "private_qualitative_review": "blocked_visual_review", "native_powerpoint": "not_run", "production_group_meeting_ready": False}}
-    specs = [{"schema_version": "4.0.0", "figure_id": plan["figure_plan_id"].replace("FPL", "FIG"), "figure_type": plan["figure_type"], "scientific_purpose": plan["scientific_purpose"], "evidence_status": plan["evidence_status"], "source_refs": plan["source_refs"], "claim_refs": plan["claim_refs"], "evidence_refs": plan["evidence_refs"], "hypothesis_layer_ref": plan["hypothesis_layer_ref"], "research_block_refs": plan["research_block_refs"], "stage_ref": plan["stage_ref"], "source_cursor": plan["source_cursor"], "director_skill": plan["selected_specialist_skill"], "renderer_class": plan["renderer_class"], "style_profile_ref": plan["style_profile_ref"], "canvas": {"width": 1600, "height": 900}, "components": [], "connections": [], "annotations": [], "labels": [], "visual_states": [], "provenance": {"rule_ids": plan["provenance_rule_ids"]}, "output_targets": [plan["canonical_output_kind"]], "qa_requirements": plan["required_qa"], "specialist_payload": plan["specialist_payload"]} for plan in plans]
     output_registry = _schema_registry()
     _require(all(not output_registry.errors("figure-production-plan", value) for value in plans), "FigureProductionPlan schema validation failed")
     _require(all(not output_registry.errors("scientific-figure-spec", value) for value in specs), "ScientificFigureSpec schema validation failed")
@@ -397,7 +479,7 @@ def validate_report_artifact_consistency(report_path: Path | str, outputs: dict[
     execution = outputs["execution"]
     state = execution["candidate_state"]
     checks = {
-        "focused_test_count": "31 passed, 0 failed" in text,
+        "focused_test_count": "36 passed, 0 failed" in text,
         "full_regression_count": f"{state['tests_passed']} passed, {state['tests_failed']} failed" in text,
         "style_profile_id": outputs["plans"][0]["style_profile_ref"] in text,
         "component_count": "33 components" in text,
