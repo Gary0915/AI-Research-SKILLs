@@ -37,16 +37,17 @@ REQUIRED_SKILLS = {
     "visual-style-governor", "figure-critic", "layout-director", "provenance-qa",
 }
 ROUTES = {
-    "quantitative_measured_result": ("scientific-plot-director", "reproducible_plot", "svg_vector", False, "canonical_data"),
-    "real_experiment_photo": ("photo-annotation-director", "real_evidence_overlay", "source_evidence_asset", False, "real_evidence"),
-    "literature_figure": ("literature-figure-director", "source_extraction_overlay", "extracted_source_figure", False, "literature_source"),
-    "mechanism_explanation": ("mechanism-diagram-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec"),
-    "experiment_setup": ("experiment-schematic-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec"),
-    "fabrication_process": ("fabrication-process-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec"),
-    "fishbone_history": ("fishbone-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec"),
-    "fair_comparison": ("comparison-figure-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec"),
-    "image_matrix": ("image-matrix-director", "deterministic_svg_vector", "svg_vector", False, "real_evidence"),
-    "organic_concept": ("concept-illustration-director", "generated_non_evidence", "generated_non_evidence_substrate", True, "non_evidence_only"),
+    # director, renderer, output, AI, source, typed FigureSpec, required CP3 categories
+    "quantitative_measured_result": ("scientific-plot-director", "reproducible_plot", "svg_vector", False, "canonical_data", "scientific_plot", ["typography_hierarchy", "body_composition", "scientific_figure_metrics", "line_style_grammar"]),
+    "real_experiment_photo": ("photo-annotation-director", "real_evidence_overlay", "source_evidence_asset", False, "real_evidence", "real_photo", ["typography_hierarchy", "body_composition", "color_emphasis_grammar"]),
+    "literature_figure": ("literature-figure-director", "source_extraction_overlay", "extracted_source_figure", False, "literature_source", "literature_figure", ["typography_hierarchy", "body_composition", "color_emphasis_grammar"]),
+    "mechanism_explanation": ("mechanism-diagram-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec", "mechanism_diagram", ["connector_arrow_grammar", "line_style_grammar", "color_emphasis_grammar", "scientific_figure_metrics"]),
+    "experiment_setup": ("experiment-schematic-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec", "experiment_schematic", ["connector_arrow_grammar", "line_style_grammar", "body_composition"]),
+    "fabrication_process": ("fabrication-process-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec", "fabrication_process_diagram", ["connector_arrow_grammar", "line_style_grammar", "body_composition"]),
+    "fishbone_history": ("fishbone-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec", "fishbone_diagram", ["connector_arrow_grammar", "line_style_grammar", "color_emphasis_grammar"]),
+    "fair_comparison": ("comparison-figure-director", "deterministic_svg_vector", "svg_vector", False, "structured_spec", "comparison_diagram", ["body_composition", "scientific_figure_metrics", "color_emphasis_grammar"]),
+    "image_matrix": ("image-matrix-director", "source_evidence_matrix", "source_evidence_asset", False, "real_evidence", "image_matrix_figure", ["body_composition", "typography_hierarchy", "scientific_figure_metrics"]),
+    "organic_concept": ("concept-illustration-director", "generated_non_evidence", "generated_non_evidence_substrate", True, "non_evidence_only", "concept_illustration", ["body_composition", "typography_hierarchy"]),
 }
 
 
@@ -72,11 +73,28 @@ def _list_strings(value: Any, name: str) -> list[str]:
     return sorted(set(value))
 
 
-def route_figure_request(request: dict[str, Any]) -> dict[str, Any]:
+REQUEST_KEYS = {"figure_plan_id", "visual_class", "scientific_purpose", "evidence_status", "scientific_claim_support", "source_refs", "claim_refs", "evidence_refs", "hypothesis_layer_ref", "research_block_refs", "stage_ref", "source_cursor", "requested_archetype", "provenance_rule_ids", "ai_generation_requested", "fabrication_steps", "fishbone_binding", "style_profile_ref", "observation_evidence_ref", "experimental_evidence_slot_refs", "quantitative_result_evidence_slot_refs", "literature_figure_evidence_slot_refs", "structured_edges"}
+
+
+def _style_categories(style: dict[str, Any], categories: list[str]) -> list[dict[str, Any]]:
+    readiness = {key: value.get("reusable_coverage_status", "unresolved") for key, value in style.get("coverage", {}).get("categories", {}).items()}
+    records = []
+    for category in categories:
+        status = readiness.get(category, "unresolved")
+        mode = "professor_recurring" if status == "fully_calibrated" else "professor_provisional_with_flag" if status in {"partial_recurring", "provisional_only"} else "blocked_unresolved"
+        records.append({"category_id": category, "cp3_readiness_status": status, "consumption_mode": mode, "source_profile_ref": style["style_profile_id"], "blocking_state": "material_semantic_colors_unresolved" if category == "color_emphasis_grammar" else None})
+    return records
+
+
+def route_figure_request(request: dict[str, Any], style_profile: dict[str, Any] | None = None) -> dict[str, Any]:
     """Resolve a request into a deterministic FigureProductionPlan, never an asset."""
+    _require(set(request) <= REQUEST_KEYS, "unknown FigureRoutingRequest field")
+    style_profile = style_profile or {"style_profile_id": "VSP003", "category_readiness": []}
+    _require(isinstance(style_profile.get("style_profile_id"), str), "CP3 style profile identity required")
+    _require(request.get("style_profile_ref", style_profile["style_profile_id"]) == style_profile["style_profile_id"], "stale style profile reference")
     visual_class = request.get("visual_class")
     _require(visual_class in ROUTES, "unknown visual class route")
-    director, renderer, output, ai_allowed, source_requirement = ROUTES[visual_class]
+    director, renderer, output, ai_allowed, source_requirement, figure_type, categories = ROUTES[visual_class]
     evidence_status = request.get("evidence_status")
     support = request.get("scientific_claim_support")
     sources = _list_strings(request.get("source_refs", []), "source_refs")
@@ -88,6 +106,7 @@ def route_figure_request(request: dict[str, Any]) -> dict[str, Any]:
     _require(request.get("provenance_rule_ids"), "routing provenance required")
     if visual_class == "organic_concept":
         _require(evidence_status == "non_evidence" and support == "forbidden" and not claims and not evidence, "concept must remain non-evidence without claim/evidence binding")
+        _require(not any(request.get(key) for key in ("observation_evidence_ref", "experimental_evidence_slot_refs", "quantitative_result_evidence_slot_refs", "literature_figure_evidence_slot_refs")), "concept cannot bind empirical evidence slots")
     else:
         _require(evidence_status != "non_evidence", "non-concept visual cannot masquerade as non-evidence")
         _require(support != "forbidden", "scientific route requires its declared support state")
@@ -117,8 +136,8 @@ def route_figure_request(request: dict[str, Any]) -> dict[str, Any]:
         "stage_ref": request["stage_ref"], "source_cursor": request["source_cursor"],
         "selected_specialist_skill": director, "renderer_class": renderer, "canonical_output_kind": output,
         "source_asset_required": source_requirement in {"real_evidence", "literature_source"}, "ai_generation_allowed": ai_allowed,
-        "native_shape_eligibility": native, "style_profile_ref": "VSP001",
-        "required_style_categories": ["body_composition", "line_style_grammar", "color_emphasis_grammar"],
+        "native_shape_eligibility": native, "style_profile_ref": style_profile["style_profile_id"], "figure_type": figure_type,
+        "required_style_categories": categories, "style_category_requirements": _style_categories(style_profile, categories),
         "style_usage_policy": {"professor_recurring_allowed": True, "professor_provisional_allowed_with_flag": True, "fallback_required": True, "blocked_unresolved": ["material_semantic_colors"]},
         "required_qa": ["provenance_qa", "figure_critic"], "handoff_target": "selected_specialist_director",
         "status": "routed_not_rendered", "provenance_rule_ids": sorted(set(request["provenance_rule_ids"])),
@@ -146,6 +165,13 @@ def validate_skill_registry(registry: dict[str, Any]) -> None:
     _require(set(ids) == REQUIRED_SKILLS and len(ids) == len(REQUIRED_SKILLS), "skill registry must have exact required identities")
     required = {"trigger", "do_not_trigger", "inputs", "required_context", "workflow", "allowed_downstream", "forbidden_actions", "output_contract", "provenance_behavior", "failure_modes", "blocked_states", "handoff_target", "qa_owner"}
     _require(all(required <= set(item) for item in skills), "skill contract incomplete")
+    by_id = {item["skill_id"]: item for item in skills}
+    _require(registry.get("handoff_graph") == ["scientific_state", "FigureProductionPlan", "selected_specialist_director", "future_renderer_output_manifest", "figure-critic", "APPROVED_FIGURE", "layout-director"], "canonical handoff graph mismatch")
+    _require(all("layout-director" not in route.get("handoff", []) for route in registry.get("routes", {}).values() if isinstance(route, dict) and route.get("scientific_visual", True)), "scientific user route bypasses FigureCritic")
+    _require(by_id["figure-critic"]["inputs"] == ["future_output_manifest"], "FigureCritic input contract must be output manifest")
+    for skill_id, item in by_id.items():
+        if skill_id.endswith("-director") and skill_id not in {"layout-director"}:
+            _require(item["handoff_target"] != "figure-critic", "specialist must render to output manifest before FigureCritic")
 
 
 def archetype_routing_matrix() -> list[dict[str, Any]]:
@@ -165,8 +191,11 @@ def _components(inputs: dict[str, dict], registry: dict[str, Any]) -> dict[str, 
     _require(set(inputs) == set(CP3_INPUTS), "exact CP3 input set required")
     component = {f"cp3:{key}": _hash(value) for key, value in sorted(inputs.items())}
     component["cp4:phase3_checkpoint4.py"] = sha256(Path(__file__).read_bytes()).hexdigest()
+    component["cp4:contracts.py"] = sha256((Path(__file__).parent / "contracts.py").read_bytes()).hexdigest()
     component["skill-registry:skill-routing.yaml"] = sha256(ROUTING_PATH.read_bytes()).hexdigest()
     component.update({f"schema:{name}": sha256((SCHEMAS / name).read_bytes()).hexdigest() for name in CP4_SCHEMAS})
+    for skill_id in sorted(REQUIRED_SKILLS):
+        component[f"skill:{skill_id}"] = sha256((ROOT / "thesis-deck-system" / "skills" / skill_id / "SKILL.md").read_bytes()).hexdigest()
     return component
 
 
@@ -218,17 +247,26 @@ def _privacy_scan(privacy_config: dict[str, Any] | None) -> tuple[bool, dict[str
     return result, {key: evidence[key] for key in sorted(required)}
 
 
-def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict[str, Any] | None = None) -> dict[str, Any]:
+def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict[str, Any] | None = None, regression_evidence: dict[str, Any] | None = None) -> dict[str, Any]:
     """Build deterministic synthetic routing records from sanitized CP3 artifacts only."""
     registry = load_skill_registry(); validate_skill_registry(registry)
     _require(_cp3_inputs_valid(inputs), "CP3 input schema validation failed")
     _require(inputs["checkpoint-3-qa.json"].get("aggregate_status") == "pass", "CP3 QA must pass")
+    base = {"scientific_purpose": "sanitized_control_plane_acceptance", "evidence_status": "empirical", "scientific_claim_support": "required", "source_refs": ["E101"], "claim_refs": ["C101"], "evidence_refs": ["E101"], "hypothesis_layer_ref": "H001", "research_block_refs": ["B101"], "stage_ref": "ST-RES101", "source_cursor": 20}
     requests = [
         {"figure_plan_id": "FPL001", "visual_class": "quantitative_measured_result", "scientific_purpose": "result_display", "evidence_status": "empirical", "scientific_claim_support": "required", "source_refs": ["E101"], "claim_refs": ["C101"], "evidence_refs": ["E101"], "hypothesis_layer_ref": "H001", "research_block_refs": ["B101"], "stage_ref": "ST-RES101", "source_cursor": 20, "requested_archetype": "A10", "provenance_rule_ids": ["CP4-ROUTE-QUANTITATIVE"]},
         {"figure_plan_id": "FPL002", "visual_class": "fishbone_history", "scientific_purpose": "research_history", "evidence_status": "empirical", "scientific_claim_support": "required", "source_refs": ["E101"], "claim_refs": ["C101"], "evidence_refs": ["E101"], "hypothesis_layer_ref": "H001", "research_block_refs": ["B101"], "stage_ref": "ST-RES101", "source_cursor": 20, "requested_archetype": "A03", "provenance_rule_ids": ["CP4-ROUTE-FISHBONE"], "fishbone_binding": {"fishbone_revision_ref": "FB001-R001", "focus_ref": "BR001", "history_ref": "H001"}},
         {"figure_plan_id": "FPL003", "visual_class": "fabrication_process", "scientific_purpose": "process_chronology", "evidence_status": "empirical", "scientific_claim_support": "required", "source_refs": ["E101"], "claim_refs": ["C101"], "evidence_refs": ["E101"], "hypothesis_layer_ref": "H001", "research_block_refs": ["B101"], "stage_ref": "ST-RES101", "source_cursor": 20, "requested_archetype": "A09", "provenance_rule_ids": ["CP4-ROUTE-FABRICATION"], "fabrication_steps": [{"ordinal": 1, "condition_state": "unknown"}]},
+        {**base, "figure_plan_id":"FPL004", "visual_class":"real_experiment_photo", "requested_archetype":"A04", "provenance_rule_ids":["CP4-ROUTE-PHOTO"]},
+        {**base, "figure_plan_id":"FPL005", "visual_class":"literature_figure", "evidence_status":"literature_evidence", "requested_archetype":"A05", "provenance_rule_ids":["CP4-ROUTE-LITERATURE"]},
+        {**base, "figure_plan_id":"FPL006", "visual_class":"mechanism_explanation", "requested_archetype":"A06", "provenance_rule_ids":["CP4-ROUTE-MECHANISM"]},
+        {**base, "figure_plan_id":"FPL007", "visual_class":"experiment_setup", "requested_archetype":"A09", "provenance_rule_ids":["CP4-ROUTE-EXPERIMENT"]},
+        {**base, "figure_plan_id":"FPL008", "visual_class":"fair_comparison", "requested_archetype":"A08", "provenance_rule_ids":["CP4-ROUTE-COMPARISON"]},
+        {**base, "figure_plan_id":"FPL009", "visual_class":"image_matrix", "requested_archetype":"A12", "provenance_rule_ids":["CP4-ROUTE-MATRIX"]},
+        {**base, "figure_plan_id":"FPL010", "visual_class":"organic_concept", "scientific_purpose":"auxiliary_non_evidence_context", "evidence_status":"non_evidence", "scientific_claim_support":"forbidden", "source_refs":[], "claim_refs":[], "evidence_refs":[], "requested_archetype":"A16", "provenance_rule_ids":["CP4-ROUTE-CONCEPT"]},
     ]
-    plans = [route_figure_request(item) for item in requests]
+    style = inputs["visual-style-profile.json"]
+    plans = [route_figure_request(item, style) for item in requests]
     matrix = archetype_routing_matrix(); _require(len(matrix) == 18, "archetype routing incomplete")
     components = _components(inputs, registry)
     schemas_closed = all(_schema_closed(json.loads((SCHEMAS / name).read_text(encoding="utf-8"))) for name in CP4_SCHEMAS)
@@ -238,11 +276,12 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
     checks = [
         ("CP4-CP3-INPUTS", _cp3_inputs_valid(inputs) and inputs["checkpoint-3-qa.json"].get("aggregate_status") == "pass"),
         ("CP4-PRIVATE-ACCESS", private_api_absent),
-        ("CP4-ROUTING-DETERMINISM", all(route_figure_request(item) == route_figure_request(dict(reversed(list(item.items())))) for item in requests)),
+        ("CP4-ROUTING-DETERMINISM", all(route_figure_request(item, style) == route_figure_request(dict(reversed(list(item.items()))), style) for item in requests)),
+        ("CP4-VISUAL-CLASS-COVERAGE", {plan["visual_class"] for plan in plans} == set(ROUTES) and len(plans) == 10),
         ("CP4-SKILL-REGISTRY", set(item["skill_id"] for item in registry["skills"]) == REQUIRED_SKILLS),
         ("CP4-HANDOFF-NO-BYPASS", registry["handoff_graph"] == ["scientific_state", "FigureProductionPlan", "selected_specialist_director", "future_renderer_output_manifest", "figure-critic", "APPROVED_FIGURE", "layout-director"] and all(plan["handoff_target"] == "selected_specialist_director" for plan in plans)),
         ("CP4-A01-A18-ROUTING", {row["archetype_id"] for row in matrix} == {f"A{i:02d}" for i in range(1, 19)}),
-        ("CP4-SVG-FIRST", all(plan["native_shape_eligibility"]["status"] == "insufficient_evidence" and plan["renderer_class"] == "deterministic_svg_vector" for plan in plans if plan["visual_class"] != "quantitative_measured_result")),
+        ("CP4-SVG-FIRST", all(plan["native_shape_eligibility"]["status"] == "insufficient_evidence" for plan in plans)),
         ("CP4-EMPIRICAL-AI-BOUNDARY", all(not plan["ai_generation_allowed"] for plan in plans if plan["evidence_status"] != "non_evidence")),
         ("CP4-FABRICATION-SEPARATION", all(plan["selected_specialist_skill"] == "fabrication-process-director" for plan in plans if plan["visual_class"] == "fabrication_process")),
         ("CP4-FISHBONE-PROVENANCE", all(plan["specialist_payload"].get("fishbone_binding") for plan in plans if plan["visual_class"] == "fishbone_history")),
@@ -250,6 +289,9 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
         ("CP4-SCHEMA-CLOSURE", schemas_closed),
         ("CP4-REPOSITORY-STAGED-PRIVACY", privacy_passed),
     ]
+    regression_evidence = regression_evidence or {"disposable_worktree": False, "tests_passed": 0, "tests_failed": 1, "suite_id": "not_run"}
+    regression_pass = bool(regression_evidence.get("disposable_worktree")) and regression_evidence.get("tests_failed") == 0 and regression_evidence.get("tests_passed", 0) > 0
+    checks.append(("CP4-DISPOSABLE-REGRESSION", regression_pass))
     owning_checks = [{"check_id": ident, "status": "pass" if result else "fail", "evidence": {"facts": [{"name": "result", "boolean": bool(result)}]}} for ident, result in checks]
     for check in owning_checks:
         if check["check_id"] == "CP4-REPOSITORY-STAGED-PRIVACY":
@@ -258,9 +300,10 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
                 {"name": "staged_scan_executed", "boolean": privacy_evidence["staged_scan_executed"]},
                 {"name": "unexcepted_findings_zero", "boolean": privacy_evidence["repository_findings"] == 0 and privacy_evidence["staged_findings"] == 0},
             ]
-    execution = {"schema_version": "4.0.0", "execution_id": "CP4-EXEC-001", "private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0, "candidate_state": {"component_hashes": components, "composite_candidate_state_hash": _hash(components)}, "privacy_scan": privacy_evidence, "owning_checks": owning_checks}
+    candidate_hash = _hash(components)
+    execution = {"schema_version": "4.0.0", "execution_id": "CP4-EXEC-001", "private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0, "candidate_state": {"component_hashes": components, "composite_candidate_state_hash": candidate_hash, "regression_candidate_state_hash": candidate_hash, "disposable_worktree": bool(regression_evidence.get("disposable_worktree")), "tests_passed": regression_evidence.get("tests_passed", 0), "tests_failed": regression_evidence.get("tests_failed", 0), "suite_id": regression_evidence.get("suite_id", "not_run"), "regression_status": "pass" if regression_pass else "fail"}, "privacy_scan": privacy_evidence, "owning_checks": owning_checks}
     qa = {"schema_version": "4.0.0", "qa_id": "CP4-QA-001", "aggregate_status": "pass" if all(item["status"] == "pass" for item in owning_checks) else "fail", "owning_check_refs": [item["check_id"] for item in owning_checks], "status_dimensions": {"production_figure_rendering": "not_run", "figure_critic_visual_acceptance": "not_run", "archetype_calibration": "not_run", "template_reconstruction": "not_run", "acceptance_deck": "not_run", "private_qualitative_review": "blocked_visual_review", "native_powerpoint": "not_run", "production_group_meeting_ready": False}}
-    specs = [{"schema_version": "4.0.0", "figure_id": plan["figure_plan_id"].replace("FPL", "FIG"), "figure_type": "scientific_plot" if plan["visual_class"] == "quantitative_measured_result" else "vector_diagram", "scientific_purpose": plan["scientific_purpose"], "evidence_status": plan["evidence_status"], "source_refs": plan["source_refs"], "claim_refs": plan["claim_refs"], "evidence_refs": plan["evidence_refs"], "hypothesis_layer_ref": plan["hypothesis_layer_ref"], "research_block_refs": plan["research_block_refs"], "stage_ref": plan["stage_ref"], "source_cursor": plan["source_cursor"], "director_skill": plan["selected_specialist_skill"], "renderer_class": plan["renderer_class"], "style_profile_ref": plan["style_profile_ref"], "canvas": {"width": 1600, "height": 900}, "components": [], "connections": [], "annotations": [], "labels": [], "visual_states": [], "provenance": {"rule_ids": plan["provenance_rule_ids"]}, "output_targets": [plan["canonical_output_kind"]], "qa_requirements": plan["required_qa"], "specialist_payload": plan["specialist_payload"]} for plan in plans]
+    specs = [{"schema_version": "4.0.0", "figure_id": plan["figure_plan_id"].replace("FPL", "FIG"), "figure_type": plan["figure_type"], "scientific_purpose": plan["scientific_purpose"], "evidence_status": plan["evidence_status"], "source_refs": plan["source_refs"], "claim_refs": plan["claim_refs"], "evidence_refs": plan["evidence_refs"], "hypothesis_layer_ref": plan["hypothesis_layer_ref"], "research_block_refs": plan["research_block_refs"], "stage_ref": plan["stage_ref"], "source_cursor": plan["source_cursor"], "director_skill": plan["selected_specialist_skill"], "renderer_class": plan["renderer_class"], "style_profile_ref": plan["style_profile_ref"], "canvas": {"width": 1600, "height": 900}, "components": [], "connections": [], "annotations": [], "labels": [], "visual_states": [], "provenance": {"rule_ids": plan["provenance_rule_ids"]}, "output_targets": [plan["canonical_output_kind"]], "qa_requirements": plan["required_qa"], "specialist_payload": plan["specialist_payload"]} for plan in plans]
     output_registry = _schema_registry()
     _require(all(not output_registry.errors("figure-production-plan", value) for value in plans), "FigureProductionPlan schema validation failed")
     _require(all(not output_registry.errors("scientific-figure-spec", value) for value in specs), "ScientificFigureSpec schema validation failed")
@@ -271,10 +314,10 @@ def build_checkpoint4_artifacts(inputs: dict[str, dict], *, privacy_config: dict
     return {"plans": plans, "specs": specs, "registry": registry, "matrix": matrix, "execution": execution, "qa": qa}
 
 
-def write_checkpoint4_artifacts(input_dir: Path, output_dir: Path, *, privacy_config: dict[str, Any] | None = None) -> dict[str, Any]:
+def write_checkpoint4_artifacts(input_dir: Path, output_dir: Path, *, privacy_config: dict[str, Any] | None = None, regression_evidence: dict[str, Any] | None = None) -> dict[str, Any]:
     """Serialize the renderer-free CP4 artifact set deterministically."""
     inputs = {name: json.loads((input_dir / name).read_text(encoding="utf-8")) for name in CP3_INPUTS}
-    outputs = build_checkpoint4_artifacts(inputs, privacy_config=privacy_config)
+    outputs = build_checkpoint4_artifacts(inputs, privacy_config=privacy_config, regression_evidence=regression_evidence)
     output_dir.mkdir(parents=True, exist_ok=True)
     files = {
         "figure-production-plans.json": outputs["plans"],

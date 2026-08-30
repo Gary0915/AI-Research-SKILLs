@@ -132,7 +132,7 @@ def test_cp4_build_is_sanitized_only_and_binds_cp3_inputs_registry_and_schemas()
             "config_id": "CP4-TEST-PRIVACY",
             "private_root_signatures": ["synthetic-private-root"],
             "forbidden_basenames": ["synthetic-private-source.pptx"],
-        },
+        }, regression_evidence={"disposable_worktree": True, "tests_passed": 1, "tests_failed": 0, "suite_id": "unit"},
     )
     assert outputs["qa"]["aggregate_status"] == "pass"
     assert outputs["execution"]["private_alias_resolution_attempts"] == 0
@@ -165,3 +165,47 @@ def test_every_registry_skill_has_a_complete_repo_local_contract_document():
     for item in load_skill_registry()["skills"]:
         text = (ROOT / "thesis-deck-system" / "skills" / item["skill_id"] / "SKILL.md").read_text(encoding="utf-8")
         assert all(section in text for section in required_sections), item["skill_id"]
+
+
+def test_router_binds_the_actual_cp3_style_profile_and_route_specific_categories():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, route_figure_request
+
+    style = _cp3_inputs()["visual-style-profile.json"]
+    mechanism = route_figure_request(_request(visual_class="mechanism_explanation"), style)
+    photo = route_figure_request(_request(visual_class="real_experiment_photo"), style)
+    assert mechanism["style_profile_ref"] == style["style_profile_id"]
+    assert "connector_arrow_grammar" in mechanism["required_style_categories"]
+    assert mechanism["required_style_categories"] != photo["required_style_categories"]
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(_request(style_profile_ref="VSP001"), style)
+
+
+def test_route_spec_discriminator_and_closed_concept_evidence_slots_fail_closed():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, route_figure_request
+
+    style = _cp3_inputs()["visual-style-profile.json"]
+    plan = route_figure_request(_request(visual_class="real_experiment_photo"), style)
+    assert plan["figure_type"] == "real_photo"
+    bad = _request(visual_class="organic_concept", evidence_status="non_evidence", scientific_claim_support="forbidden", source_refs=[], claim_refs=[], evidence_refs=[], observation_evidence_ref="E101")
+    with pytest.raises(Checkpoint4Error):
+        route_figure_request(bad, style)
+
+
+def test_checkpoint_four_persists_all_ten_classes_and_candidate_regression_evidence():
+    from thesis_deck_system.phase3_checkpoint4 import build_checkpoint4_artifacts
+
+    outputs = build_checkpoint4_artifacts(_cp3_inputs(), privacy_config={"config_id":"CP4-TEST-PRIVACY","private_root_signatures":["synthetic-private-root"],"forbidden_basenames":["synthetic-private-source.pptx"]}, regression_evidence={"disposable_worktree": True, "tests_passed": 1, "tests_failed": 0, "suite_id": "candidate"})
+    assert len(outputs["plans"]) == 10
+    coverage = next(x for x in outputs["execution"]["owning_checks"] if x["check_id"] == "CP4-VISUAL-CLASS-COVERAGE")
+    assert coverage["status"] == "pass"
+    regression = next(x for x in outputs["execution"]["owning_checks"] if x["check_id"] == "CP4-DISPOSABLE-REGRESSION")
+    assert regression["status"] == "pass"
+
+
+def test_actual_registry_graph_rejects_layout_bypass_and_direct_spec_to_critic():
+    from thesis_deck_system.phase3_checkpoint4 import Checkpoint4Error, load_skill_registry, validate_skill_registry
+
+    registry = load_skill_registry()
+    registry["routes"]["整理這批實驗數據成結果頁"]["handoff"] = ["layout-director"]
+    with pytest.raises(Checkpoint4Error):
+        validate_skill_registry(registry)

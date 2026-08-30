@@ -71,9 +71,39 @@ comparisons, matrices, and non-evidence concepts. Quantitative, real, and
 literature sources reject AI generation. Structured diagrams route to
 deterministic SVG/vector while native eligibility remains insufficient.
 
+### CP4-B1 — actual style identity and route readiness
+
+The router consumes the approved CP3 `visual-style-profile.json` and binds its
+actual `style_profile_id` (`VSP003`) to every plan/spec. Route-specific category
+records retain CP3 readiness, consumption mode, profile provenance, and any
+blocking state; material semantic colors remain explicitly unresolved.
+
+### CP4-B2 / CP4-B3 — discriminated, 10-class acceptance
+
+The deterministic acceptance set exercises all ten supported visual classes.
+Each plan/spec uses its route-consistent FigureSpec type, specialist, renderer,
+canonical output, evidence/source requirement, AI policy, and native threshold
+state. No empirical, literature, photo, or concept route is represented as a
+generic vector diagram.
+
+### CP4-B4 / CP4-B5 — graph and Observation boundaries
+
+Registry routes now enter `scientific-figure-router`; specialists pass through
+the future output-manifest stage before FigureCritic, and no scientific route
+can reach Layout directly. `FigureRoutingRequest` is closed: organic concepts
+must have non-evidence status with empty claim/evidence/empirical slots.
+
+### CP4-B6 — candidate-bound disposable regression
+
+`CP4-DISPOSABLE-REGRESSION` binds the exact composite candidate hash to the
+disposable-worktree suite identity and pass/fail counts. The component map
+includes all six CP3 inputs, CP4 source, `contracts.py`, all CP4 schemas,
+routing YAML, and all 17 local Skill contracts; source, schema, routing, skill,
+or CP3-input changes invalidate prior evidence.
+
 ### CP4-5 / CP4-6 — style and Observation boundaries
 
-Plans reference `VSP001`, preserve CP3's partial/provisional/fallback state,
+Plans reference the consumed `VSP003`, preserve CP3's partial/provisional/fallback state,
 and block unresolved material-semantic colors. Concepts require
 `non_evidence`, forbidden claim support, and zero evidence bindings; therefore
 they cannot satisfy Observation or any empirical reference.
@@ -98,12 +128,13 @@ A16 deterministic transition/mechanism; all geometry statuses are `not_run`.
 
 ### CP4-10 / CP4-11 / CP4-12 — owning QA, candidate binding, status truth
 
-Thirteen execution-owned checks validate CP3 inputs, private-boundary API absence,
+Execution-owned checks validate CP3 inputs, private-boundary API absence,
 route determinism, registry, no-bypass handoff graph, A01–A18 coverage,
 SVG-first rule, AI/evidence boundary, fabrication separation, Fishbone
 provenance, CP3 Governor consumption, recursive schema closure, and an actual
 repository plus staged-index privacy scan. Candidate state binds six CP3
-artifacts, CP4 source, six CP4 schemas, and registry hash. Independent status
+artifacts, CP4 source, `contracts.py`, six CP4 schemas, routing YAML, and 17
+Skill-contract hashes. Independent status
 dimensions remain not-run/blocked as required.
 
 ## 5. Commands/tests run

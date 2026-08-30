@@ -45,7 +45,7 @@
       "kind": "quantitative_measured_result"
     },
     "stage_ref": "ST-RES101",
-    "style_profile_ref": "VSP001",
+    "style_profile_ref": "VSP003",
     "visual_states": []
   },
   {
@@ -65,7 +65,7 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG002",
-    "figure_type": "vector_diagram",
+    "figure_type": "fishbone_diagram",
     "hypothesis_layer_ref": "H001",
     "labels": [],
     "output_targets": [
@@ -99,7 +99,7 @@
       "kind": "fishbone_history"
     },
     "stage_ref": "ST-RES101",
-    "style_profile_ref": "VSP001",
+    "style_profile_ref": "VSP003",
     "visual_states": []
   },
   {
@@ -119,7 +119,7 @@
     ],
     "evidence_status": "empirical",
     "figure_id": "FIG003",
-    "figure_type": "vector_diagram",
+    "figure_type": "fabrication_process_diagram",
     "hypothesis_layer_ref": "H001",
     "labels": [],
     "output_targets": [
@@ -154,7 +154,344 @@
       ]
     },
     "stage_ref": "ST-RES101",
-    "style_profile_ref": "VSP001",
+    "style_profile_ref": "VSP003",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "photo-annotation-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_id": "FIG004",
+    "figure_type": "real_photo",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "source_evidence_asset"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-PHOTO"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "real_evidence_overlay",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "real_experiment_photo"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP003",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "literature-figure-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "literature_evidence",
+    "figure_id": "FIG005",
+    "figure_type": "literature_figure",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "extracted_source_figure"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-LITERATURE"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "source_extraction_overlay",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "literature_figure"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP003",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "mechanism-diagram-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_id": "FIG006",
+    "figure_type": "mechanism_diagram",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "svg_vector"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-MECHANISM"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "deterministic_svg_vector",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "mechanism_explanation"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP003",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "experiment-schematic-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_id": "FIG007",
+    "figure_type": "experiment_schematic",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "svg_vector"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-EXPERIMENT"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "deterministic_svg_vector",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "experiment_setup"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP003",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "comparison-figure-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_id": "FIG008",
+    "figure_type": "comparison_diagram",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "svg_vector"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-COMPARISON"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "deterministic_svg_vector",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "fair_comparison"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP003",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [
+      "C101"
+    ],
+    "components": [],
+    "connections": [],
+    "director_skill": "image-matrix-director",
+    "evidence_refs": [
+      "E101"
+    ],
+    "evidence_status": "empirical",
+    "figure_id": "FIG009",
+    "figure_type": "image_matrix_figure",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "source_evidence_asset"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-MATRIX"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "source_evidence_matrix",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "sanitized_control_plane_acceptance",
+    "source_cursor": 20,
+    "source_refs": [
+      "E101"
+    ],
+    "specialist_payload": {
+      "kind": "image_matrix"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP003",
+    "visual_states": []
+  },
+  {
+    "annotations": [],
+    "canvas": {
+      "height": 900,
+      "width": 1600
+    },
+    "claim_refs": [],
+    "components": [],
+    "connections": [],
+    "director_skill": "concept-illustration-director",
+    "evidence_refs": [],
+    "evidence_status": "non_evidence",
+    "figure_id": "FIG010",
+    "figure_type": "concept_illustration",
+    "hypothesis_layer_ref": "H001",
+    "labels": [],
+    "output_targets": [
+      "generated_non_evidence_substrate"
+    ],
+    "provenance": {
+      "rule_ids": [
+        "CP4-ROUTE-CONCEPT"
+      ]
+    },
+    "qa_requirements": [
+      "provenance_qa",
+      "figure_critic"
+    ],
+    "renderer_class": "generated_non_evidence",
+    "research_block_refs": [
+      "B101"
+    ],
+    "schema_version": "4.0.0",
+    "scientific_purpose": "auxiliary_non_evidence_context",
+    "source_cursor": 20,
+    "source_refs": [],
+    "specialist_payload": {
+      "kind": "organic_concept"
+    },
+    "stage_ref": "ST-RES101",
+    "style_profile_ref": "VSP003",
     "visual_states": []
   }
 ]
