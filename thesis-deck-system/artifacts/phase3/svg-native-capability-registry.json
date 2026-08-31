@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "SNCR001",
+  "registry_version": "1.0.0",
+  "records": [
+    {
+      "feature_id": "svg-root-viewbox",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "group",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "rect",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "circle",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "ellipse",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "line",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "polyline",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "polygon",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "path-commands",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "text",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "tspan",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "text-editable-cjk",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "image",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "marker",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "marker-local-reference",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "clip-path",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "clip-local-reference",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "transform-translate",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "transform-scale",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "transform-rotate",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "transform-matrix",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "stroke-width",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "stroke-linecap",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "stroke-linejoin",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "stroke-dasharray",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "fill-opacity",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "stroke-opacity",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "text-anchor",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "dominant-baseline",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "font-attributes",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "same-document-reference",
+      "capability_state": "UNKNOWN",
+      "evidence_level": "source_inspected",
+      "fallback_declared": false,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": false
+    },
+    {
+      "feature_id": "svg-vector-fallback",
+      "capability_state": "VECTOR_FALLBACK",
+      "evidence_level": "thesis_synthetic_verified",
+      "fallback_declared": true,
+      "svg_ir_support_state": "supported",
+      "thesis_verified": true
+    }
+  ]
+}

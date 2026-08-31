@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "execution_id": "CP5B-EXEC-001",
+  "registry_hash": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a",
+  "vector_hash": "a8e8076ec22f38f82b683407b4e65b8d8d4593fc96213271edebc1e1560c19e6",
+  "record_count": 32,
+  "vector_count": 3,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}

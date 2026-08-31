@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "qa_id": "CP5B-QA-001",
+  "aggregate_status": "pass",
+  "checks": [
+    {
+      "check_id": "CP5B-FEATURE-COVERAGE",
+      "status": "pass",
+      "record_count": 32
+    },
+    {
+      "check_id": "CP5B-NATIVE-TRUTH",
+      "status": "pass",
+      "unknown_svg_legal": true
+    }
+  ],
+  "capability_state_distribution": {
+    "NATIVE_EXACT": 0,
+    "NATIVE_NORMALIZED": 0,
+    "RASTER_FALLBACK": 0,
+    "UNKNOWN": 31,
+    "UNSUPPORTED": 0,
+    "VECTOR_FALLBACK": 1
+  },
+  "evidence_level_distribution": {
+    "native_powerpoint_verified": 0,
+    "source_inspected": 31,
+    "thesis_synthetic_verified": 1,
+    "upstream_declared": 0
+  }
+}

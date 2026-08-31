@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_id": "SNVT001",
+  "registry_ref": "SNCR001",
+  "vectors": [
+    {
+      "vector_id": "SVTV001",
+      "feature_ids": [
+        "svg-root-viewbox",
+        "rect",
+        "text",
+        "text-editable-cjk"
+      ],
+      "figure_spec_ref": "FIG002",
+      "registry_coverage": [
+        "svg-root-viewbox",
+        "rect",
+        "text",
+        "text-editable-cjk"
+      ],
+      "evidence_status": "synthetic_test_only"
+    },
+    {
+      "vector_id": "SVTV002",
+      "feature_ids": [
+        "line",
+        "marker",
+        "marker-local-reference",
+        "transform-rotate",
+        "stroke-width"
+      ],
+      "figure_spec_ref": "FIG006",
+      "registry_coverage": [
+        "line",
+        "marker",
+        "marker-local-reference",
+        "transform-rotate",
+        "stroke-width"
+      ],
+      "evidence_status": "synthetic_test_only"
+    },
+    {
+      "vector_id": "SVTV003",
+      "feature_ids": [
+        "polyline",
+        "path-commands",
+        "clip-path",
+        "clip-local-reference",
+        "same-document-reference"
+      ],
+      "figure_spec_ref": "FIG007",
+      "registry_coverage": [
+        "polyline",
+        "path-commands",
+        "clip-path",
+        "clip-local-reference",
+        "same-document-reference"
+      ],
+      "evidence_status": "synthetic_test_only"
+    }
+  ]
+}

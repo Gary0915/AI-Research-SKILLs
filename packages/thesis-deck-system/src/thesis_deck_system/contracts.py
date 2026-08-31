@@ -75,6 +75,14 @@ CP5A_SCHEMA_NAMES = (
     "checkpoint-5a-report-facts",
 )
 
+CP5BCD_SCHEMA_NAMES = (
+    "svg-native-capability-registry", "svg-native-test-vectors",
+    "figure-output-manifest", "static-figure-critic-report", "approved-figure",
+    "checkpoint-5b-execution-evidence", "checkpoint-5b-qa",
+    "checkpoint-5c-execution-evidence", "checkpoint-5c-qa",
+    "structured-director-input", "checkpoint-5d-execution-evidence", "checkpoint-5d-qa",
+)
+
 SCHEMA_BY_COLLECTION = {
     "research_blocks": "research-block",
     "stages": "scientific-stage",
@@ -101,13 +109,14 @@ class Finding:
 
 
 class SchemaRegistry:
-    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False, include_cp5a: bool = False):
+    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False, include_cp5a: bool = False, include_cp5bcd: bool = False):
         self.schema_dir = Path(schema_dir)
         schema_names = (
             REQUIRED_SCHEMA_NAMES
             + (PHASE2_SCHEMA_NAMES if include_phase2 else ())
             + (PHASE3_SCHEMA_NAMES if include_phase3 else ())
             + (CP5A_SCHEMA_NAMES if include_cp5a else ())
+            + (CP5BCD_SCHEMA_NAMES if include_cp5bcd else ())
         )
         self._schemas = {
             name: json.loads((self.schema_dir / f"{name}.schema.json").read_text(encoding="utf-8"))
