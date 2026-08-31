@@ -91,3 +91,24 @@ def test_e1_image_matrix_binds_each_synthetic_panel_hash_provenance_order_and_sc
     stale = deepcopy(panels); stale[0]["source_sha256"] = "0" * 64
     with pytest.raises(Exception):
         build_image_matrix(ROOT, stale)
+
+
+def test_f1_deterministic_renderer_adapter_proves_positive_render_manifest_path():
+    from thesis_deck_system.phase3_cp5efg_integrated import DeterministicTestRendererAdapter, render_with_adapter
+
+    result = render_with_adapter(DeterministicTestRendererAdapter(), '<svg xmlns="http://www.w3.org/2000/svg"/>', {"width": 16, "height": 9})
+    assert result["render_manifest"]["renderer_version"] == "test-1"
+    assert result["render_manifest"]["png_sha256"] == result["render_critic"]["png_sha256"]
+    assert result["render_critic"]["status"] == "pass"
+
+
+def test_f1_review_action_is_deeply_immutable_after_caller_and_view_mutation():
+    from thesis_deck_system.phase3_cp5efg_integrated import CurrentSlideContext, ReviewAction
+
+    payload = {"nested": {"values": ["original"]}}
+    context = CurrentSlideContext("CTX-D1", "A03", "FIG002", "hash", ("obj-1",))
+    action = ReviewAction.create(context, "flag_overlap", payload)
+    payload["nested"]["values"].append("mutated")
+    assert action.payload["nested"]["values"] == ("original",)
+    with pytest.raises(TypeError):
+        action.payload["nested"] = "mutated"

@@ -13,7 +13,8 @@ import json
 from pathlib import Path
 import shutil
 from time import time
-from typing import Any
+from types import MappingProxyType
+from typing import Any, Mapping
 
 from .phase3_cp5a_scientific_svg import ROOT, author_svg_for_spec
 from .phase3_cp5bcd_integrated import StaticFigureCritic, _spec, _svg_document, apply_style_bundle, make_synthetic_manifest, resolve_style
@@ -21,6 +22,67 @@ from .phase3_cp5bcd_integrated import StaticFigureCritic, _spec, _svg_document, 
 
 class EvidenceRouteError(ValueError):
     pass
+
+
+def _freeze(value: Any) -> Any:
+    if isinstance(value, dict):
+        return MappingProxyType({key: _freeze(item) for key, item in value.items()})
+    if isinstance(value, list):
+        return tuple(_freeze(item) for item in value)
+    if isinstance(value, tuple):
+        return tuple(_freeze(item) for item in value)
+    return value
+
+
+def _thaw(value: Any) -> Any:
+    if isinstance(value, Mapping):
+        return {key: _thaw(item) for key, item in value.items()}
+    if isinstance(value, tuple):
+        return [_thaw(item) for item in value]
+    return value
+
+
+class RendererAdapter:
+    """Future renderer boundary; it never downloads or installs host tools."""
+    renderer_id = "abstract"
+
+    def probe(self) -> bool:
+        raise NotImplementedError
+
+    def version(self) -> str:
+        raise NotImplementedError
+
+    def render_svg(self, svg: str, parameters: Mapping[str, Any]) -> bytes:
+        raise NotImplementedError
+
+
+class DeterministicTestRendererAdapter(RendererAdapter):
+    renderer_id = "deterministic-test-renderer"
+
+    def probe(self) -> bool:
+        return True
+
+    def version(self) -> str:
+        return "test-1"
+
+    def render_svg(self, svg: str, parameters: Mapping[str, Any]) -> bytes:
+        # Deterministic synthetic PNG-shaped test bytes; not a production render.
+        return b"\x89PNG\r\n\x1a\n" + sha256((svg + json.dumps(dict(parameters), sort_keys=True)).encode("utf-8")).digest()
+
+
+def render_with_adapter(adapter: RendererAdapter, svg: str, parameters: Mapping[str, Any]) -> dict[str, Any]:
+    if not adapter.probe():
+        raise EvidenceRouteError("renderer adapter is unavailable")
+    version = adapter.version()
+    if not version:
+        raise EvidenceRouteError("available renderer requires an observed version")
+    png = adapter.render_svg(svg, parameters)
+    if not png.startswith(b"\x89PNG"):
+        raise EvidenceRouteError("renderer did not return PNG bytes")
+    source_hash, png_hash = _hash(svg), sha256(png).hexdigest()
+    manifest = {"renderer_id": adapter.renderer_id, "renderer_version": version, "source_svg_sha256": source_hash, "png_sha256": png_hash, "parameters": dict(parameters), "dimensions": {"width": parameters.get("width"), "height": parameters.get("height")}}
+    critic = {"status": "pass" if parameters.get("width", 0) > 0 and parameters.get("height", 0) > 0 and len(png) > 8 else "fail", "png_sha256": png_hash, "measured": {"nonblank": len(png) > 8, "dimensions": manifest["dimensions"], "aspect_ratio": parameters.get("width", 1) / parameters.get("height", 1) if parameters.get("height") else None}}
+    return {"render_manifest": manifest, "render_critic": critic}
 
 
 def _hash(value: Any) -> str:
@@ -182,20 +244,22 @@ class ReviewAction:
     figure_hash: str
     object_ids: tuple[str, ...]
     action_type: str
-    payload: dict[str, Any]
+    payload: Mapping[str, Any]
     timestamp_order: int
 
     @classmethod
     def create(cls, context: CurrentSlideContext, action_type: str, payload: dict[str, Any]) -> "ReviewAction":
         if action_type not in {"select_object","flag_overlap","request_move","request_resize","request_label_correction","request_emphasis_adjustment","accept_visual_issue","reject_visual_issue"}:
             raise EvidenceRouteError("unknown immutable review action")
-        return cls(f"RA-{_hash([context.context_id, action_type, payload])[:12]}", context.context_id, context.figure_hash, context.selected_object_ids, action_type, dict(payload), int(time() * 1000))
+        frozen = _freeze(payload)
+        return cls(f"RA-{_hash([context.context_id, action_type, payload])[:12]}", context.context_id, context.figure_hash, context.selected_object_ids, action_type, frozen, int(time() * 1000))
 
 
 def write_gate_f_artifacts(root: Path | None = None, destination: Path | None = None) -> dict[str, Any]:
     root = root or ROOT; destination = destination or root / "thesis-deck-system" / "artifacts" / "phase3"; destination.mkdir(parents=True, exist_ok=True)
     status = probe_render_capability(); context = CurrentSlideContext("CTX001", "A03", "FIG002", _hash("FIG002"), ("obj-br002",)); action = ReviewAction.create(context, "flag_overlap", {"severity":"not_reviewed"})
-    payload = {"schema_version":"1.0.0","renderer":status,"render_manifests":[],"render_critic_reports":[],"image_capable_review":{"status":"blocked_visual_review"},"current_slide_context":{"context_id":context.context_id,"archetype_id":context.archetype_id,"figure_id":context.figure_id,"figure_hash":context.figure_hash,"selected_object_ids":list(context.selected_object_ids)},"review_actions":[{"review_action_id":action.review_action_id,"context_id":action.context_id,"action_type":action.action_type,"object_ids":list(action.object_ids),"payload":action.payload,"timestamp_order":action.timestamp_order}]}
+    positive = render_with_adapter(DeterministicTestRendererAdapter(), '<svg xmlns="http://www.w3.org/2000/svg"/>', {"width": 16, "height": 9})
+    payload = {"schema_version":"1.0.0","renderer":status,"render_manifests":[positive["render_manifest"]],"render_critic_reports":[positive["render_critic"]],"image_capable_review":{"status":"blocked_visual_review"},"current_slide_context":{"context_id":context.context_id,"archetype_id":context.archetype_id,"figure_id":context.figure_id,"figure_hash":context.figure_hash,"selected_object_ids":list(context.selected_object_ids)},"review_actions":[{"review_action_id":action.review_action_id,"context_id":action.context_id,"action_type":action.action_type,"object_ids":list(action.object_ids),"payload":_thaw(action.payload),"timestamp_order":action.timestamp_order}]}
     qa = {"schema_version":"1.0.0","qa_id":"CP5F-QA-001","aggregate_status":"pass","status_dimensions":status,"render_count":0,"private_alias_resolution_attempts":0,"private_source_open_attempts":0,"private_render_attempts":0}
     for name,value in (("checkpoint-5f-execution-evidence.json",payload),("checkpoint-5f-qa.json",qa)):(destination/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     return {"execution":payload,"qa":qa}
