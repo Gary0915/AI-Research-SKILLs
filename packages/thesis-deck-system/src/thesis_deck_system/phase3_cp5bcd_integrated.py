@@ -188,7 +188,8 @@ class StaticFigureCritic:
         try:
             spec = _spec(self.root, manifest.get("figure_spec_ref", ""))
             plan = _plan(self.root, manifest.get("figure_plan_ref", ""))
-            registry = SchemaRegistry(self.root / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True)
+            registry = SchemaRegistry(self.root / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True, include_cp5bcd=True)
+            manifest_valid = not registry.errors("scientific-svg-figure-output-manifest", manifest)
             spec_valid = not registry.errors("scientific-figure-spec", spec)
             plan_valid = not registry.errors("figure-production-plan", plan)
             svg = manifest["canonical_output"]["canonical_svg"]
@@ -199,7 +200,7 @@ class StaticFigureCritic:
             fallback_valid = manifest["fallback_decision"] in {"none", "explicit_vector_fallback", "explicit_raster_fallback"}
             privacy = manifest["privacy_state"]
             privacy_valid = all(privacy.get(key) == 0 for key in ("private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts"))
-            route_valid = spec_valid and plan_valid and spec["figure_plan_ref"] == plan["figure_plan_id"]
+            route_valid = manifest_valid and spec_valid and plan_valid and spec["figure_plan_ref"] == plan["figure_plan_id"]
             checks = [("CP5C-SPEC-ROUTE", route_valid), ("CP5C-SVG-HASH", hash_valid), ("CP5C-IDENTITY", identity_valid), ("CP5C-CAPABILITY", capability_valid), ("CP5C-FALLBACK", fallback_valid), ("CP5C-PRIVACY", privacy_valid), ("CP5C-LAYOUT-BYPASS", manifest["output_lineage"].get("raw_to_layout_forbidden") is True)]
         except (KeyError, ValueError, ScientificSvgError, CapabilityError, FigureGateError):
             checks = [("CP5C-MANIFEST-CLOSURE", False)]

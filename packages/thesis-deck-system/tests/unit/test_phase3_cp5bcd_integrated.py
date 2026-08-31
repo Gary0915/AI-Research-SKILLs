@@ -52,6 +52,32 @@ def test_cp5c_static_critic_requires_real_manifest_hashes_and_approval_cannot_be
         StaticFigureCritic(ROOT).approve_unexecuted({"approved": True})
 
 
+def test_cp5c_uses_a_distinct_svg_manifest_contract_without_replacing_cp1_contract():
+    """CP5-C must not overwrite the established CP1 FigureOutputManifest."""
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_cp5bcd_integrated import make_synthetic_manifest
+
+    registry = SchemaRegistry(
+        ROOT / "thesis-deck-system" / "schemas",
+        include_phase3=True,
+        include_cp5a=True,
+        include_cp5bcd=True,
+    )
+    manifest = make_synthetic_manifest(ROOT, "FIG002")
+    assert registry.errors("scientific-svg-figure-output-manifest", manifest) == []
+
+
+@pytest.mark.parametrize("section", ["style_resolution", "output_lineage", "static_critic"])
+def test_cp5c_svg_manifest_rejects_untyped_nested_contract_fields(section: str):
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_cp5bcd_integrated import make_synthetic_manifest
+
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True, include_cp5bcd=True)
+    manifest = make_synthetic_manifest(ROOT, "FIG002")
+    manifest[section]["unexpected"] = "must-fail-closed"
+    assert registry.errors("scientific-svg-figure-output-manifest", manifest)
+
+
 def test_cp5c_layout_handoff_allows_only_executed_approved_figure():
     from thesis_deck_system.phase3_cp5bcd_integrated import StaticFigureCritic, FigureGateError, make_synthetic_manifest
 
