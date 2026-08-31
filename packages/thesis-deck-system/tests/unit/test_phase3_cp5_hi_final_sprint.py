@@ -127,3 +127,19 @@ def test_i0_reconstructs_a_fresh_sanitized_template_with_closed_part_manifest(tm
     assert {"formal_cover", "content_academic", "fishbone", "comparison_result", "summary_decision"} <= set(result["template_profile"]["semantic_roles"])
     assert result["reconstruction_manifest"]["unclassified_part_count"] == 0
     assert result["reconstruction_manifest"]["forbidden_part_count"] == 0
+
+
+def test_i1_builds_fresh_twenty_slide_h001_h002_acceptance_deck(tmp_path: Path):
+    from pptx import Presentation
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import build_i0_sanitized_native_template, build_i1_acceptance_deck
+
+    build_i0_sanitized_native_template(ROOT, tmp_path)
+    result = build_i1_acceptance_deck(ROOT, tmp_path)
+
+    assert Path(result["acceptance_deck_path"]).exists()
+    assert len(Presentation(result["acceptance_deck_path"]).slides) == 20
+    assert result["deck_manifest"]["source_slide_count"] == 19
+    assert result["deck_manifest"]["source_slide_mapping_count"] == 19
+    assert result["deck_manifest"]["hypothesis_layer_order"] == ["H001", "H002"]
+    assert result["deck_manifest"]["h003_slide_count"] == 0
+    assert result["deck_manifest"]["governed_figure_bypass_count"] == 0

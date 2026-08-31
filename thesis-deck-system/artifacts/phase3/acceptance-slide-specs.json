@@ -1,0 +1,2482 @@
+[
+  {
+    "slide_id": "CP5-I-ACCEPTANCE-COVER-001",
+    "revision": 1,
+    "native_layout_role": "formal_cover",
+    "recipe": "formal_cover",
+    "title": {
+      "text": "Synthetic Hypothesis-Layered Thesis History"
+    },
+    "content": {
+      "body": "Synthetic ledger-derived acceptance deck"
+    },
+    "placements": [],
+    "placement_plan": [],
+    "speaker_notes": {
+      "source_refs": [],
+      "text": "Fresh metadata cover; no scientific claim is introduced."
+    },
+    "source_cursor": null,
+    "bindings": {
+      "claim_refs": [],
+      "evidence_refs": [],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": []
+    }
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-PHASE2-PROGRESS-01",
+    "revision": 1,
+    "deck_role": "meeting_delta",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 3
+      },
+      {
+        "block_id": "B201",
+        "revision": 5
+      }
+    ],
+    "stage": "progress_todo",
+    "native_layout_role": "content_academic",
+    "recipe": "progress_todo",
+    "object_ref": "NS201",
+    "title": {
+      "text": "Progress / Previous Commitments",
+      "assertion_claim_refs": [
+        "C201"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E101",
+      "E201"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E101",
+        "E201"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "main",
+      "defense": "appendix"
+    },
+    "source_cursor": 66,
+    "stage_source_cursors": {},
+    "bindings": {
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E201"
+      ],
+      "asset_refs": [],
+      "action_refs": [
+        "NS101",
+        "NS201"
+      ],
+      "decision_refs": [
+        "D101",
+        "D201"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "commitment_table": "Commitment｜NS101; NS201",
+        "current_position": "Current｜H002",
+        "parallel_work": "Parallel｜interface-mechanism; interface-mechanism"
+      },
+      "semantic_fields": {
+        "progress_todo": {
+          "prior_commitment": "NS101; NS201",
+          "current_position": "H002",
+          "parallel_work": "interface-mechanism; interface-mechanism"
+        }
+      },
+      "body": "Current position｜H002\nCommitment｜NS101｜done｜Owner: Gary｜Due: 2026-09-10T09:00:00Z\nDependencies｜pressure fixture｜Parallel: True\nCommitment｜NS201｜planned｜Owner: Gary｜Due: 2026-09-24T00:00:00Z\nDependencies｜pressure fixture｜Parallel: True"
+    },
+    "slot_compositions": {
+      "commitment_table": "text_only",
+      "current_position": "text_only",
+      "parallel_work": "text_only"
+    },
+    "hypothesis_layer_ref": null,
+    "hypothesis_layer_revision": 2,
+    "current_hypothesis_layer_ref": "H002",
+    "semantic_role": "progress_todo",
+    "combined_roles": [
+      "progress_todo"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "commitment_table",
+        "left": 0.8,
+        "top": 1.45,
+        "width": 7.0,
+        "height": 3.75,
+        "z_order": 1,
+        "element_role": "commitment",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "current_position",
+        "left": 8.15,
+        "top": 1.45,
+        "width": 4.4,
+        "height": 1.7,
+        "z_order": 2,
+        "element_role": "position",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "parallel_work",
+        "left": 8.15,
+        "top": 3.45,
+        "width": 4.4,
+        "height": 1.75,
+        "z_order": 3,
+        "element_role": "parallel",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-PHASE2-PROGRESS-01"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 1
+      }
+    ],
+    "stage": "hypothesis_title",
+    "native_layout_role": "content_academic",
+    "recipe": "hypothesis_title",
+    "object_ref": "C101",
+    "title": {
+      "text": "H001｜Hypothesis",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E002",
+      "E102"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E002",
+        "E102"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 23,
+    "stage_source_cursors": {
+      "hypothesis_title": 23
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "hypothesis_statement": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+      },
+      "semantic_fields": {
+        "hypothesis_title": {
+          "hypothesis_statement": "Bulk conductivity drives the positional signal gradient.",
+          "falsifiable_prediction": "Matched conditions do not change the predicted CV or resistance.",
+          "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+        }
+      },
+      "body": "Hypothesis｜Bulk conductivity drives the positional signal gradient.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+    },
+    "slot_compositions": {
+      "hypothesis_statement": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "hypothesis_title",
+    "combined_roles": [
+      "hypothesis_title"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "hypothesis_statement",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 11.7,
+        "height": 2.35,
+        "z_order": 1,
+        "element_role": "assertion",
+        "font_size_pt": 28
+      }
+    ],
+    "layout_plan_ref": "LP-H001-HYPOTHESIS-TITLE-01"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 1
+      }
+    ],
+    "stage": "problem_definition",
+    "native_layout_role": "content_academic",
+    "recipe": "problem_definition",
+    "object_ref": "P101",
+    "title": {
+      "text": "H001｜Problem",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E002"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E002"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 23,
+    "stage_source_cursors": {
+      "problem_definition": 23
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "previous_finding": "Prior｜含水量與導電度存在位置梯度",
+        "unresolved_conflict": "Conflict｜導電度提高是否足以修復重複性仍未知。",
+        "research_question": "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+      },
+      "semantic_fields": {
+        "problem_definition": {
+          "previous_finding": "含水量與導電度存在位置梯度",
+          "unresolved_conflict": "導電度提高是否足以修復重複性仍未知。",
+          "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+          "scope": "合成五個位置、每個位置三個 replicate 的機制辨識。"
+        }
+      },
+      "body": "Problem｜合成薄膜的缺陷密度沿位置增加，且訊號重複性下降。\nPrevious finding｜含水量與導電度存在位置梯度\nConflict｜導電度提高是否足以修復重複性仍未知。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nScope｜合成五個位置、每個位置三個 replicate 的機制辨識。"
+    },
+    "slot_compositions": {
+      "previous_finding": "text_only",
+      "unresolved_conflict": "text_only",
+      "research_question": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "problem_definition",
+    "combined_roles": [
+      "problem_definition"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "previous_finding",
+        "left": 0.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 1,
+        "element_role": "evidence",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "unresolved_conflict",
+        "left": 4.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 2,
+        "element_role": "problem",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "research_question",
+        "left": 8.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 3,
+        "element_role": "question",
+        "font_size_pt": 20
+      }
+    ],
+    "layout_plan_ref": "LP-H001-PROBLEM-DEFINITION-02"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 1
+      }
+    ],
+    "stage": "fishbone_locator",
+    "native_layout_role": "content_academic",
+    "recipe": "fishbone_locator",
+    "object_ref": null,
+    "title": {
+      "text": "H001｜Total Fishbone / Research Map",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [
+      {
+        "slot": "primary_figure",
+        "asset_id": "A101",
+        "asset_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg"
+      }
+    ],
+    "citations": [
+      "E103"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E103"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 23,
+    "stage_source_cursors": {
+      "fishbone_locator": 23
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E103"
+      ],
+      "asset_refs": [
+        "A101"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "primary_figure": "Historical fishbone SVG bound by Asset Manifest.",
+        "fishbone_focus": "History｜FB001 rev1\nFocus｜FB-MATERIAL-HYDRATION"
+      },
+      "semantic_fields": {
+        "fishbone_locator": {
+          "historical_snapshot": "FB001 rev1",
+          "current_focus": "FB-MATERIAL-HYDRATION"
+        }
+      },
+      "body": "Historical snapshot｜FB001 rev1\nFocus branch｜FB-MATERIAL-HYDRATION\nImmutable map; current branch highlighted."
+    },
+    "slot_compositions": {
+      "primary_figure": "asset_only",
+      "fishbone_focus": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "fishbone_locator",
+    "combined_roles": [
+      "fishbone_locator"
+    ],
+    "fishbone_snapshot_ref": {
+      "fishbone_id": "FB001",
+      "revision": 1
+    },
+    "fishbone_focus_refs": [
+      "FB-MATERIAL-HYDRATION"
+    ],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "primary_figure",
+        "left": 4.25,
+        "top": 1.35,
+        "width": 8.35,
+        "height": 4.9,
+        "z_order": 1,
+        "element_role": "fishbone",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "fishbone_focus",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 3.0,
+        "height": 1.4,
+        "z_order": 2,
+        "element_role": "annotation",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-FISHBONE-LOCATOR-03"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 1
+      }
+    ],
+    "stage": "observation_problem",
+    "native_layout_role": "content_academic",
+    "recipe": "observation_problem",
+    "object_ref": "B101",
+    "title": {
+      "text": "H001｜Observation → Literature → Mechanism",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [
+      {
+        "slot": "primary_figure",
+        "asset_id": "A002",
+        "asset_path": "thesis-deck-system/artifacts/phase2/observation/observation_visual.svg"
+      }
+    ],
+    "citations": [
+      "E002",
+      "E102"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E002",
+        "E102"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 23,
+    "stage_source_cursors": {
+      "observation_problem": 23
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "asset_refs": [
+        "A002"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "primary_figure": "Registered observation visual.",
+        "research_question": "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+        "observation_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。"
+      },
+      "semantic_fields": {
+        "observation_problem": {
+          "observation": "位置依賴缺陷與訊號變異已觀察到。",
+          "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+        }
+      },
+      "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜bulk transport\nEvidence/claim link｜C102; C103; E103\nStrategy｜均化導電度\nSuccess criterion｜預測指標跨過 decision threshold"
+    },
+    "slot_compositions": {
+      "primary_figure": "asset_only",
+      "research_question": "text_only",
+      "observation_text": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "observation_problem",
+    "combined_roles": [
+      "observation_problem"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "primary_figure",
+        "left": 7.55,
+        "top": 1.4,
+        "width": 5.0,
+        "height": 3.8,
+        "z_order": 1,
+        "element_role": "observation_visual",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "research_question",
+        "left": 0.8,
+        "top": 1.45,
+        "width": 6.2,
+        "height": 0.9,
+        "z_order": 2,
+        "element_role": "question",
+        "font_size_pt": 20
+      },
+      {
+        "slot": "observation_text",
+        "left": 0.8,
+        "top": 2.55,
+        "width": 6.2,
+        "height": 2.65,
+        "z_order": 3,
+        "element_role": "observation",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-OBSERVATION-PROBLEM-04"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 1
+      }
+    ],
+    "stage": "literature_mechanism",
+    "native_layout_role": "content_academic",
+    "recipe": "literature_mechanism",
+    "object_ref": "B101",
+    "title": {
+      "text": "H001｜Literature → Mechanism → Strategy",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E103"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E103"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 23,
+    "stage_source_cursors": {
+      "literature_mechanism": 23
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E103"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "literature_evidence": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+        "mechanism_diagram": "Mechanism｜bulk transport\nEvidence｜C102; C103; E103"
+      },
+      "semantic_fields": {
+        "literature_mechanism": {
+          "consensus": "transport gradient 可產生位置效應。",
+          "disagreement_alternatives": "interface contact remains alternative",
+          "research_gap": "缺少控制比較隔離機制。",
+          "implication": "需匹配條件後比較。",
+          "mechanism": "bulk transport",
+          "evidence_claim_link": "C102; C103; E103"
+        }
+      },
+      "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜bulk transport\nEvidence/claim link｜C102; C103; E103\nStrategy｜均化導電度\nSuccess criterion｜預測指標跨過 decision threshold"
+    },
+    "slot_compositions": {
+      "literature_evidence": "text_only",
+      "mechanism_diagram": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "literature_mechanism",
+    "combined_roles": [
+      "literature_mechanism"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "literature_evidence",
+        "left": 0.8,
+        "top": 1.45,
+        "width": 5.8,
+        "height": 3.9,
+        "z_order": 1,
+        "element_role": "literature",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "mechanism_diagram",
+        "left": 7.0,
+        "top": 1.45,
+        "width": 5.55,
+        "height": 3.9,
+        "z_order": 2,
+        "element_role": "mechanism",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-LITERATURE-MECHANISM-05"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 1
+      }
+    ],
+    "stage": "experiment_design",
+    "native_layout_role": "content_academic",
+    "recipe": "experiment_design",
+    "object_ref": "EXP101",
+    "title": {
+      "text": "H001｜Experiment Design",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E002"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E002"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 23,
+    "stage_source_cursors": {
+      "experiment_design": 23
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "experiment_matrix": "IV｜含水量\nControls｜電極幾何; 接觸壓力\nBaseline｜原始配方\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜導電度 (mS/cm)\nUnits｜導電度 (mS/cm)\nMethod｜synthetic-four-probe",
+        "decision_rule": "Prediction｜導電度提升\nRule｜go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%"
+      },
+      "semantic_fields": {
+        "experiment_design": {
+          "independent_variables": "含水量",
+          "controlled_variables": "電極幾何; 接觸壓力",
+          "control_baseline": "原始配方",
+          "sample_plan": "replicates: 3; samples: 15",
+          "replicates": "3",
+          "measured_outputs": "導電度 (mS/cm)",
+          "units": "導電度 (mS/cm)",
+          "instrumentation_method": "synthetic-four-probe",
+          "predicted_outcomes": "導電度提升",
+          "decision_rule": "go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%"
+        }
+      },
+      "body": "EXP101｜IV: ['含水量']\nControlled variables: ['電極幾何', '接觸壓力']\nControls/baselines: ['原始配方']\nSample plan: {'replicates': 3, 'samples': 15}\nN/replicates: 3\nMetrics/units: ['導電度 (mS/cm)']\nMethod: ['synthetic-four-probe']\nPrediction: ['導電度提升']\nDecision rule: {'go': 'mean conductivity increases >=20%', 'partial_go': '10-20%', 'no_go': '<10%'}"
+    },
+    "slot_compositions": {
+      "experiment_matrix": "text_only",
+      "decision_rule": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "experiment_design",
+    "combined_roles": [
+      "experiment_design"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "experiment_matrix",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 7.4,
+        "height": 4.3,
+        "z_order": 1,
+        "element_role": "experiment",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "decision_rule",
+        "left": 8.55,
+        "top": 1.4,
+        "width": 4.0,
+        "height": 2.0,
+        "z_order": 2,
+        "element_role": "decision_rule",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-EXPERIMENT-DESIGN-06"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 1
+      }
+    ],
+    "stage": "experiment_design",
+    "native_layout_role": "content_academic",
+    "recipe": "experiment_design",
+    "object_ref": "EXP102",
+    "title": {
+      "text": "H001｜Experiment Design",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E002",
+      "E102"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E002",
+        "E102"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 23,
+    "stage_source_cursors": {
+      "experiment_design": 23
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "experiment_matrix": "IV｜位置\nControls｜配方; 電極; 接觸壓力\nBaseline｜原始位置分布\nSample｜replicates: 3; samples: 15\nN｜3\nOutputs｜訊號 CV (%)\nUnits｜訊號 CV (%)\nMethod｜synthetic-signal-test",
+        "decision_rule": "Prediction｜CV 下降\nRule｜go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%"
+      },
+      "semantic_fields": {
+        "experiment_design": {
+          "independent_variables": "位置",
+          "controlled_variables": "配方; 電極; 接觸壓力",
+          "control_baseline": "原始位置分布",
+          "sample_plan": "replicates: 3; samples: 15",
+          "replicates": "3",
+          "measured_outputs": "訊號 CV (%)",
+          "units": "訊號 CV (%)",
+          "instrumentation_method": "synthetic-signal-test",
+          "predicted_outcomes": "CV 下降",
+          "decision_rule": "go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%"
+        }
+      },
+      "body": "EXP102｜IV: ['位置']\nControlled variables: ['配方', '電極', '接觸壓力']\nControls/baselines: ['原始位置分布']\nSample plan: {'replicates': 3, 'samples': 15}\nN/replicates: 3\nMetrics/units: ['訊號 CV (%)']\nMethod: ['synthetic-signal-test']\nPrediction: ['CV 下降']\nDecision rule: {'go': 'CV decreases >=30%', 'partial_go': '10-30%', 'no_go': '<10%'}"
+    },
+    "slot_compositions": {
+      "experiment_matrix": "text_only",
+      "decision_rule": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "experiment_design",
+    "combined_roles": [
+      "experiment_design"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "experiment_matrix",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 7.4,
+        "height": 4.3,
+        "z_order": 1,
+        "element_role": "experiment",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "decision_rule",
+        "left": 8.55,
+        "top": 1.4,
+        "width": 4.0,
+        "height": 2.0,
+        "z_order": 2,
+        "element_role": "decision_rule",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-EXPERIMENT-DESIGN-07"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-RESULT-SINGLE-08",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 2
+      }
+    ],
+    "stage": "result_single",
+    "native_layout_role": "content_academic",
+    "recipe": "result_single",
+    "object_ref": "RES101",
+    "title": {
+      "text": "H001｜Result",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [
+      {
+        "slot": "result_plot",
+        "asset_id": "A001",
+        "asset_path": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.svg"
+      }
+    ],
+    "citations": [
+      "E101"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E101"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 28,
+    "stage_source_cursors": {
+      "result_single": 28
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101"
+      ],
+      "asset_refs": [
+        "A001"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "result_plot": "Figure｜RES101｜平均導電度增加 24% ± 5% SD",
+        "result_annotation": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+      },
+      "semantic_fields": {
+        "result_single": {
+          "result_identity": "RES101",
+          "result_statement": "平均導電度增加 24% ± 5% SD",
+          "metric_value_uncertainty": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+        }
+      },
+      "body": "RES101｜平均導電度增加 24% ± 5% SD\nMetrics｜[{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}]"
+    },
+    "slot_compositions": {
+      "result_plot": "asset_with_annotation",
+      "result_annotation": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "result_single",
+    "combined_roles": [
+      "result_single"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "result_plot",
+        "left": 6.0,
+        "top": 1.35,
+        "width": 6.55,
+        "height": 4.45,
+        "z_order": 1,
+        "element_role": "result",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "result_annotation",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 4.8,
+        "height": 2.3,
+        "z_order": 2,
+        "element_role": "annotation",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-RESULT-SINGLE-08"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-RESULT-SINGLE-09",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 2
+      }
+    ],
+    "stage": "result_single",
+    "native_layout_role": "content_academic",
+    "recipe": "result_single",
+    "object_ref": "RES102",
+    "title": {
+      "text": "H001｜Result",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [
+      {
+        "slot": "result_plot",
+        "asset_id": "A001",
+        "asset_path": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.svg"
+      }
+    ],
+    "citations": [
+      "E101"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E101"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 28,
+    "stage_source_cursors": {
+      "result_single": 28
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101"
+      ],
+      "asset_refs": [
+        "A001"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "result_plot": "Figure｜RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+        "result_annotation": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}"
+      },
+      "semantic_fields": {
+        "result_single": {
+          "result_identity": "RES102",
+          "result_statement": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+          "metric_value_uncertainty": "{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}"
+        }
+      },
+      "body": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetrics｜[{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}]"
+    },
+    "slot_compositions": {
+      "result_plot": "asset_with_annotation",
+      "result_annotation": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "result_single",
+    "combined_roles": [
+      "result_single"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "result_plot",
+        "left": 6.0,
+        "top": 1.35,
+        "width": 6.55,
+        "height": 4.45,
+        "z_order": 1,
+        "element_role": "result",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "result_annotation",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 4.8,
+        "height": 2.3,
+        "z_order": 2,
+        "element_role": "annotation",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-RESULT-SINGLE-09"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 2
+      }
+    ],
+    "stage": "layer_integrated_discussion",
+    "native_layout_role": "content_academic",
+    "recipe": "layer_integrated_discussion",
+    "object_ref": "DISC-H001",
+    "title": {
+      "text": "H001｜Integrated Discussion",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E101",
+      "E102",
+      "E103"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 30,
+    "stage_source_cursors": {
+      "layer_integrated_discussion": 30
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "supporting_results": "Support｜RES101",
+        "contradicting_results": "Conflict｜RES102\nNon-disc.｜none",
+        "uncertainty": "Pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nUncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。"
+      },
+      "semantic_fields": {
+        "layer_integrated_discussion": {
+          "supporting_results": "RES101",
+          "contradicting_results": "RES102",
+          "non_discriminating_results": "none",
+          "cross_experiment_pattern": "導電度提升成立，但重複性沒有同步改善。",
+          "mechanism_assessment": "bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
+          "alternative_explanations": "接觸電阻; 局部壓力差; 電極幾何",
+          "remaining_uncertainty": "contact interface 是否為主導因素仍需匹配導電度後檢驗。"
+        }
+      },
+      "body": "Supporting｜RES101\nContradicting｜RES102\nCross-experiment pattern｜導電度提升成立，但重複性沒有同步改善。\nMechanism assessment｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。\nAlternatives｜接觸電阻; 局部壓力差; 電極幾何\nRemaining uncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。"
+    },
+    "slot_compositions": {
+      "supporting_results": "text_only",
+      "contradicting_results": "text_only",
+      "uncertainty": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "layer_integrated_discussion",
+    "combined_roles": [
+      "layer_integrated_discussion"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "supporting_results",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 5.65,
+        "height": 2.2,
+        "z_order": 1,
+        "element_role": "support",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "contradicting_results",
+        "left": 6.8,
+        "top": 1.4,
+        "width": 5.75,
+        "height": 2.2,
+        "z_order": 2,
+        "element_role": "contradiction",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "uncertainty",
+        "left": 0.8,
+        "top": 3.9,
+        "width": 11.75,
+        "height": 1.7,
+        "z_order": 3,
+        "element_role": "uncertainty",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-LAYER-INTEGRATED-DISCUSSION-10"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 2
+      }
+    ],
+    "stage": "layer_summary_decision",
+    "native_layout_role": "content_academic",
+    "recipe": "layer_summary_decision",
+    "object_ref": "SUM-H001",
+    "title": {
+      "text": "H001｜Layer Summary / Decision",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E101"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E101"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 32,
+    "stage_source_cursors": {
+      "layer_summary_decision": 32
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101"
+      ],
+      "asset_refs": [],
+      "action_refs": [
+        "NS101"
+      ],
+      "decision_refs": [
+        "D101"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "decision_status": "Answer｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nStatus｜partial_support\nDecision｜Partial-Go; Bulk conductivity is contributory but insufficient.",
+        "uncertainty": "Unresolved｜interface contact 的貢獻尚未量化。",
+        "next_step": "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext step｜NS101"
+      },
+      "semantic_fields": {
+        "layer_summary_decision": {
+          "answered_question": "bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
+          "hypothesis_status": "partial_support",
+          "decision": "Partial-Go; Bulk conductivity is contributory but insufficient.",
+          "unresolved_items": "interface contact 的貢獻尚未量化。",
+          "next_question": "匹配 bulk conductivity 後，contact resistance 是否主導變異？",
+          "next_step": "NS101"
+        }
+      },
+      "body": "Answered｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。\nHypothesis status｜partial_support\nDecision｜Partial-Go: Bulk conductivity is contributory but insufficient.\nUnresolved｜interface contact 的貢獻尚未量化。\nNext question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？\nNext Step｜NS101"
+    },
+    "slot_compositions": {
+      "decision_status": "text_only",
+      "uncertainty": "text_only",
+      "next_step": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "layer_summary_decision",
+    "combined_roles": [
+      "layer_summary_decision"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "decision_status",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
+        "z_order": 1,
+        "element_role": "status",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "uncertainty",
+        "left": 4.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
+        "z_order": 2,
+        "element_role": "uncertainty",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "next_step",
+        "left": 8.8,
+        "top": 1.4,
+        "width": 3.7,
+        "height": 2.3,
+        "z_order": 3,
+        "element_role": "next_step",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-LAYER-SUMMARY-DECISION-11"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B101",
+        "revision": 3
+      }
+    ],
+    "stage": "hypothesis_transition",
+    "native_layout_role": "content_academic",
+    "recipe": "hypothesis_transition",
+    "object_ref": "TR-H001-H002",
+    "title": {
+      "text": "H001｜Hypothesis Transition",
+      "assertion_claim_refs": [
+        "C101"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E104",
+      "E101"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E104",
+        "E101"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 39,
+    "stage_source_cursors": {
+      "hypothesis_transition": 39
+    },
+    "bindings": {
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E104",
+        "E101"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [
+        "D101"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "transition_nodes": "Prior H｜C101\nKey results｜RES101; RES102\nPrecursor｜E104\nNew H｜C201",
+        "derivation_strip": "Unresolved｜導電度增加後訊號重複性沒有改善。\nRationale｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。"
+      },
+      "semantic_fields": {
+        "hypothesis_transition": {
+          "prior_hypothesis": "C101",
+          "key_prior_results": "RES101; RES102",
+          "unresolved_point": "導電度增加後訊號重複性沒有改善。",
+          "precursor_observation": "E104",
+          "derivation_rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+          "new_hypothesis": "C201"
+        }
+      },
+      "body": "Previous hypothesis｜C101\nKey results｜RES101, RES102\nNot explained｜導電度增加後訊號重複性沒有改善。\nNew observation｜E104\nTherefore｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。\nNew hypothesis｜C201"
+    },
+    "slot_compositions": {
+      "transition_nodes": "text_only",
+      "derivation_strip": "text_only"
+    },
+    "hypothesis_layer_ref": "H001",
+    "hypothesis_layer_revision": 2,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "hypothesis_transition",
+    "combined_roles": [
+      "hypothesis_transition"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "transition_nodes",
+        "left": 0.8,
+        "top": 1.55,
+        "width": 11.75,
+        "height": 2.7,
+        "z_order": 1,
+        "element_role": "transition",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "derivation_strip",
+        "left": 0.8,
+        "top": 4.55,
+        "width": 11.75,
+        "height": 0.8,
+        "z_order": 2,
+        "element_role": "derivation",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H001-HYPOTHESIS-TRANSITION-12"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B201",
+        "revision": 1
+      }
+    ],
+    "stage": "hypothesis_title",
+    "native_layout_role": "content_academic",
+    "recipe": "hypothesis_title",
+    "object_ref": "C201",
+    "title": {
+      "text": "H002｜Hypothesis",
+      "assertion_claim_refs": [
+        "C201"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E204"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E204"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 51,
+    "stage_source_cursors": {
+      "hypothesis_title": 51
+    },
+    "bindings": {
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "hypothesis_statement": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nQuestion｜低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+      },
+      "semantic_fields": {
+        "hypothesis_title": {
+          "hypothesis_statement": "Contact resistance drives instability at low pressure.",
+          "falsifiable_prediction": "Matched conditions do not change the predicted CV or resistance.",
+          "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+        }
+      },
+      "body": "Hypothesis｜Contact resistance drives instability at low pressure.\nFalsifier｜Matched conditions do not change the predicted CV or resistance.\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+    },
+    "slot_compositions": {
+      "hypothesis_statement": "text_only"
+    },
+    "hypothesis_layer_ref": "H002",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "hypothesis_title",
+    "combined_roles": [
+      "hypothesis_title"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "hypothesis_statement",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 11.7,
+        "height": 2.35,
+        "z_order": 1,
+        "element_role": "assertion",
+        "font_size_pt": 28
+      }
+    ],
+    "layout_plan_ref": "LP-H002-HYPOTHESIS-TITLE-01"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B201",
+        "revision": 1
+      }
+    ],
+    "stage": "problem_definition",
+    "native_layout_role": "content_academic",
+    "recipe": "problem_definition",
+    "object_ref": "P201",
+    "title": {
+      "text": "H002｜Problem",
+      "assertion_claim_refs": [
+        "C201"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E204"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E204"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 51,
+    "stage_source_cursors": {
+      "problem_definition": 51
+    },
+    "bindings": {
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "previous_finding": "Prior｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+        "unresolved_conflict": "Conflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。",
+        "research_question": "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+      },
+      "semantic_fields": {
+        "problem_definition": {
+          "previous_finding": "H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+          "unresolved_conflict": "bulk transport 與 interface contact 的相對貢獻尚未區分。",
+          "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+          "scope": "匹配 bulk conductivity，改變 contact pressure 的對照實驗。"
+        }
+      },
+      "body": "Problem｜導電度改善後重複性仍未改善，剩餘變異與電極接觸位置相關。\nPrevious finding｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性\nConflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？\nScope｜匹配 bulk conductivity，改變 contact pressure 的對照實驗。"
+    },
+    "slot_compositions": {
+      "previous_finding": "text_only",
+      "unresolved_conflict": "text_only",
+      "research_question": "text_only"
+    },
+    "hypothesis_layer_ref": "H002",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "problem_definition",
+    "combined_roles": [
+      "problem_definition"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "previous_finding",
+        "left": 0.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 1,
+        "element_role": "evidence",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "unresolved_conflict",
+        "left": 4.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 2,
+        "element_role": "problem",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "research_question",
+        "left": 8.8,
+        "top": 1.45,
+        "width": 3.7,
+        "height": 1.75,
+        "z_order": 3,
+        "element_role": "question",
+        "font_size_pt": 20
+      }
+    ],
+    "layout_plan_ref": "LP-H002-PROBLEM-DEFINITION-02"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B201",
+        "revision": 1
+      }
+    ],
+    "stage": "fishbone_locator",
+    "native_layout_role": "content_academic",
+    "recipe": "fishbone_locator",
+    "object_ref": null,
+    "title": {
+      "text": "H002｜Total Fishbone / Research Map",
+      "assertion_claim_refs": [
+        "C201"
+      ]
+    },
+    "placements": [
+      {
+        "slot": "primary_figure",
+        "asset_id": "A102",
+        "asset_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg"
+      }
+    ],
+    "citations": [
+      "E204"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E204"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 51,
+    "stage_source_cursors": {
+      "fishbone_locator": 51
+    },
+    "bindings": {
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204"
+      ],
+      "asset_refs": [
+        "A102"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "primary_figure": "Historical fishbone SVG bound by Asset Manifest.",
+        "fishbone_focus": "History｜FB001 rev2\nFocus｜FB-ELECTRODE-CONTACT"
+      },
+      "semantic_fields": {
+        "fishbone_locator": {
+          "historical_snapshot": "FB001 rev2",
+          "current_focus": "FB-ELECTRODE-CONTACT"
+        }
+      },
+      "body": "Historical snapshot｜FB001 rev2\nFocus branch｜FB-ELECTRODE-CONTACT\nImmutable map; current branch highlighted."
+    },
+    "slot_compositions": {
+      "primary_figure": "asset_only",
+      "fishbone_focus": "text_only"
+    },
+    "hypothesis_layer_ref": "H002",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "fishbone_locator",
+    "combined_roles": [
+      "fishbone_locator"
+    ],
+    "fishbone_snapshot_ref": {
+      "fishbone_id": "FB001",
+      "revision": 2
+    },
+    "fishbone_focus_refs": [
+      "FB-ELECTRODE-CONTACT"
+    ],
+    "compaction_rationale": null,
+    "placement_plan": [
+      {
+        "slot": "primary_figure",
+        "left": 4.25,
+        "top": 1.35,
+        "width": 8.35,
+        "height": 4.9,
+        "z_order": 1,
+        "element_role": "fishbone",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "fishbone_focus",
+        "left": 0.8,
+        "top": 1.65,
+        "width": 3.0,
+        "height": 1.4,
+        "z_order": 2,
+        "element_role": "annotation",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H002-FISHBONE-LOCATOR-03"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B201",
+        "revision": 1
+      }
+    ],
+    "stage": "observation_problem",
+    "native_layout_role": "content_academic",
+    "recipe": "observation_problem",
+    "object_ref": "B201",
+    "title": {
+      "text": "H002｜Observation → Literature → Mechanism",
+      "assertion_claim_refs": [
+        "C201"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E204",
+      "E202"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E204",
+        "E202"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 51,
+    "stage_source_cursors": {
+      "observation_problem": 51,
+      "literature_mechanism": 51,
+      "mechanism_solution": 51
+    },
+    "bindings": {
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204",
+        "E202"
+      ],
+      "asset_refs": [],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "primary_figure": "Registered observation visual.",
+        "research_question": "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+        "observation_text": "Observation｜位置依賴缺陷與訊號變異已觀察到。",
+        "literature_evidence": "Consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。",
+        "mechanism_diagram": "Mechanism｜contact resistance\nEvidence｜C202; C203; E202",
+        "strategy": "Strategy｜匹配導電度並改變接觸壓力\nCriterion｜預測指標跨過 decision threshold"
+      },
+      "semantic_fields": {
+        "observation_problem": {
+          "observation": "位置依賴缺陷與訊號變異已觀察到。",
+          "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+        },
+        "literature_mechanism": {
+          "consensus": "transport gradient 可產生位置效應。",
+          "disagreement_alternatives": "interface contact remains alternative",
+          "research_gap": "缺少控制比較隔離機制。",
+          "implication": "需匹配條件後比較。",
+          "mechanism": "contact resistance",
+          "evidence_claim_link": "C202; C203; E202"
+        },
+        "mechanism_solution": {
+          "mechanism": "contact resistance",
+          "evidence_claim_link": "C202; C203; E202",
+          "strategy": "匹配導電度並改變接觸壓力",
+          "success_criterion": "預測指標跨過 decision threshold"
+        }
+      },
+      "body": "Observation｜位置依賴缺陷與訊號變異已觀察到。\nProblem｜現有模型無法解釋此變異。\nResearch question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？\nLiterature consensus｜transport gradient 可產生位置效應。\nAlternatives｜interface contact remains alternative\nGap｜缺少控制比較隔離機制。\nImplication｜需匹配條件後比較。\nMechanism｜contact resistance\nEvidence/claim link｜C202; C203; E202\nStrategy｜匹配導電度並改變接觸壓力\nSuccess criterion｜預測指標跨過 decision threshold"
+    },
+    "slot_compositions": {
+      "primary_figure": "text_only",
+      "research_question": "text_only",
+      "observation_text": "text_only",
+      "literature_evidence": "text_only",
+      "mechanism_diagram": "text_only",
+      "strategy": "text_only"
+    },
+    "hypothesis_layer_ref": "H002",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "observation_problem",
+    "combined_roles": [
+      "observation_problem",
+      "literature_mechanism",
+      "mechanism_solution"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": "Observation, Literature, Mechanism, and Strategy remain audience-visible through unioned field/slot contracts.",
+    "placement_plan": [
+      {
+        "slot": "observation_text",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 3.0,
+        "height": 2.1,
+        "z_order": 1,
+        "element_role": "observation",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "research_question",
+        "left": 0.8,
+        "top": 3.75,
+        "width": 3.0,
+        "height": 1.55,
+        "z_order": 2,
+        "element_role": "question",
+        "font_size_pt": 18
+      },
+      {
+        "slot": "literature_evidence",
+        "left": 4.1,
+        "top": 1.4,
+        "width": 4.1,
+        "height": 3.9,
+        "z_order": 3,
+        "element_role": "literature",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "mechanism_diagram",
+        "left": 8.5,
+        "top": 1.4,
+        "width": 2.1,
+        "height": 2.3,
+        "z_order": 4,
+        "element_role": "mechanism",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "strategy",
+        "left": 10.8,
+        "top": 1.4,
+        "width": 1.7,
+        "height": 2.3,
+        "z_order": 5,
+        "element_role": "strategy",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "primary_figure",
+        "left": 8.5,
+        "top": 3.95,
+        "width": 4.0,
+        "height": 1.35,
+        "z_order": 6,
+        "element_role": "observation_visual",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H002-OBSERVATION-PROBLEM-04"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B201",
+        "revision": 3
+      }
+    ],
+    "stage": "result_comparison",
+    "native_layout_role": "content_academic",
+    "recipe": "result_comparison",
+    "object_ref": [
+      "EXP201",
+      "RES201"
+    ],
+    "title": {
+      "text": "H002｜Results",
+      "assertion_claim_refs": [
+        "C201"
+      ]
+    },
+    "placements": [
+      {
+        "slot": "result_plot",
+        "asset_id": "A201",
+        "asset_path": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.svg"
+      }
+    ],
+    "citations": [
+      "E204",
+      "E201"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E204",
+        "E201"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 57,
+    "stage_source_cursors": {
+      "experiment_design": 52,
+      "result_single": 57
+    },
+    "bindings": {
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204",
+        "E201"
+      ],
+      "asset_refs": [
+        "A201"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "experiment_matrix": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
+        "decision_rule": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
+        "result_plot": "Figure｜RES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+        "result_annotation": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+      },
+      "semantic_fields": {
+        "experiment_design": {
+          "independent_variables": "contact pressure",
+          "controlled_variables": "bulk conductivity; 電極幾何",
+          "control_baseline": "low-pressure control",
+          "sample_plan": "replicates: 5; samples: 15",
+          "replicates": "5",
+          "measured_outputs": "訊號 CV (%); contact resistance (ohm)",
+          "units": "訊號 CV (%); contact resistance (ohm)",
+          "instrumentation_method": "synthetic-pressure-fixture",
+          "predicted_outcomes": "CV and resistance decrease",
+          "decision_rule": "go: both metrics improve; partial_go: one metric improves; no_go: neither improves"
+        },
+        "result_single": {
+          "result_identity": "RES201",
+          "result_statement": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+          "metric_value_uncertainty": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+        }
+      },
+      "body": "EXP201｜\nMetrics｜\nRES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetrics｜[{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}]"
+    },
+    "slot_compositions": {
+      "experiment_matrix": "text_only",
+      "decision_rule": "text_only",
+      "result_plot": "asset_with_annotation",
+      "result_annotation": "text_only"
+    },
+    "hypothesis_layer_ref": "H002",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "result_comparison",
+    "combined_roles": [
+      "experiment_design",
+      "result_single"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": "Experiment metadata and Result remain in separate governed regions on the same slide.",
+    "placement_plan": [
+      {
+        "slot": "experiment_matrix",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 5.8,
+        "height": 4.3,
+        "z_order": 1,
+        "element_role": "experiment",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "decision_rule",
+        "left": 6.8,
+        "top": 1.4,
+        "width": 2.0,
+        "height": 2.0,
+        "z_order": 2,
+        "element_role": "decision_rule",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "result_plot",
+        "left": 9.05,
+        "top": 1.4,
+        "width": 3.5,
+        "height": 2.4,
+        "z_order": 3,
+        "element_role": "result",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "result_annotation",
+        "left": 6.8,
+        "top": 3.95,
+        "width": 5.75,
+        "height": 1.75,
+        "z_order": 4,
+        "element_role": "annotation",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H002-EXPERIMENT-DESIGN-06"
+  },
+  {
+    "schema_version": "2.0.0",
+    "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+    "revision": 1,
+    "deck_role": "hypothesis_layer",
+    "block_refs": [
+      {
+        "block_id": "B201",
+        "revision": 5
+      }
+    ],
+    "stage": "layer_summary_decision",
+    "native_layout_role": "content_academic",
+    "recipe": "layer_summary_decision",
+    "object_ref": "SUM-H002",
+    "title": {
+      "text": "H002｜Layer Summary / Decision",
+      "assertion_claim_refs": [
+        "C201"
+      ]
+    },
+    "placements": [],
+    "citations": [
+      "E201"
+    ],
+    "speaker_notes": {
+      "source_refs": [
+        "E201"
+      ],
+      "text": "Compiled from persisted ledger materialization."
+    },
+    "story_visibility": {
+      "master": "main",
+      "meeting": "history",
+      "defense": "appendix"
+    },
+    "source_cursor": 65,
+    "stage_source_cursors": {
+      "layer_integrated_discussion": 60,
+      "layer_summary_decision": 65
+    },
+    "bindings": {
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "asset_refs": [],
+      "action_refs": [
+        "NS201"
+      ],
+      "decision_refs": [
+        "D201"
+      ],
+      "professor_profile_ref": {
+        "profile_id": "PROF-SYNTH-001",
+        "version": "1.0.0"
+      },
+      "template_profile_ref": {
+        "profile_id": "TP-SYNTH-PHASE2",
+        "version": "2.0.0"
+      }
+    },
+    "content": {
+      "slots": {
+        "supporting_results": "Support｜RES201",
+        "contradicting_results": "Conflict｜none\nNon-disc.｜none",
+        "discussion_synthesis": "Cross-experiment pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism assessment｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布",
+        "uncertainty": "Pattern｜匹配導電度後，提高接觸壓力明顯降低變異。\nMechanism｜contact resistance 在低壓條件下主導不穩定。\nAlternatives｜電極幾何仍可能調節壓力分布\nUncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。",
+        "decision_status": "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。\nStatus｜supported\nDecision｜Go; Contact-pressure control discriminates the interface mechanism.",
+        "next_step": "Next question｜接觸壓力改善能否在長期循環下維持？\nNext step｜NS201"
+      },
+      "semantic_fields": {
+        "layer_integrated_discussion": {
+          "supporting_results": "RES201",
+          "contradicting_results": "none",
+          "non_discriminating_results": "none",
+          "cross_experiment_pattern": "匹配導電度後，提高接觸壓力明顯降低變異。",
+          "mechanism_assessment": "contact resistance 在低壓條件下主導不穩定。",
+          "alternative_explanations": "電極幾何仍可能調節壓力分布",
+          "remaining_uncertainty": "高壓長期循環是否造成新的 wear mechanism 尚未知。"
+        },
+        "layer_summary_decision": {
+          "answered_question": "低接觸壓力下 contact resistance 是主導不穩定來源。",
+          "hypothesis_status": "supported",
+          "decision": "Go; Contact-pressure control discriminates the interface mechanism.",
+          "unresolved_items": "高壓循環的耐久性與 wear 尚未測試。",
+          "next_question": "接觸壓力改善能否在長期循環下維持？",
+          "next_step": "NS201"
+        }
+      },
+      "body": "Answered｜低接觸壓力下 contact resistance 是主導不穩定來源。\nHypothesis status｜supported\nDecision｜Go: Contact-pressure control discriminates the interface mechanism.\nUnresolved｜高壓循環的耐久性與 wear 尚未測試。\nNext question｜接觸壓力改善能否在長期循環下維持？\nNext Step｜NS201"
+    },
+    "slot_compositions": {
+      "supporting_results": "text_only",
+      "contradicting_results": "text_only",
+      "discussion_synthesis": "text_only",
+      "uncertainty": "text_only",
+      "decision_status": "text_only",
+      "next_step": "text_only"
+    },
+    "hypothesis_layer_ref": "H002",
+    "hypothesis_layer_revision": 1,
+    "current_hypothesis_layer_ref": null,
+    "semantic_role": "layer_summary_decision",
+    "combined_roles": [
+      "layer_integrated_discussion",
+      "layer_summary_decision"
+    ],
+    "fishbone_snapshot_ref": null,
+    "fishbone_focus_refs": [],
+    "compaction_rationale": "Discussion synthesis and Summary/Decision retain independent field-level evidence in unioned slots.",
+    "placement_plan": [
+      {
+        "slot": "supporting_results",
+        "left": 0.8,
+        "top": 1.4,
+        "width": 3.0,
+        "height": 2.1,
+        "z_order": 1,
+        "element_role": "support",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "contradicting_results",
+        "left": 4.05,
+        "top": 1.4,
+        "width": 3.0,
+        "height": 2.1,
+        "z_order": 2,
+        "element_role": "contradiction",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "discussion_synthesis",
+        "left": 7.3,
+        "top": 1.4,
+        "width": 5.25,
+        "height": 2.1,
+        "z_order": 3,
+        "element_role": "interpretation",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "uncertainty",
+        "left": 0.8,
+        "top": 3.8,
+        "width": 5.75,
+        "height": 1.7,
+        "z_order": 4,
+        "element_role": "uncertainty",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "decision_status",
+        "left": 6.8,
+        "top": 3.8,
+        "width": 2.75,
+        "height": 1.7,
+        "z_order": 5,
+        "element_role": "status",
+        "font_size_pt": 16
+      },
+      {
+        "slot": "next_step",
+        "left": 9.8,
+        "top": 3.8,
+        "width": 2.75,
+        "height": 1.7,
+        "z_order": 6,
+        "element_role": "next_step",
+        "font_size_pt": 16
+      }
+    ],
+    "layout_plan_ref": "LP-H002-LAYER-SUMMARY-DECISION-09"
+  }
+]

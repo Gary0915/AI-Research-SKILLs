@@ -1,0 +1,343 @@
+{
+  "manifest_id": "CP5-I1-ACCEPTANCE-DECK-001",
+  "backend": "PythonPptxAssembler",
+  "template_path": "artifacts/phase3/sanitized-native-template.pptx",
+  "template_sha256": "7a2bc6d4eff788112b8fd36365798139067e9d1d5cbf53e848f72a895135a5b1",
+  "acceptance_deck_sha256": "c0c7201579280b940397d72992f0ec9c3cb686f9bcb585ab4e5eef541fa7722e",
+  "slide_count": 20,
+  "source_slide_count": 19,
+  "source_slide_mapping_count": 19,
+  "source_slide_mappings": [
+    {
+      "source_slide_id": "S-PHASE2-PROGRESS-01",
+      "source_cursor": 66,
+      "generated_slide_id": 257,
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E201"
+      ],
+      "action_refs": [
+        "NS101",
+        "NS201"
+      ],
+      "decision_refs": [
+        "D101",
+        "D201"
+      ],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "source_cursor": 23,
+      "generated_slide_id": 258,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "source_cursor": 23,
+      "generated_slide_id": 259,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "source_cursor": 23,
+      "generated_slide_id": 260,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E103"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": {
+        "fishbone_id": "FB001",
+        "revision": 1
+      },
+      "fishbone_focus_refs": [
+        "FB-MATERIAL-HYDRATION"
+      ]
+    },
+    {
+      "source_slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "source_cursor": 23,
+      "generated_slide_id": 261,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "source_cursor": 23,
+      "generated_slide_id": 262,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E103"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "source_cursor": 23,
+      "generated_slide_id": 263,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "source_cursor": 23,
+      "generated_slide_id": 264,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E002",
+        "E102"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-RESULT-SINGLE-08",
+      "source_cursor": 28,
+      "generated_slide_id": 265,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-RESULT-SINGLE-09",
+      "source_cursor": 28,
+      "generated_slide_id": 266,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "source_cursor": 30,
+      "generated_slide_id": 267,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101",
+        "E102",
+        "E103"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "source_cursor": 32,
+      "generated_slide_id": 268,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E101"
+      ],
+      "action_refs": [
+        "NS101"
+      ],
+      "decision_refs": [
+        "D101"
+      ],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "source_cursor": 39,
+      "generated_slide_id": 269,
+      "claim_refs": [
+        "C101"
+      ],
+      "evidence_refs": [
+        "E104",
+        "E101"
+      ],
+      "action_refs": [],
+      "decision_refs": [
+        "D101"
+      ],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "source_cursor": 51,
+      "generated_slide_id": 270,
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "source_cursor": 51,
+      "generated_slide_id": 271,
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "source_cursor": 51,
+      "generated_slide_id": 272,
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": {
+        "fishbone_id": "FB001",
+        "revision": 2
+      },
+      "fishbone_focus_refs": [
+        "FB-ELECTRODE-CONTACT"
+      ]
+    },
+    {
+      "source_slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "source_cursor": 51,
+      "generated_slide_id": 273,
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204",
+        "E202"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "source_cursor": 57,
+      "generated_slide_id": 274,
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E204",
+        "E201"
+      ],
+      "action_refs": [],
+      "decision_refs": [],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    },
+    {
+      "source_slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "source_cursor": 65,
+      "generated_slide_id": 275,
+      "claim_refs": [
+        "C201"
+      ],
+      "evidence_refs": [
+        "E201"
+      ],
+      "action_refs": [
+        "NS201"
+      ],
+      "decision_refs": [
+        "D201"
+      ],
+      "fishbone_snapshot_ref": null,
+      "fishbone_focus_refs": []
+    }
+  ],
+  "hypothesis_layer_order": [
+    "H001",
+    "H002"
+  ],
+  "h003_slide_count": 0,
+  "split_count": 0,
+  "governed_figure_count": 0,
+  "governed_figure_bypass_count": 0,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}

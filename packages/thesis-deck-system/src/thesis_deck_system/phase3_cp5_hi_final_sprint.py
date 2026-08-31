@@ -7,6 +7,7 @@ Scientific SVG into an assembler-consumed plan.
 from __future__ import annotations
 
 import ast
+import copy
 from dataclasses import dataclass
 from importlib.metadata import version
 import json
@@ -290,6 +291,7 @@ def build_h2_native_vector_benchmark(root: Path, destination: Path) -> dict[str,
     """Build and structurally audit non-private H2 vectors via the assembler."""
     from .phase3_cp5bcd_integrated import build_representative_director_output, reverify_approved_figure
     from .phase3_cp5efg_integrated import build_evidence_bound_outputs
+    from .context import ProjectContext
     from .pptx import PythonPptxAssembler, audit_pptx
     from .template import create_synthetic_template
 
@@ -417,3 +419,97 @@ def build_i0_sanitized_native_template(root: Path, destination: Path) -> dict[st
     (destination / "fresh-lineage-proof.json").write_text(json.dumps(lineage, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (destination / "template-reconstruction-metrics.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"template_path": template_path, "template_profile": profile, "reconstruction_manifest": manifest, "fresh_lineage_proof": lineage, "metrics": metrics}
+
+
+def _formal_cover_spec(deck_title: str) -> dict[str, Any]:
+    return {
+        "slide_id": "CP5-I-ACCEPTANCE-COVER-001",
+        "revision": 1,
+        "native_layout_role": "formal_cover",
+        "recipe": "formal_cover",
+        "title": {"text": deck_title},
+        "content": {"body": "Synthetic ledger-derived acceptance deck"},
+        "placements": [],
+        "placement_plan": [],
+        "speaker_notes": {"source_refs": [], "text": "Fresh metadata cover; no scientific claim is introduced."},
+        "source_cursor": None,
+        "bindings": {"claim_refs": [], "evidence_refs": [], "asset_refs": [], "action_refs": [], "decision_refs": []},
+    }
+
+
+def build_i1_acceptance_deck(root: Path, destination: Path) -> dict[str, Any]:
+    """Assemble the committed H001/H002 story into a fresh deck via one backend."""
+    from .context import ProjectContext
+    from .pptx import PythonPptxAssembler, audit_pptx
+
+    destination.mkdir(parents=True, exist_ok=True)
+    template_path = destination / "sanitized-native-template.pptx"
+    profile_path = destination / "template-profile.json"
+    if not template_path.exists() or not profile_path.exists():
+        raise NativeCompilationError("I1 requires the persisted fresh I0 template/profile")
+    source_specs = json.loads((root / "thesis-deck-system" / "artifacts" / "phase2" / "slide-specs.json").read_text(encoding="utf-8"))
+    source_manifest = json.loads((root / "thesis-deck-system" / "artifacts" / "phase2" / "MASTER-PHASE2.manifest.json").read_text(encoding="utf-8"))
+    source_ids = [item["slide_id"] for item in source_manifest["slides"]]
+    source_by_id = {item["slide_id"]: item for item in source_specs}
+    if len(source_ids) != 19 or set(source_ids) != set(source_by_id):
+        raise NativeCompilationError("I1 source manifest/spec closure is not exactly the committed 19-slide story")
+    ordered_sources = [copy.deepcopy(source_by_id[item]) for item in source_ids]
+    if any("H003" in item["slide_id"] or item.get("hypothesis_layer_ref") == "H003" for item in ordered_sources):
+        raise NativeCompilationError("I1 must not introduce H003")
+    # Source Slide Specs are stored under phase2; preserve their declared asset
+    # identity while making relative assets resolvable from the repository root.
+    for spec in ordered_sources:
+        for placement in spec.get("placements", []):
+            asset_path = placement.get("asset_path")
+            if asset_path and not Path(asset_path).is_absolute():
+                placement["asset_path"] = (Path("thesis-deck-system") / "artifacts" / "phase2" / asset_path).as_posix()
+        visual_path = spec.get("content", {}).get("observation_visual_path")
+        if visual_path and not Path(visual_path).is_absolute():
+            spec["content"]["observation_visual_path"] = (Path("thesis-deck-system") / "artifacts" / "phase2" / visual_path).as_posix()
+    cover = _formal_cover_spec(source_manifest["title"])
+    acceptance_specs = [cover, *ordered_sources]
+    output = destination / "cp5-i-ledger-derived-acceptance-deck.pptx"
+    result = PythonPptxAssembler().assemble(
+        template_path, acceptance_specs, output, attach_svg=False, project_context=ProjectContext(root)
+    )
+    profile = json.loads(profile_path.read_text(encoding="utf-8"))
+    audit = audit_pptx(result.output_path, template_path=template_path, profile=profile, slide_specs=acceptance_specs)
+    source_mapping = [
+        {
+            "source_slide_id": spec["slide_id"],
+            "source_cursor": spec["source_cursor"],
+            "generated_slide_id": generated["generated_slide_id"],
+            "claim_refs": spec["bindings"]["claim_refs"],
+            "evidence_refs": spec["bindings"]["evidence_refs"],
+            "action_refs": spec["bindings"]["action_refs"],
+            "decision_refs": spec["bindings"]["decision_refs"],
+            "fishbone_snapshot_ref": spec.get("fishbone_snapshot_ref"),
+            "fishbone_focus_refs": spec.get("fishbone_focus_refs", []),
+        }
+        for spec, generated in zip(ordered_sources, audit.get("generated_slides", [])[1:])
+    ]
+    layers = [item.get("hypothesis_layer_ref") for item in ordered_sources if item.get("hypothesis_layer_ref")]
+    hypothesis_layer_order = list(dict.fromkeys(layers))
+    deck_manifest = {
+        "manifest_id": "CP5-I1-ACCEPTANCE-DECK-001",
+        "backend": "PythonPptxAssembler",
+        "template_path": "artifacts/phase3/sanitized-native-template.pptx",
+        "template_sha256": sha256(template_path.read_bytes()).hexdigest(),
+        "acceptance_deck_sha256": sha256(output.read_bytes()).hexdigest(),
+        "slide_count": len(acceptance_specs),
+        "source_slide_count": len(ordered_sources),
+        "source_slide_mapping_count": len(source_mapping),
+        "source_slide_mappings": source_mapping,
+        "hypothesis_layer_order": hypothesis_layer_order,
+        "h003_slide_count": 0,
+        "split_count": 0,
+        "governed_figure_count": 0,
+        "governed_figure_bypass_count": 0,
+        "private_alias_resolution_attempts": 0,
+        "private_source_open_attempts": 0,
+        "private_render_attempts": 0,
+    }
+    (destination / "acceptance-slide-specs.json").write_text(json.dumps(acceptance_specs, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (destination / "acceptance-deck-manifest.json").write_text(json.dumps(deck_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (destination / "acceptance-deck-structural-audit.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return {"acceptance_deck_path": output, "deck_manifest": deck_manifest, "audit": audit, "acceptance_specs": acceptance_specs}
