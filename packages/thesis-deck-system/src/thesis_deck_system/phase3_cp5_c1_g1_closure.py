@@ -15,6 +15,30 @@ def _hash(value: Any) -> str:
     return sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
+def candidate_state_hash(root: Path) -> dict[str, Any]:
+    """Hash every execution-affecting C1–G1 closure component deterministically."""
+    component_paths = [
+        "packages/thesis-deck-system/src/thesis_deck_system/contracts.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5bcd_integrated.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5efg_integrated.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_c1_g1_closure.py",
+        "packages/thesis-deck-system/tests/unit/test_phase3_cp5bcd_integrated.py",
+        "packages/thesis-deck-system/tests/unit/test_phase3_cp5efg_integrated.py",
+        "packages/thesis-deck-system/tests/unit/test_phase3_cp5_c1_g1_closure.py",
+        "thesis-deck-system/artifacts/phase3/visual-style-profile.json",
+        "thesis-deck-system/artifacts/phase3/figure-output-manifests.json",
+        "thesis-deck-system/artifacts/phase3/scientific-svg-envelopes.json",
+        "thesis-deck-system/artifacts/phase3/checkpoint-c1-g1-cross-gate-acceptance.json",
+    ]
+    schema_paths = sorted((root / "thesis-deck-system" / "schemas").glob("*.schema.json"))
+    asset_paths = sorted((root / "thesis-deck-system" / "assets" / "cp5e-synthetic-panels").glob("*.svg"))
+    relative_schema_paths = [path.relative_to(root).as_posix() for path in schema_paths if path.name.startswith(("scientific-svg-", "static-figure-", "approved-figure", "checkpoint-5", "archetype-", "figure-family-", "fishbone-style-", "reconstruction-", "checkpoint-c1-g1"))]
+    relative_asset_paths = [path.relative_to(root).as_posix() for path in asset_paths]
+    all_paths = sorted(set(component_paths + relative_schema_paths + relative_asset_paths))
+    hashes = {path: sha256((root / path).read_bytes()).hexdigest() for path in all_paths}
+    return {"component_hashes": hashes, "candidate_state_sha256": _hash(hashes)}
+
+
 def write_cross_gate_acceptance(root: Path, destination: Path) -> dict[str, Any]:
     """Run closure proofs on freshly constructed objects and persist their facts."""
     destination.mkdir(parents=True, exist_ok=True)

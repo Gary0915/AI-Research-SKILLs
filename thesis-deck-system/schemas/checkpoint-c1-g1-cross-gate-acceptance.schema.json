@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "checkpoint-c1-g1-cross-gate-acceptance.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "acceptance_id", "cross_gate_status", "invariant_count", "invariants", "acceptance_sha256"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"}, "acceptance_id": {"const": "CP5-C1-G1-CROSS-001"}, "cross_gate_status": {"enum": ["pass", "fail"]}, "invariant_count": {"const": 12}, "invariants": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/invariant"}}, "acceptance_sha256": {"$ref": "#/$defs/sha"}
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "count": {"type": "integer", "minimum": 0}, "pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}, "pass": {"const": "pass"},
+    "record": {"type": "object", "additionalProperties": false, "required": ["invariant_id", "status", "facts"], "properties": {"invariant_id": {"type": "string"}, "status": {"$ref": "#/$defs/pass"}, "facts": {"type": "object"}}},
+    "invariant": {"oneOf": [
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "C1-CP1-FOM-TRUST-CHAIN"}, "facts": {"$ref": "#/$defs/fomFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "C1-CRITIC-CHAIN"}, "facts": {"$ref": "#/$defs/criticFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "C1-RUNTIME-HANDLE"}, "facts": {"$ref": "#/$defs/handleFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "C1-STYLE-VALUE-APPLICATION"}, "facts": {"$ref": "#/$defs/applicationFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "D1-GENERALIZED-DIRECTORS"}, "facts": {"$ref": "#/$defs/directorFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "E1-PLOT-DATA-BINDING"}, "facts": {"$ref": "#/$defs/plotFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "E1-MATRIX-PANEL-LINEAGE"}, "facts": {"$ref": "#/$defs/matrixFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "E1-SOURCE-TRUTH"}, "facts": {"$ref": "#/$defs/sourceFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "F1-POSITIVE-RENDERER"}, "facts": {"$ref": "#/$defs/renderFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "G1-MEASURED-CALIBRATION"}, "facts": {"$ref": "#/$defs/calibrationFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "G1-BENCHMARKS"}, "facts": {"$ref": "#/$defs/benchmarkFacts"}}}]},
+      {"allOf": [{"$ref": "#/$defs/record"}, {"properties": {"invariant_id": {"const": "G1-PRIVATE-BOUNDARY"}, "facts": {"$ref": "#/$defs/privateFacts"}}}]}
+    ]},
+    "fomFacts": {"type": "object", "additionalProperties": false, "required": ["cp1_fom_count", "envelope_count"], "properties": {"cp1_fom_count": {"$ref": "#/$defs/count"}, "envelope_count": {"$ref": "#/$defs/count"}}},
+    "criticFacts": {"type": "object", "additionalProperties": false, "required": ["approved_chain_count", "owning_check_count"], "properties": {"approved_chain_count": {"$ref": "#/$defs/count"}, "owning_check_count": {"$ref": "#/$defs/count"}}},
+    "handleFacts": {"type": "object", "additionalProperties": false, "required": ["persisted_approval_direct_layout", "runtime_handle"], "properties": {"persisted_approval_direct_layout": {"const": "rejected"}, "runtime_handle": {"const": "accepted"}}},
+    "applicationFacts": {"type": "object", "additionalProperties": false, "required": ["application_count"], "properties": {"application_count": {"$ref": "#/$defs/count"}}},
+    "directorFacts": {"type": "object", "additionalProperties": false, "required": ["director_count", "distinct_svg_hashes"], "properties": {"director_count": {"$ref": "#/$defs/count"}, "distinct_svg_hashes": {"$ref": "#/$defs/count"}}},
+    "plotFacts": {"type": "object", "additionalProperties": false, "required": ["data_sha256", "scale"], "properties": {"data_sha256": {"$ref": "#/$defs/sha"}, "scale": {"type": "object", "additionalProperties": false, "required": ["x_domain", "y_domain", "x_range", "y_range", "normalization"], "properties": {"x_domain": {"$ref": "#/$defs/pair"}, "y_domain": {"$ref": "#/$defs/pair"}, "x_range": {"$ref": "#/$defs/pair"}, "y_range": {"$ref": "#/$defs/pair"}, "normalization": {"const": "affine"}}}}},
+    "matrixFacts": {"type": "object", "additionalProperties": false, "required": ["panel_count", "scale_policy"], "properties": {"panel_count": {"$ref": "#/$defs/count"}, "scale_policy": {"type": "string", "pattern": "^[a-z_]+$"}}},
+    "sourceFacts": {"type": "object", "additionalProperties": false, "required": ["photo", "literature", "concept"], "properties": {"photo": {"const": "BLOCKED_SOURCE"}, "literature": {"const": "BLOCKED_SOURCE"}, "concept": {"const": "non_evidence"}}},
+    "renderFacts": {"type": "object", "additionalProperties": false, "required": ["renderer", "png_sha256"], "properties": {"renderer": {"const": "deterministic-test-renderer"}, "png_sha256": {"$ref": "#/$defs/sha"}}},
+    "calibrationFacts": {"type": "object", "additionalProperties": false, "required": ["archetype_count", "measured_metric_count"], "properties": {"archetype_count": {"$ref": "#/$defs/count"}, "measured_metric_count": {"$ref": "#/$defs/count"}}},
+    "benchmarkFacts": {"type": "object", "additionalProperties": false, "required": ["representative_benchmark_count", "stress_benchmark_count"], "properties": {"representative_benchmark_count": {"$ref": "#/$defs/count"}, "stress_benchmark_count": {"$ref": "#/$defs/count"}}},
+    "privateFacts": {"type": "object", "additionalProperties": false, "required": ["private_attempts"], "properties": {"private_attempts": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"const": 0}}}}
+  }
+}

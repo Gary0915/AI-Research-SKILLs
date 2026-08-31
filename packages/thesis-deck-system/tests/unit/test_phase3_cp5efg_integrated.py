@@ -122,6 +122,17 @@ def test_e1_default_matrix_uses_committed_synthetic_panel_fixtures():
         assert (ROOT / "thesis-deck-system" / panel["source_asset_ref"]).is_file()
 
 
+def test_e1_synthetic_panel_bundle_uses_canonical_lowercase_resource_names():
+    """Bundle-relative SVG hrefs must resolve on case-sensitive consumers."""
+    fixtures = ROOT / "thesis-deck-system" / "assets" / "cp5e-synthetic-panels"
+    assert sorted(path.name for path in fixtures.glob("*.svg")) == [
+        "p001.svg",
+        "p002.svg",
+        "p003.svg",
+        "p004.svg",
+    ]
+
+
 def test_c1_e1_approved_routes_carry_real_cp1_foms():
     from thesis_deck_system.contracts import SchemaRegistry
     from thesis_deck_system.phase3_cp5efg_integrated import build_evidence_bound_outputs
