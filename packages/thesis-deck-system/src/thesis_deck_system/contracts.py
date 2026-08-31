@@ -81,6 +81,7 @@ CP5BCD_SCHEMA_NAMES = (
     "checkpoint-5b-execution-evidence", "checkpoint-5b-qa",
     "checkpoint-5c-execution-evidence", "checkpoint-5c-qa",
     "structured-director-input", "checkpoint-5d-execution-evidence", "checkpoint-5d-qa",
+    "vsp003-style-category-resolution-map",
 )
 
 SCHEMA_BY_COLLECTION = {

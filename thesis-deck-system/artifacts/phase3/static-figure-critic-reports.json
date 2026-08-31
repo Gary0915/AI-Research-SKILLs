@@ -7,180 +7,160 @@
     "executed": true,
     "checks": [
       {
-        "check_id": "CP5C-SPEC-ROUTE",
-        "status": "pass"
+        "check_id": "C0-01",
+        "status": "pass",
+        "facts": {
+          "contract": "CP1_FigureOutputManifest_relationship",
+          "svg_envelope_valid": true
+        }
       },
       {
-        "check_id": "CP5C-SVG-HASH",
-        "status": "pass"
+        "check_id": "C0-02",
+        "status": "pass",
+        "facts": {
+          "optional_svg_envelope": "present",
+          "schema": "scientific-svg-figure-output-manifest"
+        }
       },
       {
-        "check_id": "CP5C-IDENTITY",
-        "status": "pass"
+        "check_id": "C0-03",
+        "status": "pass",
+        "facts": {
+          "plan_id": "FPL002"
+        }
       },
       {
-        "check_id": "CP5C-CAPABILITY",
-        "status": "pass"
+        "check_id": "C0-04",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG002",
+          "visual_class": "fishbone_history"
+        }
       },
       {
-        "check_id": "CP5C-FALLBACK",
-        "status": "pass"
+        "check_id": "C0-05",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG002",
+          "plan_ref": "FPL002"
+        }
       },
       {
-        "check_id": "CP5C-PRIVACY",
-        "status": "pass"
+        "check_id": "C0-06",
+        "status": "pass",
+        "facts": {
+          "canonical_hash": "075cad0d1cd336c27dc30a564aefb6e5203a3f7987bec197fc96f0d7f7bee448"
+        }
       },
       {
-        "check_id": "CP5C-LAYOUT-BYPASS",
-        "status": "pass"
-      }
-    ]
-  },
-  {
-    "schema_version": "1.0.0",
-    "critic_report_id": "FCR-FIG006-001",
-    "manifest_id": "FOM-FIG006-001",
-    "status": "APPROVED_FIGURE",
-    "executed": true,
-    "checks": [
-      {
-        "check_id": "CP5C-SPEC-ROUTE",
-        "status": "pass"
+        "check_id": "C0-07",
+        "status": "pass",
+        "facts": {
+          "svg_profile": "SSVG-P001"
+        }
       },
       {
-        "check_id": "CP5C-SVG-HASH",
-        "status": "pass"
+        "check_id": "C0-08",
+        "status": "pass",
+        "facts": {
+          "profile_version": "1.0.0"
+        }
       },
       {
-        "check_id": "CP5C-IDENTITY",
-        "status": "pass"
+        "check_id": "C0-09",
+        "status": "pass",
+        "facts": {
+          "registry": "SNCR001"
+        }
       },
       {
-        "check_id": "CP5C-CAPABILITY",
-        "status": "pass"
+        "check_id": "C0-10",
+        "status": "pass",
+        "facts": {
+          "used_feature_count": 9
+        }
       },
       {
-        "check_id": "CP5C-FALLBACK",
-        "status": "pass"
+        "check_id": "C0-11",
+        "status": "pass",
+        "facts": {
+          "fallback_decision": "none"
+        }
       },
       {
-        "check_id": "CP5C-PRIVACY",
-        "status": "pass"
+        "check_id": "C0-12",
+        "status": "pass",
+        "facts": {
+          "source_requirement": "structured_spec"
+        }
       },
       {
-        "check_id": "CP5C-LAYOUT-BYPASS",
-        "status": "pass"
-      }
-    ]
-  },
-  {
-    "schema_version": "1.0.0",
-    "critic_report_id": "FCR-FIG007-001",
-    "manifest_id": "FOM-FIG007-001",
-    "status": "APPROVED_FIGURE",
-    "executed": true,
-    "checks": [
-      {
-        "check_id": "CP5C-SPEC-ROUTE",
-        "status": "pass"
+        "check_id": "C0-13",
+        "status": "pass",
+        "facts": {
+          "evidence_status": "empirical"
+        }
       },
       {
-        "check_id": "CP5C-SVG-HASH",
-        "status": "pass"
+        "check_id": "C0-14",
+        "status": "pass",
+        "facts": {
+          "ai_generation_allowed": false
+        }
       },
       {
-        "check_id": "CP5C-IDENTITY",
-        "status": "pass"
+        "check_id": "C0-15",
+        "status": "pass",
+        "facts": {
+          "source_ref_count": 1
+        }
       },
       {
-        "check_id": "CP5C-CAPABILITY",
-        "status": "pass"
+        "check_id": "C0-16",
+        "status": "pass",
+        "facts": {
+          "style_trace_count": 3,
+          "token_count": 25
+        }
       },
       {
-        "check_id": "CP5C-FALLBACK",
-        "status": "pass"
+        "check_id": "C0-17",
+        "status": "pass",
+        "facts": {
+          "private_attempts": [
+            0,
+            0,
+            0
+          ]
+        }
       },
       {
-        "check_id": "CP5C-PRIVACY",
-        "status": "pass"
+        "check_id": "C0-18",
+        "status": "pass",
+        "facts": {
+          "parent_kind": "ScientificFigureSpec"
+        }
       },
       {
-        "check_id": "CP5C-LAYOUT-BYPASS",
-        "status": "pass"
-      }
-    ]
-  },
-  {
-    "schema_version": "1.0.0",
-    "critic_report_id": "FCR-FIG003-001",
-    "manifest_id": "FOM-FIG003-001",
-    "status": "APPROVED_FIGURE",
-    "executed": true,
-    "checks": [
-      {
-        "check_id": "CP5C-SPEC-ROUTE",
-        "status": "pass"
+        "check_id": "C0-19",
+        "status": "pass",
+        "facts": {
+          "specialist_binding": "fishbone-director"
+        }
       },
       {
-        "check_id": "CP5C-SVG-HASH",
-        "status": "pass"
+        "check_id": "C0-20",
+        "status": "pass",
+        "facts": {
+          "raw_to_layout_forbidden": true
+        }
       },
       {
-        "check_id": "CP5C-IDENTITY",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-CAPABILITY",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-FALLBACK",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-PRIVACY",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-LAYOUT-BYPASS",
-        "status": "pass"
-      }
-    ]
-  },
-  {
-    "schema_version": "1.0.0",
-    "critic_report_id": "FCR-FIG008-001",
-    "manifest_id": "FOM-FIG008-001",
-    "status": "APPROVED_FIGURE",
-    "executed": true,
-    "checks": [
-      {
-        "check_id": "CP5C-SPEC-ROUTE",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-SVG-HASH",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-IDENTITY",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-CAPABILITY",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-FALLBACK",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-PRIVACY",
-        "status": "pass"
-      },
-      {
-        "check_id": "CP5C-LAYOUT-BYPASS",
-        "status": "pass"
+        "check_id": "C0-21",
+        "status": "pass",
+        "facts": {
+          "handoff_state": "raw_output_not_layout_eligible"
+        }
       }
     ]
   }

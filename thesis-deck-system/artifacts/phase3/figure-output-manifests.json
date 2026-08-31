@@ -11,9 +11,9 @@
     "figure_spec_hash": "37a73eac311e21117efc5fb97927bdb26280f45f423005ab547f31894b384526",
     "canonical_output": {
       "kind": "scientific_svg",
-      "canonical_sha256": "0fcf7e6edf1f445846ef14d3f75c0840ec92422e011e8d28c1412c927552cafb",
-      "source_sha256": "0fcf7e6edf1f445846ef14d3f75c0840ec92422e011e8d28c1412c927552cafb",
-      "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG002\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"fishbone_history\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"780\" id=\"obj-panel\" stroke=\"#333333\" stroke-width=\"2\" width=\"1480\" x=\"60\" y=\"60\"/><text data-semantic-role=\"title\" font-family=\"synthetic-test-sans\" font-size=\"42\" id=\"obj-title\" x=\"100\" y=\"130\">Fishbone / 研究地圖</text><line data-semantic-role=\"arrow\" id=\"obj-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"4\" x1=\"180\" x2=\"1420\" y1=\"440\" y2=\"440\"/><text data-semantic-role=\"label\" font-family=\"synthetic-test-sans\" font-size=\"30\" id=\"obj-label\" x=\"700\" y=\"400\">fishbone / 合成結構</text></svg>"
+      "canonical_sha256": "075cad0d1cd336c27dc30a564aefb6e5203a3f7987bec197fc96f0d7f7bee448",
+      "source_sha256": "2fa157be6e7de42841388da07281499b5fe1537e1ae6ab472f6e7f467d74f802",
+      "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG002\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"fishbone_history\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"780\" id=\"obj-panel\" stroke=\"#333333\" stroke-width=\"2\" width=\"1480\" x=\"60\" y=\"60\"/><text data-semantic-role=\"title\" font-family=\"synthetic-test-sans\" font-size=\"42\" id=\"obj-title\" x=\"100\" y=\"130\">Synthetic Figure</text><line data-semantic-role=\"arrow\" id=\"obj-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"4\" x1=\"180\" x2=\"1420\" y1=\"440\" y2=\"440\"/><text data-semantic-role=\"label\" font-family=\"synthetic-test-sans\" font-size=\"30\" id=\"obj-label\" x=\"700\" y=\"400\">structured / 合成結構</text></svg>"
     },
     "svg_profile_ref": "SSVG-P001",
     "svg_profile_version": "1.0.0",
@@ -60,324 +60,278 @@
         "connector_arrow_grammar",
         "line_style_grammar"
       ],
-      "token_provenance": [],
-      "material_semantic_colors_not_consumed": true
-    },
-    "privacy_state": {
-      "private_alias_resolution_attempts": 0,
-      "private_source_open_attempts": 0,
-      "private_render_attempts": 0
-    },
-    "output_lineage": {
-      "parent_kind": "ScientificFigureSpec",
-      "raw_to_layout_forbidden": true
-    },
-    "static_critic": {
-      "executed": false,
-      "status": "not_run"
-    },
-    "handoff_state": "raw_output_not_layout_eligible"
-  },
-  {
-    "schema_version": "1.0.0",
-    "manifest_id": "FOM-FIG006-001",
-    "manifest_version": "1.0.0",
-    "figure_id": "FIG006",
-    "figure_revision": "1",
-    "figure_plan_ref": "FPL006",
-    "figure_plan_hash": "75846bd8e69b0631def7323147b045f451d88e74442e62ce184d0e39959fad92",
-    "figure_spec_ref": "FIG006",
-    "figure_spec_hash": "bd815831f9953e1568c6de5622df8450856a25f54b2cd012a1f03dafae41f92a",
-    "canonical_output": {
-      "kind": "scientific_svg",
-      "canonical_sha256": "77bc58a14ba4e25616b0bd49a398b802adf891d66abadb651c9eee74593a98c0",
-      "source_sha256": "77bc58a14ba4e25616b0bd49a398b802adf891d66abadb651c9eee74593a98c0",
-      "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG006\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"mechanism_explanation\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"780\" id=\"obj-panel\" stroke=\"#333333\" stroke-width=\"2\" width=\"1480\" x=\"60\" y=\"60\"/><text data-semantic-role=\"title\" font-family=\"synthetic-test-sans\" font-size=\"42\" id=\"obj-title\" x=\"100\" y=\"130\">Mechanism / 機制</text><line data-semantic-role=\"arrow\" id=\"obj-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"4\" x1=\"180\" x2=\"1420\" y1=\"440\" y2=\"440\"/><text data-semantic-role=\"label\" font-family=\"synthetic-test-sans\" font-size=\"30\" id=\"obj-label\" x=\"700\" y=\"400\">mechanism / 合成結構</text></svg>"
-    },
-    "svg_profile_ref": "SSVG-P001",
-    "svg_profile_version": "1.0.0",
-    "registry_ref": "SNCR001",
-    "registry_version": "1.0.0",
-    "used_feature_ids": [
-      "svg-root-viewbox",
-      "rect",
-      "text",
-      "font-attributes",
-      "line",
-      "marker",
-      "marker-local-reference",
-      "path-commands",
-      "stroke-width"
-    ],
-    "capability_record_refs": [
-      "svg-root-viewbox",
-      "rect",
-      "text",
-      "font-attributes",
-      "line",
-      "marker",
-      "marker-local-reference",
-      "path-commands",
-      "stroke-width"
-    ],
-    "fallback_decision": "none",
-    "source_provenance_refs": {
-      "source_refs": [
-        "E101"
+      "token_provenance": [
+        {
+          "token_id": "style_color-04bee35503",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-3",
+          "source_scope": "slide_master"
+        },
+        {
+          "token_id": "style_color-04c6610b40",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-085181297b",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-2b6cf06b58",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-4f20e16624",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-66b316bca1",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-6fd94d2ef6",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-3",
+          "source_scope": "slide_master"
+        },
+        {
+          "token_id": "style_color-71dad4de15",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-1",
+          "source_scope": "slide_master"
+        },
+        {
+          "token_id": "style_color-7602cae5f2",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-1",
+          "source_scope": "slide_layout"
+        },
+        {
+          "token_id": "style_color-91e01b86ac",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-937c64c5f6",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-1",
+          "source_scope": "slide_layout"
+        },
+        {
+          "token_id": "style_color-a0fc4cbe15",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-3",
+          "source_scope": "slide_layout"
+        },
+        {
+          "token_id": "style_color-ad01ea9da5",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-d93ab974ea",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-3",
+          "source_scope": "slide_layout"
+        },
+        {
+          "token_id": "style_color-dec70f6598",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-ee201ab856",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-1",
+          "source_scope": "slide_master"
+        },
+        {
+          "token_id": "style_color-ef34e493fb",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-f148b42c05",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-1",
+          "source_scope": "slide_layout"
+        },
+        {
+          "token_id": "style_color-f6d2cef10a",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "style_color-ff73937f02",
+          "authority_family": "formal_shell",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-COLOR",
+          "source_role": "P3-TEMPLATE-PRIMARY-3",
+          "source_scope": "slide_layout"
+        },
+        {
+          "token_id": "connector-1e17aa270f",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "connector-2cf3092675",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "connector-7e0eddd7d4",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "connector-8b9dfc6f33",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "single_example_provisional",
+          "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        },
+        {
+          "token_id": "connector-b769284b98",
+          "authority_family": "body_composition",
+          "token_family": "scientific_visual",
+          "origin": "professor_derived",
+          "evidence_tier": "recurring_pattern",
+          "resolver_rule_id": "CP3-USAGE-BACKED-CONNECTOR",
+          "source_role": "P3-LAYOUT-EXEMPLAR-2",
+          "source_scope": "slide_body"
+        }
       ],
-      "claim_refs": [
-        "C101"
+      "application_trace": [
+        {
+          "category": "color_emphasis_grammar",
+          "attribute": "stroke",
+          "source": "vsp003",
+          "token_id": "style_color-04bee35503"
+        },
+        {
+          "category": "connector_arrow_grammar",
+          "attribute": "marker-end",
+          "source": "vsp003",
+          "token_id": "connector-1e17aa270f"
+        },
+        {
+          "category": "line_style_grammar",
+          "attribute": "unresolved",
+          "source": "implementation_fallback",
+          "token_id": null
+        }
       ],
-      "evidence_refs": [
-        "E101"
-      ]
-    },
-    "style_resolution": {
-      "style_profile_ref": "VSP003",
-      "required_categories": [
-        "color_emphasis_grammar",
-        "connector_arrow_grammar",
-        "line_style_grammar",
-        "scientific_figure_metrics"
-      ],
-      "token_provenance": [],
-      "material_semantic_colors_not_consumed": true
-    },
-    "privacy_state": {
-      "private_alias_resolution_attempts": 0,
-      "private_source_open_attempts": 0,
-      "private_render_attempts": 0
-    },
-    "output_lineage": {
-      "parent_kind": "ScientificFigureSpec",
-      "raw_to_layout_forbidden": true
-    },
-    "static_critic": {
-      "executed": false,
-      "status": "not_run"
-    },
-    "handoff_state": "raw_output_not_layout_eligible"
-  },
-  {
-    "schema_version": "1.0.0",
-    "manifest_id": "FOM-FIG007-001",
-    "manifest_version": "1.0.0",
-    "figure_id": "FIG007",
-    "figure_revision": "1",
-    "figure_plan_ref": "FPL007",
-    "figure_plan_hash": "505091ec4b85747c3db37df331aa77300d559143ec99be88bc79433e2f66b5e2",
-    "figure_spec_ref": "FIG007",
-    "figure_spec_hash": "837905fe85b0b571a8b8684b0cb989ca2b3724e355d692a5eaee33d6764395a0",
-    "canonical_output": {
-      "kind": "scientific_svg",
-      "canonical_sha256": "4bb512f2e5170e7ec7b742f477ac56a63ab01ab9c1c710178dddad4ba1bc547b",
-      "source_sha256": "4bb512f2e5170e7ec7b742f477ac56a63ab01ab9c1c710178dddad4ba1bc547b",
-      "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG007\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"experiment_setup\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"780\" id=\"obj-panel\" stroke=\"#333333\" stroke-width=\"2\" width=\"1480\" x=\"60\" y=\"60\"/><text data-semantic-role=\"title\" font-family=\"synthetic-test-sans\" font-size=\"42\" id=\"obj-title\" x=\"100\" y=\"130\">Experiment / 實驗</text><line data-semantic-role=\"arrow\" id=\"obj-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"4\" x1=\"180\" x2=\"1420\" y1=\"440\" y2=\"440\"/><text data-semantic-role=\"label\" font-family=\"synthetic-test-sans\" font-size=\"30\" id=\"obj-label\" x=\"700\" y=\"400\">experiment / 合成結構</text></svg>"
-    },
-    "svg_profile_ref": "SSVG-P001",
-    "svg_profile_version": "1.0.0",
-    "registry_ref": "SNCR001",
-    "registry_version": "1.0.0",
-    "used_feature_ids": [
-      "svg-root-viewbox",
-      "rect",
-      "text",
-      "font-attributes",
-      "line",
-      "marker",
-      "marker-local-reference",
-      "path-commands",
-      "stroke-width"
-    ],
-    "capability_record_refs": [
-      "svg-root-viewbox",
-      "rect",
-      "text",
-      "font-attributes",
-      "line",
-      "marker",
-      "marker-local-reference",
-      "path-commands",
-      "stroke-width"
-    ],
-    "fallback_decision": "none",
-    "source_provenance_refs": {
-      "source_refs": [
-        "E101"
-      ],
-      "claim_refs": [
-        "C101"
-      ],
-      "evidence_refs": [
-        "E101"
-      ]
-    },
-    "style_resolution": {
-      "style_profile_ref": "VSP003",
-      "required_categories": [
-        "body_composition",
-        "connector_arrow_grammar",
-        "line_style_grammar"
-      ],
-      "token_provenance": [],
-      "material_semantic_colors_not_consumed": true
-    },
-    "privacy_state": {
-      "private_alias_resolution_attempts": 0,
-      "private_source_open_attempts": 0,
-      "private_render_attempts": 0
-    },
-    "output_lineage": {
-      "parent_kind": "ScientificFigureSpec",
-      "raw_to_layout_forbidden": true
-    },
-    "static_critic": {
-      "executed": false,
-      "status": "not_run"
-    },
-    "handoff_state": "raw_output_not_layout_eligible"
-  },
-  {
-    "schema_version": "1.0.0",
-    "manifest_id": "FOM-FIG003-001",
-    "manifest_version": "1.0.0",
-    "figure_id": "FIG003",
-    "figure_revision": "1",
-    "figure_plan_ref": "FPL003",
-    "figure_plan_hash": "41db85fa9d97fae455214abe23e3aad88a98516fed2febd35d4172cd500c1c2e",
-    "figure_spec_ref": "FIG003",
-    "figure_spec_hash": "2765815f31e41545994573afa24b5bbbb6c6b3c10ae1b5d7535a507caef958ad",
-    "canonical_output": {
-      "kind": "scientific_svg",
-      "canonical_sha256": "8d9e760ced5dec6f81d7d3c4b5c12f3cd870b49b2b493f2833c587f313037217",
-      "source_sha256": "8d9e760ced5dec6f81d7d3c4b5c12f3cd870b49b2b493f2833c587f313037217",
-      "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG003\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"fabrication_process\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"780\" id=\"obj-panel\" stroke=\"#333333\" stroke-width=\"2\" width=\"1480\" x=\"60\" y=\"60\"/><text data-semantic-role=\"title\" font-family=\"synthetic-test-sans\" font-size=\"42\" id=\"obj-title\" x=\"100\" y=\"130\">Fabrication / 製程</text><line data-semantic-role=\"arrow\" id=\"obj-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"4\" x1=\"180\" x2=\"1420\" y1=\"440\" y2=\"440\"/><text data-semantic-role=\"label\" font-family=\"synthetic-test-sans\" font-size=\"30\" id=\"obj-label\" x=\"700\" y=\"400\">fabrication / 合成結構</text></svg>"
-    },
-    "svg_profile_ref": "SSVG-P001",
-    "svg_profile_version": "1.0.0",
-    "registry_ref": "SNCR001",
-    "registry_version": "1.0.0",
-    "used_feature_ids": [
-      "svg-root-viewbox",
-      "rect",
-      "text",
-      "font-attributes",
-      "line",
-      "marker",
-      "marker-local-reference",
-      "path-commands",
-      "stroke-width"
-    ],
-    "capability_record_refs": [
-      "svg-root-viewbox",
-      "rect",
-      "text",
-      "font-attributes",
-      "line",
-      "marker",
-      "marker-local-reference",
-      "path-commands",
-      "stroke-width"
-    ],
-    "fallback_decision": "none",
-    "source_provenance_refs": {
-      "source_refs": [
-        "E101"
-      ],
-      "claim_refs": [
-        "C101"
-      ],
-      "evidence_refs": [
-        "E101"
-      ]
-    },
-    "style_resolution": {
-      "style_profile_ref": "VSP003",
-      "required_categories": [
-        "body_composition",
-        "connector_arrow_grammar",
-        "line_style_grammar"
-      ],
-      "token_provenance": [],
-      "material_semantic_colors_not_consumed": true
-    },
-    "privacy_state": {
-      "private_alias_resolution_attempts": 0,
-      "private_source_open_attempts": 0,
-      "private_render_attempts": 0
-    },
-    "output_lineage": {
-      "parent_kind": "ScientificFigureSpec",
-      "raw_to_layout_forbidden": true
-    },
-    "static_critic": {
-      "executed": false,
-      "status": "not_run"
-    },
-    "handoff_state": "raw_output_not_layout_eligible"
-  },
-  {
-    "schema_version": "1.0.0",
-    "manifest_id": "FOM-FIG008-001",
-    "manifest_version": "1.0.0",
-    "figure_id": "FIG008",
-    "figure_revision": "1",
-    "figure_plan_ref": "FPL008",
-    "figure_plan_hash": "d24cb63f06f842f7c276e694abdf7e14225574130e3935de19cdca470b9025fd",
-    "figure_spec_ref": "FIG008",
-    "figure_spec_hash": "abfb52c2af54e86a8ce6b2c9658e7099994779ecd383f7149d07d080c46870e3",
-    "canonical_output": {
-      "kind": "scientific_svg",
-      "canonical_sha256": "66ac3f07bc0326cddaeac03cc6ac40f2ca69bbe18073dc6da7595f928ea0d781",
-      "source_sha256": "66ac3f07bc0326cddaeac03cc6ac40f2ca69bbe18073dc6da7595f928ea0d781",
-      "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG008\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"fair_comparison\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"780\" id=\"obj-panel\" stroke=\"#333333\" stroke-width=\"2\" width=\"1480\" x=\"60\" y=\"60\"/><text data-semantic-role=\"title\" font-family=\"synthetic-test-sans\" font-size=\"42\" id=\"obj-title\" x=\"100\" y=\"130\">Comparison / 比較</text><line data-semantic-role=\"arrow\" id=\"obj-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"4\" x1=\"180\" x2=\"1420\" y1=\"440\" y2=\"440\"/><text data-semantic-role=\"label\" font-family=\"synthetic-test-sans\" font-size=\"30\" id=\"obj-label\" x=\"700\" y=\"400\">comparison / 合成結構</text></svg>"
-    },
-    "svg_profile_ref": "SSVG-P001",
-    "svg_profile_version": "1.0.0",
-    "registry_ref": "SNCR001",
-    "registry_version": "1.0.0",
-    "used_feature_ids": [
-      "svg-root-viewbox",
-      "rect",
-      "text",
-      "font-attributes",
-      "line",
-      "marker",
-      "marker-local-reference",
-      "path-commands",
-      "stroke-width"
-    ],
-    "capability_record_refs": [
-      "svg-root-viewbox",
-      "rect",
-      "text",
-      "font-attributes",
-      "line",
-      "marker",
-      "marker-local-reference",
-      "path-commands",
-      "stroke-width"
-    ],
-    "fallback_decision": "none",
-    "source_provenance_refs": {
-      "source_refs": [
-        "E101"
-      ],
-      "claim_refs": [
-        "C101"
-      ],
-      "evidence_refs": [
-        "E101"
-      ]
-    },
-    "style_resolution": {
-      "style_profile_ref": "VSP003",
-      "required_categories": [
-        "body_composition",
-        "color_emphasis_grammar",
-        "scientific_figure_metrics"
-      ],
-      "token_provenance": [],
       "material_semantic_colors_not_consumed": true
     },
     "privacy_state": {

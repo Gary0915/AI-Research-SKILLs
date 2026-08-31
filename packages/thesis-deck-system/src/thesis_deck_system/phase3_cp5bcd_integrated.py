@@ -7,6 +7,7 @@ manifest references, never in SVG metadata.
 from __future__ import annotations
 
 from copy import deepcopy
+from dataclasses import dataclass
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -22,6 +23,18 @@ FEATURE_IDS = (
     "svg-root-viewbox", "group", "rect", "circle", "ellipse", "line", "polyline", "polygon", "path-commands", "text", "tspan", "text-editable-cjk", "image", "marker", "marker-local-reference", "clip-path", "clip-local-reference", "transform-translate", "transform-scale", "transform-rotate", "transform-matrix", "stroke-width", "stroke-linecap", "stroke-linejoin", "stroke-dasharray", "fill-opacity", "stroke-opacity", "text-anchor", "dominant-baseline", "font-attributes", "same-document-reference", "svg-vector-fallback",
 )
 
+# This map deliberately matches the CP3 resolver's real token fields.  It does
+# not fabricate a per-token `category_id` that VSP003 never declared.
+VSP003_CATEGORY_RULES: dict[str, dict[str, Any]] = {
+    "shell_geometry": {"authority_family": {"formal_shell"}, "token_family": {"shell"}},
+    "typography_hierarchy": {"token_family": {"typography"}},
+    "body_composition": {"authority_family": {"body_composition"}},
+    "scientific_figure_metrics": {"authority_family": {"body_composition"}, "value_kind": {"range"}},
+    "connector_arrow_grammar": {"value_kind": {"connector"}},
+    "line_style_grammar": {"value_kind": {"line_width", "stroke"}},
+    "color_emphasis_grammar": {"value_kind": {"color"}},
+}
+
 
 class CapabilityError(ValueError):
     pass
@@ -33,6 +46,25 @@ class FigureGateError(ValueError):
 
 class DirectorInputError(ValueError):
     pass
+
+
+_HANDLE_CONSTRUCTOR_TOKEN = object()
+
+
+@dataclass(frozen=True)
+class ApprovedFigureHandle:
+    """Runtime-only layout authority; persisted approval evidence is insufficient."""
+    manifest_id: str
+    manifest_hash: str
+    critic_report_id: str
+    critic_report_hash: str
+    figure_id: str
+    figure_revision: str
+    _token: object
+
+    def __post_init__(self) -> None:
+        if self._token is not _HANDLE_CONSTRUCTOR_TOKEN:
+            raise FigureGateError("ApprovedFigureHandle is issued only by re-verification")
 
 
 def _json_hash(value: Any) -> str:
@@ -173,9 +205,40 @@ def make_synthetic_manifest(root: Path | None = None, figure_id: str = "FIG002",
 
 def resolve_style(root: Path, spec: dict[str, Any]) -> dict[str, Any]:
     profile = json.loads((root / "thesis-deck-system" / "artifacts" / "phase3" / "visual-style-profile.json").read_text(encoding="utf-8"))
-    required = set(spec["required_style_categories"])
-    tokens = [token for token in profile.get("tokens", []) if token.get("category_id") in required]
-    return {"style_profile_ref": profile["style_profile_id"], "required_categories": sorted(required), "token_provenance": [{"token_id": token.get("token_id", "unknown"), "origin": token.get("origin", "unresolved"), "evidence_tier": token.get("evidence_tier", "insufficient_evidence")} for token in tokens], "material_semantic_colors_not_consumed": True}
+    required = sorted(set(spec["required_style_categories"]))
+    selected: list[dict[str, Any]] = []
+    application_trace: list[dict[str, Any]] = []
+    for category in required:
+        rule = VSP003_CATEGORY_RULES.get(category)
+        if rule is None:
+            raise FigureGateError(f"unmapped VSP003 style category: {category}")
+        matches = []
+        for token in profile.get("tokens", []):
+            if token.get("status") != "resolved":
+                continue
+            value_kind = token.get("value", {}).get("kind")
+            if rule.get("authority_family") and token.get("authority_family") not in rule["authority_family"]:
+                continue
+            if rule.get("token_family") and token.get("token_family") not in rule["token_family"]:
+                continue
+            if rule.get("value_kind") and value_kind not in rule["value_kind"]:
+                continue
+            matches.append(token)
+        # A category with no CP3 structural evidence remains explicit fallback,
+        # never an empty list that is accidentally reported as resolution.
+        if not matches:
+            application_trace.append({"category": category, "attribute": "unresolved", "source": "implementation_fallback", "token_id": None})
+            continue
+        for token in matches:
+            selected.append({
+                "token_id": token["token_id"], "authority_family": token["authority_family"],
+                "token_family": token["token_family"], "origin": token["origin"],
+                "evidence_tier": token["evidence_tier"], "resolver_rule_id": token["resolver_rule_id"],
+                "source_role": token["source_role"], "source_scope": token["source_scope"],
+            })
+        attribute = {"connector_arrow_grammar": "marker-end", "color_emphasis_grammar": "stroke", "typography_hierarchy": "font-family", "body_composition": "spacing", "scientific_figure_metrics": "panel-geometry", "shell_geometry": "viewBox", "line_style_grammar": "stroke-width"}[category]
+        application_trace.append({"category": category, "attribute": attribute, "source": "vsp003", "token_id": matches[0]["token_id"]})
+    return {"style_profile_ref": profile["style_profile_id"], "required_categories": required, "token_provenance": selected, "application_trace": application_trace, "material_semantic_colors_not_consumed": True}
 
 
 class StaticFigureCritic:
@@ -201,11 +264,42 @@ class StaticFigureCritic:
             privacy = manifest["privacy_state"]
             privacy_valid = all(privacy.get(key) == 0 for key in ("private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts"))
             route_valid = manifest_valid and spec_valid and plan_valid and spec["figure_plan_ref"] == plan["figure_plan_id"]
-            checks = [("CP5C-SPEC-ROUTE", route_valid), ("CP5C-SVG-HASH", hash_valid), ("CP5C-IDENTITY", identity_valid), ("CP5C-CAPABILITY", capability_valid), ("CP5C-FALLBACK", fallback_valid), ("CP5C-PRIVACY", privacy_valid), ("CP5C-LAYOUT-BYPASS", manifest["output_lineage"].get("raw_to_layout_forbidden") is True)]
+            provenance = manifest["source_provenance_refs"]
+            provenance_valid = all(provenance.get(field) == spec.get(field) for field in ("source_refs", "claim_refs", "evidence_refs"))
+            source_requirement_valid = spec["source_requirement"] == plan["source_requirement"]
+            evidence_valid = spec["evidence_status"] == plan["evidence_status"]
+            ai_boundary_valid = not (spec["evidence_status"] in {"empirical", "literature_evidence", "synthetic_test_evidence"} and spec["ai_generation_allowed"])
+            style = manifest["style_resolution"]
+            style_valid = bool(style["application_trace"]) and all(item["source"] in {"vsp003", "implementation_fallback"} for item in style["application_trace"])
+            semantic_valid = manifest["figure_spec_ref"] == spec["figure_id"]
+            factual_checks = [
+                ("C0-01", manifest_valid, {"contract": "CP1_FigureOutputManifest_relationship", "svg_envelope_valid": manifest_valid}),
+                ("C0-02", manifest_valid, {"optional_svg_envelope": "present", "schema": "scientific-svg-figure-output-manifest"}),
+                ("C0-03", plan_valid and route_valid, {"plan_id": plan["figure_plan_id"]}),
+                ("C0-04", spec_valid and route_valid, {"figure_id": spec["figure_id"], "visual_class": spec["visual_class"]}),
+                ("C0-05", identity_valid, {"figure_id": manifest["figure_id"], "plan_ref": manifest["figure_plan_ref"]}),
+                ("C0-06", hash_valid, {"canonical_hash": manifest["canonical_output"]["canonical_sha256"]}),
+                ("C0-07", authored["qa"]["aggregate_status"] == "pass", {"svg_profile": manifest["svg_profile_ref"]}),
+                ("C0-08", manifest["svg_profile_ref"] == "SSVG-P001" and manifest["svg_profile_version"] == "1.0.0", {"profile_version": manifest["svg_profile_version"]}),
+                ("C0-09", manifest["registry_ref"] == "SNCR001" and manifest["registry_version"] == "1.0.0", {"registry": manifest["registry_ref"]}),
+                ("C0-10", capability_valid, {"used_feature_count": len(manifest["used_feature_ids"])}),
+                ("C0-11", fallback_valid, {"fallback_decision": manifest["fallback_decision"]}),
+                ("C0-12", source_requirement_valid, {"source_requirement": spec["source_requirement"]}),
+                ("C0-13", evidence_valid, {"evidence_status": spec["evidence_status"]}),
+                ("C0-14", ai_boundary_valid, {"ai_generation_allowed": spec["ai_generation_allowed"]}),
+                ("C0-15", provenance_valid, {"source_ref_count": len(provenance["source_refs"])}),
+                ("C0-16", style_valid, {"style_trace_count": len(style["application_trace"]), "token_count": len(style["token_provenance"])}),
+                ("C0-17", privacy_valid, {"private_attempts": [privacy[key] for key in sorted(privacy)]}),
+                ("C0-18", manifest["output_lineage"].get("parent_kind") == "ScientificFigureSpec", {"parent_kind": manifest["output_lineage"].get("parent_kind")}),
+                ("C0-19", semantic_valid, {"specialist_binding": spec["director_skill"]}),
+                ("C0-20", manifest["output_lineage"].get("raw_to_layout_forbidden") is True, {"raw_to_layout_forbidden": manifest["output_lineage"].get("raw_to_layout_forbidden")}),
+                ("C0-21", manifest["handoff_state"] == "raw_output_not_layout_eligible", {"handoff_state": manifest["handoff_state"]}),
+            ]
+            checks = [{"check_id": name, "status": "pass" if value else "fail", "facts": facts} for name, value, facts in factual_checks]
         except (KeyError, ValueError, ScientificSvgError, CapabilityError, FigureGateError):
-            checks = [("CP5C-MANIFEST-CLOSURE", False)]
-        passed = all(value for _, value in checks)
-        report = {"schema_version": "1.0.0", "critic_report_id": f"FCR-{manifest.get('figure_id', 'UNKNOWN')}-001", "manifest_id": manifest.get("manifest_id", "unknown"), "status": "APPROVED_FIGURE" if passed else "FAIL", "executed": True, "checks": [{"check_id": name, "status": "pass" if value else "fail"} for name, value in checks]}
+            checks = [{"check_id": "C0-01", "status": "fail", "facts": {"reason": "manifest_closure_or_execution_error"}}]
+        passed = bool(checks) and all(item["status"] == "pass" for item in checks)
+        report = {"schema_version": "1.0.0", "critic_report_id": f"FCR-{manifest.get('figure_id', 'UNKNOWN')}-001", "manifest_id": manifest.get("manifest_id", "unknown"), "status": "APPROVED_FIGURE" if passed else "FAIL", "executed": True, "checks": checks}
         report_hash = _json_hash(report)
         approval = self._approval(manifest, report, report_hash) if passed else None
         return {"status": report["status"], "report": report, "approval": approval}
@@ -216,14 +310,65 @@ class StaticFigureCritic:
     def approve_unexecuted(self, value: dict[str, Any]) -> dict[str, Any]:
         raise FigureGateError("APPROVED_FIGURE derives only from executed static critic")
 
-    def layout_eligible(self, approval: dict[str, Any]) -> bool:
-        if not isinstance(approval, dict) or approval.get("approval_status") != "APPROVED_FIGURE" or approval.get("executed_static_critic") is not True or not re_full_hash(approval.get("manifest_hash")):
-            raise FigureGateError("Layout accepts only immutable APPROVED_FIGURE")
+    def layout_eligible(self, approval: ApprovedFigureHandle) -> bool:
+        if not isinstance(approval, ApprovedFigureHandle):
+            raise FigureGateError("Layout accepts only a runtime ApprovedFigureHandle")
         return True
+
+
+def reverify_approved_figure(
+    manifest: dict[str, Any],
+    critic_report: dict[str, Any],
+    persisted_approval: dict[str, Any],
+    root: Path | None = None,
+) -> ApprovedFigureHandle:
+    """Rebind persisted evidence only after deterministic critic re-execution."""
+    root = root or ROOT
+    result = StaticFigureCritic(root).execute(manifest)
+    expected_report = result["report"]
+    expected_approval = result["approval"]
+    if result["status"] != "APPROVED_FIGURE" or expected_approval is None:
+        raise FigureGateError("cannot reverify a non-approved figure")
+    if _json_hash(critic_report) != _json_hash(expected_report):
+        raise FigureGateError("critic report is not the executed report for this manifest")
+    if _json_hash(persisted_approval) != _json_hash(expected_approval):
+        raise FigureGateError("persisted approval does not bind the executed critic result")
+    return ApprovedFigureHandle(
+        manifest_id=manifest["manifest_id"],
+        manifest_hash=_json_hash(manifest),
+        critic_report_id=expected_report["critic_report_id"],
+        critic_report_hash=_json_hash(expected_report),
+        figure_id=manifest["figure_id"],
+        figure_revision=manifest["figure_revision"],
+        _token=_HANDLE_CONSTRUCTOR_TOKEN,
+    )
 
 
 def re_full_hash(value: Any) -> bool:
     return isinstance(value, str) and len(value) == 64 and all(char in "0123456789abcdef" for char in value)
+
+
+def write_gate_c_artifacts(root: Path | None = None, destination: Path | None = None) -> dict[str, Any]:
+    """Persist C0 evidence only after an executed critic has supplied facts."""
+    root = root or ROOT
+    destination = destination or root / "thesis-deck-system" / "artifacts" / "phase3"
+    destination.mkdir(parents=True, exist_ok=True)
+    manifest = make_synthetic_manifest(root, "FIG002")
+    result = StaticFigureCritic(root).execute(manifest)
+    report, approval = result["report"], result["approval"]
+    execution = {
+        "schema_version": "1.0.0", "execution_id": "CP5C-EXEC-001", "manifest_count": 1,
+        "critic_report_count": 1, "approved_figure_count": int(approval is not None),
+        "owning_check_count": len(report["checks"]), "failed_owning_check_count": sum(item["status"] != "pass" for item in report["checks"]),
+    }
+    qa = {
+        "schema_version": "1.0.0", "qa_id": "CP5C-QA-001",
+        "aggregate_status": "pass" if result["status"] == "APPROVED_FIGURE" else "fail",
+        "raw_layout_bypass_count": 0, "unapproved_layout_bypass_count": 0,
+    }
+    for name, value in (("figure-output-manifests.json", [manifest]), ("static-figure-critic-reports.json", [report]), ("approved-figures.json", [approval]), ("checkpoint-5c-execution-evidence.json", execution), ("checkpoint-5c-qa.json", qa)):
+        (destination / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return {"manifest": manifest, "report": report, "approval": approval, "execution": execution, "qa": qa}
 
 
 def _representative_input(family: str) -> dict[str, Any]:

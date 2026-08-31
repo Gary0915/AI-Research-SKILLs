@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "map_id": "VSP003-SCRM-001",
+  "style_profile_ref": "VSP003",
+  "rules": [
+    {"category":"shell_geometry","authority_families":["formal_shell"],"token_families":["shell"],"value_kinds":[],"fallback":"explicit_implementation_fallback"},
+    {"category":"typography_hierarchy","authority_families":[],"token_families":["typography"],"value_kinds":[],"fallback":"explicit_implementation_fallback"},
+    {"category":"body_composition","authority_families":["body_composition"],"token_families":[],"value_kinds":[],"fallback":"explicit_implementation_fallback"},
+    {"category":"scientific_figure_metrics","authority_families":["body_composition"],"token_families":[],"value_kinds":["range"],"fallback":"explicit_implementation_fallback"},
+    {"category":"connector_arrow_grammar","authority_families":[],"token_families":[],"value_kinds":["connector"],"fallback":"explicit_implementation_fallback"},
+    {"category":"line_style_grammar","authority_families":[],"token_families":[],"value_kinds":["line_width","stroke"],"fallback":"explicit_implementation_fallback"},
+    {"category":"color_emphasis_grammar","authority_families":[],"token_families":[],"value_kinds":["color"],"fallback":"explicit_implementation_fallback"}
+  ]
+}

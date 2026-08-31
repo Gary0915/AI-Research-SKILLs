@@ -79,13 +79,73 @@ def test_cp5c_svg_manifest_rejects_untyped_nested_contract_fields(section: str):
 
 
 def test_cp5c_layout_handoff_allows_only_executed_approved_figure():
-    from thesis_deck_system.phase3_cp5bcd_integrated import StaticFigureCritic, FigureGateError, make_synthetic_manifest
+    from thesis_deck_system.phase3_cp5bcd_integrated import StaticFigureCritic, FigureGateError, make_synthetic_manifest, reverify_approved_figure
 
     critic = StaticFigureCritic(ROOT)
     with pytest.raises(FigureGateError):
         critic.layout_eligible({"kind": "raw_svg"})
-    approval = critic.execute(make_synthetic_manifest(ROOT, "FIG002"))["approval"]
-    assert critic.layout_eligible(approval) is True
+    manifest = make_synthetic_manifest(ROOT, "FIG002")
+    result = critic.execute(manifest)
+    handle = reverify_approved_figure(manifest, result["report"], result["approval"], ROOT)
+    assert critic.layout_eligible(handle) is True
+
+
+def test_cp5c_layout_requires_runtime_handle_and_reverification_rejects_forged_approval():
+    """Persisted approval-shaped JSON is evidence, never runtime authority."""
+    from thesis_deck_system.phase3_cp5bcd_integrated import (
+        FigureGateError,
+        StaticFigureCritic,
+        make_synthetic_manifest,
+        reverify_approved_figure,
+    )
+
+    critic = StaticFigureCritic(ROOT)
+    manifest = make_synthetic_manifest(ROOT, "FIG002")
+    result = critic.execute(manifest)
+    with pytest.raises(FigureGateError):
+        critic.layout_eligible(result["approval"])
+    handle = reverify_approved_figure(manifest, result["report"], result["approval"], ROOT)
+    assert critic.layout_eligible(handle) is True
+    forged = deepcopy(result["approval"])
+    forged["manifest_hash"] = "a" * 64
+    with pytest.raises(FigureGateError):
+        reverify_approved_figure(manifest, result["report"], forged, ROOT)
+
+
+def test_cp5c_style_resolution_consumes_actual_vsp003_fields_not_fake_category_ids():
+    from thesis_deck_system.phase3_cp5bcd_integrated import resolve_style, _spec
+
+    style = resolve_style(ROOT, _spec(ROOT, "FIG002"))
+    assert style["token_provenance"], "usable VSP003 tokens must be traceable"
+    assert all("token_id" in item and "authority_family" in item for item in style["token_provenance"])
+    assert style["application_trace"], "visual attributes must bind token/fallback provenance"
+
+
+def test_cp5c_static_critic_persists_the_full_owning_check_set_with_facts():
+    from thesis_deck_system.phase3_cp5bcd_integrated import StaticFigureCritic, make_synthetic_manifest
+
+    report = StaticFigureCritic(ROOT).execute(make_synthetic_manifest(ROOT, "FIG002"))["report"]
+    check_ids = {item["check_id"] for item in report["checks"]}
+    assert {f"C0-{index:02d}" for index in range(1, 22)} <= check_ids
+    assert all("facts" in item and item["status"] in {"pass", "fail", "blocked"} for item in report["checks"])
+
+
+def test_vsp003_category_resolution_map_is_a_registered_closed_contract():
+    from thesis_deck_system.contracts import SchemaRegistry
+    import json
+
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True, include_cp5bcd=True)
+    payload = json.loads((ROOT / "thesis-deck-system" / "artifacts" / "phase3" / "vsp003-style-category-resolution-map.json").read_text(encoding="utf-8"))
+    assert registry.errors("vsp003-style-category-resolution-map", payload) == []
+
+
+def test_cp5c_execution_artifacts_are_derived_from_executed_critic(tmp_path: Path):
+    from thesis_deck_system.phase3_cp5bcd_integrated import write_gate_c_artifacts
+
+    result = write_gate_c_artifacts(ROOT, tmp_path)
+    assert result["qa"]["aggregate_status"] == "pass"
+    assert result["execution"]["owning_check_count"] >= 21
+    assert (tmp_path / "checkpoint-5c-qa.json").exists()
 
 
 @pytest.mark.parametrize("family", ["fishbone", "mechanism", "experiment", "fabrication", "comparison"])
