@@ -48,7 +48,7 @@ def test_cp5g_calibration_is_sanitized_only_and_cannot_claim_qualitative_pass():
     from thesis_deck_system.phase3_cp5efg_integrated import build_calibration_artifacts
 
     result = build_calibration_artifacts(ROOT, None)
-    assert result["qa"]["structural_geometry_calibration"] == "pass"
+    assert result["qa"]["structural_geometry_calibration"] == "provisional"
     assert result["qa"]["professor_visual_acceptance"] == "blocked"
     assert result["qa"]["private_alias_resolution_attempts"] == 0
 
@@ -112,3 +112,14 @@ def test_f1_review_action_is_deeply_immutable_after_caller_and_view_mutation():
     assert action.payload["nested"]["values"] == ("original",)
     with pytest.raises(TypeError):
         action.payload["nested"] = "mutated"
+
+
+def test_g1_calibration_records_measured_provenance_and_real_benchmark_fixtures(tmp_path: Path):
+    from thesis_deck_system.phase3_cp5efg_integrated import build_calibration_artifacts
+
+    result = build_calibration_artifacts(ROOT, tmp_path)
+    assert all(item["measured_metrics"] and item["archetype_source_hash"] for item in result["archetypes"])
+    assert all(item["representative_fixture"] and item["stress_fixture"] for item in result["families"]["families"])
+    first = (tmp_path / "cp5g" / "archetype-calibration-montage.svg").read_text(encoding="utf-8")
+    second = (tmp_path / "cp5g" / "figure-family-calibration-montage.svg").read_text(encoding="utf-8")
+    assert first != second
