@@ -220,3 +220,10 @@ def test_hi_cross_gate_acceptance_derives_all_required_h_i_facts(tmp_path: Path)
     assert evidence["status"] == "pass"
     assert evidence["check_count"] >= 17
     assert evidence["private_access_counters"] == {"private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0}
+
+
+def test_hi_candidate_hash_normalizes_checkout_line_endings_without_normalizing_binary_inputs():
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import _candidate_component_digest
+
+    assert _candidate_component_digest("example.py", b"a\r\nb\r\n") == _candidate_component_digest("example.py", b"a\nb\n")
+    assert _candidate_component_digest("example.pptx", b"a\r\nb\r\n") != _candidate_component_digest("example.pptx", b"a\nb\n")

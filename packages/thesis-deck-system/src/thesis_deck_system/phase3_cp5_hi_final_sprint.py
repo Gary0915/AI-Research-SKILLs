@@ -585,6 +585,13 @@ def build_i2_release_qa(root: Path, destination: Path) -> dict[str, Any]:
     return {"release_gates": release, "package_manifest": package, "audit": audit, "gap_report": gaps}
 
 
+def _candidate_component_digest(relative: str, content: bytes) -> str:
+    """Hash source/config text independent of Git checkout line endings."""
+    if Path(relative).suffix.lower() in {".py", ".json", ".md", ".yaml", ".yml"}:
+        content = content.replace(b"\r\n", b"\n")
+    return sha256(content).hexdigest()
+
+
 def compute_hi_candidate_state(root: Path) -> dict[str, Any]:
     """Hash every execution-affecting H/I component, excluding derived reports."""
     root = root.resolve()
@@ -604,7 +611,7 @@ def compute_hi_candidate_state(root: Path) -> dict[str, Any]:
         "thesis-deck-system/artifacts/phase2/slide-specs.json",
         "thesis-deck-system/artifacts/phase2/MASTER-PHASE2.manifest.json",
     )
-    hashes = {relative: sha256((root / relative).read_bytes()).hexdigest() for relative in component_paths}
+    hashes = {relative: _candidate_component_digest(relative, (root / relative).read_bytes()) for relative in component_paths}
     return {"candidate_id": "CP5-HI-CANDIDATE-001", "component_count": len(hashes), "component_hashes": hashes, "candidate_state_sha256": _plan_hash(hashes)}
 
 
