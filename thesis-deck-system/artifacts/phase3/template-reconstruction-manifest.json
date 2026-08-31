@@ -1,12 +1,12 @@
 {
   "manifest_id": "CP5-I0-FRESH-TEMPLATE-PACKAGE-001",
-  "package_sha256": "f55c742f3e4f07b88ec77072e2a32f2f77c097dcef3e4bfad5a90b63d2c34782",
-  "part_count": 40,
+  "package_sha256": "7a2bc6d4eff788112b8fd36365798139067e9d1d5cbf53e848f72a895135a5b1",
+  "part_count": 36,
   "parts": [
     {
       "part_name": "[Content_Types].xml",
       "part_class": "builder_required",
-      "sha256": "9bf9186215d3f222d8978f19118afc67b12ad1f3338e4fea78fd10078ff2cc32"
+      "sha256": "af92d6f22411943a4ffeb884e5f43bb68730429ba8d2d17bc9d389b33bd99936"
     },
     {
       "part_name": "_rels/.rels",
@@ -31,7 +31,7 @@
     {
       "part_name": "ppt/_rels/presentation.xml.rels",
       "part_class": "builder_required",
-      "sha256": "0c63b9fc91c25c9cbf64768b172cf79e070286cb4dae85c08aa4d650e5cc9b61"
+      "sha256": "85d7b9a4ed02373db9a96884425e044e91f0ed786ce68539c11f2276d89b4ad8"
     },
     {
       "part_name": "ppt/presProps.xml",
@@ -41,7 +41,7 @@
     {
       "part_name": "ppt/presentation.xml",
       "part_class": "builder_required",
-      "sha256": "1ffd810aabf3346036953dad24a7bda225d33a3027b341a66b14503d3beed1fe"
+      "sha256": "10086a91c2c5d13f9b695c09b76f00ba54f7878a556abe5e7efc8ddaa7ff3c42"
     },
     {
       "part_name": "ppt/printerSettings/printerSettings1.bin",
@@ -167,26 +167,6 @@
       "part_name": "ppt/slideMasters/slideMaster1.xml",
       "part_class": "reconstructed_shell",
       "sha256": "44cc65956f47c1cf689803dcc7a1d9225c93d3fd90754a9f85e2bdcea27565bc"
-    },
-    {
-      "part_name": "ppt/slides/_rels/slide1.xml.rels",
-      "part_class": "generated_slide",
-      "sha256": "c197fb7b22e7392c4fd5a7bf18a6d25183215bd9fe446705e9b44734b09a49ea"
-    },
-    {
-      "part_name": "ppt/slides/_rels/slide2.xml.rels",
-      "part_class": "generated_slide",
-      "sha256": "89c91c7e4c382025a7c9333698b6bbbbb61031f610b2a183bd5a3eb73ef3d6dc"
-    },
-    {
-      "part_name": "ppt/slides/slide1.xml",
-      "part_class": "generated_slide",
-      "sha256": "9b60d21a78668ddc034b9952f79e7ba2db70f10b8ba755981674cec774b229b6"
-    },
-    {
-      "part_name": "ppt/slides/slide2.xml",
-      "part_class": "generated_slide",
-      "sha256": "f72edcc7c112f9ed29e4d153bdb4a162b63f9a664d6ccec26e27dc56d096bfea"
     },
     {
       "part_name": "ppt/tableStyles.xml",

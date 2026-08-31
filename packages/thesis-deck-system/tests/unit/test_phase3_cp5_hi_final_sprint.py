@@ -119,7 +119,9 @@ def test_i0_reconstructs_a_fresh_sanitized_template_with_closed_part_manifest(tm
     result = build_i0_sanitized_native_template(ROOT, tmp_path)
 
     assert Path(result["template_path"]).exists()
-    assert Presentation(result["template_path"]).slide_width > 0
+    presentation = Presentation(result["template_path"])
+    assert presentation.slide_width > 0
+    assert len(presentation.slides) == 0
     assert result["template_profile"]["fresh_lineage_status"] == "pass"
     assert result["template_profile"]["safe_content_bounds"]["status"] == "insufficient_evidence"
     assert {"formal_cover", "content_academic", "fishbone", "comparison_result", "summary_decision"} <= set(result["template_profile"]["semantic_roles"])

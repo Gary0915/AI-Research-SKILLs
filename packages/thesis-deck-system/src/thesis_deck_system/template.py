@@ -32,6 +32,20 @@ def create_synthetic_template(path: Path) -> Path:
     return path
 
 
+def create_sanitized_native_template(path: Path) -> Path:
+    """Create a fresh shell-only 16:9 template for CP5-I assembly.
+
+    Unlike the synthetic benchmark fixture, this has layouts and theme but no
+    sample slides.  The sole PPTX assembler owns every acceptance-deck slide.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    prs = Presentation()
+    prs.slide_width = Inches(13.333333)
+    prs.slide_height = Inches(7.5)
+    prs.save(path)
+    return path
+
+
 def profile_template(path: Path, output_path: Path) -> dict:
     prs = Presentation(path)
     masters = [

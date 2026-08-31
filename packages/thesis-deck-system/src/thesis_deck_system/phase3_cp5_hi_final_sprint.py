@@ -373,12 +373,12 @@ def build_i0_sanitized_native_template(root: Path, destination: Path) -> dict[st
     template profile and performs package lineage accounting.  It never opens
     a historical or private presentation and cannot assemble scientific slides.
     """
-    from .template import create_synthetic_template, profile_template
+    from .template import create_sanitized_native_template, profile_template
 
     destination.mkdir(parents=True, exist_ok=True)
     source = json.loads((root / "thesis-deck-system" / "artifacts" / "phase3" / "professor-template-resolved.json").read_text(encoding="utf-8"))
     template_path = destination / "sanitized-native-template.pptx"
-    create_synthetic_template(template_path)
+    create_sanitized_native_template(template_path)
     profile_path = destination / "template-profile.json"
     profile = profile_template(template_path, profile_path)
     layout_by_index = {item["layout_index"]: item for item in profile["layouts"]}
