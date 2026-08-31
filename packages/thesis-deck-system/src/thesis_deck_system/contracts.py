@@ -91,6 +91,8 @@ CP5HI_SCHEMA_NAMES = (
     "cp5-hi-backend-uniqueness-audit",
     "cp5-hi-execution-evidence",
     "native-figure-compilation-plan",
+    "cp5-hi-release-gates",
+    "cp5-hi-package-manifest",
 )
 
 SCHEMA_BY_COLLECTION = {

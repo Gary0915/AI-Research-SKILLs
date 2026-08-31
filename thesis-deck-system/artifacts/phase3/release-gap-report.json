@@ -1,0 +1,165 @@
+{
+  "gap_report_id": "CP5-I2-RELEASE-GAPS-001",
+  "status": "blocked",
+  "blocking_gates": [
+    {
+      "gate_id": "RG-04",
+      "dimension": "drawingml_native_fidelity_status",
+      "status": "blocked_environment",
+      "facts": {
+        "scalar": [
+          {
+            "key": "native_powerpoint_status",
+            "value": "blocked_environment"
+          },
+          {
+            "key": "structural_emission_is_not_native_fidelity",
+            "value": true
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "c65aa460a0b3196e6cbd4b596ada89c146d60869c2b03987d6551c765faf0112"
+      }
+    },
+    {
+      "gate_id": "RG-10",
+      "dimension": "render_visual_status",
+      "status": "blocked_environment",
+      "facts": {
+        "scalar": [
+          {
+            "key": "reason",
+            "value": "no hash-bound every-slide deterministic render evidence"
+          },
+          {
+            "key": "render_execution",
+            "value": "not_run"
+          },
+          {
+            "key": "renderer_probe",
+            "value": "available"
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "bd3a2d7d2325c396598637dc472769cc293315645a6411f8b71cc58fd8c7ab95"
+      }
+    },
+    {
+      "gate_id": "RG-11",
+      "dimension": "professor_structural_fidelity_status",
+      "status": "insufficient_evidence",
+      "facts": {
+        "scalar": [
+          {
+            "key": "private_render_comparison",
+            "value": "not_authorized"
+          },
+          {
+            "key": "safe_content_bounds_status",
+            "value": "insufficient_evidence"
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "551bab9f30caedf2f2d70294499df9ea5d9486f66e12858bb03704413fdbed60"
+      }
+    },
+    {
+      "gate_id": "RG-12",
+      "dimension": "image_capable_qualitative_review_status",
+      "status": "blocked_visual_review",
+      "facts": {
+        "scalar": [
+          {
+            "key": "reason",
+            "value": "no authorized image-capable qualitative review provider"
+          },
+          {
+            "key": "reviewed_slide_count",
+            "value": 0
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "1d87350561b2019bbaef9f0cf6a0923b1193c440e3ee2f5a317d727d000dd516"
+      }
+    },
+    {
+      "gate_id": "RG-13",
+      "dimension": "native_powerpoint_acceptance_status",
+      "status": "blocked_environment",
+      "facts": {
+        "scalar": [
+          {
+            "key": "native_powerpoint_status",
+            "value": "blocked_environment"
+          },
+          {
+            "key": "open_save_reopen_attempts",
+            "value": 0
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "2d92f3fa7df6be6bf261b817ad4d45b3ebcf687117e15bf0cc90839cf99051d2"
+      }
+    },
+    {
+      "gate_id": "RG-14",
+      "dimension": "package_privacy_status",
+      "status": "not_run",
+      "facts": {
+        "scalar": [
+          {
+            "key": "package_forbidden_part_count",
+            "value": 0
+          },
+          {
+            "key": "repository_staged_privacy_scan",
+            "value": "pending_final_candidate"
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "6df73e825282da06549b97f713bf3dd0221d4c5548a86fc723ebfd86215b946e"
+      }
+    },
+    {
+      "gate_id": "RG-15",
+      "dimension": "production_release_status",
+      "status": "blocked",
+      "facts": {
+        "scalar": [],
+        "structured": [
+          {
+            "key": "non_pass_gate_ids",
+            "sha256": "a9c5663219986955c4ded37248425f3a2d814974367c8aa2e08064a36e2d1048"
+          }
+        ],
+        "evidence_sha256": "5fb87cd3dc23c005036920613e3dfe7ef43134abd4e5ebc234b579fa754b0fce"
+      }
+    },
+    {
+      "gate_id": "RG-16",
+      "dimension": "production_group_meeting_ready",
+      "status": "false",
+      "facts": {
+        "scalar": [
+          {
+            "key": "external_reviewer_approval",
+            "value": false
+          },
+          {
+            "key": "production_release_status",
+            "value": "blocked"
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "6639f717af661e7cd7ae70bb1662983aa7d06f34dae18df2730a67816ab3d520"
+      }
+    }
+  ],
+  "minimum_evidence_required": {
+    "RG-10": "hash-bound every-slide deterministic render audit",
+    "RG-11": "resolved sanitized release-required metrics",
+    "RG-12": "authorized hash-bound qualitative review",
+    "RG-13": "native PowerPoint open/save/reopen acceptance",
+    "RG-14": "final candidate repository and staged privacy scan"
+  }
+}

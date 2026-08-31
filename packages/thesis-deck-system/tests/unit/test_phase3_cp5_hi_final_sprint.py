@@ -143,3 +143,50 @@ def test_i1_builds_fresh_twenty_slide_h001_h002_acceptance_deck(tmp_path: Path):
     assert result["deck_manifest"]["hypothesis_layer_order"] == ["H001", "H002"]
     assert result["deck_manifest"]["h003_slide_count"] == 0
     assert result["deck_manifest"]["governed_figure_bypass_count"] == 0
+
+
+def test_i2_computes_independent_release_gates_without_promoting_blocked_evidence(tmp_path: Path):
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import (
+        build_i0_sanitized_native_template,
+        build_i1_acceptance_deck,
+        build_i2_release_qa,
+    )
+
+    build_i0_sanitized_native_template(ROOT, tmp_path)
+    build_i1_acceptance_deck(ROOT, tmp_path)
+    result = build_i2_release_qa(ROOT, tmp_path)
+
+    by_id = {item["gate_id"]: item for item in result["release_gates"]["gates"]}
+    assert len(by_id) == 16
+    assert by_id["RG-07"]["status"] == "pass"
+    assert by_id["RG-10"]["status"] in {"blocked_environment", "not_run"}
+    assert by_id["RG-12"]["status"] == "blocked_visual_review"
+    assert by_id["RG-13"]["status"] == "blocked_environment"
+    assert result["release_gates"]["production_release_status"] != "pass"
+    assert result["release_gates"]["production_group_meeting_ready"] is False
+
+
+def test_i2_accepts_a_relative_repository_root_for_artifact_rebuild(tmp_path: Path, monkeypatch):
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import (
+        build_i0_sanitized_native_template,
+        build_i1_acceptance_deck,
+        build_i2_release_qa,
+    )
+
+    build_i0_sanitized_native_template(ROOT, tmp_path)
+    build_i1_acceptance_deck(ROOT, tmp_path)
+    monkeypatch.chdir(ROOT)
+    assert build_i2_release_qa(Path("."), tmp_path)["release_gates"]["release_id"] == "CP5-I2-RELEASE-FACTS-001"
+
+
+def test_i2_release_and_package_artifacts_validate_against_closed_cp5hi_schemas(tmp_path: Path):
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import build_i0_sanitized_native_template, build_i1_acceptance_deck, build_i2_release_qa
+
+    build_i0_sanitized_native_template(ROOT, tmp_path)
+    build_i1_acceptance_deck(ROOT, tmp_path)
+    result = build_i2_release_qa(ROOT, tmp_path)
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5hi=True)
+
+    assert registry.errors("cp5-hi-release-gates", result["release_gates"]) == []
+    assert registry.errors("cp5-hi-package-manifest", result["package_manifest"]) == []

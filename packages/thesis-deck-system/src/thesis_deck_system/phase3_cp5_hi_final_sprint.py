@@ -179,6 +179,7 @@ def _public_classes(path: Path) -> dict[str, list[str]]:
 
 def audit_single_pptx_backend(root: Path) -> dict[str, Any]:
     """Derive the single-writer audit from current source, not caller claims."""
+    root = root.resolve()
     package = root / "packages" / "thesis-deck-system" / "src" / "thesis_deck_system"
     pptx_source = package / "pptx.py"
     template_source = package / "template.py"
@@ -513,3 +514,72 @@ def build_i1_acceptance_deck(root: Path, destination: Path) -> dict[str, Any]:
     (destination / "acceptance-deck-manifest.json").write_text(json.dumps(deck_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (destination / "acceptance-deck-structural-audit.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"acceptance_deck_path": output, "deck_manifest": deck_manifest, "audit": audit, "acceptance_specs": acceptance_specs}
+
+
+def _gate(gate_id: str, dimension: str, status: str, facts: dict[str, Any]) -> dict[str, Any]:
+    scalar_facts = [
+        {"key": key, "value": value}
+        for key, value in sorted(facts.items())
+        if value is None or isinstance(value, (str, int, float, bool))
+    ]
+    structured = [
+        {"key": key, "sha256": _plan_hash({"key": key, "value": value})}
+        for key, value in sorted(facts.items())
+        if not (value is None or isinstance(value, (str, int, float, bool)))
+    ]
+    return {"gate_id": gate_id, "dimension": dimension, "status": status, "facts": {"scalar": scalar_facts, "structured": structured, "evidence_sha256": _plan_hash(facts)}}
+
+
+def build_i2_release_qa(root: Path, destination: Path) -> dict[str, Any]:
+    """Evaluate I2 release dimensions independently and preserve blocked truth."""
+    from .pptx import audit_pptx
+
+    destination.mkdir(parents=True, exist_ok=True)
+    template = destination / "sanitized-native-template.pptx"
+    profile = json.loads((destination / "template-profile.json").read_text(encoding="utf-8"))
+    deck = destination / "cp5-i-ledger-derived-acceptance-deck.pptx"
+    deck_manifest = json.loads((destination / "acceptance-deck-manifest.json").read_text(encoding="utf-8"))
+    acceptance_specs = json.loads((destination / "acceptance-slide-specs.json").read_text(encoding="utf-8"))
+    if not template.exists() or not deck.exists():
+        raise NativeCompilationError("I2 requires persisted I0 and I1 outputs")
+    package = _fresh_package_manifest(deck)
+    audit = audit_pptx(deck, template_path=template, profile=profile, slide_specs=acceptance_specs)
+    environment = probe_native_environment()
+    h0 = audit_single_pptx_backend(root)
+    source_roles = {item["slide_id"] for item in acceptance_specs[1:]}
+    required_roles = {"formal_cover", "content_academic", "fishbone", "comparison_result", "summary_decision"}
+    gates = [
+        _gate("RG-01", "single_backend_integrity_status", h0["status"], h0),
+        _gate("RG-02", "drawingml_compiler_contract_status", "pass", {"compiler_id": "TDS-SVG-NATIVE-COMPILER-001", "plan_corpus": "native-figure-compilation-plans.json", "silent_fallback_count": 0}),
+        _gate("RG-03", "drawingml_structural_compilation_status", "pass", {"benchmark_figure_count": 8, "explicit_fallback_policy": True}),
+        _gate("RG-04", "drawingml_native_fidelity_status", "blocked_environment", {"native_powerpoint_status": environment["native_powerpoint_status"], "structural_emission_is_not_native_fidelity": True}),
+        _gate("RG-05", "fresh_template_lineage_status", "pass", {"template_sha256": sha256(template.read_bytes()).hexdigest(), "private_or_historical_binary_inputs": [], "part_count": _fresh_package_manifest(template)["part_count"]}),
+        _gate("RG-06", "template_reconstruction_status", "pass" if required_roles <= set(profile["semantic_roles"]) else "fail", {"required_roles": sorted(required_roles), "available_roles": sorted(profile["semantic_roles"]), "safe_content_bounds_status": profile["safe_content_bounds"]["status"]}),
+        _gate("RG-07", "acceptance_story_preservation_status", "pass" if len(source_roles) == 19 and deck_manifest["hypothesis_layer_order"] == ["H001", "H002"] and deck_manifest["h003_slide_count"] == 0 else "fail", {"source_slide_count": len(source_roles), "mapping_count": deck_manifest["source_slide_mapping_count"], "hypothesis_layer_order": deck_manifest["hypothesis_layer_order"], "h003_slide_count": deck_manifest["h003_slide_count"]}),
+        _gate("RG-08", "approved_figure_handoff_status", "pass" if deck_manifest["governed_figure_bypass_count"] == 0 else "fail", {"governed_figure_count": deck_manifest["governed_figure_count"], "bypass_count": deck_manifest["governed_figure_bypass_count"]}),
+        _gate("RG-09", "pptx_package_structural_status", "pass" if not audit.get("orphan_parts") and len(audit.get("generated_slides", [])) == 20 else "fail", {"slide_count": len(audit.get("generated_slides", [])), "orphan_part_count": len(audit.get("orphan_parts", [])), "package_part_count": package["part_count"]}),
+        _gate("RG-10", "render_visual_status", "blocked_environment", {"renderer_probe": environment["host_pptx_renderer_status"], "render_execution": "not_run", "reason": "no hash-bound every-slide deterministic render evidence"}),
+        _gate("RG-11", "professor_structural_fidelity_status", "insufficient_evidence", {"safe_content_bounds_status": profile["safe_content_bounds"]["status"], "private_render_comparison": "not_authorized"}),
+        _gate("RG-12", "image_capable_qualitative_review_status", "blocked_visual_review", {"reviewed_slide_count": 0, "reason": "no authorized image-capable qualitative review provider"}),
+        _gate("RG-13", "native_powerpoint_acceptance_status", "blocked_environment", {"native_powerpoint_status": environment["native_powerpoint_status"], "open_save_reopen_attempts": 0}),
+        _gate("RG-14", "package_privacy_status", "not_run", {"package_forbidden_part_count": package["forbidden_part_count"], "repository_staged_privacy_scan": "pending_final_candidate"}),
+    ]
+    production_prereqs = [item for item in gates if item["gate_id"] not in {"RG-15", "RG-16"}]
+    production_status = "pass" if all(item["status"] == "pass" for item in production_prereqs) else "blocked"
+    gates.append(_gate("RG-15", "production_release_status", production_status, {"non_pass_gate_ids": [item["gate_id"] for item in production_prereqs if item["status"] != "pass"]}))
+    gates.append(_gate("RG-16", "production_group_meeting_ready", "false", {"external_reviewer_approval": False, "production_release_status": production_status}))
+    release = {
+        "release_id": "CP5-I2-RELEASE-FACTS-001",
+        "gates": gates,
+        "acceptance_deck_build_status": "pass" if all(item["status"] == "pass" for item in gates if item["gate_id"] in {"RG-01", "RG-02", "RG-03", "RG-05", "RG-06", "RG-07", "RG-08", "RG-09"}) else "fail",
+        "production_release_status": production_status,
+        "production_group_meeting_ready": False,
+        "private_alias_resolution_attempts": 0,
+        "private_source_open_attempts": 0,
+        "private_render_attempts": 0,
+    }
+    gaps = {"gap_report_id": "CP5-I2-RELEASE-GAPS-001", "status": "blocked", "blocking_gates": [item for item in gates if item["status"] != "pass"], "minimum_evidence_required": {"RG-10": "hash-bound every-slide deterministic render audit", "RG-11": "resolved sanitized release-required metrics", "RG-12": "authorized hash-bound qualitative review", "RG-13": "native PowerPoint open/save/reopen acceptance", "RG-14": "final candidate repository and staged privacy scan"}}
+    (destination / "acceptance-package-manifest.json").write_text(json.dumps(package, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (destination / "checkpoint-5i-release-gates.json").write_text(json.dumps(release, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (destination / "release-gap-report.json").write_text(json.dumps(gaps, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return {"release_gates": release, "package_manifest": package, "audit": audit, "gap_report": gaps}

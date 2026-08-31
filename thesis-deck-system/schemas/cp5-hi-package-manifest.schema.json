@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_id", "package_sha256", "part_count", "parts", "unclassified_part_count", "forbidden_part_count", "forbidden_parts", "fresh_lineage_inputs", "private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts"],
+  "properties": {
+    "manifest_id": {"type": "string", "pattern": "^CP5-I0-FRESH-TEMPLATE-PACKAGE-[0-9]{3}$"},
+    "package_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "part_count": {"type": "integer", "minimum": 1},
+    "parts": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["part_name", "part_class", "sha256"], "properties": {"part_name": {"type": "string", "pattern": "^(\\[Content_Types\\]\\.xml|_rels/.*|docProps/.*|ppt/.*)$"}, "part_class": {"enum": ["builder_required", "reconstructed_shell", "generated_slide", "generated_notes", "generated_media", "generated_metadata"]}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+    "unclassified_part_count": {"type": "integer", "const": 0},
+    "forbidden_part_count": {"type": "integer", "minimum": 0},
+    "forbidden_parts": {"type": "array", "items": {"type": "string", "pattern": "^ppt/"}},
+    "fresh_lineage_inputs": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^artifacts/phase3/[A-Za-z0-9._-]+\\.json$"}},
+    "private_alias_resolution_attempts": {"type": "integer", "const": 0},
+    "private_source_open_attempts": {"type": "integer", "const": 0},
+    "private_render_attempts": {"type": "integer", "const": 0}
+  }
+}

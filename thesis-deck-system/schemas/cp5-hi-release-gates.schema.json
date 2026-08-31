@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["release_id", "gates", "acceptance_deck_build_status", "production_release_status", "production_group_meeting_ready", "private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts"],
+  "properties": {
+    "release_id": {"type": "string", "pattern": "^CP5-I2-RELEASE-FACTS-[0-9]{3}$"},
+    "gates": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"$ref": "#/$defs/gate"}},
+    "acceptance_deck_build_status": {"enum": ["pass", "fail"]},
+    "production_release_status": {"enum": ["pass", "blocked", "fail"]},
+    "production_group_meeting_ready": {"type": "boolean"},
+    "private_alias_resolution_attempts": {"type": "integer", "const": 0},
+    "private_source_open_attempts": {"type": "integer", "const": 0},
+    "private_render_attempts": {"type": "integer", "const": 0}
+  },
+  "$defs": {
+    "scalar": {"oneOf": [{"type": "string", "maxLength": 256}, {"type": "number"}, {"type": "boolean"}, {"type": "null"}]},
+    "gate": {"type": "object", "additionalProperties": false, "required": ["gate_id", "dimension", "status", "facts"], "properties": {"gate_id": {"type": "string", "pattern": "^RG-(0[1-9]|1[0-6])$"}, "dimension": {"type": "string", "pattern": "^[a-z0-9_]+$"}, "status": {"enum": ["pass", "fail", "blocked", "blocked_environment", "blocked_visual_review", "insufficient_evidence", "not_run", "false"]}, "facts": {"type": "object", "additionalProperties": false, "required": ["scalar", "structured", "evidence_sha256"], "properties": {"scalar": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["key", "value"], "properties": {"key": {"type": "string", "pattern": "^[A-Za-z0-9_]+$"}, "value": {"$ref": "#/$defs/scalar"}}}}, "structured": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["key", "sha256"], "properties": {"key": {"type": "string", "pattern": "^[A-Za-z0-9_]+$"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}, "evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}}
+  }
+}

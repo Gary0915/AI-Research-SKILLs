@@ -1,0 +1,367 @@
+{
+  "release_id": "CP5-I2-RELEASE-FACTS-001",
+  "gates": [
+    {
+      "gate_id": "RG-01",
+      "dimension": "single_backend_integrity_status",
+      "status": "pass",
+      "facts": {
+        "scalar": [
+          {
+            "key": "assembler_source",
+            "value": "packages/thesis-deck-system/src/thesis_deck_system/pptx.py"
+          },
+          {
+            "key": "audit_id",
+            "value": "CP5-H0-BACKEND-UNIQUENESS-001"
+          },
+          {
+            "key": "bypass_count",
+            "value": 0
+          },
+          {
+            "key": "compiler_source",
+            "value": "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py"
+          },
+          {
+            "key": "status",
+            "value": "pass"
+          }
+        ],
+        "structured": [
+          {
+            "key": "compiler_pptx_writer_methods",
+            "sha256": "bd15a3f77b26df85df3cd578d7196dc2208b99aebdc642fe55ac1c5b8a7e0925"
+          },
+          {
+            "key": "public_pptx_backends",
+            "sha256": "37d7ac6871f1b7eb2f3d79bf46a5163ea6d73f7f14b4f90c19a44a629dac687c"
+          },
+          {
+            "key": "template_scientific_slide_assembly_bypasses",
+            "sha256": "4079c9072f6e08bbf31461cf28d5273f2ee828bd4c9d9b2c4eb2b7f90a4c420c"
+          }
+        ],
+        "evidence_sha256": "4ff18dccf43a9f5e75d4642f7ef2fea392d22607195d6f0911103ea5d3b3275b"
+      }
+    },
+    {
+      "gate_id": "RG-02",
+      "dimension": "drawingml_compiler_contract_status",
+      "status": "pass",
+      "facts": {
+        "scalar": [
+          {
+            "key": "compiler_id",
+            "value": "TDS-SVG-NATIVE-COMPILER-001"
+          },
+          {
+            "key": "plan_corpus",
+            "value": "native-figure-compilation-plans.json"
+          },
+          {
+            "key": "silent_fallback_count",
+            "value": 0
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "2e25ffab019fba9ae2ce99d1cefee8e1daf059adcd57b578665e42eec204b34b"
+      }
+    },
+    {
+      "gate_id": "RG-03",
+      "dimension": "drawingml_structural_compilation_status",
+      "status": "pass",
+      "facts": {
+        "scalar": [
+          {
+            "key": "benchmark_figure_count",
+            "value": 8
+          },
+          {
+            "key": "explicit_fallback_policy",
+            "value": true
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "572f3da4f5bc693f23fed3dddee5623028dece3d52483ee05b3d1b819b068a69"
+      }
+    },
+    {
+      "gate_id": "RG-04",
+      "dimension": "drawingml_native_fidelity_status",
+      "status": "blocked_environment",
+      "facts": {
+        "scalar": [
+          {
+            "key": "native_powerpoint_status",
+            "value": "blocked_environment"
+          },
+          {
+            "key": "structural_emission_is_not_native_fidelity",
+            "value": true
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "c65aa460a0b3196e6cbd4b596ada89c146d60869c2b03987d6551c765faf0112"
+      }
+    },
+    {
+      "gate_id": "RG-05",
+      "dimension": "fresh_template_lineage_status",
+      "status": "pass",
+      "facts": {
+        "scalar": [
+          {
+            "key": "part_count",
+            "value": 36
+          },
+          {
+            "key": "template_sha256",
+            "value": "7a2bc6d4eff788112b8fd36365798139067e9d1d5cbf53e848f72a895135a5b1"
+          }
+        ],
+        "structured": [
+          {
+            "key": "private_or_historical_binary_inputs",
+            "sha256": "030c04adf934efb3409b9ce531fc5ac4b67aa36e7f3dea8f29d3c41b8060b061"
+          }
+        ],
+        "evidence_sha256": "2bfa02816cc7d5bd27745aa64bcd056c48e96bb5adc2a389c893dd8c93cf552c"
+      }
+    },
+    {
+      "gate_id": "RG-06",
+      "dimension": "template_reconstruction_status",
+      "status": "pass",
+      "facts": {
+        "scalar": [
+          {
+            "key": "safe_content_bounds_status",
+            "value": "insufficient_evidence"
+          }
+        ],
+        "structured": [
+          {
+            "key": "available_roles",
+            "sha256": "78e025120e06fc69681a0896d35d8e44f3dc0f8794a587d1a905cefc0d462693"
+          },
+          {
+            "key": "required_roles",
+            "sha256": "3ac86931cb4a55e01f5fa93034abe2bc42d2c1735aa2daed8123e732da9bd4a2"
+          }
+        ],
+        "evidence_sha256": "9adf10f75a42e1d80990b1b8c4cedce126e236ac598bb3ae83708cd33a1495e7"
+      }
+    },
+    {
+      "gate_id": "RG-07",
+      "dimension": "acceptance_story_preservation_status",
+      "status": "pass",
+      "facts": {
+        "scalar": [
+          {
+            "key": "h003_slide_count",
+            "value": 0
+          },
+          {
+            "key": "mapping_count",
+            "value": 19
+          },
+          {
+            "key": "source_slide_count",
+            "value": 19
+          }
+        ],
+        "structured": [
+          {
+            "key": "hypothesis_layer_order",
+            "sha256": "ea555bef2a35d0de04bbcde99dbbc404cce4fa7d3a7be84b3e27f1f5da648f4c"
+          }
+        ],
+        "evidence_sha256": "963e4f22d474bd75f2b9b4a7a4c42b0565487a5ff7c7da778db26a87a5dc7c3c"
+      }
+    },
+    {
+      "gate_id": "RG-08",
+      "dimension": "approved_figure_handoff_status",
+      "status": "pass",
+      "facts": {
+        "scalar": [
+          {
+            "key": "bypass_count",
+            "value": 0
+          },
+          {
+            "key": "governed_figure_count",
+            "value": 0
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "709a4147d1f2908a40d57b409a9580204fcf4d0a8dff86ac47747b4510294e71"
+      }
+    },
+    {
+      "gate_id": "RG-09",
+      "dimension": "pptx_package_structural_status",
+      "status": "pass",
+      "facts": {
+        "scalar": [
+          {
+            "key": "orphan_part_count",
+            "value": 0
+          },
+          {
+            "key": "package_part_count",
+            "value": 124
+          },
+          {
+            "key": "slide_count",
+            "value": 20
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "ff527e679f673b9d9ab78df7d9f492b1c214dd60f3e8e83a8df22a25faeebf26"
+      }
+    },
+    {
+      "gate_id": "RG-10",
+      "dimension": "render_visual_status",
+      "status": "blocked_environment",
+      "facts": {
+        "scalar": [
+          {
+            "key": "reason",
+            "value": "no hash-bound every-slide deterministic render evidence"
+          },
+          {
+            "key": "render_execution",
+            "value": "not_run"
+          },
+          {
+            "key": "renderer_probe",
+            "value": "available"
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "bd3a2d7d2325c396598637dc472769cc293315645a6411f8b71cc58fd8c7ab95"
+      }
+    },
+    {
+      "gate_id": "RG-11",
+      "dimension": "professor_structural_fidelity_status",
+      "status": "insufficient_evidence",
+      "facts": {
+        "scalar": [
+          {
+            "key": "private_render_comparison",
+            "value": "not_authorized"
+          },
+          {
+            "key": "safe_content_bounds_status",
+            "value": "insufficient_evidence"
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "551bab9f30caedf2f2d70294499df9ea5d9486f66e12858bb03704413fdbed60"
+      }
+    },
+    {
+      "gate_id": "RG-12",
+      "dimension": "image_capable_qualitative_review_status",
+      "status": "blocked_visual_review",
+      "facts": {
+        "scalar": [
+          {
+            "key": "reason",
+            "value": "no authorized image-capable qualitative review provider"
+          },
+          {
+            "key": "reviewed_slide_count",
+            "value": 0
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "1d87350561b2019bbaef9f0cf6a0923b1193c440e3ee2f5a317d727d000dd516"
+      }
+    },
+    {
+      "gate_id": "RG-13",
+      "dimension": "native_powerpoint_acceptance_status",
+      "status": "blocked_environment",
+      "facts": {
+        "scalar": [
+          {
+            "key": "native_powerpoint_status",
+            "value": "blocked_environment"
+          },
+          {
+            "key": "open_save_reopen_attempts",
+            "value": 0
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "2d92f3fa7df6be6bf261b817ad4d45b3ebcf687117e15bf0cc90839cf99051d2"
+      }
+    },
+    {
+      "gate_id": "RG-14",
+      "dimension": "package_privacy_status",
+      "status": "not_run",
+      "facts": {
+        "scalar": [
+          {
+            "key": "package_forbidden_part_count",
+            "value": 0
+          },
+          {
+            "key": "repository_staged_privacy_scan",
+            "value": "pending_final_candidate"
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "6df73e825282da06549b97f713bf3dd0221d4c5548a86fc723ebfd86215b946e"
+      }
+    },
+    {
+      "gate_id": "RG-15",
+      "dimension": "production_release_status",
+      "status": "blocked",
+      "facts": {
+        "scalar": [],
+        "structured": [
+          {
+            "key": "non_pass_gate_ids",
+            "sha256": "a9c5663219986955c4ded37248425f3a2d814974367c8aa2e08064a36e2d1048"
+          }
+        ],
+        "evidence_sha256": "5fb87cd3dc23c005036920613e3dfe7ef43134abd4e5ebc234b579fa754b0fce"
+      }
+    },
+    {
+      "gate_id": "RG-16",
+      "dimension": "production_group_meeting_ready",
+      "status": "false",
+      "facts": {
+        "scalar": [
+          {
+            "key": "external_reviewer_approval",
+            "value": false
+          },
+          {
+            "key": "production_release_status",
+            "value": "blocked"
+          }
+        ],
+        "structured": [],
+        "evidence_sha256": "6639f717af661e7cd7ae70bb1662983aa7d06f34dae18df2730a67816ab3d520"
+      }
+    }
+  ],
+  "acceptance_deck_build_status": "pass",
+  "production_release_status": "blocked",
+  "production_group_meeting_ready": false,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}
