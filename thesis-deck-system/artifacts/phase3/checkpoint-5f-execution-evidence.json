@@ -9,8 +9,36 @@
     "image_capable_qualitative_review_status": "blocked_visual_review",
     "human_review_status": "not_run"
   },
-  "render_manifests": [],
-  "render_critic_reports": [],
+  "render_manifests": [
+    {
+      "renderer_id": "deterministic-test-renderer",
+      "renderer_version": "test-1",
+      "source_svg_sha256": "900fbe934249ad120004bd24adf66aad8817d89586273c0cc50e187bddebb601",
+      "png_sha256": "8e30152d357b699e2e0e9f6ed1b6e97ec71b3a878f8380b2fb84d9da030ebbfc",
+      "parameters": {
+        "width": 16,
+        "height": 9
+      },
+      "dimensions": {
+        "width": 16,
+        "height": 9
+      }
+    }
+  ],
+  "render_critic_reports": [
+    {
+      "status": "pass",
+      "png_sha256": "8e30152d357b699e2e0e9f6ed1b6e97ec71b3a878f8380b2fb84d9da030ebbfc",
+      "measured": {
+        "nonblank": true,
+        "dimensions": {
+          "width": 16,
+          "height": 9
+        },
+        "aspect_ratio": 1.7777777777777777
+      }
+    }
+  ],
   "image_capable_review": {
     "status": "blocked_visual_review"
   },
@@ -34,7 +62,7 @@
       "payload": {
         "severity": "not_reviewed"
       },
-      "timestamp_order": 1788156879664
+      "timestamp_order": 1788172324689
     }
   ]
 }

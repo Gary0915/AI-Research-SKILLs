@@ -3,10 +3,10 @@
     "status": "APPROVED_FIGURE",
     "figure_id": "FIG001",
     "scientific_claim_support": "required",
-    "svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG001\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"quantitative_measured_result\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#ffffff\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1540\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Arial\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Synthetic Quantitative Plot</text><g data-semantic-role=\"plot_area\" id=\"obj-plot\"><line data-semantic-role=\"axis\" id=\"obj-x-axis\" stroke=\"#333333\" stroke-width=\"3\" x1=\"220\" x2=\"1380\" y1=\"700\" y2=\"700\"/><line data-semantic-role=\"axis\" id=\"obj-y-axis\" stroke=\"#333333\" stroke-width=\"3\" x1=\"220\" x2=\"220\" y1=\"700\" y2=\"190\"/><polyline data-semantic-role=\"data_series\" fill=\"none\" id=\"obj-series-1\" points=\"240,650 600,500 980,390 1340,250\" stroke=\"#0F9ED5\" stroke-width=\"4\"/><text data-semantic-role=\"label\" font-family=\"Arial\" font-size=\"20\" id=\"obj-x-label\" x=\"1280\" y=\"750\">x / a.u.</text><text data-semantic-role=\"label\" font-family=\"Arial\" font-size=\"20\" id=\"obj-y-label\" x=\"110\" y=\"200\">y / a.u.</text></g></svg>",
+    "svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG001\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"quantitative_measured_result\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"4\" width=\"1480\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Calibri\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Synthetic Quantitative Plot</text><g data-semantic-role=\"plot_area\" id=\"obj-plot\"><line data-semantic-role=\"axis\" id=\"obj-x-axis\" stroke=\"#333333\" stroke-width=\"3\" x1=\"220\" x2=\"1380\" y1=\"700\" y2=\"700\"/><line data-semantic-role=\"axis\" id=\"obj-y-axis\" stroke=\"#333333\" stroke-width=\"3\" x1=\"220\" x2=\"220\" y1=\"700\" y2=\"190\"/><polyline data-semantic-role=\"data_series\" fill=\"none\" id=\"obj-series-0\" points=\"240,650 1340,220\" stroke=\"#0F9ED5\" stroke-width=\"4\"/><text data-semantic-role=\"label\" font-family=\"Arial\" font-size=\"20\" id=\"obj-x-label\" x=\"1180\" y=\"750\">time / synthetic</text><text data-semantic-role=\"label\" font-family=\"Arial\" font-size=\"20\" id=\"obj-y-label\" x=\"110\" y=\"200\">response / synthetic</text><text data-semantic-role=\"annotation\" font-family=\"Arial\" font-size=\"16\" id=\"obj-y-domain\" x=\"230\" y=\"180\">1–2</text></g></svg>",
     "manifest": {
       "schema_version": "1.0.0",
-      "manifest_id": "FOM-FIG001-001",
+      "manifest_id": "SSE-FIG001-001",
       "manifest_version": "1.0.0",
       "figure_id": "FIG001",
       "figure_revision": "1",
@@ -16,9 +16,9 @@
       "figure_spec_hash": "8df2a031e0ffade964a6294feb40880e367b0c46ed283d271de6701808583984",
       "canonical_output": {
         "kind": "scientific_svg",
-        "canonical_sha256": "8777d68e3d63ae0e18201b1c47cb0455bba591fc35e521b61b60696ff26dbea6",
-        "source_sha256": "8777d68e3d63ae0e18201b1c47cb0455bba591fc35e521b61b60696ff26dbea6",
-        "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG001\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"quantitative_measured_result\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#ffffff\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1540\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Arial\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Synthetic Quantitative Plot</text><g data-semantic-role=\"plot_area\" id=\"obj-plot\"><line data-semantic-role=\"axis\" id=\"obj-x-axis\" stroke=\"#333333\" stroke-width=\"3\" x1=\"220\" x2=\"1380\" y1=\"700\" y2=\"700\"/><line data-semantic-role=\"axis\" id=\"obj-y-axis\" stroke=\"#333333\" stroke-width=\"3\" x1=\"220\" x2=\"220\" y1=\"700\" y2=\"190\"/><polyline data-semantic-role=\"data_series\" fill=\"none\" id=\"obj-series-1\" points=\"240,650 600,500 980,390 1340,250\" stroke=\"#0F9ED5\" stroke-width=\"4\"/><text data-semantic-role=\"label\" font-family=\"Arial\" font-size=\"20\" id=\"obj-x-label\" x=\"1280\" y=\"750\">x / a.u.</text><text data-semantic-role=\"label\" font-family=\"Arial\" font-size=\"20\" id=\"obj-y-label\" x=\"110\" y=\"200\">y / a.u.</text></g></svg>"
+        "canonical_sha256": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d",
+        "source_sha256": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d",
+        "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG001\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"quantitative_measured_result\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"4\" width=\"1480\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Calibri\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Synthetic Quantitative Plot</text><g data-semantic-role=\"plot_area\" id=\"obj-plot\"><line data-semantic-role=\"axis\" id=\"obj-x-axis\" stroke=\"#333333\" stroke-width=\"3\" x1=\"220\" x2=\"1380\" y1=\"700\" y2=\"700\"/><line data-semantic-role=\"axis\" id=\"obj-y-axis\" stroke=\"#333333\" stroke-width=\"3\" x1=\"220\" x2=\"220\" y1=\"700\" y2=\"190\"/><polyline data-semantic-role=\"data_series\" fill=\"none\" id=\"obj-series-0\" points=\"240,650 1340,220\" stroke=\"#0F9ED5\" stroke-width=\"4\"/><text data-semantic-role=\"label\" font-family=\"Arial\" font-size=\"20\" id=\"obj-x-label\" x=\"1180\" y=\"750\">time / synthetic</text><text data-semantic-role=\"label\" font-family=\"Arial\" font-size=\"20\" id=\"obj-y-label\" x=\"110\" y=\"200\">response / synthetic</text><text data-semantic-role=\"annotation\" font-family=\"Arial\" font-size=\"16\" id=\"obj-y-domain\" x=\"230\" y=\"180\">1–2</text></g></svg>"
       },
       "svg_profile_ref": "SSVG-P001",
       "svg_profile_version": "1.0.0",
@@ -684,28 +684,44 @@
         ],
         "application_trace": [
           {
+            "target_object_id": "obj-canvas",
             "category": "body_composition",
-            "attribute": "spacing",
-            "source": "vsp003",
-            "token_id": "connector-1e17aa270f"
-          },
-          {
-            "category": "line_style_grammar",
-            "attribute": "unresolved",
+            "attribute": "fill",
             "source": "implementation_fallback",
-            "token_id": null
+            "token_id": null,
+            "fallback_id": "FB-PANEL-FILL",
+            "resolved_source_value": "#f8f8f8",
+            "serialized_applied_value": "#f8f8f8"
           },
           {
+            "target_object_id": "obj-canvas",
+            "category": "line_style_grammar",
+            "attribute": "stroke-width",
+            "source": "implementation_fallback",
+            "token_id": null,
+            "fallback_id": "FB-LINE-WIDTH",
+            "resolved_source_value": "4",
+            "serialized_applied_value": "4"
+          },
+          {
+            "target_object_id": "obj-canvas",
             "category": "scientific_figure_metrics",
-            "attribute": "panel-geometry",
-            "source": "vsp003",
-            "token_id": "figure-image_matrix-annotation_density"
+            "attribute": "width",
+            "source": "implementation_fallback",
+            "token_id": null,
+            "fallback_id": "FB-PANEL-WIDTH",
+            "resolved_source_value": "1480",
+            "serialized_applied_value": "1480"
           },
           {
+            "target_object_id": "obj-title",
             "category": "typography_hierarchy",
             "attribute": "font-family",
-            "source": "vsp003",
-            "token_id": "type-body-complex_script-d4210042e9"
+            "source": "vsp003_provisional",
+            "token_id": "type-body-complex_script-d4210042e9",
+            "fallback_id": null,
+            "resolved_source_value": "Calibri",
+            "serialized_applied_value": "Calibri"
           }
         ],
         "material_semantic_colors_not_consumed": true
@@ -723,14 +739,40 @@
         "executed": false,
         "status": "not_run"
       },
-      "handoff_state": "raw_output_not_layout_eligible"
+      "handoff_state": "raw_output_not_layout_eligible",
+      "cp1_fom_ref": "FOM001",
+      "cp1_fom_hash": "a620d3998b960b661e81d50de9d556ae8994b38df5810778c6d5f5592b5850ea"
+    },
+    "cp1_fom": {
+      "schema_version": "3.0.0",
+      "figure_output_id": "FOM001",
+      "figure_id": "FIG001",
+      "figure_type": "scientific_plot",
+      "primary_artifact_kind": "svg_vector",
+      "renderer": "reproducible_plot",
+      "source_spec_sha256": "8df2a031e0ffade964a6294feb40880e367b0c46ed283d271de6701808583984",
+      "provenance_refs": [
+        "E101"
+      ],
+      "style_profile_ref": "VSP003",
+      "evidence_status": "synthetic_test_evidence",
+      "primary_artifact": {
+        "path": "artifacts/phase3/cp5-runtime/FIG001.svg",
+        "sha256": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d",
+        "data_provenance_refs": [
+          "E101"
+        ]
+      },
+      "output_part_lineage": [
+        "generated"
+      ]
     },
     "critic": {
       "status": "APPROVED_FIGURE",
       "report": {
         "schema_version": "1.0.0",
         "critic_report_id": "FCR-FIG001-001",
-        "manifest_id": "FOM-FIG001-001",
+        "manifest_id": "SSE-FIG001-001",
         "status": "APPROVED_FIGURE",
         "executed": true,
         "checks": [
@@ -738,8 +780,9 @@
             "check_id": "C0-01",
             "status": "pass",
             "facts": {
-              "contract": "CP1_FigureOutputManifest_relationship",
-              "svg_envelope_valid": true
+              "contract": "FigureOutputManifest-v3",
+              "cp1_fom_id": "FOM001",
+              "cp1_fom_hash": "a620d3998b960b661e81d50de9d556ae8994b38df5810778c6d5f5592b5850ea"
             }
           },
           {
@@ -769,15 +812,16 @@
             "check_id": "C0-05",
             "status": "pass",
             "facts": {
-              "figure_id": "FIG001",
-              "plan_ref": "FPL001"
+              "cp1_fom_ref": "FOM001",
+              "cp1_fom_hash": "a620d3998b960b661e81d50de9d556ae8994b38df5810778c6d5f5592b5850ea"
             }
           },
           {
             "check_id": "C0-06",
             "status": "pass",
             "facts": {
-              "canonical_hash": "8777d68e3d63ae0e18201b1c47cb0455bba591fc35e521b61b60696ff26dbea6"
+              "primary_artifact_hash": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d",
+              "canonical_hash": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d"
             }
           },
           {
@@ -840,15 +884,16 @@
             "check_id": "C0-15",
             "status": "pass",
             "facts": {
-              "source_ref_count": 1
+              "cp1_provenance_refs": [
+                "E101"
+              ]
             }
           },
           {
             "check_id": "C0-16",
             "status": "pass",
             "facts": {
-              "style_trace_count": 4,
-              "token_count": 61
+              "verified_style_application_count": 4
             }
           },
           {
@@ -873,21 +918,22 @@
             "check_id": "C0-19",
             "status": "pass",
             "facts": {
-              "specialist_binding": "scientific-plot-director"
+              "renderer": "reproducible_plot",
+              "style_profile_ref": "VSP003"
             }
           },
           {
             "check_id": "C0-20",
             "status": "pass",
             "facts": {
-              "raw_to_layout_forbidden": true
+              "runtime_type_boundary": "ApprovedFigureHandle"
             }
           },
           {
             "check_id": "C0-21",
             "status": "pass",
             "facts": {
-              "handoff_state": "raw_output_not_layout_eligible"
+              "runtime_type_boundary": "ApprovedFigureHandle"
             }
           }
         ]
@@ -895,18 +941,41 @@
       "approval": {
         "schema_version": "1.0.0",
         "approval_id": "APF-FIG001-001",
-        "manifest_id": "FOM-FIG001-001",
-        "manifest_hash": "05f3fb5712c02f6108c282a5081d026a196f23c999ac06c4a7b1cfb9fe4cd114",
+        "manifest_id": "SSE-FIG001-001",
+        "manifest_hash": "deef2e3638b2ea7992a2abb049ebdbcc8bc1b2403bc6b84913a6ff2a631c7b91",
         "critic_report_id": "FCR-FIG001-001",
-        "critic_report_hash": "147afe0440edd85dc5bc07de36031ddbe1aa310b617bd32c30ff22e8bb20b6a0",
+        "critic_report_hash": "26ad630b49a8788086522b1c4e805fd2098059602c7e58e9b85f0d74a14d2312",
         "figure_revision": "1",
         "approval_status": "APPROVED_FIGURE",
         "executed_static_critic": true
+      },
+      "bundle": {
+        "cp1_fom_id": "FOM001",
+        "cp1_fom_hash": "a620d3998b960b661e81d50de9d556ae8994b38df5810778c6d5f5592b5850ea"
       }
     },
     "data_provenance": {
       "evidence_status": "synthetic_test_evidence",
-      "data_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      "data_sha256": "1db634966941b7bfa88269ae272c97b44f29dfd374e44ffce6cfffe46cdb636a",
+      "scale": {
+        "x_domain": [
+          0,
+          1
+        ],
+        "y_domain": [
+          1,
+          2
+        ],
+        "x_range": [
+          240,
+          1340
+        ],
+        "y_range": [
+          650,
+          220
+        ],
+        "normalization": "affine"
+      }
     }
   },
   "photo_annotation": {
@@ -925,10 +994,10 @@
     "status": "APPROVED_FIGURE",
     "figure_id": "FIG009",
     "scientific_claim_support": "required",
-    "svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG009\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"image_matrix\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#ffffff\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1540\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Arial\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Synthetic Image Matrix</text><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-0-0\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-0-0\" stroke=\"#333333\" stroke-width=\"2\" width=\"420\" x=\"260\" y=\"220\"/><image data-semantic-role=\"image\" height=\"160\" href=\"data:image/png;base64,iVBORw0KGgo=\" id=\"obj-image-0-0\" width=\"400\" x=\"270\" y=\"230\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-panel-label-0-0\" x=\"285\" y=\"430\">synthetic panel 1,1</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-0-1\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-0-1\" stroke=\"#333333\" stroke-width=\"2\" width=\"420\" x=\"820\" y=\"220\"/><image data-semantic-role=\"image\" height=\"160\" href=\"data:image/png;base64,iVBORw0KGgo=\" id=\"obj-image-0-1\" width=\"400\" x=\"830\" y=\"230\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-panel-label-0-1\" x=\"845\" y=\"430\">synthetic panel 1,2</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-1-0\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-1-0\" stroke=\"#333333\" stroke-width=\"2\" width=\"420\" x=\"260\" y=\"500\"/><image data-semantic-role=\"image\" height=\"160\" href=\"data:image/png;base64,iVBORw0KGgo=\" id=\"obj-image-1-0\" width=\"400\" x=\"270\" y=\"510\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-panel-label-1-0\" x=\"285\" y=\"710\">synthetic panel 2,1</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-1-1\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-1-1\" stroke=\"#333333\" stroke-width=\"2\" width=\"420\" x=\"820\" y=\"500\"/><image data-semantic-role=\"image\" height=\"160\" href=\"data:image/png;base64,iVBORw0KGgo=\" id=\"obj-image-1-1\" width=\"400\" x=\"830\" y=\"510\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-panel-label-1-1\" x=\"845\" y=\"710\">synthetic panel 2,2</text></g></svg>",
+    "svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG009\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"image_matrix\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1480\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Calibri\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Synthetic Image Matrix</text><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-0\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-0\" stroke=\"#333333\" stroke-width=\"2\" width=\"500\" x=\"220\" y=\"210\"/><image data-semantic-role=\"image\" height=\"140\" href=\"assets/cp5e-synthetic-panels/p001.svg\" id=\"obj-image-0\" width=\"480\" x=\"230\" y=\"220\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-label-0\" x=\"240\" y=\"380\">synthetic panel 1</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-1\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-1\" stroke=\"#333333\" stroke-width=\"2\" width=\"500\" x=\"850\" y=\"210\"/><image data-semantic-role=\"image\" height=\"140\" href=\"assets/cp5e-synthetic-panels/p002.svg\" id=\"obj-image-1\" width=\"480\" x=\"860\" y=\"220\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-label-1\" x=\"870\" y=\"380\">synthetic panel 2</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-2\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-2\" stroke=\"#333333\" stroke-width=\"2\" width=\"500\" x=\"220\" y=\"480\"/><image data-semantic-role=\"image\" height=\"140\" href=\"assets/cp5e-synthetic-panels/p003.svg\" id=\"obj-image-2\" width=\"480\" x=\"230\" y=\"490\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-label-2\" x=\"240\" y=\"650\">synthetic panel 3</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-3\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-3\" stroke=\"#333333\" stroke-width=\"2\" width=\"500\" x=\"850\" y=\"480\"/><image data-semantic-role=\"image\" height=\"140\" href=\"assets/cp5e-synthetic-panels/p004.svg\" id=\"obj-image-3\" width=\"480\" x=\"860\" y=\"490\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-label-3\" x=\"870\" y=\"650\">synthetic panel 4</text></g></svg>",
     "manifest": {
       "schema_version": "1.0.0",
-      "manifest_id": "FOM-FIG009-001",
+      "manifest_id": "SSE-FIG009-001",
       "manifest_version": "1.0.0",
       "figure_id": "FIG009",
       "figure_revision": "1",
@@ -938,9 +1007,9 @@
       "figure_spec_hash": "f5b17b85f55b41a1baf8731e654dc32eea14acefa7efc042e8388525fd4a895a",
       "canonical_output": {
         "kind": "scientific_svg",
-        "canonical_sha256": "7b968f4042bbe1fe7f6b93f306a6dfe58da552e5d5f1a07509c9da442435c18e",
-        "source_sha256": "7b968f4042bbe1fe7f6b93f306a6dfe58da552e5d5f1a07509c9da442435c18e",
-        "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG009\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"image_matrix\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#ffffff\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1540\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Arial\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Synthetic Image Matrix</text><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-0-0\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-0-0\" stroke=\"#333333\" stroke-width=\"2\" width=\"420\" x=\"260\" y=\"220\"/><image data-semantic-role=\"image\" height=\"160\" href=\"data:image/png;base64,iVBORw0KGgo=\" id=\"obj-image-0-0\" width=\"400\" x=\"270\" y=\"230\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-panel-label-0-0\" x=\"285\" y=\"430\">synthetic panel 1,1</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-0-1\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-0-1\" stroke=\"#333333\" stroke-width=\"2\" width=\"420\" x=\"820\" y=\"220\"/><image data-semantic-role=\"image\" height=\"160\" href=\"data:image/png;base64,iVBORw0KGgo=\" id=\"obj-image-0-1\" width=\"400\" x=\"830\" y=\"230\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-panel-label-0-1\" x=\"845\" y=\"430\">synthetic panel 1,2</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-1-0\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-1-0\" stroke=\"#333333\" stroke-width=\"2\" width=\"420\" x=\"260\" y=\"500\"/><image data-semantic-role=\"image\" height=\"160\" href=\"data:image/png;base64,iVBORw0KGgo=\" id=\"obj-image-1-0\" width=\"400\" x=\"270\" y=\"510\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-panel-label-1-0\" x=\"285\" y=\"710\">synthetic panel 2,1</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-1-1\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-1-1\" stroke=\"#333333\" stroke-width=\"2\" width=\"420\" x=\"820\" y=\"500\"/><image data-semantic-role=\"image\" height=\"160\" href=\"data:image/png;base64,iVBORw0KGgo=\" id=\"obj-image-1-1\" width=\"400\" x=\"830\" y=\"510\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-panel-label-1-1\" x=\"845\" y=\"710\">synthetic panel 2,2</text></g></svg>"
+        "canonical_sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c",
+        "source_sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c",
+        "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG009\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"image_matrix\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1480\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Calibri\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Synthetic Image Matrix</text><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-0\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-0\" stroke=\"#333333\" stroke-width=\"2\" width=\"500\" x=\"220\" y=\"210\"/><image data-semantic-role=\"image\" height=\"140\" href=\"assets/cp5e-synthetic-panels/p001.svg\" id=\"obj-image-0\" width=\"480\" x=\"230\" y=\"220\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-label-0\" x=\"240\" y=\"380\">synthetic panel 1</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-1\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-1\" stroke=\"#333333\" stroke-width=\"2\" width=\"500\" x=\"850\" y=\"210\"/><image data-semantic-role=\"image\" height=\"140\" href=\"assets/cp5e-synthetic-panels/p002.svg\" id=\"obj-image-1\" width=\"480\" x=\"860\" y=\"220\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-label-1\" x=\"870\" y=\"380\">synthetic panel 2</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-2\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-2\" stroke=\"#333333\" stroke-width=\"2\" width=\"500\" x=\"220\" y=\"480\"/><image data-semantic-role=\"image\" height=\"140\" href=\"assets/cp5e-synthetic-panels/p003.svg\" id=\"obj-image-2\" width=\"480\" x=\"230\" y=\"490\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-label-2\" x=\"240\" y=\"650\">synthetic panel 3</text></g><g data-semantic-role=\"matrix_cell\" id=\"obj-cell-3\"><rect data-semantic-role=\"panel\" fill=\"#d1d1d1\" height=\"180\" id=\"obj-panel-3\" stroke=\"#333333\" stroke-width=\"2\" width=\"500\" x=\"850\" y=\"480\"/><image data-semantic-role=\"image\" height=\"140\" href=\"assets/cp5e-synthetic-panels/p004.svg\" id=\"obj-image-3\" width=\"480\" x=\"860\" y=\"490\"/><text data-semantic-role=\"panel_label\" font-family=\"Arial\" font-size=\"18\" id=\"obj-label-3\" x=\"870\" y=\"650\">synthetic panel 4</text></g></svg>"
       },
       "svg_profile_ref": "SSVG-P001",
       "svg_profile_version": "1.0.0",
@@ -1603,22 +1672,34 @@
         ],
         "application_trace": [
           {
+            "target_object_id": "obj-canvas",
             "category": "body_composition",
-            "attribute": "spacing",
-            "source": "vsp003",
-            "token_id": "connector-1e17aa270f"
+            "attribute": "fill",
+            "source": "implementation_fallback",
+            "token_id": null,
+            "fallback_id": "FB-PANEL-FILL",
+            "resolved_source_value": "#f8f8f8",
+            "serialized_applied_value": "#f8f8f8"
           },
           {
+            "target_object_id": "obj-canvas",
             "category": "scientific_figure_metrics",
-            "attribute": "panel-geometry",
-            "source": "vsp003",
-            "token_id": "figure-image_matrix-annotation_density"
+            "attribute": "width",
+            "source": "implementation_fallback",
+            "token_id": null,
+            "fallback_id": "FB-PANEL-WIDTH",
+            "resolved_source_value": "1480",
+            "serialized_applied_value": "1480"
           },
           {
+            "target_object_id": "obj-title",
             "category": "typography_hierarchy",
             "attribute": "font-family",
-            "source": "vsp003",
-            "token_id": "type-body-complex_script-d4210042e9"
+            "source": "vsp003_provisional",
+            "token_id": "type-body-complex_script-d4210042e9",
+            "fallback_id": null,
+            "resolved_source_value": "Calibri",
+            "serialized_applied_value": "Calibri"
           }
         ],
         "material_semantic_colors_not_consumed": true
@@ -1636,14 +1717,37 @@
         "executed": false,
         "status": "not_run"
       },
-      "handoff_state": "raw_output_not_layout_eligible"
+      "handoff_state": "raw_output_not_layout_eligible",
+      "cp1_fom_ref": "FOM009",
+      "cp1_fom_hash": "7dfc10f77a156ca94b31e628e75711f2761a0de29f778f8f40f10f9a6c375c27"
+    },
+    "cp1_fom": {
+      "schema_version": "3.0.0",
+      "figure_output_id": "FOM009",
+      "figure_id": "FIG009",
+      "figure_type": "vector_diagram",
+      "primary_artifact_kind": "svg_vector",
+      "renderer": "source_evidence_matrix",
+      "source_spec_sha256": "f5b17b85f55b41a1baf8731e654dc32eea14acefa7efc042e8388525fd4a895a",
+      "provenance_refs": [
+        "E101"
+      ],
+      "style_profile_ref": "VSP003",
+      "evidence_status": "non_evidence",
+      "primary_artifact": {
+        "path": "artifacts/phase3/cp5-runtime/FIG009.svg",
+        "sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
+      },
+      "output_part_lineage": [
+        "generated"
+      ]
     },
     "critic": {
       "status": "APPROVED_FIGURE",
       "report": {
         "schema_version": "1.0.0",
         "critic_report_id": "FCR-FIG009-001",
-        "manifest_id": "FOM-FIG009-001",
+        "manifest_id": "SSE-FIG009-001",
         "status": "APPROVED_FIGURE",
         "executed": true,
         "checks": [
@@ -1651,8 +1755,9 @@
             "check_id": "C0-01",
             "status": "pass",
             "facts": {
-              "contract": "CP1_FigureOutputManifest_relationship",
-              "svg_envelope_valid": true
+              "contract": "FigureOutputManifest-v3",
+              "cp1_fom_id": "FOM009",
+              "cp1_fom_hash": "7dfc10f77a156ca94b31e628e75711f2761a0de29f778f8f40f10f9a6c375c27"
             }
           },
           {
@@ -1682,15 +1787,16 @@
             "check_id": "C0-05",
             "status": "pass",
             "facts": {
-              "figure_id": "FIG009",
-              "plan_ref": "FPL009"
+              "cp1_fom_ref": "FOM009",
+              "cp1_fom_hash": "7dfc10f77a156ca94b31e628e75711f2761a0de29f778f8f40f10f9a6c375c27"
             }
           },
           {
             "check_id": "C0-06",
             "status": "pass",
             "facts": {
-              "canonical_hash": "7b968f4042bbe1fe7f6b93f306a6dfe58da552e5d5f1a07509c9da442435c18e"
+              "primary_artifact_hash": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c",
+              "canonical_hash": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
             }
           },
           {
@@ -1753,15 +1859,16 @@
             "check_id": "C0-15",
             "status": "pass",
             "facts": {
-              "source_ref_count": 1
+              "cp1_provenance_refs": [
+                "E101"
+              ]
             }
           },
           {
             "check_id": "C0-16",
             "status": "pass",
             "facts": {
-              "style_trace_count": 3,
-              "token_count": 61
+              "verified_style_application_count": 3
             }
           },
           {
@@ -1786,21 +1893,22 @@
             "check_id": "C0-19",
             "status": "pass",
             "facts": {
-              "specialist_binding": "image-matrix-director"
+              "renderer": "source_evidence_matrix",
+              "style_profile_ref": "VSP003"
             }
           },
           {
             "check_id": "C0-20",
             "status": "pass",
             "facts": {
-              "raw_to_layout_forbidden": true
+              "runtime_type_boundary": "ApprovedFigureHandle"
             }
           },
           {
             "check_id": "C0-21",
             "status": "pass",
             "facts": {
-              "handoff_state": "raw_output_not_layout_eligible"
+              "runtime_type_boundary": "ApprovedFigureHandle"
             }
           }
         ]
@@ -1808,13 +1916,17 @@
       "approval": {
         "schema_version": "1.0.0",
         "approval_id": "APF-FIG009-001",
-        "manifest_id": "FOM-FIG009-001",
-        "manifest_hash": "ec3aa5ee73566096698376dde3e7976272926ace324d83ba7a3ede765df85663",
+        "manifest_id": "SSE-FIG009-001",
+        "manifest_hash": "007912ca1eddb73b6a43fa11e7e10c346ff5996cd5f61883cd3f4216c72a72a1",
         "critic_report_id": "FCR-FIG009-001",
-        "critic_report_hash": "8e78fff0ffedac1abf29257b834bee9f16c44d7d2f03935f6c666ba7f0d69ca3",
+        "critic_report_hash": "ba1f1f4a95ce567138ea46e519b5c891128dfdc0fee67f792867f735ccd31274",
         "figure_revision": "1",
         "approval_status": "APPROVED_FIGURE",
         "executed_static_critic": true
+      },
+      "bundle": {
+        "cp1_fom_id": "FOM009",
+        "cp1_fom_hash": "7dfc10f77a156ca94b31e628e75711f2761a0de29f778f8f40f10f9a6c375c27"
       }
     },
     "panel_order": [
@@ -1823,16 +1935,54 @@
       "P003",
       "P004"
     ],
-    "scale_policy": "shared_synthetic_scale"
+    "scale_policy": "shared_synthetic_scale",
+    "panel_lineage": [
+      {
+        "panel_id": "P001",
+        "source_asset_ref": "assets/cp5e-synthetic-panels/p001.svg",
+        "source_sha256": "002c68cb1bf1cba3d9ac3182b425155ce53cfc799cab7f82011a1934bf06a172",
+        "provenance_ref": "E101",
+        "order": 1,
+        "scale_policy": "shared_synthetic_scale",
+        "label": "synthetic panel 1"
+      },
+      {
+        "panel_id": "P002",
+        "source_asset_ref": "assets/cp5e-synthetic-panels/p002.svg",
+        "source_sha256": "1c6bffbecb5ba7b0da8e1b331f456d3f4089823042596214457aebd711fa5d3b",
+        "provenance_ref": "E101",
+        "order": 2,
+        "scale_policy": "shared_synthetic_scale",
+        "label": "synthetic panel 2"
+      },
+      {
+        "panel_id": "P003",
+        "source_asset_ref": "assets/cp5e-synthetic-panels/p003.svg",
+        "source_sha256": "304f0e476636cf798d403909d5a658b94faded0d351e2c49a1716f72334e5cdd",
+        "provenance_ref": "E101",
+        "order": 3,
+        "scale_policy": "shared_synthetic_scale",
+        "label": "synthetic panel 3"
+      },
+      {
+        "panel_id": "P004",
+        "source_asset_ref": "assets/cp5e-synthetic-panels/p004.svg",
+        "source_sha256": "b4734e95c7493d7413f03532c9f3407b85598c3d5d2a232c203db489d67a7a5a",
+        "provenance_ref": "E101",
+        "order": 4,
+        "scale_policy": "shared_synthetic_scale",
+        "label": "synthetic panel 4"
+      }
+    ]
   },
   "concept_illustration": {
     "status": "APPROVED_FIGURE",
     "figure_id": "FIG010",
     "scientific_claim_support": "forbidden",
-    "svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG010\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"organic_concept\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#ffffff\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1540\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Arial\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Concept Illustration</text><circle cx=\"480\" cy=\"450\" data-semantic-role=\"node\" fill=\"#CAEEFB\" id=\"obj-concept-source\" r=\"110\" stroke=\"#333333\" stroke-width=\"2\"/><circle cx=\"1120\" cy=\"450\" data-semantic-role=\"node\" fill=\"#FFC000\" id=\"obj-concept-target\" r=\"110\" stroke=\"#333333\" stroke-width=\"2\"/><line data-semantic-role=\"flow\" id=\"obj-concept-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"3\" x1=\"590\" x2=\"1010\" y1=\"450\" y2=\"450\"/><text data-semantic-role=\"annotation\" font-family=\"Arial\" font-size=\"20\" id=\"obj-concept-label\" x=\"600\" y=\"560\">non-evidence explanatory concept</text></svg>",
+    "svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG010\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"organic_concept\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1540\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Calibri\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Concept Illustration</text><circle cx=\"480\" cy=\"450\" data-semantic-role=\"node\" fill=\"#CAEEFB\" id=\"obj-concept-source\" r=\"110\" stroke=\"#333333\" stroke-width=\"2\"/><circle cx=\"1120\" cy=\"450\" data-semantic-role=\"node\" fill=\"#FFC000\" id=\"obj-concept-target\" r=\"110\" stroke=\"#333333\" stroke-width=\"2\"/><line data-semantic-role=\"flow\" id=\"obj-concept-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"3\" x1=\"590\" x2=\"1010\" y1=\"450\" y2=\"450\"/><text data-semantic-role=\"annotation\" font-family=\"Arial\" font-size=\"20\" id=\"obj-concept-label\" x=\"600\" y=\"560\">non-evidence explanatory concept</text></svg>",
     "manifest": {
       "schema_version": "1.0.0",
-      "manifest_id": "FOM-FIG010-001",
+      "manifest_id": "SSE-FIG010-001",
       "manifest_version": "1.0.0",
       "figure_id": "FIG010",
       "figure_revision": "1",
@@ -1842,9 +1992,9 @@
       "figure_spec_hash": "f2925ef6e1674f2f10b504f8dc6420aae58364cff721ca44b1488d4814868bad",
       "canonical_output": {
         "kind": "scientific_svg",
-        "canonical_sha256": "9558041f350d4709373bcfe168fe88ab146900bec7d4ee05a8b35400747309f9",
-        "source_sha256": "9558041f350d4709373bcfe168fe88ab146900bec7d4ee05a8b35400747309f9",
-        "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG010\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"organic_concept\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#ffffff\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1540\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Arial\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Concept Illustration</text><circle cx=\"480\" cy=\"450\" data-semantic-role=\"node\" fill=\"#CAEEFB\" id=\"obj-concept-source\" r=\"110\" stroke=\"#333333\" stroke-width=\"2\"/><circle cx=\"1120\" cy=\"450\" data-semantic-role=\"node\" fill=\"#FFC000\" id=\"obj-concept-target\" r=\"110\" stroke=\"#333333\" stroke-width=\"2\"/><line data-semantic-role=\"flow\" id=\"obj-concept-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"3\" x1=\"590\" x2=\"1010\" y1=\"450\" y2=\"450\"/><text data-semantic-role=\"annotation\" font-family=\"Arial\" font-size=\"20\" id=\"obj-concept-label\" x=\"600\" y=\"560\">non-evidence explanatory concept</text></svg>"
+        "canonical_sha256": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7",
+        "source_sha256": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7",
+        "canonical_svg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><svg xmlns=\"http://www.w3.org/2000/svg\" data-thesis-figure-id=\"FIG010\" data-thesis-svg-version=\"1.0.0\" data-visual-class=\"organic_concept\" viewBox=\"0 0 1600 900\"><defs><marker data-semantic-role=\"arrow\" id=\"obj-arrow\" markerHeight=\"8\" markerWidth=\"8\" orient=\"auto\" refX=\"7\" refY=\"4\"><path d=\"M 0 0 L 8 4 L 0 8 Z\" data-semantic-role=\"branch\" fill=\"#333333\" id=\"obj-arrow-path\"/></marker></defs><g data-semantic-role=\"container\" id=\"obj-frame\"><rect data-semantic-role=\"panel\" fill=\"#f8f8f8\" height=\"840\" id=\"obj-canvas\" stroke=\"#333333\" stroke-width=\"2\" width=\"1540\" x=\"30\" y=\"30\"/></g><text data-semantic-role=\"title\" font-family=\"Calibri\" font-size=\"34\" font-weight=\"bold\" id=\"obj-title\" x=\"80\" y=\"95\">Concept Illustration</text><circle cx=\"480\" cy=\"450\" data-semantic-role=\"node\" fill=\"#CAEEFB\" id=\"obj-concept-source\" r=\"110\" stroke=\"#333333\" stroke-width=\"2\"/><circle cx=\"1120\" cy=\"450\" data-semantic-role=\"node\" fill=\"#FFC000\" id=\"obj-concept-target\" r=\"110\" stroke=\"#333333\" stroke-width=\"2\"/><line data-semantic-role=\"flow\" id=\"obj-concept-flow\" marker-end=\"url(#obj-arrow)\" stroke=\"#333333\" stroke-width=\"3\" x1=\"590\" x2=\"1010\" y1=\"450\" y2=\"450\"/><text data-semantic-role=\"annotation\" font-family=\"Arial\" font-size=\"20\" id=\"obj-concept-label\" x=\"600\" y=\"560\">non-evidence explanatory concept</text></svg>"
       },
       "svg_profile_ref": "SSVG-P001",
       "svg_profile_version": "1.0.0",
@@ -2312,16 +2462,24 @@
         ],
         "application_trace": [
           {
+            "target_object_id": "obj-canvas",
             "category": "body_composition",
-            "attribute": "spacing",
-            "source": "vsp003",
-            "token_id": "connector-1e17aa270f"
+            "attribute": "fill",
+            "source": "implementation_fallback",
+            "token_id": null,
+            "fallback_id": "FB-PANEL-FILL",
+            "resolved_source_value": "#f8f8f8",
+            "serialized_applied_value": "#f8f8f8"
           },
           {
+            "target_object_id": "obj-title",
             "category": "typography_hierarchy",
             "attribute": "font-family",
-            "source": "vsp003",
-            "token_id": "type-body-complex_script-d4210042e9"
+            "source": "vsp003_provisional",
+            "token_id": "type-body-complex_script-d4210042e9",
+            "fallback_id": null,
+            "resolved_source_value": "Calibri",
+            "serialized_applied_value": "Calibri"
           }
         ],
         "material_semantic_colors_not_consumed": true
@@ -2339,14 +2497,37 @@
         "executed": false,
         "status": "not_run"
       },
-      "handoff_state": "raw_output_not_layout_eligible"
+      "handoff_state": "raw_output_not_layout_eligible",
+      "cp1_fom_ref": "FOM010",
+      "cp1_fom_hash": "6f3add6c6a9a5ad1f728aaa205e0b59713ab47577c626f3ec352ea4dfa63762d"
+    },
+    "cp1_fom": {
+      "schema_version": "3.0.0",
+      "figure_output_id": "FOM010",
+      "figure_id": "FIG010",
+      "figure_type": "vector_diagram",
+      "primary_artifact_kind": "svg_vector",
+      "renderer": "generated_non_evidence",
+      "source_spec_sha256": "f2925ef6e1674f2f10b504f8dc6420aae58364cff721ca44b1488d4814868bad",
+      "provenance_refs": [
+        "A001"
+      ],
+      "style_profile_ref": "VSP003",
+      "evidence_status": "non_evidence",
+      "primary_artifact": {
+        "path": "artifacts/phase3/cp5-runtime/FIG010.svg",
+        "sha256": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7"
+      },
+      "output_part_lineage": [
+        "generated"
+      ]
     },
     "critic": {
       "status": "APPROVED_FIGURE",
       "report": {
         "schema_version": "1.0.0",
         "critic_report_id": "FCR-FIG010-001",
-        "manifest_id": "FOM-FIG010-001",
+        "manifest_id": "SSE-FIG010-001",
         "status": "APPROVED_FIGURE",
         "executed": true,
         "checks": [
@@ -2354,8 +2535,9 @@
             "check_id": "C0-01",
             "status": "pass",
             "facts": {
-              "contract": "CP1_FigureOutputManifest_relationship",
-              "svg_envelope_valid": true
+              "contract": "FigureOutputManifest-v3",
+              "cp1_fom_id": "FOM010",
+              "cp1_fom_hash": "6f3add6c6a9a5ad1f728aaa205e0b59713ab47577c626f3ec352ea4dfa63762d"
             }
           },
           {
@@ -2385,15 +2567,16 @@
             "check_id": "C0-05",
             "status": "pass",
             "facts": {
-              "figure_id": "FIG010",
-              "plan_ref": "FPL010"
+              "cp1_fom_ref": "FOM010",
+              "cp1_fom_hash": "6f3add6c6a9a5ad1f728aaa205e0b59713ab47577c626f3ec352ea4dfa63762d"
             }
           },
           {
             "check_id": "C0-06",
             "status": "pass",
             "facts": {
-              "canonical_hash": "9558041f350d4709373bcfe168fe88ab146900bec7d4ee05a8b35400747309f9"
+              "primary_artifact_hash": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7",
+              "canonical_hash": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7"
             }
           },
           {
@@ -2456,15 +2639,16 @@
             "check_id": "C0-15",
             "status": "pass",
             "facts": {
-              "source_ref_count": 0
+              "cp1_provenance_refs": [
+                "A001"
+              ]
             }
           },
           {
             "check_id": "C0-16",
             "status": "pass",
             "facts": {
-              "style_trace_count": 2,
-              "token_count": 42
+              "verified_style_application_count": 2
             }
           },
           {
@@ -2489,21 +2673,22 @@
             "check_id": "C0-19",
             "status": "pass",
             "facts": {
-              "specialist_binding": "concept-illustration-director"
+              "renderer": "generated_non_evidence",
+              "style_profile_ref": "VSP003"
             }
           },
           {
             "check_id": "C0-20",
             "status": "pass",
             "facts": {
-              "raw_to_layout_forbidden": true
+              "runtime_type_boundary": "ApprovedFigureHandle"
             }
           },
           {
             "check_id": "C0-21",
             "status": "pass",
             "facts": {
-              "handoff_state": "raw_output_not_layout_eligible"
+              "runtime_type_boundary": "ApprovedFigureHandle"
             }
           }
         ]
@@ -2511,13 +2696,17 @@
       "approval": {
         "schema_version": "1.0.0",
         "approval_id": "APF-FIG010-001",
-        "manifest_id": "FOM-FIG010-001",
-        "manifest_hash": "37f1423bd0ebabb392a6682f293638f569058a64e5b38bc979086e8c7c1616b9",
+        "manifest_id": "SSE-FIG010-001",
+        "manifest_hash": "56ba8bc7c2bc255144e289a0bee39236f76f7ca8443df7fffdc53af1b3d1f3d6",
         "critic_report_id": "FCR-FIG010-001",
-        "critic_report_hash": "26bdfc13aae373a9d2aaf05dc8bae7e90f869d3a949539af6de1fcadfc963244",
+        "critic_report_hash": "9ba25d4e334b6fe3ded34b93666932d300d2616023ed0378b330c4a56dd7611b",
         "figure_revision": "1",
         "approval_status": "APPROVED_FIGURE",
         "executed_static_critic": true
+      },
+      "bundle": {
+        "cp1_fom_id": "FOM010",
+        "cp1_fom_hash": "6f3add6c6a9a5ad1f728aaa205e0b59713ab47577c626f3ec352ea4dfa63762d"
       }
     }
   }

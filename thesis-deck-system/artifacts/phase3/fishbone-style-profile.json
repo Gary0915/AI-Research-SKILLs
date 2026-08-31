@@ -1,8 +1,44 @@
 {
   "schema_version": "1.0.0",
   "profile_id": "CP5G-FISHBONE-001",
-  "spine_placement": "provisional",
-  "branch_spacing": "provisional",
-  "focus_emphasis": "provisional",
+  "fields": {
+    "spine_placement": {
+      "status": "provisional",
+      "value": "centerline",
+      "evidence_ref": "D1-fishbone-layout"
+    },
+    "branch_spacing": {
+      "status": "provisional",
+      "value": "depth_ordered",
+      "evidence_ref": "D1-fishbone-layout"
+    },
+    "label_placement": {
+      "status": "provisional",
+      "value": "adjacent_node",
+      "evidence_ref": "D1-fishbone-layout"
+    },
+    "focus_emphasis": {
+      "status": "provisional",
+      "value": "generic_emphasis_role",
+      "evidence_ref": "VSP003"
+    },
+    "completed_status": {
+      "status": "insufficient_evidence"
+    },
+    "partial_status": {
+      "status": "insufficient_evidence"
+    },
+    "failed_status": {
+      "status": "insufficient_evidence"
+    },
+    "future_status": {
+      "status": "insufficient_evidence"
+    },
+    "safe_bounds": {
+      "status": "provisional",
+      "value": "0.05_to_0.95",
+      "evidence_ref": "D1-fishbone-layout"
+    }
+  },
   "material_semantic_colors": "unresolved"
 }

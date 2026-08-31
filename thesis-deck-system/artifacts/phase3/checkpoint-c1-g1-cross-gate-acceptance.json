@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "acceptance_id": "CP5-C1-G1-CROSS-001",
+  "cross_gate_status": "pass",
+  "invariant_count": 12,
+  "invariants": [
+    {
+      "invariant_id": "C1-CP1-FOM-TRUST-CHAIN",
+      "status": "pass",
+      "facts": {
+        "cp1_fom_count": 8,
+        "envelope_count": 8
+      }
+    },
+    {
+      "invariant_id": "C1-CRITIC-CHAIN",
+      "status": "pass",
+      "facts": {
+        "approved_chain_count": 8,
+        "owning_check_count": 105
+      }
+    },
+    {
+      "invariant_id": "C1-RUNTIME-HANDLE",
+      "status": "pass",
+      "facts": {
+        "persisted_approval_direct_layout": "rejected",
+        "runtime_handle": "accepted"
+      }
+    },
+    {
+      "invariant_id": "C1-STYLE-VALUE-APPLICATION",
+      "status": "pass",
+      "facts": {
+        "application_count": 16
+      }
+    },
+    {
+      "invariant_id": "D1-GENERALIZED-DIRECTORS",
+      "status": "pass",
+      "facts": {
+        "director_count": 5,
+        "distinct_svg_hashes": 5
+      }
+    },
+    {
+      "invariant_id": "E1-PLOT-DATA-BINDING",
+      "status": "pass",
+      "facts": {
+        "data_sha256": "1db634966941b7bfa88269ae272c97b44f29dfd374e44ffce6cfffe46cdb636a",
+        "scale": {
+          "x_domain": [
+            0,
+            1
+          ],
+          "y_domain": [
+            1,
+            2
+          ],
+          "x_range": [
+            240,
+            1340
+          ],
+          "y_range": [
+            650,
+            220
+          ],
+          "normalization": "affine"
+        }
+      }
+    },
+    {
+      "invariant_id": "E1-MATRIX-PANEL-LINEAGE",
+      "status": "pass",
+      "facts": {
+        "panel_count": 4,
+        "scale_policy": "shared_synthetic_scale"
+      }
+    },
+    {
+      "invariant_id": "E1-SOURCE-TRUTH",
+      "status": "pass",
+      "facts": {
+        "photo": "BLOCKED_SOURCE",
+        "literature": "BLOCKED_SOURCE",
+        "concept": "non_evidence"
+      }
+    },
+    {
+      "invariant_id": "F1-POSITIVE-RENDERER",
+      "status": "pass",
+      "facts": {
+        "renderer": "deterministic-test-renderer",
+        "png_sha256": "5e52618c4436a2e8ff6f57e5be0cf7bcfcdff3cf5564ac2dca3e8ba8e2e4fc0a"
+      }
+    },
+    {
+      "invariant_id": "G1-MEASURED-CALIBRATION",
+      "status": "pass",
+      "facts": {
+        "archetype_count": 18,
+        "measured_metric_count": 36
+      }
+    },
+    {
+      "invariant_id": "G1-BENCHMARKS",
+      "status": "pass",
+      "facts": {
+        "representative_benchmark_count": 8,
+        "stress_benchmark_count": 8
+      }
+    },
+    {
+      "invariant_id": "G1-PRIVATE-BOUNDARY",
+      "status": "pass",
+      "facts": {
+        "private_attempts": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "acceptance_sha256": "eaed85eb181f1f676a3ac73d66b628b0935ffb41fbb26738f617a34685b168c7"
+}

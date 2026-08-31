@@ -2,10 +2,10 @@
   {
     "schema_version": "1.0.0",
     "approval_id": "APF-FIG002-001",
-    "manifest_id": "FOM-FIG002-001",
-    "manifest_hash": "709951f6378a90ac5c9718d888f4baf3de8cd86ec76da628d18d0acaa6deb8b4",
+    "manifest_id": "SSE-FIG002-001",
+    "manifest_hash": "d3403f996c4ffa939a1b7cb41531b91ad7f3fffa63b0c58319fb5552d86596a9",
     "critic_report_id": "FCR-FIG002-001",
-    "critic_report_hash": "0859e253176c06422b90ed10658c09f250e641a1eee048e545cb6de4e1b99698",
+    "critic_report_hash": "8f6bc0886676972c9588d735e81aa64ce069309fca16d331b98a49476817eff5",
     "figure_revision": "1",
     "approval_status": "APPROVED_FIGURE",
     "executed_static_critic": true
@@ -13,10 +13,10 @@
   {
     "schema_version": "1.0.0",
     "approval_id": "APF-FIG006-001",
-    "manifest_id": "FOM-FIG006-001",
-    "manifest_hash": "238f8a8395d1152e0fb76c3ab806106aeb9bfbda63e45e3f4b71f52edf04ec10",
+    "manifest_id": "SSE-FIG006-001",
+    "manifest_hash": "3f6a0ad151848b296b83e92d3baacd852a07018b604827d42bb72d117427fc1f",
     "critic_report_id": "FCR-FIG006-001",
-    "critic_report_hash": "d31d22739b4b676107148237eded4b62c99169ec47bdd52bd8e78669e76efce3",
+    "critic_report_hash": "d9f2532da722efeb47221bfa2ffc2b557d1f06d39201045d34de4c441abbe425",
     "figure_revision": "1",
     "approval_status": "APPROVED_FIGURE",
     "executed_static_critic": true
@@ -24,10 +24,10 @@
   {
     "schema_version": "1.0.0",
     "approval_id": "APF-FIG007-001",
-    "manifest_id": "FOM-FIG007-001",
-    "manifest_hash": "c05fe30691667acbaeddd0e493ff3385258907a2cae70fa0f0e3b2c907af805a",
+    "manifest_id": "SSE-FIG007-001",
+    "manifest_hash": "4b7f32896636f998729037562194919ceed670d4e5355874849080f8b3dff41d",
     "critic_report_id": "FCR-FIG007-001",
-    "critic_report_hash": "fcfd621717188fc119cff3798b20ec2a64ce9149cb95961f21344da83ee54a34",
+    "critic_report_hash": "8b4d8866ea0668207a1b36eacdda9f1638115abbd41a0d19caee002b2e777388",
     "figure_revision": "1",
     "approval_status": "APPROVED_FIGURE",
     "executed_static_critic": true
@@ -35,10 +35,10 @@
   {
     "schema_version": "1.0.0",
     "approval_id": "APF-FIG003-001",
-    "manifest_id": "FOM-FIG003-001",
-    "manifest_hash": "9d30c658c72ccf2217d3ce7236008c25cf59144753d6b9766cd413e6c9cd30c4",
+    "manifest_id": "SSE-FIG003-001",
+    "manifest_hash": "643be6c461dfebf5e7188fb164cd9b26c238be1ddcfe2f266faf2d03fb94f2ba",
     "critic_report_id": "FCR-FIG003-001",
-    "critic_report_hash": "4e6f814876a71416a4192cc7713bc3cb4d13cdb13fa4b760cae2bf101f61db6f",
+    "critic_report_hash": "c0e9cac738a340147c15f390f83dfabf12349b6960cfb91e9a5201e515dd910c",
     "figure_revision": "1",
     "approval_status": "APPROVED_FIGURE",
     "executed_static_critic": true
@@ -46,10 +46,43 @@
   {
     "schema_version": "1.0.0",
     "approval_id": "APF-FIG008-001",
-    "manifest_id": "FOM-FIG008-001",
-    "manifest_hash": "075c2e99262aca71ade7be235b5f7a4532c54b0dfb70fc86b771094755cbd98b",
+    "manifest_id": "SSE-FIG008-001",
+    "manifest_hash": "7d59b283019d7749064c14fbaa10e368dd1b45c16b4c16321086ad60a042d29e",
     "critic_report_id": "FCR-FIG008-001",
-    "critic_report_hash": "2e341b2e44bafaa160fb8b04ccb5a520594d45c389baa66b811520d74428a879",
+    "critic_report_hash": "e032434a63fbc5ac840e9282a95f70bd06f5241b42d5a46a8cb11b61762438d7",
+    "figure_revision": "1",
+    "approval_status": "APPROVED_FIGURE",
+    "executed_static_critic": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "approval_id": "APF-FIG001-001",
+    "manifest_id": "SSE-FIG001-001",
+    "manifest_hash": "deef2e3638b2ea7992a2abb049ebdbcc8bc1b2403bc6b84913a6ff2a631c7b91",
+    "critic_report_id": "FCR-FIG001-001",
+    "critic_report_hash": "26ad630b49a8788086522b1c4e805fd2098059602c7e58e9b85f0d74a14d2312",
+    "figure_revision": "1",
+    "approval_status": "APPROVED_FIGURE",
+    "executed_static_critic": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "approval_id": "APF-FIG009-001",
+    "manifest_id": "SSE-FIG009-001",
+    "manifest_hash": "007912ca1eddb73b6a43fa11e7e10c346ff5996cd5f61883cd3f4216c72a72a1",
+    "critic_report_id": "FCR-FIG009-001",
+    "critic_report_hash": "ba1f1f4a95ce567138ea46e519b5c891128dfdc0fee67f792867f735ccd31274",
+    "figure_revision": "1",
+    "approval_status": "APPROVED_FIGURE",
+    "executed_static_critic": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "approval_id": "APF-FIG010-001",
+    "manifest_id": "SSE-FIG010-001",
+    "manifest_hash": "56ba8bc7c2bc255144e289a0bee39236f76f7ca8443df7fffdc53af1b3d1f3d6",
+    "critic_report_id": "FCR-FIG010-001",
+    "critic_report_hash": "9ba25d4e334b6fe3ded34b93666932d300d2616023ed0378b330c4a56dd7611b",
     "figure_revision": "1",
     "approval_status": "APPROVED_FIGURE",
     "executed_static_critic": true

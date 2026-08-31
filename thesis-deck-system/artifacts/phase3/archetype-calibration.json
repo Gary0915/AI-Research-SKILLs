@@ -3,129 +3,615 @@
   "archetypes": [
     {
       "archetype_id": "A01",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "7e3f01dcf50372a46ebf8ddd2ed3a47a928c11e6b5aaa16db382181ec980d768",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 90,
+          "target_range": [
+            90,
+            90
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 1,
+          "target_range": [
+            0,
+            1
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A02",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "424860fb554b9eb61e74f5d401494d56e4bbb39e988b32cacb53bcc70849791f",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 180,
+          "target_range": [
+            180,
+            180
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 1,
+          "target_range": [
+            0,
+            1
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A03",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "c07096c04147e117d1b21d3f8fc1d73dd96efe6103067cef83e2706e39a8def8",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 60,
+          "target_range": [
+            60,
+            60
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 1,
+          "target_range": [
+            1,
+            1
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A04",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "0f1a125ed8f6fe50dfac3202c7888e7a66149eadfc7b8bfa47b97496e7e7760a",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 180,
+          "target_range": [
+            180,
+            180
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 3,
+          "target_range": [
+            1,
+            3
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A05",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "72dbe64ac8dd0f45af18efce2d45ca37725ee757226811af7ef36fa9ebacac5c",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 260,
+          "target_range": [
+            260,
+            260
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 2,
+          "target_range": [
+            0,
+            2
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A06",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "1b7246ed09ae58fca6eee9688ad48f8d98aa4e5533d9d4e9c2c83c246f0f2882",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 180,
+          "target_range": [
+            180,
+            180
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 2,
+          "target_range": [
+            1,
+            2
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A07",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "84e501e0757f8520454ea8b28eddb4118c37d2650dce4b68e7f377e793e68c20",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 120,
+          "target_range": [
+            120,
+            120
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 3,
+          "target_range": [
+            2,
+            3
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A08",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "7dc8e4013067aacab5683454bb03408c8590e3667bcd8bec020e9070e9b5755b",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 160,
+          "target_range": [
+            160,
+            160
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 4,
+          "target_range": [
+            0,
+            4
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A09",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "37c3eaa637cfd7849b57bc3265cc2934371e0693dd0d655d8d6e3ca0748e82b7",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 260,
+          "target_range": [
+            260,
+            260
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 2,
+          "target_range": [
+            0,
+            2
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A10",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "f6629e22f0b04a701903c769231d1553e8a8f0eec34c73f1283b919cef62b986",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 130,
+          "target_range": [
+            130,
+            130
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 2,
+          "target_range": [
+            1,
+            2
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A11",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "d6b865759c69c3ffdfb407a3d7730863284dc58c2ed30efab1236d71f3f34bdb",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 260,
+          "target_range": [
+            260,
+            260
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 4,
+          "target_range": [
+            1,
+            4
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A12",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "cfeec025e48e3c3b2abc5be03a0b557f1898fa7c1b0317305d72d3f3befb89e5",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 100,
+          "target_range": [
+            100,
+            100
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 12,
+          "target_range": [
+            4,
+            12
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A13",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "89fb1bdc707fb7752fe7b7eb391f0ab98d72ba77028dbc925a230a689d033ea2",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 190,
+          "target_range": [
+            190,
+            190
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 2,
+          "target_range": [
+            1,
+            2
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A14",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "c9652b47267d6eb1f070cfdb62e87936179227b696e0f47cab3ca1322b94a48e",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 300,
+          "target_range": [
+            300,
+            300
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 3,
+          "target_range": [
+            0,
+            3
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A15",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "7b3daeb863b7317606fe6d177cfdefafad04e7d833c179f80cfa5553cb70bf73",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 240,
+          "target_range": [
+            240,
+            240
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 1,
+          "target_range": [
+            0,
+            1
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A16",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "bd8cd5fd4e9fdfe19d6cbe45a6ecec332c8ff33dd793e8cf6598b9a7b00146eb",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 220,
+          "target_range": [
+            220,
+            220
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 1,
+          "target_range": [
+            0,
+            1
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A17",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "698347ac10f108a20cf56b943e07fa4ed7dc81d8c620f2a3efed5fd8758bf4d6",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 260,
+          "target_range": [
+            260,
+            260
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 1,
+          "target_range": [
+            0,
+            1
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     },
     {
       "archetype_id": "A18",
-      "structural_geometry": "supported",
+      "archetype_source_hash": "20a3fa9013168a4eb03a4ca12ac89b70b04385274506b2715b33e1d4a645c364",
+      "descriptor_refs": [
+        "VSP003"
+      ],
+      "measured_metrics": [
+        {
+          "metric_name": "text_budget",
+          "observed_value": 220,
+          "target_range": [
+            220,
+            220
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        },
+        {
+          "metric_name": "asset_capacity",
+          "observed_value": 1,
+          "target_range": [
+            0,
+            1
+          ],
+          "evidence_tier": "structurally_supported",
+          "status": "provisional"
+        }
+      ],
+      "structural_geometry": "provisional",
       "style_token_state": "provisional",
       "render_state": "blocked_environment",
-      "qualitative_state": "blocked_visual_review"
+      "qualitative_state": "blocked_visual_review",
+      "reason": "measured canonical archetype constraints; no qualitative professor acceptance"
     }
   ]
 }

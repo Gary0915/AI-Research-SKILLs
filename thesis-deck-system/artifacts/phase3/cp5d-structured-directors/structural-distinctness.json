@@ -4,7 +4,7 @@
   "families": [
     {
       "family": "fishbone",
-      "canonical_sha256": "38838b5feb9207543d317a6c94cc4bf4631bde0e2ff29f5450b06046e18a5f19",
+      "canonical_sha256": "4c1e33ee9c3bfbf1990622c3fea2f451811d4e44935f3e1ddb6e0825eaf7dd3a",
       "element_count": 31,
       "connector_count": 4,
       "role_set": [
@@ -21,7 +21,7 @@
     },
     {
       "family": "mechanism",
-      "canonical_sha256": "a1ad468a45d0d4241c64a81e314de07fdfaa32255682997b91bd458fd56d8104",
+      "canonical_sha256": "920415fce4df10be7463c125eaddcfe3fcb1a623c475bbea599178992d9eecad",
       "element_count": 25,
       "connector_count": 1,
       "role_set": [
@@ -39,7 +39,7 @@
     },
     {
       "family": "experiment",
-      "canonical_sha256": "61702da23a7ddc2ea67d4c30f862e5f35af24d89e6dcfac977c29ccca812de34",
+      "canonical_sha256": "d3fa13dd10905d971940b5020779f4c526f5cd96fccb1b3ca849e53bf7b06721",
       "element_count": 36,
       "connector_count": 5,
       "role_set": [
@@ -59,7 +59,7 @@
     },
     {
       "family": "fabrication",
-      "canonical_sha256": "274c674539e4749b6de17ad7c008de804bc358247412ec9f332e2149a7fcd3eb",
+      "canonical_sha256": "55147f0fc1bcd58435de3b87e13d16ef0830d447b95c04d555dd0cad65d69e18",
       "element_count": 24,
       "connector_count": 1,
       "role_set": [
@@ -76,7 +76,7 @@
     },
     {
       "family": "comparison",
-      "canonical_sha256": "e5ab88efe063664944f5d62ae2323cd8ac4f1be9f6b8c8be2782666a7d74c6ee",
+      "canonical_sha256": "5d12384dc8fbf330cfda0ec9ab85a6f29299ee732c2cebda41b260a50cfda485",
       "element_count": 27,
       "connector_count": 0,
       "role_set": [

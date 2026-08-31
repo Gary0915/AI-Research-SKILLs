@@ -2,7 +2,7 @@
   {
     "schema_version": "1.0.0",
     "critic_report_id": "FCR-FIG002-001",
-    "manifest_id": "FOM-FIG002-001",
+    "manifest_id": "SSE-FIG002-001",
     "status": "APPROVED_FIGURE",
     "executed": true,
     "checks": [
@@ -10,8 +10,9 @@
         "check_id": "C0-01",
         "status": "pass",
         "facts": {
-          "contract": "CP1_FigureOutputManifest_relationship",
-          "svg_envelope_valid": true
+          "contract": "FigureOutputManifest-v3",
+          "cp1_fom_id": "FOM002",
+          "cp1_fom_hash": "b03c96afff8819ace2d0040aa2afb22eabe53519d30b7e6c12dc7356287075d9"
         }
       },
       {
@@ -41,15 +42,16 @@
         "check_id": "C0-05",
         "status": "pass",
         "facts": {
-          "figure_id": "FIG002",
-          "plan_ref": "FPL002"
+          "cp1_fom_ref": "FOM002",
+          "cp1_fom_hash": "b03c96afff8819ace2d0040aa2afb22eabe53519d30b7e6c12dc7356287075d9"
         }
       },
       {
         "check_id": "C0-06",
         "status": "pass",
         "facts": {
-          "canonical_hash": "38838b5feb9207543d317a6c94cc4bf4631bde0e2ff29f5450b06046e18a5f19"
+          "primary_artifact_hash": "4c1e33ee9c3bfbf1990622c3fea2f451811d4e44935f3e1ddb6e0825eaf7dd3a",
+          "canonical_hash": "4c1e33ee9c3bfbf1990622c3fea2f451811d4e44935f3e1ddb6e0825eaf7dd3a"
         }
       },
       {
@@ -112,15 +114,16 @@
         "check_id": "C0-15",
         "status": "pass",
         "facts": {
-          "source_ref_count": 1
+          "cp1_provenance_refs": [
+            "E101"
+          ]
         }
       },
       {
         "check_id": "C0-16",
         "status": "pass",
         "facts": {
-          "style_trace_count": 3,
-          "token_count": 25
+          "verified_style_application_count": 3
         }
       },
       {
@@ -145,21 +148,22 @@
         "check_id": "C0-19",
         "status": "pass",
         "facts": {
-          "specialist_binding": "fishbone-director"
+          "renderer": "deterministic_svg_vector",
+          "style_profile_ref": "VSP003"
         }
       },
       {
         "check_id": "C0-20",
         "status": "pass",
         "facts": {
-          "raw_to_layout_forbidden": true
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       },
       {
         "check_id": "C0-21",
         "status": "pass",
         "facts": {
-          "handoff_state": "raw_output_not_layout_eligible"
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       }
     ]
@@ -167,7 +171,7 @@
   {
     "schema_version": "1.0.0",
     "critic_report_id": "FCR-FIG006-001",
-    "manifest_id": "FOM-FIG006-001",
+    "manifest_id": "SSE-FIG006-001",
     "status": "APPROVED_FIGURE",
     "executed": true,
     "checks": [
@@ -175,8 +179,9 @@
         "check_id": "C0-01",
         "status": "pass",
         "facts": {
-          "contract": "CP1_FigureOutputManifest_relationship",
-          "svg_envelope_valid": true
+          "contract": "FigureOutputManifest-v3",
+          "cp1_fom_id": "FOM006",
+          "cp1_fom_hash": "5981c24115bec15fec7db6f85c94fd128ccdae6a16851ca51d6fe2f901707dac"
         }
       },
       {
@@ -206,15 +211,16 @@
         "check_id": "C0-05",
         "status": "pass",
         "facts": {
-          "figure_id": "FIG006",
-          "plan_ref": "FPL006"
+          "cp1_fom_ref": "FOM006",
+          "cp1_fom_hash": "5981c24115bec15fec7db6f85c94fd128ccdae6a16851ca51d6fe2f901707dac"
         }
       },
       {
         "check_id": "C0-06",
         "status": "pass",
         "facts": {
-          "canonical_hash": "a1ad468a45d0d4241c64a81e314de07fdfaa32255682997b91bd458fd56d8104"
+          "primary_artifact_hash": "920415fce4df10be7463c125eaddcfe3fcb1a623c475bbea599178992d9eecad",
+          "canonical_hash": "920415fce4df10be7463c125eaddcfe3fcb1a623c475bbea599178992d9eecad"
         }
       },
       {
@@ -277,15 +283,16 @@
         "check_id": "C0-15",
         "status": "pass",
         "facts": {
-          "source_ref_count": 1
+          "cp1_provenance_refs": [
+            "E101"
+          ]
         }
       },
       {
         "check_id": "C0-16",
         "status": "pass",
         "facts": {
-          "style_trace_count": 4,
-          "token_count": 44
+          "verified_style_application_count": 4
         }
       },
       {
@@ -310,21 +317,22 @@
         "check_id": "C0-19",
         "status": "pass",
         "facts": {
-          "specialist_binding": "mechanism-diagram-director"
+          "renderer": "deterministic_svg_vector",
+          "style_profile_ref": "VSP003"
         }
       },
       {
         "check_id": "C0-20",
         "status": "pass",
         "facts": {
-          "raw_to_layout_forbidden": true
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       },
       {
         "check_id": "C0-21",
         "status": "pass",
         "facts": {
-          "handoff_state": "raw_output_not_layout_eligible"
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       }
     ]
@@ -332,7 +340,7 @@
   {
     "schema_version": "1.0.0",
     "critic_report_id": "FCR-FIG007-001",
-    "manifest_id": "FOM-FIG007-001",
+    "manifest_id": "SSE-FIG007-001",
     "status": "APPROVED_FIGURE",
     "executed": true,
     "checks": [
@@ -340,8 +348,9 @@
         "check_id": "C0-01",
         "status": "pass",
         "facts": {
-          "contract": "CP1_FigureOutputManifest_relationship",
-          "svg_envelope_valid": true
+          "contract": "FigureOutputManifest-v3",
+          "cp1_fom_id": "FOM007",
+          "cp1_fom_hash": "26f12c0bd096fe6163e611044cd2e2ca890b46797a48e20170949c2db99c4c73"
         }
       },
       {
@@ -371,15 +380,16 @@
         "check_id": "C0-05",
         "status": "pass",
         "facts": {
-          "figure_id": "FIG007",
-          "plan_ref": "FPL007"
+          "cp1_fom_ref": "FOM007",
+          "cp1_fom_hash": "26f12c0bd096fe6163e611044cd2e2ca890b46797a48e20170949c2db99c4c73"
         }
       },
       {
         "check_id": "C0-06",
         "status": "pass",
         "facts": {
-          "canonical_hash": "61702da23a7ddc2ea67d4c30f862e5f35af24d89e6dcfac977c29ccca812de34"
+          "primary_artifact_hash": "d3fa13dd10905d971940b5020779f4c526f5cd96fccb1b3ca849e53bf7b06721",
+          "canonical_hash": "d3fa13dd10905d971940b5020779f4c526f5cd96fccb1b3ca849e53bf7b06721"
         }
       },
       {
@@ -442,15 +452,16 @@
         "check_id": "C0-15",
         "status": "pass",
         "facts": {
-          "source_ref_count": 1
+          "cp1_provenance_refs": [
+            "E101"
+          ]
         }
       },
       {
         "check_id": "C0-16",
         "status": "pass",
         "facts": {
-          "style_trace_count": 3,
-          "token_count": 40
+          "verified_style_application_count": 3
         }
       },
       {
@@ -475,21 +486,22 @@
         "check_id": "C0-19",
         "status": "pass",
         "facts": {
-          "specialist_binding": "experiment-schematic-director"
+          "renderer": "deterministic_svg_vector",
+          "style_profile_ref": "VSP003"
         }
       },
       {
         "check_id": "C0-20",
         "status": "pass",
         "facts": {
-          "raw_to_layout_forbidden": true
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       },
       {
         "check_id": "C0-21",
         "status": "pass",
         "facts": {
-          "handoff_state": "raw_output_not_layout_eligible"
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       }
     ]
@@ -497,7 +509,7 @@
   {
     "schema_version": "1.0.0",
     "critic_report_id": "FCR-FIG003-001",
-    "manifest_id": "FOM-FIG003-001",
+    "manifest_id": "SSE-FIG003-001",
     "status": "APPROVED_FIGURE",
     "executed": true,
     "checks": [
@@ -505,8 +517,9 @@
         "check_id": "C0-01",
         "status": "pass",
         "facts": {
-          "contract": "CP1_FigureOutputManifest_relationship",
-          "svg_envelope_valid": true
+          "contract": "FigureOutputManifest-v3",
+          "cp1_fom_id": "FOM003",
+          "cp1_fom_hash": "8a96171d855db73466f40660acededa764ec67a536c0639fe33a2a8260bc0c42"
         }
       },
       {
@@ -536,15 +549,16 @@
         "check_id": "C0-05",
         "status": "pass",
         "facts": {
-          "figure_id": "FIG003",
-          "plan_ref": "FPL003"
+          "cp1_fom_ref": "FOM003",
+          "cp1_fom_hash": "8a96171d855db73466f40660acededa764ec67a536c0639fe33a2a8260bc0c42"
         }
       },
       {
         "check_id": "C0-06",
         "status": "pass",
         "facts": {
-          "canonical_hash": "274c674539e4749b6de17ad7c008de804bc358247412ec9f332e2149a7fcd3eb"
+          "primary_artifact_hash": "55147f0fc1bcd58435de3b87e13d16ef0830d447b95c04d555dd0cad65d69e18",
+          "canonical_hash": "55147f0fc1bcd58435de3b87e13d16ef0830d447b95c04d555dd0cad65d69e18"
         }
       },
       {
@@ -607,15 +621,16 @@
         "check_id": "C0-15",
         "status": "pass",
         "facts": {
-          "source_ref_count": 1
+          "cp1_provenance_refs": [
+            "E101"
+          ]
         }
       },
       {
         "check_id": "C0-16",
         "status": "pass",
         "facts": {
-          "style_trace_count": 3,
-          "token_count": 40
+          "verified_style_application_count": 3
         }
       },
       {
@@ -640,21 +655,22 @@
         "check_id": "C0-19",
         "status": "pass",
         "facts": {
-          "specialist_binding": "fabrication-process-director"
+          "renderer": "deterministic_svg_vector",
+          "style_profile_ref": "VSP003"
         }
       },
       {
         "check_id": "C0-20",
         "status": "pass",
         "facts": {
-          "raw_to_layout_forbidden": true
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       },
       {
         "check_id": "C0-21",
         "status": "pass",
         "facts": {
-          "handoff_state": "raw_output_not_layout_eligible"
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       }
     ]
@@ -662,7 +678,7 @@
   {
     "schema_version": "1.0.0",
     "critic_report_id": "FCR-FIG008-001",
-    "manifest_id": "FOM-FIG008-001",
+    "manifest_id": "SSE-FIG008-001",
     "status": "APPROVED_FIGURE",
     "executed": true,
     "checks": [
@@ -670,8 +686,9 @@
         "check_id": "C0-01",
         "status": "pass",
         "facts": {
-          "contract": "CP1_FigureOutputManifest_relationship",
-          "svg_envelope_valid": true
+          "contract": "FigureOutputManifest-v3",
+          "cp1_fom_id": "FOM008",
+          "cp1_fom_hash": "8c00d0e3d31a0548fa12d9faaf64e100e18c6aff60ebd8693f6d69dd2cad106b"
         }
       },
       {
@@ -701,15 +718,16 @@
         "check_id": "C0-05",
         "status": "pass",
         "facts": {
-          "figure_id": "FIG008",
-          "plan_ref": "FPL008"
+          "cp1_fom_ref": "FOM008",
+          "cp1_fom_hash": "8c00d0e3d31a0548fa12d9faaf64e100e18c6aff60ebd8693f6d69dd2cad106b"
         }
       },
       {
         "check_id": "C0-06",
         "status": "pass",
         "facts": {
-          "canonical_hash": "e5ab88efe063664944f5d62ae2323cd8ac4f1be9f6b8c8be2782666a7d74c6ee"
+          "primary_artifact_hash": "5d12384dc8fbf330cfda0ec9ab85a6f29299ee732c2cebda41b260a50cfda485",
+          "canonical_hash": "5d12384dc8fbf330cfda0ec9ab85a6f29299ee732c2cebda41b260a50cfda485"
         }
       },
       {
@@ -772,15 +790,16 @@
         "check_id": "C0-15",
         "status": "pass",
         "facts": {
-          "source_ref_count": 1
+          "cp1_provenance_refs": [
+            "E101"
+          ]
         }
       },
       {
         "check_id": "C0-16",
         "status": "pass",
         "facts": {
-          "style_trace_count": 3,
-          "token_count": 74
+          "verified_style_application_count": 3
         }
       },
       {
@@ -805,21 +824,529 @@
         "check_id": "C0-19",
         "status": "pass",
         "facts": {
-          "specialist_binding": "comparison-figure-director"
+          "renderer": "deterministic_svg_vector",
+          "style_profile_ref": "VSP003"
         }
       },
       {
         "check_id": "C0-20",
         "status": "pass",
         "facts": {
-          "raw_to_layout_forbidden": true
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       },
       {
         "check_id": "C0-21",
         "status": "pass",
         "facts": {
-          "handoff_state": "raw_output_not_layout_eligible"
+          "runtime_type_boundary": "ApprovedFigureHandle"
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG001-001",
+    "manifest_id": "SSE-FIG001-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "C0-01",
+        "status": "pass",
+        "facts": {
+          "contract": "FigureOutputManifest-v3",
+          "cp1_fom_id": "FOM001",
+          "cp1_fom_hash": "a620d3998b960b661e81d50de9d556ae8994b38df5810778c6d5f5592b5850ea"
+        }
+      },
+      {
+        "check_id": "C0-02",
+        "status": "pass",
+        "facts": {
+          "optional_svg_envelope": "present",
+          "schema": "scientific-svg-figure-output-manifest"
+        }
+      },
+      {
+        "check_id": "C0-03",
+        "status": "pass",
+        "facts": {
+          "plan_id": "FPL001"
+        }
+      },
+      {
+        "check_id": "C0-04",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG001",
+          "visual_class": "quantitative_measured_result"
+        }
+      },
+      {
+        "check_id": "C0-05",
+        "status": "pass",
+        "facts": {
+          "cp1_fom_ref": "FOM001",
+          "cp1_fom_hash": "a620d3998b960b661e81d50de9d556ae8994b38df5810778c6d5f5592b5850ea"
+        }
+      },
+      {
+        "check_id": "C0-06",
+        "status": "pass",
+        "facts": {
+          "primary_artifact_hash": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d",
+          "canonical_hash": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d"
+        }
+      },
+      {
+        "check_id": "C0-07",
+        "status": "pass",
+        "facts": {
+          "svg_profile": "SSVG-P001"
+        }
+      },
+      {
+        "check_id": "C0-08",
+        "status": "pass",
+        "facts": {
+          "profile_version": "1.0.0"
+        }
+      },
+      {
+        "check_id": "C0-09",
+        "status": "pass",
+        "facts": {
+          "registry": "SNCR001"
+        }
+      },
+      {
+        "check_id": "C0-10",
+        "status": "pass",
+        "facts": {
+          "used_feature_count": 11
+        }
+      },
+      {
+        "check_id": "C0-11",
+        "status": "pass",
+        "facts": {
+          "fallback_decision": "none"
+        }
+      },
+      {
+        "check_id": "C0-12",
+        "status": "pass",
+        "facts": {
+          "source_requirement": "canonical_data"
+        }
+      },
+      {
+        "check_id": "C0-13",
+        "status": "pass",
+        "facts": {
+          "evidence_status": "empirical"
+        }
+      },
+      {
+        "check_id": "C0-14",
+        "status": "pass",
+        "facts": {
+          "ai_generation_allowed": false
+        }
+      },
+      {
+        "check_id": "C0-15",
+        "status": "pass",
+        "facts": {
+          "cp1_provenance_refs": [
+            "E101"
+          ]
+        }
+      },
+      {
+        "check_id": "C0-16",
+        "status": "pass",
+        "facts": {
+          "verified_style_application_count": 4
+        }
+      },
+      {
+        "check_id": "C0-17",
+        "status": "pass",
+        "facts": {
+          "private_attempts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "check_id": "C0-18",
+        "status": "pass",
+        "facts": {
+          "parent_kind": "ScientificFigureSpec"
+        }
+      },
+      {
+        "check_id": "C0-19",
+        "status": "pass",
+        "facts": {
+          "renderer": "reproducible_plot",
+          "style_profile_ref": "VSP003"
+        }
+      },
+      {
+        "check_id": "C0-20",
+        "status": "pass",
+        "facts": {
+          "runtime_type_boundary": "ApprovedFigureHandle"
+        }
+      },
+      {
+        "check_id": "C0-21",
+        "status": "pass",
+        "facts": {
+          "runtime_type_boundary": "ApprovedFigureHandle"
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG009-001",
+    "manifest_id": "SSE-FIG009-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "C0-01",
+        "status": "pass",
+        "facts": {
+          "contract": "FigureOutputManifest-v3",
+          "cp1_fom_id": "FOM009",
+          "cp1_fom_hash": "7dfc10f77a156ca94b31e628e75711f2761a0de29f778f8f40f10f9a6c375c27"
+        }
+      },
+      {
+        "check_id": "C0-02",
+        "status": "pass",
+        "facts": {
+          "optional_svg_envelope": "present",
+          "schema": "scientific-svg-figure-output-manifest"
+        }
+      },
+      {
+        "check_id": "C0-03",
+        "status": "pass",
+        "facts": {
+          "plan_id": "FPL009"
+        }
+      },
+      {
+        "check_id": "C0-04",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG009",
+          "visual_class": "image_matrix"
+        }
+      },
+      {
+        "check_id": "C0-05",
+        "status": "pass",
+        "facts": {
+          "cp1_fom_ref": "FOM009",
+          "cp1_fom_hash": "7dfc10f77a156ca94b31e628e75711f2761a0de29f778f8f40f10f9a6c375c27"
+        }
+      },
+      {
+        "check_id": "C0-06",
+        "status": "pass",
+        "facts": {
+          "primary_artifact_hash": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c",
+          "canonical_hash": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
+        }
+      },
+      {
+        "check_id": "C0-07",
+        "status": "pass",
+        "facts": {
+          "svg_profile": "SSVG-P001"
+        }
+      },
+      {
+        "check_id": "C0-08",
+        "status": "pass",
+        "facts": {
+          "profile_version": "1.0.0"
+        }
+      },
+      {
+        "check_id": "C0-09",
+        "status": "pass",
+        "facts": {
+          "registry": "SNCR001"
+        }
+      },
+      {
+        "check_id": "C0-10",
+        "status": "pass",
+        "facts": {
+          "used_feature_count": 10
+        }
+      },
+      {
+        "check_id": "C0-11",
+        "status": "pass",
+        "facts": {
+          "fallback_decision": "none"
+        }
+      },
+      {
+        "check_id": "C0-12",
+        "status": "pass",
+        "facts": {
+          "source_requirement": "real_evidence"
+        }
+      },
+      {
+        "check_id": "C0-13",
+        "status": "pass",
+        "facts": {
+          "evidence_status": "empirical"
+        }
+      },
+      {
+        "check_id": "C0-14",
+        "status": "pass",
+        "facts": {
+          "ai_generation_allowed": false
+        }
+      },
+      {
+        "check_id": "C0-15",
+        "status": "pass",
+        "facts": {
+          "cp1_provenance_refs": [
+            "E101"
+          ]
+        }
+      },
+      {
+        "check_id": "C0-16",
+        "status": "pass",
+        "facts": {
+          "verified_style_application_count": 3
+        }
+      },
+      {
+        "check_id": "C0-17",
+        "status": "pass",
+        "facts": {
+          "private_attempts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "check_id": "C0-18",
+        "status": "pass",
+        "facts": {
+          "parent_kind": "ScientificFigureSpec"
+        }
+      },
+      {
+        "check_id": "C0-19",
+        "status": "pass",
+        "facts": {
+          "renderer": "source_evidence_matrix",
+          "style_profile_ref": "VSP003"
+        }
+      },
+      {
+        "check_id": "C0-20",
+        "status": "pass",
+        "facts": {
+          "runtime_type_boundary": "ApprovedFigureHandle"
+        }
+      },
+      {
+        "check_id": "C0-21",
+        "status": "pass",
+        "facts": {
+          "runtime_type_boundary": "ApprovedFigureHandle"
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG010-001",
+    "manifest_id": "SSE-FIG010-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "C0-01",
+        "status": "pass",
+        "facts": {
+          "contract": "FigureOutputManifest-v3",
+          "cp1_fom_id": "FOM010",
+          "cp1_fom_hash": "6f3add6c6a9a5ad1f728aaa205e0b59713ab47577c626f3ec352ea4dfa63762d"
+        }
+      },
+      {
+        "check_id": "C0-02",
+        "status": "pass",
+        "facts": {
+          "optional_svg_envelope": "present",
+          "schema": "scientific-svg-figure-output-manifest"
+        }
+      },
+      {
+        "check_id": "C0-03",
+        "status": "pass",
+        "facts": {
+          "plan_id": "FPL010"
+        }
+      },
+      {
+        "check_id": "C0-04",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG010",
+          "visual_class": "organic_concept"
+        }
+      },
+      {
+        "check_id": "C0-05",
+        "status": "pass",
+        "facts": {
+          "cp1_fom_ref": "FOM010",
+          "cp1_fom_hash": "6f3add6c6a9a5ad1f728aaa205e0b59713ab47577c626f3ec352ea4dfa63762d"
+        }
+      },
+      {
+        "check_id": "C0-06",
+        "status": "pass",
+        "facts": {
+          "primary_artifact_hash": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7",
+          "canonical_hash": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7"
+        }
+      },
+      {
+        "check_id": "C0-07",
+        "status": "pass",
+        "facts": {
+          "svg_profile": "SSVG-P001"
+        }
+      },
+      {
+        "check_id": "C0-08",
+        "status": "pass",
+        "facts": {
+          "profile_version": "1.0.0"
+        }
+      },
+      {
+        "check_id": "C0-09",
+        "status": "pass",
+        "facts": {
+          "registry": "SNCR001"
+        }
+      },
+      {
+        "check_id": "C0-10",
+        "status": "pass",
+        "facts": {
+          "used_feature_count": 11
+        }
+      },
+      {
+        "check_id": "C0-11",
+        "status": "pass",
+        "facts": {
+          "fallback_decision": "none"
+        }
+      },
+      {
+        "check_id": "C0-12",
+        "status": "pass",
+        "facts": {
+          "source_requirement": "non_evidence_only"
+        }
+      },
+      {
+        "check_id": "C0-13",
+        "status": "pass",
+        "facts": {
+          "evidence_status": "non_evidence"
+        }
+      },
+      {
+        "check_id": "C0-14",
+        "status": "pass",
+        "facts": {
+          "ai_generation_allowed": true
+        }
+      },
+      {
+        "check_id": "C0-15",
+        "status": "pass",
+        "facts": {
+          "cp1_provenance_refs": [
+            "A001"
+          ]
+        }
+      },
+      {
+        "check_id": "C0-16",
+        "status": "pass",
+        "facts": {
+          "verified_style_application_count": 2
+        }
+      },
+      {
+        "check_id": "C0-17",
+        "status": "pass",
+        "facts": {
+          "private_attempts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "check_id": "C0-18",
+        "status": "pass",
+        "facts": {
+          "parent_kind": "ScientificFigureSpec"
+        }
+      },
+      {
+        "check_id": "C0-19",
+        "status": "pass",
+        "facts": {
+          "renderer": "generated_non_evidence",
+          "style_profile_ref": "VSP003"
+        }
+      },
+      {
+        "check_id": "C0-20",
+        "status": "pass",
+        "facts": {
+          "runtime_type_boundary": "ApprovedFigureHandle"
+        }
+      },
+      {
+        "check_id": "C0-21",
+        "status": "pass",
+        "facts": {
+          "runtime_type_boundary": "ApprovedFigureHandle"
         }
       }
     ]

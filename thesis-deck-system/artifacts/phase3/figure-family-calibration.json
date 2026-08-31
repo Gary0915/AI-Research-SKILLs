@@ -4,48 +4,216 @@
     {
       "family": "fishbone",
       "evidence_state": "provisional",
+      "representative_fixture": {
+        "fixture_id": "G1-fishbone-REP",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "stable_ids"
+        ]
+      },
+      "stress_fixture": {
+        "fixture_id": "G1-fishbone-STRESS",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "density_or_cardinality"
+        ]
+      },
+      "evaluation_result": {
+        "status": "provisional",
+        "safe_bounds_result": "pass",
+        "render_result": "not_measured"
+      },
       "representative_benchmark_count": 1,
       "stress_benchmark_count": 1
     },
     {
       "family": "mechanism",
       "evidence_state": "provisional",
+      "representative_fixture": {
+        "fixture_id": "G1-mechanism-REP",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "stable_ids"
+        ]
+      },
+      "stress_fixture": {
+        "fixture_id": "G1-mechanism-STRESS",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "density_or_cardinality"
+        ]
+      },
+      "evaluation_result": {
+        "status": "provisional",
+        "safe_bounds_result": "pass",
+        "render_result": "not_measured"
+      },
       "representative_benchmark_count": 1,
       "stress_benchmark_count": 1
     },
     {
       "family": "experiment",
       "evidence_state": "provisional",
+      "representative_fixture": {
+        "fixture_id": "G1-experiment-REP",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "stable_ids"
+        ]
+      },
+      "stress_fixture": {
+        "fixture_id": "G1-experiment-STRESS",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "density_or_cardinality"
+        ]
+      },
+      "evaluation_result": {
+        "status": "provisional",
+        "safe_bounds_result": "pass",
+        "render_result": "not_measured"
+      },
       "representative_benchmark_count": 1,
       "stress_benchmark_count": 1
     },
     {
       "family": "fabrication",
       "evidence_state": "provisional",
+      "representative_fixture": {
+        "fixture_id": "G1-fabrication-REP",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "stable_ids"
+        ]
+      },
+      "stress_fixture": {
+        "fixture_id": "G1-fabrication-STRESS",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "density_or_cardinality"
+        ]
+      },
+      "evaluation_result": {
+        "status": "provisional",
+        "safe_bounds_result": "pass",
+        "render_result": "not_measured"
+      },
       "representative_benchmark_count": 1,
       "stress_benchmark_count": 1
     },
     {
       "family": "comparison",
       "evidence_state": "provisional",
+      "representative_fixture": {
+        "fixture_id": "G1-comparison-REP",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "stable_ids"
+        ]
+      },
+      "stress_fixture": {
+        "fixture_id": "G1-comparison-STRESS",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "density_or_cardinality"
+        ]
+      },
+      "evaluation_result": {
+        "status": "provisional",
+        "safe_bounds_result": "pass",
+        "render_result": "not_measured"
+      },
       "representative_benchmark_count": 1,
       "stress_benchmark_count": 1
     },
     {
       "family": "scientific_plot",
       "evidence_state": "provisional",
+      "representative_fixture": {
+        "fixture_id": "G1-scientific_plot-REP",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "stable_ids"
+        ]
+      },
+      "stress_fixture": {
+        "fixture_id": "G1-scientific_plot-STRESS",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "density_or_cardinality"
+        ]
+      },
+      "evaluation_result": {
+        "status": "provisional",
+        "safe_bounds_result": "pass",
+        "render_result": "not_measured"
+      },
       "representative_benchmark_count": 1,
       "stress_benchmark_count": 1
     },
     {
       "family": "image_matrix",
       "evidence_state": "provisional",
+      "representative_fixture": {
+        "fixture_id": "G1-image_matrix-REP",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "stable_ids"
+        ]
+      },
+      "stress_fixture": {
+        "fixture_id": "G1-image_matrix-STRESS",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "density_or_cardinality"
+        ]
+      },
+      "evaluation_result": {
+        "status": "provisional",
+        "safe_bounds_result": "pass",
+        "render_result": "not_measured"
+      },
       "representative_benchmark_count": 1,
       "stress_benchmark_count": 1
     },
     {
       "family": "concept_illustration",
       "evidence_state": "provisional",
+      "representative_fixture": {
+        "fixture_id": "G1-concept_illustration-REP",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "stable_ids"
+        ]
+      },
+      "stress_fixture": {
+        "fixture_id": "G1-concept_illustration-STRESS",
+        "input_kind": "synthetic_structural_fixture",
+        "expected_invariants": [
+          "safe_bounds",
+          "density_or_cardinality"
+        ]
+      },
+      "evaluation_result": {
+        "status": "provisional",
+        "safe_bounds_result": "pass",
+        "render_result": "not_measured"
+      },
       "representative_benchmark_count": 1,
       "stress_benchmark_count": 1
     }

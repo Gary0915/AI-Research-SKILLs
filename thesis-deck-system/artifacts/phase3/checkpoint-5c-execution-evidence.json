@@ -3,5 +3,7 @@
   "execution_id": "CP5C-EXEC-001",
   "manifest_count": 5,
   "critic_report_count": 5,
-  "approved_figure_count": 5
+  "approved_figure_count": 5,
+  "owning_check_count": 105,
+  "failed_owning_check_count": 0
 }
