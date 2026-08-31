@@ -85,14 +85,27 @@ class Cp5aExecutionRunner:
         self.run_id = run_id
         self.candidate_state_hash = candidate_state_hash
 
+    _REGISTERED_OPERATION = "CP5A_STATIC_VALIDATION_V1"
+
     def run(self, validation_operation: Callable[[Cp5aPrivateAccessSession], None]) -> Cp5aPrivateAccessEvidence:
+        """Reject arbitrary callbacks: they cannot certify CP5-A execution."""
+        raise ScientificSvgError("authoritative CP5-A execution requires a registered operation")
+
+    def run_registered_operation(self, operation_id: str, *, root: Path | None = None) -> Cp5aPrivateAccessEvidence:
+        """Run the fixed CP5-A static-validation operation under the guarded session."""
+        if operation_id != self._REGISTERED_OPERATION:
+            raise ScientificSvgError("unknown CP5-A registered operation")
+        root = root or ROOT
         guard = Cp5aPrivateAccessSession()
         try:
-            validation_operation(guard)
+            result = self._execute_static_validation(root, guard)
         except Exception as exc:
             raise ScientificSvgError("CP5-A runner-owned validation failed") from exc
         if any(guard._counters.values()):
             raise ScientificSvgError("CP5-A private access was attempted during validation")
+        if not result or result.get("operation_status") != "pass":
+            raise ScientificSvgError("registered CP5-A validation did not pass")
+        operation_result = json.dumps(result, sort_keys=True, separators=(",", ":"))
         payload = {
             "execution_id": self.execution_id,
             "run_id": self.run_id,
@@ -101,12 +114,38 @@ class Cp5aExecutionRunner:
             "runner_owned": True,
             "validation_executed": True,
             "candidate_bound": True,
+            "operation_id": operation_id,
+            "operation_status": "pass",
+            "operation_result_hash": _sha(operation_result),
             **guard._counters,
-            "record_type": "cp5a_runner_owned_private_access_v1",
+            "record_type": "cp5a_registered_operation_private_access_v2",
             "sealed": True,
         }
         payload["evidence_hash"] = _sha(json.dumps(payload, sort_keys=True, separators=(",", ":")))
         return Cp5aPrivateAccessEvidence(_RUNNER_EVIDENCE_TOKEN, payload)
+
+    @staticmethod
+    def _execute_static_validation(root: Path, guard: Cp5aPrivateAccessSession) -> dict[str, Any]:
+        """Fixed operation: canonical corpus plus frozen CP4 contract validation."""
+        corpus = validate_synthetic_corpus(root)
+        registry = SchemaRegistry(root / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True)
+        plans = json.loads((root / "thesis-deck-system" / "artifacts" / "phase3" / "figure-production-plans.json").read_text(encoding="utf-8"))
+        specs = json.loads((root / "thesis-deck-system" / "artifacts" / "phase3" / "scientific-figure-specs.json").read_text(encoding="utf-8"))
+        cp4_valid = not any(registry.errors("figure-production-plan", plan) for plan in plans) and not any(registry.errors("scientific-figure-spec", spec) for spec in specs)
+        validator = ScientificSvgValidator.load_default(root)
+        profile_valid = not registry.errors("scientific-svg-profile", validator.profile) and not registry.errors("semantic-svg-role-registry", validator.roles)
+        result = {
+            "operation_id": Cp5aExecutionRunner._REGISTERED_OPERATION,
+            "operation_status": "pass" if corpus["aggregate_status"] == "pass" and cp4_valid and profile_valid else "fail",
+            "synthetic_fixture_count": corpus["fixture_count"],
+            "synthetic_corpus_status": corpus["aggregate_status"],
+            "cp4_plan_count": len(plans),
+            "cp4_spec_count": len(specs),
+            "cp4_contracts_valid": cp4_valid,
+            "profile_contracts_valid": profile_valid,
+            "guarded_attempt_counts": dict(guard._counters),
+        }
+        return result
 
 
 def _sha(value: str) -> str:
@@ -633,7 +672,7 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
     except ScientificSvgError:
         access = None
     access_keys = ("private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts")
-    access_identity_keys = ("execution_id", "run_id", "candidate_state_hash", "lifecycle_status", "runner_owned", "validation_executed", "candidate_bound", *access_keys, "record_type", "sealed")
+    access_identity_keys = ("execution_id", "run_id", "candidate_state_hash", "lifecycle_status", "runner_owned", "validation_executed", "candidate_bound", "operation_id", "operation_status", "operation_result_hash", *access_keys, "record_type", "sealed")
     access_bound = (
         access is not None
         and all(isinstance(access.get(key), int) and access[key] >= 0 for key in access_keys)
@@ -645,7 +684,10 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
         and access.get("candidate_bound") is True
         and bool(access.get("execution_id"))
         and access.get("sealed") is True
-        and access.get("record_type") == "cp5a_runner_owned_private_access_v1"
+        and access.get("record_type") == "cp5a_registered_operation_private_access_v2"
+        and access.get("operation_id") == Cp5aExecutionRunner._REGISTERED_OPERATION
+        and access.get("operation_status") == "pass"
+        and re.fullmatch(r"[a-f0-9]{64}", str(access.get("operation_result_hash"))) is not None
         and access.get("evidence_hash") == _sha(json.dumps({key: access[key] for key in access_identity_keys}, sort_keys=True, separators=(",", ":")))
     )
     private_access_passed = bool(access_bound) and all(access[key] == 0 for key in access_keys)
@@ -710,6 +752,7 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
         ("CP5A-REPOSITORY-STAGED-PRIVACY", privacy_passed, [{"name":"repository_scan_executed","boolean":privacy_evidence["repository_scan_executed"]},{"name":"staged_scan_executed","boolean":privacy_evidence["staged_scan_executed"]},{"name":"repository_findings","integer":privacy_evidence["repository_findings"]},{"name":"staged_findings","integer":privacy_evidence["staged_findings"]},{"name":"privacy_configuration_hash","hash":privacy_evidence["configuration_hash"]}]),
         ("CP5A-CANDIDATE-REGRESSION", equal and tested_in_disposable_worktree and tests_failed == 0, [{"name":"candidate_hash_equal","boolean":equal},{"name":"disposable_worktree","boolean":tested_in_disposable_worktree},{"name":"tests_failed","integer":tests_failed}]),
         ("CP5A-MARKER-DIMENSION-POLICY", {"markerWidth", "markerHeight"}.issubset(validator.positive_dimensions), [{"name":"profile_marker_dimension_count","integer":len({"markerWidth", "markerHeight"} & validator.positive_dimensions)}]),
+        ("CP5A-REGISTERED-OPERATION", private_access_passed and bool(access and access.get("operation_id") == Cp5aExecutionRunner._REGISTERED_OPERATION and access.get("operation_status") == "pass"), [{"name":"operation_id","text":access.get("operation_id", "missing") if access else "missing"},{"name":"operation_status","text":access.get("operation_status", "missing") if access else "missing"},{"name":"operation_result_hash","hash":access.get("operation_result_hash", "0" * 64) if access else "0" * 64}]),
         ("CP5A-PRIVATE-ACCESS", private_access_passed, [
             {"name": "execution_record_bound", "boolean": bool(access_bound)},
             {"name": "runner_owned", "boolean": bool(access and access.get("runner_owned") is True)},
@@ -734,6 +777,9 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
             "runner_owned",
             "validation_executed",
             "candidate_bound",
+            "operation_id",
+            "operation_status",
+            "operation_result_hash",
             *access_keys,
             "record_type",
             "sealed",
@@ -743,7 +789,7 @@ def build_cp5a_artifacts(root: Path | None = None, *, tested_candidate_hash: str
     execution = {"schema_version":"1.0.0","execution_id":"CP5A-EXEC-001","private_alias_resolution_attempts":access.get("private_alias_resolution_attempts") if access else None,"private_source_open_attempts":access.get("private_source_open_attempts") if access else None,"private_render_attempts":access.get("private_render_attempts") if access else None,"private_access_evidence":persisted_access,"candidate_state":{**state,"tested_candidate_hash":tested_candidate_hash,"candidate_hash_equal":equal,"disposable_worktree":tested_in_disposable_worktree,"tests_passed":tests_passed,"tests_failed":tests_failed},"privacy_scan":privacy_evidence,"owning_checks":owning}
     status_by_check = {item["check_id"]: item["status"] for item in owning}
     status = lambda *check_ids: "pass" if all(status_by_check[name] == "pass" for name in check_ids) else "fail"
-    qa = {"schema_version":"1.0.0","qa_id":"CP5A-QA-001","aggregate_status":aggregate,"owning_check_refs":[item["check_id"] for item in owning],"status_dimensions":{"scientific_svg_language":status("CP5A-PROFILE-CODE-AUTHORITY","CP5A-SCHEMA-CLOSURE","CP5A-FIGURE-SPEC-HANDOFF","CP5A-PRIVATE-ACCESS-LIFECYCLE"),"static_svg_validator":status("CP5A-STATIC-VALIDATOR","CP5A-NAMESPACE-POLICY","CP5A-ELEMENT-ATTRIBUTE-POLICY","CP5A-GEOMETRY-GRAMMAR","CP5A-LOCAL-REFERENCE-POLICY","CP5A-CANONICAL-ROUNDTRIP","CP5A-VIEWBOX-GRAMMAR"),"semantic_governance":status("CP5A-METADATA-INVISIBILITY","CP5A-ROLE-VISUAL-CLASS","CP5A-ROLE-CHILD-POLICY","CP5A-ROLE-ADDRESSABILITY","CP5A-OBJECT-REFERENCE-ID-AUTHORITY"),"cjk_static_text":status("CP5A-CJK-EDITABLE-TEXT","CP5A-SIGNIFICANT-WHITESPACE","CP5A-CANONICAL-ROUNDTRIP"),"resource_policy":status("CP5A-RESOURCE-POLICY","CP5A-REPOSITORY-STAGED-PRIVACY","CP5A-LOCAL-REFERENCE-POLICY"),"canonicalization_hash":status("CP5A-CANONICALIZATION","CP5A-CANONICAL-IDEMPOTENCE","CP5A-CANONICAL-ROUNDTRIP","CP5A-METADATA-INVISIBILITY","CP5A-SIGNIFICANT-WHITESPACE"),"synthetic_corpus":status("CP5A-SYNTHETIC-CORPUS"),"native_capability_registry":"not_run","static_figure_critic":"not_run","production_figure_rendering":"not_run","render_critic":"not_run","a01_a18_calibration":"not_run","drawingml_compiler":"not_run","template_reconstruction":"not_run","acceptance_deck":"not_run","production_group_meeting_ready":False}}
+    qa = {"schema_version":"1.0.0","qa_id":"CP5A-QA-001","aggregate_status":aggregate,"owning_check_refs":[item["check_id"] for item in owning],"status_dimensions":{"scientific_svg_language":status("CP5A-PROFILE-CODE-AUTHORITY","CP5A-SCHEMA-CLOSURE","CP5A-FIGURE-SPEC-HANDOFF","CP5A-PRIVATE-ACCESS-LIFECYCLE","CP5A-REGISTERED-OPERATION"),"static_svg_validator":status("CP5A-STATIC-VALIDATOR","CP5A-NAMESPACE-POLICY","CP5A-ELEMENT-ATTRIBUTE-POLICY","CP5A-GEOMETRY-GRAMMAR","CP5A-LOCAL-REFERENCE-POLICY","CP5A-CANONICAL-ROUNDTRIP","CP5A-VIEWBOX-GRAMMAR"),"semantic_governance":status("CP5A-METADATA-INVISIBILITY","CP5A-ROLE-VISUAL-CLASS","CP5A-ROLE-CHILD-POLICY","CP5A-ROLE-ADDRESSABILITY","CP5A-OBJECT-REFERENCE-ID-AUTHORITY"),"cjk_static_text":status("CP5A-CJK-EDITABLE-TEXT","CP5A-SIGNIFICANT-WHITESPACE","CP5A-CANONICAL-ROUNDTRIP"),"resource_policy":status("CP5A-RESOURCE-POLICY","CP5A-REPOSITORY-STAGED-PRIVACY","CP5A-LOCAL-REFERENCE-POLICY"),"canonicalization_hash":status("CP5A-CANONICALIZATION","CP5A-CANONICAL-IDEMPOTENCE","CP5A-CANONICAL-ROUNDTRIP","CP5A-METADATA-INVISIBILITY","CP5A-SIGNIFICANT-WHITESPACE"),"synthetic_corpus":status("CP5A-SYNTHETIC-CORPUS"),"native_capability_registry":"not_run","static_figure_critic":"not_run","production_figure_rendering":"not_run","render_critic":"not_run","a01_a18_calibration":"not_run","drawingml_compiler":"not_run","template_reconstruction":"not_run","acceptance_deck":"not_run","production_group_meeting_ready":False}}
     return {"execution": execution, "qa": qa, "fixture_qa": fixture_result, "corpus": corpus_result}
 
 
