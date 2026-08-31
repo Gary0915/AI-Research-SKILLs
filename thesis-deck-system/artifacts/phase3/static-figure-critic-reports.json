@@ -519,7 +519,7 @@
         "facts": {
           "contract": "FigureOutputManifest-v3",
           "cp1_fom_id": "FOM003",
-          "cp1_fom_hash": "8a96171d855db73466f40660acededa764ec67a536c0639fe33a2a8260bc0c42"
+          "cp1_fom_hash": "772ae96bf23d2423c75a27806bfb91d46885c2b6c46a7c9bbf93ca6576dae0ed"
         }
       },
       {
@@ -550,15 +550,15 @@
         "status": "pass",
         "facts": {
           "cp1_fom_ref": "FOM003",
-          "cp1_fom_hash": "8a96171d855db73466f40660acededa764ec67a536c0639fe33a2a8260bc0c42"
+          "cp1_fom_hash": "772ae96bf23d2423c75a27806bfb91d46885c2b6c46a7c9bbf93ca6576dae0ed"
         }
       },
       {
         "check_id": "C0-06",
         "status": "pass",
         "facts": {
-          "primary_artifact_hash": "55147f0fc1bcd58435de3b87e13d16ef0830d447b95c04d555dd0cad65d69e18",
-          "canonical_hash": "55147f0fc1bcd58435de3b87e13d16ef0830d447b95c04d555dd0cad65d69e18"
+          "primary_artifact_hash": "870be8faa141b38adefd46fc4475e34c79e3da615f7ce045ab504bd5a41b25c3",
+          "canonical_hash": "870be8faa141b38adefd46fc4475e34c79e3da615f7ce045ab504bd5a41b25c3"
         }
       },
       {

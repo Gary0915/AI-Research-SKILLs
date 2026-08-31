@@ -36,9 +36,9 @@
     "schema_version": "1.0.0",
     "approval_id": "APF-FIG003-001",
     "manifest_id": "SSE-FIG003-001",
-    "manifest_hash": "643be6c461dfebf5e7188fb164cd9b26c238be1ddcfe2f266faf2d03fb94f2ba",
+    "manifest_hash": "9bf3d6ac457374647ee328515c26fb7c43ce57b195f8d03e675e74c0fb3f7bbd",
     "critic_report_id": "FCR-FIG003-001",
-    "critic_report_hash": "c0e9cac738a340147c15f390f83dfabf12349b6960cfb91e9a5201e515dd910c",
+    "critic_report_hash": "88856fe97661cb6949a0b4d53a6607f0eaccd7fe550cd37401ee54b7d6fb6384",
     "figure_revision": "1",
     "approval_status": "APPROVED_FIGURE",
     "executed_static_critic": true

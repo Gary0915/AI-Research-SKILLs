@@ -188,11 +188,10 @@ def test_d1_fabrication_preserves_mixed_known_and_unknown_conditions():
     from thesis_deck_system.phase3_cp5bcd_integrated import _representative_input, build_fabrication_svg
 
     payload = _representative_input("fabrication")
-    payload["steps"][0]["temperature"] = "25 C"
-    payload["steps"][0]["time"] = "10 min"
+    payload["steps"][0]["conditions"] = {"temperature_c": 25, "duration_min": 10}
     spec = __import__("thesis_deck_system.phase3_cp5bcd_integrated", fromlist=["_spec"])._spec(ROOT, "FIG003")
     svg = build_fabrication_svg(spec, payload)
-    assert "T: 25 C · t: 10 min" in svg
+    assert "T: 25 °C · t: 10 min" in svg
     assert "T: UNKNOWN · t: UNKNOWN" in svg
 
 
@@ -290,7 +289,7 @@ def test_c1_d1_artifact_writer_persists_cp1_foms_separately_from_svg_envelopes(t
     ("fishbone", lambda value: value["branches"].__setitem__(0, value["branches"][0] | {"parent_ref": "BR002"})),
     ("mechanism", lambda value: value["edges"].__setitem__(0, {"from": "N001", "to": "MISSING", "state": "certain"})),
     ("experiment", lambda value: value.__setitem__("controls", [])),
-    ("fabrication", lambda value: value["steps"].__setitem__(0, value["steps"][0] | {"temperature": "25"})),
+    ("fabrication", lambda value: value["steps"][0]["conditions"].__setitem__("temperature_c", "25")),
     ("comparison", lambda value: value["sides"].__setitem__(1, value["sides"][1] | {"area": 0.7})),
 ])
 def test_cp5d_director_negative_contracts_fail_closed(family: str, mutate):
@@ -300,3 +299,13 @@ def test_cp5d_director_negative_contracts_fail_closed(family: str, mutate):
     mutate(payload)
     with pytest.raises(DirectorInputError):
         validate_director_input(family, payload)
+
+
+@pytest.mark.parametrize("invalid_temperature", ["25", "25 C", [], {}, True])
+def test_d1_fabrication_rejects_noncanonical_temperature_representations(invalid_temperature):
+    from thesis_deck_system.phase3_cp5bcd_integrated import DirectorInputError, _representative_input, validate_director_input
+
+    payload = _representative_input("fabrication")
+    payload["steps"][0]["conditions"]["temperature_c"] = invalid_temperature
+    with pytest.raises(DirectorInputError):
+        validate_director_input("fabrication", payload)

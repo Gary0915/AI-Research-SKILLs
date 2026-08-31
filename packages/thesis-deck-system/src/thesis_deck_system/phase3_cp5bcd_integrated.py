@@ -16,6 +16,7 @@ from typing import Any
 from xml.etree import ElementTree as ET
 
 from .contracts import SchemaRegistry
+from .phase3_contracts import validate_fabrication_process
 from .phase3_cp5a_scientific_svg import ROOT, ScientificSvgError, author_svg_for_spec
 
 
@@ -579,7 +580,30 @@ def _representative_input(family: str) -> dict[str, Any]:
     if family == "fishbone": return common | {"fishbone_id":"FB001", "revision_id":"FB001-R001", "history_ref":"H001", "prior_revision_hash":"a" * 64, "focus_ref":"BR002", "branches":[{"branch_id":"BR001","parent_ref":None,"label":"Root","status":"completed"},{"branch_id":"BR002","parent_ref":"BR001","label":"Contact","status":"partial"},{"branch_id":"BR003","parent_ref":"BR001","label":"Future","status":"future"},{"branch_id":"BR004","parent_ref":"BR001","label":"Failed","status":"failed"}]}
     if family == "mechanism": return common | {"nodes":[{"node_id":"N001","label":"Input"},{"node_id":"N002","label":"Unknown"}],"edges":[{"from":"N001","to":"N002","state":"uncertain"}],"alternatives":["alternative_branch"],"uncertainty_labels":["uncertain"]}
     if family == "experiment": return common | {"components":["sample"],"variables":["input"],"controls":["baseline"],"instrumentation":["instrument"],"measurement_points":["probe"],"inputs":["signal"],"outputs":["measurement"],"stage_ref":"ST-RES101"}
-    if family == "fabrication": return common | {"steps":[{"ordinal":1,"material_state_ref":"M001","transition":"mixed","temperature":"UNKNOWN","time":"UNKNOWN"},{"ordinal":2,"material_state_ref":"M002","transition":"cured","temperature":"UNKNOWN","time":"UNKNOWN"}]}
+    if family == "fabrication":
+        return {
+            "process_id": "FP001",
+            "process_kind": "fabrication_process",
+            "provenance_refs": ["E101"],
+            "steps": [
+                {
+                    "ordinal": 1,
+                    "operation": "mix",
+                    "material_refs": ["M001"],
+                    "state_before": "precursors",
+                    "state_after": "mixture",
+                    "conditions": {"temperature_c": "unknown", "duration_min": "unknown"},
+                },
+                {
+                    "ordinal": 2,
+                    "operation": "cure",
+                    "material_refs": ["M001"],
+                    "state_before": "mixture",
+                    "state_after": "gel",
+                    "conditions": {"temperature_c": "unknown", "duration_min": "unknown"},
+                },
+            ],
+        }
     if family == "comparison": return common | {"sides":[{"side_id":"control","label":"Control","area":1.0},{"side_id":"proposed","label":"Proposed","area":1.0}],"shared_metrics":["metric"],"scale_policy":"same_scale","normalization_policy":"same_normalization"}
     raise DirectorInputError("unknown specialist director family")
 
@@ -601,8 +625,9 @@ def validate_director_input(family: str, value: dict[str, Any]) -> None:
     elif family == "experiment":
         if not value.get("controls") or not value.get("measurement_points") or not value.get("instrumentation") or not value.get("stage_ref"): raise DirectorInputError("experiment controls/instrument/measurement required")
     elif family == "fabrication":
-        steps = value.get("steps", []); ordinals = [item.get("ordinal") for item in steps]
-        if ordinals != list(range(1, len(steps) + 1)) or any(not isinstance(item.get("temperature"), str) or not isinstance(item.get("time"), str) or not item.get("material_state_ref") or not item.get("transition") for item in steps): raise DirectorInputError("invalid fabrication chronology or condition")
+        registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True, include_cp5bcd=True)
+        if registry.errors("fabrication-process", value) or validate_fabrication_process(value):
+            raise DirectorInputError("invalid fabrication process contract")
     elif family == "comparison":
         sides = value.get("sides", [])
         if len(sides) < 2 or len({item.get("side_id") for item in sides}) != len(sides) or len({item.get("label") for item in sides}) != len(sides) or len({item.get("area") for item in sides}) != 1 or value.get("scale_policy") != "same_scale" or value.get("normalization_policy") != "same_normalization" or not value.get("shared_metrics"): raise DirectorInputError("unfair comparison")
@@ -682,12 +707,15 @@ def build_experiment_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str:
 
 def build_fabrication_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str:
     validate_director_input("fabrication", payload)
+    def condition_label(value: Any, unit: str) -> str:
+        return "UNKNOWN" if value == "unknown" else f"{_svg_number(value)} {unit}"
     parts = []
     for index, step in enumerate(payload["steps"]):
         x = 350 + index * 650
         parts.append(f'<rect id="obj-step-{step["ordinal"]}" data-semantic-role="process_step" x="{x-190}" y="330" width="380" height="170" fill="#f4f4f4" stroke="#333333" stroke-width="2"/>')
-        parts.append(f'<text id="obj-state-{step["ordinal"]}" data-semantic-role="material_state" x="{x-150}" y="390" font-family="Arial" font-size="20">state: {step["material_state_ref"]}</text>')
-        parts.append(f'<text id="obj-condition-{step["ordinal"]}" data-semantic-role="annotation" x="{x-150}" y="435" font-family="Arial" font-size="18">T: {step["temperature"]} · t: {step["time"]}</text>')
+        parts.append(f'<text id="obj-state-{step["ordinal"]}" data-semantic-role="material_state" x="{x-150}" y="390" font-family="Arial" font-size="20">state: {step["state_after"]}</text>')
+        conditions = step["conditions"]
+        parts.append(f'<text id="obj-condition-{step["ordinal"]}" data-semantic-role="annotation" x="{x-150}" y="435" font-family="Arial" font-size="18">T: {condition_label(conditions["temperature_c"], "°C")} · t: {condition_label(conditions["duration_min"], "min")}</text>')
         if index:
             prior = 350 + (index - 1) * 650
             parts.append(f'<line id="obj-transition-{step["ordinal"]}" data-semantic-role="flow" x1="{prior+190}" y1="415" x2="{x-190}" y2="415" stroke="#333333" stroke-width="3" marker-end="url(#obj-arrow)"/>')

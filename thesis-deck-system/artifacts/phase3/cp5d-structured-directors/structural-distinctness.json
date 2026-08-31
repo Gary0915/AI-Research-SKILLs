@@ -59,7 +59,7 @@
     },
     {
       "family": "fabrication",
-      "canonical_sha256": "55147f0fc1bcd58435de3b87e13d16ef0830d447b95c04d555dd0cad65d69e18",
+      "canonical_sha256": "870be8faa141b38adefd46fc4475e34c79e3da615f7ce045ab504bd5a41b25c3",
       "element_count": 24,
       "connector_count": 1,
       "role_set": [

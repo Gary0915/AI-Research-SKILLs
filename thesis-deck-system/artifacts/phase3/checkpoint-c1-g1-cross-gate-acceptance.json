@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "acceptance_id": "CP5-C1-G1-CROSS-001",
   "cross_gate_status": "pass",
-  "invariant_count": 12,
+  "invariant_count": 13,
   "invariants": [
     {
       "invariant_id": "C1-CP1-FOM-TRUST-CHAIN",
@@ -41,6 +41,19 @@
       "facts": {
         "director_count": 5,
         "distinct_svg_hashes": 5
+      }
+    },
+    {
+      "invariant_id": "D1-FABRICATION-CONDITION-CONTRACT",
+      "status": "pass",
+      "facts": {
+        "known_condition_preserved": true,
+        "unknown_condition_preserved": true,
+        "invalid_temperature_rejected": true,
+        "implicit_coercion": false,
+        "invented_condition_count": 0,
+        "representative_fixture": "pass",
+        "stress_fixture": "pass"
       }
     },
     {
@@ -122,5 +135,5 @@
       }
     }
   ],
-  "acceptance_sha256": "eaed85eb181f1f676a3ac73d66b628b0935ffb41fbb26738f617a34685b168c7"
+  "acceptance_sha256": "9dc65fc3f9fcb182fb964e6635a72fc811835f69356fcca94846724f7d7f78a7"
 }
