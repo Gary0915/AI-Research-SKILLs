@@ -1,0 +1,11 @@
+{
+  "execution_id": "CP5-H0-EXEC-001",
+  "gate_id": "H0",
+  "backend_uniqueness_audit_id": "CP5-H0-BACKEND-UNIQUENESS-001",
+  "native_powerpoint_status": "blocked_environment",
+  "host_pptx_renderer_status": "available",
+  "python_pptx_version": "1.0.2",
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}

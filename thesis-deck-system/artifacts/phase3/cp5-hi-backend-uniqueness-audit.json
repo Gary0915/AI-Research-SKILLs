@@ -1,0 +1,12 @@
+{
+  "audit_id": "CP5-H0-BACKEND-UNIQUENESS-001",
+  "status": "pass",
+  "public_pptx_backends": [
+    "PythonPptxAssembler"
+  ],
+  "assembler_source": "packages/thesis-deck-system/src/thesis_deck_system/pptx.py",
+  "compiler_source": "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py",
+  "compiler_pptx_writer_methods": [],
+  "template_scientific_slide_assembly_bypasses": [],
+  "bypass_count": 0
+}

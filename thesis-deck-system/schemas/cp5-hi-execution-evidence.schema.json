@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/cp5-hi-execution-evidence.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["execution_id", "gate_id", "backend_uniqueness_audit_id", "native_powerpoint_status", "host_pptx_renderer_status", "python_pptx_version", "private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts"],
+  "properties": {
+    "execution_id": {"type": "string", "pattern": "^CP5-H0-EXEC-[0-9]{3}$"},
+    "gate_id": {"const": "H0"},
+    "backend_uniqueness_audit_id": {"type": "string", "pattern": "^CP5-H0-[A-Z-]+-[0-9]{3}$"},
+    "native_powerpoint_status": {"enum": ["available", "blocked_environment"]},
+    "host_pptx_renderer_status": {"enum": ["available", "blocked_environment"]},
+    "python_pptx_version": {"type": "string", "minLength": 1, "maxLength": 32},
+    "private_alias_resolution_attempts": {"const": 0},
+    "private_source_open_attempts": {"const": 0},
+    "private_render_attempts": {"const": 0}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/cp5-hi-backend-uniqueness-audit.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["audit_id", "status", "public_pptx_backends", "assembler_source", "compiler_source", "compiler_pptx_writer_methods", "template_scientific_slide_assembly_bypasses", "bypass_count"],
+  "properties": {
+    "audit_id": {"type": "string", "pattern": "^CP5-H0-[A-Z-]+-[0-9]{3}$"},
+    "status": {"enum": ["pass", "fail"]},
+    "public_pptx_backends": {"type": "array", "items": {"type": "string", "enum": ["PythonPptxAssembler"]}, "uniqueItems": true},
+    "assembler_source": {"type": "string", "pattern": "^[A-Za-z0-9._/-]+$"},
+    "compiler_source": {"type": "string", "pattern": "^[A-Za-z0-9._/-]+$"},
+    "compiler_pptx_writer_methods": {"type": "array", "items": {"type": "string", "enum": ["save_pptx", "export_pptx", "assemble"]}, "uniqueItems": true},
+    "template_scientific_slide_assembly_bypasses": {"type": "array", "items": {"type": "string", "enum": ["assemble_scientific_slides", "save_pptx", "export_pptx"]}, "uniqueItems": true},
+    "bypass_count": {"type": "integer", "minimum": 0}
+  }
+}

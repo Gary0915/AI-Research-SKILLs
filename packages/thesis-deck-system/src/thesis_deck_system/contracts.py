@@ -87,6 +87,11 @@ CP5BCD_SCHEMA_NAMES = (
     "checkpoint-c1-g1-cross-gate-acceptance",
 )
 
+CP5HI_SCHEMA_NAMES = (
+    "cp5-hi-backend-uniqueness-audit",
+    "cp5-hi-execution-evidence",
+)
+
 SCHEMA_BY_COLLECTION = {
     "research_blocks": "research-block",
     "stages": "scientific-stage",
@@ -113,7 +118,7 @@ class Finding:
 
 
 class SchemaRegistry:
-    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False, include_cp5a: bool = False, include_cp5bcd: bool = False):
+    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False, include_cp5a: bool = False, include_cp5bcd: bool = False, include_cp5hi: bool = False):
         self.schema_dir = Path(schema_dir)
         schema_names = (
             REQUIRED_SCHEMA_NAMES
@@ -121,6 +126,7 @@ class SchemaRegistry:
             + (PHASE3_SCHEMA_NAMES if include_phase3 else ())
             + (CP5A_SCHEMA_NAMES if include_cp5a else ())
             + (CP5BCD_SCHEMA_NAMES if include_cp5bcd else ())
+            + (CP5HI_SCHEMA_NAMES if include_cp5hi else ())
         )
         self._schemas = {
             name: json.loads((self.schema_dir / f"{name}.schema.json").read_text(encoding="utf-8"))
