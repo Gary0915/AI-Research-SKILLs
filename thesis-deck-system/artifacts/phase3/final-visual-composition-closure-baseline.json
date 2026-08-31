@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "baseline_commit": "e422c794a85cbd5e76c73fa364abd4542f524eb6",
+  "current_deck": "cp5-i-ledger-derived-acceptance-deck.pptx",
+  "slide_count": 20,
+  "source_slide_count": 19,
+  "hypothesis_layers": ["H001", "H002"],
+  "h003_slide_count": 0,
+  "single_public_backend": "PythonPptxAssembler",
+  "private_access_authorized": false,
+  "new_architecture_authorized": false,
+  "second_pptx_exporter_authorized": false,
+  "review_policy": "one_external_review_after_corrected_final_deck",
+  "known_final_visual_defects": [
+    "result_semantic_binding_mismatch",
+    "combined_role_duplication",
+    "visible_backend_debug_field_dump",
+    "insufficient_slide_level_professor_composition",
+    "governed_figures_not_consistently_primary",
+    "professor_qualitative_status_not_accepted"
+  ]
+}
