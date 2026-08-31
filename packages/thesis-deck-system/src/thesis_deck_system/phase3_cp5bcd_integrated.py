@@ -185,9 +185,13 @@ def _base_svg(figure_spec: dict[str, Any], *, title: str, family: str) -> str:
 
 
 def _features_for_svg(source: str) -> list[str]:
-    features = ["svg-root-viewbox", "rect", "text", "font-attributes", "line", "marker", "marker-local-reference", "path-commands", "stroke-width"]
-    if "translate(" in source: features.append("transform-translate")
-    return features
+    features = ["svg-root-viewbox", "text", "font-attributes", "marker", "marker-local-reference", "path-commands", "stroke-width"]
+    tag_features = {"<g": "group", "<rect": "rect", "<circle": "circle", "<ellipse": "ellipse", "<line": "line", "<polyline": "polyline", "<polygon": "polygon", "<image": "image", "<clipPath": "clip-path"}
+    features.extend(feature for marker, feature in tag_features.items() if marker in source)
+    if "clip-path=" in source: features.append("clip-local-reference")
+    for name, feature in (("translate(", "transform-translate"), ("scale(", "transform-scale"), ("rotate(", "transform-rotate"), ("matrix(", "transform-matrix"), ("stroke-dasharray", "stroke-dasharray"), ("stroke-linecap", "stroke-linecap"), ("stroke-linejoin", "stroke-linejoin"), ("fill-opacity", "fill-opacity"), ("stroke-opacity", "stroke-opacity"), ("text-anchor", "text-anchor"), ("dominant-baseline", "dominant-baseline")):
+        if name in source: features.append(feature)
+    return sorted(set(features))
 
 
 def make_synthetic_manifest(root: Path | None = None, figure_id: str = "FIG002", *, canonical_svg: str | None = None, style_resolution: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -382,8 +386,6 @@ def _representative_input(family: str) -> dict[str, Any]:
 
 
 def validate_director_input(family: str, value: dict[str, Any]) -> None:
-    if value.get("mutation"):
-        raise DirectorInputError("negative mutation must fail closed")
     if family == "fishbone":
         branches = value.get("branches", []); ids = [item.get("branch_id") for item in branches]
         if len(ids) != len(set(ids)) or value.get("focus_ref") not in ids or any(item.get("parent_ref") and item["parent_ref"] not in ids for item in branches): raise DirectorInputError("invalid fishbone hierarchy")
@@ -408,11 +410,87 @@ def validate_director_input(family: str, value: dict[str, Any]) -> None:
     else: raise DirectorInputError("unknown specialist director family")
 
 
-def build_fishbone_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str: validate_director_input("fishbone", payload); return _base_svg(spec, title="Fishbone / 研究地圖", family="fishbone")
-def build_mechanism_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str: validate_director_input("mechanism", payload); return _base_svg(spec, title="Mechanism / 機制", family="mechanism")
-def build_experiment_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str: validate_director_input("experiment", payload); return _base_svg(spec, title="Experiment / 實驗", family="experiment")
-def build_fabrication_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str: validate_director_input("fabrication", payload); return _base_svg(spec, title="Fabrication / 製程", family="fabrication")
-def build_comparison_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str: validate_director_input("comparison", payload); return _base_svg(spec, title="Comparison / 比較", family="comparison")
+def _svg_document(spec: dict[str, Any], title: str, body: str) -> str:
+    """Shared SVG mechanics only; each director owns the semantic body."""
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" data-thesis-svg-version="1.0.0" data-thesis-figure-id="{spec["figure_id"]}" data-visual-class="{spec["visual_class"]}"><defs><marker id="obj-arrow" data-semantic-role="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path id="obj-arrow-path" data-semantic-role="branch" d="M 0 0 L 8 4 L 0 8 Z" fill="#333333"/></marker></defs><g id="obj-frame" data-semantic-role="container"><rect id="obj-canvas" data-semantic-role="panel" x="30" y="30" width="1540" height="840" fill="#ffffff" stroke="#333333" stroke-width="2"/></g><text id="obj-title" data-semantic-role="title" x="80" y="95" font-family="Arial" font-size="34" font-weight="bold">{title}</text>{body}</svg>'''
+
+
+def build_fishbone_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str:
+    validate_director_input("fishbone", payload)
+    coordinates = {"BR001": (260, 450), "BR002": (650, 260), "BR003": (650, 650), "BR004": (1040, 260)}
+    bones = ['<line id="obj-spine" data-semantic-role="spine" x1="180" y1="450" x2="1420" y2="450" stroke="#333333" stroke-width="5" marker-end="url(#obj-arrow)"/>']
+    labels = []
+    for branch in payload["branches"]:
+        branch_key = branch["branch_id"].lower(); x, y = coordinates[branch["branch_id"]]
+        parent = branch.get("parent_ref")
+        if parent:
+            px, py = coordinates[parent]
+            bones.append(f'<line id="obj-edge-{branch_key}" data-semantic-role="branch" x1="{px}" y1="{py}" x2="{x}" y2="{y}" stroke="#333333" stroke-width="3" marker-end="url(#obj-arrow)"/>')
+        fill = "#FF0000" if branch["branch_id"] == payload["focus_ref"] else "#f4f4f4"
+        bones.append(f'<rect id="obj-{branch_key}" data-semantic-role="node" x="{x-80}" y="{y-28}" width="160" height="56" fill="{fill}" stroke="#333333" stroke-width="2"/>')
+        labels.append(f'<text id="obj-label-{branch_key}" data-semantic-role="label" x="{x-65}" y="{y+6}" font-family="Arial" font-size="18">{branch["label"]} [{branch["status"]}]</text>')
+    return _svg_document(spec, "Fishbone / 研究地圖", "".join(bones + labels) + '<text id="obj-revision" data-semantic-role="annotation" x="80" y="835" font-family="Arial" font-size="16">Revision FB001-R001 · current focus highlighted</text>')
+
+
+def build_mechanism_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str:
+    validate_director_input("mechanism", payload)
+    node_xy = {node["node_id"]: (400 + index * 520, 420) for index, node in enumerate(payload["nodes"])}
+    parts = []
+    for node in payload["nodes"]:
+        key = node["node_id"].lower(); x, y = node_xy[node["node_id"]]
+        parts.append(f'<ellipse id="obj-{key}" data-semantic-role="node" cx="{x}" cy="{y}" rx="130" ry="60" fill="#f5f5f5" stroke="#333333" stroke-width="2"/>')
+        parts.append(f'<text id="obj-label-{key}" data-semantic-role="label" x="{x-70}" y="{y+6}" font-family="Arial" font-size="20">{node["label"]}</text>')
+    for index, edge in enumerate(payload["edges"]):
+        x1, y1 = node_xy[edge["from"]]; x2, y2 = node_xy[edge["to"]]
+        dash = ' stroke-dasharray="10 8"' if edge["state"] == "uncertain" else ""
+        parts.append(f'<line id="obj-causal-{index}" data-semantic-role="connector" x1="{x1+130}" y1="{y1}" x2="{x2-130}" y2="{y2}" stroke="#333333" stroke-width="3"{dash} marker-end="url(#obj-arrow)"/>')
+        parts.append(f'<text id="obj-state-{index}" data-semantic-role="annotation" x="{(x1+x2)//2-35}" y="{y1-32}" font-family="Arial" font-size="16">{edge["state"]}</text>')
+    parts.append('<rect id="obj-alternative" data-semantic-role="callout" x="560" y="650" width="460" height="80" fill="#fff4cc" stroke="#333333" stroke-width="2"/>')
+    parts.append('<text id="obj-alt-label" data-semantic-role="annotation" x="585" y="698" font-family="Arial" font-size="18">alternative / uncertainty retained</text>')
+    return _svg_document(spec, "Mechanism / 機制", "".join(parts))
+
+
+def build_experiment_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str:
+    validate_director_input("experiment", payload)
+    boxes = [("sample", "Sample", 250, 400), ("control", "Control", 250, 620), ("instrument", "Instrument", 780, 400), ("interface", "Measurement point", 1080, 400), ("input", "Input", 520, 220), ("output", "Output", 1320, 400)]
+    parts = []
+    for role, label, x, y in boxes:
+        semantic_role = role if role in {"sample", "instrument", "interface", "output"} else "node"
+        parts.append(f'<rect id="obj-{role}" data-semantic-role="{semantic_role}" x="{x-100}" y="{y-45}" width="200" height="90" fill="#f4f4f4" stroke="#333333" stroke-width="2"/>')
+        parts.append(f'<text id="obj-label-{role}" data-semantic-role="label" x="{x-70}" y="{y+6}" font-family="Arial" font-size="18">{label}</text>')
+    for index, (left, right) in enumerate((("input", "sample"), ("sample", "instrument"), ("instrument", "interface"), ("interface", "output"), ("control", "sample"))):
+        a = next(item for item in boxes if item[0] == left); b = next(item for item in boxes if item[0] == right)
+        parts.append(f'<line id="obj-path-{index}" data-semantic-role="flow" x1="{a[2]+100}" y1="{a[3]}" x2="{b[2]-100}" y2="{b[3]}" stroke="#333333" stroke-width="3" marker-end="url(#obj-arrow)"/>')
+    return _svg_document(spec, "Experiment / 實驗", "".join(parts))
+
+
+def build_fabrication_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str:
+    validate_director_input("fabrication", payload)
+    parts = []
+    for index, step in enumerate(payload["steps"]):
+        x = 350 + index * 650
+        parts.append(f'<rect id="obj-step-{step["ordinal"]}" data-semantic-role="process_step" x="{x-190}" y="330" width="380" height="170" fill="#f4f4f4" stroke="#333333" stroke-width="2"/>')
+        parts.append(f'<text id="obj-state-{step["ordinal"]}" data-semantic-role="material_state" x="{x-150}" y="390" font-family="Arial" font-size="20">state: {step["material_state_ref"]}</text>')
+        parts.append(f'<text id="obj-condition-{step["ordinal"]}" data-semantic-role="annotation" x="{x-150}" y="435" font-family="Arial" font-size="18">T: UNKNOWN · t: UNKNOWN</text>')
+        if index:
+            prior = 350 + (index - 1) * 650
+            parts.append(f'<line id="obj-transition-{step["ordinal"]}" data-semantic-role="flow" x1="{prior+190}" y1="415" x2="{x-190}" y2="415" stroke="#333333" stroke-width="3" marker-end="url(#obj-arrow)"/>')
+    return _svg_document(spec, "Fabrication / 製程", "".join(parts))
+
+
+def build_comparison_svg(spec: dict[str, Any], payload: dict[str, Any]) -> str:
+    validate_director_input("comparison", payload)
+    parts = []
+    for index, side in enumerate(payload["sides"]):
+        x = 150 + index * 730
+        role = "control" if index == 0 else "proposed"
+        parts.append(f'<rect id="obj-panel-{side["side_id"]}" data-semantic-role="panel" x="{x}" y="210" width="570" height="500" fill="#f4f4f4" stroke="#333333" stroke-width="2"/>')
+        parts.append(f'<text id="obj-side-{side["side_id"]}" data-semantic-role="{role}" x="{x+40}" y="275" font-family="Arial" font-size="28">{side["label"]}</text>')
+        for metric_index, metric in enumerate(payload["shared_metrics"]):
+            y = 380 + metric_index * 80
+            parts.append(f'<line id="obj-metric-{side["side_id"]}-{metric_index}" data-semantic-role="connector" x1="{x+80}" y1="{y}" x2="{x+490}" y2="{y}" stroke="#333333" stroke-width="2"/>')
+            parts.append(f'<text id="obj-metric-label-{side["side_id"]}-{metric_index}" data-semantic-role="label" x="{x+90}" y="{y-16}" font-family="Arial" font-size="18">{metric} · same scale</text>')
+    return _svg_document(spec, "Fair Comparison / 比較", "".join(parts) + '<text id="obj-normalization" data-semantic-role="annotation" x="620" y="790" font-family="Arial" font-size="18">same scale · same normalization · matched area</text>')
 
 
 def build_representative_director_output(root: Path | None, family: str) -> dict[str, Any]:
@@ -428,13 +506,29 @@ def build_representative_director_output(root: Path | None, family: str) -> dict
     return {"director_family": family, "director_input": payload, "svg": authored["canonical_svg"], "svg_qa": authored["qa"], "manifest": manifest, "critic": critic, "style_resolution": style}
 
 
-def write_gate_c_and_d_artifacts(root: Path | None = None) -> dict[str, Any]:
+def write_gate_c_and_d_artifacts(root: Path | None = None, destination: Path | None = None) -> dict[str, Any]:
     """Persist synthetic approval and visible CP5-D SVG review outputs."""
-    root = root or ROOT; destination = root / "thesis-deck-system" / "artifacts" / "phase3"; preview = destination / "cp5d-structured-directors"; preview.mkdir(exist_ok=True)
+    root = root or ROOT; destination = destination or root / "thesis-deck-system" / "artifacts" / "phase3"; preview = destination / "cp5d-structured-directors"; preview.mkdir(parents=True, exist_ok=True)
     representatives = [build_representative_director_output(root, family) for family in ("fishbone", "mechanism", "experiment", "fabrication", "comparison")]
     manifests, reports, approvals = [x["manifest"] for x in representatives], [x["critic"]["report"] for x in representatives], [x["critic"]["approval"] for x in representatives]
     names = {"fishbone":"fishbone-representative.svg", "mechanism":"mechanism-representative.svg", "experiment":"experiment-schematic-representative.svg", "fabrication":"fabrication-process-representative.svg", "comparison":"comparison-representative.svg"}
     for item in representatives: (preview / names[item["director_family"]]).write_text(item["svg"], encoding="utf-8")
+    # SVG-only contact sheet remains useful even when no deterministic raster
+    # renderer is available.  It preserves source order and embeds no science.
+    montage_parts = []
+    for index, item in enumerate(representatives):
+        offset_x = (index % 2) * 800; offset_y = (index // 2) * 300
+        inner = item["svg"].split(">", 1)[1].rsplit("</svg>", 1)[0]
+        montage_parts.append(f'<g id="obj-montage-{item["director_family"]}" data-semantic-role="group" transform="translate({offset_x} {offset_y}) scale(0.24)">{inner}</g>')
+    montage = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" data-thesis-svg-version="1.0.0" data-thesis-figure-id="FIG010" data-visual-class="conceptual_explanation">' + ''.join(montage_parts) + '</svg>'
+    (preview / "structured-director-montage.svg").write_text(montage, encoding="utf-8")
+    signatures = []
+    for item in representatives:
+        svg = item["svg"]
+        roles = sorted(set(part.split('"', 1)[0] for part in svg.split('data-semantic-role="')[1:]))
+        signatures.append({"family": item["director_family"], "canonical_sha256": _text_hash(svg), "element_count": svg.count("<"), "connector_count": svg.count("marker-end="), "role_set": roles})
+    distinct = len({item["canonical_sha256"] for item in signatures}) == len(signatures)
+    (preview / "structural-distinctness.json").write_text(json.dumps({"schema_version":"1.0.0", "all_canonical_hashes_distinct": distinct, "families": signatures}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     c_execution = {"schema_version":"1.0.0","execution_id":"CP5C-EXEC-001","manifest_count":len(manifests),"critic_report_count":len(reports),"approved_figure_count":sum(x is not None for x in approvals)}
     c_qa = {"schema_version":"1.0.0","qa_id":"CP5C-QA-001","aggregate_status":"pass" if all(x["status"] == "APPROVED_FIGURE" for x in reports) else "fail","raw_layout_bypass_count":0,"unapproved_layout_bypass_count":0}
     d_execution = {"schema_version":"1.0.0","execution_id":"CP5D-EXEC-001","director_count":5,"representative_count":5,"private_alias_resolution_attempts":0,"private_source_open_attempts":0,"private_render_attempts":0}

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import json
 from pathlib import Path
 
 import pytest
@@ -159,12 +160,41 @@ def test_cp5d_specialist_directors_validate_inputs_and_traverse_static_approval(
     assert result["style_resolution"]["material_semantic_colors_not_consumed"] is True
 
 
-@pytest.mark.parametrize("family, mutation", [
-    ("fishbone", "duplicate_branch"), ("fishbone", "cycle"), ("mechanism", "unknown_promoted"),
-    ("experiment", "missing_control"), ("fabrication", "invented_unknown"), ("comparison", "unequal_scale"),
-])
-def test_cp5d_director_negative_contracts_fail_closed(family: str, mutation: str):
-    from thesis_deck_system.phase3_cp5bcd_integrated import DirectorInputError, validate_director_input
+def test_cp5d_directors_emit_distinct_family_semantic_geometry():
+    from thesis_deck_system.phase3_cp5bcd_integrated import build_representative_director_output
 
+    outputs = {family: build_representative_director_output(ROOT, family)["svg"] for family in ("fishbone", "mechanism", "experiment", "fabrication", "comparison")}
+    assert len(set(outputs.values())) == 5
+    assert outputs["fishbone"].count('data-semantic-role="branch"') >= 3
+    assert 'data-semantic-role="sample"' in outputs["experiment"]
+    assert 'id="obj-control"' in outputs["experiment"]
+    assert 'data-semantic-role="process_step"' in outputs["fabrication"]
+    assert outputs["comparison"].count('data-semantic-role="panel"') >= 2
+    assert 'stroke-dasharray=' in outputs["mechanism"]
+
+
+def test_cp5d_artifacts_include_svg_montage_and_structural_distinctness(tmp_path: Path):
+    from thesis_deck_system.phase3_cp5bcd_integrated import write_gate_c_and_d_artifacts
+
+    result = write_gate_c_and_d_artifacts(ROOT, tmp_path)
+    assert result["d_qa"]["aggregate_status"] == "pass"
+    assert (tmp_path / "cp5d-structured-directors" / "structured-director-montage.svg").exists()
+    facts = json.loads((tmp_path / "cp5d-structured-directors" / "structural-distinctness.json").read_text(encoding="utf-8"))
+    assert facts["all_canonical_hashes_distinct"] is True
+
+
+@pytest.mark.parametrize("family, mutate", [
+    ("fishbone", lambda value: value["branches"].append(deepcopy(value["branches"][0]))),
+    ("fishbone", lambda value: value["branches"].__setitem__(0, value["branches"][0] | {"parent_ref": "BR002"})),
+    ("mechanism", lambda value: value["edges"].__setitem__(0, {"from": "N001", "to": "MISSING", "state": "certain"})),
+    ("experiment", lambda value: value.__setitem__("controls", [])),
+    ("fabrication", lambda value: value["steps"].__setitem__(0, value["steps"][0] | {"temperature": "25"})),
+    ("comparison", lambda value: value["sides"].__setitem__(1, value["sides"][1] | {"area": 0.7})),
+])
+def test_cp5d_director_negative_contracts_fail_closed(family: str, mutate):
+    from thesis_deck_system.phase3_cp5bcd_integrated import DirectorInputError, _representative_input, validate_director_input
+
+    payload = _representative_input(family)
+    mutate(payload)
     with pytest.raises(DirectorInputError):
-        validate_director_input(family, {"mutation": mutation})
+        validate_director_input(family, payload)

@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0.0",
+  "all_canonical_hashes_distinct": true,
+  "families": [
+    {
+      "family": "fishbone",
+      "canonical_sha256": "38838b5feb9207543d317a6c94cc4bf4631bde0e2ff29f5450b06046e18a5f19",
+      "element_count": 31,
+      "connector_count": 4,
+      "role_set": [
+        "annotation",
+        "arrow",
+        "branch",
+        "container",
+        "label",
+        "node",
+        "panel",
+        "spine",
+        "title"
+      ]
+    },
+    {
+      "family": "mechanism",
+      "canonical_sha256": "a1ad468a45d0d4241c64a81e314de07fdfaa32255682997b91bd458fd56d8104",
+      "element_count": 25,
+      "connector_count": 1,
+      "role_set": [
+        "annotation",
+        "arrow",
+        "branch",
+        "callout",
+        "connector",
+        "container",
+        "label",
+        "node",
+        "panel",
+        "title"
+      ]
+    },
+    {
+      "family": "experiment",
+      "canonical_sha256": "61702da23a7ddc2ea67d4c30f862e5f35af24d89e6dcfac977c29ccca812de34",
+      "element_count": 36,
+      "connector_count": 5,
+      "role_set": [
+        "arrow",
+        "branch",
+        "container",
+        "flow",
+        "instrument",
+        "interface",
+        "label",
+        "node",
+        "output",
+        "panel",
+        "sample",
+        "title"
+      ]
+    },
+    {
+      "family": "fabrication",
+      "canonical_sha256": "274c674539e4749b6de17ad7c008de804bc358247412ec9f332e2149a7fcd3eb",
+      "element_count": 24,
+      "connector_count": 1,
+      "role_set": [
+        "annotation",
+        "arrow",
+        "branch",
+        "container",
+        "flow",
+        "material_state",
+        "panel",
+        "process_step",
+        "title"
+      ]
+    },
+    {
+      "family": "comparison",
+      "canonical_sha256": "e5ab88efe063664944f5d62ae2323cd8ac4f1be9f6b8c8be2782666a7d74c6ee",
+      "element_count": 27,
+      "connector_count": 0,
+      "role_set": [
+        "annotation",
+        "arrow",
+        "branch",
+        "connector",
+        "container",
+        "control",
+        "label",
+        "panel",
+        "proposed",
+        "title"
+      ]
+    }
+  ]
+}

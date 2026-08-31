@@ -49,7 +49,7 @@
         "check_id": "C0-06",
         "status": "pass",
         "facts": {
-          "canonical_hash": "075cad0d1cd336c27dc30a564aefb6e5203a3f7987bec197fc96f0d7f7bee448"
+          "canonical_hash": "38838b5feb9207543d317a6c94cc4bf4631bde0e2ff29f5450b06046e18a5f19"
         }
       },
       {
@@ -77,7 +77,7 @@
         "check_id": "C0-10",
         "status": "pass",
         "facts": {
-          "used_feature_count": 9
+          "used_feature_count": 10
         }
       },
       {
@@ -146,6 +146,666 @@
         "status": "pass",
         "facts": {
           "specialist_binding": "fishbone-director"
+        }
+      },
+      {
+        "check_id": "C0-20",
+        "status": "pass",
+        "facts": {
+          "raw_to_layout_forbidden": true
+        }
+      },
+      {
+        "check_id": "C0-21",
+        "status": "pass",
+        "facts": {
+          "handoff_state": "raw_output_not_layout_eligible"
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG006-001",
+    "manifest_id": "FOM-FIG006-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "C0-01",
+        "status": "pass",
+        "facts": {
+          "contract": "CP1_FigureOutputManifest_relationship",
+          "svg_envelope_valid": true
+        }
+      },
+      {
+        "check_id": "C0-02",
+        "status": "pass",
+        "facts": {
+          "optional_svg_envelope": "present",
+          "schema": "scientific-svg-figure-output-manifest"
+        }
+      },
+      {
+        "check_id": "C0-03",
+        "status": "pass",
+        "facts": {
+          "plan_id": "FPL006"
+        }
+      },
+      {
+        "check_id": "C0-04",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG006",
+          "visual_class": "mechanism_explanation"
+        }
+      },
+      {
+        "check_id": "C0-05",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG006",
+          "plan_ref": "FPL006"
+        }
+      },
+      {
+        "check_id": "C0-06",
+        "status": "pass",
+        "facts": {
+          "canonical_hash": "a1ad468a45d0d4241c64a81e314de07fdfaa32255682997b91bd458fd56d8104"
+        }
+      },
+      {
+        "check_id": "C0-07",
+        "status": "pass",
+        "facts": {
+          "svg_profile": "SSVG-P001"
+        }
+      },
+      {
+        "check_id": "C0-08",
+        "status": "pass",
+        "facts": {
+          "profile_version": "1.0.0"
+        }
+      },
+      {
+        "check_id": "C0-09",
+        "status": "pass",
+        "facts": {
+          "registry": "SNCR001"
+        }
+      },
+      {
+        "check_id": "C0-10",
+        "status": "pass",
+        "facts": {
+          "used_feature_count": 12
+        }
+      },
+      {
+        "check_id": "C0-11",
+        "status": "pass",
+        "facts": {
+          "fallback_decision": "none"
+        }
+      },
+      {
+        "check_id": "C0-12",
+        "status": "pass",
+        "facts": {
+          "source_requirement": "structured_spec"
+        }
+      },
+      {
+        "check_id": "C0-13",
+        "status": "pass",
+        "facts": {
+          "evidence_status": "empirical"
+        }
+      },
+      {
+        "check_id": "C0-14",
+        "status": "pass",
+        "facts": {
+          "ai_generation_allowed": false
+        }
+      },
+      {
+        "check_id": "C0-15",
+        "status": "pass",
+        "facts": {
+          "source_ref_count": 1
+        }
+      },
+      {
+        "check_id": "C0-16",
+        "status": "pass",
+        "facts": {
+          "style_trace_count": 4,
+          "token_count": 44
+        }
+      },
+      {
+        "check_id": "C0-17",
+        "status": "pass",
+        "facts": {
+          "private_attempts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "check_id": "C0-18",
+        "status": "pass",
+        "facts": {
+          "parent_kind": "ScientificFigureSpec"
+        }
+      },
+      {
+        "check_id": "C0-19",
+        "status": "pass",
+        "facts": {
+          "specialist_binding": "mechanism-diagram-director"
+        }
+      },
+      {
+        "check_id": "C0-20",
+        "status": "pass",
+        "facts": {
+          "raw_to_layout_forbidden": true
+        }
+      },
+      {
+        "check_id": "C0-21",
+        "status": "pass",
+        "facts": {
+          "handoff_state": "raw_output_not_layout_eligible"
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG007-001",
+    "manifest_id": "FOM-FIG007-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "C0-01",
+        "status": "pass",
+        "facts": {
+          "contract": "CP1_FigureOutputManifest_relationship",
+          "svg_envelope_valid": true
+        }
+      },
+      {
+        "check_id": "C0-02",
+        "status": "pass",
+        "facts": {
+          "optional_svg_envelope": "present",
+          "schema": "scientific-svg-figure-output-manifest"
+        }
+      },
+      {
+        "check_id": "C0-03",
+        "status": "pass",
+        "facts": {
+          "plan_id": "FPL007"
+        }
+      },
+      {
+        "check_id": "C0-04",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG007",
+          "visual_class": "experiment_setup"
+        }
+      },
+      {
+        "check_id": "C0-05",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG007",
+          "plan_ref": "FPL007"
+        }
+      },
+      {
+        "check_id": "C0-06",
+        "status": "pass",
+        "facts": {
+          "canonical_hash": "61702da23a7ddc2ea67d4c30f862e5f35af24d89e6dcfac977c29ccca812de34"
+        }
+      },
+      {
+        "check_id": "C0-07",
+        "status": "pass",
+        "facts": {
+          "svg_profile": "SSVG-P001"
+        }
+      },
+      {
+        "check_id": "C0-08",
+        "status": "pass",
+        "facts": {
+          "profile_version": "1.0.0"
+        }
+      },
+      {
+        "check_id": "C0-09",
+        "status": "pass",
+        "facts": {
+          "registry": "SNCR001"
+        }
+      },
+      {
+        "check_id": "C0-10",
+        "status": "pass",
+        "facts": {
+          "used_feature_count": 10
+        }
+      },
+      {
+        "check_id": "C0-11",
+        "status": "pass",
+        "facts": {
+          "fallback_decision": "none"
+        }
+      },
+      {
+        "check_id": "C0-12",
+        "status": "pass",
+        "facts": {
+          "source_requirement": "structured_spec"
+        }
+      },
+      {
+        "check_id": "C0-13",
+        "status": "pass",
+        "facts": {
+          "evidence_status": "empirical"
+        }
+      },
+      {
+        "check_id": "C0-14",
+        "status": "pass",
+        "facts": {
+          "ai_generation_allowed": false
+        }
+      },
+      {
+        "check_id": "C0-15",
+        "status": "pass",
+        "facts": {
+          "source_ref_count": 1
+        }
+      },
+      {
+        "check_id": "C0-16",
+        "status": "pass",
+        "facts": {
+          "style_trace_count": 3,
+          "token_count": 40
+        }
+      },
+      {
+        "check_id": "C0-17",
+        "status": "pass",
+        "facts": {
+          "private_attempts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "check_id": "C0-18",
+        "status": "pass",
+        "facts": {
+          "parent_kind": "ScientificFigureSpec"
+        }
+      },
+      {
+        "check_id": "C0-19",
+        "status": "pass",
+        "facts": {
+          "specialist_binding": "experiment-schematic-director"
+        }
+      },
+      {
+        "check_id": "C0-20",
+        "status": "pass",
+        "facts": {
+          "raw_to_layout_forbidden": true
+        }
+      },
+      {
+        "check_id": "C0-21",
+        "status": "pass",
+        "facts": {
+          "handoff_state": "raw_output_not_layout_eligible"
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG003-001",
+    "manifest_id": "FOM-FIG003-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "C0-01",
+        "status": "pass",
+        "facts": {
+          "contract": "CP1_FigureOutputManifest_relationship",
+          "svg_envelope_valid": true
+        }
+      },
+      {
+        "check_id": "C0-02",
+        "status": "pass",
+        "facts": {
+          "optional_svg_envelope": "present",
+          "schema": "scientific-svg-figure-output-manifest"
+        }
+      },
+      {
+        "check_id": "C0-03",
+        "status": "pass",
+        "facts": {
+          "plan_id": "FPL003"
+        }
+      },
+      {
+        "check_id": "C0-04",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG003",
+          "visual_class": "fabrication_process"
+        }
+      },
+      {
+        "check_id": "C0-05",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG003",
+          "plan_ref": "FPL003"
+        }
+      },
+      {
+        "check_id": "C0-06",
+        "status": "pass",
+        "facts": {
+          "canonical_hash": "274c674539e4749b6de17ad7c008de804bc358247412ec9f332e2149a7fcd3eb"
+        }
+      },
+      {
+        "check_id": "C0-07",
+        "status": "pass",
+        "facts": {
+          "svg_profile": "SSVG-P001"
+        }
+      },
+      {
+        "check_id": "C0-08",
+        "status": "pass",
+        "facts": {
+          "profile_version": "1.0.0"
+        }
+      },
+      {
+        "check_id": "C0-09",
+        "status": "pass",
+        "facts": {
+          "registry": "SNCR001"
+        }
+      },
+      {
+        "check_id": "C0-10",
+        "status": "pass",
+        "facts": {
+          "used_feature_count": 10
+        }
+      },
+      {
+        "check_id": "C0-11",
+        "status": "pass",
+        "facts": {
+          "fallback_decision": "none"
+        }
+      },
+      {
+        "check_id": "C0-12",
+        "status": "pass",
+        "facts": {
+          "source_requirement": "structured_spec"
+        }
+      },
+      {
+        "check_id": "C0-13",
+        "status": "pass",
+        "facts": {
+          "evidence_status": "empirical"
+        }
+      },
+      {
+        "check_id": "C0-14",
+        "status": "pass",
+        "facts": {
+          "ai_generation_allowed": false
+        }
+      },
+      {
+        "check_id": "C0-15",
+        "status": "pass",
+        "facts": {
+          "source_ref_count": 1
+        }
+      },
+      {
+        "check_id": "C0-16",
+        "status": "pass",
+        "facts": {
+          "style_trace_count": 3,
+          "token_count": 40
+        }
+      },
+      {
+        "check_id": "C0-17",
+        "status": "pass",
+        "facts": {
+          "private_attempts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "check_id": "C0-18",
+        "status": "pass",
+        "facts": {
+          "parent_kind": "ScientificFigureSpec"
+        }
+      },
+      {
+        "check_id": "C0-19",
+        "status": "pass",
+        "facts": {
+          "specialist_binding": "fabrication-process-director"
+        }
+      },
+      {
+        "check_id": "C0-20",
+        "status": "pass",
+        "facts": {
+          "raw_to_layout_forbidden": true
+        }
+      },
+      {
+        "check_id": "C0-21",
+        "status": "pass",
+        "facts": {
+          "handoff_state": "raw_output_not_layout_eligible"
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG008-001",
+    "manifest_id": "FOM-FIG008-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "C0-01",
+        "status": "pass",
+        "facts": {
+          "contract": "CP1_FigureOutputManifest_relationship",
+          "svg_envelope_valid": true
+        }
+      },
+      {
+        "check_id": "C0-02",
+        "status": "pass",
+        "facts": {
+          "optional_svg_envelope": "present",
+          "schema": "scientific-svg-figure-output-manifest"
+        }
+      },
+      {
+        "check_id": "C0-03",
+        "status": "pass",
+        "facts": {
+          "plan_id": "FPL008"
+        }
+      },
+      {
+        "check_id": "C0-04",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG008",
+          "visual_class": "fair_comparison"
+        }
+      },
+      {
+        "check_id": "C0-05",
+        "status": "pass",
+        "facts": {
+          "figure_id": "FIG008",
+          "plan_ref": "FPL008"
+        }
+      },
+      {
+        "check_id": "C0-06",
+        "status": "pass",
+        "facts": {
+          "canonical_hash": "e5ab88efe063664944f5d62ae2323cd8ac4f1be9f6b8c8be2782666a7d74c6ee"
+        }
+      },
+      {
+        "check_id": "C0-07",
+        "status": "pass",
+        "facts": {
+          "svg_profile": "SSVG-P001"
+        }
+      },
+      {
+        "check_id": "C0-08",
+        "status": "pass",
+        "facts": {
+          "profile_version": "1.0.0"
+        }
+      },
+      {
+        "check_id": "C0-09",
+        "status": "pass",
+        "facts": {
+          "registry": "SNCR001"
+        }
+      },
+      {
+        "check_id": "C0-10",
+        "status": "pass",
+        "facts": {
+          "used_feature_count": 10
+        }
+      },
+      {
+        "check_id": "C0-11",
+        "status": "pass",
+        "facts": {
+          "fallback_decision": "none"
+        }
+      },
+      {
+        "check_id": "C0-12",
+        "status": "pass",
+        "facts": {
+          "source_requirement": "structured_spec"
+        }
+      },
+      {
+        "check_id": "C0-13",
+        "status": "pass",
+        "facts": {
+          "evidence_status": "empirical"
+        }
+      },
+      {
+        "check_id": "C0-14",
+        "status": "pass",
+        "facts": {
+          "ai_generation_allowed": false
+        }
+      },
+      {
+        "check_id": "C0-15",
+        "status": "pass",
+        "facts": {
+          "source_ref_count": 1
+        }
+      },
+      {
+        "check_id": "C0-16",
+        "status": "pass",
+        "facts": {
+          "style_trace_count": 3,
+          "token_count": 74
+        }
+      },
+      {
+        "check_id": "C0-17",
+        "status": "pass",
+        "facts": {
+          "private_attempts": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "check_id": "C0-18",
+        "status": "pass",
+        "facts": {
+          "parent_kind": "ScientificFigureSpec"
+        }
+      },
+      {
+        "check_id": "C0-19",
+        "status": "pass",
+        "facts": {
+          "specialist_binding": "comparison-figure-director"
         }
       },
       {

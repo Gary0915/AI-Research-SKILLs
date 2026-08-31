@@ -1,9 +1,7 @@
 {
   "schema_version": "1.0.0",
   "execution_id": "CP5C-EXEC-001",
-  "manifest_count": 1,
-  "critic_report_count": 1,
-  "approved_figure_count": 1,
-  "owning_check_count": 21,
-  "failed_owning_check_count": 0
+  "manifest_count": 5,
+  "critic_report_count": 5,
+  "approved_figure_count": 5
 }
