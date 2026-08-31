@@ -40,3 +40,39 @@ def test_h0_artifacts_are_schema_closed_and_bind_real_audit_facts(tmp_path: Path
     assert artifacts["execution_evidence"]["private_alias_resolution_attempts"] == 0
     assert registry.errors("cp5-hi-backend-uniqueness-audit", artifacts["backend_uniqueness"]) == []
     assert registry.errors("cp5-hi-execution-evidence", artifacts["execution_evidence"]) == []
+
+
+def test_h1_compiler_requires_reverified_handle_and_returns_deterministic_native_plan():
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import NativeCompilationError, ScientificSvgNativeCompiler
+    from thesis_deck_system.phase3_cp5bcd_integrated import build_representative_director_output, reverify_approved_figure
+
+    produced = build_representative_director_output(ROOT, "mechanism")
+    handle = reverify_approved_figure(produced["manifest"], produced["critic"]["report"], produced["critic"]["approval"], ROOT)
+    compiler = ScientificSvgNativeCompiler()
+
+    plan = compiler.compile(handle, produced["manifest"], produced["svg"], target_box={"left": 1.0, "top": 1.2, "width": 8.0, "height": 4.5})
+    repeat = compiler.compile(handle, produced["manifest"], produced["svg"], target_box={"left": 1.0, "top": 1.2, "width": 8.0, "height": 4.5})
+
+    assert plan["schema_version"] == "1.0.0"
+    assert plan["figure_id"] == handle.figure_id
+    assert plan["plan_sha256"] == repeat["plan_sha256"]
+    assert plan["objects"]
+    assert all(item["outcome"] in {"DRAWINGML_EMITTED", "SVG_VECTOR_FALLBACK", "BLOCKED_UNSUPPORTED", "BLOCKED_UNKNOWN_MAPPING"} for item in plan["objects"])
+    assert any(item["text"] for item in plan["objects"] if item["shape_kind"] == "text")
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5hi=True)
+    assert registry.errors("native-figure-compilation-plan", plan) == []
+    with __import__("pytest").raises(NativeCompilationError):
+        compiler.compile({}, produced["manifest"], produced["svg"], target_box={"left": 1.0, "top": 1.2, "width": 8.0, "height": 4.5})
+
+
+def test_h1_artifacts_cover_all_registered_features_and_approved_figure_representatives(tmp_path: Path):
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import build_h1_artifacts
+
+    result = build_h1_artifacts(ROOT, tmp_path)
+
+    assert result["mapping_manifest"]["unmapped_feature_count"] == 0
+    assert result["mapping_manifest"]["feature_count"] >= 30
+    assert len(result["plans"]) == 8
+    assert all(plan["approved_figure"]["manifest_id"] for plan in result["plans"])
+    assert (tmp_path / "native-figure-compilation-plans.json").exists()

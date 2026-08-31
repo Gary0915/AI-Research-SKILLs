@@ -90,6 +90,7 @@ CP5BCD_SCHEMA_NAMES = (
 CP5HI_SCHEMA_NAMES = (
     "cp5-hi-backend-uniqueness-audit",
     "cp5-hi-execution-evidence",
+    "native-figure-compilation-plan",
 )
 
 SCHEMA_BY_COLLECTION = {

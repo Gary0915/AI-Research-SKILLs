@@ -1,0 +1,3044 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "plan_id": "NFCP-FIG002-1",
+    "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+    "compiler_version": "1.0.0",
+    "figure_id": "FIG002",
+    "figure_revision": "1",
+    "approved_figure": {
+      "manifest_id": "SSE-FIG002-001",
+      "manifest_hash": "d3403f996c4ffa939a1b7cb41531b91ad7f3fffa63b0c58319fb5552d86596a9",
+      "critic_report_id": "FCR-FIG002-001",
+      "critic_report_hash": "8f6bc0886676972c9588d735e81aa64ce069309fca16d331b98a49476817eff5"
+    },
+    "svg_profile": {
+      "profile_id": "SSVG-P001",
+      "profile_version": "1.0.0",
+      "canonical_sha256": "4c1e33ee9c3bfbf1990622c3fea2f451811d4e44935f3e1ddb6e0825eaf7dd3a"
+    },
+    "registry": {
+      "registry_id": "SNCR001",
+      "registry_version": "1.0.0",
+      "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a"
+    },
+    "view_box": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1600.0,
+      "height": 900.0
+    },
+    "target_box": {
+      "left": 0.8,
+      "top": 1.4,
+      "width": 11.75,
+      "height": 4.8
+    },
+    "coordinate_transform": {
+      "scale_x": 0.00734375,
+      "scale_y": 0.005333333333333333,
+      "translate_x": 0.8,
+      "translate_y": 1.4
+    },
+    "feature_decisions": [
+      {
+        "feature_id": "font-attributes",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "group",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "line",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker-local-reference",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "path-commands",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "rect",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-width",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "svg-root-viewbox",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "text",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      }
+    ],
+    "objects": [
+      {
+        "order": 2,
+        "svg_object_id": "obj-arrow",
+        "semantic_role": "arrow",
+        "shape_kind": "marker",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 3,
+        "svg_object_id": "obj-arrow-path",
+        "semantic_role": "branch",
+        "shape_kind": "svg_vector",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "#000000"
+        },
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 4,
+        "svg_object_id": "obj-frame",
+        "semantic_role": "container",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 5,
+        "svg_object_id": "obj-canvas",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 30.0,
+          "y": 30.0,
+          "width": 1540.0,
+          "height": 840.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#ffffff",
+          "stroke": "#333333",
+          "stroke-width": "4"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 6,
+        "svg_object_id": "obj-title",
+        "semantic_role": "title",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 95.0
+        },
+        "text": "Fishbone / 研究地圖",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "34",
+          "font-weight": "bold"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 7,
+        "svg_object_id": "obj-spine",
+        "semantic_role": "spine",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 180.0,
+          "y1": 450.0,
+          "x2": 1420.0,
+          "y2": 450.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "5",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 8,
+        "svg_object_id": "obj-br001",
+        "semantic_role": "node",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 160.0,
+          "y": 162.0,
+          "width": 160.0,
+          "height": 56.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 9,
+        "svg_object_id": "obj-edge-br002",
+        "semantic_role": "branch",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 240.0,
+          "y1": 190.0,
+          "x2": 1360.0,
+          "y2": 370.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 10,
+        "svg_object_id": "obj-br002",
+        "semantic_role": "node",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 1280.0,
+          "y": 342.0,
+          "width": 160.0,
+          "height": 56.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#FF0000",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 11,
+        "svg_object_id": "obj-edge-br003",
+        "semantic_role": "branch",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 240.0,
+          "y1": 190.0,
+          "x2": 1360.0,
+          "y2": 550.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 12,
+        "svg_object_id": "obj-br003",
+        "semantic_role": "node",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 1280.0,
+          "y": 522.0,
+          "width": 160.0,
+          "height": 56.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 13,
+        "svg_object_id": "obj-edge-br004",
+        "semantic_role": "branch",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 240.0,
+          "y1": 190.0,
+          "x2": 1360.0,
+          "y2": 730.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 14,
+        "svg_object_id": "obj-br004",
+        "semantic_role": "node",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 1280.0,
+          "y": 702.0,
+          "width": 160.0,
+          "height": 56.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 15,
+        "svg_object_id": "obj-label-br001",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 175.0,
+          "y": 196.0
+        },
+        "text": "Root [completed]",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 16,
+        "svg_object_id": "obj-label-br002",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 1295.0,
+          "y": 376.0
+        },
+        "text": "Contact [partial]",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 17,
+        "svg_object_id": "obj-label-br003",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 1295.0,
+          "y": 556.0
+        },
+        "text": "Future [future]",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 18,
+        "svg_object_id": "obj-label-br004",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 1295.0,
+          "y": 736.0
+        },
+        "text": "Failed [failed]",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 19,
+        "svg_object_id": "obj-revision",
+        "semantic_role": "annotation",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 835.0
+        },
+        "text": "Revision FB001-R001 · current focus highlighted",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "16"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      }
+    ],
+    "fallback_records": [
+      {
+        "object_id": "obj-arrow-path",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "4c1e33ee9c3bfbf1990622c3fea2f451811d4e44935f3e1ddb6e0825eaf7dd3a"
+      }
+    ],
+    "plan_sha256": "6338c9e2f3af5d4ead98f607ba11fb9779705e1a7c690b0f3e92c17ed40946eb"
+  },
+  {
+    "schema_version": "1.0.0",
+    "plan_id": "NFCP-FIG006-1",
+    "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+    "compiler_version": "1.0.0",
+    "figure_id": "FIG006",
+    "figure_revision": "1",
+    "approved_figure": {
+      "manifest_id": "SSE-FIG006-001",
+      "manifest_hash": "3f6a0ad151848b296b83e92d3baacd852a07018b604827d42bb72d117427fc1f",
+      "critic_report_id": "FCR-FIG006-001",
+      "critic_report_hash": "d9f2532da722efeb47221bfa2ffc2b557d1f06d39201045d34de4c441abbe425"
+    },
+    "svg_profile": {
+      "profile_id": "SSVG-P001",
+      "profile_version": "1.0.0",
+      "canonical_sha256": "920415fce4df10be7463c125eaddcfe3fcb1a623c475bbea599178992d9eecad"
+    },
+    "registry": {
+      "registry_id": "SNCR001",
+      "registry_version": "1.0.0",
+      "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a"
+    },
+    "view_box": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1600.0,
+      "height": 900.0
+    },
+    "target_box": {
+      "left": 0.8,
+      "top": 1.4,
+      "width": 11.75,
+      "height": 4.8
+    },
+    "coordinate_transform": {
+      "scale_x": 0.00734375,
+      "scale_y": 0.005333333333333333,
+      "translate_x": 0.8,
+      "translate_y": 1.4
+    },
+    "feature_decisions": [
+      {
+        "feature_id": "ellipse",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "font-attributes",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "group",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "line",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker-local-reference",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "path-commands",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "rect",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-dasharray",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-width",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "svg-root-viewbox",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "text",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      }
+    ],
+    "objects": [
+      {
+        "order": 2,
+        "svg_object_id": "obj-arrow",
+        "semantic_role": "arrow",
+        "shape_kind": "marker",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 3,
+        "svg_object_id": "obj-arrow-path",
+        "semantic_role": "branch",
+        "shape_kind": "svg_vector",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "#000000"
+        },
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 4,
+        "svg_object_id": "obj-frame",
+        "semantic_role": "container",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 5,
+        "svg_object_id": "obj-canvas",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 30.0,
+          "y": 30.0,
+          "width": 1480.0,
+          "height": 840.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#ffffff",
+          "stroke": "#333333",
+          "stroke-width": "4"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 6,
+        "svg_object_id": "obj-title",
+        "semantic_role": "title",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 95.0
+        },
+        "text": "Mechanism / 機制",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "34",
+          "font-weight": "bold"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 7,
+        "svg_object_id": "obj-n001",
+        "semantic_role": "node",
+        "shape_kind": "ellipse",
+        "geometry": {
+          "cx": 400.0,
+          "cy": 420.0,
+          "rx": 130.0,
+          "ry": 60.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f5f5f5",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 8,
+        "svg_object_id": "obj-label-n001",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 330.0,
+          "y": 426.0
+        },
+        "text": "Input",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "20"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 9,
+        "svg_object_id": "obj-n002",
+        "semantic_role": "node",
+        "shape_kind": "ellipse",
+        "geometry": {
+          "cx": 920.0,
+          "cy": 420.0,
+          "rx": 130.0,
+          "ry": 60.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f5f5f5",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 10,
+        "svg_object_id": "obj-label-n002",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 850.0,
+          "y": 426.0
+        },
+        "text": "Unknown",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "20"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 11,
+        "svg_object_id": "obj-causal-0",
+        "semantic_role": "connector",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 530.0,
+          "y1": 420.0,
+          "x2": 790.0,
+          "y2": 420.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "stroke-dasharray": "10 8",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 12,
+        "svg_object_id": "obj-state-0",
+        "semantic_role": "annotation",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 625.0,
+          "y": 388.0
+        },
+        "text": "uncertain",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "16"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 13,
+        "svg_object_id": "obj-alternative",
+        "semantic_role": "callout",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 560.0,
+          "y": 650.0,
+          "width": 460.0,
+          "height": 80.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#fff4cc",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 14,
+        "svg_object_id": "obj-alt-label",
+        "semantic_role": "annotation",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 585.0,
+          "y": 698.0
+        },
+        "text": "alternative / uncertainty retained",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      }
+    ],
+    "fallback_records": [
+      {
+        "object_id": "obj-arrow-path",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "920415fce4df10be7463c125eaddcfe3fcb1a623c475bbea599178992d9eecad"
+      }
+    ],
+    "plan_sha256": "813fdbcdc479edb1ea11468ff48dccac10d9bda1a4866d9881070eb7f222c249"
+  },
+  {
+    "schema_version": "1.0.0",
+    "plan_id": "NFCP-FIG007-1",
+    "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+    "compiler_version": "1.0.0",
+    "figure_id": "FIG007",
+    "figure_revision": "1",
+    "approved_figure": {
+      "manifest_id": "SSE-FIG007-001",
+      "manifest_hash": "4b7f32896636f998729037562194919ceed670d4e5355874849080f8b3dff41d",
+      "critic_report_id": "FCR-FIG007-001",
+      "critic_report_hash": "8b4d8866ea0668207a1b36eacdda9f1638115abbd41a0d19caee002b2e777388"
+    },
+    "svg_profile": {
+      "profile_id": "SSVG-P001",
+      "profile_version": "1.0.0",
+      "canonical_sha256": "d3fa13dd10905d971940b5020779f4c526f5cd96fccb1b3ca849e53bf7b06721"
+    },
+    "registry": {
+      "registry_id": "SNCR001",
+      "registry_version": "1.0.0",
+      "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a"
+    },
+    "view_box": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1600.0,
+      "height": 900.0
+    },
+    "target_box": {
+      "left": 0.8,
+      "top": 1.4,
+      "width": 11.75,
+      "height": 4.8
+    },
+    "coordinate_transform": {
+      "scale_x": 0.00734375,
+      "scale_y": 0.005333333333333333,
+      "translate_x": 0.8,
+      "translate_y": 1.4
+    },
+    "feature_decisions": [
+      {
+        "feature_id": "font-attributes",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "group",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "line",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker-local-reference",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "path-commands",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "rect",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-width",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "svg-root-viewbox",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "text",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      }
+    ],
+    "objects": [
+      {
+        "order": 2,
+        "svg_object_id": "obj-arrow",
+        "semantic_role": "arrow",
+        "shape_kind": "marker",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 3,
+        "svg_object_id": "obj-arrow-path",
+        "semantic_role": "branch",
+        "shape_kind": "svg_vector",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "#333333"
+        },
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 4,
+        "svg_object_id": "obj-frame",
+        "semantic_role": "container",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 5,
+        "svg_object_id": "obj-canvas",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 30.0,
+          "y": 30.0,
+          "width": 1540.0,
+          "height": 840.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f8f8f8",
+          "stroke": "#333333",
+          "stroke-width": "4"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 6,
+        "svg_object_id": "obj-title",
+        "semantic_role": "title",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 95.0
+        },
+        "text": "Experiment / 實驗",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "34",
+          "font-weight": "bold"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 7,
+        "svg_object_id": "obj-sample-0",
+        "semantic_role": "sample",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 70.0,
+          "y": 190.0,
+          "width": 200.0,
+          "height": 90.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 8,
+        "svg_object_id": "obj-label-sample-0",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 100.0,
+          "y": 241.0
+        },
+        "text": "sample",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 9,
+        "svg_object_id": "obj-control-1",
+        "semantic_role": "node",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 315.0,
+          "y": 190.0,
+          "width": 200.0,
+          "height": 90.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 10,
+        "svg_object_id": "obj-label-control-1",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 345.0,
+          "y": 241.0
+        },
+        "text": "baseline",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 11,
+        "svg_object_id": "obj-instrument-2",
+        "semantic_role": "instrument",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 560.0,
+          "y": 190.0,
+          "width": 200.0,
+          "height": 90.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 12,
+        "svg_object_id": "obj-label-instrument-2",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 590.0,
+          "y": 241.0
+        },
+        "text": "instrument",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 13,
+        "svg_object_id": "obj-interface-3",
+        "semantic_role": "interface",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 805.0,
+          "y": 190.0,
+          "width": 200.0,
+          "height": 90.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 14,
+        "svg_object_id": "obj-label-interface-3",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 835.0,
+          "y": 241.0
+        },
+        "text": "probe",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 15,
+        "svg_object_id": "obj-input-4",
+        "semantic_role": "node",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 1050.0,
+          "y": 190.0,
+          "width": 200.0,
+          "height": 90.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 16,
+        "svg_object_id": "obj-label-input-4",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 1080.0,
+          "y": 241.0
+        },
+        "text": "signal",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 17,
+        "svg_object_id": "obj-output-5",
+        "semantic_role": "output",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 1295.0,
+          "y": 190.0,
+          "width": 200.0,
+          "height": 90.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 18,
+        "svg_object_id": "obj-label-output-5",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 1325.0,
+          "y": 241.0
+        },
+        "text": "measurement",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 19,
+        "svg_object_id": "obj-path-0-0",
+        "semantic_role": "flow",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 1250.0,
+          "y1": 235.0,
+          "x2": 70.0,
+          "y2": 235.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 20,
+        "svg_object_id": "obj-path-1-0",
+        "semantic_role": "flow",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 270.0,
+          "y1": 235.0,
+          "x2": 560.0,
+          "y2": 235.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 21,
+        "svg_object_id": "obj-path-2-0",
+        "semantic_role": "flow",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 760.0,
+          "y1": 235.0,
+          "x2": 805.0,
+          "y2": 235.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 22,
+        "svg_object_id": "obj-path-3-0",
+        "semantic_role": "flow",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 1005.0,
+          "y1": 235.0,
+          "x2": 1295.0,
+          "y2": 235.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 23,
+        "svg_object_id": "obj-path-4-0",
+        "semantic_role": "flow",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 515.0,
+          "y1": 235.0,
+          "x2": 70.0,
+          "y2": 235.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      }
+    ],
+    "fallback_records": [
+      {
+        "object_id": "obj-arrow-path",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "d3fa13dd10905d971940b5020779f4c526f5cd96fccb1b3ca849e53bf7b06721"
+      }
+    ],
+    "plan_sha256": "09f912939c8298f9a0c56dc1d8aed951b8b528f3c881971c184e4143efc0989b"
+  },
+  {
+    "schema_version": "1.0.0",
+    "plan_id": "NFCP-FIG003-1",
+    "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+    "compiler_version": "1.0.0",
+    "figure_id": "FIG003",
+    "figure_revision": "1",
+    "approved_figure": {
+      "manifest_id": "SSE-FIG003-001",
+      "manifest_hash": "9bf3d6ac457374647ee328515c26fb7c43ce57b195f8d03e675e74c0fb3f7bbd",
+      "critic_report_id": "FCR-FIG003-001",
+      "critic_report_hash": "88856fe97661cb6949a0b4d53a6607f0eaccd7fe550cd37401ee54b7d6fb6384"
+    },
+    "svg_profile": {
+      "profile_id": "SSVG-P001",
+      "profile_version": "1.0.0",
+      "canonical_sha256": "870be8faa141b38adefd46fc4475e34c79e3da615f7ce045ab504bd5a41b25c3"
+    },
+    "registry": {
+      "registry_id": "SNCR001",
+      "registry_version": "1.0.0",
+      "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a"
+    },
+    "view_box": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1600.0,
+      "height": 900.0
+    },
+    "target_box": {
+      "left": 0.8,
+      "top": 1.4,
+      "width": 11.75,
+      "height": 4.8
+    },
+    "coordinate_transform": {
+      "scale_x": 0.00734375,
+      "scale_y": 0.005333333333333333,
+      "translate_x": 0.8,
+      "translate_y": 1.4
+    },
+    "feature_decisions": [
+      {
+        "feature_id": "font-attributes",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "group",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "line",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker-local-reference",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "path-commands",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "rect",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-width",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "svg-root-viewbox",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "text",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      }
+    ],
+    "objects": [
+      {
+        "order": 2,
+        "svg_object_id": "obj-arrow",
+        "semantic_role": "arrow",
+        "shape_kind": "marker",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 3,
+        "svg_object_id": "obj-arrow-path",
+        "semantic_role": "branch",
+        "shape_kind": "svg_vector",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "#333333"
+        },
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 4,
+        "svg_object_id": "obj-frame",
+        "semantic_role": "container",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 5,
+        "svg_object_id": "obj-canvas",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 30.0,
+          "y": 30.0,
+          "width": 1540.0,
+          "height": 840.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f8f8f8",
+          "stroke": "#333333",
+          "stroke-width": "4"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 6,
+        "svg_object_id": "obj-title",
+        "semantic_role": "title",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 95.0
+        },
+        "text": "Fabrication / 製程",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "34",
+          "font-weight": "bold"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 7,
+        "svg_object_id": "obj-step-1",
+        "semantic_role": "process_step",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 160.0,
+          "y": 330.0,
+          "width": 380.0,
+          "height": 170.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 8,
+        "svg_object_id": "obj-state-1",
+        "semantic_role": "material_state",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 200.0,
+          "y": 390.0
+        },
+        "text": "state: mixture",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "20"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 9,
+        "svg_object_id": "obj-condition-1",
+        "semantic_role": "annotation",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 200.0,
+          "y": 435.0
+        },
+        "text": "T: UNKNOWN · t: UNKNOWN",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 10,
+        "svg_object_id": "obj-step-2",
+        "semantic_role": "process_step",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 810.0,
+          "y": 330.0,
+          "width": 380.0,
+          "height": 170.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 11,
+        "svg_object_id": "obj-state-2",
+        "semantic_role": "material_state",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 850.0,
+          "y": 390.0
+        },
+        "text": "state: gel",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "20"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 12,
+        "svg_object_id": "obj-condition-2",
+        "semantic_role": "annotation",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 850.0,
+          "y": 435.0
+        },
+        "text": "T: UNKNOWN · t: UNKNOWN",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 13,
+        "svg_object_id": "obj-transition-2",
+        "semantic_role": "flow",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 540.0,
+          "y1": 415.0,
+          "x2": 810.0,
+          "y2": 415.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      }
+    ],
+    "fallback_records": [
+      {
+        "object_id": "obj-arrow-path",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "870be8faa141b38adefd46fc4475e34c79e3da615f7ce045ab504bd5a41b25c3"
+      }
+    ],
+    "plan_sha256": "9dca021a040ba311af162de93cf455b58ea3fdb91b2b116b12d270090ea10bcc"
+  },
+  {
+    "schema_version": "1.0.0",
+    "plan_id": "NFCP-FIG008-1",
+    "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+    "compiler_version": "1.0.0",
+    "figure_id": "FIG008",
+    "figure_revision": "1",
+    "approved_figure": {
+      "manifest_id": "SSE-FIG008-001",
+      "manifest_hash": "7d59b283019d7749064c14fbaa10e368dd1b45c16b4c16321086ad60a042d29e",
+      "critic_report_id": "FCR-FIG008-001",
+      "critic_report_hash": "e032434a63fbc5ac840e9282a95f70bd06f5241b42d5a46a8cb11b61762438d7"
+    },
+    "svg_profile": {
+      "profile_id": "SSVG-P001",
+      "profile_version": "1.0.0",
+      "canonical_sha256": "5d12384dc8fbf330cfda0ec9ab85a6f29299ee732c2cebda41b260a50cfda485"
+    },
+    "registry": {
+      "registry_id": "SNCR001",
+      "registry_version": "1.0.0",
+      "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a"
+    },
+    "view_box": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1600.0,
+      "height": 900.0
+    },
+    "target_box": {
+      "left": 0.8,
+      "top": 1.4,
+      "width": 11.75,
+      "height": 4.8
+    },
+    "coordinate_transform": {
+      "scale_x": 0.00734375,
+      "scale_y": 0.005333333333333333,
+      "translate_x": 0.8,
+      "translate_y": 1.4
+    },
+    "feature_decisions": [
+      {
+        "feature_id": "font-attributes",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "group",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "line",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker-local-reference",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "path-commands",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "rect",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-width",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "svg-root-viewbox",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "text",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      }
+    ],
+    "objects": [
+      {
+        "order": 2,
+        "svg_object_id": "obj-arrow",
+        "semantic_role": "arrow",
+        "shape_kind": "marker",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 3,
+        "svg_object_id": "obj-arrow-path",
+        "semantic_role": "branch",
+        "shape_kind": "svg_vector",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "#000000"
+        },
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 4,
+        "svg_object_id": "obj-frame",
+        "semantic_role": "container",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 5,
+        "svg_object_id": "obj-canvas",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 30.0,
+          "y": 30.0,
+          "width": 1480.0,
+          "height": 840.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f8f8f8",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 6,
+        "svg_object_id": "obj-title",
+        "semantic_role": "title",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 95.0
+        },
+        "text": "Fair Comparison / 比較",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "34",
+          "font-weight": "bold"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 7,
+        "svg_object_id": "obj-panel-control",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 100.0,
+          "y": 210.0,
+          "width": 670.0,
+          "height": 500.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 8,
+        "svg_object_id": "obj-side-control",
+        "semantic_role": "control",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 140.0,
+          "y": 275.0
+        },
+        "text": "Control",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "28"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 9,
+        "svg_object_id": "obj-metric-control-0",
+        "semantic_role": "connector",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 140.0,
+          "y1": 380.0,
+          "x2": 730.0,
+          "y2": 380.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 10,
+        "svg_object_id": "obj-metric-label-control-0",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 190.0,
+          "y": 364.0
+        },
+        "text": "metric · same scale",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 11,
+        "svg_object_id": "obj-panel-proposed",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 800.0,
+          "y": 210.0,
+          "width": 670.0,
+          "height": 500.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f4f4f4",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 12,
+        "svg_object_id": "obj-side-proposed",
+        "semantic_role": "proposed",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 840.0,
+          "y": 275.0
+        },
+        "text": "Proposed",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "28"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 13,
+        "svg_object_id": "obj-metric-proposed-0",
+        "semantic_role": "connector",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 840.0,
+          "y1": 380.0,
+          "x2": 1430.0,
+          "y2": 380.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 14,
+        "svg_object_id": "obj-metric-label-proposed-0",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 890.0,
+          "y": 364.0
+        },
+        "text": "metric · same scale",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 15,
+        "svg_object_id": "obj-normalization",
+        "semantic_role": "annotation",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 620.0,
+          "y": 790.0
+        },
+        "text": "same scale · same normalization · matched area",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      }
+    ],
+    "fallback_records": [
+      {
+        "object_id": "obj-arrow-path",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "5d12384dc8fbf330cfda0ec9ab85a6f29299ee732c2cebda41b260a50cfda485"
+      }
+    ],
+    "plan_sha256": "46c02fbd9d3d9b4c186b3addae80622fe51d18fd325eeb1b9b196ba59907dedd"
+  },
+  {
+    "schema_version": "1.0.0",
+    "plan_id": "NFCP-FIG001-1",
+    "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+    "compiler_version": "1.0.0",
+    "figure_id": "FIG001",
+    "figure_revision": "1",
+    "approved_figure": {
+      "manifest_id": "SSE-FIG001-001",
+      "manifest_hash": "deef2e3638b2ea7992a2abb049ebdbcc8bc1b2403bc6b84913a6ff2a631c7b91",
+      "critic_report_id": "FCR-FIG001-001",
+      "critic_report_hash": "26ad630b49a8788086522b1c4e805fd2098059602c7e58e9b85f0d74a14d2312"
+    },
+    "svg_profile": {
+      "profile_id": "SSVG-P001",
+      "profile_version": "1.0.0",
+      "canonical_sha256": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d"
+    },
+    "registry": {
+      "registry_id": "SNCR001",
+      "registry_version": "1.0.0",
+      "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a"
+    },
+    "view_box": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1600.0,
+      "height": 900.0
+    },
+    "target_box": {
+      "left": 0.8,
+      "top": 1.4,
+      "width": 11.75,
+      "height": 4.8
+    },
+    "coordinate_transform": {
+      "scale_x": 0.00734375,
+      "scale_y": 0.005333333333333333,
+      "translate_x": 0.8,
+      "translate_y": 1.4
+    },
+    "feature_decisions": [
+      {
+        "feature_id": "font-attributes",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "group",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "line",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker-local-reference",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "path-commands",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "polyline",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "rect",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-width",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "svg-root-viewbox",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "text",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      }
+    ],
+    "objects": [
+      {
+        "order": 2,
+        "svg_object_id": "obj-arrow",
+        "semantic_role": "arrow",
+        "shape_kind": "marker",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 3,
+        "svg_object_id": "obj-arrow-path",
+        "semantic_role": "branch",
+        "shape_kind": "svg_vector",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "#333333"
+        },
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 4,
+        "svg_object_id": "obj-frame",
+        "semantic_role": "container",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 5,
+        "svg_object_id": "obj-canvas",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 30.0,
+          "y": 30.0,
+          "width": 1480.0,
+          "height": 840.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f8f8f8",
+          "stroke": "#333333",
+          "stroke-width": "4"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 6,
+        "svg_object_id": "obj-title",
+        "semantic_role": "title",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 95.0
+        },
+        "text": "Synthetic Quantitative Plot",
+        "style": {
+          "font-family": "Calibri",
+          "font-size": "34",
+          "font-weight": "bold"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 7,
+        "svg_object_id": "obj-plot",
+        "semantic_role": "plot_area",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 8,
+        "svg_object_id": "obj-x-axis",
+        "semantic_role": "axis",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 220.0,
+          "y1": 700.0,
+          "x2": 1380.0,
+          "y2": 700.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 9,
+        "svg_object_id": "obj-y-axis",
+        "semantic_role": "axis",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 220.0,
+          "y1": 700.0,
+          "x2": 220.0,
+          "y2": 190.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 10,
+        "svg_object_id": "obj-series-0",
+        "semantic_role": "data_series",
+        "shape_kind": "polyline",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "none",
+          "stroke": "#0F9ED5",
+          "stroke-width": "4"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 11,
+        "svg_object_id": "obj-x-label",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 1180.0,
+          "y": 750.0
+        },
+        "text": "time / synthetic",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "20"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 12,
+        "svg_object_id": "obj-y-label",
+        "semantic_role": "label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 110.0,
+          "y": 200.0
+        },
+        "text": "response / synthetic",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "20"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 13,
+        "svg_object_id": "obj-y-domain",
+        "semantic_role": "annotation",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 230.0,
+          "y": 180.0
+        },
+        "text": "1–2",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "16"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      }
+    ],
+    "fallback_records": [
+      {
+        "object_id": "obj-arrow-path",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "88fbcec0d17ab40b639c488ab1f30e13d412189b9844ea3a19161174d0f0075d"
+      }
+    ],
+    "plan_sha256": "afb224c4fa528d3118419da036d4ebe2ed390ff913af732488fa23036598d40f"
+  },
+  {
+    "schema_version": "1.0.0",
+    "plan_id": "NFCP-FIG009-1",
+    "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+    "compiler_version": "1.0.0",
+    "figure_id": "FIG009",
+    "figure_revision": "1",
+    "approved_figure": {
+      "manifest_id": "SSE-FIG009-001",
+      "manifest_hash": "007912ca1eddb73b6a43fa11e7e10c346ff5996cd5f61883cd3f4216c72a72a1",
+      "critic_report_id": "FCR-FIG009-001",
+      "critic_report_hash": "ba1f1f4a95ce567138ea46e519b5c891128dfdc0fee67f792867f735ccd31274"
+    },
+    "svg_profile": {
+      "profile_id": "SSVG-P001",
+      "profile_version": "1.0.0",
+      "canonical_sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
+    },
+    "registry": {
+      "registry_id": "SNCR001",
+      "registry_version": "1.0.0",
+      "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a"
+    },
+    "view_box": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1600.0,
+      "height": 900.0
+    },
+    "target_box": {
+      "left": 0.8,
+      "top": 1.4,
+      "width": 11.75,
+      "height": 4.8
+    },
+    "coordinate_transform": {
+      "scale_x": 0.00734375,
+      "scale_y": 0.005333333333333333,
+      "translate_x": 0.8,
+      "translate_y": 1.4
+    },
+    "feature_decisions": [
+      {
+        "feature_id": "font-attributes",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "group",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "image",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "marker",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker-local-reference",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "path-commands",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "rect",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-width",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "svg-root-viewbox",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "text",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      }
+    ],
+    "objects": [
+      {
+        "order": 2,
+        "svg_object_id": "obj-arrow",
+        "semantic_role": "arrow",
+        "shape_kind": "marker",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 3,
+        "svg_object_id": "obj-arrow-path",
+        "semantic_role": "branch",
+        "shape_kind": "svg_vector",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "#333333"
+        },
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 4,
+        "svg_object_id": "obj-frame",
+        "semantic_role": "container",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 5,
+        "svg_object_id": "obj-canvas",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 30.0,
+          "y": 30.0,
+          "width": 1480.0,
+          "height": 840.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f8f8f8",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 6,
+        "svg_object_id": "obj-title",
+        "semantic_role": "title",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 95.0
+        },
+        "text": "Synthetic Image Matrix",
+        "style": {
+          "font-family": "Calibri",
+          "font-size": "34",
+          "font-weight": "bold"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 7,
+        "svg_object_id": "obj-cell-0",
+        "semantic_role": "matrix_cell",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 8,
+        "svg_object_id": "obj-panel-0",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 220.0,
+          "y": 210.0,
+          "width": 500.0,
+          "height": 180.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#d1d1d1",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 9,
+        "svg_object_id": "obj-image-0",
+        "semantic_role": "image",
+        "shape_kind": "svg_vector",
+        "geometry": {
+          "x": 230.0,
+          "y": 220.0,
+          "width": 480.0,
+          "height": 140.0
+        },
+        "text": null,
+        "style": {},
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 10,
+        "svg_object_id": "obj-label-0",
+        "semantic_role": "panel_label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 240.0,
+          "y": 380.0
+        },
+        "text": "synthetic panel 1",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 11,
+        "svg_object_id": "obj-cell-1",
+        "semantic_role": "matrix_cell",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 12,
+        "svg_object_id": "obj-panel-1",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 850.0,
+          "y": 210.0,
+          "width": 500.0,
+          "height": 180.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#d1d1d1",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 13,
+        "svg_object_id": "obj-image-1",
+        "semantic_role": "image",
+        "shape_kind": "svg_vector",
+        "geometry": {
+          "x": 860.0,
+          "y": 220.0,
+          "width": 480.0,
+          "height": 140.0
+        },
+        "text": null,
+        "style": {},
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 14,
+        "svg_object_id": "obj-label-1",
+        "semantic_role": "panel_label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 870.0,
+          "y": 380.0
+        },
+        "text": "synthetic panel 2",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 15,
+        "svg_object_id": "obj-cell-2",
+        "semantic_role": "matrix_cell",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 16,
+        "svg_object_id": "obj-panel-2",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 220.0,
+          "y": 480.0,
+          "width": 500.0,
+          "height": 180.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#d1d1d1",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 17,
+        "svg_object_id": "obj-image-2",
+        "semantic_role": "image",
+        "shape_kind": "svg_vector",
+        "geometry": {
+          "x": 230.0,
+          "y": 490.0,
+          "width": 480.0,
+          "height": 140.0
+        },
+        "text": null,
+        "style": {},
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 18,
+        "svg_object_id": "obj-label-2",
+        "semantic_role": "panel_label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 240.0,
+          "y": 650.0
+        },
+        "text": "synthetic panel 3",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 19,
+        "svg_object_id": "obj-cell-3",
+        "semantic_role": "matrix_cell",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 20,
+        "svg_object_id": "obj-panel-3",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 850.0,
+          "y": 480.0,
+          "width": 500.0,
+          "height": 180.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#d1d1d1",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 21,
+        "svg_object_id": "obj-image-3",
+        "semantic_role": "image",
+        "shape_kind": "svg_vector",
+        "geometry": {
+          "x": 860.0,
+          "y": 490.0,
+          "width": 480.0,
+          "height": 140.0
+        },
+        "text": null,
+        "style": {},
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 22,
+        "svg_object_id": "obj-label-3",
+        "semantic_role": "panel_label",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 870.0,
+          "y": 650.0
+        },
+        "text": "synthetic panel 4",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "18"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      }
+    ],
+    "fallback_records": [
+      {
+        "object_id": "obj-arrow-path",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
+      },
+      {
+        "object_id": "obj-image-0",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
+      },
+      {
+        "object_id": "obj-image-1",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
+      },
+      {
+        "object_id": "obj-image-2",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
+      },
+      {
+        "object_id": "obj-image-3",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "acd45632a021780d8f5c238a9384f12b4d01c6b2b2e79f62c26642bb15f2f27c"
+      }
+    ],
+    "plan_sha256": "bdd544d0e239dbc1a4c3fe348a9cb8db2ab496565d335b6c548b327792af39cc"
+  },
+  {
+    "schema_version": "1.0.0",
+    "plan_id": "NFCP-FIG010-1",
+    "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+    "compiler_version": "1.0.0",
+    "figure_id": "FIG010",
+    "figure_revision": "1",
+    "approved_figure": {
+      "manifest_id": "SSE-FIG010-001",
+      "manifest_hash": "56ba8bc7c2bc255144e289a0bee39236f76f7ca8443df7fffdc53af1b3d1f3d6",
+      "critic_report_id": "FCR-FIG010-001",
+      "critic_report_hash": "9ba25d4e334b6fe3ded34b93666932d300d2616023ed0378b330c4a56dd7611b"
+    },
+    "svg_profile": {
+      "profile_id": "SSVG-P001",
+      "profile_version": "1.0.0",
+      "canonical_sha256": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7"
+    },
+    "registry": {
+      "registry_id": "SNCR001",
+      "registry_version": "1.0.0",
+      "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a"
+    },
+    "view_box": {
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1600.0,
+      "height": 900.0
+    },
+    "target_box": {
+      "left": 0.8,
+      "top": 1.4,
+      "width": 11.75,
+      "height": 4.8
+    },
+    "coordinate_transform": {
+      "scale_x": 0.00734375,
+      "scale_y": 0.005333333333333333,
+      "translate_x": 0.8,
+      "translate_y": 1.4
+    },
+    "feature_decisions": [
+      {
+        "feature_id": "circle",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "font-attributes",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "group",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "line",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "marker-local-reference",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "path-commands",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "SVG_VECTOR_FALLBACK"
+      },
+      {
+        "feature_id": "rect",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "stroke-width",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "svg-root-viewbox",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      },
+      {
+        "feature_id": "text",
+        "capability_state": "UNKNOWN",
+        "compilation_decision": "DRAWINGML_EMITTED"
+      }
+    ],
+    "objects": [
+      {
+        "order": 2,
+        "svg_object_id": "obj-arrow",
+        "semantic_role": "arrow",
+        "shape_kind": "marker",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 3,
+        "svg_object_id": "obj-arrow-path",
+        "semantic_role": "branch",
+        "shape_kind": "svg_vector",
+        "geometry": {},
+        "text": null,
+        "style": {
+          "fill": "#333333"
+        },
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "fallback_reason": "unsupported_svg_subtree",
+        "parent_relation": null
+      },
+      {
+        "order": 4,
+        "svg_object_id": "obj-frame",
+        "semantic_role": "container",
+        "shape_kind": "group",
+        "geometry": {},
+        "text": null,
+        "style": {},
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 5,
+        "svg_object_id": "obj-canvas",
+        "semantic_role": "panel",
+        "shape_kind": "rect",
+        "geometry": {
+          "x": 30.0,
+          "y": 30.0,
+          "width": 1540.0,
+          "height": 840.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#f8f8f8",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 6,
+        "svg_object_id": "obj-title",
+        "semantic_role": "title",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 80.0,
+          "y": 95.0
+        },
+        "text": "Concept Illustration",
+        "style": {
+          "font-family": "Calibri",
+          "font-size": "34",
+          "font-weight": "bold"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 7,
+        "svg_object_id": "obj-concept-source",
+        "semantic_role": "node",
+        "shape_kind": "ellipse",
+        "geometry": {
+          "cx": 480.0,
+          "cy": 450.0,
+          "r": 110.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#CAEEFB",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 8,
+        "svg_object_id": "obj-concept-target",
+        "semantic_role": "node",
+        "shape_kind": "ellipse",
+        "geometry": {
+          "cx": 1120.0,
+          "cy": 450.0,
+          "r": 110.0
+        },
+        "text": null,
+        "style": {
+          "fill": "#FFC000",
+          "stroke": "#333333",
+          "stroke-width": "2"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 9,
+        "svg_object_id": "obj-concept-flow",
+        "semantic_role": "flow",
+        "shape_kind": "line",
+        "geometry": {
+          "x1": 590.0,
+          "y1": 450.0,
+          "x2": 1010.0,
+          "y2": 450.0
+        },
+        "text": null,
+        "style": {
+          "stroke": "#333333",
+          "stroke-width": "3",
+          "marker-end": "url(#obj-arrow)"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      },
+      {
+        "order": 10,
+        "svg_object_id": "obj-concept-label",
+        "semantic_role": "annotation",
+        "shape_kind": "text",
+        "geometry": {
+          "x": 600.0,
+          "y": 560.0
+        },
+        "text": "non-evidence explanatory concept",
+        "style": {
+          "font-family": "Arial",
+          "font-size": "20"
+        },
+        "outcome": "DRAWINGML_EMITTED",
+        "fallback_reason": null,
+        "parent_relation": null
+      }
+    ],
+    "fallback_records": [
+      {
+        "object_id": "obj-arrow-path",
+        "outcome": "SVG_VECTOR_FALLBACK",
+        "reason": "unsupported_svg_subtree",
+        "source_svg_sha256": "98a55900fcbc92e737c987279bc0360416fa1cd8cdb1948e5aadb7e95a2303c7"
+      }
+    ],
+    "plan_sha256": "c93b84a1512f900bd79d892569feaf6828b100efa8fe671d48e2f3e1b577c03e"
+  }
+]

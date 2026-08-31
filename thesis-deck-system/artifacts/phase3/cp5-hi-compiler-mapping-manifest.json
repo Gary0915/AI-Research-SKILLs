@@ -1,0 +1,171 @@
+{
+  "schema_version": "1.0.0",
+  "mapping_manifest_id": "H1-COMPILER-MAPPING-001",
+  "compiler_id": "TDS-SVG-NATIVE-COMPILER-001",
+  "registry_id": "SNCR001",
+  "registry_sha256": "57654c3165ba5fa748936137a1a53e0d99953e5f8a64ad53ab621fa97c1e025a",
+  "feature_count": 32,
+  "unmapped_feature_count": 0,
+  "feature_decisions": [
+    {
+      "feature_id": "svg-root-viewbox",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "group",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "rect",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "circle",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "ellipse",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "line",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "polyline",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "polygon",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "path-commands",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "SVG_VECTOR_FALLBACK"
+    },
+    {
+      "feature_id": "text",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "tspan",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "text-editable-cjk",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "image",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "SVG_VECTOR_FALLBACK"
+    },
+    {
+      "feature_id": "marker",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "marker-local-reference",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "clip-path",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "SVG_VECTOR_FALLBACK"
+    },
+    {
+      "feature_id": "clip-local-reference",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "SVG_VECTOR_FALLBACK"
+    },
+    {
+      "feature_id": "transform-translate",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "transform-scale",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "transform-rotate",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "transform-matrix",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "stroke-width",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "stroke-linecap",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "stroke-linejoin",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "stroke-dasharray",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "fill-opacity",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "stroke-opacity",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "text-anchor",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "dominant-baseline",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "font-attributes",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "same-document-reference",
+      "capability_state": "UNKNOWN",
+      "compilation_decision": "DRAWINGML_EMITTED"
+    },
+    {
+      "feature_id": "svg-vector-fallback",
+      "capability_state": "VECTOR_FALLBACK",
+      "compilation_decision": "SVG_VECTOR_FALLBACK"
+    }
+  ]
+}
