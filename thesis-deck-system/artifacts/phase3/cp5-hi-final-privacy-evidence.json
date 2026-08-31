@@ -1,0 +1,17 @@
+{
+  "evidence_id": "CP5-HI-FINAL-PRIVACY-001",
+  "configuration_source": "caller_supplied_ephemeral_dictionary",
+  "private_root_signature_count": 1,
+  "forbidden_basename_count": 3,
+  "scanner_id": "RepositoryPrivacyScanner",
+  "scanner_version": "CP3-REPOSITORY-STAGED-V1",
+  "configuration_hash": "b644bbc59d0c6573d19ba2296389e185ad13ca8cb5655af2463c223b23ffa88f",
+  "repository_findings": 0,
+  "staged_findings": 0,
+  "approved_legacy_exceptions": 1,
+  "repository_scan_executed": true,
+  "staged_scan_executed": true,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}

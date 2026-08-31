@@ -307,20 +307,36 @@
     {
       "gate_id": "RG-14",
       "dimension": "package_privacy_status",
-      "status": "not_run",
+      "status": "pass",
       "facts": {
         "scalar": [
+          {
+            "key": "approved_legacy_exceptions",
+            "value": 1
+          },
+          {
+            "key": "configuration_hash",
+            "value": "fc25d29c760c65d55c1b09ac2da486832666faece058a8e6583918554a2f58bf"
+          },
           {
             "key": "package_forbidden_part_count",
             "value": 0
           },
           {
             "key": "repository_staged_privacy_scan",
-            "value": "pending_final_candidate"
+            "value": "pass"
+          },
+          {
+            "key": "repository_findings",
+            "value": 0
+          },
+          {
+            "key": "staged_findings",
+            "value": 0
           }
         ],
         "structured": [],
-        "evidence_sha256": "6df73e825282da06549b97f713bf3dd0221d4c5548a86fc723ebfd86215b946e"
+        "evidence_sha256": "c0c8acad71ce2c85aa155a28e6e43be00df3425a78d60a5eee296a7537e0c006"
       }
     },
     {
