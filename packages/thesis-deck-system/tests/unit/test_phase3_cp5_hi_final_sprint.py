@@ -110,3 +110,18 @@ def test_h2_benchmark_deck_uses_sole_assembler_and_audits_native_identity(tmp_pa
     assert result["audit"]["orphan_parts"] == []
     assert result["audit"]["has_editable_text"] is True
     assert Path(result["benchmark"]["pptx_path"]).exists()
+
+
+def test_i0_reconstructs_a_fresh_sanitized_template_with_closed_part_manifest(tmp_path: Path):
+    from pptx import Presentation
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import build_i0_sanitized_native_template
+
+    result = build_i0_sanitized_native_template(ROOT, tmp_path)
+
+    assert Path(result["template_path"]).exists()
+    assert Presentation(result["template_path"]).slide_width > 0
+    assert result["template_profile"]["fresh_lineage_status"] == "pass"
+    assert result["template_profile"]["safe_content_bounds"]["status"] == "insufficient_evidence"
+    assert {"formal_cover", "content_academic", "fishbone", "comparison_result", "summary_decision"} <= set(result["template_profile"]["semantic_roles"])
+    assert result["reconstruction_manifest"]["unclassified_part_count"] == 0
+    assert result["reconstruction_manifest"]["forbidden_part_count"] == 0

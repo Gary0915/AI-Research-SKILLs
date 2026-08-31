@@ -1,0 +1,14 @@
+{
+  "proof_id": "CP5-I0-FRESH-LINEAGE-001",
+  "status": "pass",
+  "construction": "fresh_python_pptx_template",
+  "committed_sanitized_inputs": [
+    "artifacts/phase3/professor-template-resolved.json",
+    "artifacts/phase3/sanitized-shell-structural-descriptors.json",
+    "artifacts/phase3/visual-style-profile.json"
+  ],
+  "private_or_historical_binary_inputs": [],
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}

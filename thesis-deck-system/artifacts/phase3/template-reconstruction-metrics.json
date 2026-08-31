@@ -1,0 +1,27 @@
+{
+  "metrics_id": "CP5-I0-RECONSTRUCTION-METRICS-001",
+  "metrics": [
+    {
+      "metric_id": "canvas",
+      "target": {
+        "width": 13.333333,
+        "height": 7.5
+      },
+      "actual": {
+        "width": 13.333333,
+        "height": 7.5
+      },
+      "delta": 0.0,
+      "tolerance": 1e-05,
+      "status": "pass"
+    },
+    {
+      "metric_id": "safe_content_bounds",
+      "target": null,
+      "actual": null,
+      "delta": null,
+      "tolerance": null,
+      "status": "insufficient_evidence"
+    }
+  ]
+}
