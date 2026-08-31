@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "baseline_id": "CP5-HI-FINAL-PRODUCTION-BASELINE-001",
+  "reviewed_closure_commit": "ec9266bcc2497b7a486fe31465e33841f89c211d",
+  "reviewed_closure_candidate_sha256": "2c846703807a02c1b4b97b8adfb4dbff5e56dd90ff3ef35febe11bd534d30762",
+  "reviewed_regression": {
+    "passed": 461,
+    "failed": 0
+  },
+  "reviewed_cross_gate": {
+    "status": "pass",
+    "invariant_count": 13
+  },
+  "privacy": {
+    "repository_unexcepted_findings": 0,
+    "staged_unexcepted_findings": 0,
+    "approved_historical_exceptions": 1,
+    "private_alias_resolution_attempts": 0,
+    "private_source_open_attempts": 0,
+    "private_render_attempts": 0,
+    "new_private_access_authorized": false
+  },
+  "checkpoint_status": {
+    "CP5-A": "done",
+    "CP5-B": "done",
+    "CP5-C": "done",
+    "CP5-D": "done",
+    "CP5-E": "done",
+    "CP5-F": "done_with_truthful_blocked_dimensions",
+    "CP5-G": "done_with_provisional_and_insufficient_evidence_preserved",
+    "CP5-H": "not_run",
+    "CP5-I": "not_run"
+  },
+  "known_environment_status": {
+    "host_svg_renderer": "blocked_environment_at_prior_closure",
+    "image_capable_qualitative_review": "blocked_visual_review_at_prior_closure",
+    "native_powerpoint": "not_run"
+  },
+  "accepted_source_authority": {
+    "scientific_truth": "persisted Ledger / cursor materialization",
+    "acceptance_story_source": "committed Phase 2 H001-H002 synthetic hypothesis-layered state and Slide Specs",
+    "acceptance_story_hypothesis_layers": [
+      "H001",
+      "H002"
+    ],
+    "h003_present_in_committed_phase2_acceptance_source": false,
+    "professor_shell_authority": [
+      "sanitized template_primary_1 descriptors",
+      "sanitized template_primary_3 descriptors"
+    ],
+    "professor_body_composition_authority": "sanitized layout_exemplar_2 descriptors",
+    "visual_style_profile": "VSP003",
+    "native_capability_registry": "SNCR001"
+  },
+  "single_backend": {
+    "public_pptx_backend": "PythonPptxAssembler",
+    "second_exporter_allowed": false,
+    "compiler_may_write_pptx": false,
+    "template_reconstructor_may_use_private_pptx_base": false
+  },
+  "final_sprint_gates": [
+    "H0_backend_native_preflight",
+    "H1_native_figure_compiler",
+    "H2_assembler_integration_and_native_benchmarks",
+    "I0_fresh_sanitized_template_reconstruction",
+    "I1_ledger_derived_acceptance_deck",
+    "I2_qa_native_acceptance_and_release"
+  ],
+  "external_review_policy": "single_external_review_after_I2",
+  "internal_checkpoint_commits_required": true,
+  "durable_long_test_evidence_required": true,
+  "definitive_full_regression_count_target": 1,
+  "acceptance_deck": {
+    "source_phase2_slide_count": 19,
+    "fresh_formal_cover_added": true,
+    "expected_base_slide_count": 20,
+    "source_driven_split_may_increase_count": true,
+    "old_phase2_pptx_may_be_binary_base": false,
+    "must_preserve_h001_to_h002_history": true,
+    "must_not_invent_h003": true
+  },
+  "hard_prohibitions": [
+    "open_private_exemplar_pptx",
+    "render_private_exemplar",
+    "copy_private_package_parts",
+    "use_old_acceptance_pptx_as_binary_base",
+    "create_second_pptx_backend",
+    "silent_raster_fallback",
+    "invent_scientific_content",
+    "invent_h003",
+    "self_certify_production_readiness"
+  ]
+}
