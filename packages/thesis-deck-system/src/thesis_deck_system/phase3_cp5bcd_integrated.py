@@ -718,15 +718,17 @@ def build_representative_director_output(root: Path | None, family: str) -> dict
     source, style = apply_style_bundle(builders[family](spec, payload), style)
     authored = author_svg_for_spec(source, spec, root)
     manifest = make_synthetic_manifest(root, figure_id, canonical_svg=authored["canonical_svg"], style_resolution=style)
-    critic = StaticFigureCritic(root).execute(manifest)
-    return {"director_family": family, "director_input": payload, "svg": authored["canonical_svg"], "svg_qa": authored["qa"], "manifest": manifest, "critic": critic, "style_resolution": style}
+    cp1_fom = make_cp1_figure_output_manifest(root, manifest)
+    critic = StaticFigureCritic(root).execute_bundle({"cp1_fom": cp1_fom, "svg_envelope": manifest})
+    return {"director_family": family, "director_input": payload, "svg": authored["canonical_svg"], "svg_qa": authored["qa"], "manifest": manifest, "cp1_fom": cp1_fom, "critic": critic, "style_resolution": style}
 
 
 def write_gate_c_and_d_artifacts(root: Path | None = None, destination: Path | None = None) -> dict[str, Any]:
     """Persist synthetic approval and visible CP5-D SVG review outputs."""
     root = root or ROOT; destination = destination or root / "thesis-deck-system" / "artifacts" / "phase3"; preview = destination / "cp5d-structured-directors"; preview.mkdir(parents=True, exist_ok=True)
     representatives = [build_representative_director_output(root, family) for family in ("fishbone", "mechanism", "experiment", "fabrication", "comparison")]
-    manifests, reports, approvals = [x["manifest"] for x in representatives], [x["critic"]["report"] for x in representatives], [x["critic"]["approval"] for x in representatives]
+    envelopes, foms = [x["manifest"] for x in representatives], [x["cp1_fom"] for x in representatives]
+    reports, approvals = [x["critic"]["report"] for x in representatives], [x["critic"]["approval"] for x in representatives]
     names = {"fishbone":"fishbone-representative.svg", "mechanism":"mechanism-representative.svg", "experiment":"experiment-schematic-representative.svg", "fabrication":"fabrication-process-representative.svg", "comparison":"comparison-representative.svg"}
     for item in representatives: (preview / names[item["director_family"]]).write_text(item["svg"], encoding="utf-8")
     # SVG-only contact sheet remains useful even when no deterministic raster
@@ -745,10 +747,10 @@ def write_gate_c_and_d_artifacts(root: Path | None = None, destination: Path | N
         signatures.append({"family": item["director_family"], "canonical_sha256": _text_hash(svg), "element_count": svg.count("<"), "connector_count": svg.count("marker-end="), "role_set": roles})
     distinct = len({item["canonical_sha256"] for item in signatures}) == len(signatures)
     (preview / "structural-distinctness.json").write_text(json.dumps({"schema_version":"1.0.0", "all_canonical_hashes_distinct": distinct, "families": signatures}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    c_execution = {"schema_version":"1.0.0","execution_id":"CP5C-EXEC-001","manifest_count":len(manifests),"critic_report_count":len(reports),"approved_figure_count":sum(x is not None for x in approvals)}
+    c_execution = {"schema_version":"1.0.0","execution_id":"CP5C-EXEC-001","manifest_count":len(foms),"critic_report_count":len(reports),"approved_figure_count":sum(x is not None for x in approvals),"owning_check_count":sum(len(report["checks"]) for report in reports),"failed_owning_check_count":sum(check["status"] != "pass" for report in reports for check in report["checks"])}
     c_qa = {"schema_version":"1.0.0","qa_id":"CP5C-QA-001","aggregate_status":"pass" if all(x["status"] == "APPROVED_FIGURE" for x in reports) else "fail","raw_layout_bypass_count":0,"unapproved_layout_bypass_count":0}
     d_execution = {"schema_version":"1.0.0","execution_id":"CP5D-EXEC-001","director_count":5,"representative_count":5,"private_alias_resolution_attempts":0,"private_source_open_attempts":0,"private_render_attempts":0}
     d_qa = {"schema_version":"1.0.0","qa_id":"CP5D-QA-001","aggregate_status":"pass","director_families":[x["director_family"] for x in representatives],"preview_status":"preview_render_blocked_environment"}
-    writes = {"figure-output-manifests.json":manifests,"static-figure-critic-reports.json":reports,"approved-figures.json":approvals,"checkpoint-5c-execution-evidence.json":c_execution,"checkpoint-5c-qa.json":c_qa,"checkpoint-5d-execution-evidence.json":d_execution,"checkpoint-5d-qa.json":d_qa}
+    writes = {"figure-output-manifests.json":foms,"scientific-svg-envelopes.json":envelopes,"static-figure-critic-reports.json":reports,"approved-figures.json":approvals,"checkpoint-5c-execution-evidence.json":c_execution,"checkpoint-5c-qa.json":c_qa,"checkpoint-5d-execution-evidence.json":d_execution,"checkpoint-5d-qa.json":d_qa}
     for name, value in writes.items(): (destination / name).write_text(json.dumps(value, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     return {"representatives":representatives,"c_execution":c_execution,"c_qa":c_qa,"d_execution":d_execution,"d_qa":d_qa}

@@ -12,9 +12,11 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import shutil
+import struct
 from time import time
 from types import MappingProxyType
 from typing import Any, Mapping
+import zlib
 
 from .phase3_cp5a_scientific_svg import ROOT, author_svg_for_spec
 from .phase3_cp5bcd_integrated import StaticFigureCritic, _spec, _svg_document, apply_style_bundle, make_synthetic_manifest, resolve_style
@@ -66,8 +68,16 @@ class DeterministicTestRendererAdapter(RendererAdapter):
         return "test-1"
 
     def render_svg(self, svg: str, parameters: Mapping[str, Any]) -> bytes:
-        # Deterministic synthetic PNG-shaped test bytes; not a production render.
-        return b"\x89PNG\r\n\x1a\n" + sha256((svg + json.dumps(dict(parameters), sort_keys=True)).encode("utf-8")).digest()
+        """Emit a valid deterministic RGBA PNG fixture, never a production render."""
+        width, height = parameters.get("width"), parameters.get("height")
+        if not isinstance(width, int) or not isinstance(height, int) or width <= 0 or height <= 0:
+            raise EvidenceRouteError("test renderer requires positive integer dimensions")
+        seed = sha256((svg + json.dumps(dict(parameters), sort_keys=True)).encode("utf-8")).digest()
+        pixel = bytes((seed[0], seed[1], seed[2], 255))
+        raw = b"".join(b"\x00" + pixel * width for _ in range(height))
+        def chunk(kind: bytes, payload: bytes) -> bytes:
+            return struct.pack(">I", len(payload)) + kind + payload + struct.pack(">I", zlib.crc32(kind + payload) & 0xffffffff)
+        return b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0)) + chunk(b"IDAT", zlib.compress(raw, level=9)) + chunk(b"IEND", b"")
 
 
 def render_with_adapter(adapter: RendererAdapter, svg: str, parameters: Mapping[str, Any]) -> dict[str, Any]:
@@ -82,7 +92,7 @@ def render_with_adapter(adapter: RendererAdapter, svg: str, parameters: Mapping[
     source_hash, png_hash = _hash(svg), sha256(png).hexdigest()
     manifest = {"renderer_id": adapter.renderer_id, "renderer_version": version, "source_svg_sha256": source_hash, "png_sha256": png_hash, "parameters": dict(parameters), "dimensions": {"width": parameters.get("width"), "height": parameters.get("height")}}
     critic = {"status": "pass" if parameters.get("width", 0) > 0 and parameters.get("height", 0) > 0 and len(png) > 8 else "fail", "png_sha256": png_hash, "measured": {"nonblank": len(png) > 8, "dimensions": manifest["dimensions"], "aspect_ratio": parameters.get("width", 1) / parameters.get("height", 1) if parameters.get("height") else None}}
-    return {"render_manifest": manifest, "render_critic": critic}
+    return {"render_manifest": manifest, "render_critic": critic, "rendered_fixture_bytes": png}
 
 
 def _hash(value: Any) -> str:
@@ -161,8 +171,9 @@ def build_image_matrix(root: Path, panels: list[dict[str, Any]]) -> dict[str, An
             raise EvidenceRouteError("stale matrix panel hash")
         lineage.append({"panel_id": panel["panel_id"], "source_asset_ref": panel["source_asset_ref"], "source_sha256": computed, "provenance_ref": panel["provenance_ref"], "order": panel["order"], "scale_policy": panel["scale_policy"], "label": panel["label"]})
         row, column = divmod(index, 2); x, y = 220 + column * 630, 210 + row * 270
-        encoded = base64.b64encode(panel["source_bytes"]).decode("ascii")
-        cells.append(f'<g id="obj-cell-{index}" data-semantic-role="matrix_cell"><rect id="obj-panel-{index}" data-semantic-role="panel" x="{x}" y="{y}" width="500" height="180" fill="#d1d1d1" stroke="#333333" stroke-width="2"/><image id="obj-image-{index}" data-semantic-role="image" x="{x+10}" y="{y+10}" width="480" height="140" href="data:image/png;base64,{encoded}"/><text id="obj-label-{index}" data-semantic-role="panel_label" x="{x+20}" y="{y+170}" font-family="Arial" font-size="18">{panel["label"]}</text></g>')
+        # The canonical SVG owns visual placement only.  Panel bytes are
+        # committed synthetic fixtures and their identity remains in lineage.
+        cells.append(f'<g id="obj-cell-{index}" data-semantic-role="matrix_cell"><rect id="obj-panel-{index}" data-semantic-role="panel" x="{x}" y="{y}" width="500" height="180" fill="#d1d1d1" stroke="#333333" stroke-width="2"/><image id="obj-image-{index}" data-semantic-role="image" x="{x+10}" y="{y+10}" width="480" height="140" href="{panel["source_asset_ref"]}"/><text id="obj-label-{index}" data-semantic-role="panel_label" x="{x+20}" y="{y+170}" font-family="Arial" font-size="18">{panel["label"]}</text></g>')
     spec = _spec(root, "FIG009")
     authored = author_svg_for_spec(_svg_document(spec, "Synthetic Image Matrix", "".join(cells)), spec, root)
     return {"svg": authored["canonical_svg"], "canonical_sha256": authored["identity"]["canonical_sha256"], "panel_lineage": lineage, "scale_policy": ordered[0]["scale_policy"]}
@@ -201,7 +212,8 @@ def build_evidence_bound_outputs(root: Path | None = None) -> dict[str, dict[str
     plot_input = {"series":[{"series_id":"S001","points":[[0,1],[1,2]]}],"x_axis_label":"time","x_axis_unit":"synthetic","y_axis_label":"response","y_axis_unit":"synthetic","provenance_refs":["E101"],"evidence_status":"synthetic_test_evidence"}
     plot_data = build_scientific_plot(root, plot_input)
     plot = _approved_svg_route(root, "FIG001", plot_data["svg"])
-    panels = [{"panel_id": f"P{index:03}", "source_asset_ref": f"AS{index:03}", "source_bytes": f"synthetic-panel-{index}".encode("utf-8"), "provenance_ref": "E101", "order": index, "scale_policy": "shared_synthetic_scale", "label": f"synthetic panel {index}"} for index in range(1, 5)]
+    panel_folder = root / "thesis-deck-system" / "assets" / "cp5e-synthetic-panels"
+    panels = [{"panel_id": f"P{index:03}", "source_asset_ref": f"assets/cp5e-synthetic-panels/p{index:03}.svg", "source_bytes": (panel_folder / f"p{index:03}.svg").read_bytes(), "provenance_ref": "E101", "order": index, "scale_policy": "shared_synthetic_scale", "label": f"synthetic panel {index}"} for index in range(1, 5)]
     matrix_data = build_image_matrix(root, panels)
     matrix = _approved_svg_route(root, "FIG009", matrix_data["svg"])
     concept = _approved_svg_route(root, "FIG010", _concept_svg(_spec(root, "FIG010")), scientific_claim_support="forbidden")

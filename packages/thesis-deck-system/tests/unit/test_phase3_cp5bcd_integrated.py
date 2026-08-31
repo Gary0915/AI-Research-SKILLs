@@ -253,7 +253,9 @@ def test_cp5d_directors_emit_distinct_family_semantic_geometry():
     assert len(set(outputs.values())) == 5
     assert outputs["fishbone"].count('data-semantic-role="branch"') >= 3
     assert 'data-semantic-role="sample"' in outputs["experiment"]
-    assert 'id="obj-control"' in outputs["experiment"]
+    # D1 assigns collection-derived IDs; this must not regress to a
+    # representative-only fixed control object name.
+    assert 'id="obj-control-' in outputs["experiment"]
     assert 'data-semantic-role="process_step"' in outputs["fabrication"]
     assert outputs["comparison"].count('data-semantic-role="panel"') >= 2
     assert 'stroke-dasharray=' in outputs["mechanism"]
@@ -267,6 +269,20 @@ def test_cp5d_artifacts_include_svg_montage_and_structural_distinctness(tmp_path
     assert (tmp_path / "cp5d-structured-directors" / "structured-director-montage.svg").exists()
     facts = json.loads((tmp_path / "cp5d-structured-directors" / "structural-distinctness.json").read_text(encoding="utf-8"))
     assert facts["all_canonical_hashes_distinct"] is True
+
+
+def test_c1_d1_artifact_writer_persists_cp1_foms_separately_from_svg_envelopes(tmp_path: Path):
+    """A D1 envelope cannot overwrite the canonical CP1 FOM collection."""
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_cp5bcd_integrated import write_gate_c_and_d_artifacts
+
+    result = write_gate_c_and_d_artifacts(ROOT, tmp_path)
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True, include_cp5bcd=True)
+    foms = json.loads((tmp_path / "figure-output-manifests.json").read_text(encoding="utf-8"))
+    envelopes = json.loads((tmp_path / "scientific-svg-envelopes.json").read_text(encoding="utf-8"))
+    assert len(foms) == len(envelopes) == len(result["representatives"])
+    assert all(registry.errors("figure-output-manifest", item) == [] for item in foms)
+    assert all(registry.errors("scientific-svg-figure-output-manifest", item) == [] for item in envelopes)
 
 
 @pytest.mark.parametrize("family, mutate", [
