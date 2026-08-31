@@ -1,0 +1,187 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG002-001",
+    "manifest_id": "FOM-FIG002-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "CP5C-SPEC-ROUTE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-SVG-HASH",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-IDENTITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-CAPABILITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-FALLBACK",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-PRIVACY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-LAYOUT-BYPASS",
+        "status": "pass"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG006-001",
+    "manifest_id": "FOM-FIG006-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "CP5C-SPEC-ROUTE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-SVG-HASH",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-IDENTITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-CAPABILITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-FALLBACK",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-PRIVACY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-LAYOUT-BYPASS",
+        "status": "pass"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG007-001",
+    "manifest_id": "FOM-FIG007-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "CP5C-SPEC-ROUTE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-SVG-HASH",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-IDENTITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-CAPABILITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-FALLBACK",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-PRIVACY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-LAYOUT-BYPASS",
+        "status": "pass"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG003-001",
+    "manifest_id": "FOM-FIG003-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "CP5C-SPEC-ROUTE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-SVG-HASH",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-IDENTITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-CAPABILITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-FALLBACK",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-PRIVACY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-LAYOUT-BYPASS",
+        "status": "pass"
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0.0",
+    "critic_report_id": "FCR-FIG008-001",
+    "manifest_id": "FOM-FIG008-001",
+    "status": "APPROVED_FIGURE",
+    "executed": true,
+    "checks": [
+      {
+        "check_id": "CP5C-SPEC-ROUTE",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-SVG-HASH",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-IDENTITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-CAPABILITY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-FALLBACK",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-PRIVACY",
+        "status": "pass"
+      },
+      {
+        "check_id": "CP5C-LAYOUT-BYPASS",
+        "status": "pass"
+      }
+    ]
+  }
+]

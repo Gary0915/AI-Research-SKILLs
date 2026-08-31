@@ -1,0 +1,57 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "approval_id": "APF-FIG002-001",
+    "manifest_id": "FOM-FIG002-001",
+    "manifest_hash": "cf821b4632c59e8d0c9ad79e6cd897302b3a48c772f4ec3eeece214b4068cd09",
+    "critic_report_id": "FCR-FIG002-001",
+    "critic_report_hash": "42ba10a19da0e69753fb3b63c51ac7f427611c49d3b53a43aef53ed39e7d1f04",
+    "figure_revision": "1",
+    "approval_status": "APPROVED_FIGURE",
+    "executed_static_critic": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "approval_id": "APF-FIG006-001",
+    "manifest_id": "FOM-FIG006-001",
+    "manifest_hash": "7e912f74b05e0229835d76fb3a66edb3cf69c0ad6e9eaf4f9714028a8e7ba4e0",
+    "critic_report_id": "FCR-FIG006-001",
+    "critic_report_hash": "1b93d997cd1a51ee56b783ebe45121b984bc889568ff737ed65de242d44d963b",
+    "figure_revision": "1",
+    "approval_status": "APPROVED_FIGURE",
+    "executed_static_critic": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "approval_id": "APF-FIG007-001",
+    "manifest_id": "FOM-FIG007-001",
+    "manifest_hash": "36461bdd54e19d927ed6df8fa28cb31a4361a803947dc671e824793a079bb676",
+    "critic_report_id": "FCR-FIG007-001",
+    "critic_report_hash": "182fac34535afb9d16eefa17ea7baddae774a7ca75a7e02ebc24a04aac50bbc2",
+    "figure_revision": "1",
+    "approval_status": "APPROVED_FIGURE",
+    "executed_static_critic": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "approval_id": "APF-FIG003-001",
+    "manifest_id": "FOM-FIG003-001",
+    "manifest_hash": "c78109054fd96cbc9f56134f0ce8a161908b9c0ed513c59f7c380d2637c1f936",
+    "critic_report_id": "FCR-FIG003-001",
+    "critic_report_hash": "fc2d8f6f9bc1852ef0e435d81e1f01a49333e70b6da11711d02d608a74865ea5",
+    "figure_revision": "1",
+    "approval_status": "APPROVED_FIGURE",
+    "executed_static_critic": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "approval_id": "APF-FIG008-001",
+    "manifest_id": "FOM-FIG008-001",
+    "manifest_hash": "83d9976fb50b162be1e0b8fac5d87c5f7eeb0994dd59392950837800fefc950c",
+    "critic_report_id": "FCR-FIG008-001",
+    "critic_report_hash": "24748dbde717142636de3d33af4ffc26bcd15796e393d834412c1da79986b724",
+    "figure_revision": "1",
+    "approval_status": "APPROVED_FIGURE",
+    "executed_static_critic": true
+  }
+]
