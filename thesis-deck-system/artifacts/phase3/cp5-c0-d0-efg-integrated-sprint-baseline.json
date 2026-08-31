@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "baseline_commit": "42150711432933d02087b301bd3f6907022270fa",
+  "previous_definitive_regression": {"passed": 425, "failed": 0},
+  "previous_candidate_hash": "e9ad4addd5af1d02568b23f7a2b0f03b92d35f03453e1c97538207634e9aadc9",
+  "checkpoint_status": {"CP5-A": "done", "CP5-B": "done", "CP5-C": "partial", "CP5-D": "partial", "CP5-E": "not_run", "CP5-F": "not_run", "CP5-G": "not_run", "CP5-H": "not_run", "CP5-I": "not_run"},
+  "verified_review_defects": ["generic_director_geometry", "fake_mutation_shortcut", "empty_vsp003_token_provenance", "forgeable_approval_shaped_runtime_input", "incomplete_static_critic"],
+  "review_mode": "single_external_review_after_cp5g",
+  "checkpoint_commits_required": true,
+  "durable_validation_evidence_required": true,
+  "private_source_access_authorized": false,
+  "pptx_authorized": false,
+  "drawingml_authorized": false,
+  "cp5_h_i_authorized": false
+}
