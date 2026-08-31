@@ -283,3 +283,43 @@ def build_h1_artifacts(root: Path, destination: Path) -> dict[str, Any]:
     (destination / "native-figure-compilation-plans.json").write_text(json.dumps(plans, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (destination / "cp5-hi-compiler-mapping-manifest.json").write_text(json.dumps(mapping_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"plans": plans, "mapping_manifest": mapping_manifest}
+
+
+def build_h2_native_vector_benchmark(root: Path, destination: Path) -> dict[str, Any]:
+    """Build and structurally audit non-private H2 vectors via the assembler."""
+    from .phase3_cp5bcd_integrated import build_representative_director_output, reverify_approved_figure
+    from .phase3_cp5efg_integrated import build_evidence_bound_outputs
+    from .pptx import PythonPptxAssembler, audit_pptx
+    from .template import create_synthetic_template
+
+    destination.mkdir(parents=True, exist_ok=True)
+    candidates = [build_representative_director_output(root, family) for family in ("fishbone", "mechanism", "experiment", "fabrication", "comparison")]
+    evidence = build_evidence_bound_outputs(root)
+    candidates.extend(evidence[name] for name in ("scientific_plot", "image_matrix", "concept_illustration"))
+    compiler = ScientificSvgNativeCompiler()
+    compiled = []
+    for candidate in candidates:
+        handle = reverify_approved_figure(candidate["manifest"], candidate["critic"]["report"], candidate["critic"]["approval"], root)
+        plan = compiler.compile(handle, candidate["manifest"], candidate["svg"], target_box={"left": 0.8, "top": 1.4, "width": 11.75, "height": 4.8})
+        compiled.append((handle, plan))
+    template_path = destination / "cp5-hi-native-vector-benchmark-template.pptx"
+    benchmark_path = destination / "cp5-hi-native-vector-benchmark.pptx"
+    create_synthetic_template(template_path)
+    result = PythonPptxAssembler().assemble_native_vector_benchmark(template_path, compiled, benchmark_path)
+    audit = audit_pptx(result.output_path)
+    benchmark = {
+        "schema_version": "1.0.0",
+        "benchmark_id": "CP5-H2-NATIVE-VECTOR-001",
+        "backend": "PythonPptxAssembler",
+        "runtime_engine": result.backend,
+        "pptx_path": str(result.output_path),
+        "pptx_sha256": sha256(result.output_path.read_bytes()).hexdigest(),
+        "figure_count": len(compiled),
+        "native_plan_count": len(compiled),
+        "private_alias_resolution_attempts": 0,
+        "private_source_open_attempts": 0,
+        "private_render_attempts": 0,
+    }
+    (destination / "cp5-hi-native-vector-benchmark.json").write_text(json.dumps(benchmark, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (destination / "cp5-hi-native-vector-benchmark-audit.json").write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return {"benchmark": benchmark, "audit": audit}

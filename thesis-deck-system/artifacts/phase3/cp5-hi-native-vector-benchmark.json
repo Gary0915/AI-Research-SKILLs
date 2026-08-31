@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "benchmark_id": "CP5-H2-NATIVE-VECTOR-001",
+  "backend": "PythonPptxAssembler",
+  "runtime_engine": "python-pptx",
+  "pptx_path": "thesis-deck-system\\artifacts\\phase3\\cp5-hi-native-vector-benchmark.pptx",
+  "pptx_sha256": "45f6807cf8493f8a075e0ec932b684a4e7c402cbcf740510598bc17bec73a85c",
+  "figure_count": 8,
+  "native_plan_count": 8,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}

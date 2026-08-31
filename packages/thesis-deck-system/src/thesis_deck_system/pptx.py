@@ -16,6 +16,7 @@ import re
 
 from pptx import Presentation
 from pptx.dml.color import RGBColor
+from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE
 from pptx.util import Inches, Pt
 
 from .context import ProjectContext
@@ -33,6 +34,92 @@ class PptxAssembler:
 
 
 class PythonPptxAssembler(PptxAssembler):
+    def assemble_native_vector_benchmark(self, template_path: Path, compiled_figures: list[tuple[object, dict]], output_path: Path) -> AssemblyResult:
+        """Write synthetic H2 vectors through the sole public PPTX backend."""
+        prs = Presentation(template_path)
+        for approved_figure, native_plan in compiled_figures:
+            slide = prs.slides.add_slide(prs.slide_layouts[1])
+            self.add_compiled_figure(slide, approved_figure, native_plan)
+        prs.save(output_path)
+        return AssemblyResult(output_path)
+
+    def add_compiled_figure(self, slide, approved_figure, native_plan: dict) -> dict:
+        """Materialize only a reverified H1 plan as editable PowerPoint shapes.
+
+        This is deliberately an assembler method: the compiler has no package
+        writer API and cannot bypass the single public deck backend.
+        """
+        from .phase3_cp5bcd_integrated import ApprovedFigureHandle
+        from .phase3_cp5_hi_final_sprint import NativeCompilationError, _plan_hash
+
+        if not isinstance(approved_figure, ApprovedFigureHandle):
+            raise NativeCompilationError("assembler accepts only ApprovedFigureHandle")
+        if native_plan.get("figure_id") != approved_figure.figure_id or native_plan.get("figure_revision") != approved_figure.figure_revision:
+            raise NativeCompilationError("native plan does not bind approved figure identity")
+        binding = native_plan.get("approved_figure", {})
+        if binding.get("manifest_id") != approved_figure.manifest_id or binding.get("manifest_hash") != approved_figure.manifest_hash:
+            raise NativeCompilationError("native plan does not bind ApprovedFigureHandle")
+        check_plan = dict(native_plan); actual_hash = check_plan.pop("plan_sha256", None)
+        if actual_hash != _plan_hash(check_plan):
+            raise NativeCompilationError("native plan hash is invalid")
+        view_box = native_plan["view_box"]
+        target = native_plan["target_box"]
+        scale_x = target["width"] / view_box["width"]
+        scale_y = target["height"] / view_box["height"]
+
+        def coordinate(x: float, y: float) -> tuple[float, float]:
+            return target["left"] + (x - view_box["x"]) * scale_x, target["top"] + (y - view_box["y"]) * scale_y
+
+        def name_for(item: dict) -> str:
+            return f"tds-fig:{approved_figure.figure_id}/{item['svg_object_id']}/{item['semantic_role']}"
+
+        native_count = fallback_count = 0
+        emitted_names: list[str] = []
+        for item in native_plan["objects"]:
+            if item["outcome"] != "DRAWINGML_EMITTED":
+                fallback_count += 1
+                continue
+            geometry = item["geometry"]
+            kind = item["shape_kind"]
+            shape = None
+            if kind in {"rect", "ellipse"}:
+                if kind == "rect":
+                    x, y = coordinate(geometry.get("x", 0), geometry.get("y", 0))
+                    width, height = geometry.get("width", 1) * scale_x, geometry.get("height", 1) * scale_y
+                    shape = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(x), Inches(y), Inches(width), Inches(height))
+                else:
+                    cx, cy = geometry.get("cx", 0), geometry.get("cy", 0)
+                    rx, ry = geometry.get("rx", geometry.get("r", 1)), geometry.get("ry", geometry.get("r", 1))
+                    x, y = coordinate(cx - rx, cy - ry)
+                    shape = slide.shapes.add_shape(MSO_SHAPE.OVAL, Inches(x), Inches(y), Inches(2 * rx * scale_x), Inches(2 * ry * scale_y))
+            elif kind == "line":
+                x1, y1 = coordinate(geometry.get("x1", 0), geometry.get("y1", 0))
+                x2, y2 = coordinate(geometry.get("x2", 0), geometry.get("y2", 0))
+                shape = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
+            elif kind == "text":
+                x, y = coordinate(geometry.get("x", 0), geometry.get("y", 0))
+                shape = slide.shapes.add_textbox(Inches(x), Inches(y - 0.28), Inches(max(0.75, target["width"] * 0.45)), Inches(0.45))
+                shape.text = item["text"] or ""
+                for paragraph in shape.text_frame.paragraphs:
+                    for run in paragraph.runs:
+                        if item["style"].get("font-size"):
+                            run.font.size = Pt(float(item["style"]["font-size"]))
+                        if item["style"].get("font-family"):
+                            run.font.name = item["style"]["font-family"]
+            elif kind == "group":
+                # PowerPoint groups require children; the source children are
+                # emitted independently and preserve their object identities.
+                continue
+            else:
+                fallback_count += 1
+                continue
+            if shape is None:
+                continue
+            shape.name = name_for(item)
+            emitted_names.append(shape.name)
+            native_count += 1
+        return {"figure_id": approved_figure.figure_id, "native_object_count": native_count, "fallback_object_count": fallback_count, "emitted_shape_names": emitted_names}
+
     def assemble(self, template_path: Path, slide_specs: list[dict], output_path: Path, *, attach_svg: bool = True, project_context: ProjectContext | None = None) -> AssemblyResult:
         shutil.copy2(template_path, output_path)
         prs = Presentation(output_path)

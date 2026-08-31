@@ -76,3 +76,37 @@ def test_h1_artifacts_cover_all_registered_features_and_approved_figure_represen
     assert len(result["plans"]) == 8
     assert all(plan["approved_figure"]["manifest_id"] for plan in result["plans"])
     assert (tmp_path / "native-figure-compilation-plans.json").exists()
+
+
+def test_h2_existing_assembler_consumes_native_plan_as_named_editable_shapes(tmp_path: Path):
+    from pptx import Presentation
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import ScientificSvgNativeCompiler
+    from thesis_deck_system.phase3_cp5bcd_integrated import build_representative_director_output, reverify_approved_figure
+    from thesis_deck_system.pptx import PythonPptxAssembler
+    from thesis_deck_system.template import create_synthetic_template
+
+    produced = build_representative_director_output(ROOT, "mechanism")
+    handle = reverify_approved_figure(produced["manifest"], produced["critic"]["report"], produced["critic"]["approval"], ROOT)
+    plan = ScientificSvgNativeCompiler().compile(handle, produced["manifest"], produced["svg"], target_box={"left": 1.0, "top": 1.3, "width": 8.0, "height": 4.5})
+    template = create_synthetic_template(tmp_path / "template.pptx")
+    presentation = Presentation(template)
+    slide = presentation.slides.add_slide(presentation.slide_layouts[1])
+
+    facts = PythonPptxAssembler().add_compiled_figure(slide, handle, plan)
+
+    assert facts["native_object_count"] > 0
+    assert facts["fallback_object_count"] >= 0
+    assert all(shape.name.startswith(f"tds-fig:{handle.figure_id}/") for shape in slide.shapes if shape.name.startswith("tds-fig:"))
+    assert any(shape.has_text_frame and shape.text for shape in slide.shapes)
+
+
+def test_h2_benchmark_deck_uses_sole_assembler_and_audits_native_identity(tmp_path: Path):
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import build_h2_native_vector_benchmark
+
+    result = build_h2_native_vector_benchmark(ROOT, tmp_path)
+
+    assert result["benchmark"]["backend"] == "PythonPptxAssembler"
+    assert result["benchmark"]["figure_count"] == 8
+    assert result["audit"]["orphan_parts"] == []
+    assert result["audit"]["has_editable_text"] is True
+    assert Path(result["benchmark"]["pptx_path"]).exists()
