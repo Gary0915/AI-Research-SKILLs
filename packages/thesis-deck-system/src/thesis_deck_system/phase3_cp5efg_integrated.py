@@ -19,7 +19,7 @@ from typing import Any, Mapping
 import zlib
 
 from .phase3_cp5a_scientific_svg import ROOT, author_svg_for_spec
-from .phase3_cp5bcd_integrated import StaticFigureCritic, _spec, _svg_document, apply_style_bundle, make_synthetic_manifest, resolve_style
+from .phase3_cp5bcd_integrated import StaticFigureCritic, _spec, _svg_document, apply_style_bundle, make_cp1_figure_output_manifest, make_synthetic_manifest, resolve_style
 
 
 class EvidenceRouteError(ValueError):
@@ -198,13 +198,14 @@ def _concept_svg(spec: dict[str, Any]) -> str:
     return _svg_document(spec, "Concept Illustration", body)
 
 
-def _approved_svg_route(root: Path, figure_id: str, source: str, *, scientific_claim_support: str = "required") -> dict[str, Any]:
+def _approved_svg_route(root: Path, figure_id: str, source: str, *, scientific_claim_support: str = "required", require_cp1_fom: bool = True) -> dict[str, Any]:
     spec = _spec(root, figure_id)
     source, style = apply_style_bundle(source, resolve_style(root, spec))
     authored = author_svg_for_spec(source, spec, root)
     manifest = make_synthetic_manifest(root, figure_id, canonical_svg=authored["canonical_svg"], style_resolution=style)
-    critic = StaticFigureCritic(root).execute(manifest)
-    return {"status": critic["status"], "figure_id": figure_id, "scientific_claim_support": scientific_claim_support, "svg": authored["canonical_svg"], "manifest": manifest, "critic": critic}
+    cp1_fom = make_cp1_figure_output_manifest(root, manifest) if require_cp1_fom else None
+    critic = StaticFigureCritic(root).execute_bundle({"cp1_fom": cp1_fom, "svg_envelope": manifest}) if cp1_fom else StaticFigureCritic(root).execute(manifest)
+    return {"status": critic["status"], "figure_id": figure_id, "scientific_claim_support": scientific_claim_support, "svg": authored["canonical_svg"], "manifest": manifest, "cp1_fom": cp1_fom, "critic": critic}
 
 
 def build_evidence_bound_outputs(root: Path | None = None) -> dict[str, dict[str, Any]]:
@@ -231,6 +232,16 @@ def write_gate_e_artifacts(root: Path | None = None, destination: Path | None = 
     qa = {"schema_version":"1.0.0","qa_id":"CP5E-QA-001","aggregate_status":"pass","route_statuses":{key:item["status"] for key,item in outputs.items()}}
     for name, value in (("evidence-bound-figure-outputs.json", outputs), ("checkpoint-5e-execution-evidence.json", execution), ("checkpoint-5e-qa.json", qa)):
         (destination / name).write_text(json.dumps(value, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    # CP1 FOM remains canonical; envelopes are a distinct supplemental type.
+    approved = [item for item in outputs.values() if item.get("status") == "APPROVED_FIGURE" and item.get("cp1_fom")]
+    for name, key in (("figure-output-manifests.json", "cp1_fom"), ("scientific-svg-envelopes.json", "manifest"), ("static-figure-critic-reports.json", "critic"), ("approved-figures.json", "critic")):
+        path = destination / name
+        existing = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+        if key == "critic":
+            values = [item["critic"]["report" if name == "static-figure-critic-reports.json" else "approval"] for item in approved]
+        else:
+            values = [item[key] for item in approved]
+        path.write_text(json.dumps(existing + values, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"outputs":outputs,"execution":execution,"qa":qa}
 
 

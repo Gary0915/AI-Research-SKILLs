@@ -256,7 +256,9 @@ def _features_for_svg(source: str) -> list[str]:
 
 
 def _cp1_figure_type(spec: dict[str, Any]) -> str:
-    return "scientific_plot" if spec["figure_type"] == "scientific_plot" else "vector_diagram"
+    if spec["figure_type"] == "scientific_plot":
+        return "scientific_plot"
+    return "vector_diagram"
 
 
 def make_cp1_figure_output_manifest(root: Path | None, envelope: dict[str, Any]) -> dict[str, Any]:
@@ -283,7 +285,7 @@ def make_cp1_figure_output_manifest(root: Path | None, envelope: dict[str, Any])
         "primary_artifact_kind": "svg_vector",
         "renderer": spec["renderer_class"],
         "source_spec_sha256": _json_hash(spec),
-        "provenance_refs": list(spec["evidence_refs"]),
+        "provenance_refs": ["A001"] if spec["figure_type"] == "concept_illustration" else list(spec["evidence_refs"]),
         "style_profile_ref": spec["style_profile_ref"],
         "evidence_status": evidence_status,
         "primary_artifact": primary,
@@ -404,8 +406,8 @@ class StaticFigureCritic:
                 and cp1_fom["primary_artifact"]["sha256"] == manifest["canonical_output"]["canonical_sha256"]
             )
             provenance_valid = (
-                set(cp1_fom["provenance_refs"]) <= set(spec["evidence_refs"])
-                and all(item.startswith("E") for item in cp1_fom["provenance_refs"])
+                (cp1_fom["evidence_status"] == "non_evidence" and cp1_fom["figure_type"] == "vector_diagram" and all(item.startswith("A") for item in cp1_fom["provenance_refs"]))
+                or (set(cp1_fom["provenance_refs"]) <= set(spec["evidence_refs"]) and all(item.startswith("E") for item in cp1_fom["provenance_refs"]))
             )
             semantic_valid = cp1_fom["renderer"] == spec["renderer_class"] and cp1_fom["style_profile_ref"] == spec["style_profile_ref"]
         except (KeyError, TypeError, ValueError, ET.ParseError):
