@@ -63,15 +63,15 @@ The Fishbone profile records revision/focus/history requirements. Benchmarks are
 
 ## Mandatory SVG artifacts
 
-- `artifacts/phase3/cp5d/fishbone.svg`
-- `artifacts/phase3/cp5d/mechanism.svg`
-- `artifacts/phase3/cp5d/experiment.svg`
-- `artifacts/phase3/cp5d/fabrication.svg`
-- `artifacts/phase3/cp5d/comparison.svg`
-- `artifacts/phase3/cp5d/structured-director-montage.svg`
-- `artifacts/phase3/cp5e/scientific-plot.svg`
-- `artifacts/phase3/cp5e/image-matrix.svg`
-- `artifacts/phase3/cp5e/concept-illustration.svg`
+- `artifacts/phase3/cp5d-structured-directors/fishbone-representative.svg`
+- `artifacts/phase3/cp5d-structured-directors/mechanism-representative.svg`
+- `artifacts/phase3/cp5d-structured-directors/experiment-schematic-representative.svg`
+- `artifacts/phase3/cp5d-structured-directors/fabrication-process-representative.svg`
+- `artifacts/phase3/cp5d-structured-directors/comparison-representative.svg`
+- `artifacts/phase3/cp5d-structured-directors/structured-director-montage.svg`
+- `artifacts/phase3/cp5e-evidence-bound-directors/scientific_plot.svg`
+- `artifacts/phase3/cp5e-evidence-bound-directors/image_matrix.svg`
+- `artifacts/phase3/cp5e-evidence-bound-directors/concept_illustration.svg`
 - `artifacts/phase3/cp5g/archetype-calibration-montage.svg`
 - `artifacts/phase3/cp5g/figure-family-calibration-montage.svg`
 
