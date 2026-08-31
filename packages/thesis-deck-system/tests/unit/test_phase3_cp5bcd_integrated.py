@@ -131,6 +131,41 @@ def test_cp5c_static_critic_persists_the_full_owning_check_set_with_facts():
     assert all("facts" in item and item["status"] in {"pass", "fail", "blocked"} for item in report["checks"])
 
 
+def test_c1_constructs_and_schema_validates_canonical_cp1_fom_with_hash_bound_svg_envelope():
+    """The CP1 FigureOutputManifest must be a real critic input, not a label."""
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_cp5bcd_integrated import (
+        StaticFigureCritic,
+        make_cp1_figure_output_manifest,
+        make_synthetic_manifest,
+    )
+
+    envelope = make_synthetic_manifest(ROOT, "FIG002")
+    cp1_fom = make_cp1_figure_output_manifest(ROOT, envelope)
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True, include_cp5bcd=True)
+    assert registry.errors("figure-output-manifest", cp1_fom) == []
+    result = StaticFigureCritic(ROOT).execute_bundle({"cp1_fom": cp1_fom, "svg_envelope": envelope})
+    assert result["status"] == "APPROVED_FIGURE"
+    assert result["report"]["checks"][0]["facts"]["cp1_fom_hash"] == result["bundle"]["cp1_fom_hash"]
+
+
+def test_c1_rejects_cp1_fom_hash_mutation_and_svg_style_trace_disagreement():
+    from thesis_deck_system.phase3_cp5bcd_integrated import (
+        StaticFigureCritic,
+        make_cp1_figure_output_manifest,
+        make_synthetic_manifest,
+    )
+
+    envelope = make_synthetic_manifest(ROOT, "FIG002")
+    cp1_fom = make_cp1_figure_output_manifest(ROOT, envelope)
+    cp1_fom["primary_artifact"]["sha256"] = "0" * 64
+    assert StaticFigureCritic(ROOT).execute_bundle({"cp1_fom": cp1_fom, "svg_envelope": envelope})["status"] == "FAIL"
+    envelope = make_synthetic_manifest(ROOT, "FIG002")
+    envelope["style_resolution"]["application_trace"][0]["serialized_applied_value"] = "unrelated-value"
+    cp1_fom = make_cp1_figure_output_manifest(ROOT, envelope)
+    assert StaticFigureCritic(ROOT).execute_bundle({"cp1_fom": cp1_fom, "svg_envelope": envelope})["status"] == "FAIL"
+
+
 def test_vsp003_category_resolution_map_is_a_registered_closed_contract():
     from thesis_deck_system.contracts import SchemaRegistry
     import json

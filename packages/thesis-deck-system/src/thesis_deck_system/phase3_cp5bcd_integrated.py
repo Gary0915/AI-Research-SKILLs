@@ -12,6 +12,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 from typing import Any
+from xml.etree import ElementTree as ET
 
 from .contracts import SchemaRegistry
 from .phase3_cp5a_scientific_svg import ROOT, ScientificSvgError, author_svg_for_spec
@@ -178,10 +179,23 @@ def _plan(root: Path, plan_id: str) -> dict[str, Any]:
     raise FigureGateError("missing committed CP4 FigureProductionPlan")
 
 
-def _base_svg(figure_spec: dict[str, Any], *, title: str, family: str) -> str:
+def _style_value(style_resolution: dict[str, Any], object_id: str, attribute: str, default: str) -> str:
+    for item in style_resolution["application_trace"]:
+        if item["target_object_id"] == object_id and item["attribute"] == attribute:
+            return item["serialized_applied_value"]
+    return default
+
+
+def _base_svg(figure_spec: dict[str, Any], *, title: str, family: str, style_resolution: dict[str, Any] | None = None) -> str:
     fid = figure_spec["figure_id"]
+    style_resolution = style_resolution or {"application_trace": []}
+    arrow_fill = _style_value(style_resolution, "obj-arrow-path", "fill", "#333333")
+    panel_fill = _style_value(style_resolution, "obj-panel", "fill", "#f8f8f8")
+    title_font = _style_value(style_resolution, "obj-title", "font-family", "synthetic-test-sans")
+    flow_width = _style_value(style_resolution, "obj-flow", "stroke-width", "4")
+    marker_end = _style_value(style_resolution, "obj-flow", "marker-end", "url(#obj-arrow)")
     # This is visual-only and intentionally contains no Claim/Evidence/cursor data.
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" data-thesis-svg-version="1.0.0" data-thesis-figure-id="{fid}" data-visual-class="{figure_spec["visual_class"]}"><defs><marker id="obj-arrow" data-semantic-role="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path id="obj-arrow-path" data-semantic-role="branch" d="M 0 0 L 8 4 L 0 8 Z" fill="#333333"/></marker></defs><rect id="obj-panel" data-semantic-role="panel" x="60" y="60" width="1480" height="780" fill="#f8f8f8" stroke="#333333" stroke-width="2"/><text id="obj-title" data-semantic-role="title" x="100" y="130" font-family="synthetic-test-sans" font-size="42">{title}</text><line id="obj-flow" data-semantic-role="arrow" x1="180" y1="440" x2="1420" y2="440" stroke="#333333" stroke-width="4" marker-end="url(#obj-arrow)"/><text id="obj-label" data-semantic-role="label" x="700" y="400" font-family="synthetic-test-sans" font-size="30">{family} / 合成結構</text></svg>'''
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" data-thesis-svg-version="1.0.0" data-thesis-figure-id="{fid}" data-visual-class="{figure_spec["visual_class"]}"><defs><marker id="obj-arrow" data-semantic-role="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path id="obj-arrow-path" data-semantic-role="branch" d="M 0 0 L 8 4 L 0 8 Z" fill="{arrow_fill}"/></marker></defs><rect id="obj-panel" data-semantic-role="panel" x="60" y="60" width="1480" height="780" fill="{panel_fill}" stroke="#333333" stroke-width="2"/><text id="obj-title" data-semantic-role="title" x="100" y="130" font-family="{title_font}" font-size="42">{title}</text><line id="obj-flow" data-semantic-role="arrow" x1="180" y1="440" x2="1420" y2="440" stroke="#333333" stroke-width="{flow_width}" marker-end="{marker_end}"/><text id="obj-label" data-semantic-role="label" x="700" y="400" font-family="{title_font}" font-size="30">{family} / 合成結構</text></svg>'''
 
 
 def _features_for_svg(source: str) -> list[str]:
@@ -194,17 +208,68 @@ def _features_for_svg(source: str) -> list[str]:
     return sorted(set(features))
 
 
+def _cp1_figure_type(spec: dict[str, Any]) -> str:
+    return "scientific_plot" if spec["figure_type"] == "scientific_plot" else "vector_diagram"
+
+
+def make_cp1_figure_output_manifest(root: Path | None, envelope: dict[str, Any]) -> dict[str, Any]:
+    """Build the existing CP1 v3 output authority for an SVG envelope.
+
+    This does not create a CP5 replacement contract: it creates exactly the
+    repository's canonical FigureOutputManifest route variant.
+    """
+    root = root or ROOT
+    spec = _spec(root, envelope["figure_spec_ref"])
+    figure_type = _cp1_figure_type(spec)
+    evidence_status = "synthetic_test_evidence" if figure_type == "scientific_plot" else "non_evidence"
+    primary = {
+        "path": f"artifacts/phase3/cp5-runtime/{spec['figure_id']}.svg",
+        "sha256": envelope["canonical_output"]["canonical_sha256"],
+    }
+    if figure_type == "scientific_plot":
+        primary["data_provenance_refs"] = list(spec["evidence_refs"])
+    return {
+        "schema_version": "3.0.0",
+        "figure_output_id": f"FOM{spec['figure_id'][3:]}",
+        "figure_id": spec["figure_id"],
+        "figure_type": figure_type,
+        "primary_artifact_kind": "svg_vector",
+        "renderer": spec["renderer_class"],
+        "source_spec_sha256": _json_hash(spec),
+        "provenance_refs": list(spec["evidence_refs"]),
+        "style_profile_ref": spec["style_profile_ref"],
+        "evidence_status": evidence_status,
+        "primary_artifact": primary,
+        "output_part_lineage": ["generated"],
+    }
+
+
 def make_synthetic_manifest(root: Path | None = None, figure_id: str = "FIG002", *, canonical_svg: str | None = None, style_resolution: dict[str, Any] | None = None) -> dict[str, Any]:
     root = root or ROOT
     spec = _spec(root, figure_id)
     plan = _plan(root, spec["figure_plan_ref"])
-    source = canonical_svg or _base_svg(spec, title="Synthetic Figure", family="structured")
+    style_resolution = style_resolution or resolve_style(root, spec)
+    source = canonical_svg or _base_svg(spec, title="Synthetic Figure", family="structured", style_resolution=style_resolution)
     authored = author_svg_for_spec(source, spec, root)
     registry = default_registry()
     used = _features_for_svg(authored["canonical_svg"])
     capability_refs = registry.require_coverage(used)
-    style_resolution = style_resolution or resolve_style(root, spec)
-    return {"schema_version": "1.0.0", "manifest_id": f"FOM-{figure_id}-001", "manifest_version": "1.0.0", "figure_id": figure_id, "figure_revision": "1", "figure_plan_ref": plan["figure_plan_id"], "figure_plan_hash": _json_hash(plan), "figure_spec_ref": figure_id, "figure_spec_hash": _json_hash(spec), "canonical_output": {"kind": "scientific_svg", "canonical_sha256": authored["identity"]["canonical_sha256"], "source_sha256": authored["identity"]["source_sha256"], "canonical_svg": authored["canonical_svg"]}, "svg_profile_ref": "SSVG-P001", "svg_profile_version": "1.0.0", "registry_ref": "SNCR001", "registry_version": "1.0.0", "used_feature_ids": used, "capability_record_refs": [item["feature_id"] for item in capability_refs], "fallback_decision": "none", "source_provenance_refs": {"source_refs": spec["source_refs"], "claim_refs": spec["claim_refs"], "evidence_refs": spec["evidence_refs"]}, "style_resolution": style_resolution, "privacy_state": {"private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0}, "output_lineage": {"parent_kind": "ScientificFigureSpec", "raw_to_layout_forbidden": True}, "static_critic": {"executed": False, "status": "not_run"}, "handoff_state": "raw_output_not_layout_eligible"}
+    envelope = {"schema_version": "1.0.0", "manifest_id": f"SSE-{figure_id}-001", "manifest_version": "1.0.0", "figure_id": figure_id, "figure_revision": "1", "figure_plan_ref": plan["figure_plan_id"], "figure_plan_hash": _json_hash(plan), "figure_spec_ref": figure_id, "figure_spec_hash": _json_hash(spec), "canonical_output": {"kind": "scientific_svg", "canonical_sha256": authored["identity"]["canonical_sha256"], "source_sha256": authored["identity"]["source_sha256"], "canonical_svg": authored["canonical_svg"]}, "svg_profile_ref": "SSVG-P001", "svg_profile_version": "1.0.0", "registry_ref": "SNCR001", "registry_version": "1.0.0", "used_feature_ids": used, "capability_record_refs": [item["feature_id"] for item in capability_refs], "fallback_decision": "none", "source_provenance_refs": {"source_refs": spec["source_refs"], "claim_refs": spec["claim_refs"], "evidence_refs": spec["evidence_refs"]}, "style_resolution": style_resolution, "privacy_state": {"private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0}, "output_lineage": {"parent_kind": "ScientificFigureSpec", "raw_to_layout_forbidden": True}, "static_critic": {"executed": False, "status": "not_run"}, "handoff_state": "raw_output_not_layout_eligible"}
+    cp1_fom = make_cp1_figure_output_manifest(root, envelope)
+    envelope["cp1_fom_ref"] = cp1_fom["figure_output_id"]
+    envelope["cp1_fom_hash"] = _json_hash(cp1_fom)
+    return envelope
+
+
+def _token_value(token: dict[str, Any], category: str) -> str | None:
+    value = token.get("value", {})
+    if category == "color_emphasis_grammar" and value.get("kind") == "color":
+        return f"#{value['rgb']}"
+    if category == "typography_hierarchy" and value.get("kind") == "typography":
+        return str(value.get("family"))
+    if category == "line_style_grammar" and value.get("kind") == "line_width":
+        return str(value.get("width"))
+    return None
 
 
 def resolve_style(root: Path, spec: dict[str, Any]) -> dict[str, Any]:
@@ -230,9 +295,21 @@ def resolve_style(root: Path, spec: dict[str, Any]) -> dict[str, Any]:
             matches.append(token)
         # A category with no CP3 structural evidence remains explicit fallback,
         # never an empty list that is accidentally reported as resolution.
-        if not matches:
-            application_trace.append({"category": category, "attribute": "unresolved", "source": "implementation_fallback", "token_id": None})
-            continue
+        defaults = {
+            "connector_arrow_grammar": ("obj-flow", "marker-end", "url(#obj-arrow)", "FB-CONNECTOR-MARKER"),
+            "color_emphasis_grammar": ("obj-arrow-path", "fill", "#FF0000", "FB-EMPHASIS-RED"),
+            "typography_hierarchy": ("obj-title", "font-family", "synthetic-test-sans", "FB-TYPOGRAPHY"),
+            "body_composition": ("obj-panel", "fill", "#f8f8f8", "FB-PANEL-FILL"),
+            "scientific_figure_metrics": ("obj-panel", "width", "1480", "FB-PANEL-WIDTH"),
+            "shell_geometry": ("obj-panel", "x", "60", "FB-PANEL-X"),
+            "line_style_grammar": ("obj-flow", "stroke-width", "4", "FB-LINE-WIDTH"),
+        }
+        object_id, attribute, fallback_value, fallback_id = defaults[category]
+        token_value = next((item for item in (_token_value(token, category) for token in matches) if item is not None), None)
+        if token_value is None:
+            source, token_id, value, fallback_id = "implementation_fallback", None, fallback_value, fallback_id
+        else:
+            source, token_id, value = "vsp003_recurring" if matches[0]["evidence_tier"] == "recurring_pattern" else "vsp003_provisional", matches[0]["token_id"], token_value
         for token in matches:
             selected.append({
                 "token_id": token["token_id"], "authority_family": token["authority_family"],
@@ -240,8 +317,7 @@ def resolve_style(root: Path, spec: dict[str, Any]) -> dict[str, Any]:
                 "evidence_tier": token["evidence_tier"], "resolver_rule_id": token["resolver_rule_id"],
                 "source_role": token["source_role"], "source_scope": token["source_scope"],
             })
-        attribute = {"connector_arrow_grammar": "marker-end", "color_emphasis_grammar": "stroke", "typography_hierarchy": "font-family", "body_composition": "spacing", "scientific_figure_metrics": "panel-geometry", "shell_geometry": "viewBox", "line_style_grammar": "stroke-width"}[category]
-        application_trace.append({"category": category, "attribute": attribute, "source": "vsp003", "token_id": matches[0]["token_id"]})
+        application_trace.append({"target_object_id": object_id, "category": category, "attribute": attribute, "source": source, "token_id": token_id, "fallback_id": fallback_id if token_id is None else None, "resolved_source_value": value, "serialized_applied_value": value})
     return {"style_profile_ref": profile["style_profile_id"], "required_categories": required, "token_provenance": selected, "application_trace": application_trace, "material_semantic_colors_not_consumed": True}
 
 
@@ -251,6 +327,79 @@ class StaticFigureCritic:
         self.root = root or ROOT
 
     def execute(self, manifest: dict[str, Any]) -> dict[str, Any]:
+        return self.execute_bundle({"cp1_fom": make_cp1_figure_output_manifest(self.root, manifest), "svg_envelope": manifest})
+
+    def execute_bundle(self, bundle: dict[str, Any]) -> dict[str, Any]:
+        """Validate the canonical CP1 FOM and supplemental SVG envelope together."""
+        if set(bundle) != {"cp1_fom", "svg_envelope"}:
+            raise FigureGateError("closed C1 review bundle required")
+        cp1_fom, manifest = bundle["cp1_fom"], bundle["svg_envelope"]
+        registry = SchemaRegistry(self.root / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True, include_cp5bcd=True)
+        cp1_valid = not registry.errors("figure-output-manifest", cp1_fom)
+        result = self._execute_envelope(manifest)
+        try:
+            spec = _spec(self.root, manifest["figure_spec_ref"])
+            svg_root = ET.fromstring(manifest["canonical_output"]["canonical_svg"])
+            nodes = {node.get("id"): node for node in svg_root.iter() if node.get("id")}
+            style_valid = all(
+                item.get("target_object_id") in nodes
+                and nodes[item["target_object_id"]].get(item["attribute"]) == item.get("serialized_applied_value")
+                and item.get("resolved_source_value") == item.get("serialized_applied_value")
+                and ((item.get("token_id") is None) != (item.get("fallback_id") is None))
+                for item in manifest["style_resolution"]["application_trace"]
+            )
+            cp1_hash = _json_hash(cp1_fom)
+            closure = (
+                manifest["cp1_fom_ref"] == cp1_fom["figure_output_id"]
+                and manifest["cp1_fom_hash"] == cp1_hash
+                and cp1_fom["figure_id"] == spec["figure_id"]
+                and cp1_fom["source_spec_sha256"] == _json_hash(spec)
+                and cp1_fom["primary_artifact"]["sha256"] == manifest["canonical_output"]["canonical_sha256"]
+            )
+            provenance_valid = (
+                set(cp1_fom["provenance_refs"]) <= set(spec["evidence_refs"])
+                and all(item.startswith("E") for item in cp1_fom["provenance_refs"])
+            )
+            semantic_valid = cp1_fom["renderer"] == spec["renderer_class"] and cp1_fom["style_profile_ref"] == spec["style_profile_ref"]
+        except (KeyError, TypeError, ValueError, ET.ParseError):
+            cp1_hash, style_valid, closure, provenance_valid, semantic_valid = "invalid", False, False, False, False
+        changes = {
+            "C0-01": (cp1_valid, {"contract": "FigureOutputManifest-v3", "cp1_fom_id": cp1_fom.get("figure_output_id"), "cp1_fom_hash": cp1_hash}),
+            "C0-05": (closure, {"cp1_fom_ref": manifest.get("cp1_fom_ref"), "cp1_fom_hash": cp1_hash}),
+            "C0-06": (closure, {"primary_artifact_hash": cp1_fom.get("primary_artifact", {}).get("sha256"), "canonical_hash": manifest.get("canonical_output", {}).get("canonical_sha256")}),
+            "C0-15": (provenance_valid, {"cp1_provenance_refs": cp1_fom.get("provenance_refs", [])}),
+            "C0-16": (style_valid, {"verified_style_application_count": len(manifest.get("style_resolution", {}).get("application_trace", []))}),
+            "C0-19": (semantic_valid, {"renderer": cp1_fom.get("renderer"), "style_profile_ref": cp1_fom.get("style_profile_ref")}),
+            "C0-20": (self._runtime_raw_bypass_rejected(), {"runtime_type_boundary": "ApprovedFigureHandle"}),
+            "C0-21": (self._runtime_unapproved_bypass_rejected(), {"runtime_type_boundary": "ApprovedFigureHandle"}),
+        }
+        report = result["report"]
+        for check in report["checks"]:
+            if check["check_id"] in changes:
+                value, facts = changes[check["check_id"]]
+                check["status"] = "pass" if value else "fail"
+                check["facts"] = facts
+        approved = all(check["status"] == "pass" for check in report["checks"])
+        report["status"] = "APPROVED_FIGURE" if approved else "FAIL"
+        report_hash = _json_hash(report)
+        approval = self._approval(manifest, report, report_hash) if approved else None
+        return {"status": report["status"], "report": report, "approval": approval, "bundle": {"cp1_fom_id": cp1_fom.get("figure_output_id"), "cp1_fom_hash": cp1_hash}}
+
+    def _runtime_raw_bypass_rejected(self) -> bool:
+        try:
+            self.layout_eligible({"kind": "raw_svg"})  # type: ignore[arg-type]
+        except FigureGateError:
+            return True
+        return False
+
+    def _runtime_unapproved_bypass_rejected(self) -> bool:
+        try:
+            self.layout_eligible({"kind": "approval_dict"})  # type: ignore[arg-type]
+        except FigureGateError:
+            return True
+        return False
+
+    def _execute_envelope(self, manifest: dict[str, Any]) -> dict[str, Any]:
         checks: list[dict[str, Any]] = []
         try:
             spec = _spec(self.root, manifest.get("figure_spec_ref", ""))
@@ -274,7 +423,7 @@ class StaticFigureCritic:
             evidence_valid = spec["evidence_status"] == plan["evidence_status"]
             ai_boundary_valid = not (spec["evidence_status"] in {"empirical", "literature_evidence", "synthetic_test_evidence"} and spec["ai_generation_allowed"])
             style = manifest["style_resolution"]
-            style_valid = bool(style["application_trace"]) and all(item["source"] in {"vsp003", "implementation_fallback"} for item in style["application_trace"])
+            style_valid = bool(style["application_trace"]) and all(item["source"] in {"vsp003_recurring", "vsp003_provisional", "implementation_fallback"} for item in style["application_trace"])
             semantic_valid = manifest["figure_spec_ref"] == spec["figure_id"]
             factual_checks = [
                 ("C0-01", manifest_valid, {"contract": "CP1_FigureOutputManifest_relationship", "svg_envelope_valid": manifest_valid}),
@@ -358,7 +507,8 @@ def write_gate_c_artifacts(root: Path | None = None, destination: Path | None = 
     destination = destination or root / "thesis-deck-system" / "artifacts" / "phase3"
     destination.mkdir(parents=True, exist_ok=True)
     manifest = make_synthetic_manifest(root, "FIG002")
-    result = StaticFigureCritic(root).execute(manifest)
+    cp1_fom = make_cp1_figure_output_manifest(root, manifest)
+    result = StaticFigureCritic(root).execute_bundle({"cp1_fom": cp1_fom, "svg_envelope": manifest})
     report, approval = result["report"], result["approval"]
     execution = {
         "schema_version": "1.0.0", "execution_id": "CP5C-EXEC-001", "manifest_count": 1,
@@ -370,9 +520,9 @@ def write_gate_c_artifacts(root: Path | None = None, destination: Path | None = 
         "aggregate_status": "pass" if result["status"] == "APPROVED_FIGURE" else "fail",
         "raw_layout_bypass_count": 0, "unapproved_layout_bypass_count": 0,
     }
-    for name, value in (("figure-output-manifests.json", [manifest]), ("static-figure-critic-reports.json", [report]), ("approved-figures.json", [approval]), ("checkpoint-5c-execution-evidence.json", execution), ("checkpoint-5c-qa.json", qa)):
+    for name, value in (("figure-output-manifests.json", [cp1_fom]), ("scientific-svg-envelopes.json", [manifest]), ("static-figure-critic-reports.json", [report]), ("approved-figures.json", [approval]), ("checkpoint-5c-execution-evidence.json", execution), ("checkpoint-5c-qa.json", qa)):
         (destination / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return {"manifest": manifest, "report": report, "approval": approval, "execution": execution, "qa": qa}
+    return {"cp1_fom": cp1_fom, "manifest": manifest, "report": report, "approval": approval, "execution": execution, "qa": qa}
 
 
 def _representative_input(family: str) -> dict[str, Any]:
