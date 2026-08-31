@@ -226,7 +226,7 @@ def apply_style_bundle(source: str, style_resolution: dict[str, Any]) -> tuple[s
         # Replace only the already-validated target attribute in source order.
         escaped_id = re.escape(target_id)
         escaped_attribute = re.escape(attribute)
-        pattern = rf'(<[^>]*\bid="{escaped_id}"[^>]*(?<![-\w]){escaped_attribute}=")[^"]*(")'
+        pattern = rf'(<(?=[^>]*\bid="{escaped_id}")[^>]*?(?<![-\w]){escaped_attribute}=")[^"]*(")'
         source, replaced = re.subn(pattern, rf'\g<1>{trace["serialized_applied_value"]}\g<2>', source, count=1)
         if replaced != 1:
             raise FigureGateError("style application target attribute was not uniquely replaceable")

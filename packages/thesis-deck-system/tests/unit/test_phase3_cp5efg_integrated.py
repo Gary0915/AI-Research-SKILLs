@@ -62,3 +62,32 @@ def test_cp5efg_execution_artifacts_are_registered_schema_contracts(tmp_path: Pa
     registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5a=True, include_cp5bcd=True)
     for name, path in (("checkpoint-5e-execution-evidence", "checkpoint-5e-execution-evidence.json"), ("checkpoint-5e-qa", "checkpoint-5e-qa.json"), ("checkpoint-5f-qa", "checkpoint-5f-qa.json"), ("checkpoint-5g-qa", "checkpoint-5g-qa.json")):
         assert registry.errors(name, json.loads((tmp_path / path).read_text(encoding="utf-8"))) == []
+
+
+def test_e1_plot_hash_and_svg_are_deterministically_derived_from_numeric_input():
+    from thesis_deck_system.phase3_cp5efg_integrated import canonical_plot_input, build_scientific_plot
+
+    payload = {"series": [{"series_id": "S-A", "points": [[0, 1], [2, 3]]}], "x_axis_label": "time", "x_axis_unit": "s", "y_axis_label": "response", "y_axis_unit": "a.u.", "provenance_refs": ["E101"], "evidence_status": "synthetic_test_evidence"}
+    first = build_scientific_plot(ROOT, payload)
+    assert first["data_sha256"] == canonical_plot_input(payload)["data_sha256"]
+    assert "time / s" in first["svg"] and "response / a.u." in first["svg"]
+    changed = deepcopy(payload); changed["series"][0]["points"][1][1] = 4
+    assert build_scientific_plot(ROOT, changed)["canonical_sha256"] != first["canonical_sha256"]
+    stale = deepcopy(payload); stale["data_sha256"] = "a" * 64
+    with pytest.raises(Exception):
+        canonical_plot_input(stale)
+
+
+def test_e1_image_matrix_binds_each_synthetic_panel_hash_provenance_order_and_scale():
+    from thesis_deck_system.phase3_cp5efg_integrated import build_image_matrix
+
+    panels = [{"panel_id": f"P{index:03}", "source_asset_ref": f"AS{index:03}", "source_bytes": f"synthetic-panel-{index}".encode(), "provenance_ref": "E101", "order": index, "scale_policy": "shared", "label": f"panel {index}"} for index in range(1, 5)]
+    result = build_image_matrix(ROOT, panels)
+    assert len(result["panel_lineage"]) == 4
+    assert all(item["source_sha256"] for item in result["panel_lineage"])
+    reordered = [*reversed(panels)]
+    for index, panel in enumerate(reordered, 1): panel["order"] = index
+    assert build_image_matrix(ROOT, reordered)["canonical_sha256"] != result["canonical_sha256"]
+    stale = deepcopy(panels); stale[0]["source_sha256"] = "0" * 64
+    with pytest.raises(Exception):
+        build_image_matrix(ROOT, stale)
