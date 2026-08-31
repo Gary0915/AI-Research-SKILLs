@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "qa_id": "CP5E-QA-001",
+  "aggregate_status": "pass",
+  "route_statuses": {
+    "scientific_plot": "APPROVED_FIGURE",
+    "photo_annotation": "BLOCKED_SOURCE",
+    "literature_figure": "BLOCKED_SOURCE",
+    "image_matrix": "APPROVED_FIGURE",
+    "concept_illustration": "APPROVED_FIGURE"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "execution_id": "CP5E-EXEC-001",
+  "route_count": 5,
+  "approved_count": 3,
+  "blocked_source_count": 2,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}
