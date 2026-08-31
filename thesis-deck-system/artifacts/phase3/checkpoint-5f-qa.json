@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "qa_id": "CP5F-QA-001",
+  "aggregate_status": "pass",
+  "status_dimensions": {
+    "renderer_id": null,
+    "renderer_version": null,
+    "renderer_capability_status": "blocked_environment",
+    "static_critic_status": "available",
+    "render_critic_status": "blocked_environment",
+    "image_capable_qualitative_review_status": "blocked_visual_review",
+    "human_review_status": "not_run"
+  },
+  "render_count": 0,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}

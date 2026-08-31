@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "renderer": {
+    "renderer_id": null,
+    "renderer_version": null,
+    "renderer_capability_status": "blocked_environment",
+    "static_critic_status": "available",
+    "render_critic_status": "blocked_environment",
+    "image_capable_qualitative_review_status": "blocked_visual_review",
+    "human_review_status": "not_run"
+  },
+  "render_manifests": [],
+  "render_critic_reports": [],
+  "image_capable_review": {
+    "status": "blocked_visual_review"
+  },
+  "current_slide_context": {
+    "context_id": "CTX001",
+    "archetype_id": "A03",
+    "figure_id": "FIG002",
+    "figure_hash": "9248cf036d5ea5566ed02753f41fc3200cb403c6cfa3eeabd5d04e42fb338b5d",
+    "selected_object_ids": [
+      "obj-br002"
+    ]
+  },
+  "review_actions": [
+    {
+      "review_action_id": "RA-e2cdaa259ef1",
+      "context_id": "CTX001",
+      "action_type": "flag_overlap",
+      "object_ids": [
+        "obj-br002"
+      ],
+      "payload": {
+        "severity": "not_reviewed"
+      },
+      "timestamp_order": 1788156879664
+    }
+  ]
+}
