@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "qa_id": "CP5D-QA-001",
+  "aggregate_status": "pass",
+  "director_families": [
+    "fishbone",
+    "mechanism",
+    "experiment",
+    "fabrication",
+    "comparison"
+  ],
+  "preview_status": "preview_render_blocked_environment"
+}
