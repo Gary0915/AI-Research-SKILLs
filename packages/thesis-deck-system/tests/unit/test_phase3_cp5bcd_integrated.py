@@ -166,6 +166,57 @@ def test_c1_rejects_cp1_fom_hash_mutation_and_svg_style_trace_disagreement():
     assert StaticFigureCritic(ROOT).execute_bundle({"cp1_fom": cp1_fom, "svg_envelope": envelope})["status"] == "FAIL"
 
 
+def test_d1_fishbone_uses_hierarchy_not_representative_branch_ids_and_is_deterministic():
+    from thesis_deck_system.phase3_cp5bcd_integrated import _representative_input, build_fishbone_svg
+
+    payload = _representative_input("fishbone")
+    ids = ["ROOT", "contact-A", "contact-B", "risk-C", "future-D", "leaf-E", "leaf-F", "leaf-G"]
+    payload["branches"] = [
+        {"branch_id": ids[0], "parent_ref": None, "label": "Root with a deliberately long label", "status": "completed"},
+        *[{"branch_id": item, "parent_ref": ids[0] if index < 5 else ids[index - 4], "label": f"Long synthetic label {item}", "status": ("failed", "future", "partial")[index % 3]} for index, item in enumerate(ids[1:], 1)],
+    ]
+    payload["focus_ref"] = "leaf-G"
+    spec = __import__("thesis_deck_system.phase3_cp5bcd_integrated", fromlist=["_spec"])._spec(ROOT, "FIG002")
+    first, second = build_fishbone_svg(spec, payload), build_fishbone_svg(spec, payload)
+    assert first == second
+    assert 'id="obj-contact-a"' in first
+    assert 'id="obj-leaf-g"' in first
+    assert "[failed]" in first and "[future]" in first
+
+
+def test_d1_fabrication_preserves_mixed_known_and_unknown_conditions():
+    from thesis_deck_system.phase3_cp5bcd_integrated import _representative_input, build_fabrication_svg
+
+    payload = _representative_input("fabrication")
+    payload["steps"][0]["temperature"] = "25 C"
+    payload["steps"][0]["time"] = "10 min"
+    spec = __import__("thesis_deck_system.phase3_cp5bcd_integrated", fromlist=["_spec"])._spec(ROOT, "FIG003")
+    svg = build_fabrication_svg(spec, payload)
+    assert "T: 25 C · t: 10 min" in svg
+    assert "T: UNKNOWN · t: UNKNOWN" in svg
+
+
+def test_d1_experiment_and_comparison_render_typed_collections_not_fixed_examples():
+    from thesis_deck_system.phase3_cp5bcd_integrated import (
+        _representative_input,
+        build_comparison_svg,
+        build_experiment_svg,
+    )
+
+    experiment = _representative_input("experiment")
+    experiment.update({"components": ["sample-a", "sample-b"], "controls": ["blank", "reference"], "instrumentation": ["scope", "meter"], "measurement_points": ["p1", "p2"], "inputs": ["signal-a", "signal-b"], "outputs": ["output-a", "output-b"]})
+    experiment_spec = __import__("thesis_deck_system.phase3_cp5bcd_integrated", fromlist=["_spec"])._spec(ROOT, "FIG007")
+    experiment_svg = build_experiment_svg(experiment_spec, experiment)
+    assert "sample-a" in experiment_svg and "reference" in experiment_svg and "meter" in experiment_svg
+
+    comparison = _representative_input("comparison")
+    comparison["sides"].append({"side_id": "baseline-2", "label": "Baseline 2", "area": 1.0})
+    comparison["shared_metrics"] = ["m1", "m2", "m3"]
+    comparison_spec = __import__("thesis_deck_system.phase3_cp5bcd_integrated", fromlist=["_spec"])._spec(ROOT, "FIG008")
+    comparison_svg = build_comparison_svg(comparison_spec, comparison)
+    assert "Baseline 2" in comparison_svg
+
+
 def test_vsp003_category_resolution_map_is_a_registered_closed_contract():
     from thesis_deck_system.contracts import SchemaRegistry
     import json
