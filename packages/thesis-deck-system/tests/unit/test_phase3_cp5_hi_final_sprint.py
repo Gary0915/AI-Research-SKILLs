@@ -190,3 +190,33 @@ def test_i2_release_and_package_artifacts_validate_against_closed_cp5hi_schemas(
 
     assert registry.errors("cp5-hi-release-gates", result["release_gates"]) == []
     assert registry.errors("cp5-hi-package-manifest", result["package_manifest"]) == []
+
+
+def test_hi_candidate_state_hash_binds_h_i_sources_tests_schemas_and_artifacts():
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import compute_hi_candidate_state
+
+    state = compute_hi_candidate_state(ROOT)
+
+    assert state["component_count"] >= 12
+    assert "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py" in state["component_hashes"]
+    assert "packages/thesis-deck-system/tests/unit/test_phase3_cp5_hi_final_sprint.py" in state["component_hashes"]
+    assert "thesis-deck-system/schemas/cp5-hi-release-gates.schema.json" in state["component_hashes"]
+    assert len(state["candidate_state_sha256"]) == 64
+
+
+def test_hi_cross_gate_acceptance_derives_all_required_h_i_facts(tmp_path: Path):
+    from thesis_deck_system.phase3_cp5_hi_final_sprint import (
+        build_i0_sanitized_native_template,
+        build_i1_acceptance_deck,
+        build_i2_release_qa,
+        build_hi_cross_gate_acceptance,
+    )
+
+    build_i0_sanitized_native_template(ROOT, tmp_path)
+    build_i1_acceptance_deck(ROOT, tmp_path)
+    build_i2_release_qa(ROOT, tmp_path)
+    evidence = build_hi_cross_gate_acceptance(ROOT, tmp_path)
+
+    assert evidence["status"] == "pass"
+    assert evidence["check_count"] >= 17
+    assert evidence["private_access_counters"] == {"private_alias_resolution_attempts": 0, "private_source_open_attempts": 0, "private_render_attempts": 0}

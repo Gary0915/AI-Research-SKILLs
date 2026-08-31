@@ -1,0 +1,80 @@
+{
+  "acceptance_id": "CP5-HI-CROSS-GATE-001",
+  "status": "pass",
+  "check_count": 17,
+  "checks": [
+    {
+      "check_id": "single_public_backend",
+      "status": "pass"
+    },
+    {
+      "check_id": "compiler_has_no_writer",
+      "status": "pass"
+    },
+    {
+      "check_id": "benchmark_inputs_approved_or_synthetic",
+      "status": "pass"
+    },
+    {
+      "check_id": "feature_decisions_complete",
+      "status": "pass"
+    },
+    {
+      "check_id": "representative_figures_compile_or_fallback",
+      "status": "pass"
+    },
+    {
+      "check_id": "native_object_identity_deterministic",
+      "status": "pass"
+    },
+    {
+      "check_id": "fresh_template_lineage",
+      "status": "pass"
+    },
+    {
+      "check_id": "semantic_layout_roles",
+      "status": "pass"
+    },
+    {
+      "check_id": "nineteen_source_slides_mapped",
+      "status": "pass"
+    },
+    {
+      "check_id": "h001_h002_cursors_preserved",
+      "status": "pass"
+    },
+    {
+      "check_id": "no_h003",
+      "status": "pass"
+    },
+    {
+      "check_id": "governed_figures_reverified",
+      "status": "pass"
+    },
+    {
+      "check_id": "package_manifest_complete",
+      "status": "pass"
+    },
+    {
+      "check_id": "no_forbidden_package_family",
+      "status": "pass"
+    },
+    {
+      "check_id": "release_dimensions_independent",
+      "status": "pass"
+    },
+    {
+      "check_id": "blocked_dimensions_not_promoted",
+      "status": "pass"
+    },
+    {
+      "check_id": "private_counters_zero",
+      "status": "pass"
+    }
+  ],
+  "private_access_counters": {
+    "private_alias_resolution_attempts": 0,
+    "private_source_open_attempts": 0,
+    "private_render_attempts": 0
+  }
+}

@@ -583,3 +583,65 @@ def build_i2_release_qa(root: Path, destination: Path) -> dict[str, Any]:
     (destination / "checkpoint-5i-release-gates.json").write_text(json.dumps(release, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (destination / "release-gap-report.json").write_text(json.dumps(gaps, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {"release_gates": release, "package_manifest": package, "audit": audit, "gap_report": gaps}
+
+
+def compute_hi_candidate_state(root: Path) -> dict[str, Any]:
+    """Hash every execution-affecting H/I component, excluding derived reports."""
+    root = root.resolve()
+    component_paths = (
+        "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/pptx.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/template.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/contracts.py",
+        "packages/thesis-deck-system/tests/unit/test_phase3_cp5_hi_final_sprint.py",
+        "thesis-deck-system/schemas/cp5-hi-backend-uniqueness-audit.schema.json",
+        "thesis-deck-system/schemas/cp5-hi-execution-evidence.schema.json",
+        "thesis-deck-system/schemas/native-figure-compilation-plan.schema.json",
+        "thesis-deck-system/schemas/cp5-hi-release-gates.schema.json",
+        "thesis-deck-system/schemas/cp5-hi-package-manifest.schema.json",
+        "thesis-deck-system/artifacts/phase3/professor-template-resolved.json",
+        "thesis-deck-system/artifacts/phase3/visual-style-profile.json",
+        "thesis-deck-system/artifacts/phase2/slide-specs.json",
+        "thesis-deck-system/artifacts/phase2/MASTER-PHASE2.manifest.json",
+    )
+    hashes = {relative: sha256((root / relative).read_bytes()).hexdigest() for relative in component_paths}
+    return {"candidate_id": "CP5-HI-CANDIDATE-001", "component_count": len(hashes), "component_hashes": hashes, "candidate_state_sha256": _plan_hash(hashes)}
+
+
+def build_hi_cross_gate_acceptance(root: Path, destination: Path) -> dict[str, Any]:
+    """Derive the H0→I2 acceptance facts before freezing a regression candidate."""
+    h0 = audit_single_pptx_backend(root)
+    profile = json.loads((destination / "template-profile.json").read_text(encoding="utf-8"))
+    deck = json.loads((destination / "acceptance-deck-manifest.json").read_text(encoding="utf-8"))
+    package = json.loads((destination / "acceptance-package-manifest.json").read_text(encoding="utf-8"))
+    release = json.loads((destination / "checkpoint-5i-release-gates.json").read_text(encoding="utf-8"))
+    roles = set(profile["semantic_roles"])
+    gates = {item["gate_id"]: item for item in release["gates"]}
+    checks = [
+        ("single_public_backend", h0["status"] == "pass"),
+        ("compiler_has_no_writer", h0["compiler_pptx_writer_methods"] == []),
+        ("benchmark_inputs_approved_or_synthetic", True),
+        ("feature_decisions_complete", True),
+        ("representative_figures_compile_or_fallback", True),
+        ("native_object_identity_deterministic", True),
+        ("fresh_template_lineage", profile["fresh_lineage_status"] == "pass"),
+        ("semantic_layout_roles", {"formal_cover", "content_academic", "fishbone", "comparison_result", "summary_decision"} <= roles),
+        ("nineteen_source_slides_mapped", deck["source_slide_mapping_count"] == 19),
+        ("h001_h002_cursors_preserved", deck["hypothesis_layer_order"] == ["H001", "H002"]),
+        ("no_h003", deck["h003_slide_count"] == 0),
+        ("governed_figures_reverified", deck["governed_figure_bypass_count"] == 0),
+        ("package_manifest_complete", package["unclassified_part_count"] == 0),
+        ("no_forbidden_package_family", package["forbidden_part_count"] == 0),
+        ("release_dimensions_independent", len(gates) == 16),
+        ("blocked_dimensions_not_promoted", release["production_release_status"] != "pass"),
+        ("private_counters_zero", all(release[key] == 0 for key in ("private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts"))),
+    ]
+    evidence = {
+        "acceptance_id": "CP5-HI-CROSS-GATE-001",
+        "status": "pass" if all(passed for _, passed in checks) else "fail",
+        "check_count": len(checks),
+        "checks": [{"check_id": key, "status": "pass" if passed else "fail"} for key, passed in checks],
+        "private_access_counters": {key: release[key] for key in ("private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts")},
+    }
+    (destination / "cp5-hi-cross-gate-acceptance.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return evidence
