@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0.0",
+  "matrix_id": "CP5-HI-RELEASE-GATE-MATRIX-001",
+  "policy": "independent_status_dimensions_fail_honest",
+  "gates": [
+    {
+      "gate_id": "RG-01",
+      "dimension": "single_backend_integrity_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "PythonPptxAssembler is the only public deck writer; compiler and template reconstruction cannot export an acceptance deck independently"
+    },
+    {
+      "gate_id": "RG-02",
+      "dimension": "drawingml_compiler_contract_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "approved figure input, deterministic native plan, explicit per-feature/object outcome, no silent fallback"
+    },
+    {
+      "gate_id": "RG-03",
+      "dimension": "drawingml_structural_compilation_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "synthetic vectors and required acceptance figure families produce structurally auditable native plans or explicitly declared vector fallback"
+    },
+    {
+      "gate_id": "RG-04",
+      "dimension": "drawingml_native_fidelity_status",
+      "required_for_acceptance_deck_build": false,
+      "required_for_production_release": true,
+      "pass_condition": "native-fidelity evidence meets CP5-B evidence rules; structural emission alone is insufficient",
+      "allowed_blocked_state": "blocked_environment"
+    },
+    {
+      "gate_id": "RG-05",
+      "dimension": "fresh_template_lineage_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "template/package construction uses only committed sanitized/public/synthetic inputs and no private or prior-deck binary base"
+    },
+    {
+      "gate_id": "RG-06",
+      "dimension": "template_reconstruction_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "required sanitized semantic layout roles and measured shell topology/geometry are reconstructed or all deviations are below release tolerances"
+    },
+    {
+      "gate_id": "RG-07",
+      "dimension": "acceptance_story_preservation_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "Phase 2 H001→H002 order, cursors, scientific bindings, Fishbone history, decisions/actions, notes and provenance remain intact; no H003 is invented"
+    },
+    {
+      "gate_id": "RG-08",
+      "dimension": "approved_figure_handoff_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "all governed figure placements enter Layout through reverified ApprovedFigureHandle and native plan or explicit vector fallback"
+    },
+    {
+      "gate_id": "RG-09",
+      "dimension": "pptx_package_structural_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "OOXML package, relationships, slide/layout/master references, notes, media, object identities and package manifest are valid"
+    },
+    {
+      "gate_id": "RG-10",
+      "dimension": "render_visual_status",
+      "required_for_acceptance_deck_build": false,
+      "required_for_production_release": true,
+      "pass_condition": "all acceptance slides have hash-bound render evidence with required clipping/overflow/margin/nonblank checks",
+      "allowed_blocked_state": "blocked_environment"
+    },
+    {
+      "gate_id": "RG-11",
+      "dimension": "professor_structural_fidelity_status",
+      "required_for_acceptance_deck_build": false,
+      "required_for_production_release": true,
+      "pass_condition": "all release-required sanitized professor metrics are within tolerance and no required calibration is insufficient_evidence"
+    },
+    {
+      "gate_id": "RG-12",
+      "dimension": "image_capable_qualitative_review_status",
+      "required_for_acceptance_deck_build": false,
+      "required_for_production_release": true,
+      "pass_condition": "every acceptance slide render has hash-bound image-capable review with no critical issue",
+      "allowed_blocked_state": "blocked_visual_review"
+    },
+    {
+      "gate_id": "RG-13",
+      "dimension": "native_powerpoint_acceptance_status",
+      "required_for_acceptance_deck_build": false,
+      "required_for_production_release": true,
+      "pass_condition": "generated deck completes native PowerPoint open/save/reopen acceptance with required structure/editability preservation",
+      "allowed_blocked_state": "blocked_environment"
+    },
+    {
+      "gate_id": "RG-14",
+      "dimension": "package_privacy_status",
+      "required_for_acceptance_deck_build": true,
+      "required_for_production_release": true,
+      "pass_condition": "package-part manifest, relationship audit and repository/staged privacy checks show no prohibited private or undeclared package content"
+    },
+    {
+      "gate_id": "RG-15",
+      "dimension": "production_release_status",
+      "required_for_acceptance_deck_build": false,
+      "required_for_production_release": true,
+      "pass_condition": "every gate marked required_for_production_release is pass; blocked is not pass"
+    },
+    {
+      "gate_id": "RG-16",
+      "dimension": "production_group_meeting_ready",
+      "required_for_acceptance_deck_build": false,
+      "required_for_production_release": true,
+      "pass_condition": "production_release_status is pass and external reviewer accepts the release package"
+    }
+  ],
+  "aggregation_rules": {
+    "acceptance_deck_build_status": "pass only if every required_for_acceptance_deck_build gate passes",
+    "production_release_status": "pass only if every required_for_production_release gate except RG-15/RG-16 passes",
+    "production_group_meeting_ready": "false until production_release_status passes and external reviewer approval exists",
+    "blocked_state_is_pass": false,
+    "pptx_exists_is_release_evidence": false,
+    "structural_validity_implies_native_powerpoint_acceptance": false,
+    "test_renderer_implies_host_render_pass": false
+  }
+}
