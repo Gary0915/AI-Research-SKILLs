@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0.0",
+  "archetypes": [
+    {
+      "archetype_id": "A01",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A02",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A03",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A04",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A05",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A06",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A07",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A08",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A09",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A10",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A11",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A12",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A13",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A14",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A15",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A16",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A17",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    },
+    {
+      "archetype_id": "A18",
+      "structural_geometry": "supported",
+      "style_token_state": "provisional",
+      "render_state": "blocked_environment",
+      "qualitative_state": "blocked_visual_review"
+    }
+  ]
+}

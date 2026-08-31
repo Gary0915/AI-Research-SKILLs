@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "qa_id": "CP5G-QA-001",
+  "structural_geometry_calibration": "pass",
+  "style_token_calibration": "provisional",
+  "render_calibration": "blocked_environment",
+  "image_capable_qualitative_calibration": "blocked_visual_review",
+  "professor_visual_acceptance": "blocked",
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0,
+  "archetype_count": 18,
+  "style_profile_ref": "VSP003"
+}

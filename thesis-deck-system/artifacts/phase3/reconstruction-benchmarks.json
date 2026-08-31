@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "benchmarks": [
+    {
+      "family": "fishbone",
+      "representative": 1,
+      "stress": 1
+    },
+    {
+      "family": "mechanism",
+      "representative": 1,
+      "stress": 1
+    },
+    {
+      "family": "experiment",
+      "representative": 1,
+      "stress": 1
+    },
+    {
+      "family": "fabrication",
+      "representative": 1,
+      "stress": 1
+    },
+    {
+      "family": "comparison",
+      "representative": 1,
+      "stress": 1
+    },
+    {
+      "family": "scientific_plot",
+      "representative": 1,
+      "stress": 1
+    },
+    {
+      "family": "image_matrix",
+      "representative": 1,
+      "stress": 1
+    },
+    {
+      "family": "concept_illustration",
+      "representative": 1,
+      "stress": 1
+    }
+  ]
+}

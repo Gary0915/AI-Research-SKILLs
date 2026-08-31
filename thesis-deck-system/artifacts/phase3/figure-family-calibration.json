@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "families": [
+    {
+      "family": "fishbone",
+      "evidence_state": "provisional",
+      "representative_benchmark_count": 1,
+      "stress_benchmark_count": 1
+    },
+    {
+      "family": "mechanism",
+      "evidence_state": "provisional",
+      "representative_benchmark_count": 1,
+      "stress_benchmark_count": 1
+    },
+    {
+      "family": "experiment",
+      "evidence_state": "provisional",
+      "representative_benchmark_count": 1,
+      "stress_benchmark_count": 1
+    },
+    {
+      "family": "fabrication",
+      "evidence_state": "provisional",
+      "representative_benchmark_count": 1,
+      "stress_benchmark_count": 1
+    },
+    {
+      "family": "comparison",
+      "evidence_state": "provisional",
+      "representative_benchmark_count": 1,
+      "stress_benchmark_count": 1
+    },
+    {
+      "family": "scientific_plot",
+      "evidence_state": "provisional",
+      "representative_benchmark_count": 1,
+      "stress_benchmark_count": 1
+    },
+    {
+      "family": "image_matrix",
+      "evidence_state": "provisional",
+      "representative_benchmark_count": 1,
+      "stress_benchmark_count": 1
+    },
+    {
+      "family": "concept_illustration",
+      "evidence_state": "provisional",
+      "representative_benchmark_count": 1,
+      "stress_benchmark_count": 1
+    }
+  ]
+}
