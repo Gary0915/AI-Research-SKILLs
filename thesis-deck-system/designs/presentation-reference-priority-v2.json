@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "PRESENTATION-REFERENCE-PRIORITY-V2",
+  "baseline_commit": "94060296906ad91dd34fac8495578a383e87c26d",
+  "raw_reference_binaries_committed": false,
+  "authority_layers": {
+    "scientific_truth": "canonical_scientific_objects_to_ledger_to_materialized_state_to_slide_spec",
+    "shell": "existing_sanitized_thesis_professor_shell",
+    "body_composition": "latest_high_priority_user_supplied_reference_lineage"
+  },
+  "shell_override_by_latest_references": false,
+  "body_reference_priority": [
+    {
+      "reference_id": "JDP-TSMC-2026-0814",
+      "priority_rank": 1,
+      "slide_count": 15,
+      "modalities_supplied": ["pdf", "pptx"],
+      "role": "latest_primary_body_composition_and_incremental_lineage_authority"
+    },
+    {
+      "reference_id": "JDP-TSMC-2026-0730",
+      "priority_rank": 2,
+      "slide_count": 13,
+      "modalities_supplied": ["pdf", "pptx"],
+      "role": "direct_predecessor_and_high_confidence_recurrence_authority"
+    },
+    {
+      "reference_id": "JDP-TSMC-2026-0617",
+      "priority_rank": 3,
+      "slide_count": 6,
+      "modalities_supplied": ["pdf"],
+      "role": "focused_meeting_view_and_experiment_layout_authority"
+    },
+    {
+      "reference_id": "JDP-TSMC-2026-0604",
+      "priority_rank": 4,
+      "slide_count": 13,
+      "modalities_supplied": ["pdf", "pptx"],
+      "role": "principle_imaging_and_preliminary_experiment_authority"
+    },
+    {
+      "reference_id": "JDP-TSMC-2026-0525",
+      "priority_rank": 5,
+      "slide_count": 8,
+      "modalities_supplied": ["pdf"],
+      "role": "supporting_historical_body_evidence"
+    }
+  ],
+  "priority_resolution": {
+    "equivalent_body_family_conflict": "prefer_later_recurrent_reference",
+    "unique_older_family": "retain",
+    "accepted_historical_slide_default": "do_not_rebuild_for_style_reference_change_only",
+    "scientific_dependency_change": "rebuild_dependent_slide_atomically"
+  },
+  "recurrent_body_families": [
+    {
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "recurrence": [
+        {"reference_id": "JDP-TSMC-2026-0617", "page": 4},
+        {"reference_id": "JDP-TSMC-2026-0730", "page": 8},
+        {"reference_id": "JDP-TSMC-2026-0814", "page": 9}
+      ],
+      "confidence": "high"
+    },
+    {
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+      "recurrence": [
+        {"reference_id": "JDP-TSMC-2026-0617", "page": 5},
+        {"reference_id": "JDP-TSMC-2026-0730", "page": 9},
+        {"reference_id": "JDP-TSMC-2026-0814", "page": 10}
+      ],
+      "confidence": "high"
+    },
+    {
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "recurrence": [
+        {"reference_id": "JDP-TSMC-2026-0730", "page": 10},
+        {"reference_id": "JDP-TSMC-2026-0814", "page": 11}
+      ],
+      "confidence": "high"
+    },
+    {
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "recurrence": [
+        {"reference_id": "JDP-TSMC-2026-0730", "page": 11},
+        {"reference_id": "JDP-TSMC-2026-0814", "page": 12}
+      ],
+      "confidence": "high"
+    },
+    {
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "recurrence": [
+        {"reference_id": "JDP-TSMC-2026-0730", "page": 12},
+        {"reference_id": "JDP-TSMC-2026-0814", "page": 13}
+      ],
+      "confidence": "high"
+    }
+  ],
+  "additional_body_families": [
+    "BCF-TEXT-TOP-DUAL-VISUAL",
+    "BCF-PROBLEM-TO-SOLUTION",
+    "BCF-REAL-RESULT-VALIDATION",
+    "BCF-LITERATURE-VISUAL-MATRIX",
+    "BCF-THREE-COLUMN-PHYSICAL-COMPARISON"
+  ],
+  "body_visual_grammar": {
+    "information_density": "structured_high_density",
+    "primary_evidence": "figure_photo_cad_plot_equation_led",
+    "caption_pattern": "light_neutral_direct_caption_strip",
+    "focus_annotation": "red_outline_or_red_callout_for_critical_region",
+    "major_flow_arrow": "heavy_black",
+    "warning_or_critical_arrow": "red",
+    "measurement_reference_line": "thin_or_dashed",
+    "accent_color_policy": "semantic_not_decorative",
+    "generic_card_layout_preference": "low"
+  },
+  "incremental_lineage_observations": {
+    "canonical_deck_behavior": "persistent_research_history",
+    "new_content_insertion": "append_after_semantic_parent",
+    "meeting_export": "focused_view_over_canonical_history",
+    "stable_historical_content": "reuse_when_dependencies_unchanged",
+    "current_state_content": "versioned_snapshot",
+    "dependency_change": "atomic_rebuild_of_all_dependent_fields_and_figures"
+  },
+  "minimum_lifecycle_policies": [
+    "historical_stable",
+    "append_after_semantic_parent",
+    "versioned_snapshot"
+  ],
+  "minimum_materialization_decisions": [
+    "reuse_exact",
+    "append_new",
+    "new_revision",
+    "rebuild_dependency_changed",
+    "exclude_from_meeting_view_only"
+  ],
+  "known_longitudinal_hazard": {
+    "hazard_id": "STALE-DEPENDENCY-MIXED-GENERATION",
+    "description": "later reference slide updates dimensional/derived threshold evidence while retaining earlier explanatory threshold text",
+    "required_system_response": "dependency_hash_invalidation_and_atomic_rebuild"
+  },
+  "prohibitions": [
+    "do_not_copy_reference_shell_into_thesis_template",
+    "do_not_commit_raw_reference_binaries",
+    "do_not_use_reference_content_as_scientific_truth",
+    "do_not_rebuild_all_historical_slides_for_new_reference_style_only",
+    "do_not_append_every_new_slide_only_at_physical_deck_end"
+  ]
+}
