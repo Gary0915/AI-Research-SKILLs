@@ -1,0 +1,47 @@
+{
+  "facts_id": "PPA-FINAL-001",
+  "candidate_state_hash": "867e9d8ca770927811578d9019bd66fe3e603318bec9bf020fa6bc3d5635d698",
+  "candidate_component_count": 56,
+  "focused": {
+    "passed": 21,
+    "failed": 0
+  },
+  "full_disposable_regression": {
+    "passed": 532,
+    "failed": 0,
+    "duration_seconds": 166.848,
+    "tested_pre_post_current_equal": true
+  },
+  "planner_metrics": {
+    "logical_slides_evaluated": 10,
+    "candidate_count": 14,
+    "candidate_count_distribution": {
+      "1": 6,
+      "2": 4
+    },
+    "automatic_selections": 9,
+    "historical_reuse_selections": 1,
+    "reviewer_selections": 0,
+    "future_user_review_selections": 0,
+    "body_family_distribution": {
+      "BCF-FEASIBILITY-EVIDENCE-MATRIX": 1,
+      "BCF-HARDWARE-DESIGN-PROCEDURE": 1,
+      "BCF-LITERATURE-VISUAL-MATRIX": 1,
+      "BCF-PHYSICAL-VALIDATION-MATRIX": 3,
+      "BCF-PRINCIPLE-EQUIPMENT-SPLIT": 1,
+      "BCF-REAL-RESULT-VALIDATION": 2,
+      "BCF-TECHNOLOGY-COMPARISON": 1
+    }
+  },
+  "privacy": {
+    "repository_final_unexcepted": 0,
+    "staged_final_unexcepted": 0,
+    "approved_historical_exceptions": 1,
+    "private_access_attempts": {
+      "alias": 0,
+      "source": 0,
+      "render": 0
+    }
+  },
+  "aggregate_status": "pass"
+}
