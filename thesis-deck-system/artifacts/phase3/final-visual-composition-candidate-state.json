@@ -11,14 +11,14 @@
     "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5bcd_integrated.py": "adb842b5bcecb3313438cfd170ad35a6fdedce35cc21d91adb19f9d7a367bc8c",
     "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5efg_integrated.py": "0664e60509d2149521926478d7b237e53d9ffacfb8626fc278c335e3f565d8b2",
     "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py": "de3542861c9d52a6cbc83fe77ce018b23aa094745a26186e38e6acb6b623586d",
-    "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py": "72dd094208506327b60061c62a501f49d618d9c671604b6cb88feac0a95c2eca",
+    "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py": "2caf4901ff4d0967d13e29ee2c5a66bc3b7560c4eacdc9bccbbaea7645c53f9f",
     "packages/thesis-deck-system/src/thesis_deck_system/incremental_deck_lineage.py": "243e13b847efa751f93b99337339907ed9814fe6b67f9315ea778f1b3720bcad",
     "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner.py": "2e843c53422ccb1b509392f80be970bdbdfac7278291b10b1a46e97c1c164fe8",
     "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py": "25456a5ada4b52d9ec1591936ca4e6c79b1eb8ebdb3af5274c80d46b8ffbdcf9",
     "packages/thesis-deck-system/src/thesis_deck_system/contracts.py": "71a84ab27a1c02cebe0b5cb40f266917a763cdc302e6014bcbb555f0b3fecfe8",
     "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py": "7664531a8f21d4b00c70a23096a95c83e0aed889cc73c2fde9d7ed09c6f44a20",
     "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py": "3e7533080c10972941a4ae1672c1dabe904e8de6f5f92c0ffdd978a561b5b08b",
-    "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py": "e106a0a51987fc6973998612a97698ce8aa03484b17971b920e91435ffcb5b37",
+    "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py": "b2be7fbc3a864949bae0e3663b5e9222a0bbabc1f722d8b92891b72eb9848472",
     "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py": "ab7c6a3eaa785f0c1657f00cfdb517c67fcf59cbf58b16a10b180ce278abd5cd",
     "packages/thesis-deck-system/tests/unit/test_presentation_planner.py": "0664e13868a7690462348ed353b52364ad514bb1f46fb017ab9baaa77427242f",
     "packages/thesis-deck-system/tests/unit/test_presentation_planner_application.py": "1c1908e0e94df9a0649fa8d132d6db60cfaae4b4177d015ea1f7d77670dc834f",
@@ -33,7 +33,7 @@
     "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
     "thesis-deck-system/artifacts/phase3/approved-figures.json": "7e45a1887989cb5966c90b670916b8acad18fa656fdffcbde86cde799e208117",
     "thesis-deck-system/artifacts/phase3/visual-style-profile.json": "6861b4f33a9f7287a6872e8004d32290fa64dba90c7225a32d1a7d90eae5a1b2",
-    "thesis-deck-system/schemas/generated-pptx-attestation.schema.json": "5df87a8a42e5e8b453db9eee5050c202f79e19726123a849ca1f5e93b997c855",
+    "thesis-deck-system/schemas/generated-pptx-attestation.schema.json": "20a90ea5f022de360a50d4172669e026c1617c55c5f7c57d13d677bdd6d2c0b6",
     "thesis-deck-system/schemas/generated-pptx-source-closure.schema.json": "ce685ad4e6c880c33112094caba0680a0d40a659147b2fa09d866ed1cc266658",
     "thesis-deck-system/schemas/generated-pptx-media-lineage.schema.json": "c790ffe7622469cfbae33710f2118ac9fd63f2cd75f2a0db63522602f9013b0f",
     "thesis-deck-system/schemas/native-materialization-parity.schema.json": "39c6c9748407ffc33e2b3052ecbf6a05be5b2e3408a48906ee5fc63fccf7d1f3",
@@ -59,5 +59,5 @@
     "thesis-deck-system/artifacts/phase3/incremental-planner-application-audit.json": "1b97d3b5fc9747c1fbf304c21814d4c3310d09cf9978a70b64ed550428038e53",
     "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx": "fa726580525e526e7e608cdfea6bc1bce2860455f9b0504d45ea4e4b7835186e"
   },
-  "candidate_state_sha256": "867e9d8ca770927811578d9019bd66fe3e603318bec9bf020fa6bc3d5635d698"
+  "candidate_state_sha256": "6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051"
 }

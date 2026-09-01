@@ -107,6 +107,7 @@ class GeneratedArtifactAdjudicator:
 
     _ARTIFACT_CLASSES = {
         "phase2_acceptance_deck", "n_layer_acceptance_deck", "sanitized_native_template", "final_acceptance_deck",
+        "planner_composition_review_deck",
     }
     _SAFE_PART_PREFIXES = ("[Content_Types].xml", "_rels/", "docProps/", "ppt/")
 
@@ -371,6 +372,7 @@ _FINAL_GENERATED_PPTX_CONTRACTS: dict[str, tuple[str, str, tuple[str, ...]]] = {
     "thesis-deck-system/artifacts/phase2/synthetic-template.pptx": ("sanitized_native_template", "sanitized-template-builder", ("packages/thesis-deck-system/src/thesis_deck_system/template.py",)),
     "thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx": ("sanitized_native_template", "final-composition-builder", ("packages/thesis-deck-system/src/thesis_deck_system/template.py", "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py")),
     "thesis-deck-system/artifacts/phase3/cp5-final-visual-composition-acceptance-deck.pptx": ("final_acceptance_deck", "final-composition-builder", ("thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx", "thesis-deck-system/artifacts/phase3/final-acceptance-slide-composition-plan.json")),
+    "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx": ("planner_composition_review_deck", "presentation-planner-application-builder", ("packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py", "packages/thesis-deck-system/src/thesis_deck_system/pptx.py", "packages/thesis-deck-system/src/thesis_deck_system/template.py")),
 }
 
 # Every source path below is a repository-owned sanitized/generated input.  The
@@ -409,6 +411,7 @@ _FINAL_GENERATED_PPTX_MEDIA_SOURCES: dict[str, dict[str, str]] = {
         "ppt/media/image1.png": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
         "ppt/media/image2.png": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
     },
+    "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx": {},
 }
 
 
@@ -449,6 +452,7 @@ def build_final_generated_pptx_evidence_bundle(root: Path, *, candidate_state_ha
         "phase2-acceptance-builder": root / "packages/thesis-deck-system/src/thesis_deck_system/phase2_build.py",
         "sanitized-template-builder": root / "packages/thesis-deck-system/src/thesis_deck_system/template.py",
         "final-composition-builder": root / "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py",
+        "presentation-planner-application-builder": root / "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py",
     }
     contracts = {path: (artifact_class, producer) for path, (artifact_class, producer, _) in _FINAL_GENERATED_PPTX_CONTRACTS.items()}
     adjudicator = GeneratedArtifactAdjudicator(root=root, candidate_state_hash=candidate_state_hash, approved_producers=producers, generated_contracts=contracts, privacy_scanner=privacy_scanner)

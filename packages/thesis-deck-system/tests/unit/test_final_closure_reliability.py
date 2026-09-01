@@ -335,12 +335,49 @@ def test_authoritative_privacy_adjudication_clears_only_matching_attested_genera
     assert rejected["unexcepted_final_finding_count"] == 1
 
 
-def test_final_generated_pptx_contract_set_has_execution_owned_records_for_all_five_current_outputs():
+def test_planner_composition_review_deck_has_a_truthful_closed_generated_pptx_contract():
+    """The review deck is neither an acceptance deck nor an open-ended class."""
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.final_closure_reliability import (
+        GeneratedArtifactAdjudicationError,
+        GeneratedArtifactAdjudicator,
+        build_final_generated_pptx_evidence_bundle,
+    )
+    from thesis_deck_system.phase3_privacy import RepositoryPrivacyScanner
+
+    bundle = build_final_generated_pptx_evidence_bundle(
+        ROOT, candidate_state_hash="1" * 64, privacy_scanner=RepositoryPrivacyScanner(), execution_id="FC-PPA-CLASS-001"
+    )
+    review_path = "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx"
+    record = next(item for item in bundle["attestations"] if item["repository_relative_path"] == review_path)
+    registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5hi=True)
+
+    assert record["artifact_class"] == "planner_composition_review_deck"
+    assert registry.errors("generated-pptx-attestation", record) == []
+
+    adjudicator = GeneratedArtifactAdjudicator(
+        root=ROOT,
+        candidate_state_hash="1" * 64,
+        approved_producers={"presentation-planner-application-builder": ROOT / "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py"},
+        generated_contracts={review_path: ("planner_composition_review_deck", "presentation-planner-application-builder")},
+        privacy_scanner=RepositoryPrivacyScanner(),
+    )
+    with pytest.raises(GeneratedArtifactAdjudicationError):
+        adjudicator.attest_staged_generated_pptx(
+            ROOT / review_path,
+            artifact_class="final_acceptance_deck",
+            producer_id="presentation-planner-application-builder",
+            declared_input_paths=[],
+            execution_id="FC-PPA-CLASS-002",
+        )
+
+
+def test_final_generated_pptx_contract_set_has_execution_owned_records_for_all_six_current_outputs():
     from thesis_deck_system.final_closure_reliability import attest_final_generated_pptx_set
     from thesis_deck_system.phase3_privacy import RepositoryPrivacyScanner
 
     records = attest_final_generated_pptx_set(ROOT, candidate_state_hash="1" * 64, privacy_scanner=RepositoryPrivacyScanner(), execution_id="FC-R1-TEST-005")
-    assert len(records) == 5
+    assert len(records) == 6
     assert all(record["status"] == "attested_generated_artifact" for record in records)
     assert all(record["private_input_count"] == 0 for record in records)
     assert all(record["source_closure_input_record_count"] >= 1 for record in records)
@@ -356,7 +393,7 @@ def test_final_generated_pptx_evidence_bundle_preserves_per_artifact_closure_rec
     bundle = build_final_generated_pptx_evidence_bundle(
         ROOT, candidate_state_hash="1" * 64, privacy_scanner=RepositoryPrivacyScanner(), execution_id="FC-R1-TEST-006"
     )
-    assert len(bundle["attestations"]) == len(bundle["source_closures"]) == len(bundle["media_lineages"]) == 5
+    assert len(bundle["attestations"]) == len(bundle["source_closures"]) == len(bundle["media_lineages"]) == 6
     by_path = {item["repository_relative_path"]: item for item in bundle["attestations"]}
     assert all(item["source_closure_id"] == bundle["source_closures"][path]["source_closure_id"] for path, item in by_path.items())
     assert all(item["media_lineage_id"] == bundle["media_lineages"][path]["media_lineage_id"] for path, item in by_path.items())

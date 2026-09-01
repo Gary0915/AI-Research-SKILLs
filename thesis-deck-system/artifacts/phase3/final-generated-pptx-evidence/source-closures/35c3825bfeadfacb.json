@@ -1,0 +1,12 @@
+{
+  "source_closure_id": "FEC-SOURCE-CLOSURE-35C3825BFEAD",
+  "input_records": [
+    {"input_id": "SRC-001", "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/pptx.py", "input_class": "repository_input", "producer_id": "presentation-planner-application-builder", "input_role": "direct_build_input", "source_kind": "repository_sanitized", "privacy_status": "sanitized", "input_sha256": "6c48bc6c4399b4173d139f66f0c10ed5c5486d6a008fad1502564f66bfe5b440"},
+    {"input_id": "SRC-002", "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py", "input_class": "repository_input", "producer_id": "presentation-planner-application-builder", "input_role": "direct_build_input", "source_kind": "repository_sanitized", "privacy_status": "sanitized", "input_sha256": "25456a5ada4b52d9ec1591936ca4e6c79b1eb8ebdb3af5274c80d46b8ffbdcf9"},
+    {"input_id": "SRC-003", "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/template.py", "input_class": "repository_input", "producer_id": "presentation-planner-application-builder", "input_role": "direct_build_input", "source_kind": "repository_sanitized", "privacy_status": "sanitized", "input_sha256": "bfa8092a881429ec282542c418d2557f47a50c8632bba9bf6afae8f9b7d234ed"}
+  ],
+  "input_record_count": 3,
+  "unresolved_input_count": 0,
+  "private_input_count": 0,
+  "source_closure_sha256": "35c3825bfeadfacba793e93e1547cda2e24c58babae72c76a87a378efe6d158e"
+}

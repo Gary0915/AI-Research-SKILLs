@@ -1,47 +1,44 @@
 {
-  "facts_id": "PPA-FINAL-001",
-  "candidate_state_hash": "867e9d8ca770927811578d9019bd66fe3e603318bec9bf020fa6bc3d5635d698",
-  "candidate_component_count": 56,
-  "focused": {
-    "passed": 21,
-    "failed": 0
+  "facts_id": "PPA-FINAL-002",
+  "previous_accepted_candidate": {
+    "candidate_state_hash": "867e9d8ca770927811578d9019bd66fe3e603318bec9bf020fa6bc3d5635d698",
+    "focused": {"passed": 21, "failed": 0},
+    "full_disposable_regression": {"passed": 532, "failed": 0, "duration_seconds": 166.848},
+    "status": "historical_noncurrent"
   },
+  "candidate_state_hash": "6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051",
+  "candidate_component_count": 56,
+  "focused": {"passed": 58, "failed": 0},
   "full_disposable_regression": {
-    "passed": 532,
+    "run_id": "dcf07e915668ed6c",
+    "passed": 533,
     "failed": 0,
-    "duration_seconds": 166.848,
+    "duration_seconds": 153.141838,
     "tested_pre_post_current_equal": true
   },
   "planner_metrics": {
     "logical_slides_evaluated": 10,
     "candidate_count": 14,
-    "candidate_count_distribution": {
-      "1": 6,
-      "2": 4
-    },
+    "candidate_count_distribution": {"1": 6, "2": 4},
     "automatic_selections": 9,
     "historical_reuse_selections": 1,
-    "reviewer_selections": 0,
-    "future_user_review_selections": 0,
-    "body_family_distribution": {
-      "BCF-FEASIBILITY-EVIDENCE-MATRIX": 1,
-      "BCF-HARDWARE-DESIGN-PROCEDURE": 1,
-      "BCF-LITERATURE-VISUAL-MATRIX": 1,
-      "BCF-PHYSICAL-VALIDATION-MATRIX": 3,
-      "BCF-PRINCIPLE-EQUIPMENT-SPLIT": 1,
-      "BCF-REAL-RESULT-VALIDATION": 2,
-      "BCF-TECHNOLOGY-COMPARISON": 1
-    }
+    "historical_migrations": 0,
+    "hard_semantic_mismatch_selected": 0,
+    "hard_capacity_mismatch_selected": 0,
+    "fake_candidate_variants": 0,
+    "selected_materialized_mismatches": 0
   },
   "privacy": {
     "repository_final_unexcepted": 0,
     "staged_final_unexcepted": 0,
     "approved_historical_exceptions": 1,
-    "private_access_attempts": {
-      "alias": 0,
-      "source": 0,
-      "render": 0
-    }
+    "exact_staged_generated_pptx_attestations": 6,
+    "source_closure_failures": 0,
+    "unresolved_media": 0,
+    "undeclared_media": 0,
+    "duplicate_media_lineage": 0,
+    "private_access_attempts": {"alias": 0, "source": 0, "render": 0},
+    "evidence_ref": "planner-review-pptx-final-privacy-evidence.json"
   },
   "aggregate_status": "pass"
 }

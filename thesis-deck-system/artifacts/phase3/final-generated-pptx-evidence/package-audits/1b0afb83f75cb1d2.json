@@ -1,0 +1,17 @@
+{
+  "package_audit_id": "PPA-PACKAGE-AUDIT-A19BF200CFE3",
+  "repository_relative_path": "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx",
+  "artifact_sha256": "fa726580525e526e7e608cdfea6bc1bce2860455f9b0504d45ea4e4b7835186e",
+  "package_part_count": 79,
+  "package_inventory_sha256": "a19bf200cfe3a8e667eeac63f7d3c986d8b052ba21b3e08794b0bdb89f9d00af",
+  "zip_integrity_status": "pass",
+  "external_relationship_count": 0,
+  "macro_part_count": 0,
+  "embedded_package_or_ole_count": 0,
+  "package_privacy_finding_count": 0,
+  "unknown_package_part_count": 0,
+  "unauthorized_custom_xml_count": 0,
+  "orphan_package_part_count": 0,
+  "undeclared_package_part_count": 0,
+  "package_audit_sha256": "b2e256c9358d9652b40918b11f65b7bd1c1759781dd58072f50edb6d117a9b8f"
+}

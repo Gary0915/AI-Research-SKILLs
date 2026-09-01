@@ -2,7 +2,7 @@
 
 ## Authoritative current facts
 
-`artifacts/phase3/final-integrated-current-facts.json` is the sole current-facts projection. It records the frozen 47-component candidate `90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116`.
+`artifacts/phase3/final-integrated-current-facts.json` remains the Stage 0 historical projection. The planner-finalization current-facts projection is [planner-application-final-facts.json](../artifacts/phase3/planner-application-final-facts.json), which records the frozen 56-component candidate `6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051`.
 
 - Milestone A focused: 107 passed, 0 failed.
 - Planner focused: 17 passed, 0 failed.

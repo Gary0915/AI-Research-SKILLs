@@ -38,6 +38,6 @@ The unavailable Phase 2 renderer-derived PNG/PDF/montage deletions remain intent
 
 ## Stage 0 evidence reconciliation
 
-The earlier R1 values are historical evidence for the 27-component closure candidate. They do not supersede the authoritative current projection at [final-integrated-current-facts.json](../artifacts/phase3/final-integrated-current-facts.json): 47 components, candidate `90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116`, and a 528-passed/0-failed disposable regression.
+The earlier R1 values are historical evidence for the 27-component closure candidate. The current planner-finalization projection is [planner-application-final-facts.json](../artifacts/phase3/planner-application-final-facts.json): 56 components, candidate `6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051`, and a 533-passed/0-failed disposable regression. The 47-component integrated facts remain Stage 0 history.
 
 The missing durable source closure, exact staged-byte attestation, and package media-lineage records have been persisted as closed individual artifacts in [final-generated-pptx-evidence](../artifacts/phase3/final-generated-pptx-evidence). Their aggregate confirms five attestations, 24 audited media parts, no working/index mismatch, no source-closure failure, and no unresolved, undeclared, or duplicate media lineage. The repository scanner's raw historical finding is retained and covered only by its one approved historical exception; unexcepted final findings are zero.

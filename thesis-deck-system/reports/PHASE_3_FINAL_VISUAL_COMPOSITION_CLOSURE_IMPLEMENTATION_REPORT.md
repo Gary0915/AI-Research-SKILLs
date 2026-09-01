@@ -69,7 +69,7 @@ Technical debt and unresolved questions: render-derived and qualitative visual a
 
 ## Stage 0 evidence reconciliation
 
-The original closure implementation facts above are retained as their historical execution record. The authoritative current projection is now [final-integrated-current-facts.json](../artifacts/phase3/final-integrated-current-facts.json), bound to the 47-component candidate `90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116`.
+The original closure implementation facts above are retained as their historical execution record. The final planner-application current projection is [planner-application-final-facts.json](../artifacts/phase3/planner-application-final-facts.json), bound to the 56-component candidate `6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051`; the 47-component integrated facts remain Stage 0 history.
 
 That projection records the later Milestone A focused run (107 passed, 0 failed), Planner Foundation focused run (17 passed, 0 failed), combined focused run (112 passed, 0 failed), and definitive disposable regression (528 passed, 0 failed). Its tested, pre, post, and current candidate hashes agree.
 
