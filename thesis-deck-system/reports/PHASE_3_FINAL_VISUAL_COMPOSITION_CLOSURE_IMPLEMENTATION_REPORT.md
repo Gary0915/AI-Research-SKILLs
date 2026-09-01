@@ -66,3 +66,11 @@ Corrected failures: the two incomplete disposable runner attempts were rejected 
 Blocked conditions: approved renderer environment; image-capable qualitative professor review; native PowerPoint acceptance environment.
 
 Technical debt and unresolved questions: render-derived and qualitative visual acceptance remain for a future authorized environment/review step; they have not been converted into passing claims.
+
+## Stage 0 evidence reconciliation
+
+The original closure implementation facts above are retained as their historical execution record. The authoritative current projection is now [final-integrated-current-facts.json](../artifacts/phase3/final-integrated-current-facts.json), bound to the 47-component candidate `90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116`.
+
+That projection records the later Milestone A focused run (107 passed, 0 failed), Planner Foundation focused run (17 passed, 0 failed), combined focused run (112 passed, 0 failed), and definitive disposable regression (528 passed, 0 failed). Its tested, pre, post, and current candidate hashes agree.
+
+The per-artifact final package evidence is retained under [final-generated-pptx-evidence](../artifacts/phase3/final-generated-pptx-evidence): five individual staged generated-PPTX attestations, five source-closure records, and five package media-lineage records. Each individual record validates against its existing closed schema. The final privacy projection distinguishes the one raw historical finding from the one approved legacy exception; final unexcepted findings remain zero. No raw private boundary values are retained.

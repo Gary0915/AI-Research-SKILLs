@@ -1,0 +1,129 @@
+{
+  "source_closure_id": "FEC-SOURCE-CLOSURE-C881718C480D",
+  "input_records": [
+    {
+      "input_id": "SRC-001",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4"
+    },
+    {
+      "input_id": "SRC-002",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22"
+    },
+    {
+      "input_id": "SRC-003",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada"
+    },
+    {
+      "input_id": "SRC-004",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137"
+    },
+    {
+      "input_id": "SRC-005",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "direct_build_input",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "41a990c24b86b14d83539ed6a60323fd2cd6c4482fbb0a11d1cd79d5d241a7d9"
+    },
+    {
+      "input_id": "SRC-006",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/observation/observation_visual.png",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46"
+    },
+    {
+      "input_id": "SRC-007",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/observation/observation_visual.svg",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd"
+    },
+    {
+      "input_id": "SRC-008",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.png",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
+    },
+    {
+      "input_id": "SRC-009",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.svg",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
+    },
+    {
+      "input_id": "SRC-010",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.png",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787"
+    },
+    {
+      "input_id": "SRC-011",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.svg",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e"
+    },
+    {
+      "input_id": "SRC-012",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/slide-specs.json",
+      "input_class": "repository_input",
+      "producer_id": "phase2-acceptance-builder",
+      "input_role": "direct_build_input",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438"
+    }
+  ],
+  "input_record_count": 12,
+  "unresolved_input_count": 0,
+  "private_input_count": 0,
+  "source_closure_sha256": "c881718c480d81c8aca825977605ab160125decbfed1178fef87df68a0446c49"
+}

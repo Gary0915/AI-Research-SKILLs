@@ -1,0 +1,75 @@
+{
+  "evidence_id": "FINAL-STAGE0-GENERATED-PPTX-EVIDENCE-001",
+  "candidate_state_hash": "90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116",
+  "configuration_source": "caller_supplied_ephemeral_dictionary",
+  "configuration_hash": "3ee028a2c2726726dd8382328deeaf78eec5e313fdc075dbca7e939d5a582051",
+  "private_root_signature_count": 1,
+  "forbidden_basename_count": 3,
+  "scanner_id": "RepositoryPrivacyScanner",
+  "scanner_version": "CP3-REPOSITORY-STAGED-V1",
+  "raw_repository_finding_count": 1,
+  "raw_staged_finding_count": 0,
+  "raw_generated_pptx_candidate_count": 5,
+  "exact_staged_generated_pptx_attestation_count": 5,
+  "working_staged_pptx_mismatch_count": 0,
+  "source_closure_failure_count": 0,
+  "unresolved_media_count": 0,
+  "undeclared_media_count": 0,
+  "duplicate_media_lineage_count": 0,
+  "audited_media_part_count": 24,
+  "approved_historical_exception_count": 1,
+  "final_unexcepted_finding_count": 0,
+  "private_access_attempts": {
+    "alias": 0,
+    "source": 0,
+    "render": 0
+  },
+  "records": [
+    {
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/acceptance-deck.pptx",
+      "attestation_path": "attestations/bf59897ecf909328.json",
+      "source_closure_path": "source-closures/bf59897ecf909328.json",
+      "media_lineage_path": "media-lineages/bf59897ecf909328.json",
+      "attestation_sha256": "ce99c5f1a80e0ad2f76ad86dfc8b0b9de1688d0ee56663e107289f0267273b89",
+      "source_closure_sha256": "c881718c480d81c8aca825977605ab160125decbfed1178fef87df68a0446c49",
+      "media_lineage_sha256": "591d47b198bcd829d4fe34a27862ccee4ab3ed7e8a43d939178e6df8ff1c9154"
+    },
+    {
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/n-layer-acceptance-deck.pptx",
+      "attestation_path": "attestations/1bc0059106610684.json",
+      "source_closure_path": "source-closures/1bc0059106610684.json",
+      "media_lineage_path": "media-lineages/1bc0059106610684.json",
+      "attestation_sha256": "a492c51cf9636208ffb33f4ed62f690975414035d1ef8e583abe13cb8774743a",
+      "source_closure_sha256": "9f3cc59f40196f218db6e3096cf8627d7ab3d08338b1d5edc70970ee04bfb843",
+      "media_lineage_sha256": "791ca6bb32104eda5bdc504a9ab53f2b24195555c6dc412c6a0278a9157a92d4"
+    },
+    {
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/synthetic-template.pptx",
+      "attestation_path": "attestations/5cdd0b96451051d9.json",
+      "source_closure_path": "source-closures/5cdd0b96451051d9.json",
+      "media_lineage_path": "media-lineages/5cdd0b96451051d9.json",
+      "attestation_sha256": "2d77942ae3b36ea80b1fc3c1792f0bf7f447758b6299ce1e69fe7a93594fa259",
+      "source_closure_sha256": "96035cd909d9406e72102f8b413773ebc6654320dce3bf23887da04e2668bdfa",
+      "media_lineage_sha256": "e7006452fa15dc2b6ad5fae7a46c51468387158246bc1920e308bd2ef9be817e"
+    },
+    {
+      "repository_relative_path": "thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx",
+      "attestation_path": "attestations/6ffd4e3c0117cac1.json",
+      "source_closure_path": "source-closures/6ffd4e3c0117cac1.json",
+      "media_lineage_path": "media-lineages/6ffd4e3c0117cac1.json",
+      "attestation_sha256": "43c6ee886c0b0427ffa71df8e26810526ae7c176722b5441b25a66663f4b8477",
+      "source_closure_sha256": "764585ee892634f0ba5b27ca22e9114e32c98ef48d6c443b963c5b116eaaed6b",
+      "media_lineage_sha256": "e7006452fa15dc2b6ad5fae7a46c51468387158246bc1920e308bd2ef9be817e"
+    },
+    {
+      "repository_relative_path": "thesis-deck-system/artifacts/phase3/cp5-final-visual-composition-acceptance-deck.pptx",
+      "attestation_path": "attestations/45c69d66c9186842.json",
+      "source_closure_path": "source-closures/45c69d66c9186842.json",
+      "media_lineage_path": "media-lineages/45c69d66c9186842.json",
+      "attestation_sha256": "256514e366b7b9a515b7874aafa40fd6bbdc2e4395fe4093bc8c02721c89cd82",
+      "source_closure_sha256": "5674a0509af0e86957551a9a4f472451ad5940e21fb0262b357b74fd6e1ed873",
+      "media_lineage_sha256": "a491e70a26a873bd2266595ddf92562f6b0c5dbcff6256183863244d1f96f821"
+    }
+  ],
+  "aggregate_status": "pass"
+}

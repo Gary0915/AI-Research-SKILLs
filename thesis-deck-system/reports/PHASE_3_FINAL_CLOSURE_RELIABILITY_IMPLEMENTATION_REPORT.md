@@ -35,3 +35,9 @@ The definitive run was executed only in a disposable worktree. Durable local-onl
 - Production release: blocked; production Group Meeting ready: false.
 
 The unavailable Phase 2 renderer-derived PNG/PDF/montage deletions remain intentionally uncommitted and untouched; they are not restored, regenerated, or included in this closure.
+
+## Stage 0 evidence reconciliation
+
+The earlier R1 values are historical evidence for the 27-component closure candidate. They do not supersede the authoritative current projection at [final-integrated-current-facts.json](../artifacts/phase3/final-integrated-current-facts.json): 47 components, candidate `90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116`, and a 528-passed/0-failed disposable regression.
+
+The missing durable source closure, exact staged-byte attestation, and package media-lineage records have been persisted as closed individual artifacts in [final-generated-pptx-evidence](../artifacts/phase3/final-generated-pptx-evidence). Their aggregate confirms five attestations, 24 audited media parts, no working/index mismatch, no source-closure failure, and no unresolved, undeclared, or duplicate media lineage. The repository scanner's raw historical finding is retained and covered only by its one approved historical exception; unexcepted final findings are zero.

@@ -1,0 +1,30 @@
+{
+  "media_lineage_id": "FEC-MEDIA-LINEAGE-A491E70A26A8",
+  "package_media_part_count": 2,
+  "media_lineage_records": [
+    {
+      "package_part_name": "ppt/media/image1.png",
+      "media_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+      "media_type": "png",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-001",
+      "source_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+      "producer_id": "final-composition-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/image2.png",
+      "media_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+      "media_type": "png",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-002",
+      "source_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+      "producer_id": "final-composition-builder",
+      "lineage_status": "exact_source_bytes"
+    }
+  ],
+  "unresolved_media_part_count": 0,
+  "undeclared_media_part_count": 0,
+  "duplicate_media_lineage_count": 0,
+  "media_lineage_sha256": "a491e70a26a873bd2266595ddf92562f6b0c5dbcff6256183863244d1f96f821"
+}

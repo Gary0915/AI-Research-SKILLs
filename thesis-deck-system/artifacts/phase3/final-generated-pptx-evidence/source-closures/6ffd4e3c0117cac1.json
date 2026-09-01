@@ -1,0 +1,29 @@
+{
+  "source_closure_id": "FEC-SOURCE-CLOSURE-764585EE8926",
+  "input_records": [
+    {
+      "input_id": "SRC-001",
+      "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py",
+      "input_class": "repository_input",
+      "producer_id": "final-composition-builder",
+      "input_role": "direct_build_input",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "d551f350ec3134a67b3547907a3daec3e8bd57b7388b5d2c300263a75521778c"
+    },
+    {
+      "input_id": "SRC-002",
+      "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/template.py",
+      "input_class": "repository_input",
+      "producer_id": "final-composition-builder",
+      "input_role": "direct_build_input",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "bfa8092a881429ec282542c418d2557f47a50c8632bba9bf6afae8f9b7d234ed"
+    }
+  ],
+  "input_record_count": 2,
+  "unresolved_input_count": 0,
+  "private_input_count": 0,
+  "source_closure_sha256": "764585ee892634f0ba5b27ca22e9114e32c98ef48d6c443b963c5b116eaaed6b"
+}

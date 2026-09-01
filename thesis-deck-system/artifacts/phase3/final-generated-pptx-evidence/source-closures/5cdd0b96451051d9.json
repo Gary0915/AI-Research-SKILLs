@@ -1,0 +1,19 @@
+{
+  "source_closure_id": "FEC-SOURCE-CLOSURE-96035CD909D9",
+  "input_records": [
+    {
+      "input_id": "SRC-001",
+      "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/template.py",
+      "input_class": "repository_input",
+      "producer_id": "sanitized-template-builder",
+      "input_role": "direct_build_input",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "bfa8092a881429ec282542c418d2557f47a50c8632bba9bf6afae8f9b7d234ed"
+    }
+  ],
+  "input_record_count": 1,
+  "unresolved_input_count": 0,
+  "private_input_count": 0,
+  "source_closure_sha256": "96035cd909d9406e72102f8b413773ebc6654320dce3bf23887da04e2668bdfa"
+}

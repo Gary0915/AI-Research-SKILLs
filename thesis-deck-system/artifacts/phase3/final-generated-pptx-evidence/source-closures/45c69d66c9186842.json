@@ -1,0 +1,49 @@
+{
+  "source_closure_id": "FEC-SOURCE-CLOSURE-5674A0509AF0",
+  "input_records": [
+    {
+      "input_id": "SRC-001",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+      "input_class": "repository_input",
+      "producer_id": "final-composition-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4"
+    },
+    {
+      "input_id": "SRC-002",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+      "input_class": "repository_input",
+      "producer_id": "final-composition-builder",
+      "input_role": "media_source",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada"
+    },
+    {
+      "input_id": "SRC-003",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase3/final-acceptance-slide-composition-plan.json",
+      "input_class": "repository_input",
+      "producer_id": "final-composition-builder",
+      "input_role": "direct_build_input",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "5570236e9ee7550f7d51e2869ef1de1132b83fbd5db425e90130f9bb5b7a8f8d"
+    },
+    {
+      "input_id": "SRC-004",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx",
+      "input_class": "generated_artifact",
+      "producer_id": "final-composition-builder",
+      "input_role": "direct_build_input",
+      "source_kind": "repository_sanitized",
+      "privacy_status": "sanitized",
+      "input_sha256": "be0a21f2edfaba647dda72c1e0536c1894fd8c37bb2df43200dcf8b082d76b97"
+    }
+  ],
+  "input_record_count": 4,
+  "unresolved_input_count": 0,
+  "private_input_count": 0,
+  "source_closure_sha256": "5674a0509af0e86957551a9a4f472451ad5940e21fb0262b357b74fd6e1ed873"
+}

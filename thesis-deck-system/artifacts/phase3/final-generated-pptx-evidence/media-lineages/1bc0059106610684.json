@@ -1,0 +1,130 @@
+{
+  "media_lineage_id": "FEC-MEDIA-LINEAGE-791CA6BB3210",
+  "package_media_part_count": 12,
+  "media_lineage_records": [
+    {
+      "package_part_name": "ppt/media/A002.svg",
+      "media_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+      "media_type": "svg",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-008",
+      "source_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/A101.svg",
+      "media_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+      "media_type": "svg",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-002",
+      "source_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/A102.svg",
+      "media_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+      "media_type": "svg",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-004",
+      "source_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/A201.svg",
+      "media_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+      "media_type": "svg",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-012",
+      "source_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/A301.svg",
+      "media_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+      "media_type": "svg",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-012",
+      "source_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/A302.svg",
+      "media_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+      "media_type": "svg",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-004",
+      "source_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/image1.png",
+      "media_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+      "media_type": "png",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-001",
+      "source_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/image2.png",
+      "media_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46",
+      "media_type": "png",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-007",
+      "source_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/image3.png",
+      "media_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1",
+      "media_type": "png",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-009",
+      "source_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/image4.png",
+      "media_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+      "media_type": "png",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-003",
+      "source_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/image5.png",
+      "media_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787",
+      "media_type": "png",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-011",
+      "source_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    },
+    {
+      "package_part_name": "ppt/media/plot-canonical.svg",
+      "media_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+      "media_type": "svg",
+      "source_kind": "repository_sanitized",
+      "source_ref": "SRC-010",
+      "source_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+      "producer_id": "phase2-acceptance-builder",
+      "lineage_status": "exact_source_bytes"
+    }
+  ],
+  "unresolved_media_part_count": 0,
+  "undeclared_media_part_count": 0,
+  "duplicate_media_lineage_count": 0,
+  "media_lineage_sha256": "791ca6bb32104eda5bdc504a9ab53f2b24195555c6dc412c6a0278a9157a92d4"
+}

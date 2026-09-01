@@ -1,7 +1,73 @@
 {
-  "consistency_id": "FINAL-INTEGRATED-CONSISTENCY-001",
+  "consistency_id": "FINAL-INTEGRATED-CONSISTENCY-002",
   "authoritative_facts_ref": "final-integrated-current-facts.json",
   "candidate_state_sha256": "90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116",
+  "checks": [
+    {
+      "check_id": "candidate-state",
+      "actual": "90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116",
+      "expected": "90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116",
+      "status": "pass"
+    },
+    {
+      "check_id": "candidate-component-count",
+      "actual": 47,
+      "expected": 47,
+      "status": "pass"
+    },
+    {
+      "check_id": "source-media-record-closure",
+      "actual": {
+        "attestations": 5,
+        "source_closures": 5,
+        "media_lineages": 5
+      },
+      "expected": {
+        "attestations": 5,
+        "source_closures": 5,
+        "media_lineages": 5
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "privacy-aggregate",
+      "actual": {
+        "final_unexcepted_finding_count": 0,
+        "working_staged_pptx_mismatch_count": 0,
+        "source_closure_failure_count": 0,
+        "unresolved_media_count": 0,
+        "undeclared_media_count": 0,
+        "duplicate_media_lineage_count": 0,
+        "approved_historical_exception_count": 1
+      },
+      "expected": {
+        "final_unexcepted_finding_count": 0,
+        "working_staged_pptx_mismatch_count": 0,
+        "source_closure_failure_count": 0,
+        "unresolved_media_count": 0,
+        "undeclared_media_count": 0,
+        "duplicate_media_lineage_count": 0,
+        "approved_historical_exception_count": 1
+      },
+      "status": "pass"
+    },
+    {
+      "check_id": "report-current-facts-links",
+      "actual": {
+        "missing_markers": [],
+        "report_hashes": {
+          "thesis-deck-system/reports/PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE_IMPLEMENTATION_REPORT.md": "0f6934ea9c18ec62a0d4a9b0a2d46b179b57e611573c7d73a64c27ccb4775888",
+          "thesis-deck-system/reports/PHASE_3_FINAL_CLOSURE_RELIABILITY_IMPLEMENTATION_REPORT.md": "f4ad904c130591824441215d6ca9389397c7ecb3b6ef448ee74c3fbeabe90820",
+          "thesis-deck-system/reports/PHASE_3_FINAL_CLOSURE_AND_PRESENTATION_PLANNER_FOUNDATION_IMPLEMENTATION_REPORT.md": "905d3714dc2d979c1514d48c3f0ce2b5e5d17666f7760a97549157fc8310e98f"
+        }
+      },
+      "expected": {
+        "missing_marker_count": 0
+      },
+      "status": "pass"
+    }
+  ],
   "mismatch_count": 0,
+  "mismatches": [],
   "aggregate_status": "pass"
 }

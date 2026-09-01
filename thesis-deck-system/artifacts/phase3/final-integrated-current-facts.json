@@ -74,8 +74,9 @@
     }
   },
   "privacy": {
-    "raw_repository_findings": 0,
-    "raw_staged_findings": 0,
+    "raw_repository_finding_count_before_legacy_exception": 1,
+    "raw_staged_finding_count": 0,
+    "raw_generated_pptx_candidate_count": 5,
     "exact_staged_generated_pptx_attestations": 5,
     "working_staged_pptx_mismatches": 0,
     "source_closure_failures": 0,
@@ -84,11 +85,23 @@
     "undeclared_media": 0,
     "duplicate_media_lineage": 0,
     "approved_historical_exceptions": 1,
+    "final_unexcepted_findings": 0,
     "private_access_attempts": {
       "alias": 0,
       "source": 0,
       "render": 0
-    }
+    },
+    "evidence_ref": "final-generated-pptx-evidence/summary.json"
+  },
+  "stage0": {
+    "source_media_records": {
+      "attestations": 5,
+      "source_closures": 5,
+      "media_lineages": 5,
+      "individual_schema_valid_records": 15
+    },
+    "post_regression_candidate_mutation": false,
+    "reports_reconciled": true
   },
   "aggregate_status": "pass"
 }
