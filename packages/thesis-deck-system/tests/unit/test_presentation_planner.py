@@ -57,6 +57,77 @@ def test_capacity_mismatch_is_not_selected_and_equal_new_candidates_use_determin
         select_composition(shape, [{"candidate_id": "CC-X", "capability_id": "LC-X", "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL", "score": {"total": 99, "hard_capacity_match": False}}], lifecycle_decision="append_new")
 
 
+def test_v2_candidate_eligibility_is_derived_from_content_shape_and_items_not_a_caller_family_list():
+    from thesis_deck_system.presentation_planner import (
+        build_layout_capability_registry,
+        build_scientific_content_shape,
+        generate_composition_candidates,
+    )
+
+    record = {
+        "slide_id": "S-EXP-V2-001",
+        "semantic_stage": "experiment_design",
+        "title": "Hardware procedure",
+        "visible_text": ["purpose", "controls", "GO criterion"],
+        "source_semantic_fields": {"experiment_design": {"controls": ["C1", "C2"]}},
+        "source_bindings": {"evidence_refs": ["EV-001", "EV-002"]},
+        "governed_figure_route": "experiment",
+        "composition_content_items": [
+            {"item_id": "ITEM-CAD", "semantic_role": "hardware", "presentation_role": "primary_visual", "content_kind": "cad", "required": True},
+            {"item_id": "ITEM-CONTROLS", "semantic_role": "controls", "presentation_role": "procedure", "content_kind": "text", "required": True},
+            {"item_id": "ITEM-GO", "semantic_role": "decision", "presentation_role": "go_criterion", "content_kind": "metric", "required": True},
+        ],
+    }
+
+    shape = build_scientific_content_shape(record)
+    families = {item["body_family_id"] for item in generate_composition_candidates(shape, build_layout_capability_registry())}
+
+    missing_hardware_shape = build_scientific_content_shape(record | {
+        "slide_id": "S-EXP-V2-002",
+        "composition_content_items": [
+            {"item_id": "ITEM-TEXT", "semantic_role": "purpose", "presentation_role": "body", "content_kind": "text", "required": True},
+        ],
+    })
+    missing_hardware_families = {
+        item["body_family_id"]
+        for item in generate_composition_candidates(missing_hardware_shape, build_layout_capability_registry())
+    }
+
+    assert "BCF-HARDWARE-DESIGN-PROCEDURE" in families
+    assert "BCF-HARDWARE-DESIGN-PROCEDURE" not in missing_hardware_families
+
+
+def test_selection_rejects_candidates_that_fail_any_v2_hard_fit_gate():
+    from thesis_deck_system.presentation_planner import select_composition
+
+    shape = {
+        "slide_id": "PPA-HARD-GATE-001",
+        "content_shape_sha256": "a" * 64,
+    }
+    invalid = {
+        "candidate_id": "CC-INVALID",
+        "score": {
+            "semantic_hard_match": False,
+            "capacity_hard_match": True,
+            "required_role_coverage": True,
+            "total": 999,
+        },
+    }
+    valid = {
+        "candidate_id": "CC-VALID",
+        "score": {
+            "semantic_hard_match": True,
+            "capacity_hard_match": True,
+            "required_role_coverage": True,
+            "total": 1,
+        },
+    }
+
+    decision = select_composition(shape, [invalid, valid], lifecycle_decision="append_new")
+
+    assert decision["selected_candidate_id"] == "CC-VALID"
+
+
 def test_current_acceptance_deck_planner_audit_is_closed_and_never_migrates_historical_slides():
     from thesis_deck_system.contracts import SchemaRegistry
     from thesis_deck_system.presentation_planner import build_current_acceptance_planner_artifacts

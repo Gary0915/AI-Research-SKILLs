@@ -236,18 +236,33 @@ class PythonPptxAssembler(PptxAssembler):
                 for run in paragraph.runs:
                     run.font.size = Pt(27 if len(item["title"]) < 28 else 22)
 
-            text_region = item["secondary_text_region"]
-            visible_text = item.get("visible_source_fields", [])
-            if visible_text:
-                text_box = slide.shapes.add_textbox(
-                    Inches(text_region["left"]), Inches(text_region["top"]),
-                    Inches(text_region["width"]), Inches(text_region["height"]),
-                )
-                text_box.name = f"tds-composition-text:{item['slide_id']}"
-                text_box.text = "\n\n".join(str(value) for value in visible_text)
-                for paragraph in text_box.text_frame.paragraphs:
-                    for run in paragraph.runs:
-                        run.font.size = Pt(18)
+            planner_regions = item.get("planner_physical_regions")
+            if planner_regions is not None:
+                if not isinstance(planner_regions, list) or not planner_regions:
+                    raise ValueError(f"invalid planner physical regions: {item['slide_id']}")
+                for region in planner_regions:
+                    geometry = region.get("geometry", {})
+                    if not all(isinstance(geometry.get(key), (int, float)) and geometry[key] >= 0 for key in ("left", "top", "width", "height")) or geometry.get("width", 0) <= 0 or geometry.get("height", 0) <= 0:
+                        raise ValueError(f"invalid planner physical geometry: {item['slide_id']}")
+                    text_box = slide.shapes.add_textbox(Inches(geometry["left"]), Inches(geometry["top"]), Inches(geometry["width"]), Inches(geometry["height"]))
+                    text_box.name = f"PPA::{item.get('logical_slide_id', item['slide_id'])}::{item['selected_candidate_id']}::{region['region_id']}::{region['presentation_role']}::{region['item_id']}"
+                    text_box.text = f"SYNTHETIC_NON_EVIDENCE\n{region['presentation_role']}"
+                    for paragraph in text_box.text_frame.paragraphs:
+                        for run in paragraph.runs:
+                            run.font.size = Pt(12)
+            else:
+                text_region = item["secondary_text_region"]
+                visible_text = item.get("visible_source_fields", [])
+                if visible_text:
+                    text_box = slide.shapes.add_textbox(
+                        Inches(text_region["left"]), Inches(text_region["top"]),
+                        Inches(text_region["width"]), Inches(text_region["height"]),
+                    )
+                    text_box.name = f"tds-composition-text:{item['slide_id']}"
+                    text_box.text = "\n\n".join(str(value) for value in visible_text)
+                    for paragraph in text_box.text_frame.paragraphs:
+                        for run in paragraph.runs:
+                            run.font.size = Pt(18)
 
             bundle = figure_bundles.get(item["slide_id"])
             if bundle is not None:

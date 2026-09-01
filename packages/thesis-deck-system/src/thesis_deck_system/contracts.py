@@ -114,6 +114,11 @@ CP5HI_SCHEMA_NAMES = (
     "presentation-planner-qa",
     "composition-review-selections",
     "planner-application-acceptance",
+    "body-composition-recipe-registry",
+    "physical-composition-plans",
+    "presentation-review-overlay",
+    "planner-physical-reverse-audit",
+    "incremental-planner-physical-application-audit",
 )
 
 SCHEMA_BY_COLLECTION = {

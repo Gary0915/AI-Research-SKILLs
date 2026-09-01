@@ -23,6 +23,7 @@ class PlannerError(ValueError):
 PLANNER_VERSION = "1.0.0"
 _DENSITIES = frozenset({"low", "medium", "high", "unavailable"})
 _OBSERVATION_STATES = frozenset({"value", "unavailable", "not_applicable"})
+_CONTENT_KINDS = frozenset({"text", "photo", "cad", "plot", "schematic", "table", "formula", "metric", "citation", "caption", "callout"})
 _BODY_PRIORITY = (
     "JDP-TSMC-2026-0814", "JDP-TSMC-2026-0730", "JDP-TSMC-2026-0617",
     "JDP-TSMC-2026-0604", "JDP-TSMC-2026-0525",
@@ -73,6 +74,22 @@ def build_scientific_content_shape(record: dict[str, Any]) -> dict[str, Any]:
     if not required <= set(record) or not isinstance(record["slide_id"], str) or not isinstance(record["semantic_stage"], str):
         raise PlannerError("projection record cannot produce a content shape")
     fields = record["source_semantic_fields"]
+    supplied_items = record.get("composition_content_items")
+    if supplied_items is None:
+        content_items: list[dict[str, Any]] = []
+        content_items_provided = False
+    elif not isinstance(supplied_items, list):
+        raise PlannerError("composition content items must be a list")
+    else:
+        content_items = []
+        content_items_provided = True
+        for item in supplied_items:
+            required_item = {"item_id", "semantic_role", "presentation_role", "content_kind", "required"}
+            if not isinstance(item, dict) or set(item) - {"item_id", "semantic_role", "presentation_role", "content_kind", "scientific_source_ref", "governed_asset_ref", "caption_available", "priority", "required"} or not required_item <= set(item):
+                raise PlannerError("composition content item is not closed")
+            if not all(isinstance(item[key], str) and item[key] for key in ("item_id", "semantic_role", "presentation_role")) or item["content_kind"] not in _CONTENT_KINDS or not isinstance(item["required"], bool):
+                raise PlannerError("composition content item is invalid")
+            content_items.append(dict(item))
     stage_fields = fields.get(record["semantic_stage"], {}) if isinstance(fields, dict) else {}
     route = record.get("governed_figure_route")
     visible = record.get("visible_text") if isinstance(record.get("visible_text"), list) else []
@@ -111,6 +128,8 @@ def build_scientific_content_shape(record: dict[str, Any]) -> dict[str, Any]:
         "slide_id": record["slide_id"], "semantic_stage": record["semantic_stage"],
         "observations": observations, "text_density_class": fingerprint["text_density_class"],
         "evidence_density_class": fingerprint["evidence_density_class"],
+        "composition_content_items": content_items,
+        "content_items_provided": content_items_provided,
         "shape_basis": "canonical_slidespec_projection", "content_shape_sha256": _hash(fingerprint),
     }
 
@@ -118,29 +137,30 @@ def build_scientific_content_shape(record: dict[str, Any]) -> dict[str, Any]:
 def build_layout_capability_registry() -> list[dict[str, Any]]:
     """Return the bounded, queryable recipes; capacity is system heuristic only."""
     recipe_rows = (
-        ("BCF-TEXT-TOP-DUAL-VISUAL", ("A01", "A02"), ("formal_cover", "progress_todo"), ("none",), 0, 1),
-        ("BCF-PRINCIPLE-EQUIPMENT-SPLIT", ("A17",), ("hypothesis_transition", "literature_mechanism"), ("mechanism",), 1, 1),
-        ("BCF-FEASIBILITY-EVIDENCE-MATRIX", ("A09",), ("experiment_design",), ("experiment",), 1, 3),
-        ("BCF-HARDWARE-DESIGN-PROCEDURE", ("A09",), ("experiment_design",), ("experiment",), 1, 2),
-        ("BCF-PHYSICAL-VALIDATION-MATRIX", ("A11",), ("result_comparison",), ("comparison", "scientific_plot"), 1, 3),
-        ("BCF-TECHNOLOGY-COMPARISON", ("A14",), ("layer_integrated_discussion",), ("comparison",), 1, 2),
-        ("BCF-PROBLEM-TO-SOLUTION", ("A03", "A04", "A05", "A12"), ("hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem"), ("fishbone",), 0, 1),
-        ("BCF-REAL-RESULT-VALIDATION", ("A10",), ("result_single",), ("scientific_plot",), 1, 1),
-        ("BCF-LITERATURE-VISUAL-MATRIX", ("A06",), ("literature_mechanism",), ("mechanism",), 1, 3),
-        ("BCF-THREE-COLUMN-PHYSICAL-COMPARISON", ("A16",), ("layer_summary_decision",), ("comparison",), 1, 3),
+        ("BCF-TEXT-TOP-DUAL-VISUAL", ("A01", "A02"), ("formal_cover", "progress_todo"), (), ("text", "photo", "cad", "plot", "schematic"), 0, 2),
+        ("BCF-PRINCIPLE-EQUIPMENT-SPLIT", ("A17",), ("hypothesis_transition", "literature_mechanism"), ("principle", "equipment"), ("text", "schematic", "formula", "table", "photo"), 1, 2),
+        ("BCF-FEASIBILITY-EVIDENCE-MATRIX", ("A09",), ("experiment_design",), ("setup",), ("text", "photo", "plot", "schematic", "caption"), 1, 4),
+        ("BCF-HARDWARE-DESIGN-PROCEDURE", ("A09",), ("experiment_design",), ("hardware", "controls", "decision"), ("text", "cad", "schematic", "metric", "callout"), 1, 2),
+        ("BCF-PHYSICAL-VALIDATION-MATRIX", ("A11",), ("result_comparison",), ("validation",), ("photo", "plot", "caption", "metric", "text"), 2, 5),
+        ("BCF-TECHNOLOGY-COMPARISON", ("A14",), ("layer_integrated_discussion",), ("approach_a", "approach_b"), ("text", "table", "schematic", "plot", "metric"), 1, 3),
+        ("BCF-PROBLEM-TO-SOLUTION", ("A03", "A04", "A05", "A12"), ("hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem"), ("problem", "solution"), ("text", "schematic", "callout"), 0, 2),
+        ("BCF-REAL-RESULT-VALIDATION", ("A10",), ("result_single",), ("result",), ("plot", "metric", "photo", "text", "caption"), 1, 2),
+        ("BCF-LITERATURE-VISUAL-MATRIX", ("A06",), ("literature_mechanism",), ("literature", "citation"), ("photo", "plot", "schematic", "citation", "caption", "text"), 2, 4),
+        ("BCF-THREE-COLUMN-PHYSICAL-COMPARISON", ("A16",), ("layer_summary_decision", "result_comparison"), ("comparison",), ("text", "photo", "plot", "schematic", "table", "metric"), 3, 4),
     )
     registry: list[dict[str, Any]] = []
-    for family, archetypes, stages, media, minimum, maximum in recipe_rows:
-        fingerprint = {"family": family, "archetypes": archetypes, "stages": stages, "media": media, "minimum": minimum, "maximum": maximum}
+    for family, archetypes, stages, required_roles, kinds, minimum, maximum in recipe_rows:
+        fingerprint = {"family": family, "archetypes": archetypes, "stages": stages, "required_roles": required_roles, "kinds": kinds, "minimum": minimum, "maximum": maximum}
         registry.append({
             "capability_id": f"LCD-{family.removeprefix('BCF-')}", "archetype_ids": list(archetypes), "body_family_id": family,
             "composition_type": "body_composition", "structure_fingerprint": _hash(fingerprint),
+            "compatible_semantic_stages": list(stages), "required_semantic_roles": list(required_roles), "optional_semantic_roles": [],
             "required_regions": ["title_region", "body_region"], "optional_regions": ["caption_region", "secondary_visual_region"],
-            "primary_visual_slots": maximum, "secondary_visual_slots": 1, "supported_media_kinds": list(media),
+            "primary_visual_slots": maximum, "secondary_visual_slots": 1, "supported_content_kinds": list(kinds), "supported_media_kinds": list(kinds),
             "media_count": {"min": minimum, "max": maximum, "basis": "system_heuristic"},
-            "supported_table_structure": "comparison_matrix" if "comparison" in media else "not_applicable",
-            "supported_comparison_sides": 2 if "comparison" in media else None,
-            "supported_formula_presence": False, "text_capacity": {"state": "provisional", "basis": "system_heuristic"},
+            "supported_table_structure": "comparison_matrix" if "table" in kinds else "not_applicable",
+            "supported_comparison_sides": 2 if family in {"BCF-TECHNOLOGY-COMPARISON", "BCF-THREE-COLUMN-PHYSICAL-COMPARISON"} else None,
+            "supported_formula_presence": "formula" in kinds, "text_capacity": {"state": "provisional", "basis": "system_heuristic"},
             "evidence_capacity": {"state": "provisional", "basis": "system_heuristic"},
             "source_evidence_ids": [f"{_BODY_PRIORITY[0]}-PLANNER"], "authority_status": "body_only_no_shell_override",
             "confidence": "provisional", "readiness": "partial_structural_calibration",
@@ -153,28 +173,22 @@ def build_layout_capability_registry() -> list[dict[str, Any]]:
 def generate_composition_candidates(shape: dict[str, Any], capabilities: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Filter controlled recipes and score only semantically compatible candidates."""
     stage = shape.get("semantic_stage")
-    route = None
-    primary = shape.get("observations", {}).get("primary_visual_count", {}).get("value")
+    items = shape.get("composition_content_items", [])
+    items_provided = shape.get("content_items_provided", False)
+    roles = {item["semantic_role"] for item in items}
+    visual_kinds = {"photo", "cad", "plot", "schematic"}
+    primary = sum(item["content_kind"] in visual_kinds for item in items) if items_provided else shape.get("observations", {}).get("primary_visual_count", {}).get("value")
     candidates: list[dict[str, Any]] = []
     for capability in capabilities:
-        route_compatible = primary in (0, None) or capability["media_count"]["max"] >= primary
-        stage_compatible = stage in {"formal_cover", "progress_todo"} or any(stage in capability["capability_id"].casefold() for _ in ())
-        # Stages are encoded by the body-family recipe deterministically.
         family = capability["body_family_id"]
-        allowed = {
-            "experiment_design": {"BCF-FEASIBILITY-EVIDENCE-MATRIX", "BCF-HARDWARE-DESIGN-PROCEDURE"},
-            "result_single": {"BCF-REAL-RESULT-VALIDATION"}, "result_comparison": {"BCF-PHYSICAL-VALIDATION-MATRIX"},
-            "literature_mechanism": {"BCF-LITERATURE-VISUAL-MATRIX", "BCF-PRINCIPLE-EQUIPMENT-SPLIT"},
-            "layer_integrated_discussion": {"BCF-TECHNOLOGY-COMPARISON"}, "layer_summary_decision": {"BCF-THREE-COLUMN-PHYSICAL-COMPARISON"},
-            "fishbone_locator": {"BCF-PROBLEM-TO-SOLUTION"}, "hypothesis_title": {"BCF-PROBLEM-TO-SOLUTION"},
-            "problem_definition": {"BCF-PROBLEM-TO-SOLUTION"}, "observation_problem": {"BCF-PROBLEM-TO-SOLUTION"},
-            "hypothesis_transition": {"BCF-PRINCIPLE-EQUIPMENT-SPLIT"}, "formal_cover": {"BCF-TEXT-TOP-DUAL-VISUAL"},
-            "progress_todo": {"BCF-TEXT-TOP-DUAL-VISUAL"},
-        }
-        if family not in allowed.get(stage, set()) or not route_compatible:
+        route_compatible = primary in (0, None) or capability["media_count"]["max"] >= primary
+        stage_compatible = stage in capability["compatible_semantic_stages"]
+        roles_compatible = not items_provided or set(capability["required_semantic_roles"]) <= roles
+        kinds_compatible = not items_provided or all(item["content_kind"] in capability["supported_content_kinds"] for item in items)
+        if not (stage_compatible and route_compatible and roles_compatible and kinds_compatible):
             continue
-        score = {"semantic_fit": 6, "capacity_fit": 3, "historical_consistency": 0, "bounded_diversity": 0, "hard_capacity_match": True}
-        score["total"] = sum(value for key, value in score.items() if key != "hard_capacity_match")
+        score = {"semantic_fit": 6, "capacity_fit": 3, "evidence_fit": 1 if items_provided else 0, "body_recurrence_fit": 1, "historical_consistency_fit": 0, "bounded_diversity_fit": 0, "semantic_hard_match": stage_compatible, "capacity_hard_match": route_compatible, "required_role_coverage": roles_compatible}
+        score["total"] = sum(value for key, value in score.items() if isinstance(value, int))
         candidate_core = {"slide_id": shape["slide_id"], "content_shape_sha256": shape["content_shape_sha256"], "capability_id": capability["capability_id"], "body_family_id": family}
         candidates.append({"candidate_id": f"CC-{_hash(candidate_core)[:16].upper()}", **candidate_core, "score": score, "candidate_status": "eligible"})
     return sorted(candidates, key=lambda value: value["candidate_id"])
@@ -182,7 +196,11 @@ def generate_composition_candidates(shape: dict[str, Any], capabilities: list[di
 
 def select_composition(shape: dict[str, Any], candidates: list[dict[str, Any]], *, lifecycle_decision: str, historical_composition_id: str | None = None) -> dict[str, Any]:
     """Apply immutable-history lock before deterministic score/tie selection."""
-    valid = [item for item in candidates if item.get("score", {}).get("hard_capacity_match") is not False]
+    hard_gates = ("semantic_hard_match", "capacity_hard_match", "required_role_coverage")
+    valid = [
+        item for item in candidates
+        if all(item.get("score", {}).get(gate, item.get("score", {}).get("hard_capacity_match", True)) is True for gate in hard_gates)
+    ]
     if not valid:
         raise PlannerError("no capacity-compatible composition candidate")
     candidate_ids = [item["candidate_id"] for item in candidates]
