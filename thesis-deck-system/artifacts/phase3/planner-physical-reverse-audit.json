@@ -1,0 +1,875 @@
+{
+  "audit_id": "PPA-REVERSE-AUDIT-001",
+  "slides": [
+    {
+      "physical_slide_index": 1,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-A-EXPERIMENT::PPC-A118F5613DDB64C3::hardware::primary_visual::CAD",
+          "logical_slide_id": "PPA-CASE-A-EXPERIMENT",
+          "candidate_id": "PPC-A118F5613DDB64C3",
+          "region_id": "hardware",
+          "presentation_role": "primary_visual",
+          "item_id": "CAD",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.505,
+            "width": 6.635999562554681,
+            "height": 3.57
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-A-EXPERIMENT::PPC-A118F5613DDB64C3::procedure::procedure::CONTROLS",
+          "logical_slide_id": "PPA-CASE-A-EXPERIMENT",
+          "candidate_id": "PPC-A118F5613DDB64C3",
+          "region_id": "procedure",
+          "presentation_role": "procedure",
+          "item_id": "CONTROLS",
+          "bounding_box": {
+            "left": 8.4025,
+            "top": 1.505,
+            "width": 3.6734995625546807,
+            "height": 2.4479997812773404
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-A-EXPERIMENT::PPC-A118F5613DDB64C3::go::go_criterion::GO",
+          "logical_slide_id": "PPA-CASE-A-EXPERIMENT",
+          "candidate_id": "PPC-A118F5613DDB64C3",
+          "region_id": "go",
+          "presentation_role": "go_criterion",
+          "item_id": "GO",
+          "bounding_box": {
+            "left": 8.4025,
+            "top": 4.309998906386702,
+            "width": 3.6734995625546807,
+            "height": 0.8159995625546806
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 2,
+      "planner_shape_count": 7,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::photo_a::primary_visual::PHOTO-1",
+          "logical_slide_id": "PPA-CASE-B-PHYSICAL",
+          "candidate_id": "PPC-096AA5FA0BA06EE1",
+          "region_id": "photo_a",
+          "presentation_role": "primary_visual",
+          "item_id": "PHOTO-1",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.6829997812773403
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::photo_b::secondary_visual::PLOT-1",
+          "logical_slide_id": "PPA-CASE-B-PHYSICAL",
+          "candidate_id": "PPC-096AA5FA0BA06EE1",
+          "region_id": "photo_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "PLOT-1",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.6829997812773403
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::plot::validation_plot::PLOT-2",
+          "logical_slide_id": "PPA-CASE-B-PHYSICAL",
+          "candidate_id": "PPC-096AA5FA0BA06EE1",
+          "region_id": "plot",
+          "presentation_role": "validation_plot",
+          "item_id": "PLOT-2",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 1.505,
+            "width": 3.555,
+            "height": 2.4479997812773404
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::caption_a::caption::CAPTION",
+          "logical_slide_id": "PPA-CASE-B-PHYSICAL",
+          "candidate_id": "PPC-096AA5FA0BA06EE1",
+          "region_id": "caption_a",
+          "presentation_role": "caption",
+          "item_id": "CAPTION",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.3919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.51
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::caption_b::caption::REGION-CAPTION_B",
+          "logical_slide_id": "PPA-CASE-B-PHYSICAL",
+          "candidate_id": "PPC-096AA5FA0BA06EE1",
+          "region_id": "caption_b",
+          "presentation_role": "caption",
+          "item_id": "REGION-CAPTION_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 3.3919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.51
+          },
+          "z_order": 4
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::measurement_c::secondary_visual::PHOTO-2",
+          "logical_slide_id": "PPA-CASE-B-PHYSICAL",
+          "candidate_id": "PPC-096AA5FA0BA06EE1",
+          "region_id": "measurement_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "PHOTO-2",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 4.207999781277341,
+            "width": 3.555,
+            "height": 1.02
+          },
+          "z_order": 5
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::context::compact_context::REGION-CONTEXT",
+          "logical_slide_id": "PPA-CASE-B-PHYSICAL",
+          "candidate_id": "PPC-096AA5FA0BA06EE1",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "REGION-CONTEXT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.411999125109362,
+            "width": 6.991499343832021,
+            "height": 0.8669991251093613
+          },
+          "z_order": 6
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 3,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-6DC7B591568B4649::result::primary_visual::PLOT",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-6DC7B591568B4649",
+          "region_id": "result",
+          "presentation_role": "primary_visual",
+          "item_id": "PLOT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.5559995625546807,
+            "width": 7.346999125109361,
+            "height": 3.416999125109361
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-6DC7B591568B4649::metric::metric_callout::METRIC",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-6DC7B591568B4649",
+          "region_id": "metric",
+          "presentation_role": "metric_callout",
+          "item_id": "METRIC",
+          "bounding_box": {
+            "left": 9.231999125109361,
+            "top": 1.6579997812773404,
+            "width": 2.843999343832021,
+            "height": 1.1219991251093613
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-6DC7B591568B4649::context::compact_context::REGION-CONTEXT",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-6DC7B591568B4649",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "REGION-CONTEXT",
+          "bounding_box": {
+            "left": 9.231999125109361,
+            "top": 3.29,
+            "width": 2.843999343832021,
+            "height": 1.6829997812773403
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 4,
+      "planner_shape_count": 7,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::photo_a::primary_visual::PHOTO",
+          "logical_slide_id": "PPA-CASE-D-MULTIMODAL",
+          "candidate_id": "PPC-B2E8AD28884FEC68",
+          "region_id": "photo_a",
+          "presentation_role": "primary_visual",
+          "item_id": "PHOTO",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.6829997812773403
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::photo_b::secondary_visual::REGION-PHOTO_B",
+          "logical_slide_id": "PPA-CASE-D-MULTIMODAL",
+          "candidate_id": "PPC-B2E8AD28884FEC68",
+          "region_id": "photo_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "REGION-PHOTO_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.6829997812773403
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::plot::validation_plot::REGION-PLOT",
+          "logical_slide_id": "PPA-CASE-D-MULTIMODAL",
+          "candidate_id": "PPC-B2E8AD28884FEC68",
+          "region_id": "plot",
+          "presentation_role": "validation_plot",
+          "item_id": "REGION-PLOT",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 1.505,
+            "width": 3.555,
+            "height": 2.4479997812773404
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::caption_a::caption::CAPTION",
+          "logical_slide_id": "PPA-CASE-D-MULTIMODAL",
+          "candidate_id": "PPC-B2E8AD28884FEC68",
+          "region_id": "caption_a",
+          "presentation_role": "caption",
+          "item_id": "CAPTION",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.3919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.51
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::caption_b::caption::REGION-CAPTION_B",
+          "logical_slide_id": "PPA-CASE-D-MULTIMODAL",
+          "candidate_id": "PPC-B2E8AD28884FEC68",
+          "region_id": "caption_b",
+          "presentation_role": "caption",
+          "item_id": "REGION-CAPTION_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 3.3919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.51
+          },
+          "z_order": 4
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::measurement_c::secondary_visual::PLOT",
+          "logical_slide_id": "PPA-CASE-D-MULTIMODAL",
+          "candidate_id": "PPC-B2E8AD28884FEC68",
+          "region_id": "measurement_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "PLOT",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 4.207999781277341,
+            "width": 3.555,
+            "height": 1.02
+          },
+          "z_order": 5
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::context::compact_context::REGION-CONTEXT",
+          "logical_slide_id": "PPA-CASE-D-MULTIMODAL",
+          "candidate_id": "PPC-B2E8AD28884FEC68",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "REGION-CONTEXT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.411999125109362,
+            "width": 6.991499343832021,
+            "height": 0.8669991251093613
+          },
+          "z_order": 6
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 5,
+      "planner_shape_count": 7,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::visual_a::primary_visual::FIG-1",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-2067AD3AC8E29B97",
+          "region_id": "visual_a",
+          "presentation_role": "primary_visual",
+          "item_id": "FIG-1",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.785
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::visual_b::secondary_visual::FIG-2",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-2067AD3AC8E29B97",
+          "region_id": "visual_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "FIG-2",
+          "bounding_box": {
+            "left": 4.96599956255468,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.785
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::visual_c::secondary_visual::REGION-VISUAL_C",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-2067AD3AC8E29B97",
+          "region_id": "visual_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "REGION-VISUAL_C",
+          "bounding_box": {
+            "left": 8.75799978127734,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.785
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::cite_a::citation_strip::CITE",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-2067AD3AC8E29B97",
+          "region_id": "cite_a",
+          "presentation_role": "citation_strip",
+          "item_id": "CITE",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.493999343832021,
+            "width": 3.3179997812773405,
+            "height": 0.4079997812773403
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::cite_b::citation_strip::REGION-CITE_B",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-2067AD3AC8E29B97",
+          "region_id": "cite_b",
+          "presentation_role": "citation_strip",
+          "item_id": "REGION-CITE_B",
+          "bounding_box": {
+            "left": 4.96599956255468,
+            "top": 3.493999343832021,
+            "width": 3.3179997812773405,
+            "height": 0.4079997812773403
+          },
+          "z_order": 4
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::cite_c::citation_strip::REGION-CITE_C",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-2067AD3AC8E29B97",
+          "region_id": "cite_c",
+          "presentation_role": "citation_strip",
+          "item_id": "REGION-CITE_C",
+          "bounding_box": {
+            "left": 8.75799978127734,
+            "top": 3.493999343832021,
+            "width": 3.3179997812773405,
+            "height": 0.4079997812773403
+          },
+          "z_order": 5
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::synthesis::synthesis_callout::REGION-SYNTHESIS",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-2067AD3AC8E29B97",
+          "region_id": "synthesis",
+          "presentation_role": "synthesis_callout",
+          "item_id": "REGION-SYNTHESIS",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.411999125109362,
+            "width": 10.901999125109361,
+            "height": 0.8159995625546806
+          },
+          "z_order": 6
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 6,
+      "planner_shape_count": 4,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7::approach_a::primary_visual::A",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-1BB2BEBF7E6618D7",
+          "region_id": "approach_a",
+          "presentation_role": "primary_visual",
+          "item_id": "A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.5559995625546807,
+            "width": 3.3179997812773405,
+            "height": 2.4479997812773404
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7::criteria::criteria_table::TABLE",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-1BB2BEBF7E6618D7",
+          "region_id": "criteria",
+          "presentation_role": "criteria_table",
+          "item_id": "TABLE",
+          "bounding_box": {
+            "left": 4.96599956255468,
+            "top": 1.5559995625546807,
+            "width": 3.3179997812773405,
+            "height": 2.4479997812773404
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7::approach_b::secondary_visual::B",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-1BB2BEBF7E6618D7",
+          "region_id": "approach_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "B",
+          "bounding_box": {
+            "left": 8.75799978127734,
+            "top": 1.5559995625546807,
+            "width": 3.3179997812773405,
+            "height": 2.4479997812773404
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7::mechanism::mechanism_pair::REGION-MECHANISM",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-1BB2BEBF7E6618D7",
+          "region_id": "mechanism",
+          "presentation_role": "mechanism_pair",
+          "item_id": "REGION-MECHANISM",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.411999125109362,
+            "width": 10.901999125109361,
+            "height": 0.9179997812773404
+          },
+          "z_order": 3
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 7,
+      "planner_shape_count": 4,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B::principle::primary_visual::PRINCIPLE",
+          "logical_slide_id": "PPA-CASE-G-PRINCIPLE",
+          "candidate_id": "PPC-E866D0D74E77404B",
+          "region_id": "principle",
+          "presentation_role": "primary_visual",
+          "item_id": "PRINCIPLE",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.5559995625546807,
+            "width": 5.3325,
+            "height": 2.7029997812773403
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B::formula::formula::FORMULA",
+          "logical_slide_id": "PPA-CASE-G-PRINCIPLE",
+          "candidate_id": "PPC-E866D0D74E77404B",
+          "region_id": "formula",
+          "presentation_role": "formula",
+          "item_id": "FORMULA",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.615999562554681,
+            "width": 5.3325,
+            "height": 0.8159995625546806
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B::equipment::secondary_visual::EQUIPMENT",
+          "logical_slide_id": "PPA-CASE-G-PRINCIPLE",
+          "candidate_id": "PPC-E866D0D74E77404B",
+          "region_id": "equipment",
+          "presentation_role": "secondary_visual",
+          "item_id": "EQUIPMENT",
+          "bounding_box": {
+            "left": 6.980499781277341,
+            "top": 1.5559995625546807,
+            "width": 5.09549978127734,
+            "height": 2.4479997812773404
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B::specification::specification_table::REGION-SPECIFICATION",
+          "logical_slide_id": "PPA-CASE-G-PRINCIPLE",
+          "candidate_id": "PPC-E866D0D74E77404B",
+          "region_id": "specification",
+          "presentation_role": "specification_table",
+          "item_id": "REGION-SPECIFICATION",
+          "bounding_box": {
+            "left": 6.980499781277341,
+            "top": 4.309998906386702,
+            "width": 5.09549978127734,
+            "height": 1.1219991251093613
+          },
+          "z_order": 3
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 8,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-468E2014216AC345::result::primary_visual::PLOT",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-468E2014216AC345",
+          "region_id": "result",
+          "presentation_role": "primary_visual",
+          "item_id": "PLOT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.5559995625546807,
+            "width": 7.346999125109361,
+            "height": 3.416999125109361
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-468E2014216AC345::metric::metric_callout::METRIC",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-468E2014216AC345",
+          "region_id": "metric",
+          "presentation_role": "metric_callout",
+          "item_id": "METRIC",
+          "bounding_box": {
+            "left": 9.231999125109361,
+            "top": 1.6579997812773404,
+            "width": 2.843999343832021,
+            "height": 1.1219991251093613
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-468E2014216AC345::context::compact_context::REGION-CONTEXT",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-468E2014216AC345",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "REGION-CONTEXT",
+          "bounding_box": {
+            "left": 9.231999125109361,
+            "top": 3.29,
+            "width": 2.843999343832021,
+            "height": 1.6829997812773403
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 9,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-I-CONTINUATION::PPC-F1CFC7CC4822B5C0::hardware::primary_visual::CAD",
+          "logical_slide_id": "PPA-CASE-I-CONTINUATION",
+          "candidate_id": "PPC-F1CFC7CC4822B5C0",
+          "region_id": "hardware",
+          "presentation_role": "primary_visual",
+          "item_id": "CAD",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.505,
+            "width": 6.635999562554681,
+            "height": 3.57
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-I-CONTINUATION::PPC-F1CFC7CC4822B5C0::procedure::procedure::CONTROLS",
+          "logical_slide_id": "PPA-CASE-I-CONTINUATION",
+          "candidate_id": "PPC-F1CFC7CC4822B5C0",
+          "region_id": "procedure",
+          "presentation_role": "procedure",
+          "item_id": "CONTROLS",
+          "bounding_box": {
+            "left": 8.4025,
+            "top": 1.505,
+            "width": 3.6734995625546807,
+            "height": 2.4479997812773404
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-I-CONTINUATION::PPC-F1CFC7CC4822B5C0::go::go_criterion::GO",
+          "logical_slide_id": "PPA-CASE-I-CONTINUATION",
+          "candidate_id": "PPC-F1CFC7CC4822B5C0",
+          "region_id": "go",
+          "presentation_role": "go_criterion",
+          "item_id": "GO",
+          "bounding_box": {
+            "left": 8.4025,
+            "top": 4.309998906386702,
+            "width": 3.6734995625546807,
+            "height": 0.8159995625546806
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 10,
+      "planner_shape_count": 5,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::column_a::primary_visual::P1",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-8B074929C8B57B90",
+          "region_id": "column_a",
+          "presentation_role": "primary_visual",
+          "item_id": "P1",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.5559995625546807,
+            "width": 3.1994991251093614,
+            "height": 2.855999562554681
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::column_b::secondary_visual::P2",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-8B074929C8B57B90",
+          "region_id": "column_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "P2",
+          "bounding_box": {
+            "left": 5.025249343832021,
+            "top": 1.5559995625546807,
+            "width": 3.1994991251093614,
+            "height": 2.855999562554681
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::column_c::secondary_visual::P3",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-8B074929C8B57B90",
+          "region_id": "column_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "P3",
+          "bounding_box": {
+            "left": 8.876499343832021,
+            "top": 1.5559995625546807,
+            "width": 3.1994991251093614,
+            "height": 2.855999562554681
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::criteria::criteria_strip::REGION-CRITERIA",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-8B074929C8B57B90",
+          "region_id": "criteria",
+          "presentation_role": "criteria_strip",
+          "item_id": "REGION-CRITERIA",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.82,
+            "width": 7.11,
+            "height": 0.6119991251093613
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::decision::decision_callout::REGION-DECISION",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-8B074929C8B57B90",
+          "region_id": "decision",
+          "presentation_role": "decision_callout",
+          "item_id": "REGION-DECISION",
+          "bounding_box": {
+            "left": 8.994998906386702,
+            "top": 4.82,
+            "width": 3.080999562554681,
+            "height": 0.6119991251093613
+          },
+          "z_order": 4
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 11,
+      "planner_shape_count": 7,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::photo_a::primary_visual::P1",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-EFFDE13A1C6DCF85",
+          "region_id": "photo_a",
+          "presentation_role": "primary_visual",
+          "item_id": "P1",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.6829997812773403
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::photo_b::secondary_visual::P3",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-EFFDE13A1C6DCF85",
+          "region_id": "photo_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "P3",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 1.505,
+            "width": 3.3179997812773405,
+            "height": 1.6829997812773403
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::plot::validation_plot::REGION-PLOT",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-EFFDE13A1C6DCF85",
+          "region_id": "plot",
+          "presentation_role": "validation_plot",
+          "item_id": "REGION-PLOT",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 1.505,
+            "width": 3.555,
+            "height": 2.4479997812773404
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::caption_a::caption::REGION-CAPTION_A",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-EFFDE13A1C6DCF85",
+          "region_id": "caption_a",
+          "presentation_role": "caption",
+          "item_id": "REGION-CAPTION_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.3919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.51
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::caption_b::caption::REGION-CAPTION_B",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-EFFDE13A1C6DCF85",
+          "region_id": "caption_b",
+          "presentation_role": "caption",
+          "item_id": "REGION-CAPTION_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 3.3919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.51
+          },
+          "z_order": 4
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::measurement_c::secondary_visual::P2",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-EFFDE13A1C6DCF85",
+          "region_id": "measurement_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "P2",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 4.207999781277341,
+            "width": 3.555,
+            "height": 1.02
+          },
+          "z_order": 5
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::context::compact_context::REGION-CONTEXT",
+          "logical_slide_id": "PPA-CASE-J-DIVERSITY",
+          "candidate_id": "PPC-EFFDE13A1C6DCF85",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "REGION-CONTEXT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.411999125109362,
+            "width": 6.991499343832021,
+            "height": 0.8669991251093613
+          },
+          "z_order": 6
+        }
+      ]
+    }
+  ],
+  "missing_required_region_count": 0,
+  "required_role_assignment_failure_count": 0,
+  "out_of_content_bounds_count": 0,
+  "hard_overlap_violation_count": 0,
+  "selected_candidate_materialization_mismatch": 0,
+  "physical_recipe_identity_mismatch": 0,
+  "review_slide_mapping_failure_count": 0,
+  "fake_candidate_variant_count": 0,
+  "aggregate_status": "pass"
+}

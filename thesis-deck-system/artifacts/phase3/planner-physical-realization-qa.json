@@ -1,0 +1,62 @@
+{
+  "schema_version": "2.0.0",
+  "qa_id": "PPA-PHYSICAL-QA-001",
+  "schema_status": "pass",
+  "content_driven_eligibility": "pass",
+  "recipe_coverage": {
+    "recipe_count": 10,
+    "physical_family_coverage": "10/10",
+    "duplicate_recipe_id_count": 0,
+    "missing_family_count": 0
+  },
+  "candidate_counts": {
+    "logical_case_count": 10,
+    "eligible_candidate_count": 11,
+    "multi_candidate_case_count": 1,
+    "multi_candidate_status": "insufficient_multi_candidate_evidence"
+  },
+  "planner_fit": {
+    "hard_semantic_mismatch_selected_count": 0,
+    "hard_capacity_mismatch_selected_count": 0,
+    "required_role_failure_selected_count": 0,
+    "fake_candidate_variant_count": 0
+  },
+  "reverse_physical_audit": {
+    "missing_required_region_count": 0,
+    "required_role_assignment_failure_count": 0,
+    "out_of_content_bounds_count": 0,
+    "hard_overlap_violation_count": 0,
+    "physical_recipe_identity_mismatch": 0,
+    "selected_candidate_materialization_mismatch": 0,
+    "review_slide_mapping_failure_count": 0,
+    "fake_candidate_variant_count": 0
+  },
+  "review_overlay": {
+    "reviewer_selection_count": 1,
+    "layout_lock_count": 1,
+    "meeting_visibility_override_count": 1,
+    "bounded_region_adjustment_count": 1,
+    "stale_review_applied_count": 0,
+    "scientific_override_count": 0,
+    "review_selection_to_physical_mismatch_count": 0,
+    "shell_region_adjustment_count": 0,
+    "illegal_out_of_bounds_adjustment_count": 0,
+    "illegal_hard_overlap_adjustment_count": 0
+  },
+  "incremental_physical_application": {
+    "historical_reused": 20,
+    "reuse_evidence_level": "authoritative_reference",
+    "new_planned_slides": 2,
+    "new_physical_slides": 2,
+    "historical_relayout_without_dependency_change_count": 0,
+    "historical_visual_migration_count": 0,
+    "semantic_insertion_status": "pass"
+  },
+  "body_reference": {
+    "highest_priority_reference": "JDP-TSMC-2026-0814",
+    "shell_override_count": 0,
+    "scientific_truth_override_count": 0
+  },
+  "known_hard_text_overflow_count": 0,
+  "aggregate_status": "pass"
+}

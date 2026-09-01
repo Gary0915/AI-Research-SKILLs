@@ -1,44 +1,40 @@
 {
-  "facts_id": "PPA-FINAL-002",
-  "previous_accepted_candidate": {
-    "candidate_state_hash": "867e9d8ca770927811578d9019bd66fe3e603318bec9bf020fa6bc3d5635d698",
-    "focused": {"passed": 21, "failed": 0},
-    "full_disposable_regression": {"passed": 532, "failed": 0, "duration_seconds": 166.848},
-    "status": "historical_noncurrent"
-  },
-  "candidate_state_hash": "6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051",
-  "candidate_component_count": 56,
-  "focused": {"passed": 58, "failed": 0},
-  "full_disposable_regression": {
-    "run_id": "dcf07e915668ed6c",
-    "passed": 533,
-    "failed": 0,
-    "duration_seconds": 153.141838,
-    "tested_pre_post_current_equal": true
-  },
+  "facts_id": "PPA-PHYSICAL-FINAL-001",
+  "candidate_state_hash": "5628e04059f1bfb563c3899a951df1c9fc72693cbb35082ab5e31643658f7b3a",
+  "candidate_component_count": 28,
+  "focused": {"passed": 71, "failed": 0},
+  "full_disposable_regression": {"passed": 551, "failed": 0, "duration_seconds": 176.92, "tested_pre_post_current_equal": true},
   "planner_metrics": {
-    "logical_slides_evaluated": 10,
-    "candidate_count": 14,
-    "candidate_count_distribution": {"1": 6, "2": 4},
-    "automatic_selections": 9,
-    "historical_reuse_selections": 1,
-    "historical_migrations": 0,
-    "hard_semantic_mismatch_selected": 0,
-    "hard_capacity_mismatch_selected": 0,
+    "logical_cases": 10,
+    "eligible_candidates": 11,
+    "multiple_candidate_cases": 1,
+    "multiple_candidate_status": "insufficient_multi_candidate_evidence",
+    "physical_recipes": 10,
+    "physical_family_coverage": "10/10",
+    "selected_hard_semantic_mismatches": 0,
+    "selected_hard_capacity_mismatches": 0,
     "fake_candidate_variants": 0,
-    "selected_materialized_mismatches": 0
+    "reverse_audit_failures": 0
   },
+  "incremental": {"historical_reused": 20, "reuse_evidence_level": "authoritative_reference", "new_planned_slides": 2, "new_physical_slides": 2, "historical_visual_migrations": 0, "semantic_insertion_status": "pass"},
   "privacy": {
     "repository_final_unexcepted": 0,
     "staged_final_unexcepted": 0,
     "approved_historical_exceptions": 1,
-    "exact_staged_generated_pptx_attestations": 6,
+    "exact_staged_generated_pptx_attestations": 1,
     "source_closure_failures": 0,
     "unresolved_media": 0,
     "undeclared_media": 0,
     "duplicate_media_lineage": 0,
     "private_access_attempts": {"alias": 0, "source": 0, "render": 0},
     "evidence_ref": "planner-review-pptx-final-privacy-evidence.json"
+  },
+  "status_truth": {
+    "candidate_preview": "blocked_environment",
+    "qualitative_visual_review": "blocked_visual_review",
+    "native_powerpoint_acceptance": "blocked_environment",
+    "professor_physical_template_fidelity": "insufficient_evidence",
+    "production_group_meeting_ready": false
   },
   "aggregate_status": "pass"
 }

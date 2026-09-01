@@ -119,6 +119,8 @@ CP5HI_SCHEMA_NAMES = (
     "presentation-review-overlay",
     "planner-physical-reverse-audit",
     "incremental-planner-physical-application-audit",
+    "planner-physical-realization-qa",
+    "planner-physical-realization-candidate-state",
 )
 
 SCHEMA_BY_COLLECTION = {

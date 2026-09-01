@@ -150,6 +150,31 @@ def test_review_overlay_applies_only_same_dependency_candidate_and_bounded_prese
     assert stale["selection_applied"] is False
 
 
+def test_review_overlay_rejects_a_tampered_persisted_overlay_hash():
+    from thesis_deck_system.presentation_planner_application import (
+        PlannerApplicationError,
+        apply_presentation_review_overlay,
+        build_physical_composition_plans,
+        build_planner_application,
+    )
+
+    application = build_planner_application(ROOT)
+    case = next(item for item in application["cases"] if item["case_id"] == "CASE-A-EXPERIMENT")
+    plan = next(
+        item for item in build_physical_composition_plans(application)
+        if item["candidate_id"] == case["selected_decision"]["selected_candidate_id"]
+    )
+    overlay = {
+        "overlay_id": "PRO-002", "slide_id": case["slide_id"], "dependency_hash": case["dependency_hash"],
+        "selected_candidate_id": plan["candidate_id"], "layout_locked": True, "meeting_visibility": "visible",
+        "bounded_region_adjustments": [], "review_note": "synthetic review", "review_origin": "reviewer_selection",
+        "overlay_sha256": "0" * 64,
+    }
+
+    with pytest.raises(PlannerApplicationError, match="hash"):
+        apply_presentation_review_overlay(case, plan, overlay)
+
+
 def test_physical_planner_contract_schemas_are_closed_and_registered():
     from thesis_deck_system.contracts import SchemaRegistry
     from thesis_deck_system.presentation_planner_application import (
@@ -216,3 +241,112 @@ def test_application_materializes_review_only_pptx_and_incremental_scenario(tmp_
     registry = SchemaRegistry(ROOT / "thesis-deck-system/schemas", include_cp5hi=True)
     registry.validate("planner-application-acceptance", acceptance)
     registry.validate("composition-review-selections", json.loads(outputs["selections"].read_text(encoding="utf-8")))
+
+
+def test_generated_physical_planner_artifacts_close_all_registered_contracts(tmp_path: Path):
+    """The persisted review artifacts, not just in-memory plans, are schema-closed."""
+    import json
+
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.presentation_planner_application import write_planner_application_artifacts
+
+    outputs = write_planner_application_artifacts(ROOT, tmp_path)
+    registry = SchemaRegistry(
+        ROOT / "thesis-deck-system/schemas",
+        schema_names=(
+            "body-composition-recipe-registry",
+            "physical-composition-plans",
+            "presentation-review-overlay",
+            "planner-physical-reverse-audit",
+            "incremental-planner-physical-application-audit",
+        ),
+    )
+    for artifact_name, schema_name in (
+        ("recipe_registry", "body-composition-recipe-registry"),
+        ("physical_plans", "physical-composition-plans"),
+        ("review_overlays", "presentation-review-overlay"),
+        ("reverse_audit", "planner-physical-reverse-audit"),
+        ("incremental", "incremental-planner-physical-application-audit"),
+    ):
+        registry.validate(schema_name, json.loads(outputs[artifact_name].read_text(encoding="utf-8")))
+
+
+def test_physical_realization_qa_is_derived_from_generated_artifacts(tmp_path: Path):
+    """Physical planner QA must retain execution facts instead of self-certifying PASS."""
+    import json
+
+    from thesis_deck_system.presentation_planner_application import write_planner_application_artifacts
+
+    outputs = write_planner_application_artifacts(ROOT, tmp_path)
+    qa = json.loads(outputs["physical_qa"].read_text(encoding="utf-8"))
+
+    assert qa["aggregate_status"] == "pass"
+    assert qa["recipe_coverage"]["recipe_count"] == 10
+    assert qa["recipe_coverage"]["physical_family_coverage"] == "10/10"
+    assert qa["reverse_physical_audit"]["missing_required_region_count"] == 0
+    assert qa["review_overlay"]["stale_review_applied_count"] == 0
+    assert qa["incremental_physical_application"]["historical_reused"] == 20
+    assert qa["body_reference"]["shell_override_count"] == 0
+
+
+def test_writer_returns_only_schema_valid_physical_planner_artifacts(tmp_path: Path):
+    from thesis_deck_system.presentation_planner_application import (
+        validate_planner_physical_realization_artifacts,
+        write_planner_application_artifacts,
+    )
+
+    outputs = write_planner_application_artifacts(ROOT, tmp_path)
+
+    assert validate_planner_physical_realization_artifacts(ROOT, outputs) == 0
+
+
+def test_physical_realization_candidate_state_hashes_the_exact_execution_surface():
+    from thesis_deck_system.presentation_planner_application import physical_realization_candidate_state
+
+    state = physical_realization_candidate_state(ROOT)
+
+    assert state["component_count"] == len(state["component_hashes"])
+    assert state["component_count"] >= 12
+    assert len(state["candidate_state_sha256"]) == 64
+    assert all(len(value) == 64 for value in state["component_hashes"].values())
+
+
+def test_candidate_component_hash_normalizes_text_line_endings_but_not_binary_content(tmp_path: Path):
+    from thesis_deck_system.presentation_planner_application import _candidate_component_hash
+
+    lf = tmp_path / "fixture.py"
+    crlf = tmp_path / "fixture-copy.py"
+    binary = tmp_path / "fixture.pptx"
+    lf.write_bytes(b"x = 1\ny = 2\n")
+    crlf.write_bytes(b"x = 1\r\ny = 2\r\n")
+    binary.write_bytes(b"x\r\ny\r\n")
+
+    assert _candidate_component_hash(lf) == _candidate_component_hash(crlf)
+    assert _candidate_component_hash(binary) != _candidate_component_hash(lf)
+
+
+def test_writer_persists_the_candidate_state_used_for_physical_review_evidence(tmp_path: Path):
+    import json
+
+    from thesis_deck_system.presentation_planner_application import write_planner_application_artifacts
+
+    outputs = write_planner_application_artifacts(ROOT, tmp_path)
+    state = json.loads(outputs["candidate_state"].read_text(encoding="utf-8"))
+
+    assert state["candidate_id"] == "PPA-PHYSICAL-CANDIDATE-001"
+    assert state["component_count"] == len(state["component_hashes"])
+
+
+def test_persisted_candidate_state_is_not_self_referential(tmp_path: Path):
+    import json
+
+    from thesis_deck_system.presentation_planner_application import (
+        physical_realization_candidate_state,
+        write_planner_application_artifacts,
+    )
+
+    outputs = write_planner_application_artifacts(ROOT, tmp_path)
+    persisted = json.loads(outputs["candidate_state"].read_text(encoding="utf-8"))
+
+    assert persisted["candidate_state_sha256"] == physical_realization_candidate_state(ROOT)["candidate_state_sha256"]
+    assert "thesis-deck-system/artifacts/phase3/planner-physical-realization-candidate-state.json" not in persisted["component_hashes"]

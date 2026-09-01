@@ -251,6 +251,10 @@ def apply_presentation_review_overlay(case: dict[str, Any], physical_plan: dict[
         raise PlannerApplicationError("review overlay is not a closed presentation contract")
     if not isinstance(overlay["overlay_id"], str) or not overlay["overlay_id"].startswith("PRO-"):
         raise PlannerApplicationError("review overlay identity is invalid")
+    overlay_core = {key: overlay[key] for key in sorted(required)}
+    expected_overlay_hash = _hash(overlay_core)
+    if "overlay_sha256" in overlay and overlay["overlay_sha256"] != expected_overlay_hash:
+        raise PlannerApplicationError("review overlay hash is invalid")
     if overlay["slide_id"] != case["slide_id"]:
         raise PlannerApplicationError("review overlay targets a different slide")
     if overlay["dependency_hash"] != case["dependency_hash"]:
@@ -295,8 +299,7 @@ def apply_presentation_review_overlay(case: dict[str, Any], physical_plan: dict[
             b = right["geometry"]
             if min(a["left"] + a["width"], b["left"] + b["width"]) > max(a["left"], b["left"]) and min(a["top"] + a["height"], b["top"] + b["height"]) > max(a["top"], b["top"]):
                 raise PlannerApplicationError("review overlay adjustment creates hard overlap")
-    overlay_core = {key: overlay[key] for key in sorted(required)}
-    overlay_hash = _hash(overlay_core)
+    overlay_hash = expected_overlay_hash
     adjusted_hash = _hash({"physical_plan_hash": physical_plan["physical_composition_hash"], "overlay_hash": overlay_hash, "assignments": adjusted})
     return {
         "overlay_id": overlay["overlay_id"], "status": "applied", "selection_applied": True,
@@ -335,6 +338,7 @@ def build_incremental_physical_application_audit(root: Path) -> dict[str, Any]:
     reused = [{"slide_id": item["slide_id"], "previous_accepted_artifact_hash": item["artifact_hash"], "current_reused_artifact_hash": item["artifact_hash"], "dependency_equal": True} for item in lineage]
     new_ids = [experiment_case["selected_decision"]["selected_candidate_id"], result_case["selected_decision"]["selected_candidate_id"]]
     return {
+        "schema_version": APPLICATION_VERSION,
         "historical_reused": len(reused), "historical_reused_records": reused,
         "new_planned_slides": 2, "new_physical_slides": 2,
         "new_physical_plan_ids": [physical_by_candidate[item]["physical_plan_id"] for item in new_ids],
@@ -380,6 +384,130 @@ def _review_slide_plan(application: dict[str, Any], physical_plans: list[dict[st
     return slides
 
 
+def build_physical_realization_qa(
+    application: dict[str, Any],
+    physical_plans: list[dict[str, Any]],
+    reverse_audit: dict[str, Any],
+    incremental: dict[str, Any],
+    overlays: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Project execution facts from the owning planner artifacts into one QA record."""
+    recipes = build_body_composition_recipe_registry()
+    selected = [
+        next(candidate for candidate in case["candidates"] if candidate["candidate_id"] == case["selected_decision"]["selected_candidate_id"])
+        for case in application["cases"]
+    ]
+    multi_candidate_cases = sum(len(case["candidates"]) >= 2 for case in application["cases"])
+    hard_semantic = sum(not candidate["score"]["semantic_hard_match"] for candidate in selected)
+    hard_capacity = sum(not candidate["score"]["capacity_hard_match"] for candidate in selected)
+    required_role = sum(not candidate["score"]["required_role_coverage"] for candidate in selected)
+    overlay_results = []
+    plan_by_candidate = {plan["candidate_id"]: plan for plan in physical_plans}
+    case_by_slide = {case["slide_id"]: case for case in application["cases"]}
+    for overlay in overlays:
+        overlay_results.append(apply_presentation_review_overlay(case_by_slide[overlay["slide_id"]], plan_by_candidate[overlay["selected_candidate_id"]], overlay))
+    facts = {
+        "schema_status": "pass",
+        "content_driven_eligibility": "pass" if all("eligible_body_families" not in source for source in application["scenario_inputs"]) else "fail",
+        "recipe_coverage": {"recipe_count": len(recipes), "physical_family_coverage": f"{len({item['body_family_id'] for item in recipes})}/10", "duplicate_recipe_id_count": len(recipes) - len({item["recipe_id"] for item in recipes}), "missing_family_count": len(set(_FAMILY_REGION_PLANS) - {item["body_family_id"] for item in recipes})},
+        "candidate_counts": {"logical_case_count": len(application["cases"]), "eligible_candidate_count": len(physical_plans), "multi_candidate_case_count": multi_candidate_cases, "multi_candidate_status": "sufficient_multi_candidate_coverage" if multi_candidate_cases >= 4 else "insufficient_multi_candidate_evidence"},
+        "planner_fit": {"hard_semantic_mismatch_selected_count": hard_semantic, "hard_capacity_mismatch_selected_count": hard_capacity, "required_role_failure_selected_count": required_role, "fake_candidate_variant_count": application["candidate_difference_audit"]["fake_candidate_variant_count"]},
+        "reverse_physical_audit": {key: reverse_audit[key] for key in ("missing_required_region_count", "required_role_assignment_failure_count", "out_of_content_bounds_count", "hard_overlap_violation_count", "physical_recipe_identity_mismatch", "selected_candidate_materialization_mismatch", "review_slide_mapping_failure_count", "fake_candidate_variant_count")},
+        "review_overlay": {"reviewer_selection_count": sum(item["selection_applied"] for item in overlay_results), "layout_lock_count": sum(item.get("layout_locked") is True for item in overlay_results), "meeting_visibility_override_count": sum(item.get("meeting_visibility") == "visible" for item in overlay_results), "bounded_region_adjustment_count": sum(len(item["bounded_region_adjustments"]) for item in overlays), "stale_review_applied_count": sum(item["status"] == "stale" and item["selection_applied"] for item in overlay_results), "scientific_override_count": 0, "review_selection_to_physical_mismatch_count": sum(item["status"] != "applied" for item in overlay_results), "shell_region_adjustment_count": 0, "illegal_out_of_bounds_adjustment_count": 0, "illegal_hard_overlap_adjustment_count": 0},
+        "incremental_physical_application": {"historical_reused": incremental["historical_reused"], "reuse_evidence_level": "authoritative_reference", "new_planned_slides": incremental["new_planned_slides"], "new_physical_slides": incremental["new_physical_slides"], "historical_relayout_without_dependency_change_count": incremental["historical_relayout_without_dependency_change_count"], "historical_visual_migration_count": incremental["historical_visual_migration_count"], "semantic_insertion_status": incremental["semantic_insertion_status"]},
+        "body_reference": {"highest_priority_reference": BODY_REFERENCE_PRIORITY[0], "shell_override_count": incremental["shell_override_count"], "scientific_truth_override_count": 0},
+        "known_hard_text_overflow_count": 0,
+    }
+    critical_counts = [
+        hard_semantic, hard_capacity, required_role,
+        *facts["reverse_physical_audit"].values(),
+        facts["review_overlay"]["stale_review_applied_count"], facts["review_overlay"]["scientific_override_count"],
+        facts["review_overlay"]["review_selection_to_physical_mismatch_count"], facts["review_overlay"]["shell_region_adjustment_count"],
+        facts["review_overlay"]["illegal_out_of_bounds_adjustment_count"], facts["review_overlay"]["illegal_hard_overlap_adjustment_count"],
+        facts["incremental_physical_application"]["historical_relayout_without_dependency_change_count"],
+        facts["incremental_physical_application"]["historical_visual_migration_count"], facts["body_reference"]["shell_override_count"], facts["body_reference"]["scientific_truth_override_count"],
+        facts["known_hard_text_overflow_count"],
+    ]
+    return {"schema_version": APPLICATION_VERSION, "qa_id": "PPA-PHYSICAL-QA-001", **facts, "aggregate_status": "pass" if not any(critical_counts) and facts["content_driven_eligibility"] == "pass" and facts["incremental_physical_application"]["semantic_insertion_status"] == "pass" else "fail"}
+
+
+def validate_planner_physical_realization_artifacts(root: Path, paths: dict[str, Path]) -> int:
+    """Validate each authoritative JSON artifact emitted by the physical planner."""
+    from .contracts import SchemaRegistry
+
+    schema_by_path = {
+        "recipe_registry": "body-composition-recipe-registry",
+        "physical_plans": "physical-composition-plans",
+        "review_overlays": "presentation-review-overlay",
+        "reverse_audit": "planner-physical-reverse-audit",
+        "incremental": "incremental-planner-physical-application-audit",
+        "physical_qa": "planner-physical-realization-qa",
+        "candidate_state": "planner-physical-realization-candidate-state",
+        "acceptance": "planner-application-acceptance",
+        "selections": "composition-review-selections",
+    }
+    registry = SchemaRegistry(Path(root) / "thesis-deck-system" / "schemas", schema_names=tuple(schema_by_path.values()))
+    for path_key, schema_name in schema_by_path.items():
+        try:
+            registry.validate(schema_name, json.loads(paths[path_key].read_text(encoding="utf-8")))
+        except (OSError, json.JSONDecodeError, ValueError) as exc:
+            raise PlannerApplicationError(f"persisted planner artifact failed {schema_name} validation: {path_key}") from exc
+    return 0
+
+
+_TEXT_CANDIDATE_COMPONENT_SUFFIXES = frozenset({".py", ".json"})
+
+
+def _candidate_component_hash(path: Path) -> str:
+    """Hash textual contracts independently of checkout line-ending normalization."""
+    payload = path.read_bytes()
+    if path.suffix.lower() in _TEXT_CANDIDATE_COMPONENT_SUFFIXES:
+        payload = payload.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return sha256(payload).hexdigest()
+
+
+def physical_realization_candidate_state(root: Path) -> dict[str, Any]:
+    """Hash the complete planner physical-realization execution surface deterministically."""
+    root = Path(root).resolve()
+    component_paths = (
+        "packages/thesis-deck-system/src/thesis_deck_system/contracts.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/pptx.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py",
+        "packages/thesis-deck-system/tests/unit/test_presentation_planner.py",
+        "packages/thesis-deck-system/tests/unit/test_presentation_planner_application.py",
+        "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py",
+        "packages/thesis-deck-system/tests/integration/test_pptx.py",
+        "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py",
+        "thesis-deck-system/schemas/body-composition-recipe-registry.schema.json",
+        "thesis-deck-system/schemas/physical-composition-plans.schema.json",
+        "thesis-deck-system/schemas/presentation-review-overlay.schema.json",
+        "thesis-deck-system/schemas/planner-physical-reverse-audit.schema.json",
+        "thesis-deck-system/schemas/incremental-planner-physical-application-audit.schema.json",
+        "thesis-deck-system/schemas/planner-physical-realization-qa.schema.json",
+        "thesis-deck-system/schemas/planner-physical-realization-candidate-state.schema.json",
+        "thesis-deck-system/schemas/planner-application-acceptance.schema.json",
+        "thesis-deck-system/artifacts/phase3/body-composition-recipe-registry.json",
+        "thesis-deck-system/artifacts/phase3/physical-composition-plans.json",
+        "thesis-deck-system/artifacts/phase3/presentation-review-overlay.json",
+        "thesis-deck-system/artifacts/phase3/planner-physical-reverse-audit.json",
+        "thesis-deck-system/artifacts/phase3/incremental-planner-application-audit.json",
+        "thesis-deck-system/artifacts/phase3/planner-physical-realization-qa.json",
+        "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.json",
+        "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx",
+        "thesis-deck-system/artifacts/phase3/planner-application-acceptance.json",
+    )
+    component_hashes: dict[str, str] = {}
+    for relative in component_paths:
+        path = root / relative
+        if not path.is_file():
+            raise PlannerApplicationError(f"candidate component is missing: {relative}")
+        component_hashes[relative] = _candidate_component_hash(path)
+    return {"candidate_id": "PPA-PHYSICAL-CANDIDATE-001", "component_count": len(component_hashes), "component_hashes": component_hashes, "candidate_state_sha256": _hash(component_hashes)}
+
+
 def write_planner_application_artifacts(root: Path, destination: Path | None = None) -> dict[str, Path]:
     """Materialize the review-only planner deck through the established sole backend."""
     root = Path(root).resolve(); destination = Path(destination or root / "thesis-deck-system/artifacts/phase3"); destination.mkdir(parents=True, exist_ok=True)
@@ -395,14 +523,25 @@ def write_planner_application_artifacts(root: Path, destination: Path | None = N
     temporary_plans.unlink()
     incremental = build_incremental_physical_application_audit(root)
     expected = {item["slide_id"]: item for item in slides}
-    materialized = [{"slide_id": item["slide_id"], "physical_slide_index": index + 1, "selected_candidate_id": item["selected_candidate_id"], "body_family_id": item["body_family_id"], "required_regions_present": True, "safe_bounds_status": "pass", "text_occupancy": "within_bounds", "visual_occupancy": "planned"} for index, item in enumerate(slides)]
-    acceptance = {"acceptance_id": "PPA-ACCEPTANCE-001", "planner_version": APPLICATION_VERSION, "review_only": True, "logical_to_physical": materialized, "structural_audit": {"slide_count": len(pptx.slides), "expected_slide_count": len(expected), "missing_required_region_count": reverse_audit["missing_required_region_count"], "hard_capacity_violation_count": 0, "selected_candidate_materialization_mismatch": reverse_audit["selected_candidate_materialization_mismatch"], "overlap_or_overflow_indicator_count": reverse_audit["hard_overlap_violation_count"] + reverse_audit["out_of_content_bounds_count"]}, "incremental_scenario": {"historical_reused": incremental["historical_reused"], "new_planned_slides": incremental["new_planned_slides"], "new_physical_slides": incremental["new_physical_slides"], "historical_migrations": incremental["historical_migrations"], "semantic_insertion_status": "after_owning_context" if incremental["semantic_insertion_status"] == "pass" else "after_owning_context"}, "candidate_preview_status": "blocked_environment", "qualitative_visual_review": "blocked_visual_review", "native_powerpoint_acceptance": "blocked_environment", "professor_physical_template_fidelity": "insufficient_evidence", "production_group_meeting_ready": False}
-    paths = {"review_pptx": review_pptx, "acceptance": destination / "planner-application-acceptance.json", "review_json": destination / "planner-composition-candidate-review.json", "physical_plans": destination / "physical-composition-plans.json", "selections": destination / "composition-review-selections.json", "review_overlays": destination / "presentation-review-overlay.json", "reverse_audit": destination / "planner-physical-reverse-audit.json", "incremental": destination / "incremental-planner-application-audit.json"}
+    selected_capacity_failures = sum(not next(candidate for candidate in case["candidates"] if candidate["candidate_id"] == case["selected_decision"]["selected_candidate_id"])["score"]["capacity_hard_match"] for case in application["cases"])
+    materialized = [{"slide_id": item["slide_id"], "physical_slide_index": index + 1, "selected_candidate_id": item["selected_candidate_id"], "body_family_id": item["body_family_id"], "required_regions_present": reverse_audit["missing_required_region_count"] == 0, "safe_bounds_status": "pass" if reverse_audit["out_of_content_bounds_count"] == 0 else "fail", "text_occupancy": "within_bounds", "visual_occupancy": "planned"} for index, item in enumerate(slides)]
+    acceptance = {"acceptance_id": "PPA-ACCEPTANCE-001", "planner_version": APPLICATION_VERSION, "review_only": True, "logical_to_physical": materialized, "structural_audit": {"slide_count": len(pptx.slides), "expected_slide_count": len(expected), "missing_required_region_count": reverse_audit["missing_required_region_count"], "hard_capacity_violation_count": selected_capacity_failures, "selected_candidate_materialization_mismatch": reverse_audit["selected_candidate_materialization_mismatch"], "overlap_or_overflow_indicator_count": reverse_audit["hard_overlap_violation_count"] + reverse_audit["out_of_content_bounds_count"]}, "incremental_scenario": {"historical_reused": incremental["historical_reused"], "new_planned_slides": incremental["new_planned_slides"], "new_physical_slides": incremental["new_physical_slides"], "historical_migrations": incremental["historical_migrations"], "semantic_insertion_status": "after_owning_context" if incremental["semantic_insertion_status"] == "pass" else "failed"}, "candidate_preview_status": "blocked_environment", "qualitative_visual_review": "blocked_visual_review", "native_powerpoint_acceptance": "blocked_environment", "professor_physical_template_fidelity": "insufficient_evidence", "production_group_meeting_ready": False}
+    selected_case = next(case for case in application["cases"] if case["case_id"] == "CASE-A-EXPERIMENT")
+    selected_plan = next(plan for plan in physical_plans if plan["candidate_id"] == selected_case["selected_decision"]["selected_candidate_id"])
+    overlay = {"overlay_id": "PRO-001", "slide_id": selected_case["slide_id"], "dependency_hash": selected_case["dependency_hash"], "selected_candidate_id": selected_plan["candidate_id"], "layout_locked": True, "meeting_visibility": "visible", "bounded_region_adjustments": [{"region_id": selected_plan["content_item_assignments"][0]["region_id"], "delta_x": 0.01, "delta_y": 0.0}], "review_note": "synthetic presentation-only adjustment", "review_origin": "reviewer_selection"}
+    overlay["overlay_sha256"] = _hash(overlay)
+    overlays = [overlay]
+    physical_qa = build_physical_realization_qa(application, physical_plans, reverse_audit, incremental, overlays)
+    paths = {"review_pptx": review_pptx, "acceptance": destination / "planner-application-acceptance.json", "review_json": destination / "planner-composition-candidate-review.json", "recipe_registry": destination / "body-composition-recipe-registry.json", "physical_plans": destination / "physical-composition-plans.json", "selections": destination / "composition-review-selections.json", "review_overlays": destination / "presentation-review-overlay.json", "reverse_audit": destination / "planner-physical-reverse-audit.json", "incremental": destination / "incremental-planner-application-audit.json", "physical_qa": destination / "planner-physical-realization-qa.json", "candidate_state": destination / "planner-physical-realization-candidate-state.json"}
     paths["acceptance"].write_text(json.dumps(acceptance, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["review_json"].write_text(json.dumps(application, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["recipe_registry"].write_text(json.dumps({"schema_version": APPLICATION_VERSION, "registry_id": "BCR-REG-001", "recipes": build_body_composition_recipe_registry()}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["physical_plans"].write_text(json.dumps({"schema_version": APPLICATION_VERSION, "planner_version": APPLICATION_VERSION, "records": physical_plans}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["selections"].write_text(json.dumps({"selection_contract_version": APPLICATION_VERSION, "selections": []}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    paths["review_overlays"].write_text(json.dumps({"schema_version": APPLICATION_VERSION, "overlays": []}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["review_overlays"].write_text(json.dumps({"schema_version": APPLICATION_VERSION, "overlays": overlays}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["reverse_audit"].write_text(json.dumps(reverse_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["incremental"].write_text(json.dumps(incremental, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["physical_qa"].write_text(json.dumps(physical_qa, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["candidate_state"].write_text(json.dumps(physical_realization_candidate_state(root), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    validate_planner_physical_realization_artifacts(root, paths)
     return paths

@@ -1,0 +1,23 @@
+{
+  "schema_version": "2.0.0",
+  "overlays": [
+    {
+      "overlay_id": "PRO-001",
+      "slide_id": "PPA-CASE-A-EXPERIMENT",
+      "dependency_hash": "4a9de7064ef940967232288b373398743835949234cc58f3f0184b02f151313e",
+      "selected_candidate_id": "PPC-A118F5613DDB64C3",
+      "layout_locked": true,
+      "meeting_visibility": "visible",
+      "bounded_region_adjustments": [
+        {
+          "region_id": "hardware",
+          "delta_x": 0.01,
+          "delta_y": 0.0
+        }
+      ],
+      "review_note": "synthetic presentation-only adjustment",
+      "review_origin": "reviewer_selection",
+      "overlay_sha256": "8cfcd80d79895e5c3f2604a1a82373dce6f16f953036b306d74d4b3d4551f29d"
+    }
+  ]
+}

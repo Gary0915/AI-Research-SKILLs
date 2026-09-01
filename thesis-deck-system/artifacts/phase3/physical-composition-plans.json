@@ -1,0 +1,3159 @@
+{
+  "schema_version": "2.0.0",
+  "planner_version": "2.0.0",
+  "records": [
+    {
+      "physical_plan_id": "PCP-185C18215C96BBA7",
+      "slide_id": "PPA-CASE-A-EXPERIMENT",
+      "candidate_id": "PPC-A118F5613DDB64C3",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "body_recipe_id": "BCR-HARDWARE-DESIGN-PROCEDURE",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "hardware",
+          "semantic_role": "hardware",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.56,
+          "h": 0.7,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "cad",
+            "schematic",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "procedure",
+          "semantic_role": "controls",
+          "presentation_role": "procedure",
+          "x": 0.65,
+          "y": 0.05,
+          "w": 0.31,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "table"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "allowed"
+        },
+        {
+          "region_id": "go",
+          "semantic_role": "decision",
+          "presentation_role": "go_criterion",
+          "x": 0.65,
+          "y": 0.6,
+          "w": 0.31,
+          "h": 0.16,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "hardware",
+          "semantic_role": "hardware",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.56,
+          "h": 0.7,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "cad",
+            "schematic",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 6.636,
+            "height": 3.57
+          },
+          "item_id": "CAD",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "procedure",
+          "semantic_role": "controls",
+          "presentation_role": "procedure",
+          "x": 0.65,
+          "y": 0.05,
+          "w": 0.31,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "table"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "allowed",
+          "geometry": {
+            "left": 8.4025,
+            "top": 1.505,
+            "width": 3.6735,
+            "height": 2.448
+          },
+          "item_id": "CONTROLS",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "go",
+          "semantic_role": "decision",
+          "presentation_role": "go_criterion",
+          "x": 0.65,
+          "y": 0.6,
+          "w": 0.31,
+          "h": 0.16,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.4025,
+            "top": 4.31,
+            "width": 3.6735,
+            "height": 0.816
+          },
+          "item_id": "GO",
+          "synthetic_placeholder": false
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "CAD",
+          "region_id": "hardware",
+          "content_kind": "cad",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 6.636,
+            "height": 3.57
+          }
+        },
+        {
+          "item_id": "CONTROLS",
+          "region_id": "procedure",
+          "content_kind": "text",
+          "geometry": {
+            "left": 8.4025,
+            "top": 1.505,
+            "width": 3.6735,
+            "height": 2.448
+          }
+        },
+        {
+          "item_id": "GO",
+          "region_id": "go",
+          "content_kind": "metric",
+          "geometry": {
+            "left": 8.4025,
+            "top": 4.31,
+            "width": 3.6735,
+            "height": 0.816
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "1d3befdcc0f775322ceedbd061a31666de81c4bea16895d0dae2f4c502793e4d",
+      "physical_composition_hash": "185c18215c96bba721f2679f8f780612c282bb3cdb02385ac31c0497a44c2ef5",
+      "unassigned_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-533B563150A5454B",
+      "slide_id": "PPA-CASE-B-PHYSICAL",
+      "candidate_id": "PPC-096AA5FA0BA06EE1",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "body_recipe_id": "BCR-PHYSICAL-VALIDATION-MATRIX",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "photo_a",
+          "semantic_role": "validation",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "photo_b",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.35,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "plot",
+          "semantic_role": "validation",
+          "presentation_role": "validation_plot",
+          "x": 0.66,
+          "y": 0.05,
+          "w": 0.3,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "caption_a",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.04,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "caption_b",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.35,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "measurement_c",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.66,
+          "y": 0.58,
+          "w": 0.3,
+          "h": 0.2,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "validation",
+          "presentation_role": "compact_context",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.59,
+          "h": 0.17,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "photo_a",
+          "semantic_role": "validation",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          },
+          "item_id": "PHOTO-1",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "photo_b",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.35,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.8475,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          },
+          "item_id": "PLOT-1",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "plot",
+          "semantic_role": "validation",
+          "presentation_role": "validation_plot",
+          "x": 0.66,
+          "y": 0.05,
+          "w": 0.3,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.521,
+            "top": 1.505,
+            "width": 3.555,
+            "height": 2.448
+          },
+          "item_id": "PLOT-2",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "caption_a",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.04,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 3.392,
+            "width": 3.318,
+            "height": 0.51
+          },
+          "item_id": "CAPTION",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "caption_b",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.35,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.8475,
+            "top": 3.392,
+            "width": 3.318,
+            "height": 0.51
+          },
+          "item_id": "REGION-CAPTION_B",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "measurement_c",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.66,
+          "y": 0.58,
+          "w": 0.3,
+          "h": 0.2,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.521,
+            "top": 4.208,
+            "width": 3.555,
+            "height": 1.02
+          },
+          "item_id": "PHOTO-2",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "validation",
+          "presentation_role": "compact_context",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.59,
+          "h": 0.17,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 4.412,
+            "width": 6.9915,
+            "height": 0.867
+          },
+          "item_id": "REGION-CONTEXT",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "PHOTO-1",
+          "region_id": "photo_a",
+          "content_kind": "photo",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          }
+        },
+        {
+          "item_id": "PHOTO-2",
+          "region_id": "measurement_c",
+          "content_kind": "photo",
+          "geometry": {
+            "left": 8.521,
+            "top": 4.208,
+            "width": 3.555,
+            "height": 1.02
+          }
+        },
+        {
+          "item_id": "PLOT-1",
+          "region_id": "photo_b",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 4.8475,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          }
+        },
+        {
+          "item_id": "PLOT-2",
+          "region_id": "plot",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 8.521,
+            "top": 1.505,
+            "width": 3.555,
+            "height": 2.448
+          }
+        },
+        {
+          "item_id": "CAPTION",
+          "region_id": "caption_a",
+          "content_kind": "caption",
+          "geometry": {
+            "left": 1.174,
+            "top": 3.392,
+            "width": 3.318,
+            "height": 0.51
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "23c25a013fb9aac93dba1de95fdbbd303ed27f88d99d0926cd8f8d76ed9aff25",
+      "physical_composition_hash": "533b563150a5454b930cec82cfda9ca31fc695423294c688c5e100683aa7e259",
+      "unassigned_required_region_ids": [
+        "caption_b",
+        "context"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-9F4C68761ADCFFBF",
+      "slide_id": "PPA-CASE-C-RESULT",
+      "candidate_id": "PPC-6DC7B591568B4649",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "body_recipe_id": "BCR-REAL-RESULT-VALIDATION",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "result",
+          "semantic_role": "result",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.62,
+          "h": 0.67,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "photo",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "metric",
+          "semantic_role": "result",
+          "presentation_role": "metric_callout",
+          "x": 0.72,
+          "y": 0.08,
+          "w": 0.24,
+          "h": 0.22,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "result",
+          "presentation_role": "compact_context",
+          "x": 0.72,
+          "y": 0.4,
+          "w": 0.24,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "caption"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "result",
+          "semantic_role": "result",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.62,
+          "h": 0.67,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "photo",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 7.347,
+            "height": 3.417
+          },
+          "item_id": "PLOT",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "metric",
+          "semantic_role": "result",
+          "presentation_role": "metric_callout",
+          "x": 0.72,
+          "y": 0.08,
+          "w": 0.24,
+          "h": 0.22,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 9.232,
+            "top": 1.658,
+            "width": 2.844,
+            "height": 1.122
+          },
+          "item_id": "METRIC",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "result",
+          "presentation_role": "compact_context",
+          "x": 0.72,
+          "y": 0.4,
+          "w": 0.24,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "caption"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 9.232,
+            "top": 3.29,
+            "width": 2.844,
+            "height": 1.683
+          },
+          "item_id": "REGION-CONTEXT",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "PLOT",
+          "region_id": "result",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 7.347,
+            "height": 3.417
+          }
+        },
+        {
+          "item_id": "METRIC",
+          "region_id": "metric",
+          "content_kind": "metric",
+          "geometry": {
+            "left": 9.232,
+            "top": 1.658,
+            "width": 2.844,
+            "height": 1.122
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "52887a0c916b6854ccc08ba2b22d736e1478239b45542ede51d6686e61aaa1de",
+      "physical_composition_hash": "9f4c68761adcffbfb5246abed8f2c04a06b77e520d12dcb1bd65635b002cdd9e",
+      "unassigned_required_region_ids": [
+        "context"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-72098750D31EC277",
+      "slide_id": "PPA-CASE-D-MULTIMODAL",
+      "candidate_id": "PPC-B2E8AD28884FEC68",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "body_recipe_id": "BCR-PHYSICAL-VALIDATION-MATRIX",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "photo_a",
+          "semantic_role": "validation",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "photo_b",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.35,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "plot",
+          "semantic_role": "validation",
+          "presentation_role": "validation_plot",
+          "x": 0.66,
+          "y": 0.05,
+          "w": 0.3,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "caption_a",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.04,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "caption_b",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.35,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "measurement_c",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.66,
+          "y": 0.58,
+          "w": 0.3,
+          "h": 0.2,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "validation",
+          "presentation_role": "compact_context",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.59,
+          "h": 0.17,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "photo_a",
+          "semantic_role": "validation",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          },
+          "item_id": "PHOTO",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "photo_b",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.35,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.8475,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          },
+          "item_id": "REGION-PHOTO_B",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "plot",
+          "semantic_role": "validation",
+          "presentation_role": "validation_plot",
+          "x": 0.66,
+          "y": 0.05,
+          "w": 0.3,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.521,
+            "top": 1.505,
+            "width": 3.555,
+            "height": 2.448
+          },
+          "item_id": "REGION-PLOT",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "caption_a",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.04,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 3.392,
+            "width": 3.318,
+            "height": 0.51
+          },
+          "item_id": "CAPTION",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "caption_b",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.35,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.8475,
+            "top": 3.392,
+            "width": 3.318,
+            "height": 0.51
+          },
+          "item_id": "REGION-CAPTION_B",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "measurement_c",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.66,
+          "y": 0.58,
+          "w": 0.3,
+          "h": 0.2,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.521,
+            "top": 4.208,
+            "width": 3.555,
+            "height": 1.02
+          },
+          "item_id": "PLOT",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "validation",
+          "presentation_role": "compact_context",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.59,
+          "h": 0.17,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 4.412,
+            "width": 6.9915,
+            "height": 0.867
+          },
+          "item_id": "REGION-CONTEXT",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "PHOTO",
+          "region_id": "photo_a",
+          "content_kind": "photo",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          }
+        },
+        {
+          "item_id": "PLOT",
+          "region_id": "measurement_c",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 8.521,
+            "top": 4.208,
+            "width": 3.555,
+            "height": 1.02
+          }
+        },
+        {
+          "item_id": "CAPTION",
+          "region_id": "caption_a",
+          "content_kind": "caption",
+          "geometry": {
+            "left": 1.174,
+            "top": 3.392,
+            "width": 3.318,
+            "height": 0.51
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "23c25a013fb9aac93dba1de95fdbbd303ed27f88d99d0926cd8f8d76ed9aff25",
+      "physical_composition_hash": "72098750d31ec277653f7c90d253b361486890aa6a0954a7cec0799977a5533a",
+      "unassigned_required_region_ids": [
+        "caption_b",
+        "context",
+        "photo_b",
+        "plot"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-9F4FA6F4A83EF190",
+      "slide_id": "PPA-CASE-E-LITERATURE",
+      "candidate_id": "PPC-2067AD3AC8E29B97",
+      "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+      "body_recipe_id": "BCR-LITERATURE-VISUAL-MATRIX",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "visual_a",
+          "semantic_role": "literature",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.35,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "plot",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "visual_b",
+          "semantic_role": "literature",
+          "presentation_role": "secondary_visual",
+          "x": 0.36,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.35,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "plot",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "visual_c",
+          "semantic_role": "literature",
+          "presentation_role": "secondary_visual",
+          "x": 0.68,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.35,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "plot",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "cite_a",
+          "semantic_role": "citation",
+          "presentation_role": "citation_strip",
+          "x": 0.04,
+          "y": 0.44,
+          "w": 0.28,
+          "h": 0.08,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "citation",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "cite_b",
+          "semantic_role": "citation",
+          "presentation_role": "citation_strip",
+          "x": 0.36,
+          "y": 0.44,
+          "w": 0.28,
+          "h": 0.08,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "citation",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "cite_c",
+          "semantic_role": "citation",
+          "presentation_role": "citation_strip",
+          "x": 0.68,
+          "y": 0.44,
+          "w": 0.28,
+          "h": 0.08,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "citation",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "synthesis",
+          "semantic_role": "literature",
+          "presentation_role": "synthesis_callout",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.92,
+          "h": 0.16,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "visual_a",
+          "semantic_role": "literature",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.35,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "plot",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.785
+          },
+          "item_id": "FIG-1",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "visual_b",
+          "semantic_role": "literature",
+          "presentation_role": "secondary_visual",
+          "x": 0.36,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.35,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "plot",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.966,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.785
+          },
+          "item_id": "FIG-2",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "visual_c",
+          "semantic_role": "literature",
+          "presentation_role": "secondary_visual",
+          "x": 0.68,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.35,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "plot",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.758,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.785
+          },
+          "item_id": "REGION-VISUAL_C",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "cite_a",
+          "semantic_role": "citation",
+          "presentation_role": "citation_strip",
+          "x": 0.04,
+          "y": 0.44,
+          "w": 0.28,
+          "h": 0.08,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "citation",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 3.494,
+            "width": 3.318,
+            "height": 0.408
+          },
+          "item_id": "CITE",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "cite_b",
+          "semantic_role": "citation",
+          "presentation_role": "citation_strip",
+          "x": 0.36,
+          "y": 0.44,
+          "w": 0.28,
+          "h": 0.08,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "citation",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.966,
+            "top": 3.494,
+            "width": 3.318,
+            "height": 0.408
+          },
+          "item_id": "REGION-CITE_B",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "cite_c",
+          "semantic_role": "citation",
+          "presentation_role": "citation_strip",
+          "x": 0.68,
+          "y": 0.44,
+          "w": 0.28,
+          "h": 0.08,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "citation",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.758,
+            "top": 3.494,
+            "width": 3.318,
+            "height": 0.408
+          },
+          "item_id": "REGION-CITE_C",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "synthesis",
+          "semantic_role": "literature",
+          "presentation_role": "synthesis_callout",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.92,
+          "h": 0.16,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 4.412,
+            "width": 10.902,
+            "height": 0.816
+          },
+          "item_id": "REGION-SYNTHESIS",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "FIG-1",
+          "region_id": "visual_a",
+          "content_kind": "schematic",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.785
+          }
+        },
+        {
+          "item_id": "FIG-2",
+          "region_id": "visual_b",
+          "content_kind": "schematic",
+          "geometry": {
+            "left": 4.966,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.785
+          }
+        },
+        {
+          "item_id": "CITE",
+          "region_id": "cite_a",
+          "content_kind": "citation",
+          "geometry": {
+            "left": 1.174,
+            "top": 3.494,
+            "width": 3.318,
+            "height": 0.408
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "a438c4585319c6bcb7a88a45c04b516fab360693ebadf68e899d06aee18d64f2",
+      "physical_composition_hash": "9f4fa6f4a83ef190784094fd575ed9b4bd4c82c12a45c4246b838428b8843fa4",
+      "unassigned_required_region_ids": [
+        "cite_b",
+        "cite_c",
+        "synthesis",
+        "visual_c"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-CCAE4945AAC8E4C4",
+      "slide_id": "PPA-CASE-F-COMPARISON",
+      "candidate_id": "PPC-1BB2BEBF7E6618D7",
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "body_recipe_id": "BCR-TECHNOLOGY-COMPARISON",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "approach_a",
+          "semantic_role": "approach_a",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.28,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "photo",
+            "plot"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "criteria",
+          "semantic_role": "comparison",
+          "presentation_role": "criteria_table",
+          "x": 0.36,
+          "y": 0.06,
+          "w": 0.28,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "table",
+            "metric",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "approach_b",
+          "semantic_role": "approach_b",
+          "presentation_role": "secondary_visual",
+          "x": 0.68,
+          "y": 0.06,
+          "w": 0.28,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "photo",
+            "plot"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "mechanism",
+          "semantic_role": "comparison",
+          "presentation_role": "mechanism_pair",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.92,
+          "h": 0.18,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "allowed"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "approach_a",
+          "semantic_role": "approach_a",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.28,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "photo",
+            "plot"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 3.318,
+            "height": 2.448
+          },
+          "item_id": "A",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "criteria",
+          "semantic_role": "comparison",
+          "presentation_role": "criteria_table",
+          "x": 0.36,
+          "y": 0.06,
+          "w": 0.28,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "table",
+            "metric",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.966,
+            "top": 1.556,
+            "width": 3.318,
+            "height": 2.448
+          },
+          "item_id": "TABLE",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "approach_b",
+          "semantic_role": "approach_b",
+          "presentation_role": "secondary_visual",
+          "x": 0.68,
+          "y": 0.06,
+          "w": 0.28,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "photo",
+            "plot"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.758,
+            "top": 1.556,
+            "width": 3.318,
+            "height": 2.448
+          },
+          "item_id": "B",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "mechanism",
+          "semantic_role": "comparison",
+          "presentation_role": "mechanism_pair",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.92,
+          "h": 0.18,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "allowed",
+          "geometry": {
+            "left": 1.174,
+            "top": 4.412,
+            "width": 10.902,
+            "height": 0.918
+          },
+          "item_id": "REGION-MECHANISM",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "A",
+          "region_id": "approach_a",
+          "content_kind": "schematic",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 3.318,
+            "height": 2.448
+          }
+        },
+        {
+          "item_id": "B",
+          "region_id": "approach_b",
+          "content_kind": "schematic",
+          "geometry": {
+            "left": 8.758,
+            "top": 1.556,
+            "width": 3.318,
+            "height": 2.448
+          }
+        },
+        {
+          "item_id": "TABLE",
+          "region_id": "criteria",
+          "content_kind": "table",
+          "geometry": {
+            "left": 4.966,
+            "top": 1.556,
+            "width": 3.318,
+            "height": 2.448
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "26fb1e70f8f84f26ae362bc32b884929954306b4095cdd160087742a2dc71022",
+      "physical_composition_hash": "ccae4945aac8e4c46e8648982baf6d27e73e799bfcea10319559d9467e43c2d8",
+      "unassigned_required_region_ids": [
+        "mechanism"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-2EED6C0500CEC454",
+      "slide_id": "PPA-CASE-G-PRINCIPLE",
+      "candidate_id": "PPC-E866D0D74E77404B",
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "body_recipe_id": "BCR-PRINCIPLE-EQUIPMENT-SPLIT",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "principle",
+          "semantic_role": "principle",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.45,
+          "h": 0.53,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "formula",
+          "semantic_role": "principle",
+          "presentation_role": "formula",
+          "x": 0.04,
+          "y": 0.66,
+          "w": 0.45,
+          "h": 0.16,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "formula",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "equipment",
+          "semantic_role": "equipment",
+          "presentation_role": "secondary_visual",
+          "x": 0.53,
+          "y": 0.06,
+          "w": 0.43,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "schematic",
+            "table"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "specification",
+          "semantic_role": "equipment",
+          "presentation_role": "specification_table",
+          "x": 0.53,
+          "y": 0.6,
+          "w": 0.43,
+          "h": 0.22,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "table",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "principle",
+          "semantic_role": "principle",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.45,
+          "h": 0.53,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "schematic",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 5.3325,
+            "height": 2.703
+          },
+          "item_id": "PRINCIPLE",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "formula",
+          "semantic_role": "principle",
+          "presentation_role": "formula",
+          "x": 0.04,
+          "y": 0.66,
+          "w": 0.45,
+          "h": 0.16,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "formula",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 4.616,
+            "width": 5.3325,
+            "height": 0.816
+          },
+          "item_id": "FORMULA",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "equipment",
+          "semantic_role": "equipment",
+          "presentation_role": "secondary_visual",
+          "x": 0.53,
+          "y": 0.06,
+          "w": 0.43,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "schematic",
+            "table"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 6.9805,
+            "top": 1.556,
+            "width": 5.0955,
+            "height": 2.448
+          },
+          "item_id": "EQUIPMENT",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "specification",
+          "semantic_role": "equipment",
+          "presentation_role": "specification_table",
+          "x": 0.53,
+          "y": 0.6,
+          "w": 0.43,
+          "h": 0.22,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "table",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 6.9805,
+            "top": 4.31,
+            "width": 5.0955,
+            "height": 1.122
+          },
+          "item_id": "REGION-SPECIFICATION",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "PRINCIPLE",
+          "region_id": "principle",
+          "content_kind": "schematic",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 5.3325,
+            "height": 2.703
+          }
+        },
+        {
+          "item_id": "EQUIPMENT",
+          "region_id": "equipment",
+          "content_kind": "table",
+          "geometry": {
+            "left": 6.9805,
+            "top": 1.556,
+            "width": 5.0955,
+            "height": 2.448
+          }
+        },
+        {
+          "item_id": "FORMULA",
+          "region_id": "formula",
+          "content_kind": "formula",
+          "geometry": {
+            "left": 1.174,
+            "top": 4.616,
+            "width": 5.3325,
+            "height": 0.816
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "e66c091c5e97bc01d147dfe257cde7171c2ee0e14bc9a9d013a7da5944dd9602",
+      "physical_composition_hash": "2eed6c0500cec45491a4becc547e6f118f8991728a7de9a6b4faba28af794f31",
+      "unassigned_required_region_ids": [
+        "specification"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-D198F8B3FC735BDC",
+      "slide_id": "PPA-CASE-H-HISTORICAL",
+      "candidate_id": "PPC-468E2014216AC345",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "body_recipe_id": "BCR-REAL-RESULT-VALIDATION",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "result",
+          "semantic_role": "result",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.62,
+          "h": 0.67,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "photo",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "metric",
+          "semantic_role": "result",
+          "presentation_role": "metric_callout",
+          "x": 0.72,
+          "y": 0.08,
+          "w": 0.24,
+          "h": 0.22,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "result",
+          "presentation_role": "compact_context",
+          "x": 0.72,
+          "y": 0.4,
+          "w": 0.24,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "caption"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "result",
+          "semantic_role": "result",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.62,
+          "h": 0.67,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "photo",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 7.347,
+            "height": 3.417
+          },
+          "item_id": "PLOT",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "metric",
+          "semantic_role": "result",
+          "presentation_role": "metric_callout",
+          "x": 0.72,
+          "y": 0.08,
+          "w": 0.24,
+          "h": 0.22,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 9.232,
+            "top": 1.658,
+            "width": 2.844,
+            "height": 1.122
+          },
+          "item_id": "METRIC",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "result",
+          "presentation_role": "compact_context",
+          "x": 0.72,
+          "y": 0.4,
+          "w": 0.24,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "caption"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 9.232,
+            "top": 3.29,
+            "width": 2.844,
+            "height": 1.683
+          },
+          "item_id": "REGION-CONTEXT",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "PLOT",
+          "region_id": "result",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 7.347,
+            "height": 3.417
+          }
+        },
+        {
+          "item_id": "METRIC",
+          "region_id": "metric",
+          "content_kind": "metric",
+          "geometry": {
+            "left": 9.232,
+            "top": 1.658,
+            "width": 2.844,
+            "height": 1.122
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "52887a0c916b6854ccc08ba2b22d736e1478239b45542ede51d6686e61aaa1de",
+      "physical_composition_hash": "d198f8b3fc735bdca8ee087cf70c2441dc4ed2c2ec2d81eafb532b337fb9d72a",
+      "unassigned_required_region_ids": [
+        "context"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-FB4978BE9B98CFCC",
+      "slide_id": "PPA-CASE-I-CONTINUATION",
+      "candidate_id": "PPC-F1CFC7CC4822B5C0",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "body_recipe_id": "BCR-HARDWARE-DESIGN-PROCEDURE",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "hardware",
+          "semantic_role": "hardware",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.56,
+          "h": 0.7,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "cad",
+            "schematic",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "procedure",
+          "semantic_role": "controls",
+          "presentation_role": "procedure",
+          "x": 0.65,
+          "y": 0.05,
+          "w": 0.31,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "table"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "allowed"
+        },
+        {
+          "region_id": "go",
+          "semantic_role": "decision",
+          "presentation_role": "go_criterion",
+          "x": 0.65,
+          "y": 0.6,
+          "w": 0.31,
+          "h": 0.16,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "hardware",
+          "semantic_role": "hardware",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.56,
+          "h": 0.7,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "cad",
+            "schematic",
+            "photo"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 6.636,
+            "height": 3.57
+          },
+          "item_id": "CAD",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "procedure",
+          "semantic_role": "controls",
+          "presentation_role": "procedure",
+          "x": 0.65,
+          "y": 0.05,
+          "w": 0.31,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "table"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "allowed",
+          "geometry": {
+            "left": 8.4025,
+            "top": 1.505,
+            "width": 3.6735,
+            "height": 2.448
+          },
+          "item_id": "CONTROLS",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "go",
+          "semantic_role": "decision",
+          "presentation_role": "go_criterion",
+          "x": 0.65,
+          "y": 0.6,
+          "w": 0.31,
+          "h": 0.16,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.4025,
+            "top": 4.31,
+            "width": 3.6735,
+            "height": 0.816
+          },
+          "item_id": "GO",
+          "synthetic_placeholder": false
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "CAD",
+          "region_id": "hardware",
+          "content_kind": "cad",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 6.636,
+            "height": 3.57
+          }
+        },
+        {
+          "item_id": "CONTROLS",
+          "region_id": "procedure",
+          "content_kind": "text",
+          "geometry": {
+            "left": 8.4025,
+            "top": 1.505,
+            "width": 3.6735,
+            "height": 2.448
+          }
+        },
+        {
+          "item_id": "GO",
+          "region_id": "go",
+          "content_kind": "metric",
+          "geometry": {
+            "left": 8.4025,
+            "top": 4.31,
+            "width": 3.6735,
+            "height": 0.816
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "1d3befdcc0f775322ceedbd061a31666de81c4bea16895d0dae2f4c502793e4d",
+      "physical_composition_hash": "fb4978be9b98cfccbf86b3a2f1e44cd5b48d458634125706beb8601acf844bbf",
+      "unassigned_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-53FF22A5601450B1",
+      "slide_id": "PPA-CASE-J-DIVERSITY",
+      "candidate_id": "PPC-8B074929C8B57B90",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "body_recipe_id": "BCR-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "column_a",
+          "semantic_role": "comparison",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.27,
+          "h": 0.56,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "column_b",
+          "semantic_role": "comparison",
+          "presentation_role": "secondary_visual",
+          "x": 0.365,
+          "y": 0.06,
+          "w": 0.27,
+          "h": 0.56,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "column_c",
+          "semantic_role": "comparison",
+          "presentation_role": "secondary_visual",
+          "x": 0.69,
+          "y": 0.06,
+          "w": 0.27,
+          "h": 0.56,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "criteria",
+          "semantic_role": "comparison",
+          "presentation_role": "criteria_strip",
+          "x": 0.04,
+          "y": 0.7,
+          "w": 0.6,
+          "h": 0.12,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "table",
+            "metric",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "decision",
+          "semantic_role": "comparison",
+          "presentation_role": "decision_callout",
+          "x": 0.7,
+          "y": 0.7,
+          "w": 0.26,
+          "h": 0.12,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "column_a",
+          "semantic_role": "comparison",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.06,
+          "w": 0.27,
+          "h": 0.56,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 3.1995,
+            "height": 2.856
+          },
+          "item_id": "P1",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "column_b",
+          "semantic_role": "comparison",
+          "presentation_role": "secondary_visual",
+          "x": 0.365,
+          "y": 0.06,
+          "w": 0.27,
+          "h": 0.56,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 5.02525,
+            "top": 1.556,
+            "width": 3.1995,
+            "height": 2.856
+          },
+          "item_id": "P2",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "column_c",
+          "semantic_role": "comparison",
+          "presentation_role": "secondary_visual",
+          "x": 0.69,
+          "y": 0.06,
+          "w": 0.27,
+          "h": 0.56,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.8765,
+            "top": 1.556,
+            "width": 3.1995,
+            "height": 2.856
+          },
+          "item_id": "P3",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "criteria",
+          "semantic_role": "comparison",
+          "presentation_role": "criteria_strip",
+          "x": 0.04,
+          "y": 0.7,
+          "w": 0.6,
+          "h": 0.12,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "table",
+            "metric",
+            "text"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 4.82,
+            "width": 7.11,
+            "height": 0.612
+          },
+          "item_id": "REGION-CRITERIA",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "decision",
+          "semantic_role": "comparison",
+          "presentation_role": "decision_callout",
+          "x": 0.7,
+          "y": 0.7,
+          "w": 0.26,
+          "h": 0.12,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "emphasis",
+          "required": true,
+          "accepted_content_kinds": [
+            "metric",
+            "callout"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "emphasis",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.995,
+            "top": 4.82,
+            "width": 3.081,
+            "height": 0.612
+          },
+          "item_id": "REGION-DECISION",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "P1",
+          "region_id": "column_a",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.556,
+            "width": 3.1995,
+            "height": 2.856
+          }
+        },
+        {
+          "item_id": "P2",
+          "region_id": "column_b",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 5.02525,
+            "top": 1.556,
+            "width": 3.1995,
+            "height": 2.856
+          }
+        },
+        {
+          "item_id": "P3",
+          "region_id": "column_c",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 8.8765,
+            "top": 1.556,
+            "width": 3.1995,
+            "height": 2.856
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "e9fe7e21bd710160a1dea91c001a0246e2c572b20b7a79a00aadb43932f9fd47",
+      "physical_composition_hash": "53ff22a5601450b1a8ecec69b6361b6196e65d8b4dbb465a3575abccac579a67",
+      "unassigned_required_region_ids": [
+        "criteria",
+        "decision"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-323372AA0D989D75",
+      "slide_id": "PPA-CASE-J-DIVERSITY",
+      "candidate_id": "PPC-EFFDE13A1C6DCF85",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "body_recipe_id": "BCR-PHYSICAL-VALIDATION-MATRIX",
+      "shell_profile_id": "VSP003",
+      "content_bounds": {
+        "left": 0.7,
+        "top": 1.25,
+        "width": 11.85,
+        "height": 5.1
+      },
+      "regions": [
+        {
+          "region_id": "photo_a",
+          "semantic_role": "validation",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "photo_b",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.35,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "plot",
+          "semantic_role": "validation",
+          "presentation_role": "validation_plot",
+          "x": 0.66,
+          "y": 0.05,
+          "w": 0.3,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "caption_a",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.04,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "caption_b",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.35,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "measurement_c",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.66,
+          "y": 0.58,
+          "w": 0.3,
+          "h": 0.2,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "validation",
+          "presentation_role": "compact_context",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.59,
+          "h": 0.17,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none"
+        }
+      ],
+      "physical_regions": [
+        {
+          "region_id": "photo_a",
+          "semantic_role": "validation",
+          "presentation_role": "primary_visual",
+          "x": 0.04,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          },
+          "item_id": "P1",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "photo_b",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.35,
+          "y": 0.05,
+          "w": 0.28,
+          "h": 0.33,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.8475,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          },
+          "item_id": "P3",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "plot",
+          "semantic_role": "validation",
+          "presentation_role": "validation_plot",
+          "x": 0.66,
+          "y": 0.05,
+          "w": 0.3,
+          "h": 0.48,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "plot",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.521,
+            "top": 1.505,
+            "width": 3.555,
+            "height": 2.448
+          },
+          "item_id": "REGION-PLOT",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "caption_a",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.04,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 3.392,
+            "width": 3.318,
+            "height": 0.51
+          },
+          "item_id": "REGION-CAPTION_A",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "caption_b",
+          "semantic_role": "validation",
+          "presentation_role": "caption",
+          "x": 0.35,
+          "y": 0.42,
+          "w": 0.28,
+          "h": 0.1,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "caption",
+            "text"
+          ],
+          "caption_behavior": "attached",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 4.8475,
+            "top": 3.392,
+            "width": 3.318,
+            "height": 0.51
+          },
+          "item_id": "REGION-CAPTION_B",
+          "synthetic_placeholder": true
+        },
+        {
+          "region_id": "measurement_c",
+          "semantic_role": "validation",
+          "presentation_role": "secondary_visual",
+          "x": 0.66,
+          "y": 0.58,
+          "w": 0.3,
+          "h": 0.2,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "photo",
+            "plot",
+            "schematic"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 8.521,
+            "top": 4.208,
+            "width": 3.555,
+            "height": 1.02
+          },
+          "item_id": "P2",
+          "synthetic_placeholder": false
+        },
+        {
+          "region_id": "context",
+          "semantic_role": "validation",
+          "presentation_role": "compact_context",
+          "x": 0.04,
+          "y": 0.62,
+          "w": 0.59,
+          "h": 0.17,
+          "anchor_relationship": "content_bounds",
+          "z_order_class": "body",
+          "required": true,
+          "accepted_content_kinds": [
+            "text",
+            "metric"
+          ],
+          "caption_behavior": "none",
+          "callout_behavior": "none",
+          "connector_behavior": "none",
+          "geometry": {
+            "left": 1.174,
+            "top": 4.412,
+            "width": 6.9915,
+            "height": 0.867
+          },
+          "item_id": "REGION-CONTEXT",
+          "synthetic_placeholder": true
+        }
+      ],
+      "content_item_assignments": [
+        {
+          "item_id": "P1",
+          "region_id": "photo_a",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 1.174,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          }
+        },
+        {
+          "item_id": "P2",
+          "region_id": "measurement_c",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 8.521,
+            "top": 4.208,
+            "width": 3.555,
+            "height": 1.02
+          }
+        },
+        {
+          "item_id": "P3",
+          "region_id": "photo_b",
+          "content_kind": "plot",
+          "geometry": {
+            "left": 4.8475,
+            "top": 1.505,
+            "width": 3.318,
+            "height": 1.683
+          }
+        }
+      ],
+      "required_role_coverage_status": "pass",
+      "overflow_status": "pass",
+      "geometry_hash": "23c25a013fb9aac93dba1de95fdbbd303ed27f88d99d0926cd8f8d76ed9aff25",
+      "physical_composition_hash": "323372aa0d989d75f385e65b65e57b1383f378425e92566c936bd3a41d4c1bd3",
+      "unassigned_required_region_ids": [
+        "caption_a",
+        "caption_b",
+        "context",
+        "plot"
+      ]
+    }
+  ]
+}

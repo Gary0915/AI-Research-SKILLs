@@ -1,7 +1,144 @@
 {
+  "schema_version": "2.0.0",
   "historical_reused": 20,
+  "historical_reused_records": [
+    {
+      "slide_id": "FVCC-COVER-001",
+      "previous_accepted_artifact_hash": "21adfc74b3ba215946fe8c50bc88cf683e069d05cc79bb44378de8a3bdfab9e3",
+      "current_reused_artifact_hash": "21adfc74b3ba215946fe8c50bc88cf683e069d05cc79bb44378de8a3bdfab9e3",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-PHASE2-PROGRESS-01",
+      "previous_accepted_artifact_hash": "ac16142559343ef15e8ed7698117220460c52b208eddf172e95bb2ff257990b6",
+      "current_reused_artifact_hash": "ac16142559343ef15e8ed7698117220460c52b208eddf172e95bb2ff257990b6",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "previous_accepted_artifact_hash": "879082837d464e033539c367b028edb8d9484c381585c04dbd29e5a06051ef8d",
+      "current_reused_artifact_hash": "879082837d464e033539c367b028edb8d9484c381585c04dbd29e5a06051ef8d",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "previous_accepted_artifact_hash": "4ec9752b3532b5f8df794a339407fffef18c2e30e728f5dbb0c0857243336ad3",
+      "current_reused_artifact_hash": "4ec9752b3532b5f8df794a339407fffef18c2e30e728f5dbb0c0857243336ad3",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "previous_accepted_artifact_hash": "5d7ee26d3d71569c236877dab31f89013b308242a6f4c5b6c862fb2c827f4729",
+      "current_reused_artifact_hash": "5d7ee26d3d71569c236877dab31f89013b308242a6f4c5b6c862fb2c827f4729",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "previous_accepted_artifact_hash": "37880ea8df2e0fa1aea4fca21b8c9bfe33a0819701de6aa71d95ec66e6117fc8",
+      "current_reused_artifact_hash": "37880ea8df2e0fa1aea4fca21b8c9bfe33a0819701de6aa71d95ec66e6117fc8",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "previous_accepted_artifact_hash": "d8fe50afc22ada6d6e1adce5b97402b58f870b1ee3f3f14e3bd473f20e2697a0",
+      "current_reused_artifact_hash": "d8fe50afc22ada6d6e1adce5b97402b58f870b1ee3f3f14e3bd473f20e2697a0",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "previous_accepted_artifact_hash": "44d59c3c749d0fc7d0baa609f105a7171a1a64826cdd4d46f0f4cf1665e6c8ec",
+      "current_reused_artifact_hash": "44d59c3c749d0fc7d0baa609f105a7171a1a64826cdd4d46f0f4cf1665e6c8ec",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "previous_accepted_artifact_hash": "035fe00510495a0701a7a96f95c69a0cdcce2048a8248276b939c3b8acf8b629",
+      "current_reused_artifact_hash": "035fe00510495a0701a7a96f95c69a0cdcce2048a8248276b939c3b8acf8b629",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "previous_accepted_artifact_hash": "50af88df270ffd419a60efc9f723d8237e1a5d32bbb9c0a4ef6885ce876a262b",
+      "current_reused_artifact_hash": "50af88df270ffd419a60efc9f723d8237e1a5d32bbb9c0a4ef6885ce876a262b",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "previous_accepted_artifact_hash": "4e2425c0aa5e93da8d7e24b77626ca9908e2c18f29918e29fa99eabad7aa10a1",
+      "current_reused_artifact_hash": "4e2425c0aa5e93da8d7e24b77626ca9908e2c18f29918e29fa99eabad7aa10a1",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "previous_accepted_artifact_hash": "d80ba50a2c7acf3b49e2c0fa1f0fc3f0f7d1d3cab900bddd64a8b34054c24960",
+      "current_reused_artifact_hash": "d80ba50a2c7acf3b49e2c0fa1f0fc3f0f7d1d3cab900bddd64a8b34054c24960",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "previous_accepted_artifact_hash": "619a78ceba467718a0ce099290200b34d68919517cf52565ea8ca28f886a15f3",
+      "current_reused_artifact_hash": "619a78ceba467718a0ce099290200b34d68919517cf52565ea8ca28f886a15f3",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "previous_accepted_artifact_hash": "9072445b729615860be78d086ca177f2d4fbe19a404ea50f83afced488af8a07",
+      "current_reused_artifact_hash": "9072445b729615860be78d086ca177f2d4fbe19a404ea50f83afced488af8a07",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "previous_accepted_artifact_hash": "931b12e15b4d2e61147cfc8180946995bda71af5430b272c5747c87a83eb6cc2",
+      "current_reused_artifact_hash": "931b12e15b4d2e61147cfc8180946995bda71af5430b272c5747c87a83eb6cc2",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "previous_accepted_artifact_hash": "fd6447d7f4b67e2b41cec126ee5ffb4aa58678af4bc35b7a76e8d3cf456fb99e",
+      "current_reused_artifact_hash": "fd6447d7f4b67e2b41cec126ee5ffb4aa58678af4bc35b7a76e8d3cf456fb99e",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "previous_accepted_artifact_hash": "4dd46892b2032471f56a55dea7ac7d819777576d04e58a2da056806a5922691c",
+      "current_reused_artifact_hash": "4dd46892b2032471f56a55dea7ac7d819777576d04e58a2da056806a5922691c",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "previous_accepted_artifact_hash": "90df40c07ecd5a3e9b4516f58425914692ad6b0f07ca4e68d3e2aa37350c6c17",
+      "current_reused_artifact_hash": "90df40c07ecd5a3e9b4516f58425914692ad6b0f07ca4e68d3e2aa37350c6c17",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "previous_accepted_artifact_hash": "9aca8f1beaf769575d4a859ba8a72068ecb16211feb12afc37a5d0897b96b5ca",
+      "current_reused_artifact_hash": "9aca8f1beaf769575d4a859ba8a72068ecb16211feb12afc37a5d0897b96b5ca",
+      "dependency_equal": true
+    },
+    {
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "previous_accepted_artifact_hash": "27cdeef0b769908f5e65644f0c0c0390d4a1dfc318ce47799dc5d086ed0419b0",
+      "current_reused_artifact_hash": "27cdeef0b769908f5e65644f0c0c0390d4a1dfc318ce47799dc5d086ed0419b0",
+      "dependency_equal": true
+    }
+  ],
   "new_planned_slides": 2,
   "new_physical_slides": 2,
+  "new_physical_plan_ids": [
+    "PCP-185C18215C96BBA7",
+    "PCP-9F4C68761ADCFFBF"
+  ],
   "historical_migrations": 0,
-  "semantic_insertion_status": "after_owning_context"
+  "historical_relayout_without_dependency_change_count": 0,
+  "historical_visual_migration_count": 0,
+  "semantic_insertion_status": "pass",
+  "body_reference_priority": [
+    "JDP-TSMC-2026-0814",
+    "JDP-TSMC-2026-0730",
+    "JDP-TSMC-2026-0617",
+    "JDP-TSMC-2026-0604",
+    "JDP-TSMC-2026-0525"
+  ],
+  "shell_override_count": 0
 }

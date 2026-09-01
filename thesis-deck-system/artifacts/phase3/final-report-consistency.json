@@ -1,13 +1,14 @@
 {
-  "consistency_id": "PLANNER-APPLICATION-CONSISTENCY-003",
+  "consistency_id": "PPA-PHYSICAL-CONSISTENCY-001",
   "authoritative_facts_ref": "planner-application-final-facts.json",
-  "candidate_state_sha256": "6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051",
+  "candidate_state_sha256": "5628e04059f1bfb563c3899a951df1c9fc72693cbb35082ab5e31643658f7b3a",
   "checks": [
-    {"check_id": "candidate-state", "actual": "6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051", "expected": "6917ad8fa01ed1a78214d0e61c99beb12ebbaa2362264e64af1b723050059051", "status": "pass"},
-    {"check_id": "candidate-component-count", "actual": 56, "expected": 56, "status": "pass"},
-    {"check_id": "validation-evidence", "actual": {"focused_passed": 58, "focused_failed": 0, "full_passed": 533, "full_failed": 0, "tested_pre_post_current_equal": true}, "expected": {"focused_failed": 0, "full_failed": 0, "tested_pre_post_current_equal": true}, "status": "pass"},
-    {"check_id": "planner-metrics", "actual": {"logical_slides_evaluated": 10, "candidate_count": 14, "one_candidate_slides": 6, "two_candidate_slides": 4, "automatic_selections": 9, "historical_reuse": 1, "historical_migrations": 0, "hard_semantic_mismatch_selected": 0, "hard_capacity_mismatch_selected": 0, "fake_candidate_variants": 0, "selected_materialized_mismatches": 0}, "expected": {"logical_slides_evaluated": 10, "candidate_count": 14, "one_candidate_slides": 6, "two_candidate_slides": 4, "automatic_selections": 9, "historical_reuse": 1, "historical_migrations": 0, "hard_semantic_mismatch_selected": 0, "hard_capacity_mismatch_selected": 0, "fake_candidate_variants": 0, "selected_materialized_mismatches": 0}, "status": "pass"},
-    {"check_id": "generated-pptx-closure", "actual": {"attestations": 6, "source_closure_failures": 0, "unresolved_media": 0, "undeclared_media": 0, "duplicate_media_lineage": 0, "working_staged_mismatches": 0}, "expected": {"attestations": 6, "source_closure_failures": 0, "unresolved_media": 0, "undeclared_media": 0, "duplicate_media_lineage": 0, "working_staged_mismatches": 0}, "status": "pass"},
+    {"check_id": "candidate-state", "actual": "5628e04059f1bfb563c3899a951df1c9fc72693cbb35082ab5e31643658f7b3a", "expected": "5628e04059f1bfb563c3899a951df1c9fc72693cbb35082ab5e31643658f7b3a", "status": "pass"},
+    {"check_id": "candidate-component-count", "actual": 28, "expected": 28, "status": "pass"},
+    {"check_id": "validation-evidence", "actual": {"focused_passed": 71, "focused_failed": 0, "full_passed": 551, "full_failed": 0, "tested_pre_post_current_equal": true}, "expected": {"focused_failed": 0, "full_failed": 0, "tested_pre_post_current_equal": true}, "status": "pass"},
+    {"check_id": "physical-realization", "actual": {"logical_cases": 10, "eligible_candidates": 11, "multiple_candidate_cases": 1, "physical_recipes": 10, "coverage": "10/10", "reverse_audit_failures": 0}, "expected": {"logical_cases": 10, "eligible_candidates": 11, "multiple_candidate_cases": 1, "physical_recipes": 10, "coverage": "10/10", "reverse_audit_failures": 0}, "status": "pass"},
+    {"check_id": "incremental-application", "actual": {"historical_reused": 20, "new_physical_slides": 2, "migrations": 0, "semantic_insertion_status": "pass"}, "expected": {"historical_reused": 20, "new_physical_slides": 2, "migrations": 0, "semantic_insertion_status": "pass"}, "status": "pass"},
+    {"check_id": "generated-pptx-closure", "actual": {"attestations": 1, "source_closure_failures": 0, "unresolved_media": 0, "undeclared_media": 0, "duplicate_media_lineage": 0, "working_staged_mismatches": 0}, "expected": {"attestations": 1, "source_closure_failures": 0, "unresolved_media": 0, "undeclared_media": 0, "duplicate_media_lineage": 0, "working_staged_mismatches": 0}, "status": "pass"},
     {"check_id": "privacy", "actual": {"repository_unexcepted": 0, "staged_unexcepted": 0, "approved_historical_exceptions": 1, "private_alias_source_render": [0, 0, 0]}, "expected": {"repository_unexcepted": 0, "staged_unexcepted": 0, "approved_historical_exceptions": 1, "private_alias_source_render": [0, 0, 0]}, "status": "pass"}
   ],
   "mismatch_count": 0,
