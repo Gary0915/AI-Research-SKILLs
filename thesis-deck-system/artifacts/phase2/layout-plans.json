@@ -568,7 +568,7 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 103,
+    "text_units": 83,
     "text_budget": 130,
     "required_slots": [
       "result_plot",
@@ -629,7 +629,7 @@
     "warnings": [],
     "density_estimate": "high",
     "split_recommendation": false,
-    "text_units": 111,
+    "text_units": 83,
     "text_budget": 130,
     "required_slots": [
       "result_plot",

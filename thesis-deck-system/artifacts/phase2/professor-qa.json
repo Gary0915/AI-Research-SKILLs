@@ -3,7 +3,7 @@
     "profile_id": "PROF-SYNTH-001",
     "version": "1.0.0"
   },
-  "status": "pass",
+  "status": "fail",
   "executed_checks": [
     "PROF-PRESENTATION-SEMANTIC-FIDELITY",
     "PROF-HYPOTHESIS-EXISTS",
@@ -55,13 +55,13 @@
   "check_count": 46,
   "evidence": {
     "PROF-PRESENTATION-SEMANTIC-FIDELITY": {
-      "passed": true,
+      "passed": false,
       "profile_rule": null,
       "configured_value": null,
       "path": "presentation_semantic_fidelity",
       "detail": {
         "schema_version": "1.0.0",
-        "status": "pass",
+        "status": "blocked_render_evidence",
         "executed_checks": [
           "temporal_snapshot_correctness",
           "combined_role_field_completeness",
@@ -225,28 +225,28 @@
             ]
           },
           "visible_result_distinction": {
-            "status": "pass",
+            "status": "fail",
             "detail": [
               {
                 "left": "RES101",
                 "right": "RES102",
-                "left_render_sha256": "1e064066dcde182328b1df0c21bc2dff3088ecdc1b0ccf34b2cece4a9b76a010",
-                "right_render_sha256": "7ca351dd7d8dca10f466f2c88979978558be80a0e4cdd7016a13ea5de4064ac6",
-                "status": "pass"
+                "left_render_sha256": null,
+                "right_render_sha256": null,
+                "status": "fail"
               },
               {
                 "left": "RES101",
                 "right": "RES201",
-                "left_render_sha256": "1e064066dcde182328b1df0c21bc2dff3088ecdc1b0ccf34b2cece4a9b76a010",
-                "right_render_sha256": "d9a7e458a4fe74c2e666ecc9491fb797c9da780a9c060f7ab1117eac0d148f5b",
-                "status": "pass"
+                "left_render_sha256": null,
+                "right_render_sha256": null,
+                "status": "fail"
               },
               {
                 "left": "RES102",
                 "right": "RES201",
-                "left_render_sha256": "7ca351dd7d8dca10f466f2c88979978558be80a0e4cdd7016a13ea5de4064ac6",
-                "right_render_sha256": "d9a7e458a4fe74c2e666ecc9491fb797c9da780a9c060f7ab1117eac0d148f5b",
-                "status": "pass"
+                "left_render_sha256": null,
+                "right_render_sha256": null,
+                "status": "fail"
               }
             ]
           },
@@ -268,7 +268,35 @@
           "RES102",
           "RES201"
         ],
-        "findings": [],
+        "findings": [
+          {
+            "rule": "visible_result_distinction",
+            "status": "fail",
+            "evidence": [
+              {
+                "left": "RES101",
+                "right": "RES102",
+                "left_render_sha256": null,
+                "right_render_sha256": null,
+                "status": "fail"
+              },
+              {
+                "left": "RES101",
+                "right": "RES201",
+                "left_render_sha256": null,
+                "right_render_sha256": null,
+                "status": "fail"
+              },
+              {
+                "left": "RES102",
+                "right": "RES201",
+                "left_render_sha256": null,
+                "right_render_sha256": null,
+                "status": "fail"
+              }
+            ]
+          }
+        ],
         "temporal_snapshot_status": "pass",
         "combined_role_status": "pass",
         "physical_fidelity_status": "pass"
@@ -755,5 +783,14 @@
       ]
     }
   },
-  "findings": []
+  "findings": [
+    {
+      "rule_id": "PROF-PRESENTATION-SEMANTIC-FIDELITY",
+      "severity": "critical",
+      "status": "open",
+      "path": "presentation_semantic_fidelity",
+      "evidence": "executed check returned false",
+      "repair_action": "Resolve post-assembly semantic fidelity findings before Professor QA"
+    }
+  ]
 }

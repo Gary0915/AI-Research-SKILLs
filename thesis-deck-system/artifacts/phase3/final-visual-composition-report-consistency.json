@@ -1,0 +1,26 @@
+{
+  "audit_id": "FVCC-REPORT-CONSISTENCY-001",
+  "aggregate_status": "pass",
+  "mismatch_count": 0,
+  "checked_facts": {
+    "focused_passed": 6,
+    "focused_failed": 0,
+    "regression_passed": 481,
+    "regression_failed": 0,
+    "candidate_component_count": 19,
+    "candidate_hash": "61813a52c0e48f9a52db50e5a8214a023c60a2df9b30915f04f83c062a1b0eae",
+    "slide_count": 20,
+    "h003_slide_count": 0,
+    "corrected_result_trace_count": 3,
+    "deduplicated_summary_field_count": 3,
+    "visible_raw_backend_field_count": 0,
+    "governed_figure_placement_count": 11,
+    "native_plan_count": 9,
+    "fallback_count": 2,
+    "repository_findings": 0,
+    "staged_findings": 0,
+    "approved_historical_exceptions": 1,
+    "acceptance_deck_build_status": "pass",
+    "production_release_status": "blocked"
+  }
+}

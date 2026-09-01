@@ -18,8 +18,29 @@ from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE
 from pptx.util import Inches, Pt
+from PIL import Image, ImageDraw, UnidentifiedImageError
 
 from .context import ProjectContext
+
+
+def _svg_compatibility_preview(source_svg: Path, preview_root: Path) -> Path:
+    """Create a bounded temporary SVG compatibility preview.
+
+    The source SVG is never mutated and previews never use a sibling
+    `.png` name.  This helper is only a legacy decoder fallback; final
+    composition fallback assets are explicit governed inputs.
+    """
+    source_svg = Path(source_svg)
+    if source_svg.suffix.casefold() != ".svg":
+        return source_svg
+    preview_root.mkdir(parents=True, exist_ok=True)
+    digest = hashlib.sha256(source_svg.read_bytes()).hexdigest()[:16]
+    preview = preview_root / f"svg-compat-{digest}.png"
+    if not preview.exists():
+        image = Image.new("RGB", (640, 360), "#d9e5e8")
+        ImageDraw.Draw(image).text((30, 160), "SVG COMPATIBILITY PREVIEW", fill="#223344")
+        image.save(preview)
+    return preview
 
 
 @dataclass(frozen=True)
@@ -75,6 +96,52 @@ class PythonPptxAssembler(PptxAssembler):
 
         native_count = fallback_count = 0
         emitted_names: list[str] = []
+        materialization_records: list[dict] = []
+
+        def color(value: str):
+            if value == "none":
+                return None
+            if not isinstance(value, str) or not re.fullmatch(r"#[0-9a-fA-F]{6}", value):
+                raise NativeCompilationError("compiler declared unsupported native color")
+            return RGBColor.from_string(value[1:].upper())
+
+        def apply_style(shape, item: dict) -> dict[str, str]:
+            style = item["style"]
+            coverage: dict[str, str] = {key: "unresolved" for key in ("geometry", "fill", "stroke", "stroke_width", "font_family", "font_size", "font_weight", "dash", "marker", "transform")}
+            coverage["geometry"] = "supported"
+            if "fill" in style and hasattr(shape, "fill"):
+                fill = color(style["fill"])
+                if fill is None:
+                    shape.fill.background()
+                else:
+                    shape.fill.solid(); shape.fill.fore_color.rgb = fill
+                coverage["fill"] = "supported"
+            if "stroke" in style and hasattr(shape, "line"):
+                stroke = color(style["stroke"])
+                if stroke is None:
+                    shape.line.fill.background()
+                else:
+                    shape.line.color.rgb = stroke
+                coverage["stroke"] = "supported"
+            if "stroke-width" in style and hasattr(shape, "line"):
+                shape.line.width = Pt(float(style["stroke-width"]))
+                coverage["stroke_width"] = "supported"
+            if item["shape_kind"] == "text":
+                for paragraph in shape.text_frame.paragraphs:
+                    for run in paragraph.runs:
+                        if "font-size" in style:
+                            run.font.size = Pt(float(style["font-size"])); coverage["font_size"] = "supported"
+                        if "font-family" in style:
+                            run.font.name = style["font-family"]; coverage["font_family"] = "supported"
+                        if "font-weight" in style:
+                            if style["font-weight"] not in {"normal", "bold", "400", "700"}:
+                                raise NativeCompilationError("compiler declared unsupported native font weight")
+                            run.font.bold = style["font-weight"] in {"bold", "700"}; coverage["font_weight"] = "supported"
+            for unsupported in ("stroke-dasharray", "marker-start", "marker-end", "transform"):
+                if unsupported in style:
+                    raise NativeCompilationError("compiler declared unsupported native style")
+            return coverage
+
         for item in native_plan["objects"]:
             if item["outcome"] != "DRAWINGML_EMITTED":
                 fallback_count += 1
@@ -98,29 +165,120 @@ class PythonPptxAssembler(PptxAssembler):
                 shape = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
             elif kind == "text":
                 x, y = coordinate(geometry.get("x", 0), geometry.get("y", 0))
-                shape = slide.shapes.add_textbox(Inches(x), Inches(y - 0.28), Inches(max(0.75, target["width"] * 0.45)), Inches(0.45))
+                # Text labels in canonical SVG often sit close to the right or
+                # lower viewBox edge.  Keep their editable DrawingML boxes in
+                # the governed target region instead of letting a generic
+                # width spill beyond the physical slide.
+                left = min(max(x, target["left"]), target["left"] + target["width"] - 0.2)
+                top = min(max(y - 0.28, target["top"]), target["top"] + target["height"] - 0.2)
+                width = min(max(0.2, target["left"] + target["width"] - left), max(0.2, target["width"] * 0.45))
+                height = min(0.45, max(0.2, target["top"] + target["height"] - top))
+                shape = slide.shapes.add_textbox(Inches(left), Inches(top), Inches(width), Inches(height))
                 shape.text = item["text"] or ""
-                for paragraph in shape.text_frame.paragraphs:
-                    for run in paragraph.runs:
-                        if item["style"].get("font-size"):
-                            run.font.size = Pt(float(item["style"]["font-size"]))
-                        if item["style"].get("font-family"):
-                            run.font.name = item["style"]["font-family"]
             elif kind == "group":
-                # PowerPoint groups require children; the source children are
-                # emitted independently and preserve their object identities.
-                continue
+                raise NativeCompilationError("compiler may not emit group as native object")
             else:
-                fallback_count += 1
-                continue
+                raise NativeCompilationError(f"compiler emitted unsupported native shape: {kind}")
             if shape is None:
-                continue
+                raise NativeCompilationError("native plan object was not materialized")
             shape.name = name_for(item)
             emitted_names.append(shape.name)
             native_count += 1
-        return {"figure_id": approved_figure.figure_id, "native_object_count": native_count, "fallback_object_count": fallback_count, "emitted_shape_names": emitted_names}
+            materialization_records.append({"svg_object_id": item["svg_object_id"], "shape_name": shape.name, "style_coverage": apply_style(shape, item)})
+        expected = [item["svg_object_id"] for item in native_plan["objects"] if item["outcome"] == "DRAWINGML_EMITTED"]
+        emitted = [item["svg_object_id"] for item in materialization_records]
+        if len(emitted) != len(set(emitted)) or emitted != expected:
+            raise NativeCompilationError("native plan/materializer parity mismatch")
+        return {"figure_id": approved_figure.figure_id, "planned_native_object_count": len(expected), "native_object_count": native_count, "fallback_object_count": fallback_count, "emitted_shape_names": emitted_names, "materialization_records": materialization_records, "native_mismatch_count": 0}
+
+    def assemble_final_visual_composition(
+        self,
+        template_path: Path,
+        composition_slides: list[dict],
+        output_path: Path,
+        *,
+        figure_bundles: dict[str, tuple[object, dict]] | None = None,
+        svg_fallbacks: dict[str, dict] | None = None,
+    ) -> AssemblyResult:
+        """Materialize a closure-approved composition through this sole writer.
+
+        The caller supplies already-projected visible text and only reverified,
+        compiler-produced figure plans.  This method intentionally has no
+        knowledge of Ledger, private sources, or scientific evidence objects.
+        """
+        figure_bundles = figure_bundles or {}
+        svg_fallbacks = svg_fallbacks or {}
+        materialization_facts: list[dict] = []
+        shutil.copy2(template_path, output_path)
+        prs = Presentation(output_path)
+        for item in composition_slides:
+            layout_index = item["selected_pptx_layout_id"]
+            if not isinstance(layout_index, int) or not 0 <= layout_index < len(prs.slide_layouts):
+                raise ValueError(f"unresolved final composition layout: {layout_index!r}")
+            slide = prs.slides.add_slide(prs.slide_layouts[layout_index])
+            title_region = item["title_region"]
+            title_shape = slide.shapes.title
+            if title_shape is None:
+                title_shape = slide.shapes.add_textbox(
+                    Inches(title_region["left"]), Inches(title_region["top"]),
+                    Inches(title_region["width"]), Inches(title_region["height"]),
+                )
+            else:
+                title_shape.left = Inches(title_region["left"])
+                title_shape.top = Inches(title_region["top"])
+                title_shape.width = Inches(title_region["width"])
+                title_shape.height = Inches(title_region["height"])
+            title_shape.name = f"tds-title:{item['slide_id']}"
+            title_shape.text = item["title"]
+            title_shape.text_frame.margin_left = title_shape.text_frame.margin_right = 0
+            title_shape.text_frame.margin_top = title_shape.text_frame.margin_bottom = 0
+            for paragraph in title_shape.text_frame.paragraphs:
+                for run in paragraph.runs:
+                    run.font.size = Pt(27 if len(item["title"]) < 28 else 22)
+
+            text_region = item["secondary_text_region"]
+            visible_text = item.get("visible_source_fields", [])
+            if visible_text:
+                text_box = slide.shapes.add_textbox(
+                    Inches(text_region["left"]), Inches(text_region["top"]),
+                    Inches(text_region["width"]), Inches(text_region["height"]),
+                )
+                text_box.name = f"tds-composition-text:{item['slide_id']}"
+                text_box.text = "\n\n".join(str(value) for value in visible_text)
+                for paragraph in text_box.text_frame.paragraphs:
+                    for run in paragraph.runs:
+                        run.font.size = Pt(18)
+
+            bundle = figure_bundles.get(item["slide_id"])
+            if bundle is not None:
+                approved_figure, native_plan = bundle
+                emitted = self.add_compiled_figure(slide, approved_figure, native_plan)
+                if emitted["native_object_count"] == 0:
+                    raise ValueError(f"final composition figure emitted no native objects: {item['slide_id']}")
+                materialization_facts.append({"slide_id": item["slide_id"], **emitted})
+
+            fallback = svg_fallbacks.get(item["slide_id"])
+            if fallback is not None:
+                if fallback.get("binding_kind") != "explicit_svg_fallback":
+                    raise ValueError(f"invalid final composition fallback binding: {item['slide_id']}")
+                preview_path = Path(fallback.get("preview_png_path", ""))
+                if not preview_path.is_file() or preview_path.suffix.casefold() != ".png":
+                    raise ValueError(f"missing final composition fallback preview: {item['slide_id']}")
+                region = item["primary_visual_region"]
+                shape = slide.shapes.add_picture(
+                    str(preview_path), Inches(region["left"]), Inches(region["top"]),
+                    width=Inches(region["width"]), height=Inches(region["height"]),
+                )
+                shape.name = f"tds-svg-fallback:{fallback['fallback_asset_id']}/{item['slide_id']}"
+
+            notes = slide.notes_slide.notes_text_frame
+            notes.text = "[Sources]\n[/Sources]\n" + "\n".join(item.get("notes_only_fields", []))
+        prs.save(output_path)
+        self.last_final_composition_materialization = materialization_facts
+        return AssemblyResult(output_path)
 
     def assemble(self, template_path: Path, slide_specs: list[dict], output_path: Path, *, attach_svg: bool = True, project_context: ProjectContext | None = None) -> AssemblyResult:
+        compatibility_preview_root = Path(tempfile.mkdtemp(prefix="tds-svg-preview-"))
         shutil.copy2(template_path, output_path)
         prs = Presentation(output_path)
         profile_path = template_path.with_name("template-profile.json")
@@ -188,9 +346,9 @@ class PythonPptxAssembler(PptxAssembler):
                     left, top, width, height = box("result_plot", (5.3, 1.7, 7.2, 4.0)); slide.shapes.add_picture(plot_path, Inches(left), Inches(top), width=Inches(width), height=Inches(height))
                     if str(plot_path).lower().endswith(".svg"):
                         svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": spec["placements"][0]["asset_id"], "svg_path": Path(plot_path), "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
-                except Exception:
+                except UnidentifiedImageError:
                     # python-pptx cannot decode SVG; retain the registered SVG in the package and use PNG only as compatibility preview.
-                    left, top, width, height = box("result_plot", (5.3, 1.7, 7.2, 4.0)); slide.shapes.add_picture(str(Path(plot_path).with_suffix('.png')), Inches(left), Inches(top), width=Inches(width), height=Inches(height))
+                    left, top, width, height = box("result_plot", (5.3, 1.7, 7.2, 4.0)); slide.shapes.add_picture(str(_svg_compatibility_preview(Path(plot_path), compatibility_preview_root)), Inches(left), Inches(top), width=Inches(width), height=Inches(height))
                     if str(plot_path).lower().endswith(".svg"):
                         svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": spec["placements"][0]["asset_id"], "svg_path": Path(plot_path), "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
             elif spec["recipe"] == "photo_observation":
@@ -204,12 +362,9 @@ class PythonPptxAssembler(PptxAssembler):
                         left, top, width, height = box("primary_figure", (6.6, 1.6, 5.8, 3.3)); slide.shapes.add_picture(visual, Inches(left), Inches(top), width=Inches(width), height=Inches(height))
                         if str(visual).lower().endswith(".svg"):
                             svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": next((item.get("asset_id") for item in spec.get("placements", []) if item.get("slot") == "primary_figure"), "A002"), "svg_path": Path(visual), "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
-                    except Exception:
+                    except UnidentifiedImageError:
                         # observation visual is vector source; use a deterministic preview when decoder lacks SVG support.
-                        from PIL import Image, ImageDraw
-                        preview = Path(visual).with_suffix('.png')
-                        if not preview.exists():
-                            im=Image.new('RGB',(640,360),'#d9e5e8'); ImageDraw.Draw(im).text((30,160),'SYNTHETIC OBSERVATION',fill='#234'); im.save(preview)
+                        preview = _svg_compatibility_preview(Path(visual), compatibility_preview_root)
                         left, top, width, height = box("primary_figure", (6.6, 1.6, 5.8, 3.3)); slide.shapes.add_picture(str(preview), Inches(left), Inches(top), width=Inches(width), height=Inches(height))
                         if str(visual).lower().endswith(".svg"):
                             svg_placements.append({"slide_part": slide.part.partname.lstrip("/"), "asset_id": next((item.get("asset_id") for item in spec.get("placements", []) if item.get("slot") == "primary_figure"), "A002"), "svg_path": Path(visual), "picture_index": len(slide.shapes._spTree.findall('.//{http://schemas.openxmlformats.org/presentationml/2006/main}pic')) - 1})
@@ -231,7 +386,7 @@ class PythonPptxAssembler(PptxAssembler):
                         if not asset_path:
                             continue
                         resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
-                        preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
+                        preview = _svg_compatibility_preview(resolved, compatibility_preview_root)
                         shape = slide.shapes.add_picture(str(preview), Inches(5.7), Inches(1.55), width=Inches(6.0), height=Inches(4.5))
                         shape.name = f"tds-slot:{placement.get('slot', 'asset')}"
                         if str(asset_path).lower().endswith(".svg"):
@@ -243,7 +398,7 @@ class PythonPptxAssembler(PptxAssembler):
                     if placement:
                         asset_path = placement["asset_path"]
                         resolved = context.resolve_repo_path(asset_path) if not Path(asset_path).is_absolute() else Path(asset_path)
-                        preview = resolved.with_suffix(".png") if resolved.suffix.lower() == ".svg" else resolved
+                        preview = _svg_compatibility_preview(resolved, compatibility_preview_root)
                         annotation_height = min(0.48, governed_slot["height"] * 0.14) if composition in {"asset_with_caption", "asset_with_annotation", "nested_group"} and slot_content.get(slot_name) else 0
                         figure_height = governed_slot["height"] - annotation_height
                         shape = slide.shapes.add_picture(str(preview), Inches(governed_slot["left"]), Inches(governed_slot["top"]), width=Inches(governed_slot["width"]), height=Inches(figure_height))

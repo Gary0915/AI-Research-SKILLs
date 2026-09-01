@@ -1834,8 +1834,8 @@
             "width": 4.8,
             "height": 2.3000000000000003
           },
-          "actual_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
-          "expected_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "actual_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜mean conductivity increase: 24% ± 5% SD",
+          "expected_text": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜mean conductivity increase: 24% ± 5% SD",
           "expected_asset_id": null,
           "asset_relationship": false,
           "geometry_tolerance_result": true,
@@ -1941,8 +1941,8 @@
             "width": 4.8,
             "height": 2.3000000000000003
           },
-          "actual_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
-          "expected_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}",
+          "actual_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜signal CV decrease: 4% ± 6% SD",
+          "expected_text": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜signal CV decrease: 4% ± 6% SD",
           "expected_asset_id": null,
           "asset_relationship": false,
           "geometry_tolerance_result": true,
@@ -2866,8 +2866,8 @@
             "width": 5.750000000000001,
             "height": 1.75
           },
-          "actual_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
-          "expected_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}",
+          "actual_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜signal CV decrease: 38% ± 7% SD",
+          "expected_text": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜signal CV decrease: 38% ± 7% SD",
           "expected_asset_id": null,
           "asset_relationship": false,
           "geometry_tolerance_result": true,
@@ -3099,8 +3099,8 @@
     }
   ],
   "relationship_targets_checked": 146,
-  "source_template_sha256_before": "a0644756b13d5ccf6badf484c1788a6d1eca85177ad7dfa4914d719f54cf5608",
-  "source_template_sha256_after": "a0644756b13d5ccf6badf484c1788a6d1eca85177ad7dfa4914d719f54cf5608",
-  "generated_pptx_sha256": "d2614a0771bd0175e54282ac115ff8503ad112101b4c9d1f3fab97e405be9519",
+  "source_template_sha256_before": "0075c0836306d6b2ba7fbd2ba51d11b1d134072556607d84237eb04ffed0f131",
+  "source_template_sha256_after": "0075c0836306d6b2ba7fbd2ba51d11b1d134072556607d84237eb04ffed0f131",
+  "generated_pptx_sha256": "1d949246ce2e7f4f7a341e84d24b3e15cb616231866a9f688a90f6836a78a242",
   "source_template_unchanged": true
 }

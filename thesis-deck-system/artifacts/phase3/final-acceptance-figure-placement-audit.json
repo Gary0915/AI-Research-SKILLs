@@ -1,0 +1,195 @@
+{
+  "audit_id": "FVCC-FIGURE-001",
+  "aggregate_status": "pass",
+  "governed_figure_placement_count": 11,
+  "governed_routes": [
+    "comparison",
+    "experiment",
+    "fishbone",
+    "mechanism",
+    "scientific_plot"
+  ],
+  "unapproved_figure_bypass_count": 0,
+  "native_plan_count": 9,
+  "fallback_count": 2,
+  "native_materialization_record_count": 9,
+  "native_mismatch_count": 0,
+  "placements": [
+    {
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "route": "fishbone",
+      "placement": "primary_visual_region",
+      "native_shape_count": 1,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "explicit_svg_fallback",
+      "fishbone_revision_ref": "FB001 rev1",
+      "source_svg_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
+      "fallback_asset_id": "FB001-REV1"
+    },
+    {
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "route": "mechanism",
+      "placement": "primary_visual_region",
+      "native_shape_count": 9,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG006",
+      "manifest_id": "SSE-FIG006-001",
+      "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+    },
+    {
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "route": "mechanism",
+      "placement": "primary_visual_region",
+      "native_shape_count": 9,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG006",
+      "manifest_id": "SSE-FIG006-001",
+      "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "route": "experiment",
+      "placement": "primary_visual_region",
+      "native_shape_count": 14,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG007",
+      "manifest_id": "SSE-FIG007-001",
+      "native_plan_sha256": "f9ace1cb0b7664ee0732ffb6cafb2bf9deb6f240697d2e460f0d23f1f51137b3"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "route": "experiment",
+      "placement": "primary_visual_region",
+      "native_shape_count": 14,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG007",
+      "manifest_id": "SSE-FIG007-001",
+      "native_plan_sha256": "f9ace1cb0b7664ee0732ffb6cafb2bf9deb6f240697d2e460f0d23f1f51137b3"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "route": "scientific_plot",
+      "placement": "primary_visual_region",
+      "native_shape_count": 7,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG001",
+      "manifest_id": "SSE-FIG001-001",
+      "native_plan_sha256": "8ad5ef43645d9da350eb8e1a2d55c6cfe34555e91b5477a870db2973d8dda062"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "route": "scientific_plot",
+      "placement": "primary_visual_region",
+      "native_shape_count": 7,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG001",
+      "manifest_id": "SSE-FIG001-001",
+      "native_plan_sha256": "8ad5ef43645d9da350eb8e1a2d55c6cfe34555e91b5477a870db2973d8dda062"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "route": "mechanism",
+      "placement": "primary_visual_region",
+      "native_shape_count": 9,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG006",
+      "manifest_id": "SSE-FIG006-001",
+      "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+    },
+    {
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "route": "fishbone",
+      "placement": "primary_visual_region",
+      "native_shape_count": 1,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "explicit_svg_fallback",
+      "fishbone_revision_ref": "FB001 rev2",
+      "source_svg_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
+      "fallback_asset_id": "FB001-REV2"
+    },
+    {
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "route": "mechanism",
+      "placement": "primary_visual_region",
+      "native_shape_count": 9,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG006",
+      "manifest_id": "SSE-FIG006-001",
+      "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+    },
+    {
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "route": "comparison",
+      "placement": "primary_visual_region",
+      "native_shape_count": 11,
+      "primary_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "binding_kind": "approved_native_plan",
+      "figure_id": "FIG008",
+      "manifest_id": "SSE-FIG008-001",
+      "native_plan_sha256": "66223e7397112ab36405eb745aea0d066174a10a26a661703b6ef0b487fd0065"
+    }
+  ]
+}

@@ -145,7 +145,23 @@ def _compile_object(element: ET.Element, index: int, view_box: tuple[float, floa
     role = element.attrib.get("data-semantic-role", "unknown")
     simple = {"g": "group", "rect": "rect", "circle": "ellipse", "ellipse": "ellipse", "line": "line", "polyline": "polyline", "polygon": "polygon", "text": "text", "tspan": "text", "marker": "marker"}
     shape_kind = simple.get(local, "svg_vector")
-    fallback = local in {"path", "image", "clipPath"} or "clip-path" in element.attrib
+    style = {key: element.attrib[key] for key in ("fill", "stroke", "stroke-width", "stroke-dasharray", "font-family", "font-size", "font-weight", "marker-start", "marker-end", "transform") if key in element.attrib}
+    # The compiler is the sole authority that may select native emission.  The
+    # assembler deliberately supports only this conservative subset; anything
+    # else is a whole-object vector fallback instead of a silent omission.
+    native_kinds = {"rect", "ellipse", "line", "text"}
+    unsupported_style = set(style) - {"fill", "stroke", "stroke-width", "font-family", "font-size", "font-weight"}
+    unsupported_paint = any(
+        value not in {"none", ""} and not (isinstance(value, str) and len(value) == 7 and value.startswith("#") and all(char in "0123456789abcdefABCDEF" for char in value[1:]))
+        for key, value in style.items() if key in {"fill", "stroke"}
+    )
+    fallback = (
+        local not in native_kinds
+        or local in {"path", "image", "clipPath"}
+        or "clip-path" in element.attrib
+        or bool(unsupported_style)
+        or unsupported_paint
+    )
     geometry = {key: _number(element.attrib, key) for key in ("x", "y", "width", "height", "cx", "cy", "r", "rx", "ry", "x1", "y1", "x2", "y2") if key in element.attrib}
     return {
         "order": index,
@@ -154,7 +170,7 @@ def _compile_object(element: ET.Element, index: int, view_box: tuple[float, floa
         "shape_kind": shape_kind,
         "geometry": geometry,
         "text": "".join(element.itertext()) if local in {"text", "tspan"} else None,
-        "style": {key: element.attrib[key] for key in ("fill", "stroke", "stroke-width", "stroke-dasharray", "font-family", "font-size", "font-weight", "marker-start", "marker-end", "transform") if key in element.attrib},
+        "style": style,
         "outcome": "SVG_VECTOR_FALLBACK" if fallback else "DRAWINGML_EMITTED",
         "fallback_reason": "unsupported_svg_subtree" if fallback else None,
         "parent_relation": None,

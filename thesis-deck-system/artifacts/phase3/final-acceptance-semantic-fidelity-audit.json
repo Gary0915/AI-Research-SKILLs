@@ -1,0 +1,1444 @@
+{
+  "audit_id": "FVCC-SEMANTIC-001",
+  "aggregate_status": "pass",
+  "visible_raw_backend_field_count": 0,
+  "corrected_result_trace_count": 3,
+  "corrected_results": [
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "result_id": "RES101",
+      "metric": {
+        "name": "mean conductivity increase",
+        "units": "%",
+        "uncertainty": 5,
+        "uncertainty_semantics": "SD",
+        "value": 24
+      },
+      "evidence_refs": [
+        "E101"
+      ],
+      "experiment_output_stage_id": "ST-EXP101",
+      "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+      "materialized_result_stage_id": "ST-RES101"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "result_id": "RES102",
+      "metric": {
+        "name": "signal CV decrease",
+        "units": "%",
+        "uncertainty": 6,
+        "uncertainty_semantics": "SD",
+        "value": 4
+      },
+      "evidence_refs": [
+        "E101",
+        "E102"
+      ],
+      "experiment_output_stage_id": "ST-EXP102",
+      "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+      "materialized_result_stage_id": "ST-RES102"
+    },
+    {
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "result_id": "RES201",
+      "metric": {
+        "name": "signal CV decrease",
+        "units": "%",
+        "uncertainty": 7,
+        "uncertainty_semantics": "SD",
+        "value": 38
+      },
+      "evidence_refs": [
+        "E201"
+      ],
+      "experiment_output_stage_id": "ST-EXP201",
+      "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+      "materialized_result_stage_id": "ST-RES201"
+    }
+  ],
+  "deduplicated_summary_field_count": 3,
+  "h003_slide_count": 0,
+  "slides": [
+    {
+      "slide_id": "FVCC-COVER-001",
+      "source_slide_spec_id": null,
+      "source_cursor": null,
+      "hypothesis_layer": null,
+      "semantic_stage": "formal_cover",
+      "canonical_archetype_id": "A01",
+      "selected_pptx_layout_id": 0,
+      "title_region": {
+        "left": 0.7,
+        "top": 0.55,
+        "width": 11.9,
+        "height": 1.1
+      },
+      "primary_visual_region": {
+        "left": 1.2,
+        "top": 2.1,
+        "width": 10.9,
+        "height": 2.6
+      },
+      "secondary_text_region": {
+        "left": 1.2,
+        "top": 5.3,
+        "width": 10.9,
+        "height": 0.7
+      },
+      "visible_presentation_fields": [
+        "Synthetic acceptance candidate",
+        "Final visual composition closure"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {},
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.0763,
+      "figure_occupancy": 0,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-PHASE2-PROGRESS-01",
+      "source_slide_spec_id": "S-PHASE2-PROGRESS-01",
+      "source_cursor": 66,
+      "hypothesis_layer": null,
+      "semantic_stage": "progress_todo",
+      "canonical_archetype_id": "A02",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 0.7,
+        "top": 1.35,
+        "width": 11.85,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 11.85,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Commitment｜NS101; NS201",
+        "Current｜H002",
+        "Parallel｜interface-mechanism; interface-mechanism"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E101",
+          "E201"
+        ],
+        "asset_refs": [],
+        "action_refs": [
+          "NS101",
+          "NS201"
+        ],
+        "decision_refs": [
+          "D101",
+          "D201"
+        ],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.5451,
+      "figure_occupancy": 0,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "source_slide_spec_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "source_cursor": 23,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "hypothesis_title",
+      "canonical_archetype_id": "A03",
+      "selected_pptx_layout_id": 2,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 0.7,
+        "top": 1.35,
+        "width": 11.85,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 11.85,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Hypothesis｜Bulk conductivity drives the positional signal gradient.",
+        "Falsifier｜Matched conditions do not change the predicted CV or resistance.",
+        "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002",
+          "E102"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.5451,
+      "figure_occupancy": 0,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "source_slide_spec_id": "S-H001-PROBLEM-DEFINITION-02",
+      "source_cursor": 23,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "problem_definition",
+      "canonical_archetype_id": "A04",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 0.7,
+        "top": 1.35,
+        "width": 11.85,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 11.85,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Prior｜含水量與導電度存在位置梯度",
+        "Conflict｜導電度提高是否足以修復重複性仍未知。",
+        "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.5451,
+      "figure_occupancy": 0,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "source_slide_spec_id": "S-H001-FISHBONE-LOCATOR-03",
+      "source_cursor": 23,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "fishbone_locator",
+      "canonical_archetype_id": "A12",
+      "selected_pptx_layout_id": 6,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "History｜FB001 rev1",
+        "Focus｜FB-MATERIAL-HYDRATION"
+      ],
+      "notes_only_fields": [
+        "primary_figure"
+      ],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E103"
+        ],
+        "asset_refs": [
+          "A101"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "fishbone",
+        "placement": "primary_visual_region",
+        "binding_kind": "explicit_svg_fallback",
+        "fishbone_revision_ref": "FB001 rev1",
+        "source_svg_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
+        "preview_png_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+        "fallback_asset_id": "FB001-REV1"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.358875,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "source_slide_spec_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "source_cursor": 23,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "observation_problem",
+      "canonical_archetype_id": "A05",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Question｜提升 bulk conductivity 是否足以降低位置依賴的訊號變異？",
+        "Observation｜位置依賴缺陷與訊號變異已觀察到。"
+      ],
+      "notes_only_fields": [
+        "primary_figure"
+      ],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002",
+          "E102"
+        ],
+        "asset_refs": [
+          "A002"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "mechanism",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG006",
+        "manifest_id": "SSE-FIG006-001",
+        "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.407958,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "source_slide_spec_id": "S-H001-LITERATURE-MECHANISM-05",
+      "source_cursor": 23,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "literature_mechanism",
+      "canonical_archetype_id": "A06",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Consensus｜transport gradient 可產生位置效應。",
+        "Alternatives｜interface contact remains alternative",
+        "Gap｜缺少控制比較隔離機制。",
+        "Implication｜需匹配條件後比較。",
+        "Mechanism｜bulk transport",
+        "Evidence｜C102; C103; E103"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E103"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "mechanism",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG006",
+        "manifest_id": "SSE-FIG006-001",
+        "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.407958,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "source_slide_spec_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "source_cursor": 23,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "experiment_design",
+      "canonical_archetype_id": "A09",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "IV｜含水量",
+        "Controls｜電極幾何; 接觸壓力",
+        "Baseline｜原始配方",
+        "Sample｜replicates: 3; samples: 15",
+        "N｜3",
+        "Outputs｜導電度 (mS/cm)",
+        "Units｜導電度 (mS/cm)",
+        "Method｜synthetic-four-probe",
+        "Prediction｜導電度提升",
+        "Rule｜go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "experiment",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG007",
+        "manifest_id": "SSE-FIG007-001",
+        "native_plan_sha256": "f9ace1cb0b7664ee0732ffb6cafb2bf9deb6f240697d2e460f0d23f1f51137b3"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.438922,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "source_slide_spec_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "source_cursor": 23,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "experiment_design",
+      "canonical_archetype_id": "A09",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "IV｜位置",
+        "Controls｜配方; 電極; 接觸壓力",
+        "Baseline｜原始位置分布",
+        "Sample｜replicates: 3; samples: 15",
+        "N｜3",
+        "Outputs｜訊號 CV (%)",
+        "Units｜訊號 CV (%)",
+        "Method｜synthetic-signal-test",
+        "Prediction｜CV 下降",
+        "Rule｜go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002",
+          "E102"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "experiment",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG007",
+        "manifest_id": "SSE-FIG007-001",
+        "native_plan_sha256": "f9ace1cb0b7664ee0732ffb6cafb2bf9deb6f240697d2e460f0d23f1f51137b3"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.438922,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "source_slide_spec_id": "S-H001-RESULT-SINGLE-08",
+      "source_cursor": 28,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "result_single",
+      "canonical_archetype_id": "A10",
+      "selected_pptx_layout_id": 4,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "平均導電度增加 24% ± 5% SD",
+        "mean conductivity increase: 24 ± 5 SD (%)"
+      ],
+      "notes_only_fields": [
+        "metric_object",
+        "result_annotation",
+        "result_id",
+        "result_plot",
+        "source_result_object"
+      ],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E101"
+        ],
+        "asset_refs": [
+          "A001"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "scientific_plot",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG001",
+        "manifest_id": "SSE-FIG001-001",
+        "native_plan_sha256": "8ad5ef43645d9da350eb8e1a2d55c6cfe34555e91b5477a870db2973d8dda062"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.362437,
+      "result_trace": {
+        "result_id": "RES101",
+        "evidence_refs": [
+          "E101"
+        ],
+        "experiment_output_stage_id": "ST-EXP101",
+        "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+        "materialized_result_stage_id": "ST-RES101",
+        "source_slide_spec_id": "S-H001-RESULT-SINGLE-08",
+        "presentation_fields": [
+          "平均導電度增加 24% ± 5% SD",
+          "mean conductivity increase: 24 ± 5 SD (%)"
+        ]
+      }
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "source_slide_spec_id": "S-H001-RESULT-SINGLE-09",
+      "source_cursor": 28,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "result_single",
+      "canonical_archetype_id": "A10",
+      "selected_pptx_layout_id": 4,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+        "signal CV decrease: 4 ± 6 SD (%)"
+      ],
+      "notes_only_fields": [
+        "metric_object",
+        "result_annotation",
+        "result_id",
+        "result_plot",
+        "source_result_object"
+      ],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E101"
+        ],
+        "asset_refs": [
+          "A001"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "scientific_plot",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG001",
+        "manifest_id": "SSE-FIG001-001",
+        "native_plan_sha256": "8ad5ef43645d9da350eb8e1a2d55c6cfe34555e91b5477a870db2973d8dda062"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.362437,
+      "result_trace": {
+        "result_id": "RES102",
+        "evidence_refs": [
+          "E101",
+          "E102"
+        ],
+        "experiment_output_stage_id": "ST-EXP102",
+        "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+        "materialized_result_stage_id": "ST-RES102",
+        "source_slide_spec_id": "S-H001-RESULT-SINGLE-09",
+        "presentation_fields": [
+          "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
+          "signal CV decrease: 4 ± 6 SD (%)"
+        ]
+      }
+    },
+    {
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "source_slide_spec_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "source_cursor": 30,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "layer_integrated_discussion",
+      "canonical_archetype_id": "A14",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 0.7,
+        "top": 1.35,
+        "width": 11.85,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 11.85,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Support｜RES101",
+        "Conflict｜RES102",
+        "Pattern｜導電度提升成立，但重複性沒有同步改善。",
+        "Mechanism｜bulk conductivity 是部分機制，不足以解釋 interface-sensitive variation。",
+        "Alternatives｜接觸電阻; 局部壓力差; 電極幾何",
+        "Uncertainty｜contact interface 是否為主導因素仍需匹配導電度後檢驗。"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E101",
+          "E102",
+          "E103"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [
+        {
+          "source_field": "Non-disc.",
+          "decision": "suppressed_empty"
+        }
+      ],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.5451,
+      "figure_occupancy": 0,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "source_slide_spec_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "source_cursor": 32,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "layer_summary_decision",
+      "canonical_archetype_id": "A16",
+      "selected_pptx_layout_id": 2,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 0.7,
+        "top": 1.35,
+        "width": 11.85,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 11.85,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Answer｜bulk conductivity 影響缺陷梯度，但不足以單獨解釋重複性。",
+        "Status｜partial_support",
+        "Decision｜Partial-Go; Bulk conductivity is contributory but insufficient.",
+        "Unresolved｜interface contact 的貢獻尚未量化。",
+        "Next question｜匹配 bulk conductivity 後，contact resistance 是否主導變異？",
+        "Next step｜NS101"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E101"
+        ],
+        "asset_refs": [],
+        "action_refs": [
+          "NS101"
+        ],
+        "decision_refs": [
+          "D101"
+        ],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.5451,
+      "figure_occupancy": 0,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "source_slide_spec_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "source_cursor": 39,
+      "hypothesis_layer": "H001",
+      "semantic_stage": "hypothesis_transition",
+      "canonical_archetype_id": "A17",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Prior H｜C101",
+        "Key results｜RES101; RES102",
+        "Precursor｜E104",
+        "New H｜C201",
+        "Unresolved｜導電度增加後訊號重複性沒有改善。",
+        "Rationale｜剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E104",
+          "E101"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [
+          "D101"
+        ],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "mechanism",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG006",
+        "manifest_id": "SSE-FIG006-001",
+        "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.407958,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "source_slide_spec_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "source_cursor": 51,
+      "hypothesis_layer": "H002",
+      "semantic_stage": "hypothesis_title",
+      "canonical_archetype_id": "A03",
+      "selected_pptx_layout_id": 2,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 0.7,
+        "top": 1.35,
+        "width": 11.85,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 11.85,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Hypothesis｜Contact resistance drives instability at low pressure.",
+        "Falsifier｜Matched conditions do not change the predicted CV or resistance.",
+        "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.5451,
+      "figure_occupancy": 0,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "source_slide_spec_id": "S-H002-PROBLEM-DEFINITION-02",
+      "source_cursor": 51,
+      "hypothesis_layer": "H002",
+      "semantic_stage": "problem_definition",
+      "canonical_archetype_id": "A04",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 0.7,
+        "top": 1.35,
+        "width": 11.85,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 11.85,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Prior｜H01 支持導電度梯度存在; H01 未支持導電度單獨主導重複性",
+        "Conflict｜bulk transport 與 interface contact 的相對貢獻尚未區分。",
+        "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.5451,
+      "figure_occupancy": 0,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "source_slide_spec_id": "S-H002-FISHBONE-LOCATOR-03",
+      "source_cursor": 51,
+      "hypothesis_layer": "H002",
+      "semantic_stage": "fishbone_locator",
+      "canonical_archetype_id": "A12",
+      "selected_pptx_layout_id": 6,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "History｜FB001 rev2",
+        "Focus｜FB-ELECTRODE-CONTACT"
+      ],
+      "notes_only_fields": [
+        "primary_figure"
+      ],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204"
+        ],
+        "asset_refs": [
+          "A102"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "fishbone",
+        "placement": "primary_visual_region",
+        "binding_kind": "explicit_svg_fallback",
+        "fishbone_revision_ref": "FB001 rev2",
+        "source_svg_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
+        "preview_png_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+        "fallback_asset_id": "FB001-REV2"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.358875,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "source_slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "source_cursor": 51,
+      "hypothesis_layer": "H002",
+      "semantic_stage": "observation_problem",
+      "canonical_archetype_id": "A05",
+      "selected_pptx_layout_id": 3,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Question｜低接觸壓力下，contact resistance 是否主導訊號不穩定？",
+        "Observation｜位置依賴缺陷與訊號變異已觀察到。",
+        "Consensus｜transport gradient 可產生位置效應。",
+        "Alternatives｜interface contact remains alternative",
+        "Gap｜缺少控制比較隔離機制。",
+        "Implication｜需匹配條件後比較。",
+        "Mechanism｜contact resistance",
+        "Evidence｜C202; C203; E202",
+        "Strategy｜匹配導電度並改變接觸壓力",
+        "Criterion｜預測指標跨過 decision threshold"
+      ],
+      "notes_only_fields": [
+        "primary_figure"
+      ],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E202"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "mechanism",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG006",
+        "manifest_id": "SSE-FIG006-001",
+        "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.407958,
+      "result_trace": null
+    },
+    {
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "source_slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "source_cursor": 57,
+      "hypothesis_layer": "H002",
+      "semantic_stage": "result_comparison",
+      "canonical_archetype_id": "A11",
+      "selected_pptx_layout_id": 4,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 5.2,
+        "top": 1.35,
+        "width": 7.25,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 4.15,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+        "signal CV decrease: 38 ± 7 SD (%)",
+        "contact resistance: 同步下降"
+      ],
+      "notes_only_fields": [
+        "metric_object",
+        "result_annotation",
+        "result_id",
+        "result_plot",
+        "source_result_object"
+      ],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E201"
+        ],
+        "asset_refs": [
+          "A201"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [],
+      "governed_figure_binding": {
+        "route": "comparison",
+        "placement": "primary_visual_region",
+        "figure_id": "FIG008",
+        "manifest_id": "SSE-FIG008-001",
+        "native_plan_sha256": "66223e7397112ab36405eb745aea0d066174a10a26a661703b6ef0b487fd0065"
+      },
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.1909,
+      "figure_occupancy": 0.564689,
+      "result_trace": {
+        "result_id": "RES201",
+        "evidence_refs": [
+          "E201"
+        ],
+        "experiment_output_stage_id": "ST-EXP201",
+        "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+        "materialized_result_stage_id": "ST-RES201",
+        "source_slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+        "presentation_fields": [
+          "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
+          "signal CV decrease: 38 ± 7 SD (%)",
+          "contact resistance: 同步下降"
+        ]
+      }
+    },
+    {
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "source_slide_spec_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "source_cursor": 65,
+      "hypothesis_layer": "H002",
+      "semantic_stage": "layer_summary_decision",
+      "canonical_archetype_id": "A16",
+      "selected_pptx_layout_id": 2,
+      "title_region": {
+        "left": 0.55,
+        "top": 0.22,
+        "width": 12.15,
+        "height": 0.75
+      },
+      "primary_visual_region": {
+        "left": 0.7,
+        "top": 1.35,
+        "width": 11.85,
+        "height": 4.95
+      },
+      "secondary_text_region": {
+        "left": 0.7,
+        "top": 1.45,
+        "width": 11.85,
+        "height": 4.6
+      },
+      "visible_presentation_fields": [
+        "Support｜RES201",
+        "Cross-experiment pattern｜匹配導電度後，提高接觸壓力明顯降低變異。",
+        "Mechanism assessment｜contact resistance 在低壓條件下主導不穩定。",
+        "Alternatives｜電極幾何仍可能調節壓力分布",
+        "Uncertainty｜高壓長期循環是否造成新的 wear mechanism 尚未知。",
+        "Unresolved｜高壓循環的耐久性與 wear 尚未測試。",
+        "Answer｜低接觸壓力下 contact resistance 是主導不穩定來源。",
+        "Status｜supported",
+        "Decision｜Go; Contact-pressure control discriminates the interface mechanism.",
+        "Next question｜接觸壓力改善能否在長期循環下維持？",
+        "Next step｜NS201"
+      ],
+      "notes_only_fields": [],
+      "notes_only_provenance": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E201"
+        ],
+        "asset_refs": [],
+        "action_refs": [
+          "NS201"
+        ],
+        "decision_refs": [
+          "D201"
+        ],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "deduplicated_or_suppressed_fields": [
+        {
+          "source_field": "Conflict",
+          "decision": "suppressed_empty"
+        },
+        {
+          "source_field": "Non-disc.",
+          "decision": "suppressed_empty"
+        },
+        {
+          "source_field": "Pattern",
+          "decision": "suppressed_alias_duplicate",
+          "visible_field": "Cross-experiment pattern｜匹配導電度後，提高接觸壓力明顯降低變異。"
+        },
+        {
+          "source_field": "Mechanism",
+          "decision": "suppressed_alias_duplicate",
+          "visible_field": "Mechanism assessment｜contact resistance 在低壓條件下主導不穩定。"
+        },
+        {
+          "source_field": "Alternatives",
+          "decision": "suppressed_alias_duplicate",
+          "visible_field": "Alternatives｜電極幾何仍可能調節壓力分布"
+        }
+      ],
+      "governed_figure_binding": null,
+      "safe_bounds_status": "pass",
+      "text_occupancy": 0.5451,
+      "figure_occupancy": 0,
+      "result_trace": null
+    }
+  ]
+}

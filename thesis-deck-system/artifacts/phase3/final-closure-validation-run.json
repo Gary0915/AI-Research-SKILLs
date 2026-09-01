@@ -1,0 +1,14 @@
+{
+  "run_id": "3065d41546c37449",
+  "tier": "T3-definitive-full-regression",
+  "command": ["python", "-m", "pytest", "packages/thesis-deck-system/tests", "-q"],
+  "head": "99fcc44af5111834e8732b288f098b476aebbdb1",
+  "candidate_hash_pre": "8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d",
+  "candidate_hash_post": "8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d",
+  "started_at": "2026-09-01T05:10:35.058698+00:00",
+  "ended_at": "2026-09-01T05:15:49.069943+00:00",
+  "stdout_path": "local-only-durable-evidence/3065d41546c37449.stdout.log",
+  "stderr_path": "local-only-durable-evidence/3065d41546c37449.stderr.log",
+  "exit_code": 0,
+  "completion_status": "completed"
+}

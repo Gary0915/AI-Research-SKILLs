@@ -1,0 +1,292 @@
+{
+  "release_id": "FVCC-RELEASE-001",
+  "candidate_state": {
+    "candidate_id": "FVCC-CANDIDATE-001",
+    "component_count": 28,
+    "component_hashes": {
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py": "a579a20e4a43703e2b0084f62d33c4dda3d73511abdad7d1cde57a4b5a2ebba2",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase2_build.py": "14bf7b61525e8e32d94dccd8ee543f4b950e30100d305fae516fe023a0198258",
+      "packages/thesis-deck-system/src/thesis_deck_system/story.py": "301ca8a34f6884a76100a57013e93309edc475b25d0324391cc8c43f6818419f",
+      "packages/thesis-deck-system/src/thesis_deck_system/pptx.py": "09f7517ca0dd1393a4bab82f0d9835c1f2d36f542be24b6fc94feba2651c5be9",
+      "packages/thesis-deck-system/src/thesis_deck_system/template.py": "bfa8092a881429ec282542c418d2557f47a50c8632bba9bf6afae8f9b7d234ed",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5bcd_integrated.py": "dc8cb0d7c447446544f50ded86739d86d3864524737e2a05a037d6c77b1d7ec1",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5efg_integrated.py": "0664e60509d2149521926478d7b237e53d9ffacfb8626fc278c335e3f565d8b2",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py": "de3542861c9d52a6cbc83fe77ce018b23aa094745a26186e38e6acb6b623586d",
+      "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py": "7e214ca6186ff61b4e9eeac17a5ee77cf266ec19f205ea77236ca26a93cee48e",
+      "packages/thesis-deck-system/src/thesis_deck_system/contracts.py": "6c8f13fe6613962f8f8d50cc5c3884a9aa9897f34f1677202a2cbc902291036c",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py": "7664531a8f21d4b00c70a23096a95c83e0aed889cc73c2fde9d7ed09c6f44a20",
+      "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py": "030d6161007897e911b18783b8b10d52a48eda75d2b085e04a0898d3e406b45b",
+      "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py": "b77622256ddeb735b2779deb69135fea9cb298550e870430f76e269f987cf6e0",
+      "packages/thesis-deck-system/pyproject.toml": "0f323606b1699067f99abc6e587c0a08875d89dc33b298a77abe30ae4e0d94c3",
+      "thesis-deck-system/TASK_PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE.md": "20f7fa9143e96e7f83d92846f34dde847d041723123b49bd9b48ac5f659b9954",
+      "thesis-deck-system/designs/PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE_DESIGN.md": "d2cc09a4a11bea69d137958874889c26672a5aeeeb7e334754efcff5a077a4ff",
+      "thesis-deck-system/artifacts/phase2/slide-specs.json": "650bd79127689733efc7449c8484ff50ed0e643b881347b290d1909b6caad7b7",
+      "thesis-deck-system/artifacts/phase2/materialized-h02.json": "2d64f6323fc60c1eff5f7a73c9d58f61e73e224568d712c16dce058b36798273",
+      "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+      "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+      "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+      "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+      "thesis-deck-system/artifacts/phase3/approved-figures.json": "7e45a1887989cb5966c90b670916b8acad18fa656fdffcbde86cde799e208117",
+      "thesis-deck-system/artifacts/phase3/visual-style-profile.json": "6861b4f33a9f7287a6872e8004d32290fa64dba90c7225a32d1a7d90eae5a1b2",
+      "thesis-deck-system/schemas/generated-pptx-attestation.schema.json": "5f8ecdb0ef3adfad63e43f5c90a7734980f6a9732c5857476caeea87452454e1",
+      "thesis-deck-system/schemas/native-materialization-parity.schema.json": "39c6c9748407ffc33e2b3052ecbf6a05be5b2e3408a48906ee5fc63fccf7d1f3",
+      "thesis-deck-system/schemas/final-closure-validation-run.schema.json": "84f93874b63088cb7126b31db1f537f0b8967828b306dbc12aaf9c433ef6f9ab",
+      "thesis-deck-system/schemas/final-closure-reliability-qa.schema.json": "631e2462b7a29b82fc4a96e0442f0ca9a34c7a5595a64f1a6de918cbf26afd18"
+    },
+    "candidate_state_sha256": "8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d"
+  },
+  "gates": [
+    {
+      "gate_id": "RG-01",
+      "dimension": "story_mapping",
+      "status": "pass",
+      "facts": {
+        "slide_count": 20,
+        "h003_slide_count": 0
+      },
+      "facts_sha256": "291620bd6c394d2b01d5d17d7352fd26ab507104ae15bf06e43513b1a1542003"
+    },
+    {
+      "gate_id": "RG-02",
+      "dimension": "result_source_fidelity",
+      "status": "pass",
+      "facts": {
+        "corrected_results": [
+          {
+            "slide_id": "S-H001-RESULT-SINGLE-08",
+            "result_id": "RES101",
+            "metric": {
+              "name": "mean conductivity increase",
+              "units": "%",
+              "uncertainty": 5,
+              "uncertainty_semantics": "SD",
+              "value": 24
+            },
+            "evidence_refs": [
+              "E101"
+            ],
+            "experiment_output_stage_id": "ST-EXP101",
+            "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+            "materialized_result_stage_id": "ST-RES101"
+          },
+          {
+            "slide_id": "S-H001-RESULT-SINGLE-09",
+            "result_id": "RES102",
+            "metric": {
+              "name": "signal CV decrease",
+              "units": "%",
+              "uncertainty": 6,
+              "uncertainty_semantics": "SD",
+              "value": 4
+            },
+            "evidence_refs": [
+              "E101",
+              "E102"
+            ],
+            "experiment_output_stage_id": "ST-EXP102",
+            "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+            "materialized_result_stage_id": "ST-RES102"
+          },
+          {
+            "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+            "result_id": "RES201",
+            "metric": {
+              "name": "signal CV decrease",
+              "units": "%",
+              "uncertainty": 7,
+              "uncertainty_semantics": "SD",
+              "value": 38
+            },
+            "evidence_refs": [
+              "E201"
+            ],
+            "experiment_output_stage_id": "ST-EXP201",
+            "materialized_result_artifact": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+            "materialized_result_stage_id": "ST-RES201"
+          }
+        ],
+        "trace_ok": true
+      },
+      "facts_sha256": "644f009415aa46fdc14e74fd492207efa0a52dddf5bc03180cd25b27fc020bec"
+    },
+    {
+      "gate_id": "RG-03",
+      "dimension": "layout_archetype_composition",
+      "status": "pass",
+      "facts": {
+        "layout_variant_count": 5,
+        "overflow_or_clipping_count": 0
+      },
+      "facts_sha256": "47f0a06bfe56d7069df4d952511bc1c282e5c53b206cec3b5be32c82ade52227"
+    },
+    {
+      "gate_id": "RG-04",
+      "dimension": "governed_figure_placement",
+      "status": "pass",
+      "facts": {
+        "placement_count": 11,
+        "native_plan_count": 9,
+        "fallback_count": 2
+      },
+      "facts_sha256": "c150190ab636d6ef822f651839d2635bb4f72ab2b469dbbde0603c0ff593c945"
+    },
+    {
+      "gate_id": "RG-05",
+      "dimension": "pptx_package_structural",
+      "status": "pass",
+      "facts": {
+        "slide_count": 20,
+        "orphan_part_count": 0,
+        "audit_template_comparison_available": false
+      },
+      "facts_sha256": "22809736fe1ea5071bb8a160cae16fde47a26601303f8f3281bb2795a8532934"
+    },
+    {
+      "gate_id": "RG-06",
+      "dimension": "fresh_template_lineage",
+      "status": "pass",
+      "facts": {
+        "lineage_id": "FVCC-FRESH-TEMPLATE-001",
+        "construction": "fresh_python_pptx_template",
+        "template_sha256_before": "7d832d3d4ff5824d34e2fd0220ffeabc3ee5ca1673e37c9cd735608ae48e85d2",
+        "template_sha256_after": "7d832d3d4ff5824d34e2fd0220ffeabc3ee5ca1673e37c9cd735608ae48e85d2",
+        "template_unchanged": true,
+        "private_or_historical_binary_inputs": [],
+        "fresh_sanitized_base_template_status": "pass",
+        "professor_shell_tokens_consumed_status": "partial_structural",
+        "physical_professor_template_reconstruction_status": "insufficient_evidence"
+      },
+      "facts_sha256": "ecdbc15413181bb31a18908a30c25514f1b03ef8d8c9807c2de1932dc8f53a72"
+    },
+    {
+      "gate_id": "RG-07",
+      "dimension": "corrected_result_projection",
+      "status": "pass",
+      "facts": {
+        "corrected_result_trace_count": 3
+      },
+      "facts_sha256": "6a1a02239d9bf3e228994ac6605119324485e63c5225fb98a6146985e67a3066"
+    },
+    {
+      "gate_id": "RG-08",
+      "dimension": "alias_deduplication",
+      "status": "pass",
+      "facts": {
+        "deduplicated_summary_field_count": 3
+      },
+      "facts_sha256": "d48c1d31edb76d33f532e14f229bf913e4e5fc6af3995af27267cd6f461e8141"
+    },
+    {
+      "gate_id": "RG-09",
+      "dimension": "visible_backend_field_suppression",
+      "status": "pass",
+      "facts": {
+        "visible_raw_backend_field_count": 0
+      },
+      "facts_sha256": "275d5662d46adbadf7e14aa82c1736aee79ec1dbd04e5bcd457525ade7104d50"
+    },
+    {
+      "gate_id": "RG-10",
+      "dimension": "render_visual_status",
+      "status": "blocked_environment",
+      "facts": {
+        "rendered_slide_count": 0,
+        "evidence": {
+          "status": "blocked_environment",
+          "rendered_slide_count": 0,
+          "reason": "approved renderer unavailable; no substitute installed"
+        }
+      },
+      "facts_sha256": "d6678b6d8da806543d0b661394172d70ed255309e4c7e79befd55b6cc9c02fe7"
+    },
+    {
+      "gate_id": "RG-11",
+      "dimension": "professor_structural_fidelity",
+      "status": "insufficient_evidence",
+      "facts": {
+        "private_render_comparison": "not_authorized",
+        "composition_audits_pass": true
+      },
+      "facts_sha256": "9d4c44e63acf31019a66f32f4b9662402453374d1cd2a33127fbfa715ac31ff2"
+    },
+    {
+      "gate_id": "RG-12",
+      "dimension": "qualitative_visual_review",
+      "status": "blocked_visual_review",
+      "facts": {
+        "reviewed_slide_count": 0,
+        "reason": "no authorized image-capable professor review"
+      },
+      "facts_sha256": "16820e670dcc6847ed8816c62c05f7dbbb58b53826bad2f3ae55fbdc7ff41ddf"
+    },
+    {
+      "gate_id": "RG-13",
+      "dimension": "native_powerpoint_acceptance",
+      "status": "blocked_environment",
+      "facts": {
+        "open_save_reopen_attempts": 0
+      },
+      "facts_sha256": "df473a508457a22e8739e57f092c650b44ecee7af18a3c13a838b750473ab77f"
+    },
+    {
+      "gate_id": "RG-14",
+      "dimension": "privacy",
+      "status": "pass",
+      "facts": {
+        "privacy_evidence": {
+          "aggregate_status": "pass",
+          "scanner_id": "RepositoryPrivacyScanner",
+          "scanner_version": "CP3-REPOSITORY-STAGED-V1",
+          "configuration_hash": "7b07581871cd16915e27ab5172fa8dab98d1e767b4393e9851a20fa995a14562",
+          "configuration_source": "caller_supplied_ephemeral_dictionary",
+          "private_root_signature_count": 1,
+          "forbidden_basename_count": 3,
+          "repository_findings": 0,
+          "staged_findings": 0,
+          "raw_staged_pptx_candidate_count": 5,
+          "attested_generated_pptx_count": 5,
+          "unattested_pptx_count": 0,
+          "unexcepted_final_finding_count": 0,
+          "approved_legacy_exceptions": 1,
+          "repository_scan_executed": true,
+          "staged_scan_executed": true,
+          "private_alias_resolution_attempts": 0,
+          "private_source_open_attempts": 0,
+          "private_render_attempts": 0
+        },
+        "approved_historical_exception_count": 1
+      },
+      "facts_sha256": "e6c23d04172ad32f2d5c49db9ea1414f0948b5c5bdc9c1baf5e89d46d2876d28"
+    },
+    {
+      "gate_id": "RG-15",
+      "dimension": "production_release_status",
+      "status": "blocked",
+      "facts": {
+        "non_pass_gate_ids": [
+          "RG-10",
+          "RG-11",
+          "RG-12",
+          "RG-13"
+        ]
+      },
+      "facts_sha256": "8110371b4025c7ff4bee5a12a64534a8ab67ad7fe7db2a9600e8de67630059f9"
+    },
+    {
+      "gate_id": "RG-16",
+      "dimension": "production_group_meeting_ready",
+      "status": "false",
+      "facts": {
+        "production_release_status": "blocked",
+        "external_review_complete": false
+      },
+      "facts_sha256": "df638294d48728cd5cc2bfe3169415a464b76863668f163b34a0a95b2ca63e32"
+    }
+  ],
+  "acceptance_deck_build_status": "pass",
+  "production_release_status": "blocked",
+  "production_group_meeting_ready": false,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0
+}

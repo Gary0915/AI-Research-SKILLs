@@ -1047,16 +1047,16 @@
     "content": {
       "slots": {
         "result_plot": "Figure｜RES101｜平均導電度增加 24% ± 5% SD",
-        "result_annotation": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+        "result_annotation": "ID｜RES101\nResult｜平均導電度增加 24% ± 5% SD\nMetric｜mean conductivity increase: 24% ± 5% SD"
       },
       "semantic_fields": {
         "result_single": {
           "result_identity": "RES101",
           "result_statement": "平均導電度增加 24% ± 5% SD",
-          "metric_value_uncertainty": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+          "metric_value_uncertainty": "mean conductivity increase: 24% ± 5% SD"
         }
       },
-      "body": "RES101｜平均導電度增加 24% ± 5% SD\nMetrics｜[{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}]"
+      "body": "RES101｜平均導電度增加 24% ± 5% SD\nMetrics｜mean conductivity increase: 24% ± 5% SD"
     },
     "slot_compositions": {
       "result_plot": "asset_with_annotation",
@@ -1166,16 +1166,16 @@
     "content": {
       "slots": {
         "result_plot": "Figure｜RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
-        "result_annotation": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}"
+        "result_annotation": "ID｜RES102\nResult｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetric｜signal CV decrease: 4% ± 6% SD"
       },
       "semantic_fields": {
         "result_single": {
           "result_identity": "RES102",
           "result_statement": "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go",
-          "metric_value_uncertainty": "{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}"
+          "metric_value_uncertainty": "signal CV decrease: 4% ± 6% SD"
         }
       },
-      "body": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetrics｜[{'name': 'CV', 'value': 4, 'uncertainty': 5, 'units': '%'}]"
+      "body": "RES102｜訊號 CV 僅下降 4% ± 6% SD，屬 No-Go\nMetrics｜signal CV decrease: 4% ± 6% SD"
     },
     "slot_compositions": {
       "result_plot": "asset_with_annotation",
@@ -2201,7 +2201,7 @@
         "experiment_matrix": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
         "decision_rule": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
         "result_plot": "Figure｜RES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
-        "result_annotation": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+        "result_annotation": "ID｜RES201\nResult｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetric｜signal CV decrease: 38% ± 7% SD"
       },
       "semantic_fields": {
         "experiment_design": {
@@ -2219,10 +2219,10 @@
         "result_single": {
           "result_identity": "RES201",
           "result_statement": "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降",
-          "metric_value_uncertainty": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+          "metric_value_uncertainty": "signal CV decrease: 38% ± 7% SD"
         }
       },
-      "body": "EXP201｜\nMetrics｜\nRES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetrics｜[{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}]"
+      "body": "EXP201｜\nMetrics｜\nRES201｜高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降\nMetrics｜signal CV decrease: 38% ± 7% SD"
     },
     "slot_compositions": {
       "experiment_matrix": "text_only",
@@ -3182,7 +3182,7 @@
         "experiment_matrix": "IV｜contact pressure\nControls｜bulk conductivity; 電極幾何\nBaseline｜low-pressure control\nSample｜replicates: 5; samples: 15\nN｜5\nOutputs｜訊號 CV (%); contact resistance (ohm)\nUnits｜訊號 CV (%); contact resistance (ohm)\nMethod｜synthetic-pressure-fixture",
         "decision_rule": "Prediction｜CV and resistance decrease\nRule｜go: both metrics improve; partial_go: one metric improves; no_go: neither improves",
         "result_plot": "Figure｜RES301｜Cycling test retains 91% response after 100 cycles.",
-        "result_annotation": "ID｜RES301\nResult｜Cycling test retains 91% response after 100 cycles.\nMetric｜{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+        "result_annotation": "ID｜RES301\nResult｜Cycling test retains 91% response after 100 cycles.\nMetric｜signal CV decrease: 38% ± 7% SD"
       },
       "semantic_fields": {
         "experiment_design": {
@@ -3200,10 +3200,10 @@
         "result_single": {
           "result_identity": "RES301",
           "result_statement": "Cycling test retains 91% response after 100 cycles.",
-          "metric_value_uncertainty": "{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}"
+          "metric_value_uncertainty": "signal CV decrease: 38% ± 7% SD"
         }
       },
-      "body": "EXP301｜\nMetrics｜\nRES301｜Cycling test retains 91% response after 100 cycles.\nMetrics｜[{'name': 'CV', 'value': 24, 'uncertainty': 5, 'units': '%'}]"
+      "body": "EXP301｜\nMetrics｜\nRES301｜Cycling test retains 91% response after 100 cycles.\nMetrics｜signal CV decrease: 38% ± 7% SD"
     },
     "slot_compositions": {
       "experiment_matrix": "text_only",

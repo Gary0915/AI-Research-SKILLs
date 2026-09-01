@@ -123,7 +123,5 @@
     "native_powerpoint_status": "blocked_environment",
     "private_fixture_status": "blocked_fixture"
   },
-  "mismatches": {},
-  "report_path": "thesis-deck-system/reports/PHASE_2_IMPLEMENTATION_REPORT.md",
-  "report_sha256": "585c081e9e4e07ced8dffe26ffff6f3b02ff604eddc6da8bc5daf469b7ac855e"
+  "mismatches": {}
 }

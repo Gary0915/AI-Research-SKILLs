@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/final-closure-validation-run.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "tier", "command", "head", "candidate_hash_pre", "candidate_hash_post", "started_at", "ended_at", "stdout_path", "stderr_path", "exit_code", "completion_status"],
+  "properties": {
+    "run_id": {"type": "string", "pattern": "^[a-f0-9]{16}$"},
+    "tier": {"enum": ["T0-preflight", "T1-targeted", "T2-focused-closure", "T3-definitive-full-regression"]},
+    "command": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 512}},
+    "head": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "candidate_hash_pre": {"$ref": "#/$defs/hash"},
+    "candidate_hash_post": {"$ref": "#/$defs/hash"},
+    "started_at": {"type": "string", "format": "date-time"},
+    "ended_at": {"type": "string", "format": "date-time"},
+    "stdout_path": {"type": "string", "minLength": 1},
+    "stderr_path": {"type": "string", "minLength": 1},
+    "exit_code": {"type": "integer"},
+    "completion_status": {"const": "completed"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

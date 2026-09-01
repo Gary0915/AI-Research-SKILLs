@@ -23,7 +23,7 @@
       "ordinal": 1,
       "slide_id": "S-PHASE2-PROGRESS-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 3
@@ -71,7 +71,7 @@
       "ordinal": 2,
       "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -109,7 +109,7 @@
       "ordinal": 3,
       "slide_id": "S-H001-PROBLEM-DEFINITION-02",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -146,7 +146,7 @@
       "ordinal": 4,
       "slide_id": "S-H001-FISHBONE-LOCATOR-03",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -185,7 +185,7 @@
       "ordinal": 5,
       "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -225,7 +225,7 @@
       "ordinal": 6,
       "slide_id": "S-H001-LITERATURE-MECHANISM-05",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -262,7 +262,7 @@
       "ordinal": 7,
       "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -299,7 +299,7 @@
       "ordinal": 8,
       "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 1
@@ -337,7 +337,7 @@
       "ordinal": 9,
       "slide_id": "S-H001-RESULT-SINGLE-08",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 2
@@ -376,7 +376,7 @@
       "ordinal": 10,
       "slide_id": "S-H001-RESULT-SINGLE-09",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 2
@@ -415,7 +415,7 @@
       "ordinal": 11,
       "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 2
@@ -454,7 +454,7 @@
       "ordinal": 12,
       "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 2
@@ -495,7 +495,7 @@
       "ordinal": 13,
       "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B101",
         "revision": 3
@@ -535,7 +535,7 @@
       "ordinal": 14,
       "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -572,7 +572,7 @@
       "ordinal": 15,
       "slide_id": "S-H002-PROBLEM-DEFINITION-02",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -609,7 +609,7 @@
       "ordinal": 16,
       "slide_id": "S-H002-FISHBONE-LOCATOR-03",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -648,7 +648,7 @@
       "ordinal": 17,
       "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B201",
         "revision": 1
@@ -686,7 +686,7 @@
       "ordinal": 18,
       "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B201",
         "revision": 3
@@ -726,7 +726,7 @@
       "ordinal": 19,
       "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
       "slide_spec_path": "slide-specs.json",
-      "slide_spec_sha256": "f42dc5ed8bc6d5409e3e02620a0170002b97bcb46fb103ad630acb32f1c6e1d2",
+      "slide_spec_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438",
       "block_ref": {
         "block_id": "B201",
         "revision": 5
@@ -766,7 +766,7 @@
   ],
   "outputs": {
     "pptx": "acceptance-deck.pptx",
-    "pptx_sha256": "d2614a0771bd0175e54282ac115ff8503ad112101b4c9d1f3fab97e405be9519"
+    "pptx_sha256": "1d949246ce2e7f4f7a341e84d24b3e15cb616231866a9f688a90f6836a78a242"
   },
   "qa_report_refs": [
     "QA-MASTER-PHASE2-ACCEPTANCE"

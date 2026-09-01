@@ -1,0 +1,10 @@
+{
+  "qa_id": "FC-RELIABILITY-QA-001",
+  "candidate_state_hash": "8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d",
+  "aggregate_status": "pass",
+  "owning_checks": [
+    {"check_id":"FC-P0-01-NATIVE-PARITY","status":"pass","facts":{"native_mismatch_count":0},"facts_sha256":"3b327f60c4222957bd3e1634650b4b8e8e9e6609eb58c39de3fe6998cbee9307"},
+    {"check_id":"FC-P0-06-GENERATED-PPTX-PRIVACY","status":"pass","facts":{"raw_pptx_candidate_count":5,"attested_generated_pptx_count":5,"unexcepted_final_finding_count":0},"facts_sha256":"6c849586b6fc47a3a748939b787f0d11f4571a9373ca473b9f3e78bb949b774e"},
+    {"check_id":"FC-P1-07-DURABLE-VALIDATION","status":"pass","facts":{"exit_code":0,"candidate_hash_pre":"8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d","candidate_hash_post":"8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d"},"facts_sha256":"7046e478c40cedf364400c0463e9f516f2f34e43a776a6531e595bb176e69696"}
+  ]
+}

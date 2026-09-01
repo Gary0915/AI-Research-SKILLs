@@ -143,7 +143,15 @@ def _append_phase2_history(fixture: dict, assets: dict[str, Path]) -> tuple[Ledg
     exp2 = {"independent_variables": ["位置"], "controlled_variables": ["配方", "電極", "接觸壓力"], "controls_baselines": ["原始位置分布"], "sample_plan": {"replicates": 3, "samples": 15}, "measured_outputs": ["訊號 CV (%)"], "instrumentation_method_refs": ["synthetic-signal-test"], "predicted_outcomes": ["CV 下降"], "decision_rules": {"go": "CV decreases >=30%", "partial_go": "10-30%", "no_go": "<10%"}, "required_evidence": ["E101", "E102"]}
     exp3 = {"independent_variables": ["contact pressure"], "controlled_variables": ["bulk conductivity", "電極幾何"], "controls_baselines": ["low-pressure control"], "sample_plan": {"replicates": 5, "samples": 15}, "measured_outputs": ["訊號 CV (%)", "contact resistance (ohm)"], "instrumentation_method_refs": ["synthetic-pressure-fixture"], "predicted_outcomes": ["CV and resistance decrease"], "decision_rules": {"go": "both metrics improve", "partial_go": "one metric improves", "no_go": "neither improves"}, "required_evidence": ["E201"]}
     st = {}
-    for prefix, bid, claims, evidences, expdata, results in [("H001", "B101", h1_claims, ["E101", "E102", "E103"], [exp1, exp2], [("ST-RES101", "平均導電度增加 24% ± 5% SD"), ("ST-RES102", "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go")]), ("H002", "B201", h2_claims, ["E204"], [exp3], [("ST-RES201", "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降")])]:
+    for prefix, bid, claims, evidences, expdata, results in [
+        ("H001", "B101", h1_claims, ["E101", "E102", "E103"], [exp1, exp2], [
+            ("ST-RES101", "平均導電度增加 24% ± 5% SD", [{"name": "mean conductivity increase", "value": 24, "uncertainty": 5, "uncertainty_semantics": "SD", "units": "%"}], []),
+            ("ST-RES102", "訊號 CV 僅下降 4% ± 6% SD，屬 No-Go", [{"name": "signal CV decrease", "value": 4, "uncertainty": 6, "uncertainty_semantics": "SD", "units": "%"}], []),
+        ]),
+        ("H002", "B201", h2_claims, ["E204"], [exp3], [
+            ("ST-RES201", "高壓條件 CV 下降 38% ± 7% SD，contact resistance 同步下降", [{"name": "signal CV decrease", "value": 38, "uncertainty": 7, "uncertainty_semantics": "SD", "units": "%"}], [{"name": "contact resistance", "status": "qualitative_supported", "statement": "同步下降", "units": None}]),
+        ]),
+    ]:
         prior_refs = ["E002", "E102"] if prefix == "H001" else ["E204"]
         knowledge_ref = "E103" if prefix == "H001" else "E202"
         st[f"ST-{prefix}-OBS"] = _canonical_stage(f"ST-{prefix}-OBS", bid, "observation", [claims[0]["claim_id"]], prior_refs, {"observation": "位置依賴缺陷與訊號變異已觀察到。", "problem": "現有模型無法解釋此變異。"})
@@ -152,7 +160,8 @@ def _append_phase2_history(fixture: dict, assets: dict[str, Path]) -> tuple[Ledg
         st[f"ST-{prefix}-SOL"] = _canonical_stage(f"ST-{prefix}-SOL", bid, "solution", [claims[1]["claim_id"]], [knowledge_ref], {"strategy": "均化導電度" if prefix == "H001" else "匹配導電度並改變接觸壓力", "success_criterion": "預測指標跨過 decision threshold"})
         exp_stage_ids = ["ST-EXP101", "ST-EXP102"] if prefix == "H001" else ["ST-EXP201"]
         for number, data in enumerate(expdata, 1): st[exp_stage_ids[number - 1]] = _canonical_stage(exp_stage_ids[number - 1], bid, "experiment", [claims[0]["claim_id"], claims[2]["claim_id"]], evidences, data)
-        for number, (sid, summary) in enumerate(results, 1): st[sid] = _canonical_stage(sid, bid, "result", [claims[2]["claim_id"]], ["E101" if prefix == "H001" else "E201"], {"summary": summary, "metrics": [{"name": "CV", "value": 24 if number == 1 else 4, "uncertainty": 5, "units": "%"}], "decision_ref": "D101" if prefix == "H001" else "D201"})
+        for sid, summary, metrics, qualitative_metrics in results:
+            st[sid] = _canonical_stage(sid, bid, "result", [claims[2]["claim_id"]], ["E101" if prefix == "H001" else "E201"], {"summary": summary, "metrics": metrics, "qualitative_metrics": qualitative_metrics, "decision_ref": "D101" if prefix == "H001" else "D201"})
     h1_stages = {"observation": "ST-H001-OBS", "literature": "ST-H001-LIT", "mechanism": "ST-H001-MECH", "solution": "ST-H001-SOL", "experiment": "ST-EXP101", "result": "ST-RES101", "discussion": "ST-H001-DISC", "next_step": "NS101"}
     h2_stages = {"observation": "ST-H002-OBS", "literature": "ST-H002-LIT", "mechanism": "ST-H002-MECH", "solution": "ST-H002-SOL", "experiment": "ST-EXP201", "result": "ST-RES201", "discussion": "ST-H002-DISC", "next_step": "NS201"}
     b1 = _canonical_block("B101", "H01 Bulk conductivity mechanism", h1["research_question"], p101["problem_statement"], h1, stages=h1_stages, claim_refs=["C101", "C102", "C103"], evidence_refs=["E002", "E101", "E102", "E103"], assets=["A001", "A002", "A101"], action="NS101", decision="D101")

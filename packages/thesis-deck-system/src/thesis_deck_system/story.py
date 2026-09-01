@@ -5,6 +5,27 @@ from __future__ import annotations
 from .contracts import Finding
 
 
+def _format_result_metrics(metrics: object) -> str:
+    """Project typed result metrics into editable presentation text.
+
+    The source object stays structured; a SlideSpec must not leak a Python
+    dictionary representation into a visual field.
+    """
+    if not isinstance(metrics, list):
+        return ""
+    items = []
+    for metric in metrics:
+        if not isinstance(metric, dict):
+            continue
+        name = str(metric.get("name", "metric"))
+        value, uncertainty = metric.get("value"), metric.get("uncertainty")
+        units = str(metric.get("units") or "")
+        semantics = str(metric.get("uncertainty_semantics") or "")
+        if isinstance(value, (int, float)) and isinstance(uncertainty, (int, float)):
+            items.append(f"{name}: {value}{units} ± {uncertainty}{units} {semantics}".strip())
+    return "; ".join(items)
+
+
 def _spec(layer: dict, role: str, ordinal: int, source_cursor: int, *, object_ref: str | None = None) -> dict:
     layer_id = layer["hypothesis_layer_id"]
     return {
@@ -237,7 +258,7 @@ def content_from_materialized_state(state: dict, layer_id: str, role: str, objec
         chunks = []
         for ref in refs:
             data = state["stages"].get(_stage_id(state, ref), {}).get("data", {})
-            chunks.append(f"{ref}｜{data.get('summary', '')}\nMetrics｜{data.get('metrics', '')}")
+            chunks.append(f"{ref}｜{data.get('summary', '')}\nMetrics｜{_format_result_metrics(data.get('metrics', []))}")
         return "\n".join(chunks)
     if role == "layer_integrated_discussion":
         discussion = state["layer_discussions"].get(object_ref, {})
@@ -332,7 +353,7 @@ def semantic_fields_from_materialized_state(state: dict, layer_id: str, role: st
             output[current_role] = {
                 "result_identity": text(result_ref),
                 "result_statement": text(stage.get("data", {}).get("summary")),
-                "metric_value_uncertainty": text(metrics),
+                "metric_value_uncertainty": _format_result_metrics(metrics),
             }
         elif current_role == "layer_integrated_discussion":
             discussion_ref = object_ref if role == current_role else layer.get("layer_discussion_ref")

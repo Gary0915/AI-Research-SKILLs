@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/generated-pptx-attestation.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["attestation_id", "status", "repository_relative_path", "artifact_sha256", "candidate_state_hash", "artifact_class", "producer_id", "producer_source_sha256", "declared_input_count", "private_input_count", "execution_id", "raw_scanner_finding", "package_part_count", "package_inventory_sha256", "external_relationship_count", "macro_part_count", "embedded_package_or_ole_count", "package_privacy_finding_count", "unknown_package_part_count", "media_part_count", "evidence_sha256"],
+  "properties": {
+    "attestation_id": {"type": "string", "pattern": "^GPA-[a-f0-9]{16}$"},
+    "status": {"const": "attested_generated_artifact"},
+    "repository_relative_path": {"type": "string", "pattern": "^(?!/)(?!.*\\\\\\\\)(?!.*\\.\\.).+\\.pptx$"},
+    "artifact_sha256": {"$ref": "#/$defs/hash"},
+    "candidate_state_hash": {"$ref": "#/$defs/hash"},
+    "artifact_class": {"enum": ["phase2_acceptance_deck", "n_layer_acceptance_deck", "sanitized_native_template", "final_acceptance_deck"]},
+    "producer_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "producer_source_sha256": {"$ref": "#/$defs/hash"},
+    "declared_input_count": {"type": "integer", "minimum": 0},
+    "private_input_count": {"type": "integer", "minimum": 0},
+    "execution_id": {"type": "string", "pattern": "^FC-[A-Z0-9-]+$"},
+    "raw_scanner_finding": {"const": "private_pptx_candidate"},
+    "package_part_count": {"type": "integer", "minimum": 1},
+    "package_inventory_sha256": {"$ref": "#/$defs/hash"},
+    "external_relationship_count": {"type": "integer", "minimum": 0},
+    "macro_part_count": {"type": "integer", "minimum": 0},
+    "embedded_package_or_ole_count": {"type": "integer", "minimum": 0},
+    "package_privacy_finding_count": {"type": "integer", "minimum": 0},
+    "unknown_package_part_count": {"type": "integer", "minimum": 0},
+    "media_part_count": {"type": "integer", "minimum": 0},
+    "evidence_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

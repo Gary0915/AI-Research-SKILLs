@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/native-materialization-parity.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["parity_id", "aggregate_status", "planned_native_object_count", "emitted_native_object_count", "explicit_fallback_object_count", "blocked_object_count", "native_mismatch_count", "style_field_coverage", "materialization_record_count"],
+  "properties": {
+    "parity_id": {"const": "FC-NATIVE-PARITY-001"},
+    "aggregate_status": {"enum": ["pass", "fail"]},
+    "planned_native_object_count": {"type": "integer", "minimum": 0},
+    "emitted_native_object_count": {"type": "integer", "minimum": 0},
+    "explicit_fallback_object_count": {"type": "integer", "minimum": 0},
+    "blocked_object_count": {"type": "integer", "minimum": 0},
+    "native_mismatch_count": {"type": "integer", "minimum": 0},
+    "materialization_record_count": {"type": "integer", "minimum": 0},
+    "style_field_coverage": {"type": "object", "additionalProperties": false, "required": ["geometry", "fill", "stroke", "stroke_width", "font_family", "font_size", "font_weight", "dash", "marker", "transform"], "properties": {"geometry": {"$ref": "#/$defs/coverage"}, "fill": {"$ref": "#/$defs/coverage"}, "stroke": {"$ref": "#/$defs/coverage"}, "stroke_width": {"$ref": "#/$defs/coverage"}, "font_family": {"$ref": "#/$defs/coverage"}, "font_size": {"$ref": "#/$defs/coverage"}, "font_weight": {"$ref": "#/$defs/coverage"}, "dash": {"$ref": "#/$defs/coverage"}, "marker": {"$ref": "#/$defs/coverage"}, "transform": {"$ref": "#/$defs/coverage"}}}
+  },
+  "$defs": {"coverage": {"type": "object", "additionalProperties": false, "required": ["supported", "fallback", "unresolved"], "properties": {"supported": {"type": "integer", "minimum": 0}, "fallback": {"type": "integer", "minimum": 0}, "unresolved": {"type": "integer", "minimum": 0}}}}
+}

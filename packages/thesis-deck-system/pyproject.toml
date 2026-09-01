@@ -26,3 +26,12 @@ where = ["src"]
 pythonpath = ["src"]
 testpaths = ["tests"]
 addopts = "-ra"
+markers = [
+  "fast_contract: small deterministic contract validation",
+  "privacy: privacy scanner or adjudication validation",
+  "build: generated artifact build validation",
+  "pptx: PowerPoint package or assembler validation",
+  "render: rendering capability validation",
+  "release: release-gate validation",
+  "slow: expensive end-to-end validation"
+]

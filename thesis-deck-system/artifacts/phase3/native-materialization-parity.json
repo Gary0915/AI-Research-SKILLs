@@ -1,0 +1,62 @@
+{
+  "parity_id": "FC-NATIVE-PARITY-001",
+  "aggregate_status": "pass",
+  "planned_native_object_count": 89,
+  "emitted_native_object_count": 89,
+  "explicit_fallback_object_count": 45,
+  "blocked_object_count": 0,
+  "native_mismatch_count": 0,
+  "style_field_coverage": {
+    "geometry": {
+      "supported": 89,
+      "fallback": 0,
+      "unresolved": 0
+    },
+    "fill": {
+      "supported": 35,
+      "fallback": 0,
+      "unresolved": 54
+    },
+    "stroke": {
+      "supported": 41,
+      "fallback": 0,
+      "unresolved": 48
+    },
+    "stroke_width": {
+      "supported": 41,
+      "fallback": 0,
+      "unresolved": 48
+    },
+    "font_family": {
+      "supported": 48,
+      "fallback": 0,
+      "unresolved": 41
+    },
+    "font_size": {
+      "supported": 48,
+      "fallback": 0,
+      "unresolved": 41
+    },
+    "font_weight": {
+      "supported": 9,
+      "fallback": 0,
+      "unresolved": 80
+    },
+    "dash": {
+      "supported": 0,
+      "fallback": 0,
+      "unresolved": 89
+    },
+    "marker": {
+      "supported": 0,
+      "fallback": 0,
+      "unresolved": 89
+    },
+    "transform": {
+      "supported": 0,
+      "fallback": 0,
+      "unresolved": 89
+    }
+  },
+  "materialization_record_count": 9
+}

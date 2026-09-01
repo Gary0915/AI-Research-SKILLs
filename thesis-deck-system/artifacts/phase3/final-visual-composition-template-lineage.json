@@ -1,0 +1,11 @@
+{
+  "lineage_id": "FVCC-FRESH-TEMPLATE-001",
+  "construction": "fresh_python_pptx_template",
+  "template_sha256_before": "7d832d3d4ff5824d34e2fd0220ffeabc3ee5ca1673e37c9cd735608ae48e85d2",
+  "template_sha256_after": "7d832d3d4ff5824d34e2fd0220ffeabc3ee5ca1673e37c9cd735608ae48e85d2",
+  "template_unchanged": true,
+  "private_or_historical_binary_inputs": [],
+  "fresh_sanitized_base_template_status": "pass",
+  "professor_shell_tokens_consumed_status": "partial_structural",
+  "physical_professor_template_reconstruction_status": "insufficient_evidence"
+}

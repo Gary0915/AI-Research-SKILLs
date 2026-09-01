@@ -1,0 +1,44 @@
+{
+  "evidence_id": "FVCC-EXECUTION-001",
+  "candidate_state": {
+    "component_count": 27,
+    "tested_candidate_sha256": "8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d",
+    "disposable_pre_candidate_sha256": "8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d",
+    "disposable_post_candidate_sha256": "8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d",
+    "current_candidate_sha256": "8358f2ece7ef49257fb333723163cf596b2e26283174c007669f3de49e76f34d",
+    "equality": "pass"
+  },
+  "focused_validation": {
+    "command": "isolated focused closure suite",
+    "passed": 183,
+    "failed": 0,
+    "accepted": true
+  },
+  "definitive_disposable_regression": {
+    "command": "python -m pytest packages/thesis-deck-system/tests -q",
+    "disposable_worktree": true,
+    "exit_code": 0,
+    "passed": 504,
+    "failed": 0,
+    "completion_marker": "504 passed in 312.33s"
+  },
+  "privacy": {
+    "configuration_source": "caller_supplied_ephemeral_dictionary",
+    "repository_findings": 0,
+    "raw_staged_pptx_candidate_count": 5,
+    "attested_generated_pptx_count": 5,
+    "unexcepted_staged_findings": 0,
+    "approved_historical_exceptions": 1,
+    "private_alias_resolution_attempts": 0,
+    "private_source_open_attempts": 0,
+    "private_render_attempts": 0
+  },
+  "status_truth": {
+    "render_visual_status": "blocked_environment",
+    "image_capable_qualitative_review_status": "blocked_visual_review",
+    "native_powerpoint_acceptance_status": "blocked_environment",
+    "professor_structural_fidelity_status": "insufficient_evidence",
+    "production_release_status": "blocked",
+    "production_group_meeting_ready": false
+  }
+}

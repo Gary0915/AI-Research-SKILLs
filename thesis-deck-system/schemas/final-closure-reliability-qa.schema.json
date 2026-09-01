@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/final-closure-reliability-qa.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["qa_id", "candidate_state_hash", "aggregate_status", "owning_checks"],
+  "properties": {
+    "qa_id": {"const": "FC-RELIABILITY-QA-001"},
+    "candidate_state_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "aggregate_status": {"enum": ["pass", "fail"]},
+    "owning_checks": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/check"}}
+  },
+  "$defs": {
+    "check": {"type": "object", "additionalProperties": false, "required": ["check_id", "status", "facts", "facts_sha256"], "properties": {"check_id": {"enum": ["FC-P0-01-NATIVE-PARITY", "FC-P0-06-GENERATED-PPTX-PRIVACY", "FC-P1-07-DURABLE-VALIDATION"]}, "status": {"enum": ["pass", "fail"]}, "facts": {"type": "object", "additionalProperties": false, "properties": {"native_mismatch_count": {"type": ["integer", "null"]}, "raw_pptx_candidate_count": {"type": ["integer", "null"]}, "attested_generated_pptx_count": {"type": ["integer", "null"]}, "unexcepted_final_finding_count": {"type": ["integer", "null"]}, "exit_code": {"type": ["integer", "null"]}, "candidate_hash_pre": {"type": ["string", "null"]}, "candidate_hash_post": {"type": ["string", "null"]}}}, "facts_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}
+  }
+}

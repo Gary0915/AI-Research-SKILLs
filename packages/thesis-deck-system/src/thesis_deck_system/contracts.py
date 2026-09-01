@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from hashlib import sha256
 import json
 from pathlib import Path
 from typing import Any, Iterable
@@ -93,6 +94,10 @@ CP5HI_SCHEMA_NAMES = (
     "native-figure-compilation-plan",
     "cp5-hi-release-gates",
     "cp5-hi-package-manifest",
+    "generated-pptx-attestation",
+    "native-materialization-parity",
+    "final-closure-validation-run",
+    "final-closure-reliability-qa",
 )
 
 SCHEMA_BY_COLLECTION = {
@@ -120,10 +125,13 @@ class Finding:
     severity: str = "critical"
 
 
+_SCHEMA_CACHE: dict[tuple[str, str], tuple[dict[str, Any], Draft202012Validator]] = {}
+
+
 class SchemaRegistry:
-    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False, include_cp5a: bool = False, include_cp5bcd: bool = False, include_cp5hi: bool = False):
+    def __init__(self, schema_dir: Path | str, *, include_phase2: bool = False, include_phase3: bool = False, include_cp5a: bool = False, include_cp5bcd: bool = False, include_cp5hi: bool = False, schema_names: tuple[str, ...] | None = None):
         self.schema_dir = Path(schema_dir)
-        schema_names = (
+        resolved_names = schema_names or (
             REQUIRED_SCHEMA_NAMES
             + (PHASE2_SCHEMA_NAMES if include_phase2 else ())
             + (PHASE3_SCHEMA_NAMES if include_phase3 else ())
@@ -131,19 +139,27 @@ class SchemaRegistry:
             + (CP5BCD_SCHEMA_NAMES if include_cp5bcd else ())
             + (CP5HI_SCHEMA_NAMES if include_cp5hi else ())
         )
-        self._schemas = {
-            name: json.loads((self.schema_dir / f"{name}.schema.json").read_text(encoding="utf-8"))
-            for name in schema_names
-        }
-        for schema in self._schemas.values():
-            Draft202012Validator.check_schema(schema)
+        self._schemas: dict[str, dict[str, Any]] = {}
+        self._validators: dict[str, Draft202012Validator] = {}
+        for name in resolved_names:
+            path = (self.schema_dir / f"{name}.schema.json").resolve()
+            contents = path.read_bytes()
+            digest = sha256(contents).hexdigest()
+            cache_key = (str(path), digest)
+            cached = _SCHEMA_CACHE.get(cache_key)
+            if cached is None:
+                schema = json.loads(contents.decode("utf-8"))
+                Draft202012Validator.check_schema(schema)
+                cached = (schema, Draft202012Validator(schema, format_checker=FormatChecker()))
+                _SCHEMA_CACHE[cache_key] = cached
+            self._schemas[name], self._validators[name] = cached
 
     @property
     def names(self) -> tuple[str, ...]:
         return tuple(self._schemas)
 
     def errors(self, name: str, value: Any) -> list[str]:
-        validator = Draft202012Validator(self._schemas[name], format_checker=FormatChecker())
+        validator = self._validators[name]
         errors = [
             f"{'/'.join(map(str, error.absolute_path)) or '$'}: {error.message}"
             for error in sorted(validator.iter_errors(value), key=lambda item: list(item.absolute_path))
