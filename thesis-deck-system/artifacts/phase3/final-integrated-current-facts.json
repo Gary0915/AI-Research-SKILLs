@@ -1,0 +1,94 @@
+{
+  "facts_id": "FINAL-INTEGRATED-CURRENT-FACTS-001",
+  "candidate_state": {
+    "candidate_id": "FVCC-CANDIDATE-001",
+    "component_count": 47,
+    "component_hashes": {
+      ".gitattributes": "1e3ed5d8036c29859569c59df23cb3e4a13c253178c250c6520bc139de0cb1f1",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py": "d551f350ec3134a67b3547907a3daec3e8bd57b7388b5d2c300263a75521778c",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase2_build.py": "14bf7b61525e8e32d94dccd8ee543f4b950e30100d305fae516fe023a0198258",
+      "packages/thesis-deck-system/src/thesis_deck_system/story.py": "301ca8a34f6884a76100a57013e93309edc475b25d0324391cc8c43f6818419f",
+      "packages/thesis-deck-system/src/thesis_deck_system/pptx.py": "6c48bc6c4399b4173d139f66f0c10ed5c5486d6a008fad1502564f66bfe5b440",
+      "packages/thesis-deck-system/src/thesis_deck_system/template.py": "bfa8092a881429ec282542c418d2557f47a50c8632bba9bf6afae8f9b7d234ed",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5bcd_integrated.py": "adb842b5bcecb3313438cfd170ad35a6fdedce35cc21d91adb19f9d7a367bc8c",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5efg_integrated.py": "0664e60509d2149521926478d7b237e53d9ffacfb8626fc278c335e3f565d8b2",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py": "de3542861c9d52a6cbc83fe77ce018b23aa094745a26186e38e6acb6b623586d",
+      "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py": "72dd094208506327b60061c62a501f49d618d9c671604b6cb88feac0a95c2eca",
+      "packages/thesis-deck-system/src/thesis_deck_system/incremental_deck_lineage.py": "243e13b847efa751f93b99337339907ed9814fe6b67f9315ea778f1b3720bcad",
+      "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner.py": "2e843c53422ccb1b509392f80be970bdbdfac7278291b10b1a46e97c1c164fe8",
+      "packages/thesis-deck-system/src/thesis_deck_system/contracts.py": "d74353291bd45fc7bf520410f69c08606497102a5be5faf9ca90130866cba3b2",
+      "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py": "7664531a8f21d4b00c70a23096a95c83e0aed889cc73c2fde9d7ed09c6f44a20",
+      "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py": "3e7533080c10972941a4ae1672c1dabe904e8de6f5f92c0ffdd978a561b5b08b",
+      "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py": "e106a0a51987fc6973998612a97698ce8aa03484b17971b920e91435ffcb5b37",
+      "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py": "ab7c6a3eaa785f0c1657f00cfdb517c67fcf59cbf58b16a10b180ce278abd5cd",
+      "packages/thesis-deck-system/tests/unit/test_presentation_planner.py": "0664e13868a7690462348ed353b52364ad514bb1f46fb017ab9baaa77427242f",
+      "packages/thesis-deck-system/pyproject.toml": "0f323606b1699067f99abc6e587c0a08875d89dc33b298a77abe30ae4e0d94c3",
+      "thesis-deck-system/TASK_PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE.md": "20f7fa9143e96e7f83d92846f34dde847d041723123b49bd9b48ac5f659b9954",
+      "thesis-deck-system/designs/PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE_DESIGN.md": "d2cc09a4a11bea69d137958874889c26672a5aeeeb7e334754efcff5a077a4ff",
+      "thesis-deck-system/artifacts/phase2/slide-specs.json": "650bd79127689733efc7449c8484ff50ed0e643b881347b290d1909b6caad7b7",
+      "thesis-deck-system/artifacts/phase2/materialized-h02.json": "2d64f6323fc60c1eff5f7a73c9d58f61e73e224568d712c16dce058b36798273",
+      "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+      "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+      "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+      "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+      "thesis-deck-system/artifacts/phase3/approved-figures.json": "7e45a1887989cb5966c90b670916b8acad18fa656fdffcbde86cde799e208117",
+      "thesis-deck-system/artifacts/phase3/visual-style-profile.json": "6861b4f33a9f7287a6872e8004d32290fa64dba90c7225a32d1a7d90eae5a1b2",
+      "thesis-deck-system/schemas/generated-pptx-attestation.schema.json": "5df87a8a42e5e8b453db9eee5050c202f79e19726123a849ca1f5e93b997c855",
+      "thesis-deck-system/schemas/generated-pptx-source-closure.schema.json": "ce685ad4e6c880c33112094caba0680a0d40a659147b2fa09d866ed1cc266658",
+      "thesis-deck-system/schemas/generated-pptx-media-lineage.schema.json": "c790ffe7622469cfbae33710f2118ac9fd63f2cd75f2a0db63522602f9013b0f",
+      "thesis-deck-system/schemas/native-materialization-parity.schema.json": "39c6c9748407ffc33e2b3052ecbf6a05be5b2e3408a48906ee5fc63fccf7d1f3",
+      "thesis-deck-system/schemas/final-closure-validation-run.schema.json": "99410d3dd86118df83a640d3587fcaf2b2e9fef3da0b4756ef40aba9bd0f8c53",
+      "thesis-deck-system/schemas/final-closure-reliability-qa.schema.json": "631e2462b7a29b82fc4a96e0442f0ca9a34c7a5595a64f1a6de918cbf26afd18",
+      "thesis-deck-system/schemas/final-evidence-current-facts.schema.json": "2489eec16039c2a44f2427f63d4044b939de0bf877f55b32288d077beb065ae2",
+      "thesis-deck-system/schemas/slide-lineage-record.schema.json": "5b9c665e10a6360ede149363bbe9df51f97a963d0c818ae7e15e9224e198b5b7",
+      "thesis-deck-system/schemas/slide-materialization-decision.schema.json": "a66c64af43d192ef263fd50194306a68d065d9cae1ace5b544391abc16f45de4",
+      "thesis-deck-system/schemas/meeting-view-manifest.schema.json": "9b9cf6a0314e672f171464a31f8b7ff2b0bb1cefd2b53c37b8925b5e26b3f861",
+      "thesis-deck-system/schemas/body-reference-evidence-resolution.schema.json": "7625f10c8b3f39e650802996ae58722566dc58985a2b59e104342b2d580b7ff9",
+      "thesis-deck-system/schemas/incremental-build-audit.schema.json": "35ffaaed2288406e827516107df846b2995872877fcac8a1e7941f51e960fa39",
+      "thesis-deck-system/schemas/incremental-lineage-acceptance-proof.schema.json": "784246a65728df5d0fd702361cefe80098d134df379fa620cabacbe5cc57903e",
+      "thesis-deck-system/schemas/scientific-content-shapes.schema.json": "4173558370dad1e1487fb6b26606034835256669e4f0543e01a8404413f0d326",
+      "thesis-deck-system/schemas/layout-capability-registry.schema.json": "bdfec0caf77f727f628a9b08bf97679d2feb5b05587aeb8f4c5b06f4e2a333db",
+      "thesis-deck-system/schemas/composition-candidates.schema.json": "7e42de5d569088dd35eca87de13620288d6483c4f75e08da872dfa9886bc9d18",
+      "thesis-deck-system/schemas/composition-selection-audit.schema.json": "6d9110f57d4e6ba49664c62167bbdce3b253f51d4fb9bc781139e9af0249c30c",
+      "thesis-deck-system/schemas/presentation-planner-qa.schema.json": "2c70a3c2dc092358f797d1f274bedc223fc5c211195eef931827044f9b9a95be"
+    },
+    "candidate_state_sha256": "90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116"
+  },
+  "validation": {
+    "milestone_a_focused": {
+      "passed": 107,
+      "failed": 0
+    },
+    "planner_focused": {
+      "passed": 17,
+      "failed": 0
+    },
+    "combined_focused": {
+      "passed": 112,
+      "failed": 0
+    },
+    "definitive_disposable_regression": {
+      "passed": 528,
+      "failed": 0,
+      "tested_pre_post_current_equal": true
+    }
+  },
+  "privacy": {
+    "raw_repository_findings": 0,
+    "raw_staged_findings": 0,
+    "exact_staged_generated_pptx_attestations": 5,
+    "working_staged_pptx_mismatches": 0,
+    "source_closure_failures": 0,
+    "package_media_parts": 24,
+    "unresolved_media": 0,
+    "undeclared_media": 0,
+    "duplicate_media_lineage": 0,
+    "approved_historical_exceptions": 1,
+    "private_access_attempts": {
+      "alias": 0,
+      "source": 0,
+      "render": 0
+    }
+  },
+  "aggregate_status": "pass"
+}

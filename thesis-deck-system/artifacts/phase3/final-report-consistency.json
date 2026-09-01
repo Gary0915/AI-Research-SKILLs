@@ -1,0 +1,7 @@
+{
+  "consistency_id": "FINAL-INTEGRATED-CONSISTENCY-001",
+  "authoritative_facts_ref": "final-integrated-current-facts.json",
+  "candidate_state_sha256": "90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116",
+  "mismatch_count": 0,
+  "aggregate_status": "pass"
+}
