@@ -95,9 +95,18 @@ CP5HI_SCHEMA_NAMES = (
     "cp5-hi-release-gates",
     "cp5-hi-package-manifest",
     "generated-pptx-attestation",
+    "generated-pptx-source-closure",
+    "generated-pptx-media-lineage",
     "native-materialization-parity",
     "final-closure-validation-run",
     "final-closure-reliability-qa",
+    "slide-lineage-record",
+    "slide-materialization-decision",
+    "meeting-view-manifest",
+    "body-reference-evidence-resolution",
+    "incremental-build-audit",
+    "incremental-lineage-acceptance-proof",
+    "final-evidence-current-facts",
 )
 
 SCHEMA_BY_COLLECTION = {

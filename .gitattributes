@@ -1,0 +1,3 @@
+# FEC-02: exact PPTX media lineage requires this declared SVG source to have
+# checkout-stable LF bytes on every developer and disposable-regression worktree.
+thesis-deck-system/artifacts/phase2/observation/observation_visual.svg text eol=lf

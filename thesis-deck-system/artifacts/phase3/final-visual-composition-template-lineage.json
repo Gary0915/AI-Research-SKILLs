@@ -1,8 +1,8 @@
 {
   "lineage_id": "FVCC-FRESH-TEMPLATE-001",
   "construction": "fresh_python_pptx_template",
-  "template_sha256_before": "7d832d3d4ff5824d34e2fd0220ffeabc3ee5ca1673e37c9cd735608ae48e85d2",
-  "template_sha256_after": "7d832d3d4ff5824d34e2fd0220ffeabc3ee5ca1673e37c9cd735608ae48e85d2",
+  "template_sha256_before": "be0a21f2edfaba647dda72c1e0536c1894fd8c37bb2df43200dcf8b082d76b97",
+  "template_sha256_after": "be0a21f2edfaba647dda72c1e0536c1894fd8c37bb2df43200dcf8b082d76b97",
   "template_unchanged": true,
   "private_or_historical_binary_inputs": [],
   "fresh_sanitized_base_template_status": "pass",

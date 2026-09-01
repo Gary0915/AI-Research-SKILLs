@@ -10,6 +10,10 @@
     "scientific_plot"
   ],
   "unapproved_figure_bypass_count": 0,
+  "route_only_representative_final_figure_count": 0,
+  "unbound_scientific_figure_count": 0,
+  "scientific_input_mismatch_count": 0,
+  "untruthful_vector_fallback_count": 0,
   "native_plan_count": 9,
   "fallback_count": 2,
   "native_materialization_record_count": 9,
@@ -26,7 +30,7 @@
         "width": 7.25,
         "height": 4.95
       },
-      "binding_kind": "explicit_svg_fallback",
+      "binding_kind": "raster_fallback_explicit",
       "fishbone_revision_ref": "FB001 rev1",
       "source_svg_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
       "fallback_asset_id": "FB001-REV1"
@@ -45,7 +49,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG006",
       "manifest_id": "SSE-FIG006-001",
-      "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+      "native_plan_sha256": "a18317243d2d46e8d87951e07587f6a36c0f3c9bede4390acae5e1d09d149306"
     },
     {
       "slide_id": "S-H001-LITERATURE-MECHANISM-05",
@@ -61,7 +65,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG006",
       "manifest_id": "SSE-FIG006-001",
-      "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+      "native_plan_sha256": "6b9bdbfabd75fa0c4d67d6de398fabf0a8c561149f257a07135ae744db0f3744"
     },
     {
       "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
@@ -77,7 +81,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG007",
       "manifest_id": "SSE-FIG007-001",
-      "native_plan_sha256": "f9ace1cb0b7664ee0732ffb6cafb2bf9deb6f240697d2e460f0d23f1f51137b3"
+      "native_plan_sha256": "5b73b150569103d60a45db3fdcac9b01c7e55c3c3066796430f368f2cd97e2a2"
     },
     {
       "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
@@ -93,7 +97,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG007",
       "manifest_id": "SSE-FIG007-001",
-      "native_plan_sha256": "f9ace1cb0b7664ee0732ffb6cafb2bf9deb6f240697d2e460f0d23f1f51137b3"
+      "native_plan_sha256": "c586eda17a399af773499a15b0057dd975d7977765fe82288e64cfa6ce84b989"
     },
     {
       "slide_id": "S-H001-RESULT-SINGLE-08",
@@ -109,7 +113,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG001",
       "manifest_id": "SSE-FIG001-001",
-      "native_plan_sha256": "8ad5ef43645d9da350eb8e1a2d55c6cfe34555e91b5477a870db2973d8dda062"
+      "native_plan_sha256": "d80d0564b6707effcd55a3f2ad2e3317cabe1f1603de747081780f212e5c026d"
     },
     {
       "slide_id": "S-H001-RESULT-SINGLE-09",
@@ -125,7 +129,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG001",
       "manifest_id": "SSE-FIG001-001",
-      "native_plan_sha256": "8ad5ef43645d9da350eb8e1a2d55c6cfe34555e91b5477a870db2973d8dda062"
+      "native_plan_sha256": "ed65af26aff4094bc5239d172b3b32e1f2e16d05bf42f747f7f45026facb440e"
     },
     {
       "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
@@ -141,7 +145,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG006",
       "manifest_id": "SSE-FIG006-001",
-      "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+      "native_plan_sha256": "0803f4edeb3447980d3355107221203edfad6acb253dfc277f33d4575e58d2a8"
     },
     {
       "slide_id": "S-H002-FISHBONE-LOCATOR-03",
@@ -154,7 +158,7 @@
         "width": 7.25,
         "height": 4.95
       },
-      "binding_kind": "explicit_svg_fallback",
+      "binding_kind": "raster_fallback_explicit",
       "fishbone_revision_ref": "FB001 rev2",
       "source_svg_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
       "fallback_asset_id": "FB001-REV2"
@@ -173,7 +177,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG006",
       "manifest_id": "SSE-FIG006-001",
-      "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+      "native_plan_sha256": "419650350f8e0e2915519fc89415c33fdb244d2b0697f4b7b76c0eec116ae1d5"
     },
     {
       "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
@@ -189,7 +193,7 @@
       "binding_kind": "approved_native_plan",
       "figure_id": "FIG008",
       "manifest_id": "SSE-FIG008-001",
-      "native_plan_sha256": "66223e7397112ab36405eb745aea0d066174a10a26a661703b6ef0b487fd0065"
+      "native_plan_sha256": "0c63a73881880dd66e6066e73ab46a4a6bbd538728008bd8dd7702adb21abe06"
     }
   ]
 }

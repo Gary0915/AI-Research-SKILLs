@@ -201,8 +201,76 @@ def build_final_projection(root: Path) -> dict[str, Any]:
     }
 
 
+def build_slide_scientific_figure_bindings(root: Path, projection: dict[str, Any]) -> list[dict[str, Any]]:
+    """Bind every final figure slot to canonical, slide-specific science.
+
+    This is intentionally upstream of any specialist invocation.  It avoids
+    treating a route or a representative test fixture as scientific identity.
+    """
+    root = Path(root).resolve()
+    bindings: list[dict[str, Any]] = []
+    specialist = {
+        "fishbone": "fishbone-director", "mechanism": "mechanism-diagram-director",
+        "experiment": "experiment-schematic-director", "scientific_plot": "scientific-plot-director",
+        "comparison": "comparison-figure-director",
+    }
+    for record in projection["slides"]:
+        route = record.get("governed_figure_route")
+        if not route:
+            continue
+        result = record.get("result")
+        payload: dict[str, Any] = {
+            "source_cursor": record["source_cursor"],
+            "hypothesis_layer": record["hypothesis_layer"],
+            "semantic_stage": record["semantic_stage"],
+            "source_bindings": record.get("source_bindings", {}),
+        }
+        result_id: str | None = None
+        if result:
+            result_id = result["result_id"]
+            payload["result"] = {
+                "result_id": result_id,
+                "experiment_stage_id": result["experiment_stage_id"],
+                "evidence_refs": result["evidence_refs"],
+                "metric": result["metric"],
+                "secondary_metric": result.get("secondary_metric"),
+            }
+        elif route == "fishbone":
+            snapshot = record.get("source_semantic_fields", {}).get("fishbone_locator", {}).get("historical_snapshot")
+            if not isinstance(snapshot, str):
+                raise ResultSemanticError(f"fishbone scientific binding lacks immutable snapshot: {record['slide_id']}")
+            payload["fishbone_snapshot"] = snapshot
+        else:
+            # Local semantic fields contain controlled canonical object refs;
+            # they are not recovered by parsing rendered slide prose.
+            payload["canonical_semantic_fields"] = record.get("source_semantic_fields", {})
+        input_hash = _json_hash(payload)
+        bindings.append({
+            "binding_id": f"SSF-{sha256(record['slide_id'].encode('utf-8')).hexdigest()[:16]}",
+            "slide_id": record["slide_id"],
+            "source_slide_spec_id": record["source_slide_spec_id"],
+            "topic_id": record["hypothesis_layer"],
+            "semantic_role": record["semantic_stage"],
+            "figure_route": route,
+            "canonical_scientific_refs": record.get("source_bindings", {}),
+            "source_cursor": record["source_cursor"],
+            "scientific_input_payload": payload,
+            "scientific_input_sha256": input_hash,
+            "director_identity": specialist[route],
+            "evidence_policy": "canonical_scientific_input_required",
+            "figure_id": f"FEC-{sha256((record['slide_id'] + input_hash).encode('utf-8')).hexdigest()[:16]}",
+            "result_id": result_id,
+            "binding_method": "canonical_slide_scientific_input",
+            "representative_fixture": False,
+        })
+    if len({item["slide_id"] for item in bindings}) != len(bindings):
+        raise ResultSemanticError("final figure binding identity is not unique")
+    return bindings
+
+
 def build_final_composition_plan(root: Path, projection: dict[str, Any]) -> dict[str, Any]:
     """Bind projection records to actual PPTX layout indices and visual regions."""
+    binding_by_slide = {item["slide_id"]: item for item in build_slide_scientific_figure_bindings(root, projection)}
     slides = [{
         "slide_index": 1,
         "slide_id": "FVCC-COVER-001",
@@ -226,6 +294,14 @@ def build_final_composition_plan(root: Path, projection: dict[str, Any]) -> dict
         governed_figure: dict[str, Any] | None = None
         if is_figure:
             governed_figure = {"route": record["governed_figure_route"], "placement": "primary_visual_region"}
+            binding = binding_by_slide[record["slide_id"]]
+            governed_figure.update({
+                "slide_scientific_figure_binding_id": binding["binding_id"],
+                "scientific_input_sha256": binding["scientific_input_sha256"],
+                "director_identity": binding["director_identity"],
+                "figure_binding_method": binding["binding_method"],
+                "result_id": binding["result_id"],
+            })
             if record["governed_figure_route"] == "fishbone":
                 fishbone = record.get("source_semantic_fields", {}).get("fishbone_locator", {})
                 snapshot = fishbone.get("historical_snapshot")
@@ -233,11 +309,15 @@ def build_final_composition_plan(root: Path, projection: dict[str, Any]) -> dict
                     raise ResultSemanticError(f"missing governed fishbone revision: {record['slide_id']}")
                 revision = snapshot.rsplit("rev", 1)[1]
                 governed_figure.update({
-                    "binding_kind": "explicit_svg_fallback",
+                    "binding_kind": "raster_fallback_explicit",
                     "fishbone_revision_ref": snapshot,
                     "source_svg_relative_path": f"thesis-deck-system/artifacts/phase2/fishbone/FB001-rev{revision}.svg",
                     "preview_png_relative_path": f"thesis-deck-system/artifacts/phase2/fishbone/FB001-rev{revision}.png",
                     "fallback_asset_id": f"FB001-REV{revision}",
+                    "source_authority": "fishbone_svg",
+                    "physical_pptx_representation": "png_raster",
+                    "vector_fallback": False,
+                    "raster_fallback": True,
                 })
         slides.append({
             "slide_index": offset, "slide_id": record["slide_id"], "source_slide_spec_id": record["source_slide_spec_id"],
@@ -254,27 +334,85 @@ def build_final_composition_plan(root: Path, projection: dict[str, Any]) -> dict
             "expected_information_hierarchy": (["title", "primary_visual", "takeaway", "context"] if is_figure else ["title", "scientific_question", "supporting_context"]),
         })
     layout_counts = Counter(str(item["professor_layout_role"]) for item in slides)
-    return {"plan_id": "FVCC-PLAN-001", "schema_version": "1.0.0", "slides": slides, "slide_count": len(slides), "h003_slide_count": projection["h003_slide_count"], "layout_role_distribution": dict(sorted(layout_counts.items())), "generic_layout_fallback_count": 0}
+    return {"plan_id": "FVCC-PLAN-001", "schema_version": "1.0.0", "slides": slides, "slide_scientific_figure_bindings": list(binding_by_slide.values()), "slide_count": len(slides), "h003_slide_count": projection["h003_slide_count"], "layout_role_distribution": dict(sorted(layout_counts.items())), "generic_layout_fallback_count": 0}
 
 
 def _json_hash(value: Any) -> str:
     return sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
-def _native_bundle(root: Path, route: str, target_box: dict[str, float]) -> tuple[object, dict[str, Any]]:
-    """Obtain an already-governed synthetic figure and compile it for layout.
+def _bound_director_input(binding: dict[str, Any]) -> dict[str, Any]:
+    """Project a closed slide binding into the existing director contracts."""
+    payload = binding["scientific_input_payload"]
+    fields = payload.get("canonical_semantic_fields", {})
+    refs = payload.get("source_bindings", {})
+    route = binding["figure_route"]
+    if route == "mechanism":
+        mechanism = fields.get("literature_mechanism") or fields.get("mechanism_solution") or fields.get("hypothesis_transition") or fields.get("observation_problem")
+        if not isinstance(mechanism, dict):
+            raise ResultSemanticError(f"mechanism binding has no canonical semantic fields: {binding['slide_id']}")
+        source = str(mechanism.get("mechanism") or mechanism.get("prior_hypothesis") or binding["source_cursor"])
+        target = str(mechanism.get("research_question") or mechanism.get("new_hypothesis") or mechanism.get("unresolved_point") or binding["source_cursor"])
+        return {
+            "input_id": binding["binding_id"], "source_refs": list(refs.get("evidence_refs", [])),
+            "claim_refs": list(refs.get("claim_refs", [])), "revision": "1",
+            "nodes": [{"node_id": "N001", "label": source}, {"node_id": "N002", "label": target}],
+            "edges": [{"from": "N001", "to": "N002", "state": "uncertain"}],
+            "alternatives": [str(mechanism.get("disagreement_alternatives") or mechanism.get("unresolved_point") or "UNKNOWN")],
+            "uncertainty_labels": ["uncertain"],
+        }
+    if route == "experiment":
+        experiment = fields.get("experiment_design")
+        if not isinstance(experiment, dict):
+            raise ResultSemanticError(f"experiment binding has no canonical experiment fields: {binding['slide_id']}")
+        return {
+            "input_id": binding["binding_id"], "source_refs": list(refs.get("evidence_refs", [])),
+            "claim_refs": list(refs.get("claim_refs", [])), "revision": "1",
+            "components": [str(experiment["sample_plan"])], "variables": [str(experiment["independent_variables"])],
+            "controls": [str(experiment["control_baseline"])], "instrumentation": [str(experiment["instrumentation_method"])],
+            "measurement_points": [str(experiment["measured_outputs"])], "inputs": [str(experiment["independent_variables"])],
+            "outputs": [str(experiment["measured_outputs"])], "stage_ref": payload["source_cursor"],
+        }
+    if route == "comparison":
+        result = payload.get("result")
+        if not isinstance(result, dict):
+            raise ResultSemanticError(f"comparison binding lacks canonical result: {binding['slide_id']}")
+        metric = result["metric"]
+        return {
+            "input_id": binding["binding_id"], "source_refs": list(result["evidence_refs"]),
+            "claim_refs": list(refs.get("claim_refs", [])), "revision": "1",
+            "sides": [{"side_id": "control", "label": "Control", "area": 1.0}, {"side_id": "proposed", "label": "Proposed", "area": 1.0}],
+            "shared_metrics": [f"{metric['name']} ({metric['units']})"], "scale_policy": "same_scale", "normalization_policy": "same_normalization",
+        }
+    raise ResultSemanticError(f"unsupported structured final figure route: {route}")
 
-    This calls the existing director/critic path, then the existing native
-    compiler.  It does not author a new scientific figure or access a source.
-    """
-    from .phase3_cp5bcd_integrated import build_representative_director_output, reverify_approved_figure
-    from .phase3_cp5efg_integrated import build_evidence_bound_outputs
+
+def _bound_plot_input(binding: dict[str, Any]) -> dict[str, Any]:
+    result = binding["scientific_input_payload"].get("result")
+    if not isinstance(result, dict):
+        raise ResultSemanticError(f"plot binding lacks canonical result: {binding['slide_id']}")
+    metric = result["metric"]
+    value = metric["value"]
+    return {
+        "series": [{"series_id": result["result_id"], "points": [[0, 0], [1, value]]}],
+        "x_axis_label": "condition", "x_axis_unit": "canonical_index",
+        "y_axis_label": metric["name"], "y_axis_unit": metric["units"],
+        "provenance_refs": list(result["evidence_refs"]), "evidence_status": "synthetic_test_evidence",
+    }
+
+
+def build_bound_native_bundle(root: Path, binding: dict[str, Any], target_box: dict[str, float]) -> tuple[object, dict[str, Any]]:
+    """Compile an approved final figure from one slide-specific science binding."""
+    from .phase3_cp5bcd_integrated import build_bound_director_output, reverify_approved_figure
+    from .phase3_cp5efg_integrated import _approved_svg_route, build_scientific_plot
     from .phase3_cp5_hi_final_sprint import ScientificSvgNativeCompiler
 
+    route = binding["figure_route"]
     if route in {"fishbone", "mechanism", "experiment", "comparison"}:
-        output = build_representative_director_output(root, route)
+        output = build_bound_director_output(root, route, _bound_director_input(binding))
     elif route == "scientific_plot":
-        output = build_evidence_bound_outputs(root)["scientific_plot"]
+        plot = build_scientific_plot(root, _bound_plot_input(binding))
+        output = _approved_svg_route(root, "FIG001", plot["svg"])
     else:
         raise ResultSemanticError(f"unsupported governed final figure route: {route}")
     critic = output.get("critic", {})
@@ -356,14 +494,14 @@ def _audit_layout_composition(deck_path: Path, plan: dict[str, Any]) -> dict[str
             area = (shape.width / prs.slide_width) * (shape.height / prs.slide_height)
             if shape.name.startswith("tds-composition-text:"):
                 text_area += area
-            if shape.name.startswith(("tds-fig:", "tds-svg-fallback:")):
+            if shape.name.startswith(("tds-fig:", "tds-raster-fallback:")):
                 figure_area += area
         entries.append({
             "slide_id": expected["slide_id"], "semantic_stage": expected["semantic_stage"],
             "selected_pptx_layout_id": expected["selected_pptx_layout_id"],
             "actual_layout_path": slide.slide_layout.part.partname.lstrip("/"),
             "title_shape_present": any(name.startswith("tds-title:") for name in names),
-            "primary_visual_present": any(name.startswith(("tds-fig:", "tds-svg-fallback:")) for name in names),
+            "primary_visual_present": any(name.startswith(("tds-fig:", "tds-raster-fallback:")) for name in names),
             "shape_count": len(names),
             "safe_bounds_status": "pass",
             "text_occupancy": round(text_area, 6), "figure_occupancy": round(figure_area, 6),
@@ -386,17 +524,42 @@ def _audit_figure_composition(deck_path: Path, plan: dict[str, Any], bundles: di
 
     prs = Presentation(deck_path)
     entries = []
+    binding_by_id = {binding["binding_id"]: binding for binding in plan["slide_scientific_figure_bindings"]}
+    unbound_scientific_figure_count = 0
+    scientific_input_mismatch_count = 0
+    route_only_representative_final_figure_count = 0
+    untruthful_vector_fallback_count = 0
+    unapproved_figure_bypass_count = 0
     for expected, slide in zip(plan["slides"], prs.slides, strict=True):
         governed = expected.get("governed_figure")
+        materialized_names = [shape.name for shape in slide.shapes if shape.name.startswith(("tds-fig:", "tds-raster-fallback:"))]
         if not governed:
+            unapproved_figure_bypass_count += len(materialized_names)
             continue
-        names = [shape.name for shape in slide.shapes if shape.name.startswith(("tds-fig:", "tds-svg-fallback:"))]
+        binding = binding_by_id.get(governed.get("slide_scientific_figure_binding_id"))
+        if binding is None:
+            unbound_scientific_figure_count += 1
+        else:
+            scientific_input_mismatch_count += int(
+                governed.get("scientific_input_sha256") != binding["scientific_input_sha256"]
+                or governed.get("figure_binding_method") != binding["binding_method"]
+            )
+            route_only_representative_final_figure_count += int(
+                binding.get("representative_fixture") is True
+                or binding.get("binding_method") != "canonical_slide_scientific_input"
+            )
         entry = {
             "slide_id": expected["slide_id"], "route": governed["route"], "placement": governed["placement"],
-            "native_shape_count": len(names), "primary_region": expected["primary_visual_region"],
+            "native_shape_count": len(materialized_names), "primary_region": expected["primary_visual_region"],
             "binding_kind": governed.get("binding_kind", "approved_native_plan"),
         }
-        if governed.get("binding_kind") == "explicit_svg_fallback":
+        if governed.get("binding_kind") == "raster_fallback_explicit":
+            untruthful_vector_fallback_count += int(not (
+                governed.get("physical_pptx_representation") == "png_raster"
+                and governed.get("source_authority") == "fishbone_svg"
+                and governed.get("vector_fallback") is False
+                and governed.get("raster_fallback") is True
+            ))
             entry.update({
                 "fishbone_revision_ref": governed["fishbone_revision_ref"],
                 "source_svg_relative_path": governed["source_svg_relative_path"],
@@ -412,11 +575,15 @@ def _audit_figure_composition(deck_path: Path, plan: dict[str, Any], bundles: di
     native_entries = [item for item in entries if item["binding_kind"] == "approved_native_plan"]
     native_mismatch_count = sum(materialization_by_slide.get(item["slide_id"], {}).get("native_mismatch_count", 1) for item in native_entries)
     return {
-        "audit_id": "FVCC-FIGURE-001", "aggregate_status": "pass" if required <= routes and all(entry["native_shape_count"] > 0 for entry in entries) else "fail",
+        "audit_id": "FVCC-FIGURE-001", "aggregate_status": "pass" if required <= routes and all(entry["native_shape_count"] > 0 for entry in entries) and untruthful_vector_fallback_count == 0 and unapproved_figure_bypass_count == 0 else "fail",
         "governed_figure_placement_count": len(entries), "governed_routes": sorted(routes),
-        "unapproved_figure_bypass_count": 0,
+        "unapproved_figure_bypass_count": unapproved_figure_bypass_count,
+        "route_only_representative_final_figure_count": route_only_representative_final_figure_count,
+        "unbound_scientific_figure_count": unbound_scientific_figure_count,
+        "scientific_input_mismatch_count": scientific_input_mismatch_count,
+        "untruthful_vector_fallback_count": untruthful_vector_fallback_count,
         "native_plan_count": sum(item["binding_kind"] == "approved_native_plan" for item in entries),
-        "fallback_count": sum(item["binding_kind"] == "explicit_svg_fallback" for item in entries),
+        "fallback_count": sum(item["binding_kind"] == "raster_fallback_explicit" for item in entries),
         "native_materialization_record_count": len(materializations),
         "native_mismatch_count": native_mismatch_count,
         "placements": entries,
@@ -432,6 +599,12 @@ _FINAL_PUBLICATION_FILES = (
     "final-acceptance-figure-placement-audit.json",
     "final-visual-composition-template-lineage.json",
     "native-materialization-parity.json",
+    "research-deck-lineage.json",
+    "slide-materialization-decisions.json",
+    "meeting-view-manifest.json",
+    "body-reference-evidence-resolution.json",
+    "incremental-build-audit.json",
+    "incremental-lineage-acceptance-proof.json",
     "final-visual-composition-candidate-state.json",
 )
 
@@ -445,7 +618,11 @@ def _build_final_visual_composition_in_directory(root: Path, destination: Path) 
     destination.mkdir(parents=True, exist_ok=True)
     projection = build_final_projection(root)
     plan = build_final_composition_plan(root, projection)
+    from .incremental_deck_lineage import build_current_acceptance_lineage, build_incremental_lineage_acceptance_proof
+    lineage_artifacts = build_current_acceptance_lineage(plan)
+    lineage_acceptance_proof = build_incremental_lineage_acceptance_proof()
     by_id = {record["slide_id"]: record for record in projection["slides"]}
+    binding_by_id = {binding["binding_id"]: binding for binding in plan["slide_scientific_figure_bindings"]}
     for item in plan["slides"]:
         if item["source_slide_spec_id"]:
             record = by_id[item["source_slide_spec_id"]]
@@ -459,7 +636,7 @@ def _build_final_visual_composition_in_directory(root: Path, destination: Path) 
     bundle_cache: dict[tuple[str, tuple[float, float, float, float]], tuple[object, dict[str, Any]]] = {}
     for item in plan["slides"]:
         governed = item.get("governed_figure")
-        if governed and governed.get("binding_kind") == "explicit_svg_fallback":
+        if governed and governed.get("binding_kind") == "raster_fallback_explicit":
             preview = root / governed["preview_png_relative_path"]
             source_svg = root / governed["source_svg_relative_path"]
             if not preview.is_file() or not source_svg.is_file():
@@ -467,9 +644,12 @@ def _build_final_visual_composition_in_directory(root: Path, destination: Path) 
             svg_fallbacks[item["slide_id"]] = {**governed, "preview_png_path": preview}
         elif governed:
             region = item["primary_visual_region"]
-            cache_key = (governed["route"], tuple(float(region[key]) for key in ("left", "top", "width", "height")))
+            cache_key = (governed["scientific_input_sha256"], tuple(float(region[key]) for key in ("left", "top", "width", "height")))
             if cache_key not in bundle_cache:
-                bundle_cache[cache_key] = _native_bundle(root, governed["route"], region)
+                binding = binding_by_id.get(governed["slide_scientific_figure_binding_id"])
+                if binding is None:
+                    raise ResultSemanticError(f"missing final scientific figure binding: {item['slide_id']}")
+                bundle_cache[cache_key] = build_bound_native_bundle(root, binding, region)
             bundles[item["slide_id"]] = bundle_cache[cache_key]
             handle, native_plan = bundles[item["slide_id"]]
             governed.update({"figure_id": handle.figure_id, "manifest_id": handle.manifest_id, "native_plan_sha256": native_plan["plan_sha256"]})
@@ -512,6 +692,12 @@ def _build_final_visual_composition_in_directory(root: Path, destination: Path) 
         ("final-acceptance-figure-placement-audit.json", figure_audit),
         ("final-visual-composition-template-lineage.json", template_lineage),
         ("native-materialization-parity.json", native_parity),
+        ("research-deck-lineage.json", lineage_artifacts["research_deck_lineage"]),
+        ("slide-materialization-decisions.json", lineage_artifacts["slide_materialization_decisions"]),
+        ("meeting-view-manifest.json", lineage_artifacts["meeting_view_manifest"]),
+        ("body-reference-evidence-resolution.json", lineage_artifacts["body_reference_evidence_resolution"]),
+        ("incremental-build-audit.json", lineage_artifacts["incremental_build_audit"]),
+        ("incremental-lineage-acceptance-proof.json", lineage_acceptance_proof),
     ):
         (destination / filename).write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     candidate_state = compute_final_visual_composition_candidate_state(root)
@@ -523,6 +709,8 @@ def _build_final_visual_composition_in_directory(root: Path, destination: Path) 
         "semantic_audit": semantic_audit, "layout_audit": layout_audit, "figure_audit": figure_audit,
         "template_lineage": template_lineage,
         "native_parity": native_parity,
+        "lineage_artifacts": lineage_artifacts,
+        "lineage_acceptance_proof": lineage_acceptance_proof,
         "composition_hash": _json_hash({"projection": projection, "plan": plan, "semantic": semantic_audit, "layout": layout_audit, "figure": figure_audit}),
         "candidate_state": candidate_state,
     }
@@ -675,6 +863,7 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
     """Hash the complete final-composition execution domain, not its reports."""
     root = Path(root).resolve()
     component_paths = (
+        ".gitattributes",
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py",
         "packages/thesis-deck-system/src/thesis_deck_system/phase2_build.py",
         "packages/thesis-deck-system/src/thesis_deck_system/story.py",
@@ -684,10 +873,12 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5efg_integrated.py",
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py",
         "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/incremental_deck_lineage.py",
         "packages/thesis-deck-system/src/thesis_deck_system/contracts.py",
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py",
         "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py",
         "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py",
+        "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py",
         "packages/thesis-deck-system/pyproject.toml",
         "thesis-deck-system/TASK_PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE.md",
         "thesis-deck-system/designs/PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE_DESIGN.md",
@@ -700,9 +891,18 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "thesis-deck-system/artifacts/phase3/approved-figures.json",
         "thesis-deck-system/artifacts/phase3/visual-style-profile.json",
         "thesis-deck-system/schemas/generated-pptx-attestation.schema.json",
+        "thesis-deck-system/schemas/generated-pptx-source-closure.schema.json",
+        "thesis-deck-system/schemas/generated-pptx-media-lineage.schema.json",
         "thesis-deck-system/schemas/native-materialization-parity.schema.json",
         "thesis-deck-system/schemas/final-closure-validation-run.schema.json",
         "thesis-deck-system/schemas/final-closure-reliability-qa.schema.json",
+        "thesis-deck-system/schemas/final-evidence-current-facts.schema.json",
+        "thesis-deck-system/schemas/slide-lineage-record.schema.json",
+        "thesis-deck-system/schemas/slide-materialization-decision.schema.json",
+        "thesis-deck-system/schemas/meeting-view-manifest.schema.json",
+        "thesis-deck-system/schemas/body-reference-evidence-resolution.schema.json",
+        "thesis-deck-system/schemas/incremental-build-audit.schema.json",
+        "thesis-deck-system/schemas/incremental-lineage-acceptance-proof.schema.json",
     )
     hashes: dict[str, str] = {}
     for relative in component_paths:
@@ -715,6 +915,7 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
 
 def _candidate_component_digest(relative_path: str, contents: bytes) -> str:
     """Normalize checkout text line endings while preserving binary identity."""
-    if Path(relative_path).suffix.casefold() in {".py", ".json", ".md", ".toml"}:
+    path = Path(relative_path)
+    if path.suffix.casefold() in {".py", ".json", ".md", ".toml"} or path.name == ".gitattributes":
         contents = contents.replace(b"\r\n", b"\n")
     return sha256(contents).hexdigest()

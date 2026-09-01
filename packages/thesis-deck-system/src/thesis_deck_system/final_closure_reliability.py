@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from hashlib import sha256
 import json
 from pathlib import Path
+import re
 import subprocess
 from typing import Any, Callable, Iterable
 import zipfile
@@ -23,6 +24,82 @@ class GeneratedArtifactAdjudicationError(ValueError):
 
 def _canonical_hash(value: dict[str, Any]) -> str:
     return sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def build_generated_source_closure(root: Path, declared_inputs: Iterable[dict[str, Any]]) -> dict[str, Any]:
+    """Close every direct generated-PPTX input to a safe repository identity."""
+    root = Path(root).resolve()
+    required = {"input_id", "repository_relative_path", "input_class", "producer_id", "input_role", "source_kind", "privacy_status"}
+    records: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for item in declared_inputs:
+        if set(item) != required or not isinstance(item.get("input_id"), str) or item["input_id"] in seen:
+            raise GeneratedArtifactAdjudicationError("generated source closure input contract is invalid")
+        relative = item.get("repository_relative_path")
+        if not isinstance(relative, str) or relative.startswith(("/", "\\")) or ".." in Path(relative).parts:
+            raise GeneratedArtifactAdjudicationError("generated source closure path is unsafe")
+        path = (root / relative).resolve()
+        try:
+            path.relative_to(root)
+        except ValueError as error:
+            raise GeneratedArtifactAdjudicationError("generated source closure path escapes repository") from error
+        if not path.is_file() or item.get("privacy_status") != "sanitized":
+            raise GeneratedArtifactAdjudicationError("generated source closure input is unresolved or private")
+        seen.add(item["input_id"])
+        records.append({**item, "input_sha256": sha256(path.read_bytes()).hexdigest()})
+    records.sort(key=lambda value: value["input_id"])
+    closure_sha256 = _canonical_hash({"input_records": records})
+    return {
+        "source_closure_id": f"FEC-SOURCE-CLOSURE-{closure_sha256[:12].upper()}",
+        "input_records": records,
+        "input_record_count": len(records),
+        "unresolved_input_count": 0,
+        "private_input_count": 0,
+        "source_closure_sha256": closure_sha256,
+    }
+
+
+def build_package_media_lineage(package: Path, source_records: Iterable[dict[str, Any]], media_sources: dict[str, str]) -> dict[str, Any]:
+    """Map every PPTX media part to one closed source record, fail closed."""
+    by_id = {item.get("input_id"): item for item in source_records}
+    try:
+        with zipfile.ZipFile(package) as archive:
+            media_names = sorted(name for name in archive.namelist() if name.startswith("ppt/media/"))
+            records: list[dict[str, Any]] = []
+            for name in media_names:
+                source_id = media_sources.get(name)
+                source = by_id.get(source_id)
+                if source is None:
+                    raise GeneratedArtifactAdjudicationError("package media part has no declared source lineage")
+                media_sha = sha256(archive.read(name)).hexdigest()
+                source_sha = source.get("input_sha256")
+                if media_sha != source_sha:
+                    raise GeneratedArtifactAdjudicationError("package media bytes do not match declared source")
+                records.append({
+                    "package_part_name": name,
+                    "media_sha256": media_sha,
+                    "media_type": Path(name).suffix.casefold().lstrip(".") or "unknown",
+                    "source_kind": source["source_kind"],
+                    "source_ref": source_id,
+                    "source_sha256": source_sha,
+                    "producer_id": source["producer_id"],
+                    "lineage_status": "exact_source_bytes",
+                })
+    except (OSError, zipfile.BadZipFile) as error:
+        raise GeneratedArtifactAdjudicationError("package media inventory is unreadable") from error
+    declared_extra = set(media_sources) - set(media_names)
+    if declared_extra:
+        raise GeneratedArtifactAdjudicationError("media lineage declares absent package parts")
+    lineage_sha256 = _canonical_hash({"media_lineage_records": records})
+    return {
+        "media_lineage_id": f"FEC-MEDIA-LINEAGE-{lineage_sha256[:12].upper()}",
+        "package_media_part_count": len(media_names),
+        "media_lineage_records": records,
+        "unresolved_media_part_count": 0,
+        "undeclared_media_part_count": 0,
+        "duplicate_media_lineage_count": len(records) - len({item["package_part_name"] for item in records}),
+        "media_lineage_sha256": lineage_sha256,
+    }
 
 
 class GeneratedArtifactAdjudicator:
@@ -78,6 +155,89 @@ class GeneratedArtifactAdjudicator:
             "unknown_package_part_count": 0,
             "media_part_count": sum(name.startswith("ppt/media/") for name in lowered),
         }
+
+    def _staged_identity(self, relative_path: str) -> tuple[str, bytes]:
+        """Read one stage-0 Git-index blob without trusting checkout bytes."""
+        listed = subprocess.run(
+            ["git", "ls-files", "--stage", "--", relative_path],
+            cwd=self.root,
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+        entries = [line.split(maxsplit=3) for line in listed.stdout.splitlines() if line.strip()]
+        if listed.returncode != 0 or len(entries) != 1 or len(entries[0]) != 4:
+            raise GeneratedArtifactAdjudicationError("staged generated artifact has no exact index entry")
+        _mode, blob_sha, stage, staged_path = entries[0]
+        if stage != "0" or staged_path != relative_path:
+            raise GeneratedArtifactAdjudicationError("staged generated artifact index identity is ambiguous")
+        blob = subprocess.run(
+            ["git", "cat-file", "blob", blob_sha],
+            cwd=self.root,
+            check=False,
+            capture_output=True,
+        )
+        if blob.returncode != 0:
+            raise GeneratedArtifactAdjudicationError("staged generated artifact blob cannot be read")
+        return blob_sha, blob.stdout
+
+    def attest_staged_generated_pptx(
+        self,
+        package: Path,
+        *,
+        artifact_class: str,
+        producer_id: str,
+        declared_input_paths: Iterable[str | Path],
+        execution_id: str,
+        source_closure: dict[str, Any] | None = None,
+        media_lineage: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        """Attest exact stage-0 bytes, then seal working/index parity facts."""
+        record = self.attest_generated_pptx(
+            package,
+            artifact_class=artifact_class,
+            producer_id=producer_id,
+            declared_input_paths=declared_input_paths,
+            execution_id=execution_id,
+        )
+        path = record["repository_relative_path"]
+        staged_blob_sha, staged_bytes = self._staged_identity(path)
+        staged_bytes_sha256 = sha256(staged_bytes).hexdigest()
+        working_sha256 = sha256(Path(package).read_bytes()).hexdigest() if Path(package).is_file() else None
+        if (source_closure is None) != (media_lineage is None):
+            raise GeneratedArtifactAdjudicationError("source closure and media lineage must bind together")
+        closure_facts: dict[str, Any] = {}
+        if source_closure is not None and media_lineage is not None:
+            required_closure = {"source_closure_id", "source_closure_sha256", "input_record_count", "unresolved_input_count", "private_input_count"}
+            required_media = {"media_lineage_id", "media_lineage_sha256", "package_media_part_count", "unresolved_media_part_count", "undeclared_media_part_count", "duplicate_media_lineage_count"}
+            if not required_closure <= set(source_closure) or not required_media <= set(media_lineage):
+                raise GeneratedArtifactAdjudicationError("source/media closure evidence is incomplete")
+            if any(source_closure[key] != 0 for key in ("unresolved_input_count", "private_input_count")):
+                raise GeneratedArtifactAdjudicationError("source closure is not safe")
+            if any(media_lineage[key] != 0 for key in ("unresolved_media_part_count", "undeclared_media_part_count", "duplicate_media_lineage_count")):
+                raise GeneratedArtifactAdjudicationError("media lineage is not closed")
+            if media_lineage["package_media_part_count"] != record["media_part_count"]:
+                raise GeneratedArtifactAdjudicationError("media lineage does not match package inventory")
+            closure_facts = {
+                "source_closure_id": source_closure["source_closure_id"],
+                "source_closure_sha256": source_closure["source_closure_sha256"],
+                "source_closure_input_record_count": source_closure["input_record_count"],
+                "media_lineage_id": media_lineage["media_lineage_id"],
+                "media_lineage_sha256": media_lineage["media_lineage_sha256"],
+                "media_lineage_record_count": len(media_lineage.get("media_lineage_records", [])),
+            }
+        record.update({
+            "staged_git_blob_sha": staged_blob_sha,
+            "staged_bytes_sha256": staged_bytes_sha256,
+            "working_tree_sha256": working_sha256,
+            "working_tree_matches_staged": working_sha256 == staged_bytes_sha256,
+            "artifact_sha256": staged_bytes_sha256,
+            **closure_facts,
+        })
+        record["evidence_sha256"] = _canonical_hash({key: value for key, value in record.items() if key != "evidence_sha256"})
+        self._records[path] = record
+        return dict(record)
 
     def attest_generated_pptx(self, package: Path, *, artifact_class: str, producer_id: str, declared_input_paths: Iterable[str | Path], execution_id: str) -> dict[str, Any]:
         package = Path(package)
@@ -138,6 +298,17 @@ class GeneratedArtifactAdjudicator:
         forbidden_counts = ("private_input_count", "external_relationship_count", "macro_part_count", "embedded_package_or_ole_count", "package_privacy_finding_count", "unknown_package_part_count")
         if any(record.get(key) != 0 for key in forbidden_counts):
             raise GeneratedArtifactAdjudicationError("generated package failed privacy closure")
+        source_media_keys = ("source_closure_id", "source_closure_sha256", "source_closure_input_record_count", "media_lineage_id", "media_lineage_sha256", "media_lineage_record_count")
+        present = [key in record for key in source_media_keys]
+        if any(present) and not all(present):
+            raise GeneratedArtifactAdjudicationError("attestation source/media binding is incomplete")
+        if all(present):
+            if not isinstance(record["source_closure_id"], str) or not isinstance(record["media_lineage_id"], str):
+                raise GeneratedArtifactAdjudicationError("attestation source/media identity is invalid")
+            if any(not isinstance(record[key], str) or len(record[key]) != 64 for key in ("source_closure_sha256", "media_lineage_sha256")):
+                raise GeneratedArtifactAdjudicationError("attestation source/media hash is invalid")
+            if record["source_closure_input_record_count"] < 0 or record["media_lineage_record_count"] != record.get("media_part_count"):
+                raise GeneratedArtifactAdjudicationError("attestation source/media counts are invalid")
         return {**record, "status": "adjudicated_safe_generated_artifact"}
 
     def adjudicate(self, package: Path, *, artifact_class: str, producer_id: str) -> dict[str, Any]:
@@ -145,6 +316,18 @@ class GeneratedArtifactAdjudicator:
         record = self._records.get(path)
         if record is None or record.get("artifact_class") != artifact_class or record.get("producer_id") != producer_id:
             raise GeneratedArtifactAdjudicationError("no execution-owned attestation for generated artifact")
+        if "staged_git_blob_sha" in record:
+            staged_blob_sha, staged_bytes = self._staged_identity(path)
+            staged_sha256 = sha256(staged_bytes).hexdigest()
+            if (
+                staged_blob_sha != record.get("staged_git_blob_sha")
+                or staged_sha256 != record.get("staged_bytes_sha256")
+                or staged_sha256 != record.get("artifact_sha256")
+            ):
+                raise GeneratedArtifactAdjudicationError("staged generated artifact identity is stale")
+            current_working_sha = sha256(Path(package).read_bytes()).hexdigest() if Path(package).is_file() else None
+            if current_working_sha != record.get("working_tree_sha256") or current_working_sha != staged_sha256:
+                raise GeneratedArtifactAdjudicationError("working tree does not match staged generated artifact")
         if sha256(Path(package).read_bytes()).hexdigest() != record.get("artifact_sha256"):
             raise GeneratedArtifactAdjudicationError("generated artifact hash is stale")
         return self.adjudicate_record(record)
@@ -190,9 +373,72 @@ _FINAL_GENERATED_PPTX_CONTRACTS: dict[str, tuple[str, str, tuple[str, ...]]] = {
     "thesis-deck-system/artifacts/phase3/cp5-final-visual-composition-acceptance-deck.pptx": ("final_acceptance_deck", "final-composition-builder", ("thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx", "thesis-deck-system/artifacts/phase3/final-acceptance-slide-composition-plan.json")),
 }
 
+# Every source path below is a repository-owned sanitized/generated input.  The
+# mapping is intentionally package-part specific: byte equality, not filename
+# similarity, proves the media source relationship.
+_FINAL_GENERATED_PPTX_MEDIA_SOURCES: dict[str, dict[str, str]] = {
+    "thesis-deck-system/artifacts/phase2/acceptance-deck.pptx": {
+        "ppt/media/A002.svg": "thesis-deck-system/artifacts/phase2/observation/observation_visual.svg",
+        "ppt/media/A101.svg": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
+        "ppt/media/A102.svg": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
+        "ppt/media/A201.svg": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.svg",
+        "ppt/media/image1.png": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+        "ppt/media/image2.png": "thesis-deck-system/artifacts/phase2/observation/observation_visual.png",
+        "ppt/media/image3.png": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.png",
+        "ppt/media/image4.png": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+        "ppt/media/image5.png": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.png",
+        "ppt/media/plot-canonical.svg": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.svg",
+    },
+    "thesis-deck-system/artifacts/phase2/n-layer-acceptance-deck.pptx": {
+        "ppt/media/A002.svg": "thesis-deck-system/artifacts/phase2/observation/observation_visual.svg",
+        "ppt/media/A101.svg": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
+        "ppt/media/A102.svg": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
+        "ppt/media/A201.svg": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.svg",
+        "ppt/media/A301.svg": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.svg",
+        "ppt/media/A302.svg": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
+        "ppt/media/image1.png": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+        "ppt/media/image2.png": "thesis-deck-system/artifacts/phase2/observation/observation_visual.png",
+        "ppt/media/image3.png": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.png",
+        "ppt/media/image4.png": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+        "ppt/media/image5.png": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.png",
+        "ppt/media/plot-canonical.svg": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.svg",
+    },
+    "thesis-deck-system/artifacts/phase2/synthetic-template.pptx": {},
+    "thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx": {},
+    "thesis-deck-system/artifacts/phase3/cp5-final-visual-composition-acceptance-deck.pptx": {
+        "ppt/media/image1.png": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+        "ppt/media/image2.png": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+    },
+}
 
-def attest_final_generated_pptx_set(root: Path, *, candidate_state_hash: str, privacy_scanner: Any, execution_id: str) -> list[dict[str, Any]]:
-    """Attest the fixed generated outputs through declared producer contracts.
+
+def _final_source_closure(root: Path, relative_path: str, producer_id: str, direct_inputs: tuple[str, ...]) -> tuple[dict[str, Any], dict[str, str], tuple[Path, ...]]:
+    """Build exact direct-input and package-media closure for one fixed output."""
+    media_paths = _FINAL_GENERATED_PPTX_MEDIA_SOURCES[relative_path]
+    declared: dict[str, str] = {path: "direct_build_input" for path in direct_inputs}
+    declared.update({path: "media_source" for path in media_paths.values()})
+    entries: list[dict[str, Any]] = []
+    path_to_id: dict[str, str] = {}
+    for index, (path, input_role) in enumerate(sorted(declared.items()), start=1):
+        input_id = f"SRC-{index:03d}"
+        path_to_id[path] = input_id
+        entries.append({
+            "input_id": input_id,
+            "repository_relative_path": path,
+            "input_class": "generated_artifact" if path.endswith(".pptx") else "repository_input",
+            "producer_id": producer_id,
+            "input_role": input_role,
+            "source_kind": "repository_sanitized",
+            "privacy_status": "sanitized",
+        })
+    closure = build_generated_source_closure(root, entries)
+    media_sources = {part: path_to_id[path] for part, path in media_paths.items()}
+    declared_paths = tuple(root / path for path in declared)
+    return closure, media_sources, declared_paths
+
+
+def build_final_generated_pptx_evidence_bundle(root: Path, *, candidate_state_hash: str, privacy_scanner: Any, execution_id: str) -> dict[str, Any]:
+    """Build exact final-output attestations plus their closure provenance.
 
     This is intentionally not a generic PPTX allowlist: each path must be
     produced by its registered builder, hash-bound to the frozen candidate and
@@ -207,9 +453,38 @@ def attest_final_generated_pptx_set(root: Path, *, candidate_state_hash: str, pr
     contracts = {path: (artifact_class, producer) for path, (artifact_class, producer, _) in _FINAL_GENERATED_PPTX_CONTRACTS.items()}
     adjudicator = GeneratedArtifactAdjudicator(root=root, candidate_state_hash=candidate_state_hash, approved_producers=producers, generated_contracts=contracts, privacy_scanner=privacy_scanner)
     records: list[dict[str, Any]] = []
+    source_closures: dict[str, dict[str, Any]] = {}
+    media_lineages: dict[str, dict[str, Any]] = {}
     for relative_path, (artifact_class, producer, inputs) in _FINAL_GENERATED_PPTX_CONTRACTS.items():
-        records.append(adjudicator.attest_generated_pptx(root / relative_path, artifact_class=artifact_class, producer_id=producer, declared_input_paths=[root / path for path in inputs], execution_id=execution_id))
-    return records
+        source_closure, media_sources, declared_paths = _final_source_closure(root, relative_path, producer, inputs)
+        media_lineage = build_package_media_lineage(root / relative_path, source_closure["input_records"], media_sources)
+        source_closures[relative_path] = source_closure
+        media_lineages[relative_path] = media_lineage
+        records.append(adjudicator.attest_staged_generated_pptx(
+            root / relative_path,
+            artifact_class=artifact_class,
+            producer_id=producer,
+            declared_input_paths=declared_paths,
+            execution_id=execution_id,
+            source_closure=source_closure,
+            media_lineage=media_lineage,
+        ))
+    return {
+        "adjudicator": adjudicator,
+        "attestations": records,
+        "source_closures": source_closures,
+        "media_lineages": media_lineages,
+    }
+
+
+def attest_final_generated_pptx_set(root: Path, *, candidate_state_hash: str, privacy_scanner: Any, execution_id: str) -> list[dict[str, Any]]:
+    """Compatibility projection for callers that only need final attestations."""
+    return build_final_generated_pptx_evidence_bundle(
+        root,
+        candidate_state_hash=candidate_state_hash,
+        privacy_scanner=privacy_scanner,
+        execution_id=execution_id,
+    )["attestations"]
 
 
 class DurableValidationRunner:
@@ -225,12 +500,17 @@ class DurableValidationRunner:
         run_id = sha256((tier + "\0" + "\0".join(command) + "\0" + datetime.now(timezone.utc).isoformat()).encode()).hexdigest()[:16]
         stdout_path = self.evidence_root / f"{run_id}.stdout.log"
         stderr_path = self.evidence_root / f"{run_id}.stderr.log"
+        exit_status_path = self.evidence_root / f"{run_id}.exit-status.txt"
         record_path = self.evidence_root / f"{run_id}.json"
-        record = {"run_id": run_id, "tier": tier, "command": command, "head": self._git("rev-parse", "HEAD"), "candidate_hash_pre": self.candidate_hash(), "started_at": datetime.now(timezone.utc).isoformat(), "stdout_path": str(stdout_path), "stderr_path": str(stderr_path), "completion_status": "running"}
+        record = {"run_id": run_id, "tier": tier, "command": command, "head": self._git("rev-parse", "HEAD"), "candidate_hash_pre": self.candidate_hash(), "started_at": datetime.now(timezone.utc).isoformat(), "stdout_path": str(stdout_path), "stderr_path": str(stderr_path), "exit_status_path": str(exit_status_path), "completion_status": "running"}
         record_path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         with stdout_path.open("w", encoding="utf-8") as stdout, stderr_path.open("w", encoding="utf-8") as stderr:
             completed = subprocess.run(command, cwd=self.root, stdout=stdout, stderr=stderr, check=False, text=True)
-        record.update({"exit_code": completed.returncode, "candidate_hash_post": self.candidate_hash(), "ended_at": datetime.now(timezone.utc).isoformat(), "completion_status": "completed"})
+        exit_status_path.write_text(f"{completed.returncode}\n", encoding="utf-8")
+        output = stdout_path.read_text(encoding="utf-8")
+        passed_match = re.search(r"(?<!\d)(\d+) passed\b", output)
+        failed_match = re.search(r"(?<!\d)(\d+) failed\b", output)
+        record.update({"exit_code": completed.returncode, "passed": int(passed_match.group(1)) if passed_match else 0, "failed": int(failed_match.group(1)) if failed_match else 0, "candidate_hash_post": self.candidate_hash(), "ended_at": datetime.now(timezone.utc).isoformat(), "completion_status": "completed"})
         record_path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return record
 
@@ -291,3 +571,61 @@ def build_final_closure_qa(*, candidate_state_hash: str, parity: dict[str, Any],
     ]
     owning_checks = [{"check_id": check_id, "status": "pass" if passed else "fail", "facts": facts, "facts_sha256": _canonical_hash(facts)} for check_id, passed, facts in checks]
     return {"qa_id": "FC-RELIABILITY-QA-001", "candidate_state_hash": candidate_state_hash, "aggregate_status": "pass" if all(item["status"] == "pass" for item in owning_checks) else "fail", "owning_checks": owning_checks}
+
+
+def build_final_evidence_facts(
+    *,
+    candidate_state_hash: str,
+    focused: dict[str, Any],
+    figure_audit: dict[str, Any],
+    incremental_audit: dict[str, Any],
+    privacy: dict[str, Any],
+) -> dict[str, Any]:
+    """Unify final closure facts without allowing stale evidence to certify it."""
+    checks = [
+        (
+            "FEC-05-FOCUSED-CANDIDATE",
+            focused.get("candidate_hash_pre") == candidate_state_hash
+            and focused.get("candidate_hash_post") == candidate_state_hash
+            and focused.get("exit_code") == 0
+            and focused.get("failed") == 0,
+            {key: focused.get(key) for key in ("candidate_hash_pre", "candidate_hash_post", "exit_code", "passed", "failed")},
+        ),
+        (
+            "FEC-03-FIGURE-BINDING",
+            all(figure_audit.get(key) == 0 for key in (
+                "route_only_representative_final_figure_count", "unbound_scientific_figure_count",
+                "scientific_input_mismatch_count", "unapproved_figure_bypass_count", "native_mismatch_count",
+                "untruthful_vector_fallback_count",
+            )),
+            {key: figure_audit.get(key) for key in (
+                "route_only_representative_final_figure_count", "unbound_scientific_figure_count",
+                "scientific_input_mismatch_count", "unapproved_figure_bypass_count", "native_mismatch_count",
+                "untruthful_vector_fallback_count",
+            )},
+        ),
+        (
+            "IDL-MIXED-GENERATION",
+            incremental_audit.get("stale_mixed_generation_slide_count") == 0
+            and incremental_audit.get("shell_override_by_body_reference_count") == 0,
+            {key: incremental_audit.get(key) for key in ("stale_mixed_generation_slide_count", "shell_override_by_body_reference_count")},
+        ),
+        (
+            "FEC-01-02-PRIVACY-ATTESTATION",
+            privacy.get("unexcepted_final_finding_count") == 0
+            and privacy.get("attested_generated_pptx_count") == privacy.get("raw_pptx_candidate_count"),
+            {key: privacy.get(key) for key in ("unexcepted_final_finding_count", "attested_generated_pptx_count", "raw_pptx_candidate_count")},
+        ),
+    ]
+    owning_checks = [
+        {"check_id": check_id, "status": "pass" if passed else "fail", "facts": facts, "facts_sha256": _canonical_hash(facts)}
+        for check_id, passed, facts in checks
+    ]
+    return {
+        "evidence_facts_id": "FEC-CURRENT-FACTS-001",
+        "candidate_state_hash": candidate_state_hash,
+        "focused_test_count": focused.get("passed"),
+        "figure_binding_count": figure_audit.get("governed_figure_placement_count"),
+        "aggregate_status": "pass" if all(check["status"] == "pass" for check in owning_checks) else "fail",
+        "owning_checks": owning_checks,
+    }

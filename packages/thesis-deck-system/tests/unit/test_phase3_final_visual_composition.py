@@ -81,7 +81,7 @@ def test_final_audits_preserve_per_slide_provenance_and_real_fishbone_revision_b
     assert result_trace["result_trace"]["presentation_fields"] == result_trace["visible_presentation_fields"]
     fishbone = [item for item in result["figure_audit"]["placements"] if item["route"] == "fishbone"]
     assert {item["fishbone_revision_ref"] for item in fishbone} == {"FB001 rev1", "FB001 rev2"}
-    assert all(item["binding_kind"] == "explicit_svg_fallback" for item in fishbone)
+    assert all(item["binding_kind"] == "raster_fallback_explicit" for item in fishbone)
 
 
 def test_final_release_qa_is_execution_derived_and_preserves_blocked_truth(tmp_path: Path):

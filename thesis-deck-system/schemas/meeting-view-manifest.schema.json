@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/meeting-view-manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meeting_view_id", "canonical_slide_count", "selected_slide_ids", "excluded_slide_ids", "canonical_history_mutated"],
+  "properties": {
+    "meeting_view_id": {"type": "string", "pattern": "^MEETING-VIEW-[0-9]{3}$"},
+    "canonical_slide_count": {"type": "integer", "minimum": 0},
+    "selected_slide_ids": {"type": "array", "items": {"type": "string", "pattern": "^[A-Za-z0-9-]{3,140}$"}, "uniqueItems": true},
+    "excluded_slide_ids": {"type": "array", "items": {"type": "string", "pattern": "^[A-Za-z0-9-]{3,140}$"}, "uniqueItems": true},
+    "canonical_history_mutated": {"const": false}
+  }
+}

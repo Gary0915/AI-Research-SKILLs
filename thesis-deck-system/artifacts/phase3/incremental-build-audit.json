@@ -1,0 +1,14 @@
+{
+  "audit_id": "IDL-BUILD-AUDIT-001",
+  "canonical_slide_lineage_count": 20,
+  "historical_slide_reuse_count": 0,
+  "new_appended_slide_count": 20,
+  "new_snapshot_revision_count": 0,
+  "dependency_triggered_rebuild_count": 0,
+  "meeting_view_excluded_only_count": 0,
+  "reused_figure_count": 0,
+  "new_figure_count": 11,
+  "stale_mixed_generation_slide_count": 0,
+  "shell_override_by_body_reference_count": 0,
+  "aggregate_status": "pass"
+}

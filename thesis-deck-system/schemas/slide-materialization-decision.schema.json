@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/slide-materialization-decision.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slide_id", "previous_artifact_hash", "previous_dependency_hash", "current_dependency_hash", "decision", "reason_code", "output_slide_id", "revision", "decision_sha256"],
+  "properties": {
+    "slide_id": {"type": "string", "pattern": "^[A-Za-z0-9-]{3,128}$"},
+    "previous_artifact_hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "previous_dependency_hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "current_dependency_hash": {"$ref": "#/$defs/hash"},
+    "decision": {"enum": ["reuse_exact", "append_new", "new_revision", "rebuild_dependency_changed", "exclude_from_meeting_view_only"]},
+    "reason_code": {"type": "string", "pattern": "^[a-z0-9_]{3,128}$"},
+    "output_slide_id": {"type": "string", "pattern": "^[A-Za-z0-9-]{3,140}$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "decision_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "slide_id": "FVCC-COVER-001",
+    "topic_id": "TOPIC-ROOT",
+    "semantic_parent_id": null,
+    "source_cursor": 1,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "a3040700b70677769856bd24b5584262d95ac3cd1f11d4d98a0cfe243481e812",
+    "composition_family": "BCF-TEXT-TOP-DUAL-VISUAL",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P1"
+    ],
+    "artifact_hash": "21adfc74b3ba215946fe8c50bc88cf683e069d05cc79bb44378de8a3bdfab9e3",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-PHASE2-PROGRESS-01",
+    "topic_id": "TOPIC-ROOT",
+    "semantic_parent_id": null,
+    "source_cursor": 66,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "0908cf70f4e72dedb80d8865fdc46301b85e15ac4fcf57525fb6c2757da9905d",
+    "composition_family": "BCF-TEXT-TOP-DUAL-VISUAL",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P2"
+    ],
+    "artifact_hash": "ac16142559343ef15e8ed7698117220460c52b208eddf172e95bb2ff257990b6",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 23,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "7a24ba7b86b5539db7fdb2530fde770966fd4502257e617386e93d2c4615d20e",
+    "composition_family": "BCF-PROBLEM-TO-SOLUTION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P3"
+    ],
+    "artifact_hash": "879082837d464e033539c367b028edb8d9484c381585c04dbd29e5a06051ef8d",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 23,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "bec857eb11338ee4856766a6a78dd4aad5033c701b35e503571ec3a48436abd1",
+    "composition_family": "BCF-PROBLEM-TO-SOLUTION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P4"
+    ],
+    "artifact_hash": "4ec9752b3532b5f8df794a339407fffef18c2e30e728f5dbb0c0857243336ad3",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 23,
+    "lifecycle_policy": "versioned_snapshot",
+    "dependency_hash": "9e2e0cb8c6f14f5e1b3db10a327d2adc5191993b650440528bed630861545992",
+    "composition_family": "BCF-PROBLEM-TO-SOLUTION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P5"
+    ],
+    "artifact_hash": "5d7ee26d3d71569c236877dab31f89013b308242a6f4c5b6c862fb2c827f4729",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 23,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "08d4808b3fa17486f12551774b6888d040972cd244b9e1684ef0f7d51f8c0b91",
+    "composition_family": "BCF-PROBLEM-TO-SOLUTION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P6"
+    ],
+    "artifact_hash": "37880ea8df2e0fa1aea4fca21b8c9bfe33a0819701de6aa71d95ec66e6117fc8",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 23,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "72e61f1de50e90cf9894d054cc4d80945e2825f5cf595d19ff389fe6f9221fe7",
+    "composition_family": "BCF-LITERATURE-VISUAL-MATRIX",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P7"
+    ],
+    "artifact_hash": "d8fe50afc22ada6d6e1adce5b97402b58f870b1ee3f3f14e3bd473f20e2697a0",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 23,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "1cb17a17cb1c94fef594f796c2010d266e56d31a34e938effa32cde4ec0ebea1",
+    "composition_family": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P8"
+    ],
+    "artifact_hash": "44d59c3c749d0fc7d0baa609f105a7171a1a64826cdd4d46f0f4cf1665e6c8ec",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 23,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "e7d7e46abd64e78806194622993413b9e14300942594b5604eef6eb9537847fb",
+    "composition_family": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P9"
+    ],
+    "artifact_hash": "035fe00510495a0701a7a96f95c69a0cdcce2048a8248276b939c3b8acf8b629",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-RESULT-SINGLE-08",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": "S-H001-EXPERIMENT-DESIGN-07",
+    "source_cursor": 28,
+    "lifecycle_policy": "append_after_semantic_parent",
+    "dependency_hash": "9694408c50a9ec5bf8796fdabd6220485d2c0ec7396d67bc5a5cc820a01c72df",
+    "composition_family": "BCF-REAL-RESULT-VALIDATION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P10"
+    ],
+    "artifact_hash": "50af88df270ffd419a60efc9f723d8237e1a5d32bbb9c0a4ef6885ce876a262b",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-RESULT-SINGLE-09",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": "S-H001-RESULT-SINGLE-08",
+    "source_cursor": 28,
+    "lifecycle_policy": "append_after_semantic_parent",
+    "dependency_hash": "e7269f8fcfe5d36201c0e8f616c48a0db23e3f5c8b0185d989c2debb35d1fbe4",
+    "composition_family": "BCF-REAL-RESULT-VALIDATION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P11"
+    ],
+    "artifact_hash": "4e2425c0aa5e93da8d7e24b77626ca9908e2c18f29918e29fa99eabad7aa10a1",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 30,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "0f09df3a23ac0b77f13c703c499a9c2c38b1ed9b167ea2b25aadfa0369e6bb06",
+    "composition_family": "BCF-TECHNOLOGY-COMPARISON",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P12"
+    ],
+    "artifact_hash": "d80ba50a2c7acf3b49e2c0fa1f0fc3f0f7d1d3cab900bddd64a8b34054c24960",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 32,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "2ffda3c3007294ba8d032647236c395df21dd2cf321f0761d33870c75398c587",
+    "composition_family": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P13"
+    ],
+    "artifact_hash": "619a78ceba467718a0ce099290200b34d68919517cf52565ea8ca28f886a15f3",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+    "topic_id": "TOPIC-H001",
+    "semantic_parent_id": null,
+    "source_cursor": 39,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "8049c7c21f6a9bab9af0c57d453e8da09e2f68a33f82050d7817c3286c7a0f43",
+    "composition_family": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P14"
+    ],
+    "artifact_hash": "9072445b729615860be78d086ca177f2d4fbe19a404ea50f83afced488af8a07",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+    "topic_id": "TOPIC-H002",
+    "semantic_parent_id": null,
+    "source_cursor": 51,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "762f1c509cc824f2b471f222c44cc8899a702d656afc17b59708993b68ea3a19",
+    "composition_family": "BCF-PROBLEM-TO-SOLUTION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P15"
+    ],
+    "artifact_hash": "931b12e15b4d2e61147cfc8180946995bda71af5430b272c5747c87a83eb6cc2",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+    "topic_id": "TOPIC-H002",
+    "semantic_parent_id": null,
+    "source_cursor": 51,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "534be7b458cad7f536d3d67c5fc890f4e91a2c5ea1d1d7a0d8d789f04be84835",
+    "composition_family": "BCF-PROBLEM-TO-SOLUTION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P15"
+    ],
+    "artifact_hash": "fd6447d7f4b67e2b41cec126ee5ffb4aa58678af4bc35b7a76e8d3cf456fb99e",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+    "topic_id": "TOPIC-H002",
+    "semantic_parent_id": null,
+    "source_cursor": 51,
+    "lifecycle_policy": "versioned_snapshot",
+    "dependency_hash": "01c9aba69e0a2bcec596fe117791cdec1a45d5d430be87dd32babd420689e92a",
+    "composition_family": "BCF-PROBLEM-TO-SOLUTION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P15"
+    ],
+    "artifact_hash": "4dd46892b2032471f56a55dea7ac7d819777576d04e58a2da056806a5922691c",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+    "topic_id": "TOPIC-H002",
+    "semantic_parent_id": null,
+    "source_cursor": 51,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "162b5a6fe7a303488d0e3b0baef0831c5f26e45cee316e13ebdcb5cad0c98821",
+    "composition_family": "BCF-PROBLEM-TO-SOLUTION",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P15"
+    ],
+    "artifact_hash": "90df40c07ecd5a3e9b4516f58425914692ad6b0f07ca4e68d3e2aa37350c6c17",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+    "topic_id": "TOPIC-H002",
+    "semantic_parent_id": "S-H002-OBSERVATION-PROBLEM-04",
+    "source_cursor": 57,
+    "lifecycle_policy": "append_after_semantic_parent",
+    "dependency_hash": "99c3da5a047c2d38582c3bf788b0cb04981c0048068b9ea8bea64314b90420b9",
+    "composition_family": "BCF-PHYSICAL-VALIDATION-MATRIX",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P15"
+    ],
+    "artifact_hash": "9aca8f1beaf769575d4a859ba8a72068ecb16211feb12afc37a5d0897b96b5ca",
+    "accepted_revision": 1
+  },
+  {
+    "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+    "topic_id": "TOPIC-H002",
+    "semantic_parent_id": null,
+    "source_cursor": 65,
+    "lifecycle_policy": "historical_stable",
+    "dependency_hash": "e8325f0f7934c66655102023f688327aed9b7800ce9d5acf990acad42bbcef1d",
+    "composition_family": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+    "body_reference_evidence_ids": [
+      "JDP-TSMC-2026-0814-P15"
+    ],
+    "artifact_hash": "27cdeef0b769908f5e65644f0c0c0390d4a1dfc318ce47799dc5d086ed0419b0",
+    "accepted_revision": 1
+  }
+]

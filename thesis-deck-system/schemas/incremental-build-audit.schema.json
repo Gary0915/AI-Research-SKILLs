@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/incremental-build-audit.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["audit_id", "canonical_slide_lineage_count", "historical_slide_reuse_count", "new_appended_slide_count", "new_snapshot_revision_count", "dependency_triggered_rebuild_count", "meeting_view_excluded_only_count", "reused_figure_count", "new_figure_count", "stale_mixed_generation_slide_count", "shell_override_by_body_reference_count", "aggregate_status"],
+  "properties": {
+    "audit_id": {"const": "IDL-BUILD-AUDIT-001"},
+    "canonical_slide_lineage_count": {"type": "integer", "minimum": 0},
+    "historical_slide_reuse_count": {"type": "integer", "minimum": 0},
+    "new_appended_slide_count": {"type": "integer", "minimum": 0},
+    "new_snapshot_revision_count": {"type": "integer", "minimum": 0},
+    "dependency_triggered_rebuild_count": {"type": "integer", "minimum": 0},
+    "meeting_view_excluded_only_count": {"type": "integer", "minimum": 0},
+    "reused_figure_count": {"type": "integer", "minimum": 0},
+    "new_figure_count": {"type": "integer", "minimum": 0},
+    "stale_mixed_generation_slide_count": {"const": 0},
+    "shell_override_by_body_reference_count": {"const": 0},
+    "aggregate_status": {"enum": ["pass", "fail"]}
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "policy_id": "PRESENTATION-REFERENCE-PRIORITY-V2",
+  "shell_override_by_body_reference": false,
+  "priority_order": [
+    "JDP-TSMC-2026-0814",
+    "JDP-TSMC-2026-0730",
+    "JDP-TSMC-2026-0617",
+    "JDP-TSMC-2026-0604",
+    "JDP-TSMC-2026-0525"
+  ],
+  "resolutions": [
+    {
+      "slide_id": "FVCC-COVER-001",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P1"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-PHASE2-PROGRESS-01",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P2"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P3"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P4"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P5"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P6"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P7"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P8"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P9"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P10"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P11"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P12"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P13"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P14"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P15"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P15"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P15"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P15"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P15"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    },
+    {
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "reference_evidence_ids": [
+        "JDP-TSMC-2026-0814-P15"
+      ],
+      "priority_decision": "not_applied_historical_stable"
+    }
+  ]
+}

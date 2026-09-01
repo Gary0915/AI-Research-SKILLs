@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/body-reference-evidence-resolution.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["policy_id", "shell_override_by_body_reference", "priority_order", "resolutions"],
+  "properties": {
+    "policy_id": {"const": "PRESENTATION-REFERENCE-PRIORITY-V2"},
+    "shell_override_by_body_reference": {"const": false},
+    "priority_order": {"type": "array", "minItems": 5, "items": {"type": "string", "pattern": "^JDP-TSMC-[0-9]{4}-[0-9]{4}$"}, "uniqueItems": true},
+    "resolutions": {"type": "array", "items": {"$ref": "#/$defs/resolution"}}
+  },
+  "$defs": {
+    "resolution": {"type": "object", "additionalProperties": false, "required": ["slide_id", "body_family_id", "reference_evidence_ids", "priority_decision"], "properties": {"slide_id": {"type": "string", "pattern": "^[A-Za-z0-9-]{3,140}$"}, "body_family_id": {"type": "string", "pattern": "^BCF-[A-Z0-9-]+$"}, "reference_evidence_ids": {"type": "array", "items": {"type": "string", "pattern": "^JDP-TSMC-[0-9]{4}-[0-9]{4}-P[0-9]+$"}, "minItems": 1, "uniqueItems": true}, "priority_decision": {"enum": ["highest_compatible_recurrent", "retained_unique_older", "not_applied_historical_stable"]}}}
+  }
+}

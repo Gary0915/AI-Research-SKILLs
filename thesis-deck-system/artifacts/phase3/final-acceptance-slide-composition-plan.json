@@ -219,11 +219,20 @@
       "governed_figure": {
         "route": "fishbone",
         "placement": "primary_visual_region",
-        "binding_kind": "explicit_svg_fallback",
+        "slide_scientific_figure_binding_id": "SSF-c8b3c4ee6096372b",
+        "scientific_input_sha256": "a981b8d1a7a992e1cdab5248b48ea361508b8828a807d7c029066ee7e3ce9342",
+        "director_identity": "fishbone-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": null,
+        "binding_kind": "raster_fallback_explicit",
         "fishbone_revision_ref": "FB001 rev1",
         "source_svg_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
         "preview_png_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
-        "fallback_asset_id": "FB001-REV1"
+        "fallback_asset_id": "FB001-REV1",
+        "source_authority": "fishbone_svg",
+        "physical_pptx_representation": "png_raster",
+        "vector_fallback": false,
+        "raster_fallback": true
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-FISHBONE_LOCATOR",
@@ -274,9 +283,14 @@
       "governed_figure": {
         "route": "mechanism",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-f0adb250605c0819",
+        "scientific_input_sha256": "1a3581ba2b8eb9074d50e85f01305823a0ccac2e090a7242eb472745f3bbba9b",
+        "director_identity": "mechanism-diagram-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": null,
         "figure_id": "FIG006",
         "manifest_id": "SSE-FIG006-001",
-        "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+        "native_plan_sha256": "a18317243d2d46e8d87951e07587f6a36c0f3c9bede4390acae5e1d09d149306"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-OBSERVATION_PROBLEM",
@@ -329,9 +343,14 @@
       "governed_figure": {
         "route": "mechanism",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-7539affd76695070",
+        "scientific_input_sha256": "e9f549fcaeb563b50568d705ae0994faf2681534c325263655b72f58133f8cb7",
+        "director_identity": "mechanism-diagram-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": null,
         "figure_id": "FIG006",
         "manifest_id": "SSE-FIG006-001",
-        "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+        "native_plan_sha256": "6b9bdbfabd75fa0c4d67d6de398fabf0a8c561149f257a07135ae744db0f3744"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-LITERATURE_MECHANISM",
@@ -388,9 +407,14 @@
       "governed_figure": {
         "route": "experiment",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-8e9ba6f667630067",
+        "scientific_input_sha256": "77cab3894989a1c601bf75c2264cffd0abf2450e2f41a65da8f7bec1f1f90e31",
+        "director_identity": "experiment-schematic-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": null,
         "figure_id": "FIG007",
         "manifest_id": "SSE-FIG007-001",
-        "native_plan_sha256": "f9ace1cb0b7664ee0732ffb6cafb2bf9deb6f240697d2e460f0d23f1f51137b3"
+        "native_plan_sha256": "5b73b150569103d60a45db3fdcac9b01c7e55c3c3066796430f368f2cd97e2a2"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-EXPERIMENT_DESIGN",
@@ -447,9 +471,14 @@
       "governed_figure": {
         "route": "experiment",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-51d80544a574d324",
+        "scientific_input_sha256": "63a36007f1391c7b32dad59d8143b8095e1ac3bf3bb52b83d88d6050c48230ad",
+        "director_identity": "experiment-schematic-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": null,
         "figure_id": "FIG007",
         "manifest_id": "SSE-FIG007-001",
-        "native_plan_sha256": "f9ace1cb0b7664ee0732ffb6cafb2bf9deb6f240697d2e460f0d23f1f51137b3"
+        "native_plan_sha256": "c586eda17a399af773499a15b0057dd975d7977765fe82288e64cfa6ce84b989"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-EXPERIMENT_DESIGN",
@@ -504,9 +533,14 @@
       "governed_figure": {
         "route": "scientific_plot",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-5b9f39a3f54045d4",
+        "scientific_input_sha256": "51ee948af7d09e5f9bb46b08fbfb989e6dc1f364d0554ce64ac1dd0790fe3422",
+        "director_identity": "scientific-plot-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": "RES101",
         "figure_id": "FIG001",
         "manifest_id": "SSE-FIG001-001",
-        "native_plan_sha256": "8ad5ef43645d9da350eb8e1a2d55c6cfe34555e91b5477a870db2973d8dda062"
+        "native_plan_sha256": "d80d0564b6707effcd55a3f2ad2e3317cabe1f1603de747081780f212e5c026d"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-RESULT_SINGLE",
@@ -561,9 +595,14 @@
       "governed_figure": {
         "route": "scientific_plot",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-df9dc95f20e0e535",
+        "scientific_input_sha256": "aa4d30e8b1c5d599d13f2bdd835f8062cd78ddcb80096bc37e55e2953e43e7bd",
+        "director_identity": "scientific-plot-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": "RES102",
         "figure_id": "FIG001",
         "manifest_id": "SSE-FIG001-001",
-        "native_plan_sha256": "8ad5ef43645d9da350eb8e1a2d55c6cfe34555e91b5477a870db2973d8dda062"
+        "native_plan_sha256": "ed65af26aff4094bc5239d172b3b32e1f2e16d05bf42f747f7f45026facb440e"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-RESULT_SINGLE",
@@ -717,9 +756,14 @@
       "governed_figure": {
         "route": "mechanism",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-75c62e4e7d44618b",
+        "scientific_input_sha256": "84012a11b0329ebe940196d9530a47f0e4c5c225f6d7bbc6bfa59efdbb519657",
+        "director_identity": "mechanism-diagram-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": null,
         "figure_id": "FIG006",
         "manifest_id": "SSE-FIG006-001",
-        "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+        "native_plan_sha256": "0803f4edeb3447980d3355107221203edfad6acb253dfc277f33d4575e58d2a8"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-HYPOTHESIS_TRANSITION",
@@ -860,11 +904,20 @@
       "governed_figure": {
         "route": "fishbone",
         "placement": "primary_visual_region",
-        "binding_kind": "explicit_svg_fallback",
+        "slide_scientific_figure_binding_id": "SSF-e5a41db4a1a44ff6",
+        "scientific_input_sha256": "4fe1084483c5edc8a93a75b28e57ad3d906b0bb4f937b09fb44e2c0a0bf6825c",
+        "director_identity": "fishbone-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": null,
+        "binding_kind": "raster_fallback_explicit",
         "fishbone_revision_ref": "FB001 rev2",
         "source_svg_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
         "preview_png_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
-        "fallback_asset_id": "FB001-REV2"
+        "fallback_asset_id": "FB001-REV2",
+        "source_authority": "fishbone_svg",
+        "physical_pptx_representation": "png_raster",
+        "vector_fallback": false,
+        "raster_fallback": true
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-FISHBONE_LOCATOR",
@@ -923,9 +976,14 @@
       "governed_figure": {
         "route": "mechanism",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-ce2bf1b4776f1495",
+        "scientific_input_sha256": "eeb388213a4634da7e7d573e27a4baba3600a805b5a387917ff742a0a2935087",
+        "director_identity": "mechanism-diagram-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": null,
         "figure_id": "FIG006",
         "manifest_id": "SSE-FIG006-001",
-        "native_plan_sha256": "dd368b45da3ae70218efdd4c74d31fedd2cfb608eb9a531e081640dc220651d4"
+        "native_plan_sha256": "419650350f8e0e2915519fc89415c33fdb244d2b0697f4b7b76c0eec116ae1d5"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-OBSERVATION_PROBLEM",
@@ -981,9 +1039,14 @@
       "governed_figure": {
         "route": "comparison",
         "placement": "primary_visual_region",
+        "slide_scientific_figure_binding_id": "SSF-3b05d53998f5e557",
+        "scientific_input_sha256": "37bd388630d2ba915e292832f7440aba3a35c883f2c7f406de79dc9064ab7186",
+        "director_identity": "comparison-figure-director",
+        "figure_binding_method": "canonical_slide_scientific_input",
+        "result_id": "RES201",
         "figure_id": "FIG008",
         "manifest_id": "SSE-FIG008-001",
-        "native_plan_sha256": "66223e7397112ab36405eb745aea0d066174a10a26a661703b6ef0b487fd0065"
+        "native_plan_sha256": "0c63a73881880dd66e6066e73ab46a4a6bbd538728008bd8dd7702adb21abe06"
       },
       "style_bundle": "VSP003",
       "presentation_synthesis_rule_id": "FVCC-RESULT_COMPARISON",
@@ -1071,6 +1134,822 @@
         "supporting_context"
       ],
       "title": "H002｜Layer Summary / Decision"
+    }
+  ],
+  "slide_scientific_figure_bindings": [
+    {
+      "binding_id": "SSF-c8b3c4ee6096372b",
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "source_slide_spec_id": "S-H001-FISHBONE-LOCATOR-03",
+      "topic_id": "H001",
+      "semantic_role": "fishbone_locator",
+      "figure_route": "fishbone",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E103"
+        ],
+        "asset_refs": [
+          "A101"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 23,
+      "scientific_input_payload": {
+        "source_cursor": 23,
+        "hypothesis_layer": "H001",
+        "semantic_stage": "fishbone_locator",
+        "source_bindings": {
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E103"
+          ],
+          "asset_refs": [
+            "A101"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "fishbone_snapshot": "FB001 rev1"
+      },
+      "scientific_input_sha256": "a981b8d1a7a992e1cdab5248b48ea361508b8828a807d7c029066ee7e3ce9342",
+      "director_identity": "fishbone-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-e53209a1c4984eb4",
+      "result_id": null,
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-f0adb250605c0819",
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "source_slide_spec_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "topic_id": "H001",
+      "semantic_role": "observation_problem",
+      "figure_route": "mechanism",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002",
+          "E102"
+        ],
+        "asset_refs": [
+          "A002"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 23,
+      "scientific_input_payload": {
+        "source_cursor": 23,
+        "hypothesis_layer": "H001",
+        "semantic_stage": "observation_problem",
+        "source_bindings": {
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E002",
+            "E102"
+          ],
+          "asset_refs": [
+            "A002"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "canonical_semantic_fields": {
+          "observation_problem": {
+            "observation": "位置依賴缺陷與訊號變異已觀察到。",
+            "research_question": "提升 bulk conductivity 是否足以降低位置依賴的訊號變異？"
+          }
+        }
+      },
+      "scientific_input_sha256": "1a3581ba2b8eb9074d50e85f01305823a0ccac2e090a7242eb472745f3bbba9b",
+      "director_identity": "mechanism-diagram-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-5dc558ab040aa13a",
+      "result_id": null,
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-7539affd76695070",
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "source_slide_spec_id": "S-H001-LITERATURE-MECHANISM-05",
+      "topic_id": "H001",
+      "semantic_role": "literature_mechanism",
+      "figure_route": "mechanism",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E103"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 23,
+      "scientific_input_payload": {
+        "source_cursor": 23,
+        "hypothesis_layer": "H001",
+        "semantic_stage": "literature_mechanism",
+        "source_bindings": {
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E103"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "canonical_semantic_fields": {
+          "literature_mechanism": {
+            "consensus": "transport gradient 可產生位置效應。",
+            "disagreement_alternatives": "interface contact remains alternative",
+            "research_gap": "缺少控制比較隔離機制。",
+            "implication": "需匹配條件後比較。",
+            "mechanism": "bulk transport",
+            "evidence_claim_link": "C102; C103; E103"
+          }
+        }
+      },
+      "scientific_input_sha256": "e9f549fcaeb563b50568d705ae0994faf2681534c325263655b72f58133f8cb7",
+      "director_identity": "mechanism-diagram-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-e0f8b7b1cb3dce10",
+      "result_id": null,
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-8e9ba6f667630067",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "source_slide_spec_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "topic_id": "H001",
+      "semantic_role": "experiment_design",
+      "figure_route": "experiment",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 23,
+      "scientific_input_payload": {
+        "source_cursor": 23,
+        "hypothesis_layer": "H001",
+        "semantic_stage": "experiment_design",
+        "source_bindings": {
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E002"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "canonical_semantic_fields": {
+          "experiment_design": {
+            "independent_variables": "含水量",
+            "controlled_variables": "電極幾何; 接觸壓力",
+            "control_baseline": "原始配方",
+            "sample_plan": "replicates: 3; samples: 15",
+            "replicates": "3",
+            "measured_outputs": "導電度 (mS/cm)",
+            "units": "導電度 (mS/cm)",
+            "instrumentation_method": "synthetic-four-probe",
+            "predicted_outcomes": "導電度提升",
+            "decision_rule": "go: mean conductivity increases >=20%; partial_go: 10-20%; no_go: <10%"
+          }
+        }
+      },
+      "scientific_input_sha256": "77cab3894989a1c601bf75c2264cffd0abf2450e2f41a65da8f7bec1f1f90e31",
+      "director_identity": "experiment-schematic-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-28f3768497f6660e",
+      "result_id": null,
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-51d80544a574d324",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "source_slide_spec_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "topic_id": "H001",
+      "semantic_role": "experiment_design",
+      "figure_route": "experiment",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E002",
+          "E102"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 23,
+      "scientific_input_payload": {
+        "source_cursor": 23,
+        "hypothesis_layer": "H001",
+        "semantic_stage": "experiment_design",
+        "source_bindings": {
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E002",
+            "E102"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "canonical_semantic_fields": {
+          "experiment_design": {
+            "independent_variables": "位置",
+            "controlled_variables": "配方; 電極; 接觸壓力",
+            "control_baseline": "原始位置分布",
+            "sample_plan": "replicates: 3; samples: 15",
+            "replicates": "3",
+            "measured_outputs": "訊號 CV (%)",
+            "units": "訊號 CV (%)",
+            "instrumentation_method": "synthetic-signal-test",
+            "predicted_outcomes": "CV 下降",
+            "decision_rule": "go: CV decreases >=30%; partial_go: 10-30%; no_go: <10%"
+          }
+        }
+      },
+      "scientific_input_sha256": "63a36007f1391c7b32dad59d8143b8095e1ac3bf3bb52b83d88d6050c48230ad",
+      "director_identity": "experiment-schematic-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-72907edab18e9c7f",
+      "result_id": null,
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-5b9f39a3f54045d4",
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "source_slide_spec_id": "S-H001-RESULT-SINGLE-08",
+      "topic_id": "H001",
+      "semantic_role": "result_single",
+      "figure_route": "scientific_plot",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E101"
+        ],
+        "asset_refs": [
+          "A001"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 28,
+      "scientific_input_payload": {
+        "source_cursor": 28,
+        "hypothesis_layer": "H001",
+        "semantic_stage": "result_single",
+        "source_bindings": {
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E101"
+          ],
+          "asset_refs": [
+            "A001"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "result": {
+          "result_id": "RES101",
+          "experiment_stage_id": "ST-EXP101",
+          "evidence_refs": [
+            "E101"
+          ],
+          "metric": {
+            "uncertainty_semantics": "SD",
+            "uncertainty": 5,
+            "units": "%",
+            "value": 24,
+            "name": "mean conductivity increase"
+          },
+          "secondary_metric": null
+        }
+      },
+      "scientific_input_sha256": "51ee948af7d09e5f9bb46b08fbfb989e6dc1f364d0554ce64ac1dd0790fe3422",
+      "director_identity": "scientific-plot-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-b658f7cce0fe5cab",
+      "result_id": "RES101",
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-df9dc95f20e0e535",
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "source_slide_spec_id": "S-H001-RESULT-SINGLE-09",
+      "topic_id": "H001",
+      "semantic_role": "result_single",
+      "figure_route": "scientific_plot",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E101"
+        ],
+        "asset_refs": [
+          "A001"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 28,
+      "scientific_input_payload": {
+        "source_cursor": 28,
+        "hypothesis_layer": "H001",
+        "semantic_stage": "result_single",
+        "source_bindings": {
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E101"
+          ],
+          "asset_refs": [
+            "A001"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "result": {
+          "result_id": "RES102",
+          "experiment_stage_id": "ST-EXP102",
+          "evidence_refs": [
+            "E101",
+            "E102"
+          ],
+          "metric": {
+            "uncertainty_semantics": "SD",
+            "uncertainty": 6,
+            "units": "%",
+            "value": 4,
+            "name": "signal CV decrease"
+          },
+          "secondary_metric": null
+        }
+      },
+      "scientific_input_sha256": "aa4d30e8b1c5d599d13f2bdd835f8062cd78ddcb80096bc37e55e2953e43e7bd",
+      "director_identity": "scientific-plot-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-5496ff98bab8a544",
+      "result_id": "RES102",
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-75c62e4e7d44618b",
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "source_slide_spec_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "topic_id": "H001",
+      "semantic_role": "hypothesis_transition",
+      "figure_route": "mechanism",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E104",
+          "E101"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [
+          "D101"
+        ],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 39,
+      "scientific_input_payload": {
+        "source_cursor": 39,
+        "hypothesis_layer": "H001",
+        "semantic_stage": "hypothesis_transition",
+        "source_bindings": {
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E104",
+            "E101"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [
+            "D101"
+          ],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "canonical_semantic_fields": {
+          "hypothesis_transition": {
+            "prior_hypothesis": "C101",
+            "key_prior_results": "RES101; RES102",
+            "unresolved_point": "導電度增加後訊號重複性沒有改善。",
+            "precursor_observation": "E104",
+            "derivation_rationale": "剩餘變異隨電極接觸位置改變，因此核心解釋由 bulk transport 轉向 interface contact。",
+            "new_hypothesis": "C201"
+          }
+        }
+      },
+      "scientific_input_sha256": "84012a11b0329ebe940196d9530a47f0e4c5c225f6d7bbc6bfa59efdbb519657",
+      "director_identity": "mechanism-diagram-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-5cf8155438bf57c2",
+      "result_id": null,
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-e5a41db4a1a44ff6",
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "source_slide_spec_id": "S-H002-FISHBONE-LOCATOR-03",
+      "topic_id": "H002",
+      "semantic_role": "fishbone_locator",
+      "figure_route": "fishbone",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204"
+        ],
+        "asset_refs": [
+          "A102"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 51,
+      "scientific_input_payload": {
+        "source_cursor": 51,
+        "hypothesis_layer": "H002",
+        "semantic_stage": "fishbone_locator",
+        "source_bindings": {
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204"
+          ],
+          "asset_refs": [
+            "A102"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "fishbone_snapshot": "FB001 rev2"
+      },
+      "scientific_input_sha256": "4fe1084483c5edc8a93a75b28e57ad3d906b0bb4f937b09fb44e2c0a0bf6825c",
+      "director_identity": "fishbone-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-1804d097fbe99f09",
+      "result_id": null,
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-ce2bf1b4776f1495",
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "source_slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "topic_id": "H002",
+      "semantic_role": "observation_problem",
+      "figure_route": "mechanism",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E202"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 51,
+      "scientific_input_payload": {
+        "source_cursor": 51,
+        "hypothesis_layer": "H002",
+        "semantic_stage": "observation_problem",
+        "source_bindings": {
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E202"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "canonical_semantic_fields": {
+          "observation_problem": {
+            "observation": "位置依賴缺陷與訊號變異已觀察到。",
+            "research_question": "低接觸壓力下，contact resistance 是否主導訊號不穩定？"
+          },
+          "literature_mechanism": {
+            "consensus": "transport gradient 可產生位置效應。",
+            "disagreement_alternatives": "interface contact remains alternative",
+            "research_gap": "缺少控制比較隔離機制。",
+            "implication": "需匹配條件後比較。",
+            "mechanism": "contact resistance",
+            "evidence_claim_link": "C202; C203; E202"
+          },
+          "mechanism_solution": {
+            "mechanism": "contact resistance",
+            "evidence_claim_link": "C202; C203; E202",
+            "strategy": "匹配導電度並改變接觸壓力",
+            "success_criterion": "預測指標跨過 decision threshold"
+          }
+        }
+      },
+      "scientific_input_sha256": "eeb388213a4634da7e7d573e27a4baba3600a805b5a387917ff742a0a2935087",
+      "director_identity": "mechanism-diagram-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-3b646f08a7e0c441",
+      "result_id": null,
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
+    },
+    {
+      "binding_id": "SSF-3b05d53998f5e557",
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "source_slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "topic_id": "H002",
+      "semantic_role": "result_comparison",
+      "figure_route": "comparison",
+      "canonical_scientific_refs": {
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E201"
+        ],
+        "asset_refs": [
+          "A201"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "professor_profile_ref": {
+          "profile_id": "PROF-SYNTH-001",
+          "version": "1.0.0"
+        },
+        "template_profile_ref": {
+          "profile_id": "TP-SYNTH-PHASE2",
+          "version": "2.0.0"
+        }
+      },
+      "source_cursor": 57,
+      "scientific_input_payload": {
+        "source_cursor": 57,
+        "hypothesis_layer": "H002",
+        "semantic_stage": "result_comparison",
+        "source_bindings": {
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E201"
+          ],
+          "asset_refs": [
+            "A201"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "professor_profile_ref": {
+            "profile_id": "PROF-SYNTH-001",
+            "version": "1.0.0"
+          },
+          "template_profile_ref": {
+            "profile_id": "TP-SYNTH-PHASE2",
+            "version": "2.0.0"
+          }
+        },
+        "result": {
+          "result_id": "RES201",
+          "experiment_stage_id": "ST-EXP201",
+          "evidence_refs": [
+            "E201"
+          ],
+          "metric": {
+            "uncertainty_semantics": "SD",
+            "uncertainty": 7,
+            "units": "%",
+            "value": 38,
+            "name": "signal CV decrease"
+          },
+          "secondary_metric": {
+            "name": "contact resistance",
+            "status": "qualitative_supported",
+            "statement": "同步下降",
+            "units": null
+          }
+        }
+      },
+      "scientific_input_sha256": "37bd388630d2ba915e292832f7440aba3a35c883f2c7f406de79dc9064ab7186",
+      "director_identity": "comparison-figure-director",
+      "evidence_policy": "canonical_scientific_input_required",
+      "figure_id": "FEC-d1f6c5fb9e099a03",
+      "result_id": "RES201",
+      "binding_method": "canonical_slide_scientific_input",
+      "representative_fixture": false
     }
   ],
   "slide_count": 20,

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/slide-lineage-record.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slide_id", "topic_id", "semantic_parent_id", "source_cursor", "lifecycle_policy", "dependency_hash", "composition_family", "body_reference_evidence_ids", "artifact_hash", "accepted_revision"],
+  "properties": {
+    "slide_id": {"type": "string", "pattern": "^[A-Za-z0-9-]{3,128}$"},
+    "topic_id": {"type": "string", "pattern": "^[A-Za-z0-9-]{3,128}$"},
+    "semantic_parent_id": {"type": ["string", "null"], "pattern": "^[A-Za-z0-9-]{3,128}$"},
+    "source_cursor": {"type": "integer", "minimum": 1},
+    "lifecycle_policy": {"enum": ["historical_stable", "append_after_semantic_parent", "versioned_snapshot"]},
+    "dependency_hash": {"$ref": "#/$defs/hash"},
+    "composition_family": {"enum": ["BCF-TEXT-TOP-DUAL-VISUAL", "BCF-PRINCIPLE-EQUIPMENT-SPLIT", "BCF-FEASIBILITY-EVIDENCE-MATRIX", "BCF-HARDWARE-DESIGN-PROCEDURE", "BCF-PHYSICAL-VALIDATION-MATRIX", "BCF-TECHNOLOGY-COMPARISON", "BCF-PROBLEM-TO-SOLUTION", "BCF-REAL-RESULT-VALIDATION", "BCF-LITERATURE-VISUAL-MATRIX", "BCF-THREE-COLUMN-PHYSICAL-COMPARISON"]},
+    "body_reference_evidence_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^JDP-TSMC-[0-9]{4}-[0-9]{4}-P[0-9]+$"}, "uniqueItems": true},
+    "artifact_hash": {"$ref": "#/$defs/hash"},
+    "accepted_revision": {"type": "integer", "minimum": 1}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

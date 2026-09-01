@@ -753,6 +753,28 @@ def build_representative_director_output(root: Path | None, family: str) -> dict
     return {"director_family": family, "director_input": payload, "svg": authored["canonical_svg"], "svg_qa": authored["qa"], "manifest": manifest, "cp1_fom": cp1_fom, "critic": critic, "style_resolution": style}
 
 
+def build_bound_director_output(root: Path | None, family: str, payload: dict[str, Any]) -> dict[str, Any]:
+    """Build one approved director output from an already-bound canonical input.
+
+    This intentionally has no representative-input fallback.  The caller owns
+    the binding from a concrete slide to canonical scientific input; this
+    routine only validates, authors, and approves the matching visual IR.
+    """
+    root = root or ROOT
+    figure_id = {"fishbone":"FIG002", "fabrication":"FIG003", "mechanism":"FIG006", "experiment":"FIG007", "comparison":"FIG008"}.get(family)
+    if figure_id is None:
+        raise DirectorInputError("unknown specialist director family")
+    builders = {"fishbone": build_fishbone_svg, "mechanism": build_mechanism_svg, "experiment": build_experiment_svg, "fabrication": build_fabrication_svg, "comparison": build_comparison_svg}
+    spec = _spec(root, figure_id)
+    style = resolve_style(root, spec)
+    source, style = apply_style_bundle(builders[family](spec, payload), style)
+    authored = author_svg_for_spec(source, spec, root)
+    manifest = make_synthetic_manifest(root, figure_id, canonical_svg=authored["canonical_svg"], style_resolution=style)
+    cp1_fom = make_cp1_figure_output_manifest(root, manifest)
+    critic = StaticFigureCritic(root).execute_bundle({"cp1_fom": cp1_fom, "svg_envelope": manifest})
+    return {"director_family": family, "director_input": payload, "svg": authored["canonical_svg"], "svg_qa": authored["qa"], "manifest": manifest, "cp1_fom": cp1_fom, "critic": critic, "style_resolution": style, "representative_fixture": False}
+
+
 def write_gate_c_and_d_artifacts(root: Path | None = None, destination: Path | None = None) -> dict[str, Any]:
     """Persist synthetic approval and visible CP5-D SVG review outputs."""
     root = root or ROOT; destination = destination or root / "thesis-deck-system" / "artifacts" / "phase3"; preview = destination / "cp5d-structured-directors"; preview.mkdir(parents=True, exist_ok=True)

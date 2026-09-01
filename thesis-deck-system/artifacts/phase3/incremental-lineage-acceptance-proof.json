@@ -1,0 +1,76 @@
+{
+  "proof_id": "IDL-ACCEPTANCE-PROOF-001",
+  "scenarios": [
+    {
+      "scenario_id": "IDL-A",
+      "status": "pass",
+      "decision_ids": [
+        "5f94bfbc2b221c7b816ac31b071ee95df81b439006f68262c8bbf1583398b240",
+        "217625d0506b041386c31296376acf01a88ae7a4b0ddab62bb086693af89932a"
+      ]
+    },
+    {
+      "scenario_id": "IDL-B",
+      "status": "pass",
+      "decision_ids": [
+        "5f94bfbc2b221c7b816ac31b071ee95df81b439006f68262c8bbf1583398b240",
+        "8da5c3bc1027ca99679c735267f9902b34806931451caa07a885269afc231d87",
+        "54144dbc181a96a32de1e835526e74dbd637c802dc4601710794ef1abbef67eb"
+      ]
+    },
+    {
+      "scenario_id": "IDL-C",
+      "status": "pass",
+      "decision_ids": [
+        "5f94bfbc2b221c7b816ac31b071ee95df81b439006f68262c8bbf1583398b240",
+        "e3e79823a0bf6d543395c371751518fde1e63ae2d73667af45c4accad3c4154b",
+        "f8bcad7e6ce233c4662c7d8c79cef3595c0762c27f2555e324af60a9ec962f8c"
+      ]
+    },
+    {
+      "scenario_id": "IDL-D",
+      "status": "pass",
+      "decision_ids": [
+        "9256db57b4992506057a95190c41d2b56fc71b9e446d2dc69338961234aa9832"
+      ]
+    },
+    {
+      "scenario_id": "IDL-E",
+      "status": "pass",
+      "decision_ids": [
+        "4edbbc676eb0d8cdff162ff87e6f4406610dd3839f1c3d05c410a8b2ec6c74ad"
+      ]
+    },
+    {
+      "scenario_id": "IDL-F",
+      "status": "pass",
+      "decision_ids": [
+        "b4f7920bd6127a52062df728bb57b029d9ff15004dfc60bb1b8d07f9be3a72fa"
+      ]
+    },
+    {
+      "scenario_id": "IDL-G",
+      "status": "pass",
+      "decision_ids": [
+        "72a61d4723d2b08f969935ef5912f5c21cade654dc1ffbcef60a84ec02e8e6d6"
+      ]
+    },
+    {
+      "scenario_id": "IDL-H",
+      "status": "pass",
+      "decision_ids": [
+        "ce695dab9c41a4c9aefea2b4754b79783aefddd8b0f067e3b5526e494f44c02d"
+      ]
+    }
+  ],
+  "decision_counts": {
+    "append_new": 5,
+    "exclude_from_meeting_view_only": 1,
+    "new_revision": 2,
+    "rebuild_dependency_changed": 1,
+    "reuse_exact": 4
+  },
+  "stale_mixed_generation_rejection_count": 1,
+  "shell_override_by_body_reference_count": 0,
+  "aggregate_status": "pass"
+}

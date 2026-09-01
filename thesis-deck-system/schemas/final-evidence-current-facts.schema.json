@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/final-evidence-current-facts.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["evidence_facts_id", "candidate_state_hash", "focused_test_count", "figure_binding_count", "aggregate_status", "owning_checks"],
+  "properties": {
+    "evidence_facts_id": {"const": "FEC-CURRENT-FACTS-001"},
+    "candidate_state_hash": {"$ref": "#/$defs/hash"},
+    "focused_test_count": {"type": ["integer", "null"], "minimum": 0},
+    "figure_binding_count": {"type": ["integer", "null"], "minimum": 0},
+    "aggregate_status": {"enum": ["pass", "fail"]},
+    "owning_checks": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/check"}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "status", "facts", "facts_sha256"],
+      "properties": {
+        "check_id": {"enum": ["FEC-05-FOCUSED-CANDIDATE", "FEC-03-FIGURE-BINDING", "IDL-MIXED-GENERATION", "FEC-01-02-PRIVACY-ATTESTATION"]},
+        "status": {"enum": ["pass", "fail"]},
+        "facts": {"type": "object", "additionalProperties": false, "properties": {
+          "candidate_hash_pre": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "candidate_hash_post": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+          "exit_code": {"type": ["integer", "null"]},
+          "passed": {"type": ["integer", "null"], "minimum": 0},
+          "failed": {"type": ["integer", "null"], "minimum": 0},
+          "route_only_representative_final_figure_count": {"type": ["integer", "null"], "minimum": 0},
+          "unbound_scientific_figure_count": {"type": ["integer", "null"], "minimum": 0},
+          "scientific_input_mismatch_count": {"type": ["integer", "null"], "minimum": 0},
+          "unapproved_figure_bypass_count": {"type": ["integer", "null"], "minimum": 0},
+          "native_mismatch_count": {"type": ["integer", "null"], "minimum": 0},
+          "untruthful_vector_fallback_count": {"type": ["integer", "null"], "minimum": 0},
+          "stale_mixed_generation_slide_count": {"type": ["integer", "null"], "minimum": 0},
+          "shell_override_by_body_reference_count": {"type": ["integer", "null"], "minimum": 0},
+          "unexcepted_final_finding_count": {"type": ["integer", "null"], "minimum": 0},
+          "attested_generated_pptx_count": {"type": ["integer", "null"], "minimum": 0},
+          "raw_pptx_candidate_count": {"type": ["integer", "null"], "minimum": 0}
+        }},
+        "facts_sha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

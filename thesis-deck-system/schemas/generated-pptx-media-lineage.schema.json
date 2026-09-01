@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/generated-pptx-media-lineage.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["media_lineage_id", "package_media_part_count", "media_lineage_records", "unresolved_media_part_count", "undeclared_media_part_count", "duplicate_media_lineage_count", "media_lineage_sha256"],
+  "properties": {
+    "media_lineage_id": {"type": "string", "pattern": "^FEC-MEDIA-LINEAGE-[A-F0-9]{12}$"},
+    "package_media_part_count": {"type": "integer", "minimum": 0},
+    "media_lineage_records": {"type": "array", "items": {"$ref": "#/$defs/media"}},
+    "unresolved_media_part_count": {"const": 0},
+    "undeclared_media_part_count": {"const": 0},
+    "duplicate_media_lineage_count": {"const": 0},
+    "media_lineage_sha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "media": {"type": "object", "additionalProperties": false, "required": ["package_part_name", "media_sha256", "media_type", "source_kind", "source_ref", "source_sha256", "producer_id", "lineage_status"], "properties": {
+      "package_part_name": {"type": "string", "pattern": "^ppt/media/[A-Za-z0-9._-]+$"},
+      "media_sha256": {"$ref": "#/$defs/hash"},
+      "media_type": {"type": "string", "pattern": "^[a-z0-9]{2,16}$"},
+      "source_kind": {"enum": ["repository_canonical", "repository_sanitized"]},
+      "source_ref": {"type": "string", "pattern": "^SRC-[0-9]{3}$"},
+      "source_sha256": {"$ref": "#/$defs/hash"},
+      "producer_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+      "lineage_status": {"const": "exact_source_bytes"}
+    }}
+  }
+}

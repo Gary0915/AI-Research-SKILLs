@@ -259,7 +259,7 @@ class PythonPptxAssembler(PptxAssembler):
 
             fallback = svg_fallbacks.get(item["slide_id"])
             if fallback is not None:
-                if fallback.get("binding_kind") != "explicit_svg_fallback":
+                if fallback.get("binding_kind") != "raster_fallback_explicit":
                     raise ValueError(f"invalid final composition fallback binding: {item['slide_id']}")
                 preview_path = Path(fallback.get("preview_png_path", ""))
                 if not preview_path.is_file() or preview_path.suffix.casefold() != ".png":
@@ -269,7 +269,7 @@ class PythonPptxAssembler(PptxAssembler):
                     str(preview_path), Inches(region["left"]), Inches(region["top"]),
                     width=Inches(region["width"]), height=Inches(region["height"]),
                 )
-                shape.name = f"tds-svg-fallback:{fallback['fallback_asset_id']}/{item['slide_id']}"
+                shape.name = f"tds-raster-fallback:{fallback['fallback_asset_id']}/{item['slide_id']}"
 
             notes = slide.notes_slide.notes_text_frame
             notes.text = "[Sources]\n[/Sources]\n" + "\n".join(item.get("notes_only_fields", []))
