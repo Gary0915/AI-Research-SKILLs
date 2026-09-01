@@ -1,0 +1,1825 @@
+{
+  "planner_version": "1.0.0",
+  "records": [
+    {
+      "content_shape_id": "SCS-f26c06885bf66741",
+      "slide_id": "FVCC-COVER-001",
+      "semantic_stage": "formal_cover",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 5
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 0
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 0
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 0
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "low",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "f336866775afdd0be0c6f5edf1db01b5939f15f614716771bc3004291c234527"
+    },
+    {
+      "content_shape_id": "SCS-9fafe89e385714d8",
+      "slide_id": "S-PHASE2-PROGRESS-01",
+      "semantic_stage": "progress_todo",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 31
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 3
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 3
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 2
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "medium",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "30876dff1656f02e9c9dfeaa4c0cbef8886f4be717d477858fbf155a0c13c1fa"
+    },
+    {
+      "content_shape_id": "SCS-35efb8a9d26550fb",
+      "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
+      "semantic_stage": "hypothesis_title",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 15
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 3
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 3
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 2
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "medium",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "b1f3b54099097145ecb943e874c7a82cc8241557a41dd99a9f6692632138c546"
+    },
+    {
+      "content_shape_id": "SCS-a2128ae352baca31",
+      "slide_id": "S-H001-PROBLEM-DEFINITION-02",
+      "semantic_stage": "problem_definition",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 12
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 3
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 3
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "af204fc2041b24020659bc8812e8dcc6861333f832ad16adc898df289b3ab245"
+    },
+    {
+      "content_shape_id": "SCS-c8b3c4ee6096372b",
+      "slide_id": "S-H001-FISHBONE-LOCATOR-03",
+      "semantic_stage": "fishbone_locator",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 34
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 2
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 2
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "f9382fb300554ec489d778f10894e4d9e7441e2b46387b3a4e6e55a1ab6488ed"
+    },
+    {
+      "content_shape_id": "SCS-f0adb250605c0819",
+      "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
+      "semantic_stage": "observation_problem",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 41
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 2
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 2
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 1
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 2
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "medium",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "7b46be215c3430b81b6978b3a9c4a7f6c6fd5758a22258084143ec8fde44e90d"
+    },
+    {
+      "content_shape_id": "SCS-7539affd76695070",
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "semantic_stage": "literature_mechanism",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 38
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 6
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 6
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 1
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "high",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "312c78236ecb754df1f008dce9175e8bc4866c091b2d61f615be95a9801c5b7a"
+    },
+    {
+      "content_shape_id": "SCS-8e9ba6f667630067",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "semantic_stage": "experiment_design",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 22
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 10
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 10
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 1
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "high",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "8f81794fc9c3e82bdac9f4b3a32c0d8f2e1609e1ce78fdec239b0981d006d9b1"
+    },
+    {
+      "content_shape_id": "SCS-51d80544a574d324",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "semantic_stage": "experiment_design",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 22
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 10
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 10
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 1
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 2
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "high",
+      "evidence_density_class": "medium",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "90dfcef6f41c9c6e6f2437df93ad054b6066934b12d0f75e0ca8c12b65d49eae"
+    },
+    {
+      "content_shape_id": "SCS-5b9f39a3f54045d4",
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "semantic_stage": "result_single",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 11
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 2
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 2
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 1
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "value",
+          "value": 1
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "9c8a409e36d3ce908d598a3aabef5d411d9a911d29f0236d637faf40b63324ac"
+    },
+    {
+      "content_shape_id": "SCS-df9dc95f20e0e535",
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "semantic_stage": "result_single",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 11
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 2
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 2
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 1
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "value",
+          "value": 1
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "9c8a409e36d3ce908d598a3aabef5d411d9a911d29f0236d637faf40b63324ac"
+    },
+    {
+      "content_shape_id": "SCS-0b826d3123112741",
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "semantic_stage": "layer_integrated_discussion",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 26
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 6
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 6
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 3
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "high",
+      "evidence_density_class": "medium",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "3b2f83c5d2ca13637acc27e41fb2e32bf72b5abe28174adf2bacc693cab4ebe2"
+    },
+    {
+      "content_shape_id": "SCS-6a7546a6936f03df",
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "semantic_stage": "layer_summary_decision",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 29
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 6
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 6
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "high",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "83c486a9b95eb65ea5de322ded3a5274318b7f5631abf62194263c28b18d240f"
+    },
+    {
+      "content_shape_id": "SCS-75c62e4e7d44618b",
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "semantic_stage": "hypothesis_transition",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 26
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 6
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 6
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 1
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 2
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "high",
+      "evidence_density_class": "medium",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "ea866838c6549b96cdae5c1bb51572e001bae356e2439bd4cb317e5dccda1d2e"
+    },
+    {
+      "content_shape_id": "SCS-31748c9e98ee973d",
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "semantic_stage": "hypothesis_title",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 15
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 3
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 3
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "f4f57f2ab01bf9be7b590e0ff7e38d0734561e18074386ba90a50dc4fa328e49"
+    },
+    {
+      "content_shape_id": "SCS-85267a8b5e594183",
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "semantic_stage": "problem_definition",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 12
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 3
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 3
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "af204fc2041b24020659bc8812e8dcc6861333f832ad16adc898df289b3ab245"
+    },
+    {
+      "content_shape_id": "SCS-e5a41db4a1a44ff6",
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "semantic_stage": "fishbone_locator",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 34
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 2
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 2
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "f9382fb300554ec489d778f10894e4d9e7441e2b46387b3a4e6e55a1ab6488ed"
+    },
+    {
+      "content_shape_id": "SCS-ce2bf1b4776f1495",
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "semantic_stage": "observation_problem",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 41
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 10
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 10
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 1
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 2
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "high",
+      "evidence_density_class": "medium",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "612b71a83e2dc04dbbffb9d7ba6f9c544e1d0dd0ff0c2dd640f251aebfe82b52"
+    },
+    {
+      "content_shape_id": "SCS-3b05d53998f5e557",
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "semantic_stage": "result_comparison",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 12
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 3
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 3
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 1
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "value",
+          "value": 2
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 1
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 2
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 1
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "medium",
+      "evidence_density_class": "medium",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "ae1256bd68dcc6cc53a75904413af9087c12703b21a6f16f219984baaf59b061"
+    },
+    {
+      "content_shape_id": "SCS-f8cdbe6d807bd69e",
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "semantic_stage": "layer_summary_decision",
+      "observations": {
+        "title_chars": {
+          "state": "value",
+          "value": 29
+        },
+        "primary_claim_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "bullet_count": {
+          "state": "value",
+          "value": 11
+        },
+        "paragraph_count": {
+          "state": "value",
+          "value": 11
+        },
+        "photo_count": {
+          "state": "value",
+          "value": 0
+        },
+        "cad_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "plot_count": {
+          "state": "value",
+          "value": 0
+        },
+        "schematic_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_count": {
+          "state": "value",
+          "value": 0
+        },
+        "table_rows_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "table_columns_max": {
+          "state": "unavailable",
+          "value": null
+        },
+        "formula_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "comparison_side_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "caption_count": {
+          "state": "value",
+          "value": 0
+        },
+        "result_metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "mechanism_node_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "experiment_control_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "evidence_item_count": {
+          "state": "value",
+          "value": 1
+        },
+        "primary_visual_count": {
+          "state": "value",
+          "value": 0
+        },
+        "secondary_visual_count": {
+          "state": "value",
+          "value": 0
+        }
+      },
+      "text_density_class": "high",
+      "evidence_density_class": "low",
+      "shape_basis": "canonical_slidespec_projection",
+      "content_shape_sha256": "98aa737827b5cfb7bfb0668ed76864d619a33d6c4b3cca894550e36ffddd38ba"
+    }
+  ]
+}

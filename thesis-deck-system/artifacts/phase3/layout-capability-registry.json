@@ -1,0 +1,450 @@
+{
+  "planner_version": "1.0.0",
+  "records": [
+    {
+      "capability_id": "LCD-TEXT-TOP-DUAL-VISUAL",
+      "archetype_ids": [
+        "A01",
+        "A02"
+      ],
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "e3796c2b18138ee724acc7b4dec1a6cadae6801a3ed808926de0714b819584cb",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 1,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "none"
+      ],
+      "media_count": {
+        "min": 0,
+        "max": 1,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "not_applicable",
+      "supported_comparison_sides": null,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-PRINCIPLE-EQUIPMENT-SPLIT",
+      "archetype_ids": [
+        "A17"
+      ],
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "07e90ae0136d2481934b49afe6511582a3df2dec56dab58f52d9346894ae045c",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 1,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "mechanism"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 1,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "not_applicable",
+      "supported_comparison_sides": null,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-FEASIBILITY-EVIDENCE-MATRIX",
+      "archetype_ids": [
+        "A09"
+      ],
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "9e52e713d0889279ea5ebf411e978666fc1c10a479f5e43f70914d967914be9d",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 3,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "experiment"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 3,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "not_applicable",
+      "supported_comparison_sides": null,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-HARDWARE-DESIGN-PROCEDURE",
+      "archetype_ids": [
+        "A09"
+      ],
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "3b87dd88c16e4d17736ad37388c078670e9c9d23e72a92c3a9cd99693cc98318",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 2,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "experiment"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 2,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "not_applicable",
+      "supported_comparison_sides": null,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-PHYSICAL-VALIDATION-MATRIX",
+      "archetype_ids": [
+        "A11"
+      ],
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "25892e64d58cede7db66f0aa4d0b137e5236b7f2e94f7884d439cd4028d94926",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 3,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "comparison",
+        "scientific_plot"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 3,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "comparison_matrix",
+      "supported_comparison_sides": 2,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-TECHNOLOGY-COMPARISON",
+      "archetype_ids": [
+        "A14"
+      ],
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "6af8c2906c257ab11e1df3b0b6b065af79681adc49dc9659acf3d4f151b25e8b",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 2,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "comparison"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 2,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "comparison_matrix",
+      "supported_comparison_sides": 2,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
+      "archetype_ids": [
+        "A03",
+        "A04",
+        "A05",
+        "A12"
+      ],
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "39c75e8846370266ac83782532803779b0cc49828548c6515cb9bba1eba21354",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 1,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "fishbone"
+      ],
+      "media_count": {
+        "min": 0,
+        "max": 1,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "not_applicable",
+      "supported_comparison_sides": null,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-REAL-RESULT-VALIDATION",
+      "archetype_ids": [
+        "A10"
+      ],
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "d63fca9459b422fd6e8710b17aa95e150d714f5f9d24f0507fb76a19c4c677b9",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 1,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "scientific_plot"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 1,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "not_applicable",
+      "supported_comparison_sides": null,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-LITERATURE-VISUAL-MATRIX",
+      "archetype_ids": [
+        "A06"
+      ],
+      "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "0ab5a7962f66a5c34532741642854f1bf245c366ed86df8618c280a7a5a9d9da",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 3,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "mechanism"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 3,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "not_applicable",
+      "supported_comparison_sides": null,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "archetype_ids": [
+        "A16"
+      ],
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "f1c572cdf4a9c81da803ece09b2640bf45c70060776df9cf4e4459cd1937ab55",
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 3,
+      "secondary_visual_slots": 1,
+      "supported_media_kinds": [
+        "comparison"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 3,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "comparison_matrix",
+      "supported_comparison_sides": 2,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-PLANNER"
+      ],
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    }
+  ]
+}

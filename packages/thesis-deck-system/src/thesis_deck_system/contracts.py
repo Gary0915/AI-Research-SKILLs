@@ -107,6 +107,11 @@ CP5HI_SCHEMA_NAMES = (
     "incremental-build-audit",
     "incremental-lineage-acceptance-proof",
     "final-evidence-current-facts",
+    "scientific-content-shapes",
+    "layout-capability-registry",
+    "composition-candidates",
+    "composition-selection-audit",
+    "presentation-planner-qa",
 )
 
 SCHEMA_BY_COLLECTION = {

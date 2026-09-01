@@ -1,0 +1,15 @@
+{
+  "qa_id": "PP-QA-001",
+  "content_shape_schema_status": "pass",
+  "layout_capability_schema_status": "pass",
+  "candidate_schema_status": "pass",
+  "selection_schema_status": "pass",
+  "planner_determinism": "pass",
+  "hard_semantic_mismatch_selected_count": 0,
+  "hard_capacity_mismatch_selected_count": 0,
+  "scientific_truth_override_count": 0,
+  "shell_override_count": 0,
+  "historical_relayout_without_dependency_change_count": 0,
+  "nondeterministic_tie_count": 0,
+  "aggregate_status": "pass"
+}

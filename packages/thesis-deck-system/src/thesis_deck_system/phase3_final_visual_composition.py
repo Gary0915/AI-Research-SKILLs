@@ -874,11 +874,13 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_cp5_hi_final_sprint.py",
         "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py",
         "packages/thesis-deck-system/src/thesis_deck_system/incremental_deck_lineage.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner.py",
         "packages/thesis-deck-system/src/thesis_deck_system/contracts.py",
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py",
         "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py",
         "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py",
         "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py",
+        "packages/thesis-deck-system/tests/unit/test_presentation_planner.py",
         "packages/thesis-deck-system/pyproject.toml",
         "thesis-deck-system/TASK_PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE.md",
         "thesis-deck-system/designs/PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE_DESIGN.md",
@@ -903,6 +905,11 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "thesis-deck-system/schemas/body-reference-evidence-resolution.schema.json",
         "thesis-deck-system/schemas/incremental-build-audit.schema.json",
         "thesis-deck-system/schemas/incremental-lineage-acceptance-proof.schema.json",
+        "thesis-deck-system/schemas/scientific-content-shapes.schema.json",
+        "thesis-deck-system/schemas/layout-capability-registry.schema.json",
+        "thesis-deck-system/schemas/composition-candidates.schema.json",
+        "thesis-deck-system/schemas/composition-selection-audit.schema.json",
+        "thesis-deck-system/schemas/presentation-planner-qa.schema.json",
     )
     hashes: dict[str, str] = {}
     for relative in component_paths:

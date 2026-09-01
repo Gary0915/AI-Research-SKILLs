@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thesis-deck-system.local/schemas/presentation-planner-qa.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["qa_id", "content_shape_schema_status", "layout_capability_schema_status", "candidate_schema_status", "selection_schema_status", "planner_determinism", "hard_semantic_mismatch_selected_count", "hard_capacity_mismatch_selected_count", "scientific_truth_override_count", "shell_override_count", "historical_relayout_without_dependency_change_count", "nondeterministic_tie_count", "aggregate_status"],
+  "properties": {
+    "qa_id": {"const": "PP-QA-001"},
+    "content_shape_schema_status": {"const": "pass"}, "layout_capability_schema_status": {"const": "pass"}, "candidate_schema_status": {"const": "pass"}, "selection_schema_status": {"const": "pass"}, "planner_determinism": {"const": "pass"},
+    "hard_semantic_mismatch_selected_count": {"const": 0}, "hard_capacity_mismatch_selected_count": {"const": 0}, "scientific_truth_override_count": {"const": 0}, "shell_override_count": {"const": 0}, "historical_relayout_without_dependency_change_count": {"const": 0}, "nondeterministic_tie_count": {"const": 0}, "aggregate_status": {"const": "pass"}
+  }
+}
