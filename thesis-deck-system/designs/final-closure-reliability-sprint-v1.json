@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "spec_id": "FINAL-CLOSURE-RELIABILITY-SPRINT-V1",
+  "date": "2026-09-01",
+  "review_baseline": {
+    "repository": "Gary0915/AI-Research-SKILLs",
+    "branch": "codex/thesis-deck-system",
+    "remote_commit": "e422c794a85cbd5e76c73fa364abd4542f524eb6",
+    "newer_unpushed_candidate_may_exist": true,
+    "reported_unpushed_candidate_hash_prefix": "61813a"
+  },
+  "objective": "Close final-deck correctness, privacy, native parity, and validation reliability blockers without broad architectural refactoring.",
+  "required_workstreams": [
+    {
+      "id": "FC-P0-01",
+      "title": "native compiler materializer parity",
+      "priority": "P0",
+      "acceptance": [
+        "Every DRAWINGML_EMITTED plan object has exactly one controlled native materialization record.",
+        "Assembler never silently downgrades or skips a plan-declared native object.",
+        "Unsupported object families are explicit fallback before materialization."
+      ]
+    },
+    {
+      "id": "FC-P0-02",
+      "title": "native style fidelity",
+      "priority": "P0",
+      "acceptance": [
+        "Supported native style fields are explicitly enumerated.",
+        "Geometry, fill, stroke, line width and supported text/font attributes have plan-to-PPTX parity evidence.",
+        "Unsupported style or transform semantics become explicit fallback and are not claimed native."
+      ]
+    },
+    {
+      "id": "FC-P0-03",
+      "title": "truthful template reconstruction state",
+      "priority": "P0",
+      "acceptance": [
+        "Release evidence distinguishes fresh sanitized base template from physical professor-template reconstruction.",
+        "No full Master/Layout reconstruction is claimed unless physically implemented and validated."
+      ]
+    },
+    {
+      "id": "FC-P0-04",
+      "title": "final composition authority",
+      "priority": "P0",
+      "acceptance": [
+        "Final acceptance-deck slides consume governed placement/composition provenance.",
+        "No new final-composition path introduces backend hard-coded geometry that bypasses the governed plan.",
+        "Legacy hard-coded branches remain non-authoritative for final production."
+      ]
+    },
+    {
+      "id": "FC-P0-05",
+      "title": "bounded SVG fallback and source-tree immutability",
+      "priority": "P0",
+      "acceptance": [
+        "Broad Exception fallback is removed or bounded to explicit decoder/capability failure.",
+        "Compatibility previews are written only to build/temp output locations.",
+        "A test proves source and fixture trees remain unchanged after the touched build path."
+      ]
+    },
+    {
+      "id": "FC-P0-06",
+      "title": "generated PPTX privacy attestation",
+      "priority": "P0",
+      "acceptance": [
+        "The base scanner remains fail-closed for PPTX candidates.",
+        "Generated PPTX approval requires execution-derived candidate-bound artifact attestation.",
+        "Attestation checks approved producer, declared non-private inputs, package lineage, package content privacy, and hashes.",
+        "No raw private boundary values are persisted.",
+        "Historical exception handling remains separate."
+      ]
+    }
+  ],
+  "performance_quick_wins": [
+    {
+      "id": "FC-P1-01",
+      "title": "reuse immutable expensive build fixtures",
+      "required": true
+    },
+    {
+      "id": "FC-P1-02",
+      "title": "cache parsed schemas and compiled validators",
+      "required": true
+    },
+    {
+      "id": "FC-P1-05",
+      "title": "transactional publication for touched final build paths",
+      "required": true
+    },
+    {
+      "id": "FC-P1-06",
+      "title": "validation tiers and test markers or manifest",
+      "required": true
+    },
+    {
+      "id": "FC-P1-07",
+      "title": "durable same-candidate full regression runner with optional sharding",
+      "required": true
+    },
+    {
+      "id": "FC-P1-03",
+      "title": "ledger materialization optimization",
+      "required": false,
+      "condition": "Only if profiling shows it is a material slow-test hot path."
+    },
+    {
+      "id": "FC-P1-04",
+      "title": "synthetic deterministic clock",
+      "required": false,
+      "condition": "Defer unless a release-affecting nondeterminism RED test is demonstrated."
+    }
+  ],
+  "validation_policy": {
+    "tiers": ["preflight", "targeted_red_green", "focused_closure", "candidate_freeze", "definitive_full_regression", "privacy_finalization", "report_commit_push_verify"],
+    "full_regression_max_attempts_without_real_candidate_change": 1,
+    "durable_exit_status_required": true,
+    "pre_run_candidate_hash_required": true,
+    "post_run_candidate_hash_required": true,
+    "same_candidate_required": true,
+    "complete_collection_coverage_required": true,
+    "sharding_allowed": true,
+    "sharding_condition": "All shards run the same candidate and executed node union equals the authoritative full collection.",
+    "aggressive_polling_prohibited": true
+  },
+  "deferred": [
+    "broad module decomposition",
+    "full content-addressed BuildGraph",
+    "full Ledger snapshot/index architecture",
+    "repository-wide ProjectContext dependency injection",
+    "complete professor Master/Layout reconstruction",
+    "universal SVG-to-DrawingML support",
+    "native PowerPoint round-trip when environment remains blocked",
+    "Git LFS or storage migration",
+    "unrelated Phase 1 cleanup"
+  ],
+  "stop_conditions": [
+    "native plan/materializer mismatch remains",
+    "generated PPTX is approved without execution-derived attestation",
+    "private alias/source/render access occurs",
+    "candidate changes during definitive validation",
+    "complete regression collection coverage cannot be proven",
+    "unexcepted privacy finding remains",
+    "unrelated artifacts are modified outside authorized dependency closure",
+    "environment limitation would require a fabricated pass"
+  ]
+}
