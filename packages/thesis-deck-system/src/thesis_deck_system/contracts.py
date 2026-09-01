@@ -112,6 +112,8 @@ CP5HI_SCHEMA_NAMES = (
     "composition-candidates",
     "composition-selection-audit",
     "presentation-planner-qa",
+    "composition-review-selections",
+    "planner-application-acceptance",
 )
 
 SCHEMA_BY_COLLECTION = {

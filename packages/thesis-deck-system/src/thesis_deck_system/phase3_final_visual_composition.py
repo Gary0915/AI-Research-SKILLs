@@ -875,12 +875,14 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py",
         "packages/thesis-deck-system/src/thesis_deck_system/incremental_deck_lineage.py",
         "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py",
         "packages/thesis-deck-system/src/thesis_deck_system/contracts.py",
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py",
         "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py",
         "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py",
         "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py",
         "packages/thesis-deck-system/tests/unit/test_presentation_planner.py",
+        "packages/thesis-deck-system/tests/unit/test_presentation_planner_application.py",
         "packages/thesis-deck-system/pyproject.toml",
         "thesis-deck-system/TASK_PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE.md",
         "thesis-deck-system/designs/PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE_DESIGN.md",
@@ -910,6 +912,13 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "thesis-deck-system/schemas/composition-candidates.schema.json",
         "thesis-deck-system/schemas/composition-selection-audit.schema.json",
         "thesis-deck-system/schemas/presentation-planner-qa.schema.json",
+        "thesis-deck-system/schemas/composition-review-selections.schema.json",
+        "thesis-deck-system/schemas/planner-application-acceptance.schema.json",
+        "thesis-deck-system/artifacts/phase3/planner-application-acceptance.json",
+        "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.json",
+        "thesis-deck-system/artifacts/phase3/composition-review-selections.json",
+        "thesis-deck-system/artifacts/phase3/incremental-planner-application-audit.json",
+        "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx",
     )
     hashes: dict[str, str] = {}
     for relative in component_paths:

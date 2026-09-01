@@ -1,0 +1,127 @@
+{
+  "acceptance_id": "PPA-ACCEPTANCE-001",
+  "planner_version": "1.0.0",
+  "review_only": true,
+  "logical_to_physical": [
+    {
+      "slide_id": "PPA-CASE-A-EXPERIMENT",
+      "physical_slide_index": 1,
+      "selected_candidate_id": "PPC-15E2E60CDC958D7F",
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-B-PHYSICAL",
+      "physical_slide_index": 2,
+      "selected_candidate_id": "PPC-AA583D5B5B5C0F0B",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-C-RESULT",
+      "physical_slide_index": 3,
+      "selected_candidate_id": "PPC-98FE4A886E93FF32",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-D-MULTIMODAL",
+      "physical_slide_index": 4,
+      "selected_candidate_id": "PPC-92707C9CB1168234",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-E-LITERATURE",
+      "physical_slide_index": 5,
+      "selected_candidate_id": "PPC-35C2A24F06D4BE0F",
+      "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-F-COMPARISON",
+      "physical_slide_index": 6,
+      "selected_candidate_id": "PPC-85660A7F903C21ED",
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-G-PRINCIPLE",
+      "physical_slide_index": 7,
+      "selected_candidate_id": "PPC-87DB9C0CF02E8505",
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-H-HISTORICAL",
+      "physical_slide_index": 8,
+      "selected_candidate_id": "PPC-D2297F354327F049",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-I-CONTINUATION",
+      "physical_slide_index": 9,
+      "selected_candidate_id": "PPC-108804FBC65293F0",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    },
+    {
+      "slide_id": "PPA-CASE-J-DIVERSITY",
+      "physical_slide_index": 10,
+      "selected_candidate_id": "PPC-18E8C7BB7836DA36",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_regions_present": true,
+      "safe_bounds_status": "pass",
+      "text_occupancy": "within_bounds",
+      "visual_occupancy": "planned"
+    }
+  ],
+  "structural_audit": {
+    "slide_count": 10,
+    "expected_slide_count": 10,
+    "missing_required_region_count": 0,
+    "hard_capacity_violation_count": 0,
+    "selected_candidate_materialization_mismatch": 0,
+    "overlap_or_overflow_indicator_count": 0
+  },
+  "incremental_scenario": {
+    "historical_reused": 20,
+    "new_planned_slides": 2,
+    "new_physical_slides": 2,
+    "historical_migrations": 0,
+    "semantic_insertion_status": "after_owning_context"
+  },
+  "candidate_preview_status": "blocked_environment",
+  "qualitative_visual_review": "blocked_visual_review",
+  "native_powerpoint_acceptance": "blocked_environment",
+  "professor_physical_template_fidelity": "insufficient_evidence",
+  "production_group_meeting_ready": false
+}

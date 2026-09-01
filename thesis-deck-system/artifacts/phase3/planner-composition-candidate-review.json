@@ -1,0 +1,669 @@
+{
+  "application_id": "PPA-V1-001",
+  "planner_version": "1.0.0",
+  "body_reference_priority": [
+    "JDP-TSMC-2026-0814",
+    "JDP-TSMC-2026-0730",
+    "JDP-TSMC-2026-0617",
+    "JDP-TSMC-2026-0604",
+    "JDP-TSMC-2026-0525"
+  ],
+  "cases": [
+    {
+      "case_id": "CASE-A-EXPERIMENT",
+      "slide_id": "PPA-CASE-A-EXPERIMENT",
+      "semantic_stage": "experiment_design",
+      "visual_count": 2,
+      "eligible_body_families": [
+        "BCF-HARDWARE-DESIGN-PROCEDURE",
+        "BCF-FEASIBILITY-EVIDENCE-MATRIX"
+      ],
+      "dependency_hash": "a16168963e9cb5a4c147330eaa2e4051e7a56d8205b3abc5529f9936b9b7518c",
+      "historical": false,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-A7400B72CEE8CDC0",
+          "slide_id": "PPA-CASE-A-EXPERIMENT",
+          "dependency_hash": "a16168963e9cb5a4c147330eaa2e4051e7a56d8205b3abc5529f9936b9b7518c",
+          "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+          "structure_fingerprint": "498c029dc3a6e6b3aadc3c52ec3d7281014a1ac81d201a51bed0d829678aa5ca",
+          "region_plan": [
+            "large_hardware_visual",
+            "procedure_controls",
+            "go_criterion"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "PPC-15E2E60CDC958D7F",
+          "slide_id": "PPA-CASE-A-EXPERIMENT",
+          "dependency_hash": "a16168963e9cb5a4c147330eaa2e4051e7a56d8205b3abc5529f9936b9b7518c",
+          "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+          "structure_fingerprint": "d029432077e0bfda49c9e89b90606f2c968627343e177d2594d8b7c91614f66f",
+          "region_plan": [
+            "experiment_visual",
+            "evidence_matrix",
+            "caption_strip"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-A-EXPERIMENT",
+        "dependency_hash": "a16168963e9cb5a4c147330eaa2e4051e7a56d8205b3abc5529f9936b9b7518c",
+        "candidate_ids": [
+          "PPC-15E2E60CDC958D7F",
+          "PPC-A7400B72CEE8CDC0"
+        ],
+        "selected_candidate_id": "PPC-15E2E60CDC958D7F",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "9e4062dd5ea9e41d0aaa8f35b1673359fb609334c11236dad00055ce9ebb8670"
+      },
+      "rejection_reasons": []
+    },
+    {
+      "case_id": "CASE-B-PHYSICAL",
+      "slide_id": "PPA-CASE-B-PHYSICAL",
+      "semantic_stage": "result_comparison",
+      "visual_count": 5,
+      "eligible_body_families": [
+        "BCF-PHYSICAL-VALIDATION-MATRIX"
+      ],
+      "dependency_hash": "f59472086a3633b4d3e8219a8a62c79405c64f73b21ccd31ebf9f4893c9fddba",
+      "historical": false,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-AA583D5B5B5C0F0B",
+          "slide_id": "PPA-CASE-B-PHYSICAL",
+          "dependency_hash": "f59472086a3633b4d3e8219a8a62c79405c64f73b21ccd31ebf9f4893c9fddba",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "structure_fingerprint": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+          "region_plan": [
+            "physical_visual_grid",
+            "validation_plot",
+            "caption_matrix"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-B-PHYSICAL",
+        "dependency_hash": "f59472086a3633b4d3e8219a8a62c79405c64f73b21ccd31ebf9f4893c9fddba",
+        "candidate_ids": [
+          "PPC-AA583D5B5B5C0F0B"
+        ],
+        "selected_candidate_id": "PPC-AA583D5B5B5C0F0B",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "572d13969b540800d184bd9ba8e7d764ca1ad913d4892f4a9615347ad1d81c71"
+      },
+      "rejection_reasons": [
+        "single_visual_capacity"
+      ]
+    },
+    {
+      "case_id": "CASE-C-RESULT",
+      "slide_id": "PPA-CASE-C-RESULT",
+      "semantic_stage": "result_single",
+      "visual_count": 1,
+      "eligible_body_families": [
+        "BCF-REAL-RESULT-VALIDATION"
+      ],
+      "dependency_hash": "0a58659c38991ae63094d7df630114b5775915421a120d17d2b50b7b5cddc2a3",
+      "historical": false,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-98FE4A886E93FF32",
+          "slide_id": "PPA-CASE-C-RESULT",
+          "dependency_hash": "0a58659c38991ae63094d7df630114b5775915421a120d17d2b50b7b5cddc2a3",
+          "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+          "structure_fingerprint": "8848c6775dbcae232a24319e73b16d33057e80f6ac6b62622a1332e543fcfbd3",
+          "region_plan": [
+            "dominant_result_plot",
+            "metric_callout",
+            "compact_context"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-C-RESULT",
+        "dependency_hash": "0a58659c38991ae63094d7df630114b5775915421a120d17d2b50b7b5cddc2a3",
+        "candidate_ids": [
+          "PPC-98FE4A886E93FF32"
+        ],
+        "selected_candidate_id": "PPC-98FE4A886E93FF32",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "0a72e32fecbff045929bd63e56c7acd96fd9c40e230594631adc46ed4e17523b"
+      },
+      "rejection_reasons": []
+    },
+    {
+      "case_id": "CASE-D-MULTIMODAL",
+      "slide_id": "PPA-CASE-D-MULTIMODAL",
+      "semantic_stage": "result_comparison",
+      "visual_count": 4,
+      "eligible_body_families": [
+        "BCF-PHYSICAL-VALIDATION-MATRIX",
+        "BCF-REAL-RESULT-VALIDATION"
+      ],
+      "dependency_hash": "0f9e41200db1449a1f88b52f753f7248c9833fdaf93540e3b6fe34ff6e6f0404",
+      "historical": false,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-92707C9CB1168234",
+          "slide_id": "PPA-CASE-D-MULTIMODAL",
+          "dependency_hash": "0f9e41200db1449a1f88b52f753f7248c9833fdaf93540e3b6fe34ff6e6f0404",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "structure_fingerprint": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+          "region_plan": [
+            "physical_visual_grid",
+            "validation_plot",
+            "caption_matrix"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "PPC-409083B4C5FF37AE",
+          "slide_id": "PPA-CASE-D-MULTIMODAL",
+          "dependency_hash": "0f9e41200db1449a1f88b52f753f7248c9833fdaf93540e3b6fe34ff6e6f0404",
+          "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+          "structure_fingerprint": "8848c6775dbcae232a24319e73b16d33057e80f6ac6b62622a1332e543fcfbd3",
+          "region_plan": [
+            "dominant_result_plot",
+            "metric_callout",
+            "compact_context"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 4,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 16
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-D-MULTIMODAL",
+        "dependency_hash": "0f9e41200db1449a1f88b52f753f7248c9833fdaf93540e3b6fe34ff6e6f0404",
+        "candidate_ids": [
+          "PPC-409083B4C5FF37AE",
+          "PPC-92707C9CB1168234"
+        ],
+        "selected_candidate_id": "PPC-92707C9CB1168234",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "12e2f071f6f0b58d97b400711e07a771cc26e881659f95eace51ac47c066184b"
+      },
+      "rejection_reasons": []
+    },
+    {
+      "case_id": "CASE-E-LITERATURE",
+      "slide_id": "PPA-CASE-E-LITERATURE",
+      "semantic_stage": "literature_mechanism",
+      "visual_count": 3,
+      "eligible_body_families": [
+        "BCF-LITERATURE-VISUAL-MATRIX"
+      ],
+      "dependency_hash": "5fa8bccd50141a2eddaa409c33bb540b351b7735630f4418d351a5f98bcd8a8d",
+      "historical": false,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-35C2A24F06D4BE0F",
+          "slide_id": "PPA-CASE-E-LITERATURE",
+          "dependency_hash": "5fa8bccd50141a2eddaa409c33bb540b351b7735630f4418d351a5f98bcd8a8d",
+          "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+          "structure_fingerprint": "717522fbabbb111732dccebd2e1f8c5c4d92845563411a237900f4da14a7ecf9",
+          "region_plan": [
+            "literature_visual_grid",
+            "citation_strip",
+            "synthesis_callout"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-E-LITERATURE",
+        "dependency_hash": "5fa8bccd50141a2eddaa409c33bb540b351b7735630f4418d351a5f98bcd8a8d",
+        "candidate_ids": [
+          "PPC-35C2A24F06D4BE0F"
+        ],
+        "selected_candidate_id": "PPC-35C2A24F06D4BE0F",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "9fdddadf9690a85a1d9b999c081efb2c44406de9e864290ec23882dbe459189b"
+      },
+      "rejection_reasons": []
+    },
+    {
+      "case_id": "CASE-F-COMPARISON",
+      "slide_id": "PPA-CASE-F-COMPARISON",
+      "semantic_stage": "layer_integrated_discussion",
+      "visual_count": 3,
+      "eligible_body_families": [
+        "BCF-TECHNOLOGY-COMPARISON"
+      ],
+      "dependency_hash": "e8e71a452d9f4e185cf8b80f111d81c941913c5a20c2706a8bce70df0b718d8d",
+      "historical": false,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-85660A7F903C21ED",
+          "slide_id": "PPA-CASE-F-COMPARISON",
+          "dependency_hash": "e8e71a452d9f4e185cf8b80f111d81c941913c5a20c2706a8bce70df0b718d8d",
+          "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+          "structure_fingerprint": "bf8424cc639ca5f614bfbe1e2c3142a3d9c31a958ff81583baa5b306f07ce728",
+          "region_plan": [
+            "approach_comparison",
+            "criteria_table",
+            "mechanism_pair"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-F-COMPARISON",
+        "dependency_hash": "e8e71a452d9f4e185cf8b80f111d81c941913c5a20c2706a8bce70df0b718d8d",
+        "candidate_ids": [
+          "PPC-85660A7F903C21ED"
+        ],
+        "selected_candidate_id": "PPC-85660A7F903C21ED",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "b5f1e7a1e17c19ce97f92a9e460a1ee57eba7982e4651849ff12a5b88cc0aeb0"
+      },
+      "rejection_reasons": []
+    },
+    {
+      "case_id": "CASE-G-PRINCIPLE",
+      "slide_id": "PPA-CASE-G-PRINCIPLE",
+      "semantic_stage": "hypothesis_transition",
+      "visual_count": 2,
+      "eligible_body_families": [
+        "BCF-PRINCIPLE-EQUIPMENT-SPLIT"
+      ],
+      "dependency_hash": "63bb74a847ce20081a5936ec896cfefde213801fcd02f8eaf850b6b9396c8552",
+      "historical": false,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-87DB9C0CF02E8505",
+          "slide_id": "PPA-CASE-G-PRINCIPLE",
+          "dependency_hash": "63bb74a847ce20081a5936ec896cfefde213801fcd02f8eaf850b6b9396c8552",
+          "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+          "structure_fingerprint": "4077ddcd09484723edf39959c0ee40ec07b0d4044c9cc2b8f9a29844ce7cdcff",
+          "region_plan": [
+            "principle_schematic",
+            "instrument_visual",
+            "specification_table"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-G-PRINCIPLE",
+        "dependency_hash": "63bb74a847ce20081a5936ec896cfefde213801fcd02f8eaf850b6b9396c8552",
+        "candidate_ids": [
+          "PPC-87DB9C0CF02E8505"
+        ],
+        "selected_candidate_id": "PPC-87DB9C0CF02E8505",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "20aec27a9712723d10bc934d4ca9ce1b2e5b2bd29cf439a57b0f738eda8315b5"
+      },
+      "rejection_reasons": []
+    },
+    {
+      "case_id": "CASE-H-HISTORICAL",
+      "slide_id": "PPA-CASE-H-HISTORICAL",
+      "semantic_stage": "result_single",
+      "visual_count": 1,
+      "eligible_body_families": [
+        "BCF-REAL-RESULT-VALIDATION"
+      ],
+      "dependency_hash": "24275583294a587e9ab5b4416c92aad100ee1ce0ca1ccbf059e437ef78c516dd",
+      "historical": true,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-D2297F354327F049",
+          "slide_id": "PPA-CASE-H-HISTORICAL",
+          "dependency_hash": "24275583294a587e9ab5b4416c92aad100ee1ce0ca1ccbf059e437ef78c516dd",
+          "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+          "structure_fingerprint": "8848c6775dbcae232a24319e73b16d33057e80f6ac6b62622a1332e543fcfbd3",
+          "region_plan": [
+            "dominant_result_plot",
+            "metric_callout",
+            "compact_context"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-H-HISTORICAL",
+        "dependency_hash": "24275583294a587e9ab5b4416c92aad100ee1ce0ca1ccbf059e437ef78c516dd",
+        "candidate_ids": [
+          "PPC-D2297F354327F049"
+        ],
+        "selected_candidate_id": "PPC-D2297F354327F049",
+        "selection_mode": "historical_reuse",
+        "historical_lock_status": "locked_dependency_unchanged",
+        "planner_version": "1.0.0",
+        "selection_reason": "accepted_history_preserved",
+        "decision_hash": "202cbad5720f02e42ae4adbd03ea6911813405839db7b557b77585ca19d260e5"
+      },
+      "rejection_reasons": []
+    },
+    {
+      "case_id": "CASE-I-CONTINUATION",
+      "slide_id": "PPA-CASE-I-CONTINUATION",
+      "semantic_stage": "experiment_design",
+      "visual_count": 2,
+      "eligible_body_families": [
+        "BCF-HARDWARE-DESIGN-PROCEDURE",
+        "BCF-FEASIBILITY-EVIDENCE-MATRIX"
+      ],
+      "dependency_hash": "5d26c4ca90cf92107f1d6f0a9b0a8112d0ebb8692b72c918ec07e3ec9805609d",
+      "historical": false,
+      "tie": false,
+      "candidates": [
+        {
+          "candidate_id": "PPC-108804FBC65293F0",
+          "slide_id": "PPA-CASE-I-CONTINUATION",
+          "dependency_hash": "5d26c4ca90cf92107f1d6f0a9b0a8112d0ebb8692b72c918ec07e3ec9805609d",
+          "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+          "structure_fingerprint": "498c029dc3a6e6b3aadc3c52ec3d7281014a1ac81d201a51bed0d829678aa5ca",
+          "region_plan": [
+            "large_hardware_visual",
+            "procedure_controls",
+            "go_criterion"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 2,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 19
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "PPC-42CD25071FBFAA5E",
+          "slide_id": "PPA-CASE-I-CONTINUATION",
+          "dependency_hash": "5d26c4ca90cf92107f1d6f0a9b0a8112d0ebb8692b72c918ec07e3ec9805609d",
+          "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+          "structure_fingerprint": "d029432077e0bfda49c9e89b90606f2c968627343e177d2594d8b7c91614f66f",
+          "region_plan": [
+            "experiment_visual",
+            "evidence_matrix",
+            "caption_strip"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 2,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 19
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-I-CONTINUATION",
+        "dependency_hash": "5d26c4ca90cf92107f1d6f0a9b0a8112d0ebb8692b72c918ec07e3ec9805609d",
+        "candidate_ids": [
+          "PPC-108804FBC65293F0",
+          "PPC-42CD25071FBFAA5E"
+        ],
+        "selected_candidate_id": "PPC-108804FBC65293F0",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "d1635c72e6a3e2f55da538aad0c679b7872eed0d33b1da8c5b74c5e906396823"
+      },
+      "rejection_reasons": []
+    },
+    {
+      "case_id": "CASE-J-DIVERSITY",
+      "slide_id": "PPA-CASE-J-DIVERSITY",
+      "semantic_stage": "result_comparison",
+      "visual_count": 2,
+      "eligible_body_families": [
+        "BCF-PHYSICAL-VALIDATION-MATRIX",
+        "BCF-THREE-COLUMN-PHYSICAL-COMPARISON"
+      ],
+      "dependency_hash": "a46dbc1ad5f5233b11d5efee126fcc6399f78ba50f5177d37af8a96c05a3d28a",
+      "historical": false,
+      "tie": true,
+      "candidates": [
+        {
+          "candidate_id": "PPC-18E8C7BB7836DA36",
+          "slide_id": "PPA-CASE-J-DIVERSITY",
+          "dependency_hash": "a46dbc1ad5f5233b11d5efee126fcc6399f78ba50f5177d37af8a96c05a3d28a",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "structure_fingerprint": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+          "region_plan": [
+            "physical_visual_grid",
+            "validation_plot",
+            "caption_matrix"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "PPC-9AD37F362F234F92",
+          "slide_id": "PPA-CASE-J-DIVERSITY",
+          "dependency_hash": "a46dbc1ad5f5233b11d5efee126fcc6399f78ba50f5177d37af8a96c05a3d28a",
+          "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "structure_fingerprint": "8f1f9b421132e6915274f6e4233879424c5311fea469a2aec8aae16ecaa0496c",
+          "region_plan": [
+            "three_physical_columns",
+            "criteria_strip",
+            "decision_callout"
+          ],
+          "score": {
+            "semantic_fit": 10,
+            "capacity_fit": 5,
+            "historical_consistency": 0,
+            "bounded_diversity": 0,
+            "hard_semantic_match": true,
+            "hard_capacity_match": true,
+            "total": 17
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_decision": {
+        "slide_id": "PPA-CASE-J-DIVERSITY",
+        "dependency_hash": "a46dbc1ad5f5233b11d5efee126fcc6399f78ba50f5177d37af8a96c05a3d28a",
+        "candidate_ids": [
+          "PPC-18E8C7BB7836DA36",
+          "PPC-9AD37F362F234F92"
+        ],
+        "selected_candidate_id": "PPC-18E8C7BB7836DA36",
+        "selection_mode": "automatic",
+        "historical_lock_status": "not_locked",
+        "planner_version": "1.0.0",
+        "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
+        "decision_hash": "3788bcba7033299da4e60b0ab308b1c4991013f3713bfc782273d3bae103d119"
+      },
+      "rejection_reasons": []
+    }
+  ],
+  "candidate_difference_audit": {
+    "records": [
+      {
+        "slide_id": "PPA-CASE-A-EXPERIMENT",
+        "candidate_a": "PPC-A7400B72CEE8CDC0",
+        "candidate_b": "PPC-15E2E60CDC958D7F",
+        "structure_fingerprint_a": "498c029dc3a6e6b3aadc3c52ec3d7281014a1ac81d201a51bed0d829678aa5ca",
+        "structure_fingerprint_b": "d029432077e0bfda49c9e89b90606f2c968627343e177d2594d8b7c91614f66f",
+        "structurally_distinct": true
+      },
+      {
+        "slide_id": "PPA-CASE-D-MULTIMODAL",
+        "candidate_a": "PPC-92707C9CB1168234",
+        "candidate_b": "PPC-409083B4C5FF37AE",
+        "structure_fingerprint_a": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+        "structure_fingerprint_b": "8848c6775dbcae232a24319e73b16d33057e80f6ac6b62622a1332e543fcfbd3",
+        "structurally_distinct": true
+      },
+      {
+        "slide_id": "PPA-CASE-I-CONTINUATION",
+        "candidate_a": "PPC-108804FBC65293F0",
+        "candidate_b": "PPC-42CD25071FBFAA5E",
+        "structure_fingerprint_a": "498c029dc3a6e6b3aadc3c52ec3d7281014a1ac81d201a51bed0d829678aa5ca",
+        "structure_fingerprint_b": "d029432077e0bfda49c9e89b90606f2c968627343e177d2594d8b7c91614f66f",
+        "structurally_distinct": true
+      },
+      {
+        "slide_id": "PPA-CASE-J-DIVERSITY",
+        "candidate_a": "PPC-18E8C7BB7836DA36",
+        "candidate_b": "PPC-9AD37F362F234F92",
+        "structure_fingerprint_a": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+        "structure_fingerprint_b": "8f1f9b421132e6915274f6e4233879424c5311fea469a2aec8aae16ecaa0496c",
+        "structurally_distinct": true
+      }
+    ],
+    "fake_candidate_variant_count": 0
+  },
+  "metrics": {
+    "logical_slides_evaluated": 10,
+    "candidate_count": 14,
+    "candidate_count_distribution": {
+      "1": 6,
+      "2": 4
+    },
+    "automatic_selections": 9,
+    "historical_reuse_selections": 1,
+    "reviewer_selections": 0,
+    "future_user_review_selections": 0,
+    "body_family_distribution": {
+      "BCF-FEASIBILITY-EVIDENCE-MATRIX": 1,
+      "BCF-HARDWARE-DESIGN-PROCEDURE": 1,
+      "BCF-LITERATURE-VISUAL-MATRIX": 1,
+      "BCF-PHYSICAL-VALIDATION-MATRIX": 3,
+      "BCF-PRINCIPLE-EQUIPMENT-SPLIT": 1,
+      "BCF-REAL-RESULT-VALIDATION": 2,
+      "BCF-TECHNOLOGY-COMPARISON": 1
+    }
+  }
+}

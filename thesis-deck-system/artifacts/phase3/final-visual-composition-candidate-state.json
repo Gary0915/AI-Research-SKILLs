@@ -1,9 +1,9 @@
 {
   "candidate_id": "FVCC-CANDIDATE-001",
-  "component_count": 47,
+  "component_count": 56,
   "component_hashes": {
     ".gitattributes": "1e3ed5d8036c29859569c59df23cb3e4a13c253178c250c6520bc139de0cb1f1",
-    "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py": "d551f350ec3134a67b3547907a3daec3e8bd57b7388b5d2c300263a75521778c",
+    "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py": "6bbe9fa0e9d9637da01e20ec9cf6925b2d2cb4cdd015f61b400bb44ea1109758",
     "packages/thesis-deck-system/src/thesis_deck_system/phase2_build.py": "14bf7b61525e8e32d94dccd8ee543f4b950e30100d305fae516fe023a0198258",
     "packages/thesis-deck-system/src/thesis_deck_system/story.py": "301ca8a34f6884a76100a57013e93309edc475b25d0324391cc8c43f6818419f",
     "packages/thesis-deck-system/src/thesis_deck_system/pptx.py": "6c48bc6c4399b4173d139f66f0c10ed5c5486d6a008fad1502564f66bfe5b440",
@@ -14,12 +14,14 @@
     "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py": "72dd094208506327b60061c62a501f49d618d9c671604b6cb88feac0a95c2eca",
     "packages/thesis-deck-system/src/thesis_deck_system/incremental_deck_lineage.py": "243e13b847efa751f93b99337339907ed9814fe6b67f9315ea778f1b3720bcad",
     "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner.py": "2e843c53422ccb1b509392f80be970bdbdfac7278291b10b1a46e97c1c164fe8",
-    "packages/thesis-deck-system/src/thesis_deck_system/contracts.py": "d74353291bd45fc7bf520410f69c08606497102a5be5faf9ca90130866cba3b2",
+    "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py": "25456a5ada4b52d9ec1591936ca4e6c79b1eb8ebdb3af5274c80d46b8ffbdcf9",
+    "packages/thesis-deck-system/src/thesis_deck_system/contracts.py": "71a84ab27a1c02cebe0b5cb40f266917a763cdc302e6014bcbb555f0b3fecfe8",
     "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py": "7664531a8f21d4b00c70a23096a95c83e0aed889cc73c2fde9d7ed09c6f44a20",
     "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py": "3e7533080c10972941a4ae1672c1dabe904e8de6f5f92c0ffdd978a561b5b08b",
     "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py": "e106a0a51987fc6973998612a97698ce8aa03484b17971b920e91435ffcb5b37",
     "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py": "ab7c6a3eaa785f0c1657f00cfdb517c67fcf59cbf58b16a10b180ce278abd5cd",
     "packages/thesis-deck-system/tests/unit/test_presentation_planner.py": "0664e13868a7690462348ed353b52364ad514bb1f46fb017ab9baaa77427242f",
+    "packages/thesis-deck-system/tests/unit/test_presentation_planner_application.py": "1c1908e0e94df9a0649fa8d132d6db60cfaae4b4177d015ea1f7d77670dc834f",
     "packages/thesis-deck-system/pyproject.toml": "0f323606b1699067f99abc6e587c0a08875d89dc33b298a77abe30ae4e0d94c3",
     "thesis-deck-system/TASK_PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE.md": "20f7fa9143e96e7f83d92846f34dde847d041723123b49bd9b48ac5f659b9954",
     "thesis-deck-system/designs/PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE_DESIGN.md": "d2cc09a4a11bea69d137958874889c26672a5aeeeb7e334754efcff5a077a4ff",
@@ -48,7 +50,14 @@
     "thesis-deck-system/schemas/layout-capability-registry.schema.json": "bdfec0caf77f727f628a9b08bf97679d2feb5b05587aeb8f4c5b06f4e2a333db",
     "thesis-deck-system/schemas/composition-candidates.schema.json": "7e42de5d569088dd35eca87de13620288d6483c4f75e08da872dfa9886bc9d18",
     "thesis-deck-system/schemas/composition-selection-audit.schema.json": "6d9110f57d4e6ba49664c62167bbdce3b253f51d4fb9bc781139e9af0249c30c",
-    "thesis-deck-system/schemas/presentation-planner-qa.schema.json": "2c70a3c2dc092358f797d1f274bedc223fc5c211195eef931827044f9b9a95be"
+    "thesis-deck-system/schemas/presentation-planner-qa.schema.json": "2c70a3c2dc092358f797d1f274bedc223fc5c211195eef931827044f9b9a95be",
+    "thesis-deck-system/schemas/composition-review-selections.schema.json": "f1c01fb410585a30366a5ffae28bad90bace8b6627c006d99d0241f831c99564",
+    "thesis-deck-system/schemas/planner-application-acceptance.schema.json": "c5a64b449a3c3e0d788ee4d4a59186946b3af51b2ca2f788c26752ea1625a97d",
+    "thesis-deck-system/artifacts/phase3/planner-application-acceptance.json": "4ef35353aa8cb5fb7f55ed01b617d44d27cf16cb81721dcfcebe485d7bf0ef9e",
+    "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.json": "0f65a1da07193b8b624b65a0683a2aa9f9da5ed345629af210c4298549817dd5",
+    "thesis-deck-system/artifacts/phase3/composition-review-selections.json": "0c286d863add51df981a4162d2b9f7debc30dd48f97ce4fa3faec20211621d14",
+    "thesis-deck-system/artifacts/phase3/incremental-planner-application-audit.json": "1b97d3b5fc9747c1fbf304c21814d4c3310d09cf9978a70b64ed550428038e53",
+    "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx": "fa726580525e526e7e608cdfea6bc1bce2860455f9b0504d45ea4e4b7835186e"
   },
-  "candidate_state_sha256": "90ae8c40f4797aaee0c5b12b2c74bf352d12c2e605ca2f6a852d05459f426116"
+  "candidate_state_sha256": "867e9d8ca770927811578d9019bd66fe3e603318bec9bf020fa6bc3d5635d698"
 }
