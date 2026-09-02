@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "professor-shell-profile.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "shell_profile_id", "version", "canvas", "master_identity", "layout_identities", "title_safe_region", "body_content_safe_region", "footer_region", "header_region", "page_number_region", "recurring_marker_regions", "background_treatment", "shell_color_roles", "shell_font_role_bindings", "content_exclusion_regions", "source_evidence_ids", "measurement_evidence_level", "fidelity_status", "shell_profile_sha256"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "shell_profile_id": {"const": "PSP-001"},
+    "version": {"const": "1.0.0"},
+    "canvas": {"$ref": "#/$defs/canvas"},
+    "master_identity": {"$ref": "#/$defs/identity"},
+    "layout_identities": {"$ref": "#/$defs/layouts"},
+    "title_safe_region": {"$ref": "#/$defs/region"},
+    "body_content_safe_region": {"$ref": "#/$defs/region"},
+    "footer_region": {"$ref": "#/$defs/region"},
+    "header_region": {"$ref": "#/$defs/region"},
+    "page_number_region": {"$ref": "#/$defs/region"},
+    "recurring_marker_regions": {"type": "array", "items": {"$ref": "#/$defs/region"}},
+    "background_treatment": {"$ref": "#/$defs/background"},
+    "shell_color_roles": {"type": "array", "items": {"enum": ["background", "foreground", "muted", "border", "caption_background", "accent_primary", "focus", "warning", "measurement_reference"]}},
+    "shell_font_role_bindings": {"$ref": "#/$defs/fontBindings"},
+    "content_exclusion_regions": {"type": "array", "items": {"$ref": "#/$defs/region"}},
+    "source_evidence_ids": {"type": "array", "items": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"}},
+    "measurement_evidence_level": {"enum": ["measured_sanitized", "repository_observed", "synthetic_system_owned", "insufficient_evidence", "not_applicable", "partial"]},
+    "fidelity_status": {"enum": ["measured", "partial", "insufficient_evidence"]},
+    "shell_profile_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "evidence": {"enum": ["measured_sanitized", "repository_observed", "synthetic_system_owned", "insufficient_evidence", "not_applicable"]},
+    "fidelity": {"enum": ["measured", "partial", "insufficient_evidence", "not_applicable"]},
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"},
+    "geometry": {"type": "object", "additionalProperties": false, "required": ["left", "top", "width", "height"], "properties": {"left": {"type": "number", "minimum": 0}, "top": {"type": "number", "minimum": 0}, "width": {"type": "number", "exclusiveMinimum": 0}, "height": {"type": "number", "exclusiveMinimum": 0}}},
+    "region": {"type": "object", "additionalProperties": false, "required": ["geometry_inches", "evidence_level", "fidelity_status", "source_evidence_ids"], "properties": {"geometry_inches": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/geometry"}]}, "evidence_level": {"$ref": "#/$defs/evidence"}, "fidelity_status": {"$ref": "#/$defs/fidelity"}, "source_evidence_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}}},
+    "canvas": {"type": "object", "additionalProperties": false, "required": ["width_inches", "height_inches", "aspect_ratio", "evidence_level", "fidelity_status", "source_evidence_ids"], "properties": {"width_inches": {"type": "number", "exclusiveMinimum": 0}, "height_inches": {"type": "number", "exclusiveMinimum": 0}, "aspect_ratio": {"const": "16:9"}, "evidence_level": {"$ref": "#/$defs/evidence"}, "fidelity_status": {"$ref": "#/$defs/fidelity"}, "source_evidence_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}}},
+    "identity": {"type": "object", "additionalProperties": false, "required": ["master_ids", "evidence_level", "fidelity_status"], "properties": {"master_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "evidence_level": {"$ref": "#/$defs/evidence"}, "fidelity_status": {"$ref": "#/$defs/fidelity"}}},
+    "topology": {"type": "object", "additionalProperties": false, "required": ["source_id", "target_id", "basis", "source_scope"], "properties": {"source_id": {"$ref": "#/$defs/id"}, "target_id": {"$ref": "#/$defs/id"}, "basis": {"enum": ["measured", "derived"]}, "source_scope": {"const": "slide_layout"}}},
+    "layouts": {"type": "object", "additionalProperties": false, "required": ["layout_ids", "topology", "evidence_level", "fidelity_status"], "properties": {"layout_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}}, "topology": {"type": "array", "items": {"$ref": "#/$defs/topology"}}, "evidence_level": {"$ref": "#/$defs/evidence"}, "fidelity_status": {"$ref": "#/$defs/fidelity"}}},
+    "background": {"type": "object", "additionalProperties": false, "required": ["role", "evidence_level", "fidelity_status"], "properties": {"role": {"const": "background"}, "evidence_level": {"$ref": "#/$defs/evidence"}, "fidelity_status": {"$ref": "#/$defs/fidelity"}}},
+    "fontBindings": {"type": "object", "additionalProperties": false, "required": ["status", "roles"], "properties": {"status": {"enum": ["measured", "partial", "insufficient_evidence"]}, "roles": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["role", "evidence_level"], "properties": {"role": {"type": "string", "pattern": "^[a-z_]+$"}, "evidence_level": {"$ref": "#/$defs/evidence"}}}}}}
+  }
+}

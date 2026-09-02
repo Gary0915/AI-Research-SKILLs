@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0.0",
+  "shell_profile_id": "PSP-001",
+  "version": "1.0.0",
+  "canvas": {
+    "width_inches": 13.333333,
+    "height_inches": 7.5,
+    "aspect_ratio": "16:9",
+    "evidence_level": "measured_sanitized",
+    "fidelity_status": "partial",
+    "source_evidence_ids": [
+      "P3-TEMPLATE-PRIMARY-1"
+    ]
+  },
+  "master_identity": {
+    "master_ids": [
+      "M001",
+      "M002"
+    ],
+    "evidence_level": "measured_sanitized",
+    "fidelity_status": "insufficient_evidence"
+  },
+  "layout_identities": {
+    "layout_ids": [
+      "L001",
+      "L002",
+      "L003",
+      "L004",
+      "L005",
+      "L006",
+      "L007",
+      "L008",
+      "L009",
+      "L010",
+      "L011",
+      "L012",
+      "L013",
+      "L014",
+      "L015",
+      "L016",
+      "L017",
+      "L018",
+      "L019"
+    ],
+    "topology": [
+      {
+        "basis": "measured",
+        "source_id": "L001",
+        "source_scope": "slide_layout",
+        "target_id": "M001"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L002",
+        "source_scope": "slide_layout",
+        "target_id": "M001"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L003",
+        "source_scope": "slide_layout",
+        "target_id": "M001"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L004",
+        "source_scope": "slide_layout",
+        "target_id": "M001"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L005",
+        "source_scope": "slide_layout",
+        "target_id": "M001"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L006",
+        "source_scope": "slide_layout",
+        "target_id": "M001"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L007",
+        "source_scope": "slide_layout",
+        "target_id": "M001"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L008",
+        "source_scope": "slide_layout",
+        "target_id": "M001"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L009",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L010",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L011",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L012",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L013",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L014",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L015",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L016",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L017",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L018",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      },
+      {
+        "basis": "measured",
+        "source_id": "L019",
+        "source_scope": "slide_layout",
+        "target_id": "M002"
+      }
+    ],
+    "evidence_level": "measured_sanitized",
+    "fidelity_status": "insufficient_evidence"
+  },
+  "title_safe_region": {
+    "geometry_inches": {
+      "left": 0.916667,
+      "top": 0.399307,
+      "width": 11.5,
+      "height": 1.449653
+    },
+    "evidence_level": "measured_sanitized",
+    "fidelity_status": "partial",
+    "source_evidence_ids": [
+      "L001",
+      "L002",
+      "L003",
+      "L004",
+      "L005",
+      "L007",
+      "L009",
+      "L010",
+      "L011",
+      "L012",
+      "L013",
+      "L014",
+      "L016",
+      "L017",
+      "L018",
+      "L019",
+      "M001",
+      "M002",
+      "R005"
+    ]
+  },
+  "body_content_safe_region": {
+    "geometry_inches": {
+      "left": 0.7,
+      "top": 1.25,
+      "width": 11.85,
+      "height": 5.1
+    },
+    "evidence_level": "synthetic_system_owned",
+    "fidelity_status": "insufficient_evidence",
+    "source_evidence_ids": []
+  },
+  "footer_region": {
+    "geometry_inches": {
+      "left": 4.416667,
+      "top": 6.95139,
+      "width": 4.5,
+      "height": 0.399307
+    },
+    "evidence_level": "measured_sanitized",
+    "fidelity_status": "partial",
+    "source_evidence_ids": [
+      "L003",
+      "L004",
+      "L005",
+      "L006",
+      "L007",
+      "L008",
+      "L009",
+      "L010",
+      "L011",
+      "L012",
+      "L013",
+      "L014",
+      "L015",
+      "L016",
+      "L017",
+      "L018",
+      "M002",
+      "R002"
+    ]
+  },
+  "header_region": {
+    "geometry_inches": null,
+    "evidence_level": "insufficient_evidence",
+    "fidelity_status": "insufficient_evidence",
+    "source_evidence_ids": []
+  },
+  "page_number_region": {
+    "geometry_inches": {
+      "left": 9.416666,
+      "top": 6.95139,
+      "width": 3.0,
+      "height": 0.399307
+    },
+    "evidence_level": "measured_sanitized",
+    "fidelity_status": "partial",
+    "source_evidence_ids": [
+      "L001",
+      "L002",
+      "L003",
+      "L004",
+      "L005",
+      "L006",
+      "L007",
+      "L008",
+      "L009",
+      "L010",
+      "L011",
+      "L012",
+      "L013",
+      "L014",
+      "L015",
+      "L016",
+      "L017",
+      "L018",
+      "M001",
+      "M002",
+      "R003"
+    ]
+  },
+  "recurring_marker_regions": [],
+  "background_treatment": {
+    "role": "background",
+    "evidence_level": "repository_observed",
+    "fidelity_status": "partial"
+  },
+  "shell_color_roles": [
+    "background",
+    "foreground",
+    "muted",
+    "border"
+  ],
+  "shell_font_role_bindings": {
+    "status": "insufficient_evidence",
+    "roles": []
+  },
+  "content_exclusion_regions": [],
+  "source_evidence_ids": [
+    "L001",
+    "L002",
+    "L003",
+    "L004",
+    "L005",
+    "L006",
+    "L007",
+    "L008",
+    "L009",
+    "L010",
+    "L011",
+    "L012",
+    "L013",
+    "L014",
+    "L015",
+    "L016",
+    "L017",
+    "L018",
+    "L019",
+    "M001",
+    "M002",
+    "P3-RESOLVED-SHELL-001"
+  ],
+  "measurement_evidence_level": "partial",
+  "fidelity_status": "insufficient_evidence",
+  "shell_profile_sha256": "1334a9fe1e9b675060ae9a2965162f3da65d7afe476e0e1320888a73c20d4aec"
+}

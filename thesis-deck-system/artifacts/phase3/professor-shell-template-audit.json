@@ -1,0 +1,18 @@
+{
+  "audit_id": "PSP-TEMPLATE-AUDIT-001",
+  "shell_profile_id": "PSP-001",
+  "slide_size": {
+    "width_emu": 12192000,
+    "height_emu": 6858000
+  },
+  "master_count": 1,
+  "layout_count": 11,
+  "title_placeholder_count": 11,
+  "body_placeholder_count": 13,
+  "canvas_mismatch_count": 0,
+  "title_safe_region_mismatch_count": 0,
+  "body_safe_region_mismatch_count": 0,
+  "shell_profile_to_pptx_mismatch_count": 0,
+  "unsupported_claimed_shell_feature_count": 0,
+  "aggregate_status": "pass"
+}

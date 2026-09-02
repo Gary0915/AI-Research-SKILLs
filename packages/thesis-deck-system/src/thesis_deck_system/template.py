@@ -32,7 +32,7 @@ def create_synthetic_template(path: Path) -> Path:
     return path
 
 
-def create_sanitized_native_template(path: Path) -> Path:
+def create_sanitized_native_template(path: Path, *, shell_profile: dict | None = None) -> Path:
     """Create a fresh shell-only 16:9 template for CP5-I assembly.
 
     Unlike the synthetic benchmark fixture, this has layouts and theme but no
@@ -40,8 +40,12 @@ def create_sanitized_native_template(path: Path) -> Path:
     """
     path.parent.mkdir(parents=True, exist_ok=True)
     prs = Presentation()
-    prs.slide_width = Inches(13.333333)
-    prs.slide_height = Inches(7.5)
+    if shell_profile is None:
+        prs.slide_width = Inches(13.333333)
+        prs.slide_height = Inches(7.5)
+    else:
+        from .professor_shell import apply_professor_shell_profile
+        apply_professor_shell_profile(prs, shell_profile)
     prs.save(path)
     return path
 
