@@ -1,0 +1,3565 @@
+{
+  "application_id": "RRVA-PPA-001",
+  "logical_fixture_count": 14,
+  "cases": [
+    {
+      "fixture_id": "R01",
+      "logical_slide_id": "RRVA-R01",
+      "slide_id": "RRVA-R01",
+      "title": "論文研究目標",
+      "fixture": {
+        "fixture_id": "R01",
+        "logical_slide_id": "RRVA-R01",
+        "title": "論文研究目標",
+        "visible_text": "以控制接觸壓力辨識低壓下訊號不穩定的主導機制。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "tsmc_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-HYPOTHESIS-TITLE-01",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 51
+        },
+        "dependency_hash": "22541cf000866e576647f24e996a906e642ce656b1c76cd48d828757c059c5b3",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-49BDA9BBBDEAE24F",
+        "slide_id": "RRVA-R01",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 6
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 3
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 3
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 2
+          },
+          "table_count": {
+            "state": "value",
+            "value": 0
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 1
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 3
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 1
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R01-TEXT_TOP",
+            "semantic_role": "explanation",
+            "presentation_role": "text_top",
+            "content_kind": "formula",
+            "required": true
+          },
+          {
+            "item_id": "R01-LEFT_VISUAL",
+            "semantic_role": "evidence",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R01-RIGHT_VISUAL",
+            "semantic_role": "evidence",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "b556c39c6b1777c961b0e597a944a9f2f6073ca9bc5fa7ec54dde7b6ae387b78"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-DDD814B3A3058761",
+          "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+          "composition_strategy": "objective_with_system_pair",
+          "body_source_class": "tsmc_dominant",
+          "dependency_hash": "22541cf000866e576647f24e996a906e642ce656b1c76cd48d828757c059c5b3",
+          "structure_fingerprint": "e1b85c27ec560441e2ef30c31293165227499eb9970465881e43fece611e4c2e",
+          "content_items": [
+            {
+              "item_id": "R01-TEXT_TOP",
+              "semantic_role": "explanation",
+              "presentation_role": "text_top",
+              "content_kind": "formula",
+              "required": true,
+              "visible_text": "以控制接觸壓力辨識低壓下訊號不穩定的主導機制。"
+            },
+            {
+              "item_id": "R01-LEFT_VISUAL",
+              "semantic_role": "evidence",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "水凝膠元件與接觸介面示意"
+            },
+            {
+              "item_id": "R01-RIGHT_VISUAL",
+              "semantic_role": "evidence",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 4,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-DDD814B3A3058761",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "tsmc_research_synthesis"
+    },
+    {
+      "fixture_id": "R02",
+      "logical_slide_id": "RRVA-R02",
+      "slide_id": "RRVA-R02",
+      "title": "研究系統架構",
+      "fixture": {
+        "fixture_id": "R02",
+        "logical_slide_id": "RRVA-R02",
+        "title": "研究系統架構",
+        "visible_text": "由水凝膠元件、接觸介面與電性量測鏈共同檢驗訊號穩定性。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "tsmc_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E202"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 51
+        },
+        "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-5B4BD93B2E8A5639",
+        "slide_id": "RRVA-R02",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 6
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 4
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 4
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 2
+          },
+          "table_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 1
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 4
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 1
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R02-PRINCIPLE",
+            "semantic_role": "principle",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R02-FORMULA",
+            "semantic_role": "principle",
+            "presentation_role": "formula",
+            "content_kind": "formula",
+            "required": true
+          },
+          {
+            "item_id": "R02-EQUIPMENT",
+            "semantic_role": "equipment",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R02-SPECIFICATION",
+            "semantic_role": "equipment",
+            "presentation_role": "specification_table",
+            "content_kind": "table",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "e6c8dc281099ad4132b690d2de8c0d2d9b1314d1002ba0e7dbc651765eb94f6a"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-E08B3302D873FC4F",
+          "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+          "composition_strategy": "system_and_measurement_chain",
+          "body_source_class": "tsmc_dominant",
+          "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+          "structure_fingerprint": "03832b8177b1cc67808b456f4ed942807adc2e1dc08d63b3a343d9fb3905ee18",
+          "content_items": [
+            {
+              "item_id": "R02-PRINCIPLE",
+              "semantic_role": "principle",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "由水凝膠元件、接觸介面與電性量測鏈共同檢驗訊號穩定性。"
+            },
+            {
+              "item_id": "R02-FORMULA",
+              "semantic_role": "principle",
+              "presentation_role": "formula",
+              "content_kind": "formula",
+              "required": true,
+              "visible_text": "由水凝膠元件、接觸介面與電性量測鏈共同檢驗訊號穩定性。"
+            },
+            {
+              "item_id": "R02-EQUIPMENT",
+              "semantic_role": "equipment",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R02-SPECIFICATION",
+              "semantic_role": "equipment",
+              "presentation_role": "specification_table",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 4,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-E08B3302D873FC4F",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "tsmc_research_synthesis"
+    },
+    {
+      "fixture_id": "R03",
+      "logical_slide_id": "RRVA-R03",
+      "slide_id": "RRVA-R03",
+      "title": "研究傳承與目前定位",
+      "fixture": {
+        "fixture_id": "R03",
+        "logical_slide_id": "RRVA-R03",
+        "title": "研究傳承與目前定位",
+        "visible_text": "目前工作承接 H002：先驗證接觸電阻，再決定後續實驗。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "historical_reuse",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-PHASE2-PROGRESS-01",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E101",
+            "E201"
+          ],
+          "asset_refs": [],
+          "action_refs": [
+            "NS101",
+            "NS201"
+          ],
+          "decision_refs": [
+            "D101",
+            "D201"
+          ],
+          "source_cursor": 66
+        },
+        "dependency_hash": "816c41db99bfa84e7099d0bd3e857e97c37b756824cbed1ae9c69fa5a49039a0",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-EDA6BC6CE8212499",
+        "slide_id": "RRVA-R03",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 9
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 3
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 3
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 2
+          },
+          "table_count": {
+            "state": "value",
+            "value": 0
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 1
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 3
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 1
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R03-TEXT_TOP",
+            "semantic_role": "explanation",
+            "presentation_role": "text_top",
+            "content_kind": "formula",
+            "required": true
+          },
+          {
+            "item_id": "R03-LEFT_VISUAL",
+            "semantic_role": "evidence",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R03-RIGHT_VISUAL",
+            "semantic_role": "evidence",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "36a81dd084f0ac178d98ce99176cd5f84005de25261a3d35d5f95fbcc59b5cfa"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-79C53AD11445ACE4",
+          "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+          "composition_strategy": "historical_positioning",
+          "body_source_class": "historical_reuse",
+          "dependency_hash": "816c41db99bfa84e7099d0bd3e857e97c37b756824cbed1ae9c69fa5a49039a0",
+          "structure_fingerprint": "61314488603413efc2fc75c840227e9811ae6d601a3494d5ce973b3c6b29668b",
+          "content_items": [
+            {
+              "item_id": "R03-TEXT_TOP",
+              "semantic_role": "explanation",
+              "presentation_role": "text_top",
+              "content_kind": "formula",
+              "required": true,
+              "visible_text": "目前工作承接 H002：先驗證接觸電阻，再決定後續實驗。"
+            },
+            {
+              "item_id": "R03-LEFT_VISUAL",
+              "semantic_role": "evidence",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "水凝膠元件與接觸介面示意"
+            },
+            {
+              "item_id": "R03-RIGHT_VISUAL",
+              "semantic_role": "evidence",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 4,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-79C53AD11445ACE4",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "tsmc_research_synthesis"
+    },
+    {
+      "fixture_id": "R04",
+      "logical_slide_id": "RRVA-R04",
+      "slide_id": "RRVA-R04",
+      "title": "研究缺口",
+      "fixture": {
+        "fixture_id": "R04",
+        "logical_slide_id": "RRVA-R04",
+        "title": "研究缺口",
+        "visible_text": "低接觸壓力下，contact resistance 是否主導訊號不穩定仍待控制比較。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "tsmc_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-PROBLEM-DEFINITION-02",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 51
+        },
+        "dependency_hash": "3e4d21b6b5491441cab5272f120a627a3a1021a0ebbea23f93e452d1e5bb7234",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-22E25ADB727A2542",
+        "slide_id": "RRVA-R04",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 4
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 4
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 4
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 3
+          },
+          "table_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 4
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 1
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R04-APPROACH_A",
+            "semantic_role": "approach_a",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R04-CRITERIA",
+            "semantic_role": "comparison",
+            "presentation_role": "criteria_table",
+            "content_kind": "table",
+            "required": true
+          },
+          {
+            "item_id": "R04-APPROACH_B",
+            "semantic_role": "approach_b",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R04-MECHANISM",
+            "semantic_role": "comparison",
+            "presentation_role": "mechanism_pair",
+            "content_kind": "schematic",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "c8694e0c82f2f2e165ed102b05b855715267f3827dd1fc197fea640ba2587f57"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-5B5408035971F627",
+          "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+          "composition_strategy": "aligned_alternative_mechanism_comparison",
+          "body_source_class": "tsmc_dominant",
+          "dependency_hash": "3e4d21b6b5491441cab5272f120a627a3a1021a0ebbea23f93e452d1e5bb7234",
+          "structure_fingerprint": "76a9609b3e04ccb7beb4d16834a116fd6b79fe0c1bdc59fee6b3afc40e44b5d6",
+          "content_items": [
+            {
+              "item_id": "R04-APPROACH_A",
+              "semantic_role": "approach_a",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "低接觸壓力下，contact resistance 是否主導訊號不穩定仍待控制比較。"
+            },
+            {
+              "item_id": "R04-CRITERIA",
+              "semantic_role": "comparison",
+              "presentation_role": "criteria_table",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            },
+            {
+              "item_id": "R04-APPROACH_B",
+              "semantic_role": "approach_b",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R04-MECHANISM",
+              "semantic_role": "comparison",
+              "presentation_role": "mechanism_pair",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "機制與替代解釋對照"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 5,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "RRVC-9C3D232355FABF10",
+          "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+          "composition_strategy": "problem_question_with_mechanism_sidecar",
+          "body_source_class": "tsmc_dominant",
+          "dependency_hash": "3e4d21b6b5491441cab5272f120a627a3a1021a0ebbea23f93e452d1e5bb7234",
+          "structure_fingerprint": "c86bcf61e46293a0ab09a009df90146f42ecd68f32bff76ccc01b1e368cd86e2",
+          "content_items": [
+            {
+              "item_id": "R04-PROBLEM",
+              "semantic_role": "problem",
+              "presentation_role": "problem_statement",
+              "content_kind": "callout",
+              "required": true,
+              "visible_text": "低接觸壓力下，contact resistance 是否主導訊號不穩定仍待控制比較。"
+            },
+            {
+              "item_id": "R04-SOLUTION",
+              "semantic_role": "solution",
+              "presentation_role": "solution_path",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "問題 → 機制 → 受控比較"
+            },
+            {
+              "item_id": "R04-SUPPORT",
+              "semantic_role": "solution",
+              "presentation_role": "support_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "量測與驗證支援圖"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-5B5408035971F627",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "tsmc_research_synthesis"
+    },
+    {
+      "fixture_id": "R05",
+      "logical_slide_id": "RRVA-R05",
+      "slide_id": "RRVA-R05",
+      "title": "文獻證據：自發感測前例",
+      "fixture": {
+        "fixture_id": "R05",
+        "logical_slide_id": "RRVA-R05",
+        "title": "文獻證據：自發感測前例",
+        "visible_text": "文獻指出 transport gradient 可產生位置效應；接觸介面仍是替代解釋。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "tsmc_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H001-LITERATURE-MECHANISM-05",
+          "claim_refs": [
+            "C101"
+          ],
+          "evidence_refs": [
+            "E103"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 23
+        },
+        "dependency_hash": "762e8cfa2b0d45091c52fbfdeee6657be4c0cc94254a0952007fc64d0efcfe34",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-3981F1C82FE31C87",
+        "slide_id": "RRVA-R05",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 11
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 4
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 4
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 3
+          },
+          "table_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 4
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 1
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R05-APPROACH_A",
+            "semantic_role": "approach_a",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R05-CRITERIA",
+            "semantic_role": "comparison",
+            "presentation_role": "criteria_table",
+            "content_kind": "table",
+            "required": true
+          },
+          {
+            "item_id": "R05-APPROACH_B",
+            "semantic_role": "approach_b",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R05-MECHANISM",
+            "semantic_role": "comparison",
+            "presentation_role": "mechanism_pair",
+            "content_kind": "schematic",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "fb29a44a601fe46b93e9ca93e69ebebd7e83762716bae2211a17fe50e02bcebb"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-A0A88FFE317BB571",
+          "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+          "composition_strategy": "precedent_to_gap_comparison",
+          "body_source_class": "tsmc_dominant",
+          "dependency_hash": "762e8cfa2b0d45091c52fbfdeee6657be4c0cc94254a0952007fc64d0efcfe34",
+          "structure_fingerprint": "5495ee4bdf910981c318e7dc1d6c1e55aec77ac6b2f14f8acd738e1620bb9f27",
+          "content_items": [
+            {
+              "item_id": "R05-APPROACH_A",
+              "semantic_role": "approach_a",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "文獻指出 transport gradient 可產生位置效應；接觸介面仍是替代解釋。"
+            },
+            {
+              "item_id": "R05-CRITERIA",
+              "semantic_role": "comparison",
+              "presentation_role": "criteria_table",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            },
+            {
+              "item_id": "R05-APPROACH_B",
+              "semantic_role": "approach_b",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R05-MECHANISM",
+              "semantic_role": "comparison",
+              "presentation_role": "mechanism_pair",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "機制與替代解釋對照"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 5,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "RRVC-AFDA1ECFBC44D324",
+          "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+          "composition_strategy": "paper_visuals_with_short_takehomes",
+          "body_source_class": "tsmc_dominant",
+          "dependency_hash": "762e8cfa2b0d45091c52fbfdeee6657be4c0cc94254a0952007fc64d0efcfe34",
+          "structure_fingerprint": "387bec59dea0ae6225e5188968d187f0a382707554b7f52815da95d8c6aeafaa",
+          "content_items": [
+            {
+              "item_id": "R05-VISUAL_A",
+              "semantic_role": "literature",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "文獻指出 transport gradient 可產生位置效應；接觸介面仍是替代解釋。"
+            },
+            {
+              "item_id": "R05-VISUAL_B",
+              "semantic_role": "literature",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R05-VISUAL_C",
+              "semantic_role": "literature",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R05-CITE_A",
+              "semantic_role": "citation",
+              "presentation_role": "citation_strip",
+              "content_kind": "citation",
+              "required": true,
+              "visible_text": "資料來源：S-H001-LITERATURE-MECHANISM-05"
+            },
+            {
+              "item_id": "R05-CITE_B",
+              "semantic_role": "citation",
+              "presentation_role": "citation_strip",
+              "content_kind": "citation",
+              "required": true,
+              "visible_text": "資料來源：S-H001-LITERATURE-MECHANISM-05"
+            },
+            {
+              "item_id": "R05-CITE_C",
+              "semantic_role": "citation",
+              "presentation_role": "citation_strip",
+              "content_kind": "citation",
+              "required": true,
+              "visible_text": "資料來源：S-H001-LITERATURE-MECHANISM-05"
+            },
+            {
+              "item_id": "R05-SYNTHESIS",
+              "semantic_role": "literature",
+              "presentation_role": "synthesis_callout",
+              "content_kind": "callout",
+              "required": true,
+              "visible_text": "文獻指出 transport gradient 可產生位置效應；接觸介面仍是替代解釋。"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-A0A88FFE317BB571",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "tsmc_research_synthesis"
+    },
+    {
+      "fixture_id": "R06",
+      "logical_slide_id": "RRVA-R06",
+      "slide_id": "RRVA-R06",
+      "title": "文獻綜整至主要機制",
+      "fixture": {
+        "fixture_id": "R06",
+        "logical_slide_id": "RRVA-R06",
+        "title": "文獻綜整至主要機制",
+        "visible_text": "以匹配導電度並改變接觸壓力，隔離 contact resistance 的機制貢獻。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "tsmc_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E202"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 51
+        },
+        "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-9F71EA03ABE99823",
+        "slide_id": "RRVA-R06",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 9
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 3
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 3
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 2
+          },
+          "table_count": {
+            "state": "value",
+            "value": 0
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 3
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 0
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 0
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R06-PROBLEM",
+            "semantic_role": "problem",
+            "presentation_role": "problem_statement",
+            "content_kind": "callout",
+            "required": true
+          },
+          {
+            "item_id": "R06-SOLUTION",
+            "semantic_role": "solution",
+            "presentation_role": "solution_path",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R06-SUPPORT",
+            "semantic_role": "solution",
+            "presentation_role": "support_visual",
+            "content_kind": "schematic",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "ce7b2f37aee93373eccec3512934aae1614d784f4af1ace419bcf5fd1d358c24"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-FE4A32E8CE2B9170",
+          "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+          "composition_strategy": "synthesis_to_controlled_mechanism",
+          "body_source_class": "tsmc_dominant",
+          "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+          "structure_fingerprint": "6f595298ec609e9ab8013a1a7668f6c7ca6dbbce6ab5d60d9bf830dfd619751f",
+          "content_items": [
+            {
+              "item_id": "R06-PROBLEM",
+              "semantic_role": "problem",
+              "presentation_role": "problem_statement",
+              "content_kind": "callout",
+              "required": true,
+              "visible_text": "以匹配導電度並改變接觸壓力，隔離 contact resistance 的機制貢獻。"
+            },
+            {
+              "item_id": "R06-SOLUTION",
+              "semantic_role": "solution",
+              "presentation_role": "solution_path",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "問題 → 機制 → 受控比較"
+            },
+            {
+              "item_id": "R06-SUPPORT",
+              "semantic_role": "solution",
+              "presentation_role": "support_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "量測與驗證支援圖"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 4,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-FE4A32E8CE2B9170",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "tsmc_research_synthesis"
+    },
+    {
+      "fixture_id": "R07",
+      "logical_slide_id": "RRVA-R07",
+      "slide_id": "RRVA-R07",
+      "title": "研究魚骨：目前分支位置",
+      "fixture": {
+        "fixture_id": "R07",
+        "logical_slide_id": "RRVA-R07",
+        "title": "研究魚骨：目前分支位置",
+        "visible_text": "保留 FB001 rev2 歷史結構，僅標示目前接觸介面分支。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "group_meeting_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-FISHBONE-LOCATOR-03",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204"
+          ],
+          "asset_refs": [
+            "A102"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 51
+        },
+        "dependency_hash": "753d6b8d9c104f347deffe2b39939acd253a802d318f27bc4b561681b739b210",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-8E6E4161A3BD9B6D",
+        "slide_id": "RRVA-R07",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 11
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 3
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 3
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 2
+          },
+          "table_count": {
+            "state": "value",
+            "value": 0
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 3
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 0
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 0
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R07-PROBLEM",
+            "semantic_role": "problem",
+            "presentation_role": "problem_statement",
+            "content_kind": "callout",
+            "required": true
+          },
+          {
+            "item_id": "R07-SOLUTION",
+            "semantic_role": "solution",
+            "presentation_role": "solution_path",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R07-SUPPORT",
+            "semantic_role": "solution",
+            "presentation_role": "support_visual",
+            "content_kind": "schematic",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "12a6f00d9f986ec38747a06923a3f200cdc9d3cea20f2400cb5f24f760417b12"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-17FB017CC384B555",
+          "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+          "composition_strategy": "stable_fishbone_current_branch",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "753d6b8d9c104f347deffe2b39939acd253a802d318f27bc4b561681b739b210",
+          "structure_fingerprint": "f2d166e0e48f0a262288912395abfe4f756076bb83624580a3ac4800d0cac3ac",
+          "content_items": [
+            {
+              "item_id": "R07-PROBLEM",
+              "semantic_role": "problem",
+              "presentation_role": "problem_statement",
+              "content_kind": "callout",
+              "required": true,
+              "visible_text": "保留 FB001 rev2 歷史結構，僅標示目前接觸介面分支。"
+            },
+            {
+              "item_id": "R07-SOLUTION",
+              "semantic_role": "solution",
+              "presentation_role": "solution_path",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "問題 → 機制 → 受控比較"
+            },
+            {
+              "item_id": "R07-SUPPORT",
+              "semantic_role": "solution",
+              "presentation_role": "support_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "量測與驗證支援圖"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 4,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-17FB017CC384B555",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "group_meeting_evidence_setup"
+    },
+    {
+      "fixture_id": "R08",
+      "logical_slide_id": "RRVA-R08",
+      "slide_id": "RRVA-R08",
+      "title": "G02 優先實驗：接觸壓力量測",
+      "fixture": {
+        "fixture_id": "R08",
+        "logical_slide_id": "RRVA-R08",
+        "title": "G02 優先實驗：接觸壓力量測",
+        "visible_text": "在匹配導電度條件下改變接觸壓力，量測訊號 CV 與接觸電阻。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "group_meeting_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E201"
+          ],
+          "asset_refs": [
+            "A201"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 57
+        },
+        "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-98CF069994C72018",
+        "slide_id": "RRVA-R08",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 15
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 3
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 3
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 3
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 0
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R08-HARDWARE",
+            "semantic_role": "hardware",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R08-PROCEDURE",
+            "semantic_role": "controls",
+            "presentation_role": "procedure",
+            "content_kind": "table",
+            "required": true
+          },
+          {
+            "item_id": "R08-GO",
+            "semantic_role": "decision",
+            "presentation_role": "go_criterion",
+            "content_kind": "metric",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "1e893ffc0e36fa4450bc7f0d8db92ea2d481f20a3f51349b05943380946725cf"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-63AB339C5178A415",
+          "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+          "composition_strategy": "large_setup_with_conditions_side_rail",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+          "structure_fingerprint": "c8374964228426dfccc49ac5fa38067f572efb9e4e7525fd43622c0bd52039e8",
+          "content_items": [
+            {
+              "item_id": "R08-HARDWARE",
+              "semantic_role": "hardware",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "在匹配導電度條件下改變接觸壓力，量測訊號 CV 與接觸電阻。"
+            },
+            {
+              "item_id": "R08-PROCEDURE",
+              "semantic_role": "controls",
+              "presentation_role": "procedure",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            },
+            {
+              "item_id": "R08-GO",
+              "semantic_role": "decision",
+              "presentation_role": "go_criterion",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "在匹配導電度條件下改變接觸壓力，量測訊號 CV 與接觸電阻。"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "RRVC-6728D88AE926646F",
+          "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+          "composition_strategy": "setup_evidence_matrix_with_parameters",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+          "structure_fingerprint": "01919c3ed278cec36bd05266757f360b383977efce24c0be9b04f5650540bbcb",
+          "content_items": [
+            {
+              "item_id": "R08-EXPLANATION",
+              "semantic_role": "setup",
+              "presentation_role": "procedure",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            },
+            {
+              "item_id": "R08-MATRIX_A",
+              "semantic_role": "setup",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "水凝膠元件與接觸介面示意"
+            },
+            {
+              "item_id": "R08-MATRIX_B",
+              "semantic_role": "setup",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R08-MATRIX_C",
+              "semantic_role": "setup",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R08-MATRIX_D",
+              "semantic_role": "setup",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-63AB339C5178A415",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "group_meeting_evidence_setup"
+    },
+    {
+      "fixture_id": "R09",
+      "logical_slide_id": "RRVA-R09",
+      "slide_id": "RRVA-R09",
+      "title": "量測架構：電性量測鏈",
+      "fixture": {
+        "fixture_id": "R09",
+        "logical_slide_id": "RRVA-R09",
+        "title": "量測架構：電性量測鏈",
+        "visible_text": "以量測儀器、樣品接觸點與資料記錄鏈路對應每一個控制變因。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "group_meeting_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E201"
+          ],
+          "asset_refs": [
+            "A201"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 57
+        },
+        "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-735D055FAF7796A4",
+        "slide_id": "RRVA-R09",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 10
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 4
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 4
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 2
+          },
+          "table_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 1
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 4
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 1
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R09-PRINCIPLE",
+            "semantic_role": "principle",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R09-FORMULA",
+            "semantic_role": "principle",
+            "presentation_role": "formula",
+            "content_kind": "formula",
+            "required": true
+          },
+          {
+            "item_id": "R09-EQUIPMENT",
+            "semantic_role": "equipment",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R09-SPECIFICATION",
+            "semantic_role": "equipment",
+            "presentation_role": "specification_table",
+            "content_kind": "table",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "56e27c8336aa13878c970910110240284f1eaba521c57ad88c78efdfd724e90f"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-6B148A9D705DFB96",
+          "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+          "composition_strategy": "measurement_chain_with_control_points",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+          "structure_fingerprint": "ecb9c77a8000734dfaecc6a3f4df754d999fee655cf288e04c949d0899c84526",
+          "content_items": [
+            {
+              "item_id": "R09-PRINCIPLE",
+              "semantic_role": "principle",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "以量測儀器、樣品接觸點與資料記錄鏈路對應每一個控制變因。"
+            },
+            {
+              "item_id": "R09-FORMULA",
+              "semantic_role": "principle",
+              "presentation_role": "formula",
+              "content_kind": "formula",
+              "required": true,
+              "visible_text": "以量測儀器、樣品接觸點與資料記錄鏈路對應每一個控制變因。"
+            },
+            {
+              "item_id": "R09-EQUIPMENT",
+              "semantic_role": "equipment",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R09-SPECIFICATION",
+              "semantic_role": "equipment",
+              "presentation_role": "specification_table",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 4,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-6B148A9D705DFB96",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "group_meeting_evidence_setup"
+    },
+    {
+      "fixture_id": "R10",
+      "logical_slide_id": "RRVA-R10",
+      "slide_id": "RRVA-R10",
+      "title": "實驗設計與 Go / No-Go",
+      "fixture": {
+        "fixture_id": "R10",
+        "logical_slide_id": "RRVA-R10",
+        "title": "實驗設計與 Go / No-Go",
+        "visible_text": "若控制比較後訊號 CV 跨過決策門檻，才進入下一輪驗證。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "group_meeting_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E201"
+          ],
+          "asset_refs": [
+            "A201"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 57
+        },
+        "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-43E8DFCFB60BC4CA",
+        "slide_id": "RRVA-R10",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 16
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 3
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 3
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 3
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 0
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R10-HARDWARE",
+            "semantic_role": "hardware",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R10-PROCEDURE",
+            "semantic_role": "controls",
+            "presentation_role": "procedure",
+            "content_kind": "table",
+            "required": true
+          },
+          {
+            "item_id": "R10-GO",
+            "semantic_role": "decision",
+            "presentation_role": "go_criterion",
+            "content_kind": "metric",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "44eeab24f9f17ff0056c902bf936a15b3f5855cac2b7f486da3b8f14343bd4c4"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-EECA852EB17473EF",
+          "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+          "composition_strategy": "experiment_with_go_no_go",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+          "structure_fingerprint": "ece5ea818392e44586bbfb3e0b8ba73f5ed5519368d54ebf684f2c2cd099aef9",
+          "content_items": [
+            {
+              "item_id": "R10-HARDWARE",
+              "semantic_role": "hardware",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "若控制比較後訊號 CV 跨過決策門檻，才進入下一輪驗證。"
+            },
+            {
+              "item_id": "R10-PROCEDURE",
+              "semantic_role": "controls",
+              "presentation_role": "procedure",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            },
+            {
+              "item_id": "R10-GO",
+              "semantic_role": "decision",
+              "presentation_role": "go_criterion",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "若控制比較後訊號 CV 跨過決策門檻，才進入下一輪驗證。"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 4,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-EECA852EB17473EF",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "group_meeting_evidence_setup"
+    },
+    {
+      "fixture_id": "R11",
+      "logical_slide_id": "RRVA-R11",
+      "slide_id": "RRVA-R11",
+      "title": "結果與討論版面示意",
+      "fixture": {
+        "fixture_id": "R11",
+        "logical_slide_id": "RRVA-R11",
+        "title": "結果與討論版面示意",
+        "visible_text": "預期版面示意，不代表實驗結果；主圖保留給未來量測結果。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "group_meeting_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E201"
+          ],
+          "asset_refs": [
+            "A201"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 57
+        },
+        "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+        "scientific_evidence_status": "synthetic_non_evidence",
+        "source_only_role_indicators": [
+          "visual_layout_fixture"
+        ],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-01E1693FC5B8F7F5",
+        "slide_id": "RRVA-R11",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 9
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 7
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 7
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 4
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 0
+          },
+          "table_count": {
+            "state": "value",
+            "value": 0
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 2
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 7
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 2
+          }
+        },
+        "text_density_class": "high",
+        "evidence_density_class": "high",
+        "composition_content_items": [
+          {
+            "item_id": "R11-PHOTO_A",
+            "semantic_role": "validation",
+            "presentation_role": "primary_visual",
+            "content_kind": "plot",
+            "required": true
+          },
+          {
+            "item_id": "R11-PHOTO_B",
+            "semantic_role": "validation",
+            "presentation_role": "secondary_visual",
+            "content_kind": "plot",
+            "required": true
+          },
+          {
+            "item_id": "R11-PLOT",
+            "semantic_role": "validation",
+            "presentation_role": "validation_plot",
+            "content_kind": "plot",
+            "required": true
+          },
+          {
+            "item_id": "R11-CAPTION_A",
+            "semantic_role": "validation",
+            "presentation_role": "caption",
+            "content_kind": "caption",
+            "required": true
+          },
+          {
+            "item_id": "R11-CAPTION_B",
+            "semantic_role": "validation",
+            "presentation_role": "caption",
+            "content_kind": "caption",
+            "required": true
+          },
+          {
+            "item_id": "R11-MEASUREMENT_C",
+            "semantic_role": "validation",
+            "presentation_role": "secondary_visual",
+            "content_kind": "plot",
+            "required": true
+          },
+          {
+            "item_id": "R11-CONTEXT",
+            "semantic_role": "validation",
+            "presentation_role": "compact_context",
+            "content_kind": "metric",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "69f8275ed16cdce691ffe43e291468a9ca4b3777d4a4d40121a888a0f879d638"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-A360B8A5E9077913",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "composition_strategy": "plot_with_setup_and_decision_strip",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+          "structure_fingerprint": "f53bbd711ac26702330a8bf9433308ac6da427476c960822c58fe1e7f0a0fafc",
+          "content_items": [
+            {
+              "item_id": "R11-PHOTO_A",
+              "semantic_role": "validation",
+              "presentation_role": "primary_visual",
+              "content_kind": "plot",
+              "required": true,
+              "visible_text": "預期版面示意，不代表實驗結果；主圖保留給未來量測結果。"
+            },
+            {
+              "item_id": "R11-PHOTO_B",
+              "semantic_role": "validation",
+              "presentation_role": "secondary_visual",
+              "content_kind": "plot",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R11-PLOT",
+              "semantic_role": "validation",
+              "presentation_role": "validation_plot",
+              "content_kind": "plot",
+              "required": true,
+              "visible_text": "主結果圖位置"
+            },
+            {
+              "item_id": "R11-CAPTION_A",
+              "semantic_role": "validation",
+              "presentation_role": "caption",
+              "content_kind": "caption",
+              "required": true,
+              "visible_text": "資料來源：S-H002-EXPERIMENT-DESIGN-06"
+            },
+            {
+              "item_id": "R11-CAPTION_B",
+              "semantic_role": "validation",
+              "presentation_role": "caption",
+              "content_kind": "caption",
+              "required": true,
+              "visible_text": "資料來源：S-H002-EXPERIMENT-DESIGN-06"
+            },
+            {
+              "item_id": "R11-MEASUREMENT_C",
+              "semantic_role": "validation",
+              "presentation_role": "secondary_visual",
+              "content_kind": "plot",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R11-CONTEXT",
+              "semantic_role": "validation",
+              "presentation_role": "compact_context",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 3,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "RRVC-D025BEB614E8C19C",
+          "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+          "composition_strategy": "dominant_plot_with_single_decision_sidecar",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+          "structure_fingerprint": "8f11ba5db9da8d3c3cc5300577f7ad77a9a91f47016d3205c61f896b116f8b51",
+          "content_items": [
+            {
+              "item_id": "R11-RESULT",
+              "semantic_role": "result",
+              "presentation_role": "primary_visual",
+              "content_kind": "plot",
+              "required": true,
+              "visible_text": "預期版面示意，不代表實驗結果；主圖保留給未來量測結果。"
+            },
+            {
+              "item_id": "R11-METRIC",
+              "semantic_role": "result",
+              "presentation_role": "metric_callout",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "預期版面示意，不代表實驗結果；主圖保留給未來量測結果。"
+            },
+            {
+              "item_id": "R11-CONTEXT",
+              "semantic_role": "result",
+              "presentation_role": "compact_context",
+              "content_kind": "caption",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 3,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-D025BEB614E8C19C",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "group_meeting_evidence_setup"
+    },
+    {
+      "fixture_id": "R12",
+      "logical_slide_id": "RRVA-R12",
+      "slide_id": "RRVA-R12",
+      "title": "問題至機制至解法",
+      "fixture": {
+        "fixture_id": "R12",
+        "logical_slide_id": "RRVA-R12",
+        "title": "問題至機制至解法",
+        "visible_text": "問題：低壓接觸不穩；機制：contact resistance；策略：匹配導電度並改變壓力。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "group_meeting_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E202"
+          ],
+          "asset_refs": [],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 51
+        },
+        "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-1B6F758FC59EA0D4",
+        "slide_id": "RRVA-R12",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 8
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 4
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 4
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 2
+          },
+          "table_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 1
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 0
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 4
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 1
+          }
+        },
+        "text_density_class": "medium",
+        "evidence_density_class": "medium",
+        "composition_content_items": [
+          {
+            "item_id": "R12-PRINCIPLE",
+            "semantic_role": "principle",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R12-FORMULA",
+            "semantic_role": "principle",
+            "presentation_role": "formula",
+            "content_kind": "formula",
+            "required": true
+          },
+          {
+            "item_id": "R12-EQUIPMENT",
+            "semantic_role": "equipment",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R12-SPECIFICATION",
+            "semantic_role": "equipment",
+            "presentation_role": "specification_table",
+            "content_kind": "table",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "dfd9dac888d26637d7dc5b9356f19f5a239bfada5258160fe219f8ae7806db6a"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-1AC941F2F6BE6B96",
+          "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+          "composition_strategy": "mechanism_and_measurement_split",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+          "structure_fingerprint": "e323646859a550f120f80b0d315df095f853f23c991b2d29836fdc3a62c682ac",
+          "content_items": [
+            {
+              "item_id": "R12-PRINCIPLE",
+              "semantic_role": "principle",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "問題：低壓接觸不穩；機制：contact resistance；策略：匹配導電度並改變壓力。"
+            },
+            {
+              "item_id": "R12-FORMULA",
+              "semantic_role": "principle",
+              "presentation_role": "formula",
+              "content_kind": "formula",
+              "required": true,
+              "visible_text": "問題：低壓接觸不穩；機制：contact resistance；策略：匹配導電度並改變壓力。"
+            },
+            {
+              "item_id": "R12-EQUIPMENT",
+              "semantic_role": "equipment",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R12-SPECIFICATION",
+              "semantic_role": "equipment",
+              "presentation_role": "specification_table",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "RRVC-6223C9AB9C96B097",
+          "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+          "composition_strategy": "causal_path_with_support_visual",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+          "structure_fingerprint": "0fa960a237c60f9ee286e92580b84e1a180a8d059b419ab9b93b98f20d21cbcc",
+          "content_items": [
+            {
+              "item_id": "R12-PROBLEM",
+              "semantic_role": "problem",
+              "presentation_role": "problem_statement",
+              "content_kind": "callout",
+              "required": true,
+              "visible_text": "問題：低壓接觸不穩；機制：contact resistance；策略：匹配導電度並改變壓力。"
+            },
+            {
+              "item_id": "R12-SOLUTION",
+              "semantic_role": "solution",
+              "presentation_role": "solution_path",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "問題 → 機制 → 受控比較"
+            },
+            {
+              "item_id": "R12-SUPPORT",
+              "semantic_role": "solution",
+              "presentation_role": "support_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "量測與驗證支援圖"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-6223C9AB9C96B097",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "group_meeting_evidence_setup"
+    },
+    {
+      "fixture_id": "R13",
+      "logical_slide_id": "RRVA-R13",
+      "slide_id": "RRVA-R13",
+      "title": "物理驗證與比較",
+      "fixture": {
+        "fixture_id": "R13",
+        "logical_slide_id": "RRVA-R13",
+        "title": "物理驗證與比較",
+        "visible_text": "以相同位置與相同判準水平對齊 control / treatment 的比較結果。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "group_meeting_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E204",
+            "E201"
+          ],
+          "asset_refs": [
+            "A201"
+          ],
+          "action_refs": [],
+          "decision_refs": [],
+          "source_cursor": 57
+        },
+        "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-98DD00DFEBD5D08F",
+        "slide_id": "RRVA-R13",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 7
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 7
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 7
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 1
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 3
+          },
+          "table_count": {
+            "state": "value",
+            "value": 0
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 2
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 7
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 2
+          }
+        },
+        "text_density_class": "high",
+        "evidence_density_class": "high",
+        "composition_content_items": [
+          {
+            "item_id": "R13-PHOTO_A",
+            "semantic_role": "validation",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R13-PHOTO_B",
+            "semantic_role": "validation",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R13-PLOT",
+            "semantic_role": "validation",
+            "presentation_role": "validation_plot",
+            "content_kind": "plot",
+            "required": true
+          },
+          {
+            "item_id": "R13-CAPTION_A",
+            "semantic_role": "validation",
+            "presentation_role": "caption",
+            "content_kind": "caption",
+            "required": true
+          },
+          {
+            "item_id": "R13-CAPTION_B",
+            "semantic_role": "validation",
+            "presentation_role": "caption",
+            "content_kind": "caption",
+            "required": true
+          },
+          {
+            "item_id": "R13-MEASUREMENT_C",
+            "semantic_role": "validation",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R13-CONTEXT",
+            "semantic_role": "validation",
+            "presentation_role": "compact_context",
+            "content_kind": "metric",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "b2d2b4a292415467a8cebe1d1a6ff0f203cda3c6bb2c27c0c5551f1ce1cfa3d7"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-B32D68F0CB335D6A",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "composition_strategy": "paired_validation_visuals_with_plot",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+          "structure_fingerprint": "3afcc6904ccd204c83e114a5d14d4473e0bda8a25937686e91d993c36bef1bc3",
+          "content_items": [
+            {
+              "item_id": "R13-PHOTO_A",
+              "semantic_role": "validation",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "以相同位置與相同判準水平對齊 control / treatment 的比較結果。"
+            },
+            {
+              "item_id": "R13-PHOTO_B",
+              "semantic_role": "validation",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R13-PLOT",
+              "semantic_role": "validation",
+              "presentation_role": "validation_plot",
+              "content_kind": "plot",
+              "required": true,
+              "visible_text": "主結果圖位置"
+            },
+            {
+              "item_id": "R13-CAPTION_A",
+              "semantic_role": "validation",
+              "presentation_role": "caption",
+              "content_kind": "caption",
+              "required": true,
+              "visible_text": "資料來源：S-H002-EXPERIMENT-DESIGN-06"
+            },
+            {
+              "item_id": "R13-CAPTION_B",
+              "semantic_role": "validation",
+              "presentation_role": "caption",
+              "content_kind": "caption",
+              "required": true,
+              "visible_text": "資料來源：S-H002-EXPERIMENT-DESIGN-06"
+            },
+            {
+              "item_id": "R13-MEASUREMENT_C",
+              "semantic_role": "validation",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R13-CONTEXT",
+              "semantic_role": "validation",
+              "presentation_role": "compact_context",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 5,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "RRVC-BD0A59D0EA7405B4",
+          "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "composition_strategy": "aligned_control_treatment_and_shared_criterion",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+          "structure_fingerprint": "3d9bc67232956b04329963b24ef49373ad68c8bcbaea932e7038b1bfd024c7a3",
+          "content_items": [
+            {
+              "item_id": "R13-COLUMN_A",
+              "semantic_role": "comparison",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "以相同位置與相同判準水平對齊 control / treatment 的比較結果。"
+            },
+            {
+              "item_id": "R13-COLUMN_B",
+              "semantic_role": "comparison",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R13-COLUMN_C",
+              "semantic_role": "comparison",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R13-CRITERIA",
+              "semantic_role": "comparison",
+              "presentation_role": "criteria_strip",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            },
+            {
+              "item_id": "R13-DECISION",
+              "semantic_role": "comparison",
+              "presentation_role": "decision_callout",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "以相同位置與相同判準水平對齊 control / treatment 的比較結果。"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 5,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-BD0A59D0EA7405B4",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "group_meeting_evidence_setup"
+    },
+    {
+      "fixture_id": "R14",
+      "logical_slide_id": "RRVA-R14",
+      "slide_id": "RRVA-R14",
+      "title": "決策與下一步",
+      "fixture": {
+        "fixture_id": "R14",
+        "logical_slide_id": "RRVA-R14",
+        "title": "決策與下一步",
+        "visible_text": "依控制比較結果決定是否保留接觸介面假說，並安排下一步驗證。",
+        "traditional_chinese_primary": true,
+        "body_source_class": "group_meeting_dominant",
+        "canonical_source_refs": {
+          "slide_spec_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+          "claim_refs": [
+            "C201"
+          ],
+          "evidence_refs": [
+            "E201"
+          ],
+          "asset_refs": [],
+          "action_refs": [
+            "NS201"
+          ],
+          "decision_refs": [
+            "D201"
+          ],
+          "source_cursor": 65
+        },
+        "dependency_hash": "b0aeb18765f8d2446591785271345f2292f55ed33ede9de6270d0d430fae6954",
+        "scientific_evidence_status": "canonical_supported",
+        "source_only_role_indicators": [],
+        "human_visual_acceptance": "not_reviewed"
+      },
+      "content_shape": {
+        "content_shape_id": "SCS-F1387E2B21498F0B",
+        "slide_id": "RRVA-R14",
+        "semantic_stage": "review_fixture",
+        "observations": {
+          "title_chars": {
+            "state": "value",
+            "value": 6
+          },
+          "primary_claim_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "bullet_count": {
+            "state": "value",
+            "value": 5
+          },
+          "paragraph_count": {
+            "state": "value",
+            "value": 5
+          },
+          "photo_count": {
+            "state": "value",
+            "value": 0
+          },
+          "cad_count": {
+            "state": "value",
+            "value": 0
+          },
+          "plot_count": {
+            "state": "value",
+            "value": 0
+          },
+          "schematic_count": {
+            "state": "value",
+            "value": 3
+          },
+          "table_count": {
+            "state": "value",
+            "value": 1
+          },
+          "table_rows_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "table_columns_max": {
+            "state": "unavailable",
+            "value": null
+          },
+          "formula_count": {
+            "state": "value",
+            "value": 0
+          },
+          "comparison_side_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "caption_count": {
+            "state": "value",
+            "value": 0
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "result_metric_count": {
+            "state": "value",
+            "value": 1
+          },
+          "mechanism_node_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "experiment_control_count": {
+            "state": "unavailable",
+            "value": null
+          },
+          "evidence_item_count": {
+            "state": "value",
+            "value": 5
+          },
+          "primary_visual_count": {
+            "state": "value",
+            "value": 1
+          },
+          "secondary_visual_count": {
+            "state": "value",
+            "value": 2
+          }
+        },
+        "text_density_class": "high",
+        "evidence_density_class": "high",
+        "composition_content_items": [
+          {
+            "item_id": "R14-COLUMN_A",
+            "semantic_role": "comparison",
+            "presentation_role": "primary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R14-COLUMN_B",
+            "semantic_role": "comparison",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R14-COLUMN_C",
+            "semantic_role": "comparison",
+            "presentation_role": "secondary_visual",
+            "content_kind": "schematic",
+            "required": true
+          },
+          {
+            "item_id": "R14-CRITERIA",
+            "semantic_role": "comparison",
+            "presentation_role": "criteria_strip",
+            "content_kind": "table",
+            "required": true
+          },
+          {
+            "item_id": "R14-DECISION",
+            "semantic_role": "comparison",
+            "presentation_role": "decision_callout",
+            "content_kind": "metric",
+            "required": true
+          }
+        ],
+        "content_items_provided": true,
+        "shape_basis": "canonical_slidespec_projection",
+        "content_shape_sha256": "3c5184b52f6974bfa1d3d5ff67ace9572d0bca5c51b49f5502bf427a74d5d323"
+      },
+      "eligible_layout_capability_count": 10,
+      "candidates": [
+        {
+          "candidate_id": "RRVC-1D4C0277DB4165C2",
+          "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "composition_strategy": "decision_tree_with_next_experiment",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "b0aeb18765f8d2446591785271345f2292f55ed33ede9de6270d0d430fae6954",
+          "structure_fingerprint": "fb6d40ecaabf93cc3b4d4989a1324478beac1b7dacd3096398e03a1ef2dfdd17",
+          "content_items": [
+            {
+              "item_id": "R14-COLUMN_A",
+              "semantic_role": "comparison",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "依控制比較結果決定是否保留接觸介面假說，並安排下一步驗證。"
+            },
+            {
+              "item_id": "R14-COLUMN_B",
+              "semantic_role": "comparison",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R14-COLUMN_C",
+              "semantic_role": "comparison",
+              "presentation_role": "secondary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "受控比較結構"
+            },
+            {
+              "item_id": "R14-CRITERIA",
+              "semantic_role": "comparison",
+              "presentation_role": "criteria_strip",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            },
+            {
+              "item_id": "R14-DECISION",
+              "semantic_role": "comparison",
+              "presentation_role": "decision_callout",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "依控制比較結果決定是否保留接觸介面假說，並安排下一步驗證。"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "RRVC-CAD9A32016A1C4CA",
+          "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+          "composition_strategy": "decision_criterion_with_execution_rail",
+          "body_source_class": "group_meeting_dominant",
+          "dependency_hash": "b0aeb18765f8d2446591785271345f2292f55ed33ede9de6270d0d430fae6954",
+          "structure_fingerprint": "a29eddf863898668a745a42d20b49bfc32e4efff0203993ae68924d40f596804",
+          "content_items": [
+            {
+              "item_id": "R14-HARDWARE",
+              "semantic_role": "hardware",
+              "presentation_role": "primary_visual",
+              "content_kind": "schematic",
+              "required": true,
+              "visible_text": "依控制比較結果決定是否保留接觸介面假說，並安排下一步驗證。"
+            },
+            {
+              "item_id": "R14-PROCEDURE",
+              "semantic_role": "controls",
+              "presentation_role": "procedure",
+              "content_kind": "table",
+              "required": true,
+              "visible_text": "控制變因、量測鏈與判準依來源閉合"
+            },
+            {
+              "item_id": "R14-GO",
+              "semantic_role": "decision",
+              "presentation_role": "go_criterion",
+              "content_kind": "metric",
+              "required": true,
+              "visible_text": "依控制比較結果決定是否保留接觸介面假說，並安排下一步驗證。"
+            }
+          ],
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          },
+          "candidate_status": "eligible"
+        }
+      ],
+      "selected_candidate_id": "RRVC-1D4C0277DB4165C2",
+      "body_source_fit_status": "pass",
+      "expected_family_purpose": "group_meeting_evidence_setup"
+    }
+  ],
+  "real_candidate_slide_count": 21,
+  "multi_candidate_fixture_count": 7,
+  "candidate_difference_audit": {
+    "records": [
+      {
+        "fixture_id": "R04",
+        "candidate_a": "RRVC-5B5408035971F627",
+        "candidate_b": "RRVC-9C3D232355FABF10",
+        "structurally_distinct": true
+      },
+      {
+        "fixture_id": "R05",
+        "candidate_a": "RRVC-A0A88FFE317BB571",
+        "candidate_b": "RRVC-AFDA1ECFBC44D324",
+        "structurally_distinct": true
+      },
+      {
+        "fixture_id": "R08",
+        "candidate_a": "RRVC-63AB339C5178A415",
+        "candidate_b": "RRVC-6728D88AE926646F",
+        "structurally_distinct": true
+      },
+      {
+        "fixture_id": "R11",
+        "candidate_a": "RRVC-A360B8A5E9077913",
+        "candidate_b": "RRVC-D025BEB614E8C19C",
+        "structurally_distinct": true
+      },
+      {
+        "fixture_id": "R12",
+        "candidate_a": "RRVC-1AC941F2F6BE6B96",
+        "candidate_b": "RRVC-6223C9AB9C96B097",
+        "structurally_distinct": true
+      },
+      {
+        "fixture_id": "R13",
+        "candidate_a": "RRVC-B32D68F0CB335D6A",
+        "candidate_b": "RRVC-BD0A59D0EA7405B4",
+        "structurally_distinct": true
+      },
+      {
+        "fixture_id": "R14",
+        "candidate_a": "RRVC-1D4C0277DB4165C2",
+        "candidate_b": "RRVC-CAD9A32016A1C4CA",
+        "structurally_distinct": true
+      }
+    ]
+  },
+  "fake_candidate_variant_count": 0,
+  "traditional_chinese_primary_language": "pass",
+  "invented_scientific_claim_count": 0,
+  "invented_measured_value_count": 0
+}

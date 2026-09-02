@@ -1,0 +1,146 @@
+{
+  "qa_id": "RRVA-VISUAL-QA-001",
+  "review_pptx_slide_count": 31,
+  "slide_records": [
+    {
+      "slide_index": 1,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 2,
+      "planner_region_count": 4
+    },
+    {
+      "slide_index": 3,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 4,
+      "planner_region_count": 4
+    },
+    {
+      "slide_index": 5,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 6,
+      "planner_region_count": 4
+    },
+    {
+      "slide_index": 7,
+      "planner_region_count": 7
+    },
+    {
+      "slide_index": 8,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 9,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 10,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 11,
+      "planner_region_count": 5
+    },
+    {
+      "slide_index": 12,
+      "planner_region_count": 4
+    },
+    {
+      "slide_index": 13,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 14,
+      "planner_region_count": 7
+    },
+    {
+      "slide_index": 15,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 16,
+      "planner_region_count": 4
+    },
+    {
+      "slide_index": 17,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 18,
+      "planner_region_count": 7
+    },
+    {
+      "slide_index": 19,
+      "planner_region_count": 5
+    },
+    {
+      "slide_index": 20,
+      "planner_region_count": 5
+    },
+    {
+      "slide_index": 21,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 22,
+      "planner_region_count": 5
+    },
+    {
+      "slide_index": 23,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 24,
+      "planner_region_count": 7
+    },
+    {
+      "slide_index": 25,
+      "planner_region_count": 7
+    },
+    {
+      "slide_index": 26,
+      "planner_region_count": 4
+    },
+    {
+      "slide_index": 27,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 28,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 29,
+      "planner_region_count": 4
+    },
+    {
+      "slide_index": 30,
+      "planner_region_count": 3
+    },
+    {
+      "slide_index": 31,
+      "planner_region_count": 5
+    }
+  ],
+  "traditional_chinese_primary_language": "pass",
+  "chinese_title_count": 21,
+  "chinese_or_mixed_body_count": 86,
+  "english_only_narrative_violation_count": 0,
+  "main_content_below_16pt_count": 0,
+  "title_typography_violation_count": 0,
+  "hard_overlap_violation_count": 0,
+  "known_hard_text_overflow_count": 0,
+  "dashboard_style_violation_count": 0,
+  "fixed_four_box_footer_count": 0,
+  "fake_candidate_variant_count": 0,
+  "shell_override_count": 0,
+  "scientific_truth_override_count": 0,
+  "body_source_fit_failure_count": 0,
+  "human_acceptance_falsely_claimed_count": 0,
+  "aggregate_status": "pass"
+}

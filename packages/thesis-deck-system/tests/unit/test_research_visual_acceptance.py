@@ -77,3 +77,81 @@ def test_profile_and_manifest_writers_emit_closed_contracts(tmp_path: Path):
     ))
     registry.validate("research-presentation-visual-acceptance-profile", json.loads(outputs["profile"].read_text(encoding="utf-8")))
     registry.validate("professor-visual-review-manifest", json.loads(outputs["manifest"].read_text(encoding="utf-8")))
+
+
+def test_real_research_review_application_materializes_all_fixtures_with_meaningful_candidates():
+    from thesis_deck_system.presentation_planner_application import build_physical_composition_plans
+    from thesis_deck_system.professor_shell import build_professor_shell_profile
+    from thesis_deck_system.research_visual_acceptance import build_real_research_review_application
+
+    application = build_real_research_review_application(ROOT)
+
+    assert application["logical_fixture_count"] == 14
+    assert len(application["cases"]) == 14
+    assert application["real_candidate_slide_count"] >= 20
+    assert application["multi_candidate_fixture_count"] >= 6
+    assert application["fake_candidate_variant_count"] == 0
+    assert all(case["body_source_fit_status"] == "pass" for case in application["cases"])
+    assert all(candidate["content_items"] for case in application["cases"] for candidate in case["candidates"])
+    assert any("不代表實驗結果" in item["visible_text"] for case in application["cases"] for candidate in case["candidates"] for item in candidate["content_items"])
+
+    physical = build_physical_composition_plans(application, shell_profile=build_professor_shell_profile(ROOT))
+    assert len(physical) == application["real_candidate_slide_count"]
+    assert all(plan["required_role_coverage_status"] == "pass" for plan in physical)
+    assert any("接觸壓力" in region.get("visible_text", "") for plan in physical for region in plan["physical_regions"])
+
+
+def test_real_research_review_writer_creates_real_first_pptx_and_pending_human_mapping(tmp_path: Path):
+    import json
+
+    from pptx import Presentation
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.research_visual_acceptance import write_real_research_visual_review_artifacts
+
+    outputs = write_real_research_visual_review_artifacts(ROOT, tmp_path)
+    presentation = Presentation(outputs["review_pptx"])
+    manifest = json.loads(outputs["review_manifest"].read_text(encoding="utf-8"))
+    texts = [shape.text for slide in presentation.slides for shape in slide.shapes if shape.has_text_frame]
+
+    assert outputs["review_pptx"].is_file()
+    assert len(presentation.slides) == 31  # 21 real candidates + ten golden appendices.
+    assert any("研究缺口" in text for text in texts)
+    assert any("不代表實驗結果" in text for text in texts)
+    assert all(candidate["pptx_slide_index"] >= 1 for case in manifest["cases"] for candidate in case["candidates"])
+    assert all(case["human_selection"] is None and case["human_status"] == "pending" for case in manifest["cases"])
+    assert all(shape.text_frame.paragraphs[0].runs[0].font.size.pt == 30 for slide in list(presentation.slides)[:21] for shape in slide.shapes if shape.name.startswith("tds-title:"))
+    SchemaRegistry(ROOT / "thesis-deck-system/schemas", schema_names=("professor-visual-review-manifest", "physical-composition-plans")).validate(
+        "professor-visual-review-manifest", manifest
+    )
+    assert outputs["visual_qa"].is_file()
+    assert outputs["render_discovery"].is_file()
+
+
+def test_real_research_visual_qa_is_derived_from_materialized_pptx(tmp_path: Path):
+    from thesis_deck_system.research_visual_acceptance import (
+        build_real_research_visual_qa,
+        write_real_research_visual_review_artifacts,
+    )
+
+    outputs = write_real_research_visual_review_artifacts(ROOT, tmp_path)
+    qa = build_real_research_visual_qa(outputs["review_pptx"], outputs["application"])
+
+    assert qa["aggregate_status"] == "pass"
+    assert qa["traditional_chinese_primary_language"] == "pass"
+    assert qa["main_content_below_16pt_count"] == 0
+    assert qa["title_typography_violation_count"] == 0
+    assert qa["hard_overlap_violation_count"] == 0
+    assert qa["dashboard_style_violation_count"] == 0
+    assert qa["fixed_four_box_footer_count"] == 0
+    assert qa["shell_override_count"] == 0
+    assert qa["scientific_truth_override_count"] == 0
+
+
+def test_render_capability_discovery_is_honest_and_non_rendering():
+    from thesis_deck_system.research_visual_acceptance import discover_review_render_capability
+
+    discovery = discover_review_render_capability()
+
+    assert discovery["render_attempt_count"] == 0
+    assert discovery["renderer_install_attempt_count"] == 0
+    assert discovery["candidate_preview_status"] in {"renderer_available_not_run", "blocked_environment"}

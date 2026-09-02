@@ -167,7 +167,7 @@ class PythonPptxAssembler(PptxAssembler):
         self._add_planner_native_effects(slide, item=item, region=region, fill_role=fill_role, typography_profile=typography_profile)
         text_box = slide.shapes.add_textbox(Inches(geometry["left"]), Inches(geometry["top"]), Inches(geometry["width"]), Inches(geometry["height"]))
         text_box.name = f"PPA::{item.get('logical_slide_id', item['slide_id'])}::{item['selected_candidate_id']}::{region['region_id']}::{region['presentation_role']}::{region['item_id']}"
-        text_box.text = self._planner_region_label(region)
+        text_box.text = region.get("visible_text") or self._planner_region_label(region)
         role = self._planner_typography_role(presentation_role)
         apply_typography_to_shape(text_box, typography_profile, role)
 

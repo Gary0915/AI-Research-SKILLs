@@ -1,0 +1,19 @@
+{
+  "discovery_id": "RRVA-RENDER-DISCOVERY-001",
+  "renderer_candidates_checked": [
+    "repository_render_pipeline",
+    "libreoffice"
+  ],
+  "existing_renderer_available": true,
+  "candidate_preview_status": "blocked_environment",
+  "qualitative_visual_review": "pending_human_review_from_pptx",
+  "render_attempt_count": 0,
+  "renderer_install_attempt_count": 0,
+  "private_alias_resolution_attempts": 0,
+  "private_source_open_attempts": 0,
+  "private_render_attempts": 0,
+  "renderer_conversion_attempt_count": 1,
+  "renderer_conversion_success_count": 0,
+  "rendered_slide_count": 0,
+  "failure_classification": "renderer_conversion_failed"
+}

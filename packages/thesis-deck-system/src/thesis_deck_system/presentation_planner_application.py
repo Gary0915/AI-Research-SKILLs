@@ -94,9 +94,12 @@ def build_physical_composition_plans(application: dict[str, Any], *, shell_profi
         for candidate in case["candidates"]:
             recipe = recipes[candidate["body_family_id"]]
             style = styles[candidate["body_family_id"]]
+            content_items = candidate.get("content_items", case.get("content_items", []))
+            if not content_items:
+                raise PlannerApplicationError(f"candidate has no assignable content: {case.get('slide_id')}")
             available = list(recipe["regions"])
             assignments = []
-            for item in case["content_items"]:
+            for item in content_items:
                 matching = [region for region in available if item["content_kind"] in region["accepted_content_kinds"]]
                 if not matching:
                     if item["required"]:
@@ -106,15 +109,15 @@ def build_physical_composition_plans(application: dict[str, Any], *, shell_profi
                 region = matching[0]
                 available.remove(region)
                 geometry = _physical_geometry(content_bounds, region)
-                assignments.append({"item_id": item["item_id"], "region_id": region["region_id"], "content_kind": item["content_kind"], "geometry": geometry})
+                assignments.append({"item_id": item["item_id"], "region_id": region["region_id"], "content_kind": item["content_kind"], "visible_text": item.get("visible_text"), "geometry": geometry})
             required_regions = {region["region_id"] for region in recipe["regions"] if region["required"]}
             assigned_regions = {item["region_id"] for item in assignments}
             # Empty recipe regions remain intentionally available for optional layout treatment;
             # all required content items must have a concrete physical assignment.
-            required_content_assigned = all(item["item_id"] in {assignment["item_id"] for assignment in assignments} for item in case["content_items"] if item["required"])
+            required_content_assigned = all(item["item_id"] in {assignment["item_id"] for assignment in assignments} for item in content_items if item["required"])
             assignment_by_region = {item["region_id"]: item for item in assignments}
             physical_regions = [
-                {**region, "geometry": _physical_geometry(content_bounds, region), "item_id": assignment_by_region.get(region["region_id"], {}).get("item_id", f"REGION-{region['region_id'].upper()}"), "content_kind": assignment_by_region.get(region["region_id"], {}).get("content_kind", "text"), "synthetic_placeholder": region["region_id"] not in assignment_by_region}
+                {**region, "geometry": _physical_geometry(content_bounds, region), "item_id": assignment_by_region.get(region["region_id"], {}).get("item_id", f"REGION-{region['region_id'].upper()}"), "content_kind": assignment_by_region.get(region["region_id"], {}).get("content_kind", "text"), "visible_text": assignment_by_region.get(region["region_id"], {}).get("visible_text"), "synthetic_placeholder": region["region_id"] not in assignment_by_region}
                 for region in recipe["regions"]
             ]
             core = {"slide_id": case["slide_id"], "candidate_id": candidate["candidate_id"], "recipe_id": recipe["recipe_id"], "assignments": assignments, "physical_regions": physical_regions, "content_bounds": content_bounds}
