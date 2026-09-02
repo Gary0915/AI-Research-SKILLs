@@ -1,0 +1,674 @@
+{
+  "inventory_id": "RRVA-SCHEMA-CLOSURE-001",
+  "candidate_schema_component_count": 27,
+  "checked_schema_count": 27,
+  "checked_object_node_count": 79,
+  "open_node_count": 0,
+  "corrected_node_count": 2,
+  "recursive_closure_status": "pass",
+  "schemas": [
+    {
+      "schema_path": "thesis-deck-system/schemas/body-reference-evidence-resolution.schema.json",
+      "object_node_count": 2,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/resolution",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/composition-candidates.schema.json",
+      "object_node_count": 4,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/recurrence",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/score",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/record",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/composition-review-selections.schema.json",
+      "object_node_count": 2,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/selections/items",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/composition-selection-audit.schema.json",
+      "object_node_count": 5,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/score",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/score/properties/body_recurrence_evidence",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/selection",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/selection/properties/candidate_component_scores/items",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/final-closure-reliability-qa.schema.json",
+      "object_node_count": 3,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/check",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/check/properties/facts",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/final-closure-validation-run.schema.json",
+      "object_node_count": 1,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/final-evidence-current-facts.schema.json",
+      "object_node_count": 3,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/check",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/check/properties/facts",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/generated-pptx-attestation.schema.json",
+      "object_node_count": 1,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/generated-pptx-media-lineage.schema.json",
+      "object_node_count": 2,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/media",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/generated-pptx-source-closure.schema.json",
+      "object_node_count": 2,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/input",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/incremental-build-audit.schema.json",
+      "object_node_count": 1,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/incremental-lineage-acceptance-proof.schema.json",
+      "object_node_count": 3,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/decision_counts",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/scenario",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/layout-capability-registry.schema.json",
+      "object_node_count": 5,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/capacity",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/recurrence",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/record",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/record/properties/media_count",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/meeting-view-manifest.schema.json",
+      "object_node_count": 1,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/native-materialization-parity.schema.json",
+      "object_node_count": 3,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/style_field_coverage",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/coverage",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/planner-application-acceptance.schema.json",
+      "object_node_count": 4,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/logical_to_physical/items",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/structural_audit",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/incremental_scenario",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/presentation-planner-qa.schema.json",
+      "object_node_count": 1,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/professor-visual-review-manifest.schema.json",
+      "object_node_count": 4,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/case",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/candidate",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/fit",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/real-research-visual-acceptance-schema-closure-inventory.schema.json",
+      "object_node_count": 3,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/schema",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/node",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/real-research-visual-fixture-pack.schema.json",
+      "object_node_count": 3,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/refs",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/fixture",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/real-research-visual-qa.schema.json",
+      "object_node_count": 2,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/slide_records/items",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/real-research-visual-review-application.schema.json",
+      "object_node_count": 12,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/candidate_difference_audit",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/properties/candidate_difference_audit/properties/records/items",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/case",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/canonicalSourceRefs",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/fixture",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/contentShape",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/contentShape/properties/observations",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "bounded_typed_map"
+        },
+        {
+          "json_pointer": "$/$defs/contentShape/properties/observations/additionalProperties",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/candidate",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/candidate/properties/algorithm_fit",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "bounded_typed_map"
+        },
+        {
+          "json_pointer": "$/$defs/contentItem",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/render-capability-discovery.schema.json",
+      "object_node_count": 1,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/research-presentation-visual-acceptance-profile.schema.json",
+      "object_node_count": 4,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/rule",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/counts",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/range",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/scientific-content-shapes.schema.json",
+      "object_node_count": 5,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/observation",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/item",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/observations",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        },
+        {
+          "json_pointer": "$/$defs/record",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/slide-lineage-record.schema.json",
+      "object_node_count": 1,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    },
+    {
+      "schema_path": "thesis-deck-system/schemas/slide-materialization-decision.schema.json",
+      "object_node_count": 1,
+      "open_node_count": 0,
+      "nodes": [
+        {
+          "json_pointer": "$",
+          "node_type": "object",
+          "status": "closed",
+          "reason": "additional_properties_false"
+        }
+      ]
+    }
+  ]
+}

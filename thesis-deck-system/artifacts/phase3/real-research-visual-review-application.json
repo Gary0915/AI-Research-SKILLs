@@ -194,10 +194,10 @@
             "semantic_fit": 5,
             "capacity_fit": 5,
             "evidence_fit": 5,
-            "primary_visual_prominence_fit": 4,
+            "primary_visual_prominence_fit": 5,
             "text_density_fit": 4,
             "caption_density_fit": 4,
-            "comparison_alignment_fit": 4,
+            "comparison_alignment_fit": 3,
             "technical_evidence_hierarchy_fit": 4
           },
           "candidate_status": "eligible"
@@ -415,10 +415,10 @@
             "semantic_fit": 5,
             "capacity_fit": 5,
             "evidence_fit": 5,
-            "primary_visual_prominence_fit": 4,
+            "primary_visual_prominence_fit": 5,
             "text_density_fit": 4,
             "caption_density_fit": 4,
-            "comparison_alignment_fit": 4,
+            "comparison_alignment_fit": 3,
             "technical_evidence_hierarchy_fit": 4
           },
           "candidate_status": "eligible"
@@ -627,10 +627,10 @@
             "semantic_fit": 5,
             "capacity_fit": 5,
             "evidence_fit": 5,
-            "primary_visual_prominence_fit": 4,
+            "primary_visual_prominence_fit": 5,
             "text_density_fit": 4,
             "caption_density_fit": 4,
-            "comparison_alignment_fit": 4,
+            "comparison_alignment_fit": 3,
             "technical_evidence_hierarchy_fit": 4
           },
           "candidate_status": "eligible"
@@ -1395,10 +1395,10 @@
             "semantic_fit": 5,
             "capacity_fit": 5,
             "evidence_fit": 5,
-            "primary_visual_prominence_fit": 4,
+            "primary_visual_prominence_fit": 5,
             "text_density_fit": 4,
             "caption_density_fit": 4,
-            "comparison_alignment_fit": 4,
+            "comparison_alignment_fit": 3,
             "technical_evidence_hierarchy_fit": 4
           },
           "candidate_status": "eligible"
@@ -1602,10 +1602,10 @@
             "semantic_fit": 5,
             "capacity_fit": 5,
             "evidence_fit": 5,
-            "primary_visual_prominence_fit": 4,
+            "primary_visual_prominence_fit": 5,
             "text_density_fit": 4,
             "caption_density_fit": 4,
-            "comparison_alignment_fit": 4,
+            "comparison_alignment_fit": 3,
             "technical_evidence_hierarchy_fit": 4
           },
           "candidate_status": "eligible"
@@ -2094,10 +2094,10 @@
             "semantic_fit": 5,
             "capacity_fit": 5,
             "evidence_fit": 5,
-            "primary_visual_prominence_fit": 4,
+            "primary_visual_prominence_fit": 5,
             "text_density_fit": 4,
             "caption_density_fit": 4,
-            "comparison_alignment_fit": 4,
+            "comparison_alignment_fit": 3,
             "technical_evidence_hierarchy_fit": 4
           },
           "candidate_status": "eligible"
@@ -2302,10 +2302,10 @@
             "semantic_fit": 5,
             "capacity_fit": 5,
             "evidence_fit": 5,
-            "primary_visual_prominence_fit": 4,
+            "primary_visual_prominence_fit": 5,
             "text_density_fit": 4,
             "caption_density_fit": 4,
-            "comparison_alignment_fit": 4,
+            "comparison_alignment_fit": 3,
             "technical_evidence_hierarchy_fit": 4
           },
           "candidate_status": "eligible"

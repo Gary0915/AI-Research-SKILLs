@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "render-capability-discovery.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["discovery_id", "renderer_candidates_checked", "existing_renderer_available", "candidate_preview_status", "qualitative_visual_review", "render_attempt_count", "renderer_install_attempt_count", "private_alias_resolution_attempts", "private_source_open_attempts", "private_render_attempts"],
+  "properties": {
+    "discovery_id": {"const": "RRVA-RENDER-DISCOVERY-001"}, "renderer_candidates_checked": {"type": "array", "minItems": 2, "items": {"type": "string"}}, "existing_renderer_available": {"type": "boolean"}, "candidate_preview_status": {"enum": ["renderer_available_not_run", "blocked_environment", "rendered"]}, "qualitative_visual_review": {"const": "pending_human_review_from_pptx"}, "render_attempt_count": {"type": "integer", "minimum": 0}, "renderer_install_attempt_count": {"const": 0}, "private_alias_resolution_attempts": {"const": 0}, "private_source_open_attempts": {"const": 0}, "private_render_attempts": {"const": 0}, "renderer_conversion_attempt_count": {"type": "integer", "minimum": 0}, "renderer_conversion_success_count": {"type": "integer", "minimum": 0}, "rendered_slide_count": {"type": "integer", "minimum": 0}, "failure_classification": {"enum": ["renderer_conversion_failed"]}
+  }
+}

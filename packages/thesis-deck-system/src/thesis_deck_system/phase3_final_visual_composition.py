@@ -876,6 +876,7 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "packages/thesis-deck-system/src/thesis_deck_system/incremental_deck_lineage.py",
         "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner.py",
         "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/research_visual_acceptance.py",
         "packages/thesis-deck-system/src/thesis_deck_system/contracts.py",
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py",
         "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py",
@@ -883,6 +884,7 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py",
         "packages/thesis-deck-system/tests/unit/test_presentation_planner.py",
         "packages/thesis-deck-system/tests/unit/test_presentation_planner_application.py",
+        "packages/thesis-deck-system/tests/unit/test_research_visual_acceptance.py",
         "packages/thesis-deck-system/pyproject.toml",
         "thesis-deck-system/TASK_PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE.md",
         "thesis-deck-system/designs/PHASE_3_FINAL_VISUAL_COMPOSITION_CLOSURE_DESIGN.md",
@@ -914,11 +916,25 @@ def compute_final_visual_composition_candidate_state(root: Path) -> dict[str, An
         "thesis-deck-system/schemas/presentation-planner-qa.schema.json",
         "thesis-deck-system/schemas/composition-review-selections.schema.json",
         "thesis-deck-system/schemas/planner-application-acceptance.schema.json",
+        "thesis-deck-system/schemas/real-research-visual-fixture-pack.schema.json",
+        "thesis-deck-system/schemas/research-presentation-visual-acceptance-profile.schema.json",
+        "thesis-deck-system/schemas/professor-visual-review-manifest.schema.json",
+        "thesis-deck-system/schemas/real-research-visual-review-application.schema.json",
+        "thesis-deck-system/schemas/real-research-visual-qa.schema.json",
+        "thesis-deck-system/schemas/render-capability-discovery.schema.json",
+        "thesis-deck-system/schemas/real-research-visual-acceptance-schema-closure-inventory.schema.json",
         "thesis-deck-system/artifacts/phase3/planner-application-acceptance.json",
         "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.json",
         "thesis-deck-system/artifacts/phase3/composition-review-selections.json",
         "thesis-deck-system/artifacts/phase3/incremental-planner-application-audit.json",
         "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx",
+        "thesis-deck-system/artifacts/phase3/real-research-visual-fixture-pack.json",
+        "thesis-deck-system/artifacts/phase3/research-presentation-visual-acceptance-profile.json",
+        "thesis-deck-system/artifacts/phase3/professor-visual-review-manifest.json",
+        "thesis-deck-system/artifacts/phase3/real-research-visual-review-application.json",
+        "thesis-deck-system/artifacts/phase3/real-research-physical-composition-plans.json",
+        "thesis-deck-system/artifacts/phase3/real-research-visual-qa.json",
+        "thesis-deck-system/artifacts/phase3/render-capability-discovery.json",
     )
     hashes: dict[str, str] = {}
     for relative in component_paths:
@@ -935,3 +951,81 @@ def _candidate_component_digest(relative_path: str, contents: bytes) -> str:
     if path.suffix.casefold() in {".py", ".json", ".md", ".toml"} or path.name == ".gitattributes":
         contents = contents.replace(b"\r\n", b"\n")
     return sha256(contents).hexdigest()
+
+
+_SCHEMA_CLOSURE_CORRECTED_NODES = (
+    ("thesis-deck-system/schemas/real-research-visual-review-application.schema.json", "#/$defs/fixture/properties/canonical_source_refs"),
+    ("thesis-deck-system/schemas/composition-selection-audit.schema.json", "#/$defs/selection/properties/candidate_component_scores/items/properties/score"),
+)
+
+
+def _schema_object_closure_reason(node: dict[str, Any]) -> str | None:
+    """Return the controlled reason an object node is fail-closed, if any."""
+    additional = node.get("additionalProperties")
+    if additional is False:
+        return "additional_properties_false"
+    if not isinstance(additional, dict):
+        return None
+    if "$ref" in additional:
+        return "bounded_typed_map"
+    value_type = additional.get("type")
+    if value_type in {"string", "integer", "number", "boolean", "null"}:
+        return "bounded_typed_map"
+    if value_type == "object" and additional.get("additionalProperties") is False and isinstance(additional.get("properties"), dict):
+        return "bounded_typed_map"
+    return None
+
+
+def build_candidate_schema_closure_inventory(root: Path) -> dict[str, Any]:
+    """Inventory every candidate-bound schema object node without changing product output."""
+    root = Path(root).resolve()
+    state = compute_final_visual_composition_candidate_state(root)
+    schema_paths = sorted(path for path in state["component_hashes"] if path.startswith("thesis-deck-system/schemas/"))
+    schemas: list[dict[str, Any]] = []
+
+    def walk(node: Any, pointer: str, rows: list[dict[str, Any]]) -> None:
+        if isinstance(node, dict):
+            if node.get("type") == "object":
+                reason = _schema_object_closure_reason(node)
+                rows.append({
+                    "json_pointer": pointer,
+                    "node_type": "object",
+                    "status": "closed" if reason else "open",
+                    "reason": reason or "missing_or_unbounded_additional_properties",
+                })
+            for key, value in node.items():
+                walk(value, f"{pointer}/{key.replace('~', '~0').replace('/', '~1')}", rows)
+        elif isinstance(node, list):
+            for index, value in enumerate(node):
+                walk(value, f"{pointer}/{index}", rows)
+
+    for relative_path in schema_paths:
+        rows: list[dict[str, Any]] = []
+        walk(_read_json(root / relative_path), "$", rows)
+        schemas.append({
+            "schema_path": relative_path,
+            "object_node_count": len(rows),
+            "open_node_count": sum(row["status"] == "open" for row in rows),
+            "nodes": rows,
+        })
+
+    open_node_count = sum(schema["open_node_count"] for schema in schemas)
+    return {
+        "inventory_id": "RRVA-SCHEMA-CLOSURE-001",
+        "candidate_schema_component_count": len(schema_paths),
+        "checked_schema_count": len(schemas),
+        "checked_object_node_count": sum(schema["object_node_count"] for schema in schemas),
+        "open_node_count": open_node_count,
+        "corrected_node_count": len(_SCHEMA_CLOSURE_CORRECTED_NODES),
+        "recursive_closure_status": "pass" if open_node_count == 0 else "fail",
+        "schemas": schemas,
+    }
+
+
+def write_candidate_schema_closure_inventory(root: Path, destination: Path) -> Path:
+    """Persist the execution-derived candidate schema-closure inventory."""
+    destination = Path(destination)
+    destination.mkdir(parents=True, exist_ok=True)
+    output = destination / "real-research-visual-acceptance-schema-closure-inventory.json"
+    output.write_text(json.dumps(build_candidate_schema_closure_inventory(root), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return output

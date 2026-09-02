@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+from copy import deepcopy
+
 
 ROOT = Path(__file__).resolve().parents[4]
 
@@ -61,7 +63,8 @@ def test_visual_acceptance_profile_and_manifest_preserve_pending_human_choices()
     assert profile["main_content_minimum_font_pt"] == 16
     assert profile["rule_counts"]["source_observed"] > 0
     assert profile["rule_counts"]["system_calibrated"] > 0
-    assert len(manifest["cases"]) >= 6
+    assert len(manifest["cases"]) == 14
+    assert sum(len(case["candidates"]) for case in manifest["cases"]) == 21
     assert all(case["human_selection"] is None and case["human_status"] == "pending" for case in manifest["cases"])
 
 
@@ -118,6 +121,8 @@ def test_real_research_review_writer_creates_real_first_pptx_and_pending_human_m
     assert any("研究缺口" in text for text in texts)
     assert any("不代表實驗結果" in text for text in texts)
     assert all(candidate["pptx_slide_index"] >= 1 for case in manifest["cases"] for candidate in case["candidates"])
+    assert len(manifest["cases"]) == 14
+    assert sum(len(case["candidates"]) for case in manifest["cases"]) == 21
     assert all(case["human_selection"] is None and case["human_status"] == "pending" for case in manifest["cases"])
     assert all(shape.text_frame.paragraphs[0].runs[0].font.size.pt == 30 for slide in list(presentation.slides)[:21] for shape in slide.shapes if shape.name.startswith("tds-title:"))
     SchemaRegistry(ROOT / "thesis-deck-system/schemas", schema_names=("professor-visual-review-manifest", "physical-composition-plans")).validate(
@@ -145,6 +150,53 @@ def test_real_research_visual_qa_is_derived_from_materialized_pptx(tmp_path: Pat
     assert qa["fixed_four_box_footer_count"] == 0
     assert qa["shell_override_count"] == 0
     assert qa["scientific_truth_override_count"] == 0
+
+
+def test_real_research_review_outputs_have_closed_machine_contracts(tmp_path: Path):
+    import json
+
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.research_visual_acceptance import write_real_research_visual_review_artifacts
+
+    outputs = write_real_research_visual_review_artifacts(ROOT, tmp_path)
+    registry = SchemaRegistry(ROOT / "thesis-deck-system/schemas", schema_names=(
+        "real-research-visual-review-application", "real-research-visual-qa", "render-capability-discovery",
+    ))
+    for key, schema_name in (("application", "real-research-visual-review-application"), ("visual_qa", "real-research-visual-qa"), ("render_discovery", "render-capability-discovery")):
+        registry.validate(schema_name, json.loads(outputs[key].read_text(encoding="utf-8")))
+
+
+def test_candidate_bound_visual_acceptance_schemas_are_recursively_closed_and_fail_closed():
+    """The source-ref and planner-score contracts admit no unknown members."""
+    import json
+
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.phase3_final_visual_composition import build_candidate_schema_closure_inventory
+
+    registry = SchemaRegistry(ROOT / "thesis-deck-system/schemas", schema_names=(
+        "real-research-visual-review-application",
+        "composition-selection-audit",
+        "real-research-visual-acceptance-schema-closure-inventory",
+    ))
+    application = json.loads((ROOT / "thesis-deck-system/artifacts/phase3/real-research-visual-review-application.json").read_text(encoding="utf-8"))
+    planner_audit = json.loads((ROOT / "thesis-deck-system/artifacts/phase3/composition-selection-audit.json").read_text(encoding="utf-8"))
+
+    # All fourteen real source-reference variants remain valid.
+    assert registry.errors("real-research-visual-review-application", application) == []
+    assert registry.errors("composition-selection-audit", planner_audit) == []
+
+    unknown_source_ref = deepcopy(application)
+    unknown_source_ref["cases"][0]["fixture"]["canonical_source_refs"]["unexpected_source_ref"] = "X001"
+    assert registry.errors("real-research-visual-review-application", unknown_source_ref)
+
+    unknown_nested_score_member = deepcopy(planner_audit)
+    unknown_nested_score_member["selections"][0]["candidate_component_scores"][0]["score"]["body_recurrence_evidence"]["unexpected_member"] = "forbidden"
+    assert registry.errors("composition-selection-audit", unknown_nested_score_member)
+
+    inventory = build_candidate_schema_closure_inventory(ROOT)
+    assert inventory["checked_schema_count"] >= 26
+    assert inventory["open_node_count"] == 0
+    registry.validate("real-research-visual-acceptance-schema-closure-inventory", inventory)
 
 
 def test_render_capability_discovery_is_honest_and_non_rendering():

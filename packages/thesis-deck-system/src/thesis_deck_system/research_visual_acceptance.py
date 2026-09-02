@@ -302,8 +302,10 @@ def build_professor_visual_review_manifest(root: Path) -> dict[str, Any]:
     """Provide stable review-case identities without asserting human selection."""
     fixtures = {item["fixture_id"]: item for item in build_real_research_fixture_pack(root)["fixtures"]}
     cases = []
-    for fixture_id, strategies in sorted(_REVIEW_STRATEGIES.items()):
-        fixture = fixtures[fixture_id]
+    for fixture_id, fixture in sorted(fixtures.items()):
+        strategies = _REVIEW_STRATEGIES.get(fixture_id)
+        if strategies is None:
+            strategies = (_SINGLE_FAMILY[fixture_id],)
         candidates = []
         for index, (family, strategy) in enumerate(strategies, 1):
             core = {"fixture_id": fixture_id, "family": family, "strategy": strategy, "dependency_hash": fixture["dependency_hash"]}

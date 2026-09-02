@@ -119,3 +119,15 @@ def test_final_candidate_state_binds_composition_source_fixture_and_approved_fig
     assert "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py" in candidate["component_hashes"]
     assert "thesis-deck-system/artifacts/phase2/materialized-h02.json" in candidate["component_hashes"]
     assert "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg" in candidate["component_hashes"]
+    assert {
+        "packages/thesis-deck-system/src/thesis_deck_system/research_visual_acceptance.py",
+        "packages/thesis-deck-system/tests/unit/test_research_visual_acceptance.py",
+        "thesis-deck-system/schemas/real-research-visual-review-application.schema.json",
+        "thesis-deck-system/schemas/real-research-visual-qa.schema.json",
+        "thesis-deck-system/schemas/render-capability-discovery.schema.json",
+        "thesis-deck-system/artifacts/phase3/real-research-visual-fixture-pack.json",
+        "thesis-deck-system/artifacts/phase3/real-research-visual-review-application.json",
+        "thesis-deck-system/artifacts/phase3/real-research-physical-composition-plans.json",
+        "thesis-deck-system/artifacts/phase3/real-research-visual-qa.json",
+        "thesis-deck-system/artifacts/phase3/render-capability-discovery.json",
+    } <= set(candidate["component_hashes"])

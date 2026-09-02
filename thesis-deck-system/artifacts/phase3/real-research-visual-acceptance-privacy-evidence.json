@@ -1,0 +1,990 @@
+{
+  "schema_version": "1.0.0",
+  "privacy_finalization_id": "RRVA-PRIVACY-SCHEMA-CLOSURE-001",
+  "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+  "privacy_config": {
+    "configuration_source": "caller_supplied_ephemeral_dictionary",
+    "configuration_hash": "56775a5e9804abf163fb03be2295b47b48c3d4cf3598247276d2eb2321873291",
+    "private_root_signature_count": 1,
+    "forbidden_basename_count": 3,
+    "raw_values_persisted": false
+  },
+  "repository_scan": {
+    "executed": true,
+    "raw_finding_count": 0,
+    "unexcepted_finding_count": 0,
+    "approved_historical_exception_count": 1
+  },
+  "staged_scan": {
+    "executed": true,
+    "raw_finding_count": 1,
+    "unexcepted_finding_count": 0,
+    "adjudication": {
+      "raw_pptx_candidate_count": 1,
+      "attested_generated_pptx_count": 1,
+      "unattested_pptx_count": 0,
+      "unexcepted_final_finding_count": 0,
+      "unexcepted_finding_categories": []
+    }
+  },
+  "private_access_counters": {
+    "private_alias_resolution_attempts": 0,
+    "private_source_open_attempts": 0,
+    "private_render_attempts": 0
+  },
+  "generated_pptx_attestations": [
+    {
+      "attestation_id": "GPA-2178684a58ecdbba",
+      "status": "attested_generated_artifact",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/acceptance-deck.pptx",
+      "artifact_sha256": "1d949246ce2e7f4f7a341e84d24b3e15cb616231866a9f688a90f6836a78a242",
+      "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+      "artifact_class": "phase2_acceptance_deck",
+      "producer_id": "phase2-acceptance-builder",
+      "producer_source_sha256": "14bf7b61525e8e32d94dccd8ee543f4b950e30100d305fae516fe023a0198258",
+      "declared_input_count": 12,
+      "private_input_count": 0,
+      "execution_id": "FC-RRVA-SCHEMA-CLOSURE-001",
+      "raw_scanner_finding": "private_pptx_candidate",
+      "package_part_count": 129,
+      "package_inventory_sha256": "0d14ea41ba965563ebdf329eb9d15da91f57e51ce88729bda8561c90a7de0ceb",
+      "external_relationship_count": 0,
+      "macro_part_count": 0,
+      "embedded_package_or_ole_count": 0,
+      "package_privacy_finding_count": 0,
+      "unknown_package_part_count": 0,
+      "media_part_count": 10,
+      "evidence_sha256": "9fbff42b299939035f13d1132d32b9181580997fe6332a19d48f7267d7939362",
+      "staged_git_blob_sha": "5260412b3f540526445f2ce675f45b38930103a5",
+      "staged_bytes_sha256": "1d949246ce2e7f4f7a341e84d24b3e15cb616231866a9f688a90f6836a78a242",
+      "working_tree_sha256": "1d949246ce2e7f4f7a341e84d24b3e15cb616231866a9f688a90f6836a78a242",
+      "working_tree_matches_staged": true,
+      "source_closure_id": "FEC-SOURCE-CLOSURE-C881718C480D",
+      "source_closure_sha256": "c881718c480d81c8aca825977605ab160125decbfed1178fef87df68a0446c49",
+      "source_closure_input_record_count": 12,
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-591D47B198BC",
+      "media_lineage_sha256": "591d47b198bcd829d4fe34a27862ccee4ab3ed7e8a43d939178e6df8ff1c9154",
+      "media_lineage_record_count": 10
+    },
+    {
+      "attestation_id": "GPA-8d0b93e9d9ed7360",
+      "status": "attested_generated_artifact",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/n-layer-acceptance-deck.pptx",
+      "artifact_sha256": "ce83fe34a4f708b2a468cc6ed0926a52fd5bc88efb410db4c46cab5bbee51082",
+      "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+      "artifact_class": "n_layer_acceptance_deck",
+      "producer_id": "phase2-acceptance-builder",
+      "producer_source_sha256": "14bf7b61525e8e32d94dccd8ee543f4b950e30100d305fae516fe023a0198258",
+      "declared_input_count": 12,
+      "private_input_count": 0,
+      "execution_id": "FC-RRVA-SCHEMA-CLOSURE-001",
+      "raw_scanner_finding": "private_pptx_candidate",
+      "package_part_count": 159,
+      "package_inventory_sha256": "c9ccd7dad87e94d6583560523675c07fdd00f02ef5e0ec73843bbea592248b00",
+      "external_relationship_count": 0,
+      "macro_part_count": 0,
+      "embedded_package_or_ole_count": 0,
+      "package_privacy_finding_count": 0,
+      "unknown_package_part_count": 0,
+      "media_part_count": 12,
+      "evidence_sha256": "d428beaf4584b0481a5d7c08cbbe2a39223cfdd59f1adeb53a2d2ca7ae064bad",
+      "staged_git_blob_sha": "18199fdbfbcdd31720ec4c0628e03ae4e21372d1",
+      "staged_bytes_sha256": "ce83fe34a4f708b2a468cc6ed0926a52fd5bc88efb410db4c46cab5bbee51082",
+      "working_tree_sha256": "ce83fe34a4f708b2a468cc6ed0926a52fd5bc88efb410db4c46cab5bbee51082",
+      "working_tree_matches_staged": true,
+      "source_closure_id": "FEC-SOURCE-CLOSURE-9F3CC59F4019",
+      "source_closure_sha256": "9f3cc59f40196f218db6e3096cf8627d7ab3d08338b1d5edc70970ee04bfb843",
+      "source_closure_input_record_count": 12,
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-791CA6BB3210",
+      "media_lineage_sha256": "791ca6bb32104eda5bdc504a9ab53f2b24195555c6dc412c6a0278a9157a92d4",
+      "media_lineage_record_count": 12
+    },
+    {
+      "attestation_id": "GPA-c10ae3ca1c2f916e",
+      "status": "attested_generated_artifact",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase2/synthetic-template.pptx",
+      "artifact_sha256": "0075c0836306d6b2ba7fbd2ba51d11b1d134072556607d84237eb04ffed0f131",
+      "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+      "artifact_class": "sanitized_native_template",
+      "producer_id": "sanitized-template-builder",
+      "producer_source_sha256": "0ef4cf16b18daf1ccd2175ecb8fa4c5ff404c4abc2ec2fab555703115a49e8f0",
+      "declared_input_count": 1,
+      "private_input_count": 0,
+      "execution_id": "FC-RRVA-SCHEMA-CLOSURE-001",
+      "raw_scanner_finding": "private_pptx_candidate",
+      "package_part_count": 40,
+      "package_inventory_sha256": "a405bf0eb4d65d1a7b118e80aeb6897ed2488a5a58787dfbee71785fab13fcd0",
+      "external_relationship_count": 0,
+      "macro_part_count": 0,
+      "embedded_package_or_ole_count": 0,
+      "package_privacy_finding_count": 0,
+      "unknown_package_part_count": 0,
+      "media_part_count": 0,
+      "evidence_sha256": "7fb3de130027a822b59e2d2cdc0bdabf27c609eb3d50eb5ca88bcc098421cca8",
+      "staged_git_blob_sha": "4e1db95cfda7ad02347f7ce20231ed799eea5747",
+      "staged_bytes_sha256": "0075c0836306d6b2ba7fbd2ba51d11b1d134072556607d84237eb04ffed0f131",
+      "working_tree_sha256": "0075c0836306d6b2ba7fbd2ba51d11b1d134072556607d84237eb04ffed0f131",
+      "working_tree_matches_staged": true,
+      "source_closure_id": "FEC-SOURCE-CLOSURE-6531DCC65D23",
+      "source_closure_sha256": "6531dcc65d239632ccc964da1961d2c0c67a268db3e39b06d18e742c027b7f82",
+      "source_closure_input_record_count": 1,
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-E7006452FA15",
+      "media_lineage_sha256": "e7006452fa15dc2b6ad5fae7a46c51468387158246bc1920e308bd2ef9be817e",
+      "media_lineage_record_count": 0
+    },
+    {
+      "attestation_id": "GPA-e88d8e8be885ae07",
+      "status": "attested_generated_artifact",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx",
+      "artifact_sha256": "be0a21f2edfaba647dda72c1e0536c1894fd8c37bb2df43200dcf8b082d76b97",
+      "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+      "artifact_class": "sanitized_native_template",
+      "producer_id": "final-composition-builder",
+      "producer_source_sha256": "ce6fb65c0d03a0ce8f11784480d515682c0072e250a2dfc707c741826f452b4b",
+      "declared_input_count": 2,
+      "private_input_count": 0,
+      "execution_id": "FC-RRVA-SCHEMA-CLOSURE-001",
+      "raw_scanner_finding": "private_pptx_candidate",
+      "package_part_count": 36,
+      "package_inventory_sha256": "548a8a01cf244b20f61497c072daa4b43226abe4384c01ff4827c6b01892dc46",
+      "external_relationship_count": 0,
+      "macro_part_count": 0,
+      "embedded_package_or_ole_count": 0,
+      "package_privacy_finding_count": 0,
+      "unknown_package_part_count": 0,
+      "media_part_count": 0,
+      "evidence_sha256": "7d5c708a86dc3e52bf6de4fd09869cce239da1743a1660163636ed34c88cb41d",
+      "staged_git_blob_sha": "044c434e05661d86d88575f5c4e1f38f27794114",
+      "staged_bytes_sha256": "be0a21f2edfaba647dda72c1e0536c1894fd8c37bb2df43200dcf8b082d76b97",
+      "working_tree_sha256": "be0a21f2edfaba647dda72c1e0536c1894fd8c37bb2df43200dcf8b082d76b97",
+      "working_tree_matches_staged": true,
+      "source_closure_id": "FEC-SOURCE-CLOSURE-08FA71BA55E9",
+      "source_closure_sha256": "08fa71ba55e9c60a90e09219618267cdf893772c711cad01e1693ea8597424db",
+      "source_closure_input_record_count": 2,
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-E7006452FA15",
+      "media_lineage_sha256": "e7006452fa15dc2b6ad5fae7a46c51468387158246bc1920e308bd2ef9be817e",
+      "media_lineage_record_count": 0
+    },
+    {
+      "attestation_id": "GPA-c81328623c5d6c57",
+      "status": "attested_generated_artifact",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase3/cp5-final-visual-composition-acceptance-deck.pptx",
+      "artifact_sha256": "e271758cca8b846bd0eaad8c2d8bf089231a8a9b4f4142c4ea686313903cd134",
+      "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+      "artifact_class": "final_acceptance_deck",
+      "producer_id": "final-composition-builder",
+      "producer_source_sha256": "ce6fb65c0d03a0ce8f11784480d515682c0072e250a2dfc707c741826f452b4b",
+      "declared_input_count": 4,
+      "private_input_count": 0,
+      "execution_id": "FC-RRVA-SCHEMA-CLOSURE-001",
+      "raw_scanner_finding": "private_pptx_candidate",
+      "package_part_count": 121,
+      "package_inventory_sha256": "99daa4a8ae3411f17c802bdea1f82f572ae9f454259be977041d5559a7c32e77",
+      "external_relationship_count": 0,
+      "macro_part_count": 0,
+      "embedded_package_or_ole_count": 0,
+      "package_privacy_finding_count": 0,
+      "unknown_package_part_count": 0,
+      "media_part_count": 2,
+      "evidence_sha256": "630b5299b406762bc03bb29d7c4334291118ff1096e21d25bf789dc323e6a444",
+      "staged_git_blob_sha": "ed3090f79603ebc69f42da9a31c0ecdf4448c6ca",
+      "staged_bytes_sha256": "e271758cca8b846bd0eaad8c2d8bf089231a8a9b4f4142c4ea686313903cd134",
+      "working_tree_sha256": "e271758cca8b846bd0eaad8c2d8bf089231a8a9b4f4142c4ea686313903cd134",
+      "working_tree_matches_staged": true,
+      "source_closure_id": "FEC-SOURCE-CLOSURE-5674A0509AF0",
+      "source_closure_sha256": "5674a0509af0e86957551a9a4f472451ad5940e21fb0262b357b74fd6e1ed873",
+      "source_closure_input_record_count": 4,
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-A491E70A26A8",
+      "media_lineage_sha256": "a491e70a26a873bd2266595ddf92562f6b0c5dbcff6256183863244d1f96f821",
+      "media_lineage_record_count": 2
+    },
+    {
+      "attestation_id": "GPA-7a6f98198e0f4966",
+      "status": "attested_generated_artifact",
+      "repository_relative_path": "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx",
+      "artifact_sha256": "feaf48500c439de427d8582b7d66bbafcc0ac01bbed84e7d7ffd6330f67f1aa8",
+      "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+      "artifact_class": "planner_composition_review_deck",
+      "producer_id": "presentation-planner-application-builder",
+      "producer_source_sha256": "212c9b6cee327ef9d675d52c10df76bf1d1af13b52f4d390e58890a8e12e296e",
+      "declared_input_count": 8,
+      "private_input_count": 0,
+      "execution_id": "FC-RRVA-SCHEMA-CLOSURE-001",
+      "raw_scanner_finding": "private_pptx_candidate",
+      "package_part_count": 163,
+      "package_inventory_sha256": "e3baedcb6cf0875fd85aa6c455753f5db5d2cd3d7a278a78e5c927adec8e4308",
+      "external_relationship_count": 0,
+      "macro_part_count": 0,
+      "embedded_package_or_ole_count": 0,
+      "package_privacy_finding_count": 0,
+      "unknown_package_part_count": 0,
+      "media_part_count": 0,
+      "evidence_sha256": "06aacc94faaebd55486856f12d23fa746048e4f8226a5103e4f435d79c03ac78",
+      "staged_git_blob_sha": "1cd5525d66ea5c85a9c693cb0f126054f97e07fc",
+      "staged_bytes_sha256": "feaf48500c439de427d8582b7d66bbafcc0ac01bbed84e7d7ffd6330f67f1aa8",
+      "working_tree_sha256": "feaf48500c439de427d8582b7d66bbafcc0ac01bbed84e7d7ffd6330f67f1aa8",
+      "working_tree_matches_staged": true,
+      "source_closure_id": "FEC-SOURCE-CLOSURE-5F3DDF030246",
+      "source_closure_sha256": "5f3ddf03024622ded8f6589a7d1172c83afa6c2c64ea130443f8af1df9349f90",
+      "source_closure_input_record_count": 8,
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-E7006452FA15",
+      "media_lineage_sha256": "e7006452fa15dc2b6ad5fae7a46c51468387158246bc1920e308bd2ef9be817e",
+      "media_lineage_record_count": 0
+    }
+  ],
+  "source_closures": {
+    "thesis-deck-system/artifacts/phase2/acceptance-deck.pptx": {
+      "source_closure_id": "FEC-SOURCE-CLOSURE-C881718C480D",
+      "input_records": [
+        {
+          "input_id": "SRC-001",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4"
+        },
+        {
+          "input_id": "SRC-002",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22"
+        },
+        {
+          "input_id": "SRC-003",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada"
+        },
+        {
+          "input_id": "SRC-004",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137"
+        },
+        {
+          "input_id": "SRC-005",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "41a990c24b86b14d83539ed6a60323fd2cd6c4482fbb0a11d1cd79d5d241a7d9"
+        },
+        {
+          "input_id": "SRC-006",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/observation/observation_visual.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46"
+        },
+        {
+          "input_id": "SRC-007",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/observation/observation_visual.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd"
+        },
+        {
+          "input_id": "SRC-008",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
+        },
+        {
+          "input_id": "SRC-009",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
+        },
+        {
+          "input_id": "SRC-010",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787"
+        },
+        {
+          "input_id": "SRC-011",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e"
+        },
+        {
+          "input_id": "SRC-012",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/slide-specs.json",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "6211ab05f199a59ae9a01454a84576a7ec25910d939a75d4ca0776d73449b438"
+        }
+      ],
+      "input_record_count": 12,
+      "unresolved_input_count": 0,
+      "private_input_count": 0,
+      "source_closure_sha256": "c881718c480d81c8aca825977605ab160125decbfed1178fef87df68a0446c49"
+    },
+    "thesis-deck-system/artifacts/phase2/n-layer-acceptance-deck.pptx": {
+      "source_closure_id": "FEC-SOURCE-CLOSURE-9F3CC59F4019",
+      "input_records": [
+        {
+          "input_id": "SRC-001",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4"
+        },
+        {
+          "input_id": "SRC-002",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22"
+        },
+        {
+          "input_id": "SRC-003",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada"
+        },
+        {
+          "input_id": "SRC-004",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137"
+        },
+        {
+          "input_id": "SRC-005",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/materialized-h02.json",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "41a990c24b86b14d83539ed6a60323fd2cd6c4482fbb0a11d1cd79d5d241a7d9"
+        },
+        {
+          "input_id": "SRC-006",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/n-layer-slide-specs.json",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "1a6b727d46cb65d532f5cafc997f235d6de9532b0ea150d64275ecbcf01401be"
+        },
+        {
+          "input_id": "SRC-007",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/observation/observation_visual.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46"
+        },
+        {
+          "input_id": "SRC-008",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/observation/observation_visual.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd"
+        },
+        {
+          "input_id": "SRC-009",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1"
+        },
+        {
+          "input_id": "SRC-010",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/B001_defect_density.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2"
+        },
+        {
+          "input_id": "SRC-011",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.png",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787"
+        },
+        {
+          "input_id": "SRC-012",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/plots/H02_contact_pressure.svg",
+          "input_class": "repository_input",
+          "producer_id": "phase2-acceptance-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e"
+        }
+      ],
+      "input_record_count": 12,
+      "unresolved_input_count": 0,
+      "private_input_count": 0,
+      "source_closure_sha256": "9f3cc59f40196f218db6e3096cf8627d7ab3d08338b1d5edc70970ee04bfb843"
+    },
+    "thesis-deck-system/artifacts/phase2/synthetic-template.pptx": {
+      "source_closure_id": "FEC-SOURCE-CLOSURE-6531DCC65D23",
+      "input_records": [
+        {
+          "input_id": "SRC-001",
+          "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/template.py",
+          "input_class": "repository_input",
+          "producer_id": "sanitized-template-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "0ef4cf16b18daf1ccd2175ecb8fa4c5ff404c4abc2ec2fab555703115a49e8f0"
+        }
+      ],
+      "input_record_count": 1,
+      "unresolved_input_count": 0,
+      "private_input_count": 0,
+      "source_closure_sha256": "6531dcc65d239632ccc964da1961d2c0c67a268db3e39b06d18e742c027b7f82"
+    },
+    "thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx": {
+      "source_closure_id": "FEC-SOURCE-CLOSURE-08FA71BA55E9",
+      "input_records": [
+        {
+          "input_id": "SRC-001",
+          "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py",
+          "input_class": "repository_input",
+          "producer_id": "final-composition-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "ce6fb65c0d03a0ce8f11784480d515682c0072e250a2dfc707c741826f452b4b"
+        },
+        {
+          "input_id": "SRC-002",
+          "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/template.py",
+          "input_class": "repository_input",
+          "producer_id": "final-composition-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "0ef4cf16b18daf1ccd2175ecb8fa4c5ff404c4abc2ec2fab555703115a49e8f0"
+        }
+      ],
+      "input_record_count": 2,
+      "unresolved_input_count": 0,
+      "private_input_count": 0,
+      "source_closure_sha256": "08fa71ba55e9c60a90e09219618267cdf893772c711cad01e1693ea8597424db"
+    },
+    "thesis-deck-system/artifacts/phase3/cp5-final-visual-composition-acceptance-deck.pptx": {
+      "source_closure_id": "FEC-SOURCE-CLOSURE-5674A0509AF0",
+      "input_records": [
+        {
+          "input_id": "SRC-001",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev1.png",
+          "input_class": "repository_input",
+          "producer_id": "final-composition-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4"
+        },
+        {
+          "input_id": "SRC-002",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase2/fishbone/FB001-rev2.png",
+          "input_class": "repository_input",
+          "producer_id": "final-composition-builder",
+          "input_role": "media_source",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada"
+        },
+        {
+          "input_id": "SRC-003",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase3/final-acceptance-slide-composition-plan.json",
+          "input_class": "repository_input",
+          "producer_id": "final-composition-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "5570236e9ee7550f7d51e2869ef1de1132b83fbd5db425e90130f9bb5b7a8f8d"
+        },
+        {
+          "input_id": "SRC-004",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx",
+          "input_class": "generated_artifact",
+          "producer_id": "final-composition-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "be0a21f2edfaba647dda72c1e0536c1894fd8c37bb2df43200dcf8b082d76b97"
+        }
+      ],
+      "input_record_count": 4,
+      "unresolved_input_count": 0,
+      "private_input_count": 0,
+      "source_closure_sha256": "5674a0509af0e86957551a9a4f472451ad5940e21fb0262b357b74fd6e1ed873"
+    },
+    "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx": {
+      "source_closure_id": "FEC-SOURCE-CLOSURE-5F3DDF030246",
+      "input_records": [
+        {
+          "input_id": "SRC-001",
+          "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/pptx.py",
+          "input_class": "repository_input",
+          "producer_id": "presentation-planner-application-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "e30d3d7afce1c6a6608395611237b3fa95a9b8496342c26e6b20d0c7bb9ce6ac"
+        },
+        {
+          "input_id": "SRC-002",
+          "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py",
+          "input_class": "repository_input",
+          "producer_id": "presentation-planner-application-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "212c9b6cee327ef9d675d52c10df76bf1d1af13b52f4d390e58890a8e12e296e"
+        },
+        {
+          "input_id": "SRC-003",
+          "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/research_visual_acceptance.py",
+          "input_class": "repository_input",
+          "producer_id": "presentation-planner-application-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "3f2614aa8fbced72ca026bedc92110af30ce8455065a20d9a3ba41b1b6a70a39"
+        },
+        {
+          "input_id": "SRC-004",
+          "repository_relative_path": "packages/thesis-deck-system/src/thesis_deck_system/template.py",
+          "input_class": "repository_input",
+          "producer_id": "presentation-planner-application-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "0ef4cf16b18daf1ccd2175ecb8fa4c5ff404c4abc2ec2fab555703115a49e8f0"
+        },
+        {
+          "input_id": "SRC-005",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase3/professor-visual-review-manifest.json",
+          "input_class": "repository_input",
+          "producer_id": "presentation-planner-application-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "7a01e9642391733e09c9d557bd74ff7c4363ca5c0f9341282d75f6771e6f6255"
+        },
+        {
+          "input_id": "SRC-006",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase3/real-research-physical-composition-plans.json",
+          "input_class": "repository_input",
+          "producer_id": "presentation-planner-application-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "3f1cf8b1d964ec4dcac3669ba3f4ff0fd549a2d5ed98e30f5a591f5ce8d5ed64"
+        },
+        {
+          "input_id": "SRC-007",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase3/real-research-visual-fixture-pack.json",
+          "input_class": "repository_input",
+          "producer_id": "presentation-planner-application-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "89f4004e6820bd7d2ba4c2db8cbed9af7afdbee911fcac8f9266ca97315524d2"
+        },
+        {
+          "input_id": "SRC-008",
+          "repository_relative_path": "thesis-deck-system/artifacts/phase3/real-research-visual-review-application.json",
+          "input_class": "repository_input",
+          "producer_id": "presentation-planner-application-builder",
+          "input_role": "direct_build_input",
+          "source_kind": "repository_sanitized",
+          "privacy_status": "sanitized",
+          "input_sha256": "b7826bf5f883a24f09cb6d25ef65f4ae3d63c12c7acf45fc4fe0d92274538ef1"
+        }
+      ],
+      "input_record_count": 8,
+      "unresolved_input_count": 0,
+      "private_input_count": 0,
+      "source_closure_sha256": "5f3ddf03024622ded8f6589a7d1172c83afa6c2c64ea130443f8af1df9349f90"
+    }
+  },
+  "media_lineages": {
+    "thesis-deck-system/artifacts/phase2/acceptance-deck.pptx": {
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-591D47B198BC",
+      "package_media_part_count": 10,
+      "media_lineage_records": [
+        {
+          "package_part_name": "ppt/media/A002.svg",
+          "media_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-007",
+          "source_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/A101.svg",
+          "media_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-002",
+          "source_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/A102.svg",
+          "media_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-004",
+          "source_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/A201.svg",
+          "media_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-011",
+          "source_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image1.png",
+          "media_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-001",
+          "source_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image2.png",
+          "media_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-006",
+          "source_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image3.png",
+          "media_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-008",
+          "source_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image4.png",
+          "media_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-003",
+          "source_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image5.png",
+          "media_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-010",
+          "source_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/plot-canonical.svg",
+          "media_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-009",
+          "source_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        }
+      ],
+      "unresolved_media_part_count": 0,
+      "undeclared_media_part_count": 0,
+      "duplicate_media_lineage_count": 0,
+      "media_lineage_sha256": "591d47b198bcd829d4fe34a27862ccee4ab3ed7e8a43d939178e6df8ff1c9154"
+    },
+    "thesis-deck-system/artifacts/phase2/n-layer-acceptance-deck.pptx": {
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-791CA6BB3210",
+      "package_media_part_count": 12,
+      "media_lineage_records": [
+        {
+          "package_part_name": "ppt/media/A002.svg",
+          "media_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-008",
+          "source_sha256": "9112de315b0a1e2aa9ca2775b67ada71f7e44d2709256c33bbbefe3b4167d1fd",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/A101.svg",
+          "media_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-002",
+          "source_sha256": "0c8566297865ec62fa14a5768d8bf02348a4bf80e4471944eef39c17e6d1ee22",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/A102.svg",
+          "media_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-004",
+          "source_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/A201.svg",
+          "media_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-012",
+          "source_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/A301.svg",
+          "media_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-012",
+          "source_sha256": "2e9a6ebe2ac37351c4b01930f036369a67f2138cac1863d0e49fd13c6972c99e",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/A302.svg",
+          "media_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-004",
+          "source_sha256": "e7ac8379a0b914b9e032429f853a2126126565f94c479e237a6e78ddda410137",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image1.png",
+          "media_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-001",
+          "source_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image2.png",
+          "media_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-007",
+          "source_sha256": "53bd6076dbfbfee882213df7616948dbcd6ab0e8c9ae354c486fd7d3ccbb5c46",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image3.png",
+          "media_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-009",
+          "source_sha256": "269a1828723b55ddc344612df1a8311e4d07b22677646e6e0b6b6f92eb2a7ba1",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image4.png",
+          "media_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-003",
+          "source_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image5.png",
+          "media_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-011",
+          "source_sha256": "7f25cf78526df341c3c42477abc36dc80661b5fbed9117c30654ed4a7962f787",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/plot-canonical.svg",
+          "media_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+          "media_type": "svg",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-010",
+          "source_sha256": "98b5a740eeaf526b29508701cb19a27973090f68bb62b19397fdfe78567da1a2",
+          "producer_id": "phase2-acceptance-builder",
+          "lineage_status": "exact_source_bytes"
+        }
+      ],
+      "unresolved_media_part_count": 0,
+      "undeclared_media_part_count": 0,
+      "duplicate_media_lineage_count": 0,
+      "media_lineage_sha256": "791ca6bb32104eda5bdc504a9ab53f2b24195555c6dc412c6a0278a9157a92d4"
+    },
+    "thesis-deck-system/artifacts/phase2/synthetic-template.pptx": {
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-E7006452FA15",
+      "package_media_part_count": 0,
+      "media_lineage_records": [],
+      "unresolved_media_part_count": 0,
+      "undeclared_media_part_count": 0,
+      "duplicate_media_lineage_count": 0,
+      "media_lineage_sha256": "e7006452fa15dc2b6ad5fae7a46c51468387158246bc1920e308bd2ef9be817e"
+    },
+    "thesis-deck-system/artifacts/phase3/final-sanitized-native-template.pptx": {
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-E7006452FA15",
+      "package_media_part_count": 0,
+      "media_lineage_records": [],
+      "unresolved_media_part_count": 0,
+      "undeclared_media_part_count": 0,
+      "duplicate_media_lineage_count": 0,
+      "media_lineage_sha256": "e7006452fa15dc2b6ad5fae7a46c51468387158246bc1920e308bd2ef9be817e"
+    },
+    "thesis-deck-system/artifacts/phase3/cp5-final-visual-composition-acceptance-deck.pptx": {
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-A491E70A26A8",
+      "package_media_part_count": 2,
+      "media_lineage_records": [
+        {
+          "package_part_name": "ppt/media/image1.png",
+          "media_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-001",
+          "source_sha256": "a5b24f5f0654b1c7f6be01edf1dab98bc5c9b4b3bf31be2b873bd39347b3b7b4",
+          "producer_id": "final-composition-builder",
+          "lineage_status": "exact_source_bytes"
+        },
+        {
+          "package_part_name": "ppt/media/image2.png",
+          "media_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+          "media_type": "png",
+          "source_kind": "repository_sanitized",
+          "source_ref": "SRC-002",
+          "source_sha256": "fc272b7bd28851925dff7554587cee32df9598a906db99459606077476e30ada",
+          "producer_id": "final-composition-builder",
+          "lineage_status": "exact_source_bytes"
+        }
+      ],
+      "unresolved_media_part_count": 0,
+      "undeclared_media_part_count": 0,
+      "duplicate_media_lineage_count": 0,
+      "media_lineage_sha256": "a491e70a26a873bd2266595ddf92562f6b0c5dbcff6256183863244d1f96f821"
+    },
+    "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx": {
+      "media_lineage_id": "FEC-MEDIA-LINEAGE-E7006452FA15",
+      "package_media_part_count": 0,
+      "media_lineage_records": [],
+      "unresolved_media_part_count": 0,
+      "undeclared_media_part_count": 0,
+      "duplicate_media_lineage_count": 0,
+      "media_lineage_sha256": "e7006452fa15dc2b6ad5fae7a46c51468387158246bc1920e308bd2ef9be817e"
+    }
+  },
+  "aggregate": {
+    "attested_generated_pptx_count": 1,
+    "unattested_staged_generated_pptx_count": 0,
+    "working_staged_mismatch_count": 0,
+    "source_closure_failure_count": 0,
+    "unresolved_media_count": 0,
+    "package_private_finding_count": 0,
+    "status": "pass"
+  },
+  "evidence_sha256": "4e4ef6e7125bcdf218c554014fbeb70ba936631614c69868544eb769fdcdc35f"
+}

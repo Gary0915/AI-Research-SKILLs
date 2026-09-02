@@ -1,0 +1,33 @@
+{
+  "manifest_id": "RRVA-STAGED-PATHS-001",
+  "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+  "staged_path_count": 23,
+  "staged_paths": [
+    "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py",
+    "packages/thesis-deck-system/src/thesis_deck_system/phase3_final_visual_composition.py",
+    "packages/thesis-deck-system/src/thesis_deck_system/research_visual_acceptance.py",
+    "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py",
+    "packages/thesis-deck-system/tests/unit/test_phase3_final_visual_composition.py",
+    "packages/thesis-deck-system/tests/unit/test_research_visual_acceptance.py",
+    "thesis-deck-system/artifacts/phase3/final-evidence-current-facts.json",
+    "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx",
+    "thesis-deck-system/artifacts/phase3/professor-visual-review-manifest.json",
+    "thesis-deck-system/artifacts/phase3/real-research-visual-acceptance-privacy-evidence.json",
+    "thesis-deck-system/artifacts/phase3/real-research-visual-acceptance-report-consistency.json",
+    "thesis-deck-system/artifacts/phase3/real-research-visual-acceptance-schema-closure-inventory.json",
+    "thesis-deck-system/artifacts/phase3/real-research-visual-acceptance-staged-path-manifest.json",
+    "thesis-deck-system/artifacts/phase3/real-research-visual-acceptance-staged-path-manifest.json",
+    "thesis-deck-system/artifacts/phase3/real-research-visual-review-application.json",
+    "thesis-deck-system/artifacts/phase3/render-capability-discovery.json",
+    "thesis-deck-system/reports/PHASE_3_REAL_RESEARCH_VISUAL_ACCEPTANCE_AND_PROFESSOR_STYLE_CALIBRATION_IMPLEMENTATION_REPORT.md",
+    "thesis-deck-system/schemas/composition-selection-audit.schema.json",
+    "thesis-deck-system/schemas/professor-visual-review-manifest.schema.json",
+    "thesis-deck-system/schemas/real-research-visual-acceptance-schema-closure-inventory.schema.json",
+    "thesis-deck-system/schemas/real-research-visual-qa.schema.json",
+    "thesis-deck-system/schemas/real-research-visual-review-application.schema.json",
+    "thesis-deck-system/schemas/render-capability-discovery.schema.json"
+  ],
+  "protected_phase2_path_count": 31,
+  "protected_phase2_paths_staged": 0,
+  "status": "pass"
+}

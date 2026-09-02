@@ -353,6 +353,14 @@ def test_planner_composition_review_deck_has_a_truthful_closed_generated_pptx_co
     registry = SchemaRegistry(ROOT / "thesis-deck-system" / "schemas", include_phase3=True, include_cp5hi=True)
 
     assert record["artifact_class"] == "planner_composition_review_deck"
+    closure = bundle["source_closures"][review_path]
+    assert {
+        "packages/thesis-deck-system/src/thesis_deck_system/research_visual_acceptance.py",
+        "thesis-deck-system/artifacts/phase3/real-research-visual-fixture-pack.json",
+        "thesis-deck-system/artifacts/phase3/real-research-visual-review-application.json",
+        "thesis-deck-system/artifacts/phase3/real-research-physical-composition-plans.json",
+        "thesis-deck-system/artifacts/phase3/professor-visual-review-manifest.json",
+    } <= {item["repository_relative_path"] for item in closure["input_records"]}
     assert registry.errors("generated-pptx-attestation", record) == []
 
     adjudicator = GeneratedArtifactAdjudicator(

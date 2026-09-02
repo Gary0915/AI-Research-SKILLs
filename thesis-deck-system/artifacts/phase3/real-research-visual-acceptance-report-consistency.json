@@ -1,0 +1,81 @@
+{
+  "consistency_id": "RRVA-REPORT-CONSISTENCY-001",
+  "candidate_state_hash": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+  "authoritative_current_facts_ref": "final-evidence-current-facts.json",
+  "privacy_evidence_ref": "real-research-visual-acceptance-privacy-evidence.json",
+  "checks": [
+    {
+      "check_id": "candidate_hash",
+      "expected": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+      "actual": "eff2bf74c27f11932672d1a8982e36ccddf497a26adbe7a28a3c5cc2772e5217",
+      "report_contains": true,
+      "status": "pass"
+    },
+    {
+      "check_id": "schema_closure",
+      "expected": [
+        27,
+        79,
+        0
+      ],
+      "actual": [
+        27,
+        79,
+        0
+      ],
+      "report_contains": true,
+      "status": "pass"
+    },
+    {
+      "check_id": "focused_validation",
+      "expected": [
+        88,
+        0
+      ],
+      "actual": [
+        88,
+        0
+      ],
+      "report_contains": true,
+      "status": "pass"
+    },
+    {
+      "check_id": "definitive_regression",
+      "expected": [
+        578,
+        0
+      ],
+      "actual": [
+        578,
+        0
+      ],
+      "report_contains": true,
+      "status": "pass"
+    },
+    {
+      "check_id": "privacy",
+      "expected": [
+        0,
+        0,
+        1
+      ],
+      "actual": [
+        0,
+        0,
+        1
+      ],
+      "report_contains": true,
+      "status": "pass"
+    },
+    {
+      "check_id": "render",
+      "expected": "blocked_environment",
+      "actual": "blocked_environment",
+      "report_contains": true,
+      "status": "pass"
+    }
+  ],
+  "mismatch_count": 0,
+  "aggregate_status": "pass",
+  "evidence_sha256": "05c7a348755489ac303cd675f396db6e768e2b3bfdb73e2c685caaad3e0e4fa7"
+}

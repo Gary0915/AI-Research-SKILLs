@@ -7,7 +7,7 @@
   "existing_renderer_available": true,
   "candidate_preview_status": "blocked_environment",
   "qualitative_visual_review": "pending_human_review_from_pptx",
-  "render_attempt_count": 0,
+  "render_attempt_count": 1,
   "renderer_install_attempt_count": 0,
   "private_alias_resolution_attempts": 0,
   "private_source_open_attempts": 0,
