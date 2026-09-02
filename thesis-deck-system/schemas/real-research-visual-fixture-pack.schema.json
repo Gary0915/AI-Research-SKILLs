@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "real-research-visual-fixture-pack.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fixture_pack_id", "fixtures", "logical_fixture_count", "invented_scientific_claim_count", "invented_measured_value_count", "traditional_chinese_primary", "historical_visual_migration_count", "aggregate_status"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "fixture_pack_id": {"const": "RRVFP-001"},
+    "fixtures": {"type": "array", "minItems": 14, "items": {"$ref": "#/$defs/fixture"}},
+    "logical_fixture_count": {"type": "integer", "minimum": 14},
+    "invented_scientific_claim_count": {"const": 0},
+    "invented_measured_value_count": {"const": 0},
+    "traditional_chinese_primary": {"const": true},
+    "historical_visual_migration_count": {"const": 0},
+    "aggregate_status": {"const": "source_closed_review_fixture_pack"}
+  },
+  "$defs": {
+    "refs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["slide_spec_id", "claim_refs", "evidence_refs", "asset_refs", "action_refs", "decision_refs", "source_cursor"],
+      "properties": {
+        "slide_spec_id": {"type": "string", "pattern": "^S-"},
+        "claim_refs": {"type": "array", "items": {"type": "string", "pattern": "^C"}},
+        "evidence_refs": {"type": "array", "items": {"type": "string", "pattern": "^E"}},
+        "asset_refs": {"type": "array", "items": {"type": "string", "pattern": "^A"}},
+        "action_refs": {"type": "array", "items": {"type": "string", "pattern": "^N"}},
+        "decision_refs": {"type": "array", "items": {"type": "string", "pattern": "^D"}},
+        "source_cursor": {"type": "integer", "minimum": 1}
+      }
+    },
+    "fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixture_id", "logical_slide_id", "title", "visible_text", "traditional_chinese_primary", "body_source_class", "canonical_source_refs", "dependency_hash", "scientific_evidence_status", "source_only_role_indicators", "human_visual_acceptance"],
+      "properties": {
+        "fixture_id": {"type": "string", "pattern": "^R(0[1-9]|1[0-8])$"},
+        "logical_slide_id": {"type": "string", "pattern": "^RRVA-R"},
+        "title": {"type": "string", "minLength": 2},
+        "visible_text": {"type": "string", "minLength": 2},
+        "traditional_chinese_primary": {"const": true},
+        "body_source_class": {"enum": ["group_meeting_dominant", "tsmc_dominant", "hybrid_body", "historical_reuse"]},
+        "canonical_source_refs": {"$ref": "#/$defs/refs"},
+        "dependency_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "scientific_evidence_status": {"enum": ["canonical_supported", "synthetic_non_evidence", "tbc", "pending_validation"]},
+        "source_only_role_indicators": {"type": "array", "items": {"enum": ["visual_layout_fixture"]}},
+        "human_visual_acceptance": {"const": "not_reviewed"}
+      }
+    }
+  }
+}

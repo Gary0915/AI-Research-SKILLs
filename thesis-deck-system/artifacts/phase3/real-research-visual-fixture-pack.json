@@ -1,0 +1,395 @@
+{
+  "schema_version": "1.0.0",
+  "fixture_pack_id": "RRVFP-001",
+  "fixtures": [
+    {
+      "fixture_id": "R01",
+      "logical_slide_id": "RRVA-R01",
+      "title": "論文研究目標",
+      "visible_text": "以控制接觸壓力辨識低壓下訊號不穩定的主導機制。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "tsmc_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-HYPOTHESIS-TITLE-01",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 51
+      },
+      "dependency_hash": "22541cf000866e576647f24e996a906e642ce656b1c76cd48d828757c059c5b3",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R02",
+      "logical_slide_id": "RRVA-R02",
+      "title": "研究系統架構",
+      "visible_text": "由水凝膠元件、接觸介面與電性量測鏈共同檢驗訊號穩定性。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "tsmc_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E202"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 51
+      },
+      "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R03",
+      "logical_slide_id": "RRVA-R03",
+      "title": "研究傳承與目前定位",
+      "visible_text": "目前工作承接 H002：先驗證接觸電阻，再決定後續實驗。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "historical_reuse",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-PHASE2-PROGRESS-01",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E101",
+          "E201"
+        ],
+        "asset_refs": [],
+        "action_refs": [
+          "NS101",
+          "NS201"
+        ],
+        "decision_refs": [
+          "D101",
+          "D201"
+        ],
+        "source_cursor": 66
+      },
+      "dependency_hash": "816c41db99bfa84e7099d0bd3e857e97c37b756824cbed1ae9c69fa5a49039a0",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R04",
+      "logical_slide_id": "RRVA-R04",
+      "title": "研究缺口",
+      "visible_text": "低接觸壓力下，contact resistance 是否主導訊號不穩定仍待控制比較。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "tsmc_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-PROBLEM-DEFINITION-02",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 51
+      },
+      "dependency_hash": "3e4d21b6b5491441cab5272f120a627a3a1021a0ebbea23f93e452d1e5bb7234",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R05",
+      "logical_slide_id": "RRVA-R05",
+      "title": "文獻證據：自發感測前例",
+      "visible_text": "文獻指出 transport gradient 可產生位置效應；接觸介面仍是替代解釋。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "tsmc_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H001-LITERATURE-MECHANISM-05",
+        "claim_refs": [
+          "C101"
+        ],
+        "evidence_refs": [
+          "E103"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 23
+      },
+      "dependency_hash": "762e8cfa2b0d45091c52fbfdeee6657be4c0cc94254a0952007fc64d0efcfe34",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R06",
+      "logical_slide_id": "RRVA-R06",
+      "title": "文獻綜整至主要機制",
+      "visible_text": "以匹配導電度並改變接觸壓力，隔離 contact resistance 的機制貢獻。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "tsmc_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E202"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 51
+      },
+      "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R07",
+      "logical_slide_id": "RRVA-R07",
+      "title": "研究魚骨：目前分支位置",
+      "visible_text": "保留 FB001 rev2 歷史結構，僅標示目前接觸介面分支。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "group_meeting_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-FISHBONE-LOCATOR-03",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204"
+        ],
+        "asset_refs": [
+          "A102"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 51
+      },
+      "dependency_hash": "753d6b8d9c104f347deffe2b39939acd253a802d318f27bc4b561681b739b210",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R08",
+      "logical_slide_id": "RRVA-R08",
+      "title": "G02 優先實驗：接觸壓力量測",
+      "visible_text": "在匹配導電度條件下改變接觸壓力，量測訊號 CV 與接觸電阻。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "group_meeting_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E201"
+        ],
+        "asset_refs": [
+          "A201"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 57
+      },
+      "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R09",
+      "logical_slide_id": "RRVA-R09",
+      "title": "量測架構：電性量測鏈",
+      "visible_text": "以量測儀器、樣品接觸點與資料記錄鏈路對應每一個控制變因。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "group_meeting_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E201"
+        ],
+        "asset_refs": [
+          "A201"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 57
+      },
+      "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R10",
+      "logical_slide_id": "RRVA-R10",
+      "title": "實驗設計與 Go / No-Go",
+      "visible_text": "若控制比較後訊號 CV 跨過決策門檻，才進入下一輪驗證。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "group_meeting_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E201"
+        ],
+        "asset_refs": [
+          "A201"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 57
+      },
+      "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R11",
+      "logical_slide_id": "RRVA-R11",
+      "title": "結果與討論版面示意",
+      "visible_text": "預期版面示意，不代表實驗結果；主圖保留給未來量測結果。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "group_meeting_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E201"
+        ],
+        "asset_refs": [
+          "A201"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 57
+      },
+      "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+      "scientific_evidence_status": "synthetic_non_evidence",
+      "source_only_role_indicators": [
+        "visual_layout_fixture"
+      ],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R12",
+      "logical_slide_id": "RRVA-R12",
+      "title": "問題至機制至解法",
+      "visible_text": "問題：低壓接觸不穩；機制：contact resistance；策略：匹配導電度並改變壓力。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "group_meeting_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-OBSERVATION-PROBLEM-04",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E202"
+        ],
+        "asset_refs": [],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 51
+      },
+      "dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R13",
+      "logical_slide_id": "RRVA-R13",
+      "title": "物理驗證與比較",
+      "visible_text": "以相同位置與相同判準水平對齊 control / treatment 的比較結果。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "group_meeting_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-EXPERIMENT-DESIGN-06",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E204",
+          "E201"
+        ],
+        "asset_refs": [
+          "A201"
+        ],
+        "action_refs": [],
+        "decision_refs": [],
+        "source_cursor": 57
+      },
+      "dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    },
+    {
+      "fixture_id": "R14",
+      "logical_slide_id": "RRVA-R14",
+      "title": "決策與下一步",
+      "visible_text": "依控制比較結果決定是否保留接觸介面假說，並安排下一步驗證。",
+      "traditional_chinese_primary": true,
+      "body_source_class": "group_meeting_dominant",
+      "canonical_source_refs": {
+        "slide_spec_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+        "claim_refs": [
+          "C201"
+        ],
+        "evidence_refs": [
+          "E201"
+        ],
+        "asset_refs": [],
+        "action_refs": [
+          "NS201"
+        ],
+        "decision_refs": [
+          "D201"
+        ],
+        "source_cursor": 65
+      },
+      "dependency_hash": "b0aeb18765f8d2446591785271345f2292f55ed33ede9de6270d0d430fae6954",
+      "scientific_evidence_status": "canonical_supported",
+      "source_only_role_indicators": [],
+      "human_visual_acceptance": "not_reviewed"
+    }
+  ],
+  "logical_fixture_count": 14,
+  "invented_scientific_claim_count": 0,
+  "invented_measured_value_count": 0,
+  "traditional_chinese_primary": true,
+  "historical_visual_migration_count": 0,
+  "aggregate_status": "source_closed_review_fixture_pack"
+}
