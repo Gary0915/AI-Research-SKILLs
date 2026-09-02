@@ -1,14 +1,13 @@
 {
-  "consistency_id": "PPA-PHYSICAL-CONSISTENCY-001",
+  "consistency_id": "PSTP-VC-REPORT-CONSISTENCY-001",
   "authoritative_facts_ref": "planner-application-final-facts.json",
-  "candidate_state_sha256": "5628e04059f1bfb563c3899a951df1c9fc72693cbb35082ab5e31643658f7b3a",
+  "candidate_state_sha256": "4a6281d03173d57fbcc587378eb549b519cd2d78be0603401e09faaa088e79b2",
   "checks": [
-    {"check_id": "candidate-state", "actual": "5628e04059f1bfb563c3899a951df1c9fc72693cbb35082ab5e31643658f7b3a", "expected": "5628e04059f1bfb563c3899a951df1c9fc72693cbb35082ab5e31643658f7b3a", "status": "pass"},
-    {"check_id": "candidate-component-count", "actual": 28, "expected": 28, "status": "pass"},
-    {"check_id": "validation-evidence", "actual": {"focused_passed": 71, "focused_failed": 0, "full_passed": 551, "full_failed": 0, "tested_pre_post_current_equal": true}, "expected": {"focused_failed": 0, "full_failed": 0, "tested_pre_post_current_equal": true}, "status": "pass"},
-    {"check_id": "physical-realization", "actual": {"logical_cases": 10, "eligible_candidates": 11, "multiple_candidate_cases": 1, "physical_recipes": 10, "coverage": "10/10", "reverse_audit_failures": 0}, "expected": {"logical_cases": 10, "eligible_candidates": 11, "multiple_candidate_cases": 1, "physical_recipes": 10, "coverage": "10/10", "reverse_audit_failures": 0}, "status": "pass"},
-    {"check_id": "incremental-application", "actual": {"historical_reused": 20, "new_physical_slides": 2, "migrations": 0, "semantic_insertion_status": "pass"}, "expected": {"historical_reused": 20, "new_physical_slides": 2, "migrations": 0, "semantic_insertion_status": "pass"}, "status": "pass"},
-    {"check_id": "generated-pptx-closure", "actual": {"attestations": 1, "source_closure_failures": 0, "unresolved_media": 0, "undeclared_media": 0, "duplicate_media_lineage": 0, "working_staged_mismatches": 0}, "expected": {"attestations": 1, "source_closure_failures": 0, "unresolved_media": 0, "undeclared_media": 0, "duplicate_media_lineage": 0, "working_staged_mismatches": 0}, "status": "pass"},
+    {"check_id": "candidate-state", "actual": "4a6281d03173d57fbcc587378eb549b519cd2d78be0603401e09faaa088e79b2", "expected": "4a6281d03173d57fbcc587378eb549b519cd2d78be0603401e09faaa088e79b2", "status": "pass"},
+    {"check_id": "validation", "actual": {"focused": [44, 0], "regression": [567, 0], "hash_equality": true}, "expected": {"focused": [44, 0], "regression": [567, 0], "hash_equality": true}, "status": "pass"},
+    {"check_id": "coverage", "actual": {"recipe_registry": "10/10", "physical_recipe": "10/10", "review_deck": "10/10", "golden": "10/10", "logical_cases": 10, "eligible_candidates": 16, "multi_candidate_cases": 6}, "expected": {"recipe_registry": "10/10", "physical_recipe": "10/10", "review_deck": "10/10", "golden": "10/10", "logical_cases": 10, "eligible_candidates": 16, "multi_candidate_cases": 6}, "status": "pass"},
+    {"check_id": "reverse-audits", "actual": {"geometry": "pass", "shell": "pass", "typography": "pass", "style": "pass", "occupancy": "pass", "hard_text_overflow": 0}, "expected": {"geometry": "pass", "shell": "pass", "typography": "pass", "style": "pass", "occupancy": "pass", "hard_text_overflow": 0}, "status": "pass"},
+    {"check_id": "generated-pptx-closure", "actual": {"attestation": "pass", "source_closure": "pass", "media_lineage": "pass", "working_staged_mismatch": 0}, "expected": {"attestation": "pass", "source_closure": "pass", "media_lineage": "pass", "working_staged_mismatch": 0}, "status": "pass"},
     {"check_id": "privacy", "actual": {"repository_unexcepted": 0, "staged_unexcepted": 0, "approved_historical_exceptions": 1, "private_alias_source_render": [0, 0, 0]}, "expected": {"repository_unexcepted": 0, "staged_unexcepted": 0, "approved_historical_exceptions": 1, "private_alias_source_render": [0, 0, 0]}, "status": "pass"}
   ],
   "mismatch_count": 0,

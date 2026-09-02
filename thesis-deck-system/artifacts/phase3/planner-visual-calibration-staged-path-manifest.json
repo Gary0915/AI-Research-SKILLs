@@ -1,0 +1,16 @@
+{
+  "manifest_id": "PSTP-VC-STAGED-PATHS-001",
+  "candidate_state_sha256": "4a6281d03173d57fbcc587378eb549b519cd2d78be0603401e09faaa088e79b2",
+  "authorized_staged_paths": [
+    "thesis-deck-system/artifacts/phase3/final-report-consistency.json",
+    "thesis-deck-system/artifacts/phase3/planner-application-final-facts.json",
+    "thesis-deck-system/artifacts/phase3/planner-review-pptx-final-privacy-evidence.json",
+    "thesis-deck-system/artifacts/phase3/planner-visual-calibration-staged-path-manifest.json",
+    "thesis-deck-system/reports/PHASE_3_PROFESSOR_SHELL_TYPOGRAPHY_AND_PLANNER_VISUAL_CALIBRATION_IMPLEMENTATION_REPORT.md"
+  ],
+  "authorized_staged_path_count": 5,
+  "protected_phase2_deletion_count": 31,
+  "protected_phase2_deletions_staged": 0,
+  "untracked_durable_logs_staged": 0,
+  "aggregate_status": "pass"
+}
