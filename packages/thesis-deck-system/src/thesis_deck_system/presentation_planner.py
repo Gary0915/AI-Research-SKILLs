@@ -29,6 +29,17 @@ _BODY_PRIORITY = (
     "JDP-TSMC-2026-0604", "JDP-TSMC-2026-0525",
 )
 
+# Sanitized recurrence from the approved body-reference priority policy.  This
+# is reference-supported composition evidence, not a probability of professor
+# preference and never shell authority.
+_BODY_RECURRENCE = {
+    "BCF-PRINCIPLE-EQUIPMENT-SPLIT": ("JDP-TSMC-2026-0617", "JDP-TSMC-2026-0730", "JDP-TSMC-2026-0814"),
+    "BCF-FEASIBILITY-EVIDENCE-MATRIX": ("JDP-TSMC-2026-0617", "JDP-TSMC-2026-0730", "JDP-TSMC-2026-0814"),
+    "BCF-HARDWARE-DESIGN-PROCEDURE": ("JDP-TSMC-2026-0730", "JDP-TSMC-2026-0814"),
+    "BCF-PHYSICAL-VALIDATION-MATRIX": ("JDP-TSMC-2026-0730", "JDP-TSMC-2026-0814"),
+    "BCF-TECHNOLOGY-COMPARISON": ("JDP-TSMC-2026-0730", "JDP-TSMC-2026-0814"),
+}
+
 
 def _canonical(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
@@ -134,7 +145,7 @@ def build_scientific_content_shape(record: dict[str, Any]) -> dict[str, Any]:
         "evidence_density_class": _density(observations["evidence_item_count"]["value"]),
     }
     return {
-        "content_shape_id": f"SCS-{sha256(record['slide_id'].encode()).hexdigest()[:16]}",
+        "content_shape_id": f"SCS-{sha256(record['slide_id'].encode()).hexdigest()[:16].upper()}",
         "slide_id": record["slide_id"], "semantic_stage": record["semantic_stage"],
         "observations": observations, "text_density_class": fingerprint["text_density_class"],
         "evidence_density_class": fingerprint["evidence_density_class"],
@@ -172,7 +183,7 @@ def build_layout_capability_registry() -> list[dict[str, Any]]:
             "supported_comparison_sides": 2 if family in {"BCF-TECHNOLOGY-COMPARISON", "BCF-THREE-COLUMN-PHYSICAL-COMPARISON"} else None,
             "supported_formula_presence": "formula" in kinds, "text_capacity": {"state": "provisional", "basis": "system_heuristic"},
             "evidence_capacity": {"state": "provisional", "basis": "system_heuristic"},
-            "source_evidence_ids": [f"{_BODY_PRIORITY[0]}-PLANNER"], "authority_status": "body_only_no_shell_override",
+            "source_evidence_ids": list(_BODY_RECURRENCE.get(family, (_BODY_PRIORITY[0],))), "body_recurrence_evidence": {"reference_ids": list(_BODY_RECURRENCE.get(family, ())), "priority_rank": min((_BODY_PRIORITY.index(reference) + 1 for reference in _BODY_RECURRENCE.get(family, ())), default=None), "evidence_state": "reference_supported" if family in _BODY_RECURRENCE else "single_example_provisional"}, "authority_status": "body_only_no_shell_override",
             "confidence": "provisional", "readiness": "partial_structural_calibration",
         })
     if {item["body_family_id"] for item in registry} != BODY_COMPOSITION_FAMILIES:
@@ -197,8 +208,25 @@ def generate_composition_candidates(shape: dict[str, Any], capabilities: list[di
         kinds_compatible = not items_provided or all(item["content_kind"] in capability["supported_content_kinds"] for item in items)
         if not (stage_compatible and route_compatible and roles_compatible and kinds_compatible):
             continue
-        score = {"semantic_fit": 6, "capacity_fit": 3, "evidence_fit": 1 if items_provided else 0, "body_recurrence_fit": 1, "historical_consistency_fit": 0, "bounded_diversity_fit": 0, "semantic_hard_match": stage_compatible, "capacity_hard_match": route_compatible, "required_role_coverage": roles_compatible}
-        score["total"] = sum(value for key, value in score.items() if isinstance(value, int))
+        recurrence = capability["body_recurrence_evidence"]
+        reference_count = len(recurrence["reference_ids"])
+        priority_rank = recurrence["priority_rank"]
+        # Each component records a bounded, explainable system-owned meaning.
+        # It is deliberately not a likelihood of professor preference.
+        score = {
+            "semantic_fit": 4 + int(bool(capability["required_semantic_roles"])),
+            "capacity_fit": 2 + int(capability["media_count"]["max"] >= primary if primary is not None else True),
+            "evidence_fit": min(3, len(items)) if items_provided else 0,
+            "body_recurrence_fit": reference_count * 2 + (6 - priority_rank if priority_rank is not None else 0),
+            "body_recurrence_evidence": {"reference_ids": recurrence["reference_ids"], "reference_count": reference_count, "priority_rank": priority_rank, "evidence_state": recurrence["evidence_state"]},
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "exact_fit" if items_provided and set(capability["required_semantic_roles"]) == roles else "compatible_fit",
+            "semantic_hard_match": stage_compatible,
+            "capacity_hard_match": route_compatible,
+            "required_role_coverage": roles_compatible,
+        }
+        score["total"] = sum(value for value in score.values() if isinstance(value, int) and not isinstance(value, bool))
         candidate_core = {"slide_id": shape["slide_id"], "content_shape_sha256": shape["content_shape_sha256"], "capability_id": capability["capability_id"], "body_family_id": family}
         candidates.append({"candidate_id": f"CC-{_hash(candidate_core)[:16].upper()}", **candidate_core, "score": score, "candidate_status": "eligible"})
     return sorted(candidates, key=lambda value: value["candidate_id"])

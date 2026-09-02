@@ -80,6 +80,18 @@ def test_each_physical_plan_binds_a_closed_body_style_recipe_and_spacing_scale()
     assert all(plan["style_authority_status"] == "body_only_no_shell_override" for plan in plans)
 
 
+def test_physical_plans_bind_the_professor_shell_profile_without_claiming_body_measurement():
+    from thesis_deck_system.presentation_planner_application import build_physical_composition_plans, build_planner_application
+    from thesis_deck_system.professor_shell import build_professor_shell_profile
+
+    shell = build_professor_shell_profile(ROOT)
+    plans = build_physical_composition_plans(build_planner_application(ROOT), shell_profile=shell)
+
+    assert all(plan["shell_profile_id"] == shell["shell_profile_id"] for plan in plans)
+    assert all(plan["content_bounds"] == shell["body_content_safe_region"]["geometry_inches"] for plan in plans)
+    assert shell["body_content_safe_region"]["evidence_level"] == "synthetic_system_owned"
+
+
 def test_reverse_physical_audit_recovers_deterministic_region_identity_from_pptx(tmp_path: Path):
     from thesis_deck_system.presentation_planner_application import reverse_audit_physical_composition, write_planner_application_artifacts
 
@@ -89,6 +101,41 @@ def test_reverse_physical_audit_recovers_deterministic_region_identity_from_pptx
     assert audit["out_of_content_bounds_count"] == 0
     assert audit["hard_overlap_violation_count"] == 0
     assert all(item["planner_shape_count"] > 0 for item in audit["slides"])
+
+
+def test_review_deck_uses_governed_typography_and_native_synthetic_visuals_not_wireframe_labels(tmp_path: Path):
+    from pptx import Presentation
+    from thesis_deck_system.presentation_planner_application import write_planner_application_artifacts
+
+    outputs = write_planner_application_artifacts(ROOT, tmp_path)
+    presentation = Presentation(outputs["review_pptx"])
+    texts = [shape.text for slide in presentation.slides for shape in slide.shapes if shape.has_text_frame]
+    effect_shapes = [shape for slide in presentation.slides for shape in slide.shapes if shape.name.startswith("PPAFX::")]
+    titles = [shape for slide in presentation.slides for shape in slide.shapes if shape.name.startswith("tds-title:")]
+
+    assert not any(text.startswith("SYNTHETIC_NON_EVIDENCE") for text in texts if text)
+    assert effect_shapes
+    assert titles and all(shape.text_frame.paragraphs[0].runs[0].font.size.pt == 26 for shape in titles)
+
+
+def test_review_deck_persists_shell_typography_style_and_occupancy_audits(tmp_path: Path):
+    import json
+
+    from thesis_deck_system.presentation_planner_application import write_planner_application_artifacts
+
+    outputs = write_planner_application_artifacts(ROOT, tmp_path)
+    shell = json.loads(outputs["shell_reverse_audit"].read_text(encoding="utf-8"))
+    typography = json.loads(outputs["typography_reverse_audit"].read_text(encoding="utf-8"))
+    style = json.loads(outputs["style_reverse_audit"].read_text(encoding="utf-8"))
+    occupancy = json.loads(outputs["occupancy_audit"].read_text(encoding="utf-8"))
+
+    assert shell["aggregate_status"] == "pass"
+    assert shell["title_safe_region_violation_count"] == 0
+    assert typography["typography_role_mismatch_count"] == 0
+    assert style["uncontrolled_style_override_count"] == 0
+    assert occupancy["recipe_registry_family_coverage"] == "10/10"
+    assert occupancy["review_deck_materialized_family_coverage"] == "10/10"
+    assert occupancy["fully_occupied_golden_family_coverage"] == "10/10"
 
 
 def test_reverse_audit_compares_each_review_slide_to_the_full_physical_recipe(tmp_path: Path):
@@ -246,10 +293,10 @@ def test_application_materializes_review_only_pptx_and_incremental_scenario(tmp_
     import json
     acceptance = json.loads(outputs["acceptance"].read_text(encoding="utf-8"))
     physical_plans = json.loads(outputs["physical_plans"].read_text(encoding="utf-8"))
-    assert len(physical_plans["records"]) == json.loads(outputs["review_json"].read_text(encoding="utf-8"))["metrics"]["candidate_count"]
+    assert len(physical_plans["records"]) > json.loads(outputs["review_json"].read_text(encoding="utf-8"))["metrics"]["candidate_count"]
     from pptx import Presentation
     review_application = json.loads(outputs["review_json"].read_text(encoding="utf-8"))
-    assert len(Presentation(outputs["review_pptx"]).slides) == review_application["metrics"]["candidate_count"]
+    assert len(Presentation(outputs["review_pptx"]).slides) == len(physical_plans["records"])
     assert acceptance["structural_audit"]["missing_required_region_count"] == 0
     assert acceptance["structural_audit"]["hard_capacity_violation_count"] == 0
     assert acceptance["structural_audit"]["selected_candidate_materialization_mismatch"] == 0
@@ -302,7 +349,9 @@ def test_physical_realization_qa_is_derived_from_generated_artifacts(tmp_path: P
 
     assert qa["aggregate_status"] == "pass"
     assert qa["recipe_coverage"]["recipe_count"] == 10
-    assert qa["recipe_coverage"]["physical_family_coverage"] == "10/10"
+    assert qa["recipe_coverage"]["physical_family_coverage"] == "8/10"
+    assert qa["recipe_coverage"]["recipe_registry_family_coverage"] == "10/10"
+    assert qa["recipe_coverage"]["review_deck_materialized_family_coverage"] == "10/10"
     assert qa["reverse_physical_audit"]["missing_required_region_count"] == 0
     assert qa["review_overlay"]["stale_review_applied_count"] == 0
     assert qa["incremental_physical_application"]["historical_reused"] == 20

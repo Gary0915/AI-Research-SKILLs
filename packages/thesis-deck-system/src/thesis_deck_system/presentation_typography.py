@@ -123,10 +123,17 @@ _COLOR_ROLE_RGB = {
 }
 
 
+def semantic_color_rgb(role: str) -> RGBColor:
+    """Resolve a governed semantic color role for native non-text shapes."""
+    if role not in _COLOR_ROLE_RGB:
+        raise TypographyGovernorError("unknown semantic color role")
+    return RGBColor.from_string(_COLOR_ROLE_RGB[role])
+
+
 def apply_typography_to_shape(shape: Any, profile: dict[str, Any], role: str) -> dict[str, Any]:
     """Apply one governed semantic role to an existing editable text shape."""
     typography = resolve_typography(profile, role)
-    if not getattr(shape, "has_text_frame", False):
+    if not getattr(shape, "has_text_frame", False) and not hasattr(shape, "text_frame"):
         raise TypographyGovernorError("typography target is not an editable text shape")
     frame = shape.text_frame
     margins = typography["text_box_margins_pt"]
@@ -136,7 +143,7 @@ def apply_typography_to_shape(shape: Any, profile: dict[str, Any], role: str) ->
     frame.margin_bottom = Pt(margins["bottom"])
     frame.vertical_anchor = MSO_ANCHOR.MIDDLE
     alignment = {"left": PP_ALIGN.LEFT, "center": PP_ALIGN.CENTER, "right": PP_ALIGN.RIGHT}[typography["alignment"]]
-    color = RGBColor.from_string(_COLOR_ROLE_RGB[typography["color_role"]])
+    color = semantic_color_rgb(typography["color_role"])
     for paragraph in frame.paragraphs:
         paragraph.alignment = alignment
         for run in paragraph.runs:

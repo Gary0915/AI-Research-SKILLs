@@ -160,6 +160,29 @@ def test_selection_rejects_candidates_that_fail_any_v2_hard_fit_gate():
     assert decision["selected_candidate_id"] == "CC-VALID"
 
 
+def test_fit_score_uses_reference_specific_body_recurrence_not_a_constant_placeholder():
+    from thesis_deck_system.presentation_planner import build_layout_capability_registry, build_scientific_content_shape, generate_composition_candidates
+
+    record = {
+        "slide_id": "S-PRINCIPLE-RECURRENCE-001", "semantic_stage": "hypothesis_transition",
+        "title": "Principle / Equipment", "visible_text": ["controlled fixture"],
+        "source_semantic_fields": {"hypothesis_transition": {}}, "source_bindings": {},
+        "governed_figure_route": None,
+        "composition_content_items": [
+            {"item_id": "PRINCIPLE", "semantic_role": "principle", "presentation_role": "primary_visual", "content_kind": "schematic", "required": True},
+            {"item_id": "EQUIPMENT", "semantic_role": "equipment", "presentation_role": "secondary_visual", "content_kind": "table", "required": True},
+            {"item_id": "FORMULA", "semantic_role": "principle", "presentation_role": "formula", "content_kind": "formula", "required": True},
+        ],
+    }
+    candidates = generate_composition_candidates(build_scientific_content_shape(record), build_layout_capability_registry())
+    recurrent = next(item for item in candidates if item["body_family_id"] == "BCF-PRINCIPLE-EQUIPMENT-SPLIT")
+
+    assert recurrent["score"]["body_recurrence_fit"] > 1
+    assert recurrent["score"]["body_recurrence_evidence"]["reference_count"] == 3
+    assert recurrent["score"]["semantic_fit"] > 0
+    assert recurrent["score"]["capacity_fit"] > 0
+
+
 def test_current_acceptance_deck_planner_audit_is_closed_and_never_migrates_historical_slides():
     from thesis_deck_system.contracts import SchemaRegistry
     from thesis_deck_system.presentation_planner import build_current_acceptance_planner_artifacts

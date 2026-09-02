@@ -92,7 +92,11 @@ def build_professor_shell_profile(root: Path) -> dict[str, Any]:
 
     # CP3 intentionally found no defensible professor-derived safe bounds.  This
     # system-owned region is an explicit assembly fallback, never a measurement.
-    body_fallback = {"left": 0.7, "top": 1.25, "width": 11.85, "height": 5.1}
+    # This is deliberately an assembly-owned fallback because CP3 found no
+    # defensible professor-derived body safe area.  It starts below the
+    # measured title region, so a physical planner cannot silently overlap
+    # title and body while calling the resulting bounds professor evidence.
+    body_fallback = {"left": 0.7, "top": 2.0, "width": 11.85, "height": 4.3}
     body_region = {
         "geometry_inches": body_fallback,
         "evidence_level": "synthetic_system_owned",

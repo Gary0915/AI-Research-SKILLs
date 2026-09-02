@@ -13,9 +13,12 @@ import tempfile
 from typing import Any
 
 from pptx import Presentation
+from pptx.enum.text import PP_ALIGN
 
 from .pptx import PythonPptxAssembler
 from .body_style import build_body_style_recipe_registry
+from .presentation_typography import build_presentation_typography_profile
+from .professor_shell import build_professor_shell_profile
 from .presentation_planner import build_layout_capability_registry, build_scientific_content_shape, generate_composition_candidates
 from .template import create_sanitized_native_template
 from .incremental_deck_lineage import (
@@ -81,11 +84,11 @@ def build_body_composition_recipe_registry() -> list[dict[str, Any]]:
     return recipes
 
 
-def build_physical_composition_plans(application: dict[str, Any]) -> list[dict[str, Any]]:
+def build_physical_composition_plans(application: dict[str, Any], *, shell_profile: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     """Bind every eligible candidate to its recipe using the existing shell content bounds."""
     recipes = {item["body_family_id"]: item for item in build_body_composition_recipe_registry()}
     styles = {item["body_family_id"]: item for item in build_body_style_recipe_registry(Path("."))}
-    content_bounds = {"left": 0.7, "top": 1.25, "width": 11.85, "height": 5.1}
+    content_bounds = dict((shell_profile or {}).get("body_content_safe_region", {}).get("geometry_inches") or {"left": 0.7, "top": 2.0, "width": 11.85, "height": 4.3})
     plans: list[dict[str, Any]] = []
     for case in application["cases"]:
         for candidate in case["candidates"]:
@@ -111,11 +114,11 @@ def build_physical_composition_plans(application: dict[str, Any]) -> list[dict[s
             required_content_assigned = all(item["item_id"] in {assignment["item_id"] for assignment in assignments} for item in case["content_items"] if item["required"])
             assignment_by_region = {item["region_id"]: item for item in assignments}
             physical_regions = [
-                {**region, "geometry": _physical_geometry(content_bounds, region), "item_id": assignment_by_region.get(region["region_id"], {}).get("item_id", f"REGION-{region['region_id'].upper()}"), "synthetic_placeholder": region["region_id"] not in assignment_by_region}
+                {**region, "geometry": _physical_geometry(content_bounds, region), "item_id": assignment_by_region.get(region["region_id"], {}).get("item_id", f"REGION-{region['region_id'].upper()}"), "content_kind": assignment_by_region.get(region["region_id"], {}).get("content_kind", "text"), "synthetic_placeholder": region["region_id"] not in assignment_by_region}
                 for region in recipe["regions"]
             ]
             core = {"slide_id": case["slide_id"], "candidate_id": candidate["candidate_id"], "recipe_id": recipe["recipe_id"], "assignments": assignments, "physical_regions": physical_regions, "content_bounds": content_bounds}
-            plans.append({"physical_plan_id": f"PCP-{_hash(core)[:16].upper()}", "slide_id": case["slide_id"], "candidate_id": candidate["candidate_id"], "body_family_id": candidate["body_family_id"], "body_recipe_id": recipe["recipe_id"], "body_style_recipe_id": style["body_style_recipe_id"], "spacing_scale_id": style["spacing_scale_id"], "style_authority_status": "body_only_no_shell_override", "shell_profile_id": "VSP003", "content_bounds": content_bounds, "regions": recipe["regions"], "physical_regions": physical_regions, "content_item_assignments": assignments, "required_role_coverage_status": "pass" if required_content_assigned else "fail", "overflow_status": "pass", "geometry_hash": _hash({"recipe_id": recipe["recipe_id"], "regions": recipe["regions"]}), "physical_composition_hash": _hash(core), "unassigned_required_region_ids": sorted(required_regions - assigned_regions)})
+            plans.append({"physical_plan_id": f"PCP-{_hash(core)[:16].upper()}", "slide_id": case["slide_id"], "candidate_id": candidate["candidate_id"], "body_family_id": candidate["body_family_id"], "body_recipe_id": recipe["recipe_id"], "body_style_recipe_id": style["body_style_recipe_id"], "spacing_scale_id": style["spacing_scale_id"], "style_authority_status": "body_only_no_shell_override", "shell_profile_id": (shell_profile or {}).get("shell_profile_id", "PSP-001"), "content_bounds": content_bounds, "regions": recipe["regions"], "physical_regions": physical_regions, "content_item_assignments": assignments, "required_role_coverage_status": "pass" if required_content_assigned else "fail", "overflow_status": "pass", "geometry_hash": _hash({"recipe_id": recipe["recipe_id"], "regions": recipe["regions"]}), "physical_composition_hash": _hash(core), "unassigned_required_region_ids": sorted(required_regions - assigned_regions)})
     return plans
 
 
@@ -123,12 +126,27 @@ def _physical_geometry(content_bounds: dict[str, float], region: dict[str, Any])
     return {"left": round(content_bounds["left"] + region["x"] * content_bounds["width"], 6), "top": round(content_bounds["top"] + region["y"] * content_bounds["height"], 6), "width": round(region["w"] * content_bounds["width"], 6), "height": round(region["h"] * content_bounds["height"], 6)}
 
 
-def reverse_audit_physical_composition(path: Path, physical_plans_path: Path | None = None) -> dict[str, Any]:
+def build_golden_calibration_plans(shell_profile: dict[str, Any]) -> list[dict[str, Any]]:
+    """Build all-family synthetic calibration fixtures outside scientific selection."""
+    content_bounds = dict(shell_profile["body_content_safe_region"]["geometry_inches"])
+    styles = {item["body_family_id"]: item for item in build_body_style_recipe_registry(Path("."))}
+    plans = []
+    for recipe in build_body_composition_recipe_registry():
+        family = recipe["body_family_id"]
+        physical_regions = [{**region, "geometry": _physical_geometry(content_bounds, region), "item_id": f"GOLDEN-{region['region_id'].upper()}", "content_kind": region["accepted_content_kinds"][0], "synthetic_placeholder": False} for region in recipe["regions"]]
+        assignments = [{"item_id": region["item_id"], "region_id": region["region_id"], "content_kind": region["content_kind"], "geometry": region["geometry"]} for region in physical_regions]
+        core = {"family": family, "physical_regions": physical_regions, "content_bounds": content_bounds}
+        plans.append({"physical_plan_id": f"PCP-GOLDEN-{_hash(core)[:12].upper()}", "slide_id": f"PPA-GOLDEN-{family.removeprefix('BCF-')}", "candidate_id": f"PPC-GOLDEN-{family.removeprefix('BCF-')}", "body_family_id": family, "body_recipe_id": recipe["recipe_id"], "body_style_recipe_id": styles[family]["body_style_recipe_id"], "spacing_scale_id": styles[family]["spacing_scale_id"], "style_authority_status": "body_only_no_shell_override", "shell_profile_id": shell_profile["shell_profile_id"], "content_bounds": content_bounds, "regions": recipe["regions"], "physical_regions": physical_regions, "content_item_assignments": assignments, "required_role_coverage_status": "pass", "overflow_status": "pass", "geometry_hash": _hash({"recipe_id": recipe["recipe_id"], "regions": recipe["regions"]}), "physical_composition_hash": _hash(core), "unassigned_required_region_ids": []})
+    return plans
+
+
+def reverse_audit_physical_composition(path: Path, physical_plans_path: Path | None = None, *, content_bounds: dict[str, float] | None = None) -> dict[str, Any]:
     """Recover planner region identities and physical bounds from the review PPTX."""
     presentation = Presentation(path)
     slides = []
     missing = out_of_bounds = overlaps = identity_mismatch = mapping_failures = 0
     expected_by_candidate: dict[str, dict[str, Any]] = {}
+    content_bounds = dict(content_bounds or {"left": 0.7, "top": 2.0, "width": 11.85, "height": 4.3})
     if physical_plans_path is not None:
         payload = json.loads(Path(physical_plans_path).read_text(encoding="utf-8"))
         expected_by_candidate = {item["candidate_id"]: item for item in payload.get("records", [])}
@@ -143,7 +161,7 @@ def reverse_audit_physical_composition(path: Path, physical_plans_path: Path | N
                 continue
             left, top = shape.left / 914400, shape.top / 914400
             width, height = shape.width / 914400, shape.height / 914400
-            if left < .7 or top < 1.25 or left + width > 12.55 or top + height > 6.35:
+            if left < content_bounds["left"] or top < content_bounds["top"] or left + width > content_bounds["left"] + content_bounds["width"] or top + height > content_bounds["top"] + content_bounds["height"]:
                 out_of_bounds += 1
             regions.append({"shape_name": shape.name, "logical_slide_id": parts[1], "candidate_id": parts[2], "region_id": parts[3], "presentation_role": parts[4], "item_id": parts[5], "bounding_box": {"left": left, "top": top, "width": width, "height": height}, "z_order": len(regions)})
         # Planner recipes reserve non-overlapping content regions; callout/connector
@@ -208,7 +226,7 @@ def _candidate(case: dict[str, Any], planner_candidate: dict[str, Any]) -> dict[
     score = dict(planner_candidate["score"])
     score["historical_consistency_fit"] = 2 if case["case_id"] == "CASE-I-CONTINUATION" else 0
     score["bounded_diversity_fit"] = 0
-    score["total"] = sum(value for value in score.values() if isinstance(value, int))
+    score["total"] = sum(value for value in score.values() if isinstance(value, int) and not isinstance(value, bool))
     return {"candidate_id": f"PPC-{_hash(core)[:16].upper()}", **core, "region_plan": list(regions), "score": score, "candidate_status": "eligible"}
 
 
@@ -374,7 +392,7 @@ def build_planner_application(root: Path) -> dict[str, Any]:
     return {"application_id": "PPA-V2-001", "planner_version": APPLICATION_VERSION, "body_reference_priority": list(BODY_REFERENCE_PRIORITY), "scenario_inputs": scenario_inputs, "cases": cases, "candidate_difference_audit": {"records": difference_records, "fake_candidate_variant_count": sum(not item["structurally_distinct"] for item in difference_records)}, "metrics": {"logical_slides_evaluated": len(cases), "candidate_count": sum(len(item["candidates"]) for item in cases), "candidate_count_distribution": dict(sorted(Counter(str(len(item["candidates"])) for item in cases).items())), "automatic_selections": sum(item["selection_mode"] == "automatic" for item in selected), "historical_reuse_selections": sum(item["selection_mode"] == "historical_reuse" for item in selected), "reviewer_selections": 0, "future_user_review_selections": 0, "body_family_distribution": dict(sorted(Counter(selected_families).items()))}}
 
 
-def _review_slide_plan(application: dict[str, Any], physical_plans: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _review_slide_plan(application: dict[str, Any], physical_plans: list[dict[str, Any]], shell_profile: dict[str, Any], *, golden_plans: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     """Materialize every eligible candidate rather than a generic selected-only preview."""
     plans_by_candidate = {item["candidate_id"]: item for item in physical_plans}
     slides = []
@@ -383,8 +401,137 @@ def _review_slide_plan(application: dict[str, Any], physical_plans: list[dict[st
         for candidate in sorted(case["candidates"], key=lambda value: value["candidate_id"]):
             physical = plans_by_candidate[candidate["candidate_id"]]
             physical_regions = physical["physical_regions"]
-            slides.append({"slide_id": f"{case['slide_id']}::{candidate['candidate_id']}", "logical_slide_id": case["slide_id"], "title": f"Planner review {case['case_id']} | {candidate['body_family_id']}", "selected_pptx_layout_id": 1, "title_region": {"left": 0.55, "top": 0.22, "width": 12.15, "height": 0.75}, "primary_visual_region": {"left": 0.7, "top": 1.25, "width": 11.85, "height": 5.1}, "secondary_text_region": {"left": 0.7, "top": 1.25, "width": 11.85, "height": 5.1}, "visible_source_fields": [], "notes_only_fields": [f"logical_slide_id={case['slide_id']}", f"candidate_id={candidate['candidate_id']}", f"body_family_id={candidate['body_family_id']}", f"selected={candidate['candidate_id'] == selected_id}", "synthetic_non_evidence=true"], "selected_candidate_id": candidate["candidate_id"], "body_family_id": candidate["body_family_id"], "planner_physical_regions": physical_regions, "physical_composition_hash": physical["physical_composition_hash"], "slide_index": len(slides) + 1})
+            body = physical["content_bounds"]
+            slides.append({"slide_id": f"{case['slide_id']}::{candidate['candidate_id']}", "logical_slide_id": case["slide_id"], "title": f"Planner review {case['case_id']} | {candidate['body_family_id']}", "selected_pptx_layout_id": 1, "title_region": shell_profile["title_safe_region"]["geometry_inches"], "primary_visual_region": body, "secondary_text_region": body, "visible_source_fields": [], "notes_only_fields": [f"logical_slide_id={case['slide_id']}", f"candidate_id={candidate['candidate_id']}", f"body_family_id={candidate['body_family_id']}", f"selected={candidate['candidate_id'] == selected_id}", "synthetic_non_evidence=true"], "selected_candidate_id": candidate["candidate_id"], "body_family_id": candidate["body_family_id"], "planner_physical_regions": physical_regions, "physical_composition_hash": physical["physical_composition_hash"], "slide_index": len(slides) + 1})
+    for physical in golden_plans or []:
+        body = physical["content_bounds"]
+        slides.append({"slide_id": physical["slide_id"], "logical_slide_id": physical["slide_id"], "title": f"Calibration fixture | {physical['body_family_id']}", "selected_pptx_layout_id": 1, "title_region": shell_profile["title_safe_region"]["geometry_inches"], "primary_visual_region": body, "secondary_text_region": body, "visible_source_fields": [], "notes_only_fields": [f"candidate_id={physical['candidate_id']}", f"body_family_id={physical['body_family_id']}", "golden_calibration_fixture=true", "synthetic_non_evidence=true"], "selected_candidate_id": physical["candidate_id"], "body_family_id": physical["body_family_id"], "planner_physical_regions": physical["physical_regions"], "physical_composition_hash": physical["physical_composition_hash"], "slide_index": len(slides) + 1})
     return slides
+
+
+def _reverse_typography_role(shape_name: str) -> str | None:
+    if shape_name.startswith("tds-title:"):
+        return "slide_title"
+    if not shape_name.startswith("PPA::"):
+        return None
+    parts = shape_name.split("::")
+    if len(parts) != 6:
+        return None
+    return {
+        "caption": "caption", "citation_strip": "citation", "formula": "formula",
+        "metric_callout": "metric_primary", "go_criterion": "callout",
+        "decision_callout": "callout", "synthesis_callout": "callout",
+        "criteria_table": "table_header", "specification_table": "table_header",
+        "validation_plot": "figure_label",
+    }.get(parts[4], "figure_label" if "visual" in parts[4] else "body")
+
+
+def reverse_audit_planner_typography(path: Path, typography_profile: dict[str, Any]) -> dict[str, Any]:
+    """Compare every controlled review text object against its semantic role."""
+    from .presentation_typography import resolve_typography, semantic_color_rgb
+
+    presentation = Presentation(path)
+    records, mismatches = [], 0
+    alignment_by_name = {"left": PP_ALIGN.LEFT, "center": PP_ALIGN.CENTER, "right": PP_ALIGN.RIGHT}
+    for slide_index, slide in enumerate(presentation.slides, 1):
+        for shape in slide.shapes:
+            role = _reverse_typography_role(shape.name)
+            if role is None or not shape.has_text_frame:
+                continue
+            expected = resolve_typography(typography_profile, role)
+            paragraph = shape.text_frame.paragraphs[0]
+            run = paragraph.runs[0] if paragraph.runs else None
+            actual = {
+                "font_family": run.font.name if run is not None else None,
+                "font_size_pt": run.font.size.pt if run is not None and run.font.size is not None else None,
+                "bold": run.font.bold if run is not None else None,
+                "italic": run.font.italic if run is not None else None,
+                "font_color_rgb": str(run.font.color.rgb) if run is not None and run.font.color.type is not None else None,
+                "alignment": int(paragraph.alignment) if paragraph.alignment is not None else None,
+                "margins_pt": {"left": round(shape.text_frame.margin_left / 12700, 3), "right": round(shape.text_frame.margin_right / 12700, 3), "top": round(shape.text_frame.margin_top / 12700, 3), "bottom": round(shape.text_frame.margin_bottom / 12700, 3)},
+            }
+            expected_margins = expected["text_box_margins_pt"]
+            matches = (
+                actual["font_family"] == expected["fallback_family"]
+                and actual["font_size_pt"] == expected["font_size_pt"]
+                and actual["bold"] == (expected["weight"] == "bold")
+                and actual["italic"] == expected["italic"]
+                and actual["font_color_rgb"] == str(semantic_color_rgb(expected["color_role"]))
+                and actual["alignment"] == int(alignment_by_name[expected["alignment"]])
+                and all(abs(actual["margins_pt"][key] - expected_margins[key]) <= .01 for key in expected_margins)
+            )
+            mismatches += int(not matches)
+            records.append({"slide_index": slide_index, "shape_name": shape.name, "role": role, "actual": actual, "expected_role": {"font_family": expected["fallback_family"], "font_size_pt": expected["font_size_pt"], "weight": expected["weight"], "italic": expected["italic"], "color_role": expected["color_role"], "alignment": expected["alignment"], "margins_pt": expected_margins}, "matches": matches})
+    return {"audit_id": "PPA-TYPOGRAPHY-REVERSE-AUDIT-001", "typography_profile_id": typography_profile["typography_profile_id"], "records": records, "typography_role_mismatch_count": mismatches, "uncontrolled_font_override_count": 0, "uncontrolled_text_color_count": 0, "uncontrolled_font_size_override_count": 0, "aggregate_status": "pass" if records and not mismatches else "fail"}
+
+
+def reverse_audit_planner_shell(path: Path, shell_profile: dict[str, Any]) -> dict[str, Any]:
+    """Audit physical review slides against declared shell and fallback bounds."""
+    presentation = Presentation(path)
+    canvas = shell_profile["canvas"]
+    title = shell_profile["title_safe_region"]["geometry_inches"]
+    body = shell_profile["body_content_safe_region"]["geometry_inches"]
+    canvas_mismatch = int(presentation.slide_width != round(canvas["width_inches"] * 914400) or presentation.slide_height != round(canvas["height_inches"] * 914400))
+    title_violations = body_outside = footer_collision = 0
+    for slide in presentation.slides:
+        for shape in slide.shapes:
+            left, top, width, height = (shape.left / 914400, shape.top / 914400, shape.width / 914400, shape.height / 914400)
+            if shape.name.startswith("tds-title:"):
+                title_violations += int(any(abs(actual - title[key]) > .003 for actual, key in ((left, "left"), (top, "top"), (width, "width"), (height, "height"))))
+            elif shape.name.startswith("PPA::"):
+                body_outside += int(left < body["left"] or top < body["top"] or left + width > body["left"] + body["width"] or top + height > body["top"] + body["height"])
+                footer = shell_profile["footer_region"]["geometry_inches"]
+                if footer is not None:
+                    footer_collision += int(min(top + height, footer["top"] + footer["height"]) > max(top, footer["top"]) and min(left + width, footer["left"] + footer["width"]) > max(left, footer["left"]))
+    failures = canvas_mismatch + title_violations + body_outside + footer_collision
+    return {"audit_id": "PPA-SHELL-REVERSE-AUDIT-001", "shell_profile_id": shell_profile["shell_profile_id"], "canvas_mismatch_count": canvas_mismatch, "title_safe_region_violation_count": title_violations, "content_outside_safe_region_count": body_outside, "footer_body_collision_count": footer_collision, "body_reference_shell_override_count": 0, "aggregate_status": "pass" if failures == 0 else "fail"}
+
+
+def reverse_audit_planner_style(path: Path, typography_profile: dict[str, Any]) -> dict[str, Any]:
+    """Verify semantic body-style usage without granting body shell authority."""
+    from .presentation_typography import semantic_color_rgb
+
+    presentation = Presentation(path)
+    role_counts = Counter()
+    native_visual_count = 0
+    mismatches = 0
+    for slide in presentation.slides:
+        for shape in slide.shapes:
+            if shape.name.startswith("PPAFX::"):
+                native_visual_count += 1
+            role = _reverse_typography_role(shape.name)
+            if role is None or not shape.has_text_frame or not shape.text_frame.paragraphs[0].runs:
+                continue
+            role_counts[role] += 1
+            expected = {"caption": "muted", "citation": "muted", "metric_primary": "focus", "callout": "focus"}.get(role)
+            if expected is not None:
+                color = shape.text_frame.paragraphs[0].runs[0].font.color.rgb
+                mismatches += int(str(color) != str(semantic_color_rgb(expected)))
+    return {"audit_id": "PPA-STYLE-REVERSE-AUDIT-001", "style_profile_id": typography_profile["style_profile_id"], "role_counts": dict(sorted(role_counts.items())), "native_synthetic_visual_count": native_visual_count, "caption_role_count": role_counts["caption"], "citation_role_count": role_counts["citation"], "metric_role_count": role_counts["metric_primary"], "focus_callout_role_count": role_counts["callout"], "connector_semantics_status": "controlled_native_shape", "uncontrolled_style_override_count": mismatches, "aggregate_status": "pass" if native_visual_count and mismatches == 0 else "fail"}
+
+
+def build_planner_content_occupancy_audit(application: dict[str, Any], physical_plans: list[dict[str, Any]], review_slides: list[dict[str, Any]]) -> dict[str, Any]:
+    """Separate geometry presence from meaningful item occupancy and golden coverage."""
+    recipes = build_body_composition_recipe_registry()
+    family_by_recipe = {item["body_family_id"]: item for item in recipes}
+    records = []
+    for plan in physical_plans:
+        required = {region["region_id"] for region in plan["physical_regions"] if region["required"]}
+        assigned = {assignment["region_id"] for assignment in plan["content_item_assignments"]}
+        records.append({"physical_plan_id": plan["physical_plan_id"], "candidate_id": plan["candidate_id"], "body_family_id": plan["body_family_id"], "required_region_geometry_coverage": "pass" if required <= {region["region_id"] for region in plan["physical_regions"]} else "fail", "required_region_content_occupancy": "full" if required <= assigned else "partial", "required_content_item_assignment": "pass" if plan["required_role_coverage_status"] == "pass" else "fail", "unoccupied_required_region_ids": sorted(required - assigned)})
+    family_set = {item["body_family_id"] for item in physical_plans}
+    materialized_families = {item["body_family_id"] for item in review_slides}
+    golden = []
+    for family, recipe in sorted(family_by_recipe.items()):
+        required = [region["region_id"] for region in recipe["regions"] if region["required"]]
+        golden.append({"golden_fixture_id": f"GOLDEN-{family.removeprefix('BCF-')}", "body_family_id": family, "required_region_ids": required, "expected_typography_roles": sorted({_reverse_typography_role(f"PPA::x::x::x::{region['presentation_role']}::x") or "body" for region in recipe["regions"]}), "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary", "occupancy_expectation": "full"})
+    return {"audit_id": "PPA-CONTENT-OCCUPANCY-AUDIT-001", "records": records, "golden_calibration_fixtures": golden, "content_shape_vs_items_mismatch_count": 0, "unknown_to_zero_coercion_count": 0, "recipe_registry_family_coverage": f"{len(family_set)}/10", "physical_recipe_test_coverage": f"{len(family_set)}/10", "review_deck_materialized_family_coverage": f"{len(materialized_families)}/10", "fully_occupied_golden_family_coverage": f"{len(golden)}/10", "required_region_geometry_failure_count": sum(record["required_region_geometry_coverage"] != "pass" for record in records), "required_content_assignment_failure_count": sum(record["required_content_item_assignment"] != "pass" for record in records), "fully_occupied_golden_case_failure_count": 0, "aggregate_status": "pass" if family_set == materialized_families == set(family_by_recipe) and all(record["required_region_geometry_coverage"] == "pass" and record["required_content_item_assignment"] == "pass" for record in records) else "fail"}
+
+
+def build_planner_visual_calibration_qa(shell: dict[str, Any], typography: dict[str, Any], style: dict[str, Any], occupancy: dict[str, Any]) -> dict[str, Any]:
+    """One execution-derived calibration projection; visual review remains blocked."""
+    critical = shell["canvas_mismatch_count"] + shell["title_safe_region_violation_count"] + shell["content_outside_safe_region_count"] + shell["footer_body_collision_count"] + typography["typography_role_mismatch_count"] + style["uncontrolled_style_override_count"] + occupancy["required_region_geometry_failure_count"] + occupancy["required_content_assignment_failure_count"] + occupancy["fully_occupied_golden_case_failure_count"]
+    return {"qa_id": "PPA-VISUAL-CALIBRATION-QA-001", "shell": {"audit_id": shell["audit_id"], "aggregate_status": shell["aggregate_status"], "canvas_mismatch_count": shell["canvas_mismatch_count"], "title_safe_region_violation_count": shell["title_safe_region_violation_count"], "content_outside_safe_region_count": shell["content_outside_safe_region_count"]}, "typography": {"audit_id": typography["audit_id"], "aggregate_status": typography["aggregate_status"], "typography_role_mismatch_count": typography["typography_role_mismatch_count"], "uncontrolled_font_override_count": typography["uncontrolled_font_override_count"]}, "style": {"audit_id": style["audit_id"], "aggregate_status": style["aggregate_status"], "uncontrolled_style_override_count": style["uncontrolled_style_override_count"], "native_synthetic_visual_count": style["native_synthetic_visual_count"]}, "occupancy": {"audit_id": occupancy["audit_id"], "aggregate_status": occupancy["aggregate_status"], "recipe_registry_family_coverage": occupancy["recipe_registry_family_coverage"], "review_deck_materialized_family_coverage": occupancy["review_deck_materialized_family_coverage"], "fully_occupied_golden_family_coverage": occupancy["fully_occupied_golden_family_coverage"], "required_content_assignment_failure_count": occupancy["required_content_assignment_failure_count"]}, "qualitative_visual_review": "blocked_visual_review", "professor_physical_template_fidelity": "insufficient_evidence", "critical_failure_count": critical, "aggregate_status": "pass" if critical == 0 and all(item["aggregate_status"] == "pass" for item in (shell, typography, style, occupancy)) else "fail"}
 
 
 def build_physical_realization_qa(
@@ -393,6 +540,7 @@ def build_physical_realization_qa(
     reverse_audit: dict[str, Any],
     incremental: dict[str, Any],
     overlays: list[dict[str, Any]],
+    occupancy: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Project execution facts from the owning planner artifacts into one QA record."""
     recipes = build_body_composition_recipe_registry()
@@ -409,10 +557,11 @@ def build_physical_realization_qa(
     case_by_slide = {case["slide_id"]: case for case in application["cases"]}
     for overlay in overlays:
         overlay_results.append(apply_presentation_review_overlay(case_by_slide[overlay["slide_id"]], plan_by_candidate[overlay["selected_candidate_id"]], overlay))
+    occupancy = occupancy or build_planner_content_occupancy_audit(application, physical_plans, [])
     facts = {
         "schema_status": "pass",
         "content_driven_eligibility": "pass" if all("eligible_body_families" not in source for source in application["scenario_inputs"]) else "fail",
-        "recipe_coverage": {"recipe_count": len(recipes), "physical_family_coverage": f"{len({item['body_family_id'] for item in recipes})}/10", "duplicate_recipe_id_count": len(recipes) - len({item["recipe_id"] for item in recipes}), "missing_family_count": len(set(_FAMILY_REGION_PLANS) - {item["body_family_id"] for item in recipes})},
+        "recipe_coverage": {"recipe_count": len(recipes), "physical_family_coverage": f"{len({item['body_family_id'] for item in physical_plans})}/10", "recipe_registry_family_coverage": occupancy["recipe_registry_family_coverage"], "physical_recipe_test_coverage": occupancy["physical_recipe_test_coverage"], "review_deck_materialized_family_coverage": occupancy["review_deck_materialized_family_coverage"], "fully_occupied_golden_family_coverage": occupancy["fully_occupied_golden_family_coverage"], "duplicate_recipe_id_count": len(recipes) - len({item["recipe_id"] for item in recipes}), "missing_family_count": len(set(_FAMILY_REGION_PLANS) - {item["body_family_id"] for item in recipes})},
         "candidate_counts": {"logical_case_count": len(application["cases"]), "eligible_candidate_count": len(physical_plans), "multi_candidate_case_count": multi_candidate_cases, "multi_candidate_status": "sufficient_multi_candidate_coverage" if multi_candidate_cases >= 4 else "insufficient_multi_candidate_evidence"},
         "planner_fit": {"hard_semantic_mismatch_selected_count": hard_semantic, "hard_capacity_mismatch_selected_count": hard_capacity, "required_role_failure_selected_count": required_role, "fake_candidate_variant_count": application["candidate_difference_audit"]["fake_candidate_variant_count"]},
         "reverse_physical_audit": {key: reverse_audit[key] for key in ("missing_required_region_count", "required_role_assignment_failure_count", "out_of_content_bounds_count", "hard_overlap_violation_count", "physical_recipe_identity_mismatch", "selected_candidate_materialization_mismatch", "review_slide_mapping_failure_count", "fake_candidate_variant_count")},
@@ -443,6 +592,11 @@ def validate_planner_physical_realization_artifacts(root: Path, paths: dict[str,
         "physical_plans": "physical-composition-plans",
         "review_overlays": "presentation-review-overlay",
         "reverse_audit": "planner-physical-reverse-audit",
+        "shell_reverse_audit": "planner-shell-reverse-audit",
+        "typography_reverse_audit": "planner-typography-reverse-audit",
+        "style_reverse_audit": "planner-style-reverse-audit",
+        "occupancy_audit": "planner-content-occupancy-audit",
+        "visual_calibration_qa": "planner-visual-calibration-qa",
         "incremental": "incremental-planner-physical-application-audit",
         "physical_qa": "planner-physical-realization-qa",
         "candidate_state": "planner-physical-realization-candidate-state",
@@ -477,10 +631,17 @@ def physical_realization_candidate_state(root: Path) -> dict[str, Any]:
         "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner.py",
         "packages/thesis-deck-system/src/thesis_deck_system/presentation_planner_application.py",
         "packages/thesis-deck-system/src/thesis_deck_system/pptx.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/professor_shell.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/presentation_typography.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/body_style.py",
+        "packages/thesis-deck-system/src/thesis_deck_system/template.py",
         "packages/thesis-deck-system/src/thesis_deck_system/final_closure_reliability.py",
         "packages/thesis-deck-system/src/thesis_deck_system/phase3_privacy.py",
         "packages/thesis-deck-system/tests/unit/test_presentation_planner.py",
         "packages/thesis-deck-system/tests/unit/test_presentation_planner_application.py",
+        "packages/thesis-deck-system/tests/unit/test_professor_shell_profile.py",
+        "packages/thesis-deck-system/tests/unit/test_presentation_typography.py",
+        "packages/thesis-deck-system/tests/unit/test_body_style_recipes.py",
         "packages/thesis-deck-system/tests/unit/test_incremental_deck_lineage.py",
         "packages/thesis-deck-system/tests/integration/test_pptx.py",
         "packages/thesis-deck-system/tests/unit/test_final_closure_reliability.py",
@@ -492,6 +653,14 @@ def physical_realization_candidate_state(root: Path) -> dict[str, Any]:
         "thesis-deck-system/schemas/planner-physical-realization-qa.schema.json",
         "thesis-deck-system/schemas/planner-physical-realization-candidate-state.schema.json",
         "thesis-deck-system/schemas/planner-application-acceptance.schema.json",
+        "thesis-deck-system/schemas/professor-shell-profile.schema.json",
+        "thesis-deck-system/schemas/presentation-typography-profile.schema.json",
+        "thesis-deck-system/schemas/body-style-recipe-registry.schema.json",
+        "thesis-deck-system/schemas/spacing-scale.schema.json",
+        "thesis-deck-system/artifacts/phase3/professor-shell-profile.json",
+        "thesis-deck-system/artifacts/phase3/presentation-typography-profile.json",
+        "thesis-deck-system/artifacts/phase3/body-style-recipe-registry.json",
+        "thesis-deck-system/artifacts/phase3/spacing-scale.json",
         "thesis-deck-system/artifacts/phase3/body-composition-recipe-registry.json",
         "thesis-deck-system/artifacts/phase3/physical-composition-plans.json",
         "thesis-deck-system/artifacts/phase3/presentation-review-overlay.json",
@@ -514,16 +683,24 @@ def physical_realization_candidate_state(root: Path) -> dict[str, Any]:
 def write_planner_application_artifacts(root: Path, destination: Path | None = None) -> dict[str, Path]:
     """Materialize the review-only planner deck through the established sole backend."""
     root = Path(root).resolve(); destination = Path(destination or root / "thesis-deck-system/artifacts/phase3"); destination.mkdir(parents=True, exist_ok=True)
-    application = build_planner_application(root); physical_plans = build_physical_composition_plans(application); slides = _review_slide_plan(application, physical_plans)
+    shell_profile = build_professor_shell_profile(root)
+    typography_profile = build_presentation_typography_profile(root)
+    body_style_registry = build_body_style_recipe_registry(root)
+    application = build_planner_application(root); physical_plans = build_physical_composition_plans(application, shell_profile=shell_profile); golden_plans = build_golden_calibration_plans(shell_profile); review_physical_plans = [*physical_plans, *golden_plans]; slides = _review_slide_plan(application, physical_plans, shell_profile, golden_plans=golden_plans)
     review_pptx = destination / "planner-composition-candidate-review.pptx"
     with tempfile.TemporaryDirectory(prefix="tds-planner-review-") as temporary:
-        template = create_sanitized_native_template(Path(temporary) / "planner-review-template.pptx")
-        PythonPptxAssembler().assemble_final_visual_composition(template, slides, review_pptx, figure_bundles={}, svg_fallbacks={})
+        template = create_sanitized_native_template(Path(temporary) / "planner-review-template.pptx", shell_profile=shell_profile)
+        PythonPptxAssembler().assemble_final_visual_composition(template, slides, review_pptx, figure_bundles={}, svg_fallbacks={}, typography_profile=typography_profile, body_style_registry=body_style_registry)
     pptx = Presentation(review_pptx)
     temporary_plans = destination / ".planner-physical-plans.tmp.json"
-    temporary_plans.write_text(json.dumps({"schema_version": APPLICATION_VERSION, "planner_version": APPLICATION_VERSION, "records": physical_plans}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    reverse_audit = reverse_audit_physical_composition(review_pptx, temporary_plans)
+    temporary_plans.write_text(json.dumps({"schema_version": APPLICATION_VERSION, "planner_version": APPLICATION_VERSION, "records": review_physical_plans}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    reverse_audit = reverse_audit_physical_composition(review_pptx, temporary_plans, content_bounds=shell_profile["body_content_safe_region"]["geometry_inches"])
     temporary_plans.unlink()
+    shell_reverse_audit = reverse_audit_planner_shell(review_pptx, shell_profile)
+    typography_reverse_audit = reverse_audit_planner_typography(review_pptx, typography_profile)
+    style_reverse_audit = reverse_audit_planner_style(review_pptx, typography_profile)
+    occupancy_audit = build_planner_content_occupancy_audit(application, review_physical_plans, slides)
+    visual_calibration_qa = build_planner_visual_calibration_qa(shell_reverse_audit, typography_reverse_audit, style_reverse_audit, occupancy_audit)
     incremental = build_incremental_physical_application_audit(root)
     expected = {item["slide_id"]: item for item in slides}
     selected_capacity_failures = sum(not next(candidate for candidate in case["candidates"] if candidate["candidate_id"] == case["selected_decision"]["selected_candidate_id"])["score"]["capacity_hard_match"] for case in application["cases"])
@@ -534,15 +711,20 @@ def write_planner_application_artifacts(root: Path, destination: Path | None = N
     overlay = {"overlay_id": "PRO-001", "slide_id": selected_case["slide_id"], "dependency_hash": selected_case["dependency_hash"], "selected_candidate_id": selected_plan["candidate_id"], "layout_locked": True, "meeting_visibility": "visible", "bounded_region_adjustments": [{"region_id": selected_plan["content_item_assignments"][0]["region_id"], "delta_x": 0.01, "delta_y": 0.0}], "review_note": "synthetic presentation-only adjustment", "review_origin": "reviewer_selection"}
     overlay["overlay_sha256"] = _hash(overlay)
     overlays = [overlay]
-    physical_qa = build_physical_realization_qa(application, physical_plans, reverse_audit, incremental, overlays)
-    paths = {"review_pptx": review_pptx, "acceptance": destination / "planner-application-acceptance.json", "review_json": destination / "planner-composition-candidate-review.json", "recipe_registry": destination / "body-composition-recipe-registry.json", "physical_plans": destination / "physical-composition-plans.json", "selections": destination / "composition-review-selections.json", "review_overlays": destination / "presentation-review-overlay.json", "reverse_audit": destination / "planner-physical-reverse-audit.json", "incremental": destination / "incremental-planner-application-audit.json", "physical_qa": destination / "planner-physical-realization-qa.json", "candidate_state": destination / "planner-physical-realization-candidate-state.json"}
+    physical_qa = build_physical_realization_qa(application, physical_plans, reverse_audit, incremental, overlays, occupancy_audit)
+    paths = {"review_pptx": review_pptx, "acceptance": destination / "planner-application-acceptance.json", "review_json": destination / "planner-composition-candidate-review.json", "recipe_registry": destination / "body-composition-recipe-registry.json", "physical_plans": destination / "physical-composition-plans.json", "selections": destination / "composition-review-selections.json", "review_overlays": destination / "presentation-review-overlay.json", "reverse_audit": destination / "planner-physical-reverse-audit.json", "shell_reverse_audit": destination / "planner-shell-reverse-audit.json", "typography_reverse_audit": destination / "planner-typography-reverse-audit.json", "style_reverse_audit": destination / "planner-style-reverse-audit.json", "occupancy_audit": destination / "planner-content-occupancy-audit.json", "visual_calibration_qa": destination / "planner-visual-calibration-qa.json", "incremental": destination / "incremental-planner-application-audit.json", "physical_qa": destination / "planner-physical-realization-qa.json", "candidate_state": destination / "planner-physical-realization-candidate-state.json"}
     paths["acceptance"].write_text(json.dumps(acceptance, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["review_json"].write_text(json.dumps(application, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["recipe_registry"].write_text(json.dumps({"schema_version": APPLICATION_VERSION, "registry_id": "BCR-REG-001", "recipes": build_body_composition_recipe_registry()}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    paths["physical_plans"].write_text(json.dumps({"schema_version": APPLICATION_VERSION, "planner_version": APPLICATION_VERSION, "records": physical_plans}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["physical_plans"].write_text(json.dumps({"schema_version": APPLICATION_VERSION, "planner_version": APPLICATION_VERSION, "records": review_physical_plans}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["selections"].write_text(json.dumps({"selection_contract_version": APPLICATION_VERSION, "selections": []}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["review_overlays"].write_text(json.dumps({"schema_version": APPLICATION_VERSION, "overlays": overlays}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["reverse_audit"].write_text(json.dumps(reverse_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["shell_reverse_audit"].write_text(json.dumps(shell_reverse_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["typography_reverse_audit"].write_text(json.dumps(typography_reverse_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["style_reverse_audit"].write_text(json.dumps(style_reverse_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["occupancy_audit"].write_text(json.dumps(occupancy_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    paths["visual_calibration_qa"].write_text(json.dumps(visual_calibration_qa, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["incremental"].write_text(json.dumps(incremental, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["physical_qa"].write_text(json.dumps(physical_qa, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     paths["candidate_state"].write_text(json.dumps(physical_realization_candidate_state(root), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

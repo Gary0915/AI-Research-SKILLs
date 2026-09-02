@@ -21,6 +21,7 @@ from pptx.util import Inches, Pt
 from PIL import Image, ImageDraw, UnidentifiedImageError
 
 from .context import ProjectContext
+from .presentation_typography import apply_typography_to_shape, semantic_color_rgb
 
 
 def _svg_compatibility_preview(source_svg: Path, preview_root: Path) -> Path:
@@ -55,6 +56,121 @@ class PptxAssembler:
 
 
 class PythonPptxAssembler(PptxAssembler):
+    @staticmethod
+    def _planner_typography_role(presentation_role: str) -> str:
+        return {
+            "caption": "caption",
+            "citation_strip": "citation",
+            "formula": "formula",
+            "metric_callout": "metric_primary",
+            "go_criterion": "callout",
+            "decision_callout": "callout",
+            "synthesis_callout": "callout",
+            "criteria_table": "table_header",
+            "specification_table": "table_header",
+            "validation_plot": "figure_label",
+        }.get(presentation_role, "figure_label" if "visual" in presentation_role else "body")
+
+    @staticmethod
+    def _planner_region_label(region: dict) -> str:
+        """Visible copy for a synthetic composition fixture, never evidence."""
+        kind = region.get("content_kind", "text")
+        role = region.get("presentation_role", "body")
+        labels = {
+            "cad": "Component geometry study",
+            "photo": "Reference-image placement",
+            "plot": "Measured-trend composition",
+            "schematic": "Structured mechanism view",
+            "table": "Comparison criteria",
+            "formula": "Controlled relation",
+            "caption": "Figure caption · bounded layout fixture",
+            "citation": "Reference fixture · citation placement",
+            "metric": "Decision threshold",
+            "callout": "Focused design criterion",
+        }
+        return labels.get(kind, {
+            "procedure": "Method sequence",
+            "go_criterion": "Decision criterion",
+            "decision_callout": "Decision boundary",
+            "synthesis_callout": "Synthesis note",
+        }.get(role, "Structured supporting context"))
+
+    @staticmethod
+    def _apply_planner_fill(shape, fill_role: str, border_role: str = "border") -> None:
+        shape.fill.solid()
+        shape.fill.fore_color.rgb = semantic_color_rgb(fill_role)
+        shape.line.color.rgb = semantic_color_rgb(border_role)
+        shape.line.width = Pt(0.8)
+
+    def _add_planner_native_effects(self, slide, *, item: dict, region: dict, fill_role: str, typography_profile: dict) -> None:
+        """Use native shapes for bounded visual fixtures without evidence claims."""
+        geometry = region["geometry"]
+        left, top = Inches(geometry["left"]), Inches(geometry["top"])
+        width, height = Inches(geometry["width"]), Inches(geometry["height"])
+        base_name = "::".join(("PPAFX", str(item.get("logical_slide_id", item["slide_id"])), item["selected_candidate_id"], region["region_id"]))
+        kind = region.get("content_kind", "text")
+        if kind not in {"cad", "photo", "plot", "schematic", "table"}:
+            return
+        frame = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, left, top, width, height)
+        frame.name = f"{base_name}::frame"
+        self._apply_planner_fill(frame, "background")
+        if kind == "plot":
+            x_axis = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, left + int(width * .14), top + int(height * .78), left + int(width * .88), top + int(height * .78))
+            y_axis = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, left + int(width * .14), top + int(height * .78), left + int(width * .14), top + int(height * .18))
+            trend = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, left + int(width * .20), top + int(height * .66), left + int(width * .75), top + int(height * .32))
+            for ordinal, connector in enumerate((x_axis, y_axis, trend), 1):
+                connector.name = f"{base_name}::plot-line-{ordinal}"
+                connector.line.color.rgb = semantic_color_rgb("foreground" if ordinal < 3 else fill_role)
+                connector.line.width = Pt(1.3 if ordinal == 3 else .7)
+        elif kind in {"cad", "photo"}:
+            inner = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left + int(width * .2), top + int(height * .24), int(width * .58), int(height * .46))
+            inner.name = f"{base_name}::visual-frame"
+            self._apply_planner_fill(inner, "caption_background")
+            guide = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, left + int(width * .12), top + int(height * .80), left + int(width * .88), top + int(height * .80))
+            guide.name = f"{base_name}::dimension-line"
+            guide.line.color.rgb = semantic_color_rgb("measurement_reference")
+            guide.line.width = Pt(.75)
+        elif kind == "schematic":
+            first = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left + int(width * .13), top + int(height * .34), int(width * .25), int(height * .28))
+            second = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, left + int(width * .62), top + int(height * .34), int(width * .25), int(height * .28))
+            for ordinal, node in enumerate((first, second), 1):
+                node.name = f"{base_name}::node-{ordinal}"
+                self._apply_planner_fill(node, "caption_background")
+            arrow = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, left + int(width * .40), top + int(height * .48), left + int(width * .60), top + int(height * .48))
+            arrow.name = f"{base_name}::connector"
+            arrow.line.color.rgb = semantic_color_rgb("foreground")
+            arrow.line.width = Pt(1.1)
+        else:  # table
+            rows, columns = 3, 3
+            table = slide.shapes.add_table(rows, columns, left + int(width * .08), top + int(height * .20), int(width * .84), int(height * .60)).table
+            for row in range(rows):
+                for column in range(columns):
+                    cell = table.cell(row, column)
+                    cell.text = "Criterion" if row == 0 else "—"
+                    cell.fill.solid()
+                    cell.fill.fore_color.rgb = semantic_color_rgb("foreground" if row == 0 else "caption_background")
+                    apply_typography_to_shape(cell, typography_profile, "table_header" if row == 0 else "table_body")
+            # Native table does not expose a shape name per cell; its containing
+            # graphic frame remains under the assembler's sole writer.
+
+    def _add_planner_region(self, slide, *, item: dict, region: dict, typography_profile: dict, style_recipe: dict) -> None:
+        geometry = region["geometry"]
+        presentation_role = region["presentation_role"]
+        if presentation_role == "caption":
+            fill_role = style_recipe["caption_treatment"]["color_role"]
+        elif presentation_role in {"metric_callout", "go_criterion", "decision_callout", "synthesis_callout"}:
+            fill_role = style_recipe["metric_callout_treatment"]["color_role"]
+        else:
+            fill_role = style_recipe["panel_treatment"]["color_role"]
+        # Effects first: native visual structure stays behind its editable
+        # governed region label and preserves the reading/z-order contract.
+        self._add_planner_native_effects(slide, item=item, region=region, fill_role=fill_role, typography_profile=typography_profile)
+        text_box = slide.shapes.add_textbox(Inches(geometry["left"]), Inches(geometry["top"]), Inches(geometry["width"]), Inches(geometry["height"]))
+        text_box.name = f"PPA::{item.get('logical_slide_id', item['slide_id'])}::{item['selected_candidate_id']}::{region['region_id']}::{region['presentation_role']}::{region['item_id']}"
+        text_box.text = self._planner_region_label(region)
+        role = self._planner_typography_role(presentation_role)
+        apply_typography_to_shape(text_box, typography_profile, role)
+
     def assemble_native_vector_benchmark(self, template_path: Path, compiled_figures: list[tuple[object, dict]], output_path: Path) -> AssemblyResult:
         """Write synthetic H2 vectors through the sole public PPTX backend."""
         prs = Presentation(template_path)
@@ -199,6 +315,8 @@ class PythonPptxAssembler(PptxAssembler):
         *,
         figure_bundles: dict[str, tuple[object, dict]] | None = None,
         svg_fallbacks: dict[str, dict] | None = None,
+        typography_profile: dict | None = None,
+        body_style_registry: list[dict] | None = None,
     ) -> AssemblyResult:
         """Materialize a closure-approved composition through this sole writer.
 
@@ -208,6 +326,7 @@ class PythonPptxAssembler(PptxAssembler):
         """
         figure_bundles = figure_bundles or {}
         svg_fallbacks = svg_fallbacks or {}
+        style_by_family = {item["body_family_id"]: item for item in (body_style_registry or [])}
         materialization_facts: list[dict] = []
         shutil.copy2(template_path, output_path)
         prs = Presentation(output_path)
@@ -232,24 +351,24 @@ class PythonPptxAssembler(PptxAssembler):
             title_shape.text = item["title"]
             title_shape.text_frame.margin_left = title_shape.text_frame.margin_right = 0
             title_shape.text_frame.margin_top = title_shape.text_frame.margin_bottom = 0
-            for paragraph in title_shape.text_frame.paragraphs:
-                for run in paragraph.runs:
-                    run.font.size = Pt(27 if len(item["title"]) < 28 else 22)
+            if typography_profile is None:
+                for paragraph in title_shape.text_frame.paragraphs:
+                    for run in paragraph.runs:
+                        run.font.size = Pt(27 if len(item["title"]) < 28 else 22)
+            else:
+                apply_typography_to_shape(title_shape, typography_profile, "slide_title")
 
             planner_regions = item.get("planner_physical_regions")
             if planner_regions is not None:
                 if not isinstance(planner_regions, list) or not planner_regions:
                     raise ValueError(f"invalid planner physical regions: {item['slide_id']}")
+                if typography_profile is None or item.get("body_family_id") not in style_by_family:
+                    raise ValueError(f"planner physical composition requires governed typography and body style: {item['slide_id']}")
                 for region in planner_regions:
                     geometry = region.get("geometry", {})
                     if not all(isinstance(geometry.get(key), (int, float)) and geometry[key] >= 0 for key in ("left", "top", "width", "height")) or geometry.get("width", 0) <= 0 or geometry.get("height", 0) <= 0:
                         raise ValueError(f"invalid planner physical geometry: {item['slide_id']}")
-                    text_box = slide.shapes.add_textbox(Inches(geometry["left"]), Inches(geometry["top"]), Inches(geometry["width"]), Inches(geometry["height"]))
-                    text_box.name = f"PPA::{item.get('logical_slide_id', item['slide_id'])}::{item['selected_candidate_id']}::{region['region_id']}::{region['presentation_role']}::{region['item_id']}"
-                    text_box.text = f"SYNTHETIC_NON_EVIDENCE\n{region['presentation_role']}"
-                    for paragraph in text_box.text_frame.paragraphs:
-                        for run in paragraph.runs:
-                            run.font.size = Pt(12)
+                    self._add_planner_region(slide, item=item, region=region, typography_profile=typography_profile, style_recipe=style_by_family[item["body_family_id"]])
             else:
                 text_region = item["secondary_text_region"]
                 visible_text = item.get("visible_source_fields", [])
