@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "matrix_id": "PVAGM-001",
+  "baseline_commit": "72ca8ada45119f5a2adad814b31f919f52b22099",
+  "assessment_scope": "read_only_pre_implementation",
+  "source_priority": [
+    "latest_professor_research_instructions",
+    "scientific_method_and_reasoning_preferences",
+    "group_meeting_body_evidence",
+    "tsmc_jdp_body_evidence",
+    "sanitized_professor_shell_evidence",
+    "planner_calibration_rules",
+    "system_owned_fallback"
+  ],
+  "inputs": [
+    {"artifact": "thesis-deck-system/artifacts/phase3/professor-shell-profile.json", "role": "shell_authority", "evidence_state": "source_observed"},
+    {"artifact": "thesis-deck-system/artifacts/phase3/presentation-typography-profile.json", "role": "typography_baseline", "evidence_state": "system_calibrated"},
+    {"artifact": "thesis-deck-system/artifacts/phase3/body-style-recipe-registry.json", "role": "body_style_evidence", "evidence_state": "source_observed"},
+    {"artifact": "thesis-deck-system/artifacts/phase3/body-reference-evidence-resolution.json", "role": "group_meeting_and_tsmc_body_evidence", "evidence_state": "source_recurrent"},
+    {"artifact": "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.json", "role": "current_review_candidate_baseline", "evidence_state": "system_calibrated"},
+    {"artifact": "thesis-deck-system/artifacts/phase2/slide-specs.json", "role": "canonical_research_content", "evidence_state": "source_observed"},
+    {"artifact": "thesis-deck-system/artifacts/phase3/final-acceptance-slide-composition-plan.json", "role": "current_story_and_figure_bindings", "evidence_state": "source_observed"}
+  ],
+  "dimensions": [
+    {"dimension": "shell_fidelity", "baseline_status": "partial", "evidence_state": "source_observed", "gap": "Measured 16:9 title, footer, and page-number geometry exists; body safe bounds remain system-owned.", "required_action": "Retain PSP-001 shell and do not allow body references to override it."},
+    {"dimension": "title_treatment", "baseline_status": "partial", "evidence_state": "system_calibrated", "gap": "Profile establishes title roles but current review cases use engineering-oriented labels rather than short Traditional-Chinese research titles.", "required_action": "Materialize short Chinese titles and separate take-home text where needed."},
+    {"dimension": "typography_hierarchy", "baseline_status": "partial", "evidence_state": "system_calibrated", "gap": "PTP-001 provides controlled roles but baseline table/body minima are below this sprint's projection targets.", "required_action": "Add real-content reverse audit enforcing title 28–32 pt, main body 18–22 pt, and main/table text >=16 pt."},
+    {"dimension": "traditional_chinese_fit", "baseline_status": "missing", "evidence_state": "insufficient_evidence", "gap": "No baseline fixture stresses long and mixed Chinese/English production-length content.", "required_action": "Create source-closed Chinese fixtures and static wrapping/role checks."},
+    {"dimension": "image_plot_proportion", "baseline_status": "partial", "evidence_state": "source_recurrent", "gap": "Existing recipes encode geometry but not research-visual prominence by presentation family.", "required_action": "Add family-specific primary-visual prominence metrics."},
+    {"dimension": "technical_density", "baseline_status": "partial", "evidence_state": "source_recurrent", "gap": "Recipe capability exists without production-length research text, citations, or decision context.", "required_action": "Materialize realistic research density and audit text/caption/citation occupancy."},
+    {"dimension": "caption_treatment", "baseline_status": "partial", "evidence_state": "source_observed", "gap": "Caption role exists but has not been demonstrated on real research figure fixtures.", "required_action": "Use controlled short figure-attached caption strips."},
+    {"dimension": "citation_treatment", "baseline_status": "partial", "evidence_state": "source_observed", "gap": "Citation role exists but no review deck validates literature-length citations.", "required_action": "Use compact source-bound citation strips on literature fixtures."},
+    {"dimension": "table_treatment", "baseline_status": "partial", "evidence_state": "source_recurrent", "gap": "Current table roles are calibrated below the projection-readable requirement.", "required_action": "Use tables only for comparisons and audit primary cell text >=16 pt."},
+    {"dimension": "experiment_layout", "baseline_status": "partial", "evidence_state": "source_recurrent", "gap": "Hardware/procedure recipe is generic and lacks current G02-style setup and Go/No-Go semantics.", "required_action": "Create Group-Meeting-dominant setup, measurement-chain, and controlled-variable fixtures."},
+    {"dimension": "result_layout", "baseline_status": "partial", "evidence_state": "source_recurrent", "gap": "Result recipe has a dominant region but does not distinguish canonical measurements from synthetic layout-only plots.", "required_action": "Bind all results to canonical evidence or explicit synthetic_non_evidence status."},
+    {"dimension": "literature_layout", "baseline_status": "partial", "evidence_state": "source_recurrent", "gap": "Literature matrix is structurally available but lacks source-bound take-homes and citation occupancy.", "required_action": "Create TSMC-dominant literature review candidates with one synthesis statement."},
+    {"dimension": "comparison_layout", "baseline_status": "partial", "evidence_state": "source_recurrent", "gap": "Comparison recipes do not yet audit aligned variables or shared criteria strips with real content.", "required_action": "Add horizontal alignment and shared-comparison-criterion checks."},
+    {"dimension": "problem_mechanism_solution", "baseline_status": "partial", "evidence_state": "source_observed", "gap": "A structural family exists but current review material does not bind the problem/mechanism/solution story to canonical research facts.", "required_action": "Create source-closed current-priority mechanism and solution fixtures."},
+    {"dimension": "arrows_annotations", "baseline_status": "partial", "evidence_state": "source_recurrent", "gap": "Connector grammar is available but does not classify causal, focus, and measurement arrows at review-deck level.", "required_action": "Implement controlled arrow semantics and direct target auditing."},
+    {"dimension": "dashboard_card_smell", "baseline_status": "missing", "evidence_state": "system_calibrated", "gap": "No explicit audit rejects generic dashboard/card drift in rendered review candidates.", "required_action": "Add bounded fragmentation, rounded-panel, badge, and fixed-four-footer audits."},
+    {"dimension": "main_message_clarity", "baseline_status": "missing", "evidence_state": "system_calibrated", "gap": "Candidate selection is governed by structural eligibility rather than a declared one-main-message visual gate.", "required_action": "Add explicit main-message and supporting-element evidence per candidate."},
+    {"dimension": "candidate_usefulness", "baseline_status": "partial", "evidence_state": "system_calibrated", "gap": "Six structural multi-candidate cases exist, but alternatives are not yet realistic research presentation strategies.", "required_action": "Generate meaningful real-content A/B/C variants and a pending-human-selection manifest."}
+  ],
+  "baseline_counts": {
+    "shell_profile_id": "PSP-001",
+    "typography_profile_id": "PTP-001",
+    "controlled_typography_roles": 16,
+    "body_style_recipes": 10,
+    "current_logical_cases": 10,
+    "current_eligible_candidates": 16,
+    "current_multi_candidate_cases": 6
+  },
+  "implementation_boundary": {
+    "private_source_access_required": false,
+    "private_alias_resolution_attempts": 0,
+    "private_source_open_attempts": 0,
+    "private_render_attempts": 0,
+    "human_visual_acceptance": "not_reviewed",
+    "native_powerpoint_acceptance": "blocked_environment",
+    "historical_visual_migration": "prohibited"
+  },
+  "aggregate_status": "gap_analysis_complete"
+}
