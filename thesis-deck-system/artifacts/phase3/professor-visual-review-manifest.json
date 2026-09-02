@@ -1,0 +1,414 @@
+{
+  "schema_version": "1.0.0",
+  "review_manifest_id": "PVRM-001",
+  "cases": [
+    {
+      "logical_slide_id": "RRVA-R04",
+      "fixture_id": "R04",
+      "scientific_content_dependency_hash": "3e4d21b6b5491441cab5272f120a627a3a1021a0ebbea23f93e452d1e5bb7234",
+      "candidate_ids": [
+        "RRVC-5B5408035971F627",
+        "RRVC-9C3D232355FABF10"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "RRVC-5B5408035971F627",
+          "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+          "composition_strategy": "aligned_alternative_mechanism_comparison",
+          "body_source_class": "tsmc_dominant",
+          "physical_plan_hash": "57b20d33a6455d6377f0c0a8ca262444b8bb6658e0ed87c417c8f95bc684b2d2",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 5,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        },
+        {
+          "candidate_id": "RRVC-9C3D232355FABF10",
+          "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+          "composition_strategy": "problem_question_with_mechanism_sidecar",
+          "body_source_class": "tsmc_dominant",
+          "physical_plan_hash": "83a11bf66803b55176472416b3a94f4c0586003c898211bbaa7d2f7bdb69b7b4",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        }
+      ],
+      "selected_by_algorithm_candidate_id": "RRVC-5B5408035971F627",
+      "human_selection": null,
+      "human_status": "pending",
+      "review_dimensions": [
+        "message_clarity",
+        "figure_prominence",
+        "text_density",
+        "typography",
+        "caption",
+        "technical_density",
+        "group_meeting_tsmc_fit",
+        "overall_preference"
+      ]
+    },
+    {
+      "logical_slide_id": "RRVA-R05",
+      "fixture_id": "R05",
+      "scientific_content_dependency_hash": "762e8cfa2b0d45091c52fbfdeee6657be4c0cc94254a0952007fc64d0efcfe34",
+      "candidate_ids": [
+        "RRVC-A0A88FFE317BB571",
+        "RRVC-AFDA1ECFBC44D324"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "RRVC-A0A88FFE317BB571",
+          "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+          "composition_strategy": "precedent_to_gap_comparison",
+          "body_source_class": "tsmc_dominant",
+          "physical_plan_hash": "d596f6b13bf9595217d88d530db52924d04fa3adf1dc977bf9f7e0f8688a2e3d",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 5,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        },
+        {
+          "candidate_id": "RRVC-AFDA1ECFBC44D324",
+          "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+          "composition_strategy": "paper_visuals_with_short_takehomes",
+          "body_source_class": "tsmc_dominant",
+          "physical_plan_hash": "6bd41edddc1d2e5a4f1501aa61ea99f427fd1d3d75d42fbf0bb8fb1eba6e8d1d",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        }
+      ],
+      "selected_by_algorithm_candidate_id": "RRVC-A0A88FFE317BB571",
+      "human_selection": null,
+      "human_status": "pending",
+      "review_dimensions": [
+        "message_clarity",
+        "figure_prominence",
+        "text_density",
+        "typography",
+        "caption",
+        "technical_density",
+        "group_meeting_tsmc_fit",
+        "overall_preference"
+      ]
+    },
+    {
+      "logical_slide_id": "RRVA-R08",
+      "fixture_id": "R08",
+      "scientific_content_dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+      "candidate_ids": [
+        "RRVC-63AB339C5178A415",
+        "RRVC-6728D88AE926646F"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "RRVC-63AB339C5178A415",
+          "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+          "composition_strategy": "large_setup_with_conditions_side_rail",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "b11f974388615636240632036ca8aa2f40bb7a261dbae035100c9b537310a72d",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        },
+        {
+          "candidate_id": "RRVC-6728D88AE926646F",
+          "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+          "composition_strategy": "setup_evidence_matrix_with_parameters",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "6f4cdd40270372721993939523fd4bb6513972fe4009ced0335308c5b0739ad9",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        }
+      ],
+      "selected_by_algorithm_candidate_id": "RRVC-63AB339C5178A415",
+      "human_selection": null,
+      "human_status": "pending",
+      "review_dimensions": [
+        "message_clarity",
+        "figure_prominence",
+        "text_density",
+        "typography",
+        "caption",
+        "technical_density",
+        "group_meeting_tsmc_fit",
+        "overall_preference"
+      ]
+    },
+    {
+      "logical_slide_id": "RRVA-R11",
+      "fixture_id": "R11",
+      "scientific_content_dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+      "candidate_ids": [
+        "RRVC-A360B8A5E9077913",
+        "RRVC-D025BEB614E8C19C"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "RRVC-A360B8A5E9077913",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "composition_strategy": "plot_with_setup_and_decision_strip",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "3c946a553e98dab43c4751039465c4f206db143c32f8b14735d7aac21c1c5540",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 3,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        },
+        {
+          "candidate_id": "RRVC-D025BEB614E8C19C",
+          "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+          "composition_strategy": "dominant_plot_with_single_decision_sidecar",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "88262487bde6e2ad6343036a51a9b68a743e8a96a3cb8b3b67024b717d2aedd3",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 3,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        }
+      ],
+      "selected_by_algorithm_candidate_id": "RRVC-D025BEB614E8C19C",
+      "human_selection": null,
+      "human_status": "pending",
+      "review_dimensions": [
+        "message_clarity",
+        "figure_prominence",
+        "text_density",
+        "typography",
+        "caption",
+        "technical_density",
+        "group_meeting_tsmc_fit",
+        "overall_preference"
+      ]
+    },
+    {
+      "logical_slide_id": "RRVA-R12",
+      "fixture_id": "R12",
+      "scientific_content_dependency_hash": "972109c6701328b04a166c18509d3fa1de7ba9f786c5cf83aab36a86f0d53404",
+      "candidate_ids": [
+        "RRVC-1AC941F2F6BE6B96",
+        "RRVC-6223C9AB9C96B097"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "RRVC-1AC941F2F6BE6B96",
+          "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+          "composition_strategy": "mechanism_and_measurement_split",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "344a4668928047a1b49815b6b302f28f2d22f653984481893e9be95aca065fe4",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        },
+        {
+          "candidate_id": "RRVC-6223C9AB9C96B097",
+          "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+          "composition_strategy": "causal_path_with_support_visual",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "a864d0d49cdb0c8ec37ecc343bce1dfd4353847437e22f9ff03269b04406b01a",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        }
+      ],
+      "selected_by_algorithm_candidate_id": "RRVC-6223C9AB9C96B097",
+      "human_selection": null,
+      "human_status": "pending",
+      "review_dimensions": [
+        "message_clarity",
+        "figure_prominence",
+        "text_density",
+        "typography",
+        "caption",
+        "technical_density",
+        "group_meeting_tsmc_fit",
+        "overall_preference"
+      ]
+    },
+    {
+      "logical_slide_id": "RRVA-R13",
+      "fixture_id": "R13",
+      "scientific_content_dependency_hash": "8f57bf977f7eb938e8777c8ff323b7c16290c72dc1d1e55524890265b3f6d413",
+      "candidate_ids": [
+        "RRVC-B32D68F0CB335D6A",
+        "RRVC-BD0A59D0EA7405B4"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "RRVC-B32D68F0CB335D6A",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "composition_strategy": "paired_validation_visuals_with_plot",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "a58374a32ebdf55ebdc54f3aa0dcbf0b079d89500959aa463597a672d0212385",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 5,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        },
+        {
+          "candidate_id": "RRVC-BD0A59D0EA7405B4",
+          "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "composition_strategy": "aligned_control_treatment_and_shared_criterion",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "7fd49bce5a8acea2b3332cd4f89d14ae831b5062894e2ad49b673cc0b254798c",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 5,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        }
+      ],
+      "selected_by_algorithm_candidate_id": "RRVC-BD0A59D0EA7405B4",
+      "human_selection": null,
+      "human_status": "pending",
+      "review_dimensions": [
+        "message_clarity",
+        "figure_prominence",
+        "text_density",
+        "typography",
+        "caption",
+        "technical_density",
+        "group_meeting_tsmc_fit",
+        "overall_preference"
+      ]
+    },
+    {
+      "logical_slide_id": "RRVA-R14",
+      "fixture_id": "R14",
+      "scientific_content_dependency_hash": "b0aeb18765f8d2446591785271345f2292f55ed33ede9de6270d0d430fae6954",
+      "candidate_ids": [
+        "RRVC-1D4C0277DB4165C2",
+        "RRVC-CAD9A32016A1C4CA"
+      ],
+      "candidates": [
+        {
+          "candidate_id": "RRVC-1D4C0277DB4165C2",
+          "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "composition_strategy": "decision_tree_with_next_experiment",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "939d2dd08cc0889ca1f6c04579b31aeed6232e6c6744e3a09d04705a8507af23",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 5,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        },
+        {
+          "candidate_id": "RRVC-CAD9A32016A1C4CA",
+          "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+          "composition_strategy": "decision_criterion_with_execution_rail",
+          "body_source_class": "group_meeting_dominant",
+          "physical_plan_hash": "6927f1ff2e1ec3ee636dfdc25d684a9f02de3491a1ddf911293b8deebd6c8e88",
+          "algorithm_fit": {
+            "semantic_fit": 5,
+            "capacity_fit": 5,
+            "evidence_fit": 5,
+            "primary_visual_prominence_fit": 4,
+            "text_density_fit": 4,
+            "caption_density_fit": 4,
+            "comparison_alignment_fit": 3,
+            "technical_evidence_hierarchy_fit": 4
+          }
+        }
+      ],
+      "selected_by_algorithm_candidate_id": "RRVC-1D4C0277DB4165C2",
+      "human_selection": null,
+      "human_status": "pending",
+      "review_dimensions": [
+        "message_clarity",
+        "figure_prominence",
+        "text_density",
+        "typography",
+        "caption",
+        "technical_density",
+        "group_meeting_tsmc_fit",
+        "overall_preference"
+      ]
+    }
+  ],
+  "pending_human_decision_count": 7,
+  "aggregate_status": "ready_for_human_visual_acceptance_review"
+}

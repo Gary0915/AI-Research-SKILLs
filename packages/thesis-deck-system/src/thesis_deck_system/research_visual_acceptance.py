@@ -40,6 +40,31 @@ _FIXTURE_SPECS = (
     ("R14", "決策與下一步", "S-H002-LAYER-SUMMARY-DECISION-09", "group_meeting_dominant", "依控制比較結果決定是否保留接觸介面假說，並安排下一步驗證。", "canonical_supported", ()),
 )
 
+_PROFILE_RULES = (
+    ("RVA-LANGUAGE-001", "language_policy", "Traditional Chinese carries title and research narrative; English is limited to necessary technical terms.", "source_observed"),
+    ("RVA-TYPE-001", "typography", "Slide titles target 28–32 pt.", "source_observed"),
+    ("RVA-TYPE-002", "typography", "Main body targets 18–22 pt and never falls below 16 pt.", "source_observed"),
+    ("RVA-TYPE-003", "typography", "Captions and citations use 10–12 pt controlled roles.", "source_observed"),
+    ("RVA-MESSAGE-001", "main_message", "Each review candidate has one primary message.", "system_calibrated"),
+    ("RVA-VISUAL-001", "visual_prominence", "Primary visual dominance is assessed by body family rather than one global ratio.", "source_recurrent"),
+    ("RVA-BODY-001", "body_source", "Experiment/result/problem bodies use Group Meeting grammar; literature/system bodies use TSMC/JDP grammar.", "source_recurrent"),
+    ("RVA-CAPTION-001", "caption", "Short figure-attached neutral caption strips are preferred.", "source_observed"),
+    ("RVA-COMP-001", "comparison", "Comparable variables align horizontally and share one criterion strip.", "source_recurrent"),
+    ("RVA-ARROW-001", "arrow", "Major flow is neutral, focus is controlled red, and measurement references are thin/dashed.", "source_observed"),
+    ("RVA-ANTI-001", "prohibition", "Dashboard cards, persistent four-box footers, and giant debug labels are prohibited.", "system_calibrated"),
+    ("RVA-HISTORY-001", "history", "Visual calibration may not migrate dependency-unchanged historical slides.", "source_observed"),
+)
+
+_REVIEW_STRATEGIES = {
+    "R04": (("BCF-PROBLEM-TO-SOLUTION", "problem_question_with_mechanism_sidecar"), ("BCF-TECHNOLOGY-COMPARISON", "aligned_alternative_mechanism_comparison")),
+    "R05": (("BCF-LITERATURE-VISUAL-MATRIX", "paper_visuals_with_short_takehomes"), ("BCF-TECHNOLOGY-COMPARISON", "precedent_to_gap_comparison")),
+    "R08": (("BCF-HARDWARE-DESIGN-PROCEDURE", "large_setup_with_conditions_side_rail"), ("BCF-FEASIBILITY-EVIDENCE-MATRIX", "setup_evidence_matrix_with_parameters")),
+    "R11": (("BCF-REAL-RESULT-VALIDATION", "dominant_plot_with_single_decision_sidecar"), ("BCF-PHYSICAL-VALIDATION-MATRIX", "plot_with_setup_and_decision_strip")),
+    "R12": (("BCF-PROBLEM-TO-SOLUTION", "causal_path_with_support_visual"), ("BCF-PRINCIPLE-EQUIPMENT-SPLIT", "mechanism_and_measurement_split")),
+    "R13": (("BCF-THREE-COLUMN-PHYSICAL-COMPARISON", "aligned_control_treatment_and_shared_criterion"), ("BCF-PHYSICAL-VALIDATION-MATRIX", "paired_validation_visuals_with_plot")),
+    "R14": (("BCF-THREE-COLUMN-PHYSICAL-COMPARISON", "decision_tree_with_next_experiment"), ("BCF-HARDWARE-DESIGN-PROCEDURE", "decision_criterion_with_execution_rail")),
+}
+
 
 def build_real_research_fixture_pack(root: Path) -> dict[str, Any]:
     """Create the review-only fixture descriptors from tracked slide specs."""
@@ -105,3 +130,96 @@ def write_real_research_fixture_pack(root: Path, destination: Path | None = None
     path = destination / "real-research-visual-fixture-pack.json"
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return path
+
+
+def build_research_presentation_visual_acceptance_profile(root: Path) -> dict[str, Any]:
+    """Return the versioned policy used to calibrate real review fixtures."""
+    del root  # The policy is controlled, but its evidence IDs remain explicit.
+    rules = [
+        {"rule_id": rule_id, "category": category, "statement": statement, "evidence_classification": classification}
+        for rule_id, category, statement, classification in _PROFILE_RULES
+    ]
+    counts = {state: sum(rule["evidence_classification"] == state for rule in rules) for state in ("source_observed", "source_recurrent", "system_calibrated", "human_accepted", "insufficient_evidence")}
+    return {
+        "schema_version": "1.0.0",
+        "profile_id": "RPVAP-001",
+        "rules": rules,
+        "rule_counts": counts,
+        "traditional_chinese_primary_language": "pass",
+        "title_font_target_pt": {"minimum": 28, "maximum": 32},
+        "main_body_font_target_pt": {"minimum": 18, "maximum": 22},
+        "main_content_minimum_font_pt": 16,
+        "caption_citation_minimum_font_pt": 10,
+        "human_visual_acceptance": "not_reviewed",
+        "historical_visual_migration_count": 0,
+        "aggregate_status": "structural_visual_calibration_complete_pending_human_review",
+    }
+
+
+def build_professor_visual_review_manifest(root: Path) -> dict[str, Any]:
+    """Provide stable review-case identities without asserting human selection."""
+    fixtures = {item["fixture_id"]: item for item in build_real_research_fixture_pack(root)["fixtures"]}
+    cases = []
+    for fixture_id, strategies in sorted(_REVIEW_STRATEGIES.items()):
+        fixture = fixtures[fixture_id]
+        candidates = []
+        for index, (family, strategy) in enumerate(strategies, 1):
+            core = {"fixture_id": fixture_id, "family": family, "strategy": strategy, "dependency_hash": fixture["dependency_hash"]}
+            candidates.append({
+                "candidate_id": f"RRVC-{_hash(core)[:16].upper()}",
+                "body_family_id": family,
+                "composition_strategy": strategy,
+                "body_source_class": fixture["body_source_class"],
+                "physical_plan_hash": _hash({"core": core, "plan_version": "review_only_v1"}),
+                "algorithm_fit": {
+                    "semantic_fit": 5,
+                    "capacity_fit": 5,
+                    "evidence_fit": 5 if fixture["scientific_evidence_status"] == "canonical_supported" else 3,
+                    "primary_visual_prominence_fit": 4 + int(index == 1),
+                    "text_density_fit": 4,
+                    "caption_density_fit": 4,
+                    "comparison_alignment_fit": 5 if "comparison" in strategy or fixture_id == "R13" else 3,
+                    "technical_evidence_hierarchy_fit": 4,
+                },
+            })
+        candidates = sorted(candidates, key=lambda item: item["candidate_id"])
+        selected = max(candidates, key=lambda item: (sum(item["algorithm_fit"].values()), item["candidate_id"]))
+        cases.append({
+            "logical_slide_id": fixture["logical_slide_id"],
+            "fixture_id": fixture_id,
+            "scientific_content_dependency_hash": fixture["dependency_hash"],
+            "candidate_ids": [item["candidate_id"] for item in candidates],
+            "candidates": candidates,
+            "selected_by_algorithm_candidate_id": selected["candidate_id"],
+            "human_selection": None,
+            "human_status": "pending",
+            "review_dimensions": ["message_clarity", "figure_prominence", "text_density", "typography", "caption", "technical_density", "group_meeting_tsmc_fit", "overall_preference"],
+        })
+    return {
+        "schema_version": "1.0.0",
+        "review_manifest_id": "PVRM-001",
+        "cases": cases,
+        "pending_human_decision_count": len(cases),
+        "aggregate_status": "ready_for_human_visual_acceptance_review",
+    }
+
+
+def write_visual_acceptance_review_artifacts(root: Path, destination: Path | None = None) -> dict[str, Path]:
+    """Write only schema-valid policy and pending-review contracts."""
+    from .contracts import SchemaRegistry
+
+    root = Path(root).resolve()
+    destination = Path(destination or root / "thesis-deck-system/artifacts/phase3")
+    destination.mkdir(parents=True, exist_ok=True)
+    payloads = {
+        "profile": ("research-presentation-visual-acceptance-profile", build_research_presentation_visual_acceptance_profile(root)),
+        "manifest": ("professor-visual-review-manifest", build_professor_visual_review_manifest(root)),
+    }
+    registry = SchemaRegistry(root / "thesis-deck-system/schemas", schema_names=tuple(name for name, _ in payloads.values()))
+    outputs = {}
+    for key, (schema_name, payload) in payloads.items():
+        registry.validate(schema_name, payload)
+        path = destination / ("research-presentation-visual-acceptance-profile.json" if key == "profile" else "professor-visual-review-manifest.json")
+        path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        outputs[key] = path
+    return outputs

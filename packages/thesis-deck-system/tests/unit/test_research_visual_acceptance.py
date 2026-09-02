@@ -45,3 +45,35 @@ def test_fixture_writer_persists_schema_valid_source_closed_artifact(tmp_path: P
         "real-research-visual-fixture-pack", payload
     )
     assert payload["aggregate_status"] == "source_closed_review_fixture_pack"
+
+
+def test_visual_acceptance_profile_and_manifest_preserve_pending_human_choices():
+    from thesis_deck_system.research_visual_acceptance import (
+        build_professor_visual_review_manifest,
+        build_research_presentation_visual_acceptance_profile,
+    )
+
+    profile = build_research_presentation_visual_acceptance_profile(ROOT)
+    manifest = build_professor_visual_review_manifest(ROOT)
+
+    assert profile["human_visual_acceptance"] == "not_reviewed"
+    assert profile["traditional_chinese_primary_language"] == "pass"
+    assert profile["main_content_minimum_font_pt"] == 16
+    assert profile["rule_counts"]["source_observed"] > 0
+    assert profile["rule_counts"]["system_calibrated"] > 0
+    assert len(manifest["cases"]) >= 6
+    assert all(case["human_selection"] is None and case["human_status"] == "pending" for case in manifest["cases"])
+
+
+def test_profile_and_manifest_writers_emit_closed_contracts(tmp_path: Path):
+    import json
+
+    from thesis_deck_system.contracts import SchemaRegistry
+    from thesis_deck_system.research_visual_acceptance import write_visual_acceptance_review_artifacts
+
+    outputs = write_visual_acceptance_review_artifacts(ROOT, tmp_path)
+    registry = SchemaRegistry(ROOT / "thesis-deck-system/schemas", schema_names=(
+        "research-presentation-visual-acceptance-profile", "professor-visual-review-manifest",
+    ))
+    registry.validate("research-presentation-visual-acceptance-profile", json.loads(outputs["profile"].read_text(encoding="utf-8")))
+    registry.validate("professor-visual-review-manifest", json.loads(outputs["manifest"].read_text(encoding="utf-8")))

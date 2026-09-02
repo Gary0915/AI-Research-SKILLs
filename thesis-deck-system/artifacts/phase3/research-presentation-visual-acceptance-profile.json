@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "RPVAP-001",
+  "rules": [
+    {
+      "rule_id": "RVA-LANGUAGE-001",
+      "category": "language_policy",
+      "statement": "Traditional Chinese carries title and research narrative; English is limited to necessary technical terms.",
+      "evidence_classification": "source_observed"
+    },
+    {
+      "rule_id": "RVA-TYPE-001",
+      "category": "typography",
+      "statement": "Slide titles target 28–32 pt.",
+      "evidence_classification": "source_observed"
+    },
+    {
+      "rule_id": "RVA-TYPE-002",
+      "category": "typography",
+      "statement": "Main body targets 18–22 pt and never falls below 16 pt.",
+      "evidence_classification": "source_observed"
+    },
+    {
+      "rule_id": "RVA-TYPE-003",
+      "category": "typography",
+      "statement": "Captions and citations use 10–12 pt controlled roles.",
+      "evidence_classification": "source_observed"
+    },
+    {
+      "rule_id": "RVA-MESSAGE-001",
+      "category": "main_message",
+      "statement": "Each review candidate has one primary message.",
+      "evidence_classification": "system_calibrated"
+    },
+    {
+      "rule_id": "RVA-VISUAL-001",
+      "category": "visual_prominence",
+      "statement": "Primary visual dominance is assessed by body family rather than one global ratio.",
+      "evidence_classification": "source_recurrent"
+    },
+    {
+      "rule_id": "RVA-BODY-001",
+      "category": "body_source",
+      "statement": "Experiment/result/problem bodies use Group Meeting grammar; literature/system bodies use TSMC/JDP grammar.",
+      "evidence_classification": "source_recurrent"
+    },
+    {
+      "rule_id": "RVA-CAPTION-001",
+      "category": "caption",
+      "statement": "Short figure-attached neutral caption strips are preferred.",
+      "evidence_classification": "source_observed"
+    },
+    {
+      "rule_id": "RVA-COMP-001",
+      "category": "comparison",
+      "statement": "Comparable variables align horizontally and share one criterion strip.",
+      "evidence_classification": "source_recurrent"
+    },
+    {
+      "rule_id": "RVA-ARROW-001",
+      "category": "arrow",
+      "statement": "Major flow is neutral, focus is controlled red, and measurement references are thin/dashed.",
+      "evidence_classification": "source_observed"
+    },
+    {
+      "rule_id": "RVA-ANTI-001",
+      "category": "prohibition",
+      "statement": "Dashboard cards, persistent four-box footers, and giant debug labels are prohibited.",
+      "evidence_classification": "system_calibrated"
+    },
+    {
+      "rule_id": "RVA-HISTORY-001",
+      "category": "history",
+      "statement": "Visual calibration may not migrate dependency-unchanged historical slides.",
+      "evidence_classification": "source_observed"
+    }
+  ],
+  "rule_counts": {
+    "source_observed": 7,
+    "source_recurrent": 3,
+    "system_calibrated": 2,
+    "human_accepted": 0,
+    "insufficient_evidence": 0
+  },
+  "traditional_chinese_primary_language": "pass",
+  "title_font_target_pt": {
+    "minimum": 28,
+    "maximum": 32
+  },
+  "main_body_font_target_pt": {
+    "minimum": 18,
+    "maximum": 22
+  },
+  "main_content_minimum_font_pt": 16,
+  "caption_citation_minimum_font_pt": 10,
+  "human_visual_acceptance": "not_reviewed",
+  "historical_visual_migration_count": 0,
+  "aggregate_status": "structural_visual_calibration_complete_pending_human_review"
+}
