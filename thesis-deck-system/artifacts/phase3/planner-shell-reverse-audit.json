@@ -1,0 +1,10 @@
+{
+  "audit_id": "PPA-SHELL-REVERSE-AUDIT-001",
+  "shell_profile_id": "PSP-001",
+  "canvas_mismatch_count": 0,
+  "title_safe_region_violation_count": 0,
+  "content_outside_safe_region_count": 0,
+  "footer_body_collision_count": 0,
+  "body_reference_shell_override_count": 0,
+  "aggregate_status": "pass"
+}

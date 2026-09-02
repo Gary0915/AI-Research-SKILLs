@@ -1,0 +1,34 @@
+{
+  "qa_id": "PPA-VISUAL-CALIBRATION-QA-001",
+  "shell": {
+    "audit_id": "PPA-SHELL-REVERSE-AUDIT-001",
+    "aggregate_status": "pass",
+    "canvas_mismatch_count": 0,
+    "title_safe_region_violation_count": 0,
+    "content_outside_safe_region_count": 0
+  },
+  "typography": {
+    "audit_id": "PPA-TYPOGRAPHY-REVERSE-AUDIT-001",
+    "aggregate_status": "pass",
+    "typography_role_mismatch_count": 0,
+    "uncontrolled_font_override_count": 0
+  },
+  "style": {
+    "audit_id": "PPA-STYLE-REVERSE-AUDIT-001",
+    "aggregate_status": "pass",
+    "uncontrolled_style_override_count": 0,
+    "native_synthetic_visual_count": 199
+  },
+  "occupancy": {
+    "audit_id": "PPA-CONTENT-OCCUPANCY-AUDIT-001",
+    "aggregate_status": "pass",
+    "recipe_registry_family_coverage": "10/10",
+    "review_deck_materialized_family_coverage": "10/10",
+    "fully_occupied_golden_family_coverage": "10/10",
+    "required_content_assignment_failure_count": 0
+  },
+  "qualitative_visual_review": "blocked_visual_review",
+  "professor_physical_template_fidelity": "insufficient_evidence",
+  "critical_failure_count": 0,
+  "aggregate_status": "pass"
+}

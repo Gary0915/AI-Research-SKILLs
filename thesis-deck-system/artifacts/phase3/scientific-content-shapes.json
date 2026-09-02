@@ -2,7 +2,7 @@
   "planner_version": "1.0.0",
   "records": [
     {
-      "content_shape_id": "SCS-f26c06885bf66741",
+      "content_shape_id": "SCS-F26C06885BF66741",
       "slide_id": "FVCC-COVER-001",
       "semantic_stage": "formal_cover",
       "observations": {
@@ -62,6 +62,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -89,11 +97,13 @@
       },
       "text_density_class": "low",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "f336866775afdd0be0c6f5edf1db01b5939f15f614716771bc3004291c234527"
+      "content_shape_sha256": "5ffc4736dafff65ff7442ed973828d80b0a3052a3c8cf5d687cb41e927b83caa"
     },
     {
-      "content_shape_id": "SCS-9fafe89e385714d8",
+      "content_shape_id": "SCS-9FAFE89E385714D8",
       "slide_id": "S-PHASE2-PROGRESS-01",
       "semantic_stage": "progress_todo",
       "observations": {
@@ -153,6 +163,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -180,11 +198,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "medium",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "30876dff1656f02e9c9dfeaa4c0cbef8886f4be717d477858fbf155a0c13c1fa"
+      "content_shape_sha256": "4c451bfb8ebd6559df2247302e1a316277284db013a571dbdf9d3360db453b15"
     },
     {
-      "content_shape_id": "SCS-35efb8a9d26550fb",
+      "content_shape_id": "SCS-35EFB8A9D26550FB",
       "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
       "semantic_stage": "hypothesis_title",
       "observations": {
@@ -244,6 +264,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -271,11 +299,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "medium",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "b1f3b54099097145ecb943e874c7a82cc8241557a41dd99a9f6692632138c546"
+      "content_shape_sha256": "9a4a1fbf45995cf5587a9ccc18ef8794a9a1b3fbc85db1ced9bc5271d5c5cbcb"
     },
     {
-      "content_shape_id": "SCS-a2128ae352baca31",
+      "content_shape_id": "SCS-A2128AE352BACA31",
       "slide_id": "S-H001-PROBLEM-DEFINITION-02",
       "semantic_stage": "problem_definition",
       "observations": {
@@ -335,6 +365,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -362,11 +400,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "af204fc2041b24020659bc8812e8dcc6861333f832ad16adc898df289b3ab245"
+      "content_shape_sha256": "b6c18f25a56ff107922afa3a0fd31acf3e08497d9d55f40aaca3d221067141cf"
     },
     {
-      "content_shape_id": "SCS-c8b3c4ee6096372b",
+      "content_shape_id": "SCS-C8B3C4EE6096372B",
       "slide_id": "S-H001-FISHBONE-LOCATOR-03",
       "semantic_stage": "fishbone_locator",
       "observations": {
@@ -426,6 +466,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -453,11 +501,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "f9382fb300554ec489d778f10894e4d9e7441e2b46387b3a4e6e55a1ab6488ed"
+      "content_shape_sha256": "c09292490b69b27601b202760765a12d66fde112de6ae5d66aabc3653d9709ae"
     },
     {
-      "content_shape_id": "SCS-f0adb250605c0819",
+      "content_shape_id": "SCS-F0ADB250605C0819",
       "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
       "semantic_stage": "observation_problem",
       "observations": {
@@ -517,6 +567,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -544,11 +602,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "medium",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "7b46be215c3430b81b6978b3a9c4a7f6c6fd5758a22258084143ec8fde44e90d"
+      "content_shape_sha256": "e4b945cfa5ca14ad52f587973256513248f451661e6163ac56f019382f5e09ef"
     },
     {
-      "content_shape_id": "SCS-7539affd76695070",
+      "content_shape_id": "SCS-7539AFFD76695070",
       "slide_id": "S-H001-LITERATURE-MECHANISM-05",
       "semantic_stage": "literature_mechanism",
       "observations": {
@@ -608,6 +668,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -635,11 +703,13 @@
       },
       "text_density_class": "high",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "312c78236ecb754df1f008dce9175e8bc4866c091b2d61f615be95a9801c5b7a"
+      "content_shape_sha256": "b8fe82534cfef76b25b90e68cd7727f0e96dd9049bd402436742c6c2d062c8f0"
     },
     {
-      "content_shape_id": "SCS-8e9ba6f667630067",
+      "content_shape_id": "SCS-8E9BA6F667630067",
       "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
       "semantic_stage": "experiment_design",
       "observations": {
@@ -699,6 +769,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -726,11 +804,13 @@
       },
       "text_density_class": "high",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "8f81794fc9c3e82bdac9f4b3a32c0d8f2e1609e1ce78fdec239b0981d006d9b1"
+      "content_shape_sha256": "0b249bbeb3375bda3aed7f9bf604b89f453acd873cbb52c65ca9ba4669b64b7c"
     },
     {
-      "content_shape_id": "SCS-51d80544a574d324",
+      "content_shape_id": "SCS-51D80544A574D324",
       "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
       "semantic_stage": "experiment_design",
       "observations": {
@@ -790,6 +870,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -817,11 +905,13 @@
       },
       "text_density_class": "high",
       "evidence_density_class": "medium",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "90dfcef6f41c9c6e6f2437df93ad054b6066934b12d0f75e0ca8c12b65d49eae"
+      "content_shape_sha256": "111ab45a132412d69255ced78d8e959c6970d7d4c569cbbe87a031321e0e00e5"
     },
     {
-      "content_shape_id": "SCS-5b9f39a3f54045d4",
+      "content_shape_id": "SCS-5B9F39A3F54045D4",
       "slide_id": "S-H001-RESULT-SINGLE-08",
       "semantic_stage": "result_single",
       "observations": {
@@ -881,6 +971,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "value",
+          "value": 1
+        },
         "result_metric_count": {
           "state": "value",
           "value": 1
@@ -908,11 +1006,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "9c8a409e36d3ce908d598a3aabef5d411d9a911d29f0236d637faf40b63324ac"
+      "content_shape_sha256": "3a512f9f317bfa4bb77afc7ca6313776412665cb82f60da2612da2b960fbe41e"
     },
     {
-      "content_shape_id": "SCS-df9dc95f20e0e535",
+      "content_shape_id": "SCS-DF9DC95F20E0E535",
       "slide_id": "S-H001-RESULT-SINGLE-09",
       "semantic_stage": "result_single",
       "observations": {
@@ -972,6 +1072,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "value",
+          "value": 1
+        },
         "result_metric_count": {
           "state": "value",
           "value": 1
@@ -999,11 +1107,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "9c8a409e36d3ce908d598a3aabef5d411d9a911d29f0236d637faf40b63324ac"
+      "content_shape_sha256": "3a512f9f317bfa4bb77afc7ca6313776412665cb82f60da2612da2b960fbe41e"
     },
     {
-      "content_shape_id": "SCS-0b826d3123112741",
+      "content_shape_id": "SCS-0B826D3123112741",
       "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
       "semantic_stage": "layer_integrated_discussion",
       "observations": {
@@ -1063,6 +1173,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1090,11 +1208,13 @@
       },
       "text_density_class": "high",
       "evidence_density_class": "medium",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "3b2f83c5d2ca13637acc27e41fb2e32bf72b5abe28174adf2bacc693cab4ebe2"
+      "content_shape_sha256": "b578a183829edeea23c2c483aefb4fc899304e203e5239e3964cdd9d338e7331"
     },
     {
-      "content_shape_id": "SCS-6a7546a6936f03df",
+      "content_shape_id": "SCS-6A7546A6936F03DF",
       "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
       "semantic_stage": "layer_summary_decision",
       "observations": {
@@ -1154,6 +1274,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1181,11 +1309,13 @@
       },
       "text_density_class": "high",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "83c486a9b95eb65ea5de322ded3a5274318b7f5631abf62194263c28b18d240f"
+      "content_shape_sha256": "d2471892fdc51f1eae2cce0921c74044385d62049564f4ae330501a820ff38a0"
     },
     {
-      "content_shape_id": "SCS-75c62e4e7d44618b",
+      "content_shape_id": "SCS-75C62E4E7D44618B",
       "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
       "semantic_stage": "hypothesis_transition",
       "observations": {
@@ -1245,6 +1375,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1272,11 +1410,13 @@
       },
       "text_density_class": "high",
       "evidence_density_class": "medium",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "ea866838c6549b96cdae5c1bb51572e001bae356e2439bd4cb317e5dccda1d2e"
+      "content_shape_sha256": "2c93c5ba4bf024fbd097a3a1b82f62a1fe803956769c355d2c404ff254819811"
     },
     {
-      "content_shape_id": "SCS-31748c9e98ee973d",
+      "content_shape_id": "SCS-31748C9E98EE973D",
       "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
       "semantic_stage": "hypothesis_title",
       "observations": {
@@ -1336,6 +1476,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1363,11 +1511,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "f4f57f2ab01bf9be7b590e0ff7e38d0734561e18074386ba90a50dc4fa328e49"
+      "content_shape_sha256": "6cf4077ec4cd74bbb61309f42bfebe4081923c31511ffb696c60eb9d3bc78d87"
     },
     {
-      "content_shape_id": "SCS-85267a8b5e594183",
+      "content_shape_id": "SCS-85267A8B5E594183",
       "slide_id": "S-H002-PROBLEM-DEFINITION-02",
       "semantic_stage": "problem_definition",
       "observations": {
@@ -1427,6 +1577,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1454,11 +1612,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "af204fc2041b24020659bc8812e8dcc6861333f832ad16adc898df289b3ab245"
+      "content_shape_sha256": "b6c18f25a56ff107922afa3a0fd31acf3e08497d9d55f40aaca3d221067141cf"
     },
     {
-      "content_shape_id": "SCS-e5a41db4a1a44ff6",
+      "content_shape_id": "SCS-E5A41DB4A1A44FF6",
       "slide_id": "S-H002-FISHBONE-LOCATOR-03",
       "semantic_stage": "fishbone_locator",
       "observations": {
@@ -1518,6 +1678,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1545,11 +1713,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "f9382fb300554ec489d778f10894e4d9e7441e2b46387b3a4e6e55a1ab6488ed"
+      "content_shape_sha256": "c09292490b69b27601b202760765a12d66fde112de6ae5d66aabc3653d9709ae"
     },
     {
-      "content_shape_id": "SCS-ce2bf1b4776f1495",
+      "content_shape_id": "SCS-CE2BF1B4776F1495",
       "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
       "semantic_stage": "observation_problem",
       "observations": {
@@ -1609,6 +1779,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1636,11 +1814,13 @@
       },
       "text_density_class": "high",
       "evidence_density_class": "medium",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "612b71a83e2dc04dbbffb9d7ba6f9c544e1d0dd0ff0c2dd640f251aebfe82b52"
+      "content_shape_sha256": "55d952956b65c715a3cbfb2dc1633555242bcabaf1bfe2c7a20b33208022a961"
     },
     {
-      "content_shape_id": "SCS-3b05d53998f5e557",
+      "content_shape_id": "SCS-3B05D53998F5E557",
       "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
       "semantic_stage": "result_comparison",
       "observations": {
@@ -1700,6 +1880,14 @@
           "state": "value",
           "value": 1
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1727,11 +1915,13 @@
       },
       "text_density_class": "medium",
       "evidence_density_class": "medium",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "ae1256bd68dcc6cc53a75904413af9087c12703b21a6f16f219984baaf59b061"
+      "content_shape_sha256": "5eefbb810835654dade571705a1e03426a06ebbb8d393db190ec6c45d0900680"
     },
     {
-      "content_shape_id": "SCS-f8cdbe6d807bd69e",
+      "content_shape_id": "SCS-F8CDBE6D807BD69E",
       "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
       "semantic_stage": "layer_summary_decision",
       "observations": {
@@ -1791,6 +1981,14 @@
           "state": "value",
           "value": 0
         },
+        "citation_count": {
+          "state": "unavailable",
+          "value": null
+        },
+        "metric_count": {
+          "state": "unavailable",
+          "value": null
+        },
         "result_metric_count": {
           "state": "unavailable",
           "value": null
@@ -1818,8 +2016,10 @@
       },
       "text_density_class": "high",
       "evidence_density_class": "low",
+      "composition_content_items": [],
+      "content_items_provided": false,
       "shape_basis": "canonical_slidespec_projection",
-      "content_shape_sha256": "98aa737827b5cfb7bfb0668ed76864d619a33d6c4b3cca894550e36ffddd38ba"
+      "content_shape_sha256": "8e12bdc9e3f7afa87742df89cc0443f12bd3804a824d8f01597cf50fcbf215f1"
     }
   ]
 }

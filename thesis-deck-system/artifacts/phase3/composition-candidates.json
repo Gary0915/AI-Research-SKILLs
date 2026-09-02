@@ -2,370 +2,819 @@
   "planner_version": "1.0.0",
   "records": [
     {
-      "candidate_id": "CC-F402A483DBDEB3AB",
+      "candidate_id": "CC-20ECD9CD3C33BFC1",
       "slide_id": "FVCC-COVER-001",
-      "content_shape_sha256": "f336866775afdd0be0c6f5edf1db01b5939f15f614716771bc3004291c234527",
+      "content_shape_sha256": "5ffc4736dafff65ff7442ed973828d80b0a3052a3c8cf5d687cb41e927b83caa",
       "capability_id": "LCD-TEXT-TOP-DUAL-VISUAL",
       "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 4,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 7
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-DBE13175EDAD8C18",
+      "candidate_id": "CC-BE586E33CDE0CF36",
       "slide_id": "S-PHASE2-PROGRESS-01",
-      "content_shape_sha256": "30876dff1656f02e9c9dfeaa4c0cbef8886f4be717d477858fbf155a0c13c1fa",
+      "content_shape_sha256": "4c451bfb8ebd6559df2247302e1a316277284db013a571dbdf9d3360db453b15",
       "capability_id": "LCD-TEXT-TOP-DUAL-VISUAL",
       "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 4,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 7
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-F4710FB399D4624F",
+      "candidate_id": "CC-53A93492A4D850D9",
       "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
-      "content_shape_sha256": "b1f3b54099097145ecb943e874c7a82cc8241557a41dd99a9f6692632138c546",
+      "content_shape_sha256": "9a4a1fbf45995cf5587a9ccc18ef8794a9a1b3fbc85db1ced9bc5271d5c5cbcb",
       "capability_id": "LCD-PROBLEM-TO-SOLUTION",
       "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-404F57043FFA3A97",
+      "candidate_id": "CC-9EFF5DABAE9428F4",
       "slide_id": "S-H001-PROBLEM-DEFINITION-02",
-      "content_shape_sha256": "af204fc2041b24020659bc8812e8dcc6861333f832ad16adc898df289b3ab245",
+      "content_shape_sha256": "b6c18f25a56ff107922afa3a0fd31acf3e08497d9d55f40aaca3d221067141cf",
       "capability_id": "LCD-PROBLEM-TO-SOLUTION",
       "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-8A1DF57A9722958F",
+      "candidate_id": "CC-C0F9ED4A97A21177",
       "slide_id": "S-H001-FISHBONE-LOCATOR-03",
-      "content_shape_sha256": "f9382fb300554ec489d778f10894e4d9e7441e2b46387b3a4e6e55a1ab6488ed",
+      "content_shape_sha256": "c09292490b69b27601b202760765a12d66fde112de6ae5d66aabc3653d9709ae",
       "capability_id": "LCD-PROBLEM-TO-SOLUTION",
       "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-FE93719DB1BCFEB6",
+      "candidate_id": "CC-A314F2417EDB2D61",
       "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
-      "content_shape_sha256": "7b46be215c3430b81b6978b3a9c4a7f6c6fd5758a22258084143ec8fde44e90d",
+      "content_shape_sha256": "e4b945cfa5ca14ad52f587973256513248f451661e6163ac56f019382f5e09ef",
       "capability_id": "LCD-PROBLEM-TO-SOLUTION",
       "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-56E66BBCD62E6ACA",
+      "candidate_id": "CC-942410A9126B8FD3",
       "slide_id": "S-H001-LITERATURE-MECHANISM-05",
-      "content_shape_sha256": "312c78236ecb754df1f008dce9175e8bc4866c091b2d61f615be95a9801c5b7a",
-      "capability_id": "LCD-PRINCIPLE-EQUIPMENT-SPLIT",
-      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-83ADB08EC0C364E1",
-      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
-      "content_shape_sha256": "312c78236ecb754df1f008dce9175e8bc4866c091b2d61f615be95a9801c5b7a",
+      "content_shape_sha256": "b8fe82534cfef76b25b90e68cd7727f0e96dd9049bd402436742c6c2d062c8f0",
       "capability_id": "LCD-LITERATURE-VISUAL-MATRIX",
       "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-6FD31F7545E767FF",
-      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
-      "content_shape_sha256": "8f81794fc9c3e82bdac9f4b3a32c0d8f2e1609e1ce78fdec239b0981d006d9b1",
-      "capability_id": "LCD-HARDWARE-DESIGN-PROCEDURE",
-      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-854E50E3AC19BB8F",
-      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
-      "content_shape_sha256": "8f81794fc9c3e82bdac9f4b3a32c0d8f2e1609e1ce78fdec239b0981d006d9b1",
-      "capability_id": "LCD-FEASIBILITY-EVIDENCE-MATRIX",
-      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-4E7FDB82A9E953EF",
-      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
-      "content_shape_sha256": "90dfcef6f41c9c6e6f2437df93ad054b6066934b12d0f75e0ca8c12b65d49eae",
-      "capability_id": "LCD-FEASIBILITY-EVIDENCE-MATRIX",
-      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-87FB145D0CD23442",
-      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
-      "content_shape_sha256": "90dfcef6f41c9c6e6f2437df93ad054b6066934b12d0f75e0ca8c12b65d49eae",
-      "capability_id": "LCD-HARDWARE-DESIGN-PROCEDURE",
-      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-7E3219982650D6A4",
-      "slide_id": "S-H001-RESULT-SINGLE-08",
-      "content_shape_sha256": "9c8a409e36d3ce908d598a3aabef5d411d9a911d29f0236d637faf40b63324ac",
-      "capability_id": "LCD-REAL-RESULT-VALIDATION",
-      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-431711D9D5B58705",
-      "slide_id": "S-H001-RESULT-SINGLE-09",
-      "content_shape_sha256": "9c8a409e36d3ce908d598a3aabef5d411d9a911d29f0236d637faf40b63324ac",
-      "capability_id": "LCD-REAL-RESULT-VALIDATION",
-      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-97EF1B03684BA638",
-      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
-      "content_shape_sha256": "3b2f83c5d2ca13637acc27e41fb2e32bf72b5abe28174adf2bacc693cab4ebe2",
-      "capability_id": "LCD-TECHNOLOGY-COMPARISON",
-      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-50C0E894108D97EF",
-      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
-      "content_shape_sha256": "83c486a9b95eb65ea5de322ded3a5274318b7f5631abf62194263c28b18d240f",
-      "capability_id": "LCD-THREE-COLUMN-PHYSICAL-COMPARISON",
-      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
-      "score": {
-        "semantic_fit": 6,
-        "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
-      },
-      "candidate_status": "eligible"
-    },
-    {
-      "candidate_id": "CC-DBB1ECB4ACDB3E45",
-      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
-      "content_shape_sha256": "ea866838c6549b96cdae5c1bb51572e001bae356e2439bd4cb317e5dccda1d2e",
+      "candidate_id": "CC-CE1BA7F4B6BE13C0",
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "content_shape_sha256": "b8fe82534cfef76b25b90e68cd7727f0e96dd9049bd402436742c6c2d062c8f0",
       "capability_id": "LCD-PRINCIPLE-EQUIPMENT-SPLIT",
       "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 11,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0617",
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 3,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 19
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-A09F7CD73948A2B1",
-      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
-      "content_shape_sha256": "f4f57f2ab01bf9be7b590e0ff7e38d0734561e18074386ba90a50dc4fa328e49",
-      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
-      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "candidate_id": "CC-F8C0D6C428646FB6",
+      "slide_id": "S-H001-LITERATURE-MECHANISM-05",
+      "content_shape_sha256": "b8fe82534cfef76b25b90e68cd7727f0e96dd9049bd402436742c6c2d062c8f0",
+      "capability_id": "LCD-TEXT-TOP-DUAL-VISUAL",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 4,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 7
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-731F589A427540BC",
-      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
-      "content_shape_sha256": "af204fc2041b24020659bc8812e8dcc6861333f832ad16adc898df289b3ab245",
-      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
-      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "candidate_id": "CC-D92085395047546A",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "content_shape_sha256": "0b249bbeb3375bda3aed7f9bf604b89f453acd873cbb52c65ca9ba4669b64b7c",
+      "capability_id": "LCD-FEASIBILITY-EVIDENCE-MATRIX",
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 11,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0617",
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 3,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 19
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-1F214789386408E0",
-      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
-      "content_shape_sha256": "f9382fb300554ec489d778f10894e4d9e7441e2b46387b3a4e6e55a1ab6488ed",
-      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
-      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "candidate_id": "CC-F56EA69EE7BCA0CB",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
+      "content_shape_sha256": "0b249bbeb3375bda3aed7f9bf604b89f453acd873cbb52c65ca9ba4669b64b7c",
+      "capability_id": "LCD-HARDWARE-DESIGN-PROCEDURE",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 9,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 2,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 17
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-E18BAA996BF160C0",
-      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
-      "content_shape_sha256": "612b71a83e2dc04dbbffb9d7ba6f9c544e1d0dd0ff0c2dd640f251aebfe82b52",
-      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
-      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "candidate_id": "CC-084C16127C1D9DE6",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "content_shape_sha256": "111ab45a132412d69255ced78d8e959c6970d7d4c569cbbe87a031321e0e00e5",
+      "capability_id": "LCD-FEASIBILITY-EVIDENCE-MATRIX",
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 11,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0617",
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 3,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 19
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-7AA891013F357AA5",
-      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
-      "content_shape_sha256": "ae1256bd68dcc6cc53a75904413af9087c12703b21a6f16f219984baaf59b061",
+      "candidate_id": "CC-1B33AB218272733F",
+      "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
+      "content_shape_sha256": "111ab45a132412d69255ced78d8e959c6970d7d4c569cbbe87a031321e0e00e5",
+      "capability_id": "LCD-HARDWARE-DESIGN-PROCEDURE",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 9,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 2,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 17
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-02BFF563453F683C",
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "content_shape_sha256": "3a512f9f317bfa4bb77afc7ca6313776412665cb82f60da2612da2b960fbe41e",
+      "capability_id": "LCD-REAL-RESULT-VALIDATION",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-C5001AE46A25A458",
+      "slide_id": "S-H001-RESULT-SINGLE-08",
+      "content_shape_sha256": "3a512f9f317bfa4bb77afc7ca6313776412665cb82f60da2612da2b960fbe41e",
       "capability_id": "LCD-PHYSICAL-VALIDATION-MATRIX",
       "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 4,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 9,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 2,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 16
       },
       "candidate_status": "eligible"
     },
     {
-      "candidate_id": "CC-FDD0552E0C9C1C69",
-      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
-      "content_shape_sha256": "98aa737827b5cfb7bfb0668ed76864d619a33d6c4b3cca894550e36ffddd38ba",
+      "candidate_id": "CC-8AFE63424ED280F7",
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "content_shape_sha256": "3a512f9f317bfa4bb77afc7ca6313776412665cb82f60da2612da2b960fbe41e",
+      "capability_id": "LCD-PHYSICAL-VALIDATION-MATRIX",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "score": {
+        "semantic_fit": 4,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 9,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 2,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 16
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-A5276BDBC05ADFF3",
+      "slide_id": "S-H001-RESULT-SINGLE-09",
+      "content_shape_sha256": "3a512f9f317bfa4bb77afc7ca6313776412665cb82f60da2612da2b960fbe41e",
+      "capability_id": "LCD-REAL-RESULT-VALIDATION",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-F0F90F93ACC9FB5F",
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "content_shape_sha256": "b578a183829edeea23c2c483aefb4fc899304e203e5239e3964cdd9d338e7331",
       "capability_id": "LCD-THREE-COLUMN-PHYSICAL-COMPARISON",
       "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
       "score": {
-        "semantic_fit": 6,
+        "semantic_fit": 5,
         "capacity_fit": 3,
-        "historical_consistency": 0,
-        "bounded_diversity": 0,
-        "hard_capacity_match": true,
-        "total": 9
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-F9D51958741DB8E1",
+      "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
+      "content_shape_sha256": "b578a183829edeea23c2c483aefb4fc899304e203e5239e3964cdd9d338e7331",
+      "capability_id": "LCD-TECHNOLOGY-COMPARISON",
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 9,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 2,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 17
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-048FD2B83C83C2C3",
+      "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
+      "content_shape_sha256": "d2471892fdc51f1eae2cce0921c74044385d62049564f4ae330501a820ff38a0",
+      "capability_id": "LCD-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-20FBA38129A6E1CF",
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "content_shape_sha256": "2c93c5ba4bf024fbd097a3a1b82f62a1fe803956769c355d2c404ff254819811",
+      "capability_id": "LCD-TEXT-TOP-DUAL-VISUAL",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "score": {
+        "semantic_fit": 4,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 7
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-5A8E7DC84D56ACBB",
+      "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
+      "content_shape_sha256": "2c93c5ba4bf024fbd097a3a1b82f62a1fe803956769c355d2c404ff254819811",
+      "capability_id": "LCD-PRINCIPLE-EQUIPMENT-SPLIT",
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 11,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0617",
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 3,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 19
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-E0FDC550DEF561CD",
+      "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
+      "content_shape_sha256": "6cf4077ec4cd74bbb61309f42bfebe4081923c31511ffb696c60eb9d3bc78d87",
+      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-1C407EDA81D1F71E",
+      "slide_id": "S-H002-PROBLEM-DEFINITION-02",
+      "content_shape_sha256": "b6c18f25a56ff107922afa3a0fd31acf3e08497d9d55f40aaca3d221067141cf",
+      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-443B2CDEBFEFF593",
+      "slide_id": "S-H002-FISHBONE-LOCATOR-03",
+      "content_shape_sha256": "c09292490b69b27601b202760765a12d66fde112de6ae5d66aabc3653d9709ae",
+      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-A1048502BA743144",
+      "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
+      "content_shape_sha256": "55d952956b65c715a3cbfb2dc1633555242bcabaf1bfe2c7a20b33208022a961",
+      "capability_id": "LCD-PROBLEM-TO-SOLUTION",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-2EC1F3BA5CA4BB3C",
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "content_shape_sha256": "5eefbb810835654dade571705a1e03426a06ebbb8d393db190ec6c45d0900680",
+      "capability_id": "LCD-PHYSICAL-VALIDATION-MATRIX",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "score": {
+        "semantic_fit": 4,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 9,
+        "body_recurrence_evidence": {
+          "reference_ids": [
+            "JDP-TSMC-2026-0730",
+            "JDP-TSMC-2026-0814"
+          ],
+          "reference_count": 2,
+          "priority_rank": 1,
+          "evidence_state": "reference_supported"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 16
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-D0368131B86C7559",
+      "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
+      "content_shape_sha256": "5eefbb810835654dade571705a1e03426a06ebbb8d393db190ec6c45d0900680",
+      "capability_id": "LCD-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
+      },
+      "candidate_status": "eligible"
+    },
+    {
+      "candidate_id": "CC-3C2F1B0BA7A41359",
+      "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
+      "content_shape_sha256": "8e12bdc9e3f7afa87742df89cc0443f12bd3804a824d8f01597cf50fcbf215f1",
+      "capability_id": "LCD-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "score": {
+        "semantic_fit": 5,
+        "capacity_fit": 3,
+        "evidence_fit": 0,
+        "body_recurrence_fit": 0,
+        "body_recurrence_evidence": {
+          "reference_ids": [],
+          "reference_count": 0,
+          "priority_rank": null,
+          "evidence_state": "single_example_provisional"
+        },
+        "historical_consistency_fit": 0,
+        "bounded_diversity_fit": 0,
+        "compatibility_level": "compatible_fit",
+        "semantic_hard_match": true,
+        "capacity_hard_match": true,
+        "required_role_coverage": true,
+        "total": 8
       },
       "candidate_status": "eligible"
     }

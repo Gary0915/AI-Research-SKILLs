@@ -1,0 +1,5043 @@
+{
+  "audit_id": "PPA-TYPOGRAPHY-REVERSE-AUDIT-001",
+  "typography_profile_id": "PTP-001",
+  "records": [
+    {
+      "slide_index": 1,
+      "shape_name": "tds-title:PPA-CASE-A-EXPERIMENT::PPC-A118F5613DDB64C3",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 1,
+      "shape_name": "PPA::PPA-CASE-A-EXPERIMENT::PPC-A118F5613DDB64C3::hardware::primary_visual::CAD",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 1,
+      "shape_name": "PPA::PPA-CASE-A-EXPERIMENT::PPC-A118F5613DDB64C3::procedure::procedure::CONTROLS",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 1,
+      "shape_name": "PPA::PPA-CASE-A-EXPERIMENT::PPC-A118F5613DDB64C3::go::go_criterion::GO",
+      "role": "callout",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 15.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 15,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 2,
+      "shape_name": "tds-title:PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 2,
+      "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::photo_a::primary_visual::PHOTO-1",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 2,
+      "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::photo_b::secondary_visual::PLOT-1",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 2,
+      "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::plot::validation_plot::PLOT-2",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 2,
+      "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::caption_a::caption::CAPTION",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 2,
+      "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::caption_b::caption::REGION-CAPTION_B",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 2,
+      "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::measurement_c::secondary_visual::PHOTO-2",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 2,
+      "shape_name": "PPA::PPA-CASE-B-PHYSICAL::PPC-096AA5FA0BA06EE1::context::compact_context::REGION-CONTEXT",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 3,
+      "shape_name": "tds-title:PPA-CASE-C-RESULT::PPC-497C2609E843D136",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 3,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::photo_a::primary_visual::PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 3,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::photo_b::secondary_visual::REGION-PHOTO_B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 3,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::plot::validation_plot::REGION-PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 3,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::caption_a::caption::REGION-CAPTION_A",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 3,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::caption_b::caption::REGION-CAPTION_B",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 3,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::measurement_c::secondary_visual::REGION-MEASUREMENT_C",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 3,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::context::compact_context::METRIC",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 4,
+      "shape_name": "tds-title:PPA-CASE-C-RESULT::PPC-6DC7B591568B4649",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 4,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-6DC7B591568B4649::result::primary_visual::PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 4,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-6DC7B591568B4649::metric::metric_callout::METRIC",
+      "role": "metric_primary",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 22.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 22,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 4,
+      "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-6DC7B591568B4649::context::compact_context::REGION-CONTEXT",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 5,
+      "shape_name": "tds-title:PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 5,
+      "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::photo_a::primary_visual::PHOTO",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 5,
+      "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::photo_b::secondary_visual::REGION-PHOTO_B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 5,
+      "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::plot::validation_plot::REGION-PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 5,
+      "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::caption_a::caption::CAPTION",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 5,
+      "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::caption_b::caption::REGION-CAPTION_B",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 5,
+      "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::measurement_c::secondary_visual::PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 5,
+      "shape_name": "PPA::PPA-CASE-D-MULTIMODAL::PPC-B2E8AD28884FEC68::context::compact_context::REGION-CONTEXT",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 6,
+      "shape_name": "tds-title:PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 6,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::visual_a::primary_visual::FIG-1",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 6,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::visual_b::secondary_visual::FIG-2",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 6,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::visual_c::secondary_visual::REGION-VISUAL_C",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 6,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::cite_a::citation_strip::CITE",
+      "role": "citation",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 10.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 10,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 6,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::cite_b::citation_strip::REGION-CITE_B",
+      "role": "citation",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 10.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 10,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 6,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::cite_c::citation_strip::REGION-CITE_C",
+      "role": "citation",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 10.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 10,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 6,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-2067AD3AC8E29B97::synthesis::synthesis_callout::REGION-SYNTHESIS",
+      "role": "callout",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 15.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 15,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 7,
+      "shape_name": "tds-title:PPA-CASE-E-LITERATURE::PPC-E2D8E8694848D8DD",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 7,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-E2D8E8694848D8DD::text_top::text_top::CITE",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 7,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-E2D8E8694848D8DD::left_visual::primary_visual::FIG-1",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 7,
+      "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-E2D8E8694848D8DD::right_visual::secondary_visual::FIG-2",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 8,
+      "shape_name": "tds-title:PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 8,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7::approach_a::primary_visual::A",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 8,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7::criteria::criteria_table::TABLE",
+      "role": "table_header",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 8,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7::approach_b::secondary_visual::B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 8,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-1BB2BEBF7E6618D7::mechanism::mechanism_pair::REGION-MECHANISM",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 9,
+      "shape_name": "tds-title:PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 9,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::column_a::primary_visual::A",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 9,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::column_b::secondary_visual::B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 9,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::column_c::secondary_visual::REGION-COLUMN_C",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 9,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::criteria::criteria_strip::TABLE",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 9,
+      "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::decision::decision_callout::REGION-DECISION",
+      "role": "callout",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 15.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 15,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 10,
+      "shape_name": "tds-title:PPA-CASE-G-PRINCIPLE::PPC-CF994760E192A2C1",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 10,
+      "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-CF994760E192A2C1::text_top::text_top::FORMULA",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 10,
+      "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-CF994760E192A2C1::left_visual::primary_visual::PRINCIPLE",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 10,
+      "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-CF994760E192A2C1::right_visual::secondary_visual::EQUIPMENT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 11,
+      "shape_name": "tds-title:PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 11,
+      "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B::principle::primary_visual::PRINCIPLE",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 11,
+      "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B::formula::formula::FORMULA",
+      "role": "formula",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 16.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 16,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 11,
+      "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B::equipment::secondary_visual::EQUIPMENT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 11,
+      "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-E866D0D74E77404B::specification::specification_table::REGION-SPECIFICATION",
+      "role": "table_header",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 12,
+      "shape_name": "tds-title:PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 12,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::photo_a::primary_visual::PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 12,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::photo_b::secondary_visual::REGION-PHOTO_B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 12,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::plot::validation_plot::REGION-PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 12,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::caption_a::caption::REGION-CAPTION_A",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 12,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::caption_b::caption::REGION-CAPTION_B",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 12,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::measurement_c::secondary_visual::REGION-MEASUREMENT_C",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 12,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::context::compact_context::METRIC",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 13,
+      "shape_name": "tds-title:PPA-CASE-H-HISTORICAL::PPC-468E2014216AC345",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 13,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-468E2014216AC345::result::primary_visual::PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 13,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-468E2014216AC345::metric::metric_callout::METRIC",
+      "role": "metric_primary",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 22.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 22,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 13,
+      "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-468E2014216AC345::context::compact_context::REGION-CONTEXT",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 14,
+      "shape_name": "tds-title:PPA-CASE-I-CONTINUATION::PPC-F1CFC7CC4822B5C0",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 14,
+      "shape_name": "PPA::PPA-CASE-I-CONTINUATION::PPC-F1CFC7CC4822B5C0::hardware::primary_visual::CAD",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 14,
+      "shape_name": "PPA::PPA-CASE-I-CONTINUATION::PPC-F1CFC7CC4822B5C0::procedure::procedure::CONTROLS",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 14,
+      "shape_name": "PPA::PPA-CASE-I-CONTINUATION::PPC-F1CFC7CC4822B5C0::go::go_criterion::GO",
+      "role": "callout",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 15.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 15,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 15,
+      "shape_name": "tds-title:PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 15,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::column_a::primary_visual::P1",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 15,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::column_b::secondary_visual::P2",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 15,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::column_c::secondary_visual::P3",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 15,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::criteria::criteria_strip::REGION-CRITERIA",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 15,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-8B074929C8B57B90::decision::decision_callout::REGION-DECISION",
+      "role": "callout",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 15.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 15,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 16,
+      "shape_name": "tds-title:PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 16,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::photo_a::primary_visual::P1",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 16,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::photo_b::secondary_visual::P3",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 16,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::plot::validation_plot::REGION-PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 16,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::caption_a::caption::REGION-CAPTION_A",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 16,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::caption_b::caption::REGION-CAPTION_B",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 16,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::measurement_c::secondary_visual::P2",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 16,
+      "shape_name": "PPA::PPA-CASE-J-DIVERSITY::PPC-EFFDE13A1C6DCF85::context::compact_context::REGION-CONTEXT",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 17,
+      "shape_name": "tds-title:PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 17,
+      "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::explanation::procedure::GOLDEN-EXPLANATION",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 17,
+      "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::matrix_a::primary_visual::GOLDEN-MATRIX_A",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 17,
+      "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::matrix_b::secondary_visual::GOLDEN-MATRIX_B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 17,
+      "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::matrix_c::secondary_visual::GOLDEN-MATRIX_C",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 17,
+      "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::matrix_d::secondary_visual::GOLDEN-MATRIX_D",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 18,
+      "shape_name": "tds-title:PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 18,
+      "shape_name": "PPA::PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE::PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE::hardware::primary_visual::GOLDEN-HARDWARE",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 18,
+      "shape_name": "PPA::PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE::PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE::procedure::procedure::GOLDEN-PROCEDURE",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 18,
+      "shape_name": "PPA::PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE::PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE::go::go_criterion::GOLDEN-GO",
+      "role": "callout",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 15.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 15,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 19,
+      "shape_name": "tds-title:PPA-GOLDEN-LITERATURE-VISUAL-MATRIX",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 19,
+      "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::visual_a::primary_visual::GOLDEN-VISUAL_A",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 19,
+      "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::visual_b::secondary_visual::GOLDEN-VISUAL_B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 19,
+      "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::visual_c::secondary_visual::GOLDEN-VISUAL_C",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 19,
+      "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::cite_a::citation_strip::GOLDEN-CITE_A",
+      "role": "citation",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 10.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 10,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 19,
+      "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::cite_b::citation_strip::GOLDEN-CITE_B",
+      "role": "citation",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 10.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 10,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 19,
+      "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::cite_c::citation_strip::GOLDEN-CITE_C",
+      "role": "citation",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 10.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 10,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 19,
+      "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::synthesis::synthesis_callout::GOLDEN-SYNTHESIS",
+      "role": "callout",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 15.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 15,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 20,
+      "shape_name": "tds-title:PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 20,
+      "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::photo_a::primary_visual::GOLDEN-PHOTO_A",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 20,
+      "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::photo_b::secondary_visual::GOLDEN-PHOTO_B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 20,
+      "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::plot::validation_plot::GOLDEN-PLOT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 20,
+      "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::caption_a::caption::GOLDEN-CAPTION_A",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 20,
+      "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::caption_b::caption::GOLDEN-CAPTION_B",
+      "role": "caption",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 12.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "666666",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 12,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "muted",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 20,
+      "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::measurement_c::secondary_visual::GOLDEN-MEASUREMENT_C",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 20,
+      "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::context::compact_context::GOLDEN-CONTEXT",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 21,
+      "shape_name": "tds-title:PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 21,
+      "shape_name": "PPA::PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::principle::primary_visual::GOLDEN-PRINCIPLE",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 21,
+      "shape_name": "PPA::PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::formula::formula::GOLDEN-FORMULA",
+      "role": "formula",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 16.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 16,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 21,
+      "shape_name": "PPA::PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::equipment::secondary_visual::GOLDEN-EQUIPMENT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 21,
+      "shape_name": "PPA::PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::specification::specification_table::GOLDEN-SPECIFICATION",
+      "role": "table_header",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 22,
+      "shape_name": "tds-title:PPA-GOLDEN-PROBLEM-TO-SOLUTION",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 22,
+      "shape_name": "PPA::PPA-GOLDEN-PROBLEM-TO-SOLUTION::PPC-GOLDEN-PROBLEM-TO-SOLUTION::problem::problem_statement::GOLDEN-PROBLEM",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 22,
+      "shape_name": "PPA::PPA-GOLDEN-PROBLEM-TO-SOLUTION::PPC-GOLDEN-PROBLEM-TO-SOLUTION::solution::solution_path::GOLDEN-SOLUTION",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 22,
+      "shape_name": "PPA::PPA-GOLDEN-PROBLEM-TO-SOLUTION::PPC-GOLDEN-PROBLEM-TO-SOLUTION::support::support_visual::GOLDEN-SUPPORT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 23,
+      "shape_name": "tds-title:PPA-GOLDEN-REAL-RESULT-VALIDATION",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 23,
+      "shape_name": "PPA::PPA-GOLDEN-REAL-RESULT-VALIDATION::PPC-GOLDEN-REAL-RESULT-VALIDATION::result::primary_visual::GOLDEN-RESULT",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 23,
+      "shape_name": "PPA::PPA-GOLDEN-REAL-RESULT-VALIDATION::PPC-GOLDEN-REAL-RESULT-VALIDATION::metric::metric_callout::GOLDEN-METRIC",
+      "role": "metric_primary",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 22.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 22,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 23,
+      "shape_name": "PPA::PPA-GOLDEN-REAL-RESULT-VALIDATION::PPC-GOLDEN-REAL-RESULT-VALIDATION::context::compact_context::GOLDEN-CONTEXT",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 24,
+      "shape_name": "tds-title:PPA-GOLDEN-TECHNOLOGY-COMPARISON",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 24,
+      "shape_name": "PPA::PPA-GOLDEN-TECHNOLOGY-COMPARISON::PPC-GOLDEN-TECHNOLOGY-COMPARISON::approach_a::primary_visual::GOLDEN-APPROACH_A",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 24,
+      "shape_name": "PPA::PPA-GOLDEN-TECHNOLOGY-COMPARISON::PPC-GOLDEN-TECHNOLOGY-COMPARISON::criteria::criteria_table::GOLDEN-CRITERIA",
+      "role": "table_header",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 2,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "center",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 24,
+      "shape_name": "PPA::PPA-GOLDEN-TECHNOLOGY-COMPARISON::PPC-GOLDEN-TECHNOLOGY-COMPARISON::approach_b::secondary_visual::GOLDEN-APPROACH_B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 24,
+      "shape_name": "PPA::PPA-GOLDEN-TECHNOLOGY-COMPARISON::PPC-GOLDEN-TECHNOLOGY-COMPARISON::mechanism::mechanism_pair::GOLDEN-MECHANISM",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 25,
+      "shape_name": "tds-title:PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 25,
+      "shape_name": "PPA::PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL::PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL::text_top::text_top::GOLDEN-TEXT_TOP",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 25,
+      "shape_name": "PPA::PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL::PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL::left_visual::primary_visual::GOLDEN-LEFT_VISUAL",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 25,
+      "shape_name": "PPA::PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL::PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL::right_visual::secondary_visual::GOLDEN-RIGHT_VISUAL",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 26,
+      "shape_name": "tds-title:PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "role": "slide_title",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 26.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 26,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 26,
+      "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::column_a::primary_visual::GOLDEN-COLUMN_A",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 26,
+      "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::column_b::secondary_visual::GOLDEN-COLUMN_B",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 26,
+      "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::column_c::secondary_visual::GOLDEN-COLUMN_C",
+      "role": "figure_label",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 13.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 13,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 26,
+      "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::criteria::criteria_strip::GOLDEN-CRITERIA",
+      "role": "body",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 18.0,
+        "bold": false,
+        "italic": false,
+        "font_color_rgb": "1F1F1F",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 18,
+        "weight": "normal",
+        "italic": false,
+        "color_role": "foreground",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    },
+    {
+      "slide_index": 26,
+      "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::decision::decision_callout::GOLDEN-DECISION",
+      "role": "callout",
+      "actual": {
+        "font_family": "Aptos",
+        "font_size_pt": 15.0,
+        "bold": true,
+        "italic": false,
+        "font_color_rgb": "B00020",
+        "alignment": 1,
+        "margins_pt": {
+          "left": 3.0,
+          "right": 3.0,
+          "top": 2.0,
+          "bottom": 2.0
+        }
+      },
+      "expected_role": {
+        "font_family": "Aptos",
+        "font_size_pt": 15,
+        "weight": "bold",
+        "italic": false,
+        "color_role": "focus",
+        "alignment": "left",
+        "margins_pt": {
+          "left": 3,
+          "right": 3,
+          "top": 2,
+          "bottom": 2
+        }
+      },
+      "matches": true
+    }
+  ],
+  "typography_role_mismatch_count": 0,
+  "uncontrolled_font_override_count": 0,
+  "uncontrolled_text_color_count": 0,
+  "uncontrolled_font_size_override_count": 0,
+  "aggregate_status": "pass"
+}

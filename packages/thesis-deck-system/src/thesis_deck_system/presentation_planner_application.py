@@ -653,6 +653,11 @@ def physical_realization_candidate_state(root: Path) -> dict[str, Any]:
         "thesis-deck-system/schemas/planner-physical-realization-qa.schema.json",
         "thesis-deck-system/schemas/planner-physical-realization-candidate-state.schema.json",
         "thesis-deck-system/schemas/planner-application-acceptance.schema.json",
+        "thesis-deck-system/schemas/planner-shell-reverse-audit.schema.json",
+        "thesis-deck-system/schemas/planner-typography-reverse-audit.schema.json",
+        "thesis-deck-system/schemas/planner-style-reverse-audit.schema.json",
+        "thesis-deck-system/schemas/planner-content-occupancy-audit.schema.json",
+        "thesis-deck-system/schemas/planner-visual-calibration-qa.schema.json",
         "thesis-deck-system/schemas/professor-shell-profile.schema.json",
         "thesis-deck-system/schemas/presentation-typography-profile.schema.json",
         "thesis-deck-system/schemas/body-style-recipe-registry.schema.json",
@@ -670,6 +675,11 @@ def physical_realization_candidate_state(root: Path) -> dict[str, Any]:
         "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.json",
         "thesis-deck-system/artifacts/phase3/planner-composition-candidate-review.pptx",
         "thesis-deck-system/artifacts/phase3/planner-application-acceptance.json",
+        "thesis-deck-system/artifacts/phase3/planner-shell-reverse-audit.json",
+        "thesis-deck-system/artifacts/phase3/planner-typography-reverse-audit.json",
+        "thesis-deck-system/artifacts/phase3/planner-style-reverse-audit.json",
+        "thesis-deck-system/artifacts/phase3/planner-content-occupancy-audit.json",
+        "thesis-deck-system/artifacts/phase3/planner-visual-calibration-qa.json",
     )
     component_hashes: dict[str, str] = {}
     for relative in component_paths:

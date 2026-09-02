@@ -9,7 +9,15 @@
       ],
       "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
       "composition_type": "body_composition",
-      "structure_fingerprint": "e3796c2b18138ee724acc7b4dec1a6cadae6801a3ed808926de0714b819584cb",
+      "structure_fingerprint": "d08937e7cad3263f8a2ec1bf4b516fc7e98dbf3c6f66551742ce86b3743b751e",
+      "compatible_semantic_stages": [
+        "formal_cover",
+        "progress_todo",
+        "literature_mechanism",
+        "hypothesis_transition"
+      ],
+      "required_semantic_roles": [],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -18,19 +26,36 @@
         "caption_region",
         "secondary_visual_region"
       ],
-      "primary_visual_slots": 1,
+      "primary_visual_slots": 2,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "text",
+        "photo",
+        "cad",
+        "plot",
+        "schematic",
+        "citation",
+        "formula",
+        "table"
+      ],
       "supported_media_kinds": [
-        "none"
+        "text",
+        "photo",
+        "cad",
+        "plot",
+        "schematic",
+        "citation",
+        "formula",
+        "table"
       ],
       "media_count": {
         "min": 0,
-        "max": 1,
+        "max": 2,
         "basis": "system_heuristic"
       },
-      "supported_table_structure": "not_applicable",
+      "supported_table_structure": "comparison_matrix",
       "supported_comparison_sides": null,
-      "supported_formula_presence": false,
+      "supported_formula_presence": true,
       "text_capacity": {
         "state": "provisional",
         "basis": "system_heuristic"
@@ -40,8 +65,13 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0814"
       ],
+      "body_recurrence_evidence": {
+        "reference_ids": [],
+        "priority_rank": null,
+        "evidence_state": "single_example_provisional"
+      },
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"
@@ -53,7 +83,16 @@
       ],
       "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
       "composition_type": "body_composition",
-      "structure_fingerprint": "07e90ae0136d2481934b49afe6511582a3df2dec56dab58f52d9346894ae045c",
+      "structure_fingerprint": "bac862637de6eecc5492cfc4c4f5fcb390a647fc50b425d2a859360b5efb4e01",
+      "compatible_semantic_stages": [
+        "hypothesis_transition",
+        "literature_mechanism"
+      ],
+      "required_semantic_roles": [
+        "principle",
+        "equipment"
+      ],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -62,19 +101,30 @@
         "caption_region",
         "secondary_visual_region"
       ],
-      "primary_visual_slots": 1,
+      "primary_visual_slots": 2,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "text",
+        "schematic",
+        "formula",
+        "table",
+        "photo"
+      ],
       "supported_media_kinds": [
-        "mechanism"
+        "text",
+        "schematic",
+        "formula",
+        "table",
+        "photo"
       ],
       "media_count": {
         "min": 1,
-        "max": 1,
+        "max": 2,
         "basis": "system_heuristic"
       },
-      "supported_table_structure": "not_applicable",
+      "supported_table_structure": "comparison_matrix",
       "supported_comparison_sides": null,
-      "supported_formula_presence": false,
+      "supported_formula_presence": true,
       "text_capacity": {
         "state": "provisional",
         "basis": "system_heuristic"
@@ -84,8 +134,19 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0617",
+        "JDP-TSMC-2026-0730",
+        "JDP-TSMC-2026-0814"
       ],
+      "body_recurrence_evidence": {
+        "reference_ids": [
+          "JDP-TSMC-2026-0617",
+          "JDP-TSMC-2026-0730",
+          "JDP-TSMC-2026-0814"
+        ],
+        "priority_rank": 1,
+        "evidence_state": "reference_supported"
+      },
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"
@@ -97,7 +158,14 @@
       ],
       "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
       "composition_type": "body_composition",
-      "structure_fingerprint": "9e52e713d0889279ea5ebf411e978666fc1c10a479f5e43f70914d967914be9d",
+      "structure_fingerprint": "969f7b34a16718d3a2af8fe298fbd9e50f81de6b6d21a06bda40db196b44076e",
+      "compatible_semantic_stages": [
+        "experiment_design"
+      ],
+      "required_semantic_roles": [
+        "setup"
+      ],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -106,14 +174,25 @@
         "caption_region",
         "secondary_visual_region"
       ],
-      "primary_visual_slots": 3,
+      "primary_visual_slots": 4,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "text",
+        "photo",
+        "plot",
+        "schematic",
+        "caption"
+      ],
       "supported_media_kinds": [
-        "experiment"
+        "text",
+        "photo",
+        "plot",
+        "schematic",
+        "caption"
       ],
       "media_count": {
         "min": 1,
-        "max": 3,
+        "max": 4,
         "basis": "system_heuristic"
       },
       "supported_table_structure": "not_applicable",
@@ -128,8 +207,19 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0617",
+        "JDP-TSMC-2026-0730",
+        "JDP-TSMC-2026-0814"
       ],
+      "body_recurrence_evidence": {
+        "reference_ids": [
+          "JDP-TSMC-2026-0617",
+          "JDP-TSMC-2026-0730",
+          "JDP-TSMC-2026-0814"
+        ],
+        "priority_rank": 1,
+        "evidence_state": "reference_supported"
+      },
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"
@@ -141,7 +231,16 @@
       ],
       "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
       "composition_type": "body_composition",
-      "structure_fingerprint": "3b87dd88c16e4d17736ad37388c078670e9c9d23e72a92c3a9cd99693cc98318",
+      "structure_fingerprint": "e0fd24ec5529a2f3249f1d6f7975204635d1235cb99ea58a6f0cfc47d6463578",
+      "compatible_semantic_stages": [
+        "experiment_design"
+      ],
+      "required_semantic_roles": [
+        "hardware",
+        "controls",
+        "decision"
+      ],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -152,8 +251,19 @@
       ],
       "primary_visual_slots": 2,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "text",
+        "cad",
+        "schematic",
+        "metric",
+        "callout"
+      ],
       "supported_media_kinds": [
-        "experiment"
+        "text",
+        "cad",
+        "schematic",
+        "metric",
+        "callout"
       ],
       "media_count": {
         "min": 1,
@@ -172,8 +282,17 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0730",
+        "JDP-TSMC-2026-0814"
       ],
+      "body_recurrence_evidence": {
+        "reference_ids": [
+          "JDP-TSMC-2026-0730",
+          "JDP-TSMC-2026-0814"
+        ],
+        "priority_rank": 1,
+        "evidence_state": "reference_supported"
+      },
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"
@@ -185,7 +304,85 @@
       ],
       "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
       "composition_type": "body_composition",
-      "structure_fingerprint": "25892e64d58cede7db66f0aa4d0b137e5236b7f2e94f7884d439cd4028d94926",
+      "structure_fingerprint": "03d568b94b3e66711735c0fa0106fdb258345674c13b9cb08695c92c68de2a28",
+      "compatible_semantic_stages": [
+        "result_comparison",
+        "result_single"
+      ],
+      "required_semantic_roles": [],
+      "optional_semantic_roles": [],
+      "required_regions": [
+        "title_region",
+        "body_region"
+      ],
+      "optional_regions": [
+        "caption_region",
+        "secondary_visual_region"
+      ],
+      "primary_visual_slots": 5,
+      "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "photo",
+        "plot",
+        "caption",
+        "metric",
+        "text"
+      ],
+      "supported_media_kinds": [
+        "photo",
+        "plot",
+        "caption",
+        "metric",
+        "text"
+      ],
+      "media_count": {
+        "min": 1,
+        "max": 5,
+        "basis": "system_heuristic"
+      },
+      "supported_table_structure": "not_applicable",
+      "supported_comparison_sides": null,
+      "supported_formula_presence": false,
+      "text_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "evidence_capacity": {
+        "state": "provisional",
+        "basis": "system_heuristic"
+      },
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0730",
+        "JDP-TSMC-2026-0814"
+      ],
+      "body_recurrence_evidence": {
+        "reference_ids": [
+          "JDP-TSMC-2026-0730",
+          "JDP-TSMC-2026-0814"
+        ],
+        "priority_rank": 1,
+        "evidence_state": "reference_supported"
+      },
+      "authority_status": "body_only_no_shell_override",
+      "confidence": "provisional",
+      "readiness": "partial_structural_calibration"
+    },
+    {
+      "capability_id": "LCD-TECHNOLOGY-COMPARISON",
+      "archetype_ids": [
+        "A14"
+      ],
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "composition_type": "body_composition",
+      "structure_fingerprint": "b300dd27364b00fac86be084ec2c4888e651bc56d6955f1c0b9e9720f77b15a9",
+      "compatible_semantic_stages": [
+        "layer_integrated_discussion"
+      ],
+      "required_semantic_roles": [
+        "approach_a",
+        "approach_b"
+      ],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -196,9 +393,19 @@
       ],
       "primary_visual_slots": 3,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "text",
+        "table",
+        "schematic",
+        "plot",
+        "metric"
+      ],
       "supported_media_kinds": [
-        "comparison",
-        "scientific_plot"
+        "text",
+        "table",
+        "schematic",
+        "plot",
+        "metric"
       ],
       "media_count": {
         "min": 1,
@@ -217,52 +424,17 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0730",
+        "JDP-TSMC-2026-0814"
       ],
-      "authority_status": "body_only_no_shell_override",
-      "confidence": "provisional",
-      "readiness": "partial_structural_calibration"
-    },
-    {
-      "capability_id": "LCD-TECHNOLOGY-COMPARISON",
-      "archetype_ids": [
-        "A14"
-      ],
-      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
-      "composition_type": "body_composition",
-      "structure_fingerprint": "6af8c2906c257ab11e1df3b0b6b065af79681adc49dc9659acf3d4f151b25e8b",
-      "required_regions": [
-        "title_region",
-        "body_region"
-      ],
-      "optional_regions": [
-        "caption_region",
-        "secondary_visual_region"
-      ],
-      "primary_visual_slots": 2,
-      "secondary_visual_slots": 1,
-      "supported_media_kinds": [
-        "comparison"
-      ],
-      "media_count": {
-        "min": 1,
-        "max": 2,
-        "basis": "system_heuristic"
+      "body_recurrence_evidence": {
+        "reference_ids": [
+          "JDP-TSMC-2026-0730",
+          "JDP-TSMC-2026-0814"
+        ],
+        "priority_rank": 1,
+        "evidence_state": "reference_supported"
       },
-      "supported_table_structure": "comparison_matrix",
-      "supported_comparison_sides": 2,
-      "supported_formula_presence": false,
-      "text_capacity": {
-        "state": "provisional",
-        "basis": "system_heuristic"
-      },
-      "evidence_capacity": {
-        "state": "provisional",
-        "basis": "system_heuristic"
-      },
-      "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
-      ],
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"
@@ -277,7 +449,18 @@
       ],
       "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
       "composition_type": "body_composition",
-      "structure_fingerprint": "39c75e8846370266ac83782532803779b0cc49828548c6515cb9bba1eba21354",
+      "structure_fingerprint": "ad88cc472bf6b1f888a8835a7b10bc344e9216fdbc3881024c5cc872b3746e9d",
+      "compatible_semantic_stages": [
+        "hypothesis_title",
+        "problem_definition",
+        "fishbone_locator",
+        "observation_problem"
+      ],
+      "required_semantic_roles": [
+        "problem",
+        "solution"
+      ],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -286,14 +469,21 @@
         "caption_region",
         "secondary_visual_region"
       ],
-      "primary_visual_slots": 1,
+      "primary_visual_slots": 2,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "text",
+        "schematic",
+        "callout"
+      ],
       "supported_media_kinds": [
-        "fishbone"
+        "text",
+        "schematic",
+        "callout"
       ],
       "media_count": {
         "min": 0,
-        "max": 1,
+        "max": 2,
         "basis": "system_heuristic"
       },
       "supported_table_structure": "not_applicable",
@@ -308,8 +498,13 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0814"
       ],
+      "body_recurrence_evidence": {
+        "reference_ids": [],
+        "priority_rank": null,
+        "evidence_state": "single_example_provisional"
+      },
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"
@@ -321,7 +516,14 @@
       ],
       "body_family_id": "BCF-REAL-RESULT-VALIDATION",
       "composition_type": "body_composition",
-      "structure_fingerprint": "d63fca9459b422fd6e8710b17aa95e150d714f5f9d24f0507fb76a19c4c677b9",
+      "structure_fingerprint": "afeca6ee8c42fbfe78ac9f93cd9ea5b097f616c5a0e7c48235cc077ea9a500e7",
+      "compatible_semantic_stages": [
+        "result_single"
+      ],
+      "required_semantic_roles": [
+        "result"
+      ],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -330,14 +532,25 @@
         "caption_region",
         "secondary_visual_region"
       ],
-      "primary_visual_slots": 1,
+      "primary_visual_slots": 2,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "plot",
+        "metric",
+        "photo",
+        "text",
+        "caption"
+      ],
       "supported_media_kinds": [
-        "scientific_plot"
+        "plot",
+        "metric",
+        "photo",
+        "text",
+        "caption"
       ],
       "media_count": {
         "min": 1,
-        "max": 1,
+        "max": 2,
         "basis": "system_heuristic"
       },
       "supported_table_structure": "not_applicable",
@@ -352,8 +565,13 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0814"
       ],
+      "body_recurrence_evidence": {
+        "reference_ids": [],
+        "priority_rank": null,
+        "evidence_state": "single_example_provisional"
+      },
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"
@@ -365,7 +583,15 @@
       ],
       "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
       "composition_type": "body_composition",
-      "structure_fingerprint": "0ab5a7962f66a5c34532741642854f1bf245c366ed86df8618c280a7a5a9d9da",
+      "structure_fingerprint": "e32fdd45a6cb495f4ccb7385780bde1ac88a9f6c828c8310de6c78ded4af8254",
+      "compatible_semantic_stages": [
+        "literature_mechanism"
+      ],
+      "required_semantic_roles": [
+        "literature",
+        "citation"
+      ],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -374,14 +600,27 @@
         "caption_region",
         "secondary_visual_region"
       ],
-      "primary_visual_slots": 3,
+      "primary_visual_slots": 4,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "photo",
+        "plot",
+        "schematic",
+        "citation",
+        "caption",
+        "text"
+      ],
       "supported_media_kinds": [
-        "mechanism"
+        "photo",
+        "plot",
+        "schematic",
+        "citation",
+        "caption",
+        "text"
       ],
       "media_count": {
-        "min": 1,
-        "max": 3,
+        "min": 2,
+        "max": 4,
         "basis": "system_heuristic"
       },
       "supported_table_structure": "not_applicable",
@@ -396,8 +635,13 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0814"
       ],
+      "body_recurrence_evidence": {
+        "reference_ids": [],
+        "priority_rank": null,
+        "evidence_state": "single_example_provisional"
+      },
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"
@@ -409,7 +653,16 @@
       ],
       "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
       "composition_type": "body_composition",
-      "structure_fingerprint": "f1c572cdf4a9c81da803ece09b2640bf45c70060776df9cf4e4459cd1937ab55",
+      "structure_fingerprint": "4e8fdf4c864e8479ef5d4a7208f2d46be4deb6a9658f8fce36d89c0deee18c0b",
+      "compatible_semantic_stages": [
+        "layer_summary_decision",
+        "result_comparison",
+        "layer_integrated_discussion"
+      ],
+      "required_semantic_roles": [
+        "comparison"
+      ],
+      "optional_semantic_roles": [],
       "required_regions": [
         "title_region",
         "body_region"
@@ -418,14 +671,27 @@
         "caption_region",
         "secondary_visual_region"
       ],
-      "primary_visual_slots": 3,
+      "primary_visual_slots": 4,
       "secondary_visual_slots": 1,
+      "supported_content_kinds": [
+        "text",
+        "photo",
+        "plot",
+        "schematic",
+        "table",
+        "metric"
+      ],
       "supported_media_kinds": [
-        "comparison"
+        "text",
+        "photo",
+        "plot",
+        "schematic",
+        "table",
+        "metric"
       ],
       "media_count": {
-        "min": 1,
-        "max": 3,
+        "min": 3,
+        "max": 4,
         "basis": "system_heuristic"
       },
       "supported_table_structure": "comparison_matrix",
@@ -440,8 +706,13 @@
         "basis": "system_heuristic"
       },
       "source_evidence_ids": [
-        "JDP-TSMC-2026-0814-PLANNER"
+        "JDP-TSMC-2026-0814"
       ],
+      "body_recurrence_evidence": {
+        "reference_ids": [],
+        "priority_rank": null,
+        "evidence_state": "single_example_provisional"
+      },
       "authority_status": "body_only_no_shell_override",
       "confidence": "provisional",
       "readiness": "partial_structural_calibration"

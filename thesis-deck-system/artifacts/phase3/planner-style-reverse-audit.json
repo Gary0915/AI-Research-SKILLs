@@ -1,0 +1,23 @@
+{
+  "audit_id": "PPA-STYLE-REVERSE-AUDIT-001",
+  "style_profile_id": "VSP003",
+  "role_counts": {
+    "body": 23,
+    "callout": 8,
+    "caption": 12,
+    "citation": 6,
+    "figure_label": 64,
+    "formula": 2,
+    "metric_primary": 3,
+    "slide_title": 26,
+    "table_header": 4
+  },
+  "native_synthetic_visual_count": 199,
+  "caption_role_count": 12,
+  "citation_role_count": 6,
+  "metric_role_count": 3,
+  "focus_callout_role_count": 8,
+  "connector_semantics_status": "controlled_native_shape",
+  "uncontrolled_style_override_count": 0,
+  "aggregate_status": "pass"
+}

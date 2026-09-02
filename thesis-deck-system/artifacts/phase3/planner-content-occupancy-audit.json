@@ -1,0 +1,466 @@
+{
+  "audit_id": "PPA-CONTENT-OCCUPANCY-AUDIT-001",
+  "records": [
+    {
+      "physical_plan_id": "PCP-2478D348212193DD",
+      "candidate_id": "PPC-A118F5613DDB64C3",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-95B9EA314E63D9A8",
+      "candidate_id": "PPC-096AA5FA0BA06EE1",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "caption_b",
+        "context"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-B9FDEEA1F8A91EF7",
+      "candidate_id": "PPC-497C2609E843D136",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "caption_a",
+        "caption_b",
+        "measurement_c",
+        "photo_b",
+        "plot"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-8AC0D31EBAF9A66B",
+      "candidate_id": "PPC-6DC7B591568B4649",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "context"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-A85AF28D3CED14D9",
+      "candidate_id": "PPC-B2E8AD28884FEC68",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "caption_b",
+        "context",
+        "photo_b",
+        "plot"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-3C2969A0E91C4133",
+      "candidate_id": "PPC-2067AD3AC8E29B97",
+      "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "cite_b",
+        "cite_c",
+        "synthesis",
+        "visual_c"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-80B4775F868AC89F",
+      "candidate_id": "PPC-E2D8E8694848D8DD",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-B6D9831C41B8EC9B",
+      "candidate_id": "PPC-1BB2BEBF7E6618D7",
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "mechanism"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-4DC2D9F8FCB7309E",
+      "candidate_id": "PPC-44A416081EC9BE79",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "column_c",
+        "decision"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-24ACEC234A3FC629",
+      "candidate_id": "PPC-E866D0D74E77404B",
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "specification"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-5AA5CCA48FA6112F",
+      "candidate_id": "PPC-CF994760E192A2C1",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-BACC361C0688AAA6",
+      "candidate_id": "PPC-453ABDFB2283E7A6",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "caption_a",
+        "caption_b",
+        "measurement_c",
+        "photo_b",
+        "plot"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-581877814CD4687A",
+      "candidate_id": "PPC-468E2014216AC345",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "context"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-84C5584EB20AC129",
+      "candidate_id": "PPC-F1CFC7CC4822B5C0",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-E69B0D15ABE75E25",
+      "candidate_id": "PPC-EFFDE13A1C6DCF85",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "caption_a",
+        "caption_b",
+        "context",
+        "plot"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-FC336548971BA2F0",
+      "candidate_id": "PPC-8B074929C8B57B90",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "partial",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": [
+        "criteria",
+        "decision"
+      ]
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-85727EBAEC28",
+      "candidate_id": "PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-56EB3A8880A4",
+      "candidate_id": "PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-DC6AEDFDEE27",
+      "candidate_id": "PPC-GOLDEN-LITERATURE-VISUAL-MATRIX",
+      "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-75D58CB67ABB",
+      "candidate_id": "PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-06E50799419D",
+      "candidate_id": "PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-4ADB93B6A57A",
+      "candidate_id": "PPC-GOLDEN-PROBLEM-TO-SOLUTION",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-EA39BFC8918E",
+      "candidate_id": "PPC-GOLDEN-REAL-RESULT-VALIDATION",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-8405EF428D1A",
+      "candidate_id": "PPC-GOLDEN-TECHNOLOGY-COMPARISON",
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-CDE5313B6D98",
+      "candidate_id": "PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    },
+    {
+      "physical_plan_id": "PCP-GOLDEN-89989A101F18",
+      "candidate_id": "PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "required_region_geometry_coverage": "pass",
+      "required_region_content_occupancy": "full",
+      "required_content_item_assignment": "pass",
+      "unoccupied_required_region_ids": []
+    }
+  ],
+  "golden_calibration_fixtures": [
+    {
+      "golden_fixture_id": "GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+      "required_region_ids": [
+        "explanation",
+        "matrix_a",
+        "matrix_b",
+        "matrix_c",
+        "matrix_d"
+      ],
+      "expected_typography_roles": [
+        "body",
+        "figure_label"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "required_region_ids": [
+        "hardware",
+        "procedure",
+        "go"
+      ],
+      "expected_typography_roles": [
+        "body",
+        "callout",
+        "figure_label"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-LITERATURE-VISUAL-MATRIX",
+      "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+      "required_region_ids": [
+        "visual_a",
+        "visual_b",
+        "visual_c",
+        "cite_a",
+        "cite_b",
+        "cite_c",
+        "synthesis"
+      ],
+      "expected_typography_roles": [
+        "callout",
+        "citation",
+        "figure_label"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "required_region_ids": [
+        "photo_a",
+        "photo_b",
+        "plot",
+        "caption_a",
+        "caption_b",
+        "measurement_c",
+        "context"
+      ],
+      "expected_typography_roles": [
+        "body",
+        "caption",
+        "figure_label"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "required_region_ids": [
+        "principle",
+        "formula",
+        "equipment",
+        "specification"
+      ],
+      "expected_typography_roles": [
+        "figure_label",
+        "formula",
+        "table_header"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-PROBLEM-TO-SOLUTION",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "required_region_ids": [
+        "problem",
+        "solution",
+        "support"
+      ],
+      "expected_typography_roles": [
+        "body",
+        "figure_label"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-REAL-RESULT-VALIDATION",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "required_region_ids": [
+        "result",
+        "metric",
+        "context"
+      ],
+      "expected_typography_roles": [
+        "body",
+        "figure_label",
+        "metric_primary"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-TECHNOLOGY-COMPARISON",
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "required_region_ids": [
+        "approach_a",
+        "criteria",
+        "approach_b",
+        "mechanism"
+      ],
+      "expected_typography_roles": [
+        "body",
+        "figure_label",
+        "table_header"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-TEXT-TOP-DUAL-VISUAL",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "required_region_ids": [
+        "text_top",
+        "left_visual",
+        "right_visual"
+      ],
+      "expected_typography_roles": [
+        "body",
+        "figure_label"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    },
+    {
+      "golden_fixture_id": "GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "required_region_ids": [
+        "column_a",
+        "column_b",
+        "column_c",
+        "criteria",
+        "decision"
+      ],
+      "expected_typography_roles": [
+        "body",
+        "callout",
+        "figure_label"
+      ],
+      "expected_primary_secondary_hierarchy": "primary_not_weaker_than_secondary",
+      "occupancy_expectation": "full"
+    }
+  ],
+  "content_shape_vs_items_mismatch_count": 0,
+  "unknown_to_zero_coercion_count": 0,
+  "recipe_registry_family_coverage": "10/10",
+  "physical_recipe_test_coverage": "10/10",
+  "review_deck_materialized_family_coverage": "10/10",
+  "fully_occupied_golden_family_coverage": "10/10",
+  "required_region_geometry_failure_count": 0,
+  "required_content_assignment_failure_count": 0,
+  "fully_occupied_golden_case_failure_count": 0,
+  "aggregate_status": "pass"
+}

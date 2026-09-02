@@ -14,9 +14,9 @@
           "item_id": "CAD",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 6.635999562554681,
-            "height": 3.57
+            "height": 3.01
           },
           "z_order": 0
         },
@@ -29,9 +29,9 @@
           "item_id": "CONTROLS",
           "bounding_box": {
             "left": 8.4025,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.6734995625546807,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 1
         },
@@ -44,9 +44,9 @@
           "item_id": "GO",
           "bounding_box": {
             "left": 8.4025,
-            "top": 4.309998906386702,
+            "top": 4.58,
             "width": 3.6734995625546807,
-            "height": 0.8159995625546806
+            "height": 0.6879997812773403
           },
           "z_order": 2
         }
@@ -65,9 +65,9 @@
           "item_id": "PHOTO-1",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.6829997812773403
+            "height": 1.418999343832021
           },
           "z_order": 0
         },
@@ -80,9 +80,9 @@
           "item_id": "PLOT-1",
           "bounding_box": {
             "left": 4.8475,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.6829997812773403
+            "height": 1.418999343832021
           },
           "z_order": 1
         },
@@ -95,9 +95,9 @@
           "item_id": "PLOT-2",
           "bounding_box": {
             "left": 8.52099956255468,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.555,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 2
         },
@@ -110,9 +110,9 @@
           "item_id": "CAPTION",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 3.3919991251093613,
+            "top": 3.8059995625546805,
             "width": 3.3179997812773405,
-            "height": 0.51
+            "height": 0.43
           },
           "z_order": 3
         },
@@ -125,9 +125,9 @@
           "item_id": "REGION-CAPTION_B",
           "bounding_box": {
             "left": 4.8475,
-            "top": 3.3919991251093613,
+            "top": 3.8059995625546805,
             "width": 3.3179997812773405,
-            "height": 0.51
+            "height": 0.43
           },
           "z_order": 4
         },
@@ -140,9 +140,9 @@
           "item_id": "PHOTO-2",
           "bounding_box": {
             "left": 8.52099956255468,
-            "top": 4.207999781277341,
+            "top": 4.493999343832021,
             "width": 3.555,
-            "height": 1.02
+            "height": 0.86
           },
           "z_order": 5
         },
@@ -155,9 +155,9 @@
           "item_id": "REGION-CONTEXT",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 4.411999125109362,
+            "top": 4.66599956255468,
             "width": 6.991499343832021,
-            "height": 0.8669991251093613
+            "height": 0.7309995625546807
           },
           "z_order": 6
         }
@@ -165,6 +165,117 @@
     },
     {
       "physical_slide_index": 3,
+      "planner_shape_count": 7,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::photo_a::primary_visual::PLOT",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-497C2609E843D136",
+          "region_id": "photo_a",
+          "presentation_role": "primary_visual",
+          "item_id": "PLOT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.418999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::photo_b::secondary_visual::REGION-PHOTO_B",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-497C2609E843D136",
+          "region_id": "photo_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "REGION-PHOTO_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.418999343832021
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::plot::validation_plot::REGION-PLOT",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-497C2609E843D136",
+          "region_id": "plot",
+          "presentation_role": "validation_plot",
+          "item_id": "REGION-PLOT",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 2.2149989063867017,
+            "width": 3.555,
+            "height": 2.063999343832021
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::caption_a::caption::REGION-CAPTION_A",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-497C2609E843D136",
+          "region_id": "caption_a",
+          "presentation_role": "caption",
+          "item_id": "REGION-CAPTION_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.8059995625546805,
+            "width": 3.3179997812773405,
+            "height": 0.43
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::caption_b::caption::REGION-CAPTION_B",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-497C2609E843D136",
+          "region_id": "caption_b",
+          "presentation_role": "caption",
+          "item_id": "REGION-CAPTION_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 3.8059995625546805,
+            "width": 3.3179997812773405,
+            "height": 0.43
+          },
+          "z_order": 4
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::measurement_c::secondary_visual::REGION-MEASUREMENT_C",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-497C2609E843D136",
+          "region_id": "measurement_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "REGION-MEASUREMENT_C",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 4.493999343832021,
+            "width": 3.555,
+            "height": 0.86
+          },
+          "z_order": 5
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-C-RESULT::PPC-497C2609E843D136::context::compact_context::METRIC",
+          "logical_slide_id": "PPA-CASE-C-RESULT",
+          "candidate_id": "PPC-497C2609E843D136",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "METRIC",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.66599956255468,
+            "width": 6.991499343832021,
+            "height": 0.7309995625546807
+          },
+          "z_order": 6
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 4,
       "planner_shape_count": 3,
       "regions": [
         {
@@ -176,9 +287,9 @@
           "item_id": "PLOT",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 7.346999125109361,
-            "height": 3.416999125109361
+            "height": 2.8809995625546807
           },
           "z_order": 0
         },
@@ -191,9 +302,9 @@
           "item_id": "METRIC",
           "bounding_box": {
             "left": 9.231999125109361,
-            "top": 1.6579997812773404,
+            "top": 2.343999343832021,
             "width": 2.843999343832021,
-            "height": 1.1219991251093613
+            "height": 0.9459995625546807
           },
           "z_order": 1
         },
@@ -206,16 +317,16 @@
           "item_id": "REGION-CONTEXT",
           "bounding_box": {
             "left": 9.231999125109361,
-            "top": 3.29,
+            "top": 3.72,
             "width": 2.843999343832021,
-            "height": 1.6829997812773403
+            "height": 1.418999343832021
           },
           "z_order": 2
         }
       ]
     },
     {
-      "physical_slide_index": 4,
+      "physical_slide_index": 5,
       "planner_shape_count": 7,
       "regions": [
         {
@@ -227,9 +338,9 @@
           "item_id": "PHOTO",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.6829997812773403
+            "height": 1.418999343832021
           },
           "z_order": 0
         },
@@ -242,9 +353,9 @@
           "item_id": "REGION-PHOTO_B",
           "bounding_box": {
             "left": 4.8475,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.6829997812773403
+            "height": 1.418999343832021
           },
           "z_order": 1
         },
@@ -257,9 +368,9 @@
           "item_id": "REGION-PLOT",
           "bounding_box": {
             "left": 8.52099956255468,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.555,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 2
         },
@@ -272,9 +383,9 @@
           "item_id": "CAPTION",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 3.3919991251093613,
+            "top": 3.8059995625546805,
             "width": 3.3179997812773405,
-            "height": 0.51
+            "height": 0.43
           },
           "z_order": 3
         },
@@ -287,9 +398,9 @@
           "item_id": "REGION-CAPTION_B",
           "bounding_box": {
             "left": 4.8475,
-            "top": 3.3919991251093613,
+            "top": 3.8059995625546805,
             "width": 3.3179997812773405,
-            "height": 0.51
+            "height": 0.43
           },
           "z_order": 4
         },
@@ -302,9 +413,9 @@
           "item_id": "PLOT",
           "bounding_box": {
             "left": 8.52099956255468,
-            "top": 4.207999781277341,
+            "top": 4.493999343832021,
             "width": 3.555,
-            "height": 1.02
+            "height": 0.86
           },
           "z_order": 5
         },
@@ -317,16 +428,16 @@
           "item_id": "REGION-CONTEXT",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 4.411999125109362,
+            "top": 4.66599956255468,
             "width": 6.991499343832021,
-            "height": 0.8669991251093613
+            "height": 0.7309995625546807
           },
           "z_order": 6
         }
       ]
     },
     {
-      "physical_slide_index": 5,
+      "physical_slide_index": 6,
       "planner_shape_count": 7,
       "regions": [
         {
@@ -338,9 +449,9 @@
           "item_id": "FIG-1",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.785
+            "height": 1.505
           },
           "z_order": 0
         },
@@ -353,9 +464,9 @@
           "item_id": "FIG-2",
           "bounding_box": {
             "left": 4.96599956255468,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.785
+            "height": 1.505
           },
           "z_order": 1
         },
@@ -368,9 +479,9 @@
           "item_id": "REGION-VISUAL_C",
           "bounding_box": {
             "left": 8.75799978127734,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.785
+            "height": 1.505
           },
           "z_order": 2
         },
@@ -383,9 +494,9 @@
           "item_id": "CITE",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 3.493999343832021,
+            "top": 3.8919991251093613,
             "width": 3.3179997812773405,
-            "height": 0.4079997812773403
+            "height": 0.343999343832021
           },
           "z_order": 3
         },
@@ -398,9 +509,9 @@
           "item_id": "REGION-CITE_B",
           "bounding_box": {
             "left": 4.96599956255468,
-            "top": 3.493999343832021,
+            "top": 3.8919991251093613,
             "width": 3.3179997812773405,
-            "height": 0.4079997812773403
+            "height": 0.343999343832021
           },
           "z_order": 4
         },
@@ -413,9 +524,9 @@
           "item_id": "REGION-CITE_C",
           "bounding_box": {
             "left": 8.75799978127734,
-            "top": 3.493999343832021,
+            "top": 3.8919991251093613,
             "width": 3.3179997812773405,
-            "height": 0.4079997812773403
+            "height": 0.343999343832021
           },
           "z_order": 5
         },
@@ -428,16 +539,67 @@
           "item_id": "REGION-SYNTHESIS",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 4.411999125109362,
+            "top": 4.66599956255468,
             "width": 10.901999125109361,
-            "height": 0.8159995625546806
+            "height": 0.6879997812773403
           },
           "z_order": 6
         }
       ]
     },
     {
-      "physical_slide_index": 6,
+      "physical_slide_index": 7,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-E2D8E8694848D8DD::text_top::text_top::CITE",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-E2D8E8694848D8DD",
+          "region_id": "text_top",
+          "presentation_role": "text_top",
+          "item_id": "CITE",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.128999343832021,
+            "width": 10.901999125109361,
+            "height": 0.773999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-E2D8E8694848D8DD::left_visual::primary_visual::FIG-1",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-E2D8E8694848D8DD",
+          "region_id": "left_visual",
+          "presentation_role": "primary_visual",
+          "item_id": "FIG-1",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.1179997812773403,
+            "width": 5.09549978127734,
+            "height": 2.58
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-E-LITERATURE::PPC-E2D8E8694848D8DD::right_visual::secondary_visual::FIG-2",
+          "logical_slide_id": "PPA-CASE-E-LITERATURE",
+          "candidate_id": "PPC-E2D8E8694848D8DD",
+          "region_id": "right_visual",
+          "presentation_role": "secondary_visual",
+          "item_id": "FIG-2",
+          "bounding_box": {
+            "left": 6.980499781277341,
+            "top": 3.1179997812773403,
+            "width": 5.09549978127734,
+            "height": 2.58
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 8,
       "planner_shape_count": 4,
       "regions": [
         {
@@ -449,9 +611,9 @@
           "item_id": "A",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 3.3179997812773405,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 0
         },
@@ -464,9 +626,9 @@
           "item_id": "TABLE",
           "bounding_box": {
             "left": 4.96599956255468,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 3.3179997812773405,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 1
         },
@@ -479,9 +641,9 @@
           "item_id": "B",
           "bounding_box": {
             "left": 8.75799978127734,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 3.3179997812773405,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 2
         },
@@ -494,16 +656,148 @@
           "item_id": "REGION-MECHANISM",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 4.411999125109362,
+            "top": 4.66599956255468,
             "width": 10.901999125109361,
-            "height": 0.9179997812773404
+            "height": 0.773999343832021
           },
           "z_order": 3
         }
       ]
     },
     {
-      "physical_slide_index": 7,
+      "physical_slide_index": 9,
+      "planner_shape_count": 5,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::column_a::primary_visual::A",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-44A416081EC9BE79",
+          "region_id": "column_a",
+          "presentation_role": "primary_visual",
+          "item_id": "A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2579997812773405,
+            "width": 3.1994991251093614,
+            "height": 2.4079997812773404
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::column_b::secondary_visual::B",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-44A416081EC9BE79",
+          "region_id": "column_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "B",
+          "bounding_box": {
+            "left": 5.025249343832021,
+            "top": 2.2579997812773405,
+            "width": 3.1994991251093614,
+            "height": 2.4079997812773404
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::column_c::secondary_visual::REGION-COLUMN_C",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-44A416081EC9BE79",
+          "region_id": "column_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "REGION-COLUMN_C",
+          "bounding_box": {
+            "left": 8.876499343832021,
+            "top": 2.2579997812773405,
+            "width": 3.1994991251093614,
+            "height": 2.4079997812773404
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::criteria::criteria_strip::TABLE",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-44A416081EC9BE79",
+          "region_id": "criteria",
+          "presentation_role": "criteria_strip",
+          "item_id": "TABLE",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 5.01,
+            "width": 7.11,
+            "height": 0.5159995625546807
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-F-COMPARISON::PPC-44A416081EC9BE79::decision::decision_callout::REGION-DECISION",
+          "logical_slide_id": "PPA-CASE-F-COMPARISON",
+          "candidate_id": "PPC-44A416081EC9BE79",
+          "region_id": "decision",
+          "presentation_role": "decision_callout",
+          "item_id": "REGION-DECISION",
+          "bounding_box": {
+            "left": 8.994998906386702,
+            "top": 5.01,
+            "width": 3.080999562554681,
+            "height": 0.5159995625546807
+          },
+          "z_order": 4
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 10,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-CF994760E192A2C1::text_top::text_top::FORMULA",
+          "logical_slide_id": "PPA-CASE-G-PRINCIPLE",
+          "candidate_id": "PPC-CF994760E192A2C1",
+          "region_id": "text_top",
+          "presentation_role": "text_top",
+          "item_id": "FORMULA",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.128999343832021,
+            "width": 10.901999125109361,
+            "height": 0.773999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-CF994760E192A2C1::left_visual::primary_visual::PRINCIPLE",
+          "logical_slide_id": "PPA-CASE-G-PRINCIPLE",
+          "candidate_id": "PPC-CF994760E192A2C1",
+          "region_id": "left_visual",
+          "presentation_role": "primary_visual",
+          "item_id": "PRINCIPLE",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.1179997812773403,
+            "width": 5.09549978127734,
+            "height": 2.58
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-G-PRINCIPLE::PPC-CF994760E192A2C1::right_visual::secondary_visual::EQUIPMENT",
+          "logical_slide_id": "PPA-CASE-G-PRINCIPLE",
+          "candidate_id": "PPC-CF994760E192A2C1",
+          "region_id": "right_visual",
+          "presentation_role": "secondary_visual",
+          "item_id": "EQUIPMENT",
+          "bounding_box": {
+            "left": 6.980499781277341,
+            "top": 3.1179997812773403,
+            "width": 5.09549978127734,
+            "height": 2.58
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 11,
       "planner_shape_count": 4,
       "regions": [
         {
@@ -515,9 +809,9 @@
           "item_id": "PRINCIPLE",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 5.3325,
-            "height": 2.7029997812773403
+            "height": 2.278999343832021
           },
           "z_order": 0
         },
@@ -530,9 +824,9 @@
           "item_id": "FORMULA",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 4.615999562554681,
+            "top": 4.8379997812773405,
             "width": 5.3325,
-            "height": 0.8159995625546806
+            "height": 0.6879997812773403
           },
           "z_order": 1
         },
@@ -545,9 +839,9 @@
           "item_id": "EQUIPMENT",
           "bounding_box": {
             "left": 6.980499781277341,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 5.09549978127734,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 2
         },
@@ -560,16 +854,127 @@
           "item_id": "REGION-SPECIFICATION",
           "bounding_box": {
             "left": 6.980499781277341,
-            "top": 4.309998906386702,
+            "top": 4.58,
             "width": 5.09549978127734,
-            "height": 1.1219991251093613
+            "height": 0.9459995625546807
           },
           "z_order": 3
         }
       ]
     },
     {
-      "physical_slide_index": 8,
+      "physical_slide_index": 12,
+      "planner_shape_count": 7,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::photo_a::primary_visual::PLOT",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-453ABDFB2283E7A6",
+          "region_id": "photo_a",
+          "presentation_role": "primary_visual",
+          "item_id": "PLOT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.418999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::photo_b::secondary_visual::REGION-PHOTO_B",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-453ABDFB2283E7A6",
+          "region_id": "photo_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "REGION-PHOTO_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.418999343832021
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::plot::validation_plot::REGION-PLOT",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-453ABDFB2283E7A6",
+          "region_id": "plot",
+          "presentation_role": "validation_plot",
+          "item_id": "REGION-PLOT",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 2.2149989063867017,
+            "width": 3.555,
+            "height": 2.063999343832021
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::caption_a::caption::REGION-CAPTION_A",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-453ABDFB2283E7A6",
+          "region_id": "caption_a",
+          "presentation_role": "caption",
+          "item_id": "REGION-CAPTION_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.8059995625546805,
+            "width": 3.3179997812773405,
+            "height": 0.43
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::caption_b::caption::REGION-CAPTION_B",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-453ABDFB2283E7A6",
+          "region_id": "caption_b",
+          "presentation_role": "caption",
+          "item_id": "REGION-CAPTION_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 3.8059995625546805,
+            "width": 3.3179997812773405,
+            "height": 0.43
+          },
+          "z_order": 4
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::measurement_c::secondary_visual::REGION-MEASUREMENT_C",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-453ABDFB2283E7A6",
+          "region_id": "measurement_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "REGION-MEASUREMENT_C",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 4.493999343832021,
+            "width": 3.555,
+            "height": 0.86
+          },
+          "z_order": 5
+        },
+        {
+          "shape_name": "PPA::PPA-CASE-H-HISTORICAL::PPC-453ABDFB2283E7A6::context::compact_context::METRIC",
+          "logical_slide_id": "PPA-CASE-H-HISTORICAL",
+          "candidate_id": "PPC-453ABDFB2283E7A6",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "METRIC",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.66599956255468,
+            "width": 6.991499343832021,
+            "height": 0.7309995625546807
+          },
+          "z_order": 6
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 13,
       "planner_shape_count": 3,
       "regions": [
         {
@@ -581,9 +986,9 @@
           "item_id": "PLOT",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 7.346999125109361,
-            "height": 3.416999125109361
+            "height": 2.8809995625546807
           },
           "z_order": 0
         },
@@ -596,9 +1001,9 @@
           "item_id": "METRIC",
           "bounding_box": {
             "left": 9.231999125109361,
-            "top": 1.6579997812773404,
+            "top": 2.343999343832021,
             "width": 2.843999343832021,
-            "height": 1.1219991251093613
+            "height": 0.9459995625546807
           },
           "z_order": 1
         },
@@ -611,16 +1016,16 @@
           "item_id": "REGION-CONTEXT",
           "bounding_box": {
             "left": 9.231999125109361,
-            "top": 3.29,
+            "top": 3.72,
             "width": 2.843999343832021,
-            "height": 1.6829997812773403
+            "height": 1.418999343832021
           },
           "z_order": 2
         }
       ]
     },
     {
-      "physical_slide_index": 9,
+      "physical_slide_index": 14,
       "planner_shape_count": 3,
       "regions": [
         {
@@ -632,9 +1037,9 @@
           "item_id": "CAD",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 6.635999562554681,
-            "height": 3.57
+            "height": 3.01
           },
           "z_order": 0
         },
@@ -647,9 +1052,9 @@
           "item_id": "CONTROLS",
           "bounding_box": {
             "left": 8.4025,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.6734995625546807,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 1
         },
@@ -662,16 +1067,16 @@
           "item_id": "GO",
           "bounding_box": {
             "left": 8.4025,
-            "top": 4.309998906386702,
+            "top": 4.58,
             "width": 3.6734995625546807,
-            "height": 0.8159995625546806
+            "height": 0.6879997812773403
           },
           "z_order": 2
         }
       ]
     },
     {
-      "physical_slide_index": 10,
+      "physical_slide_index": 15,
       "planner_shape_count": 5,
       "regions": [
         {
@@ -683,9 +1088,9 @@
           "item_id": "P1",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 3.1994991251093614,
-            "height": 2.855999562554681
+            "height": 2.4079997812773404
           },
           "z_order": 0
         },
@@ -698,9 +1103,9 @@
           "item_id": "P2",
           "bounding_box": {
             "left": 5.025249343832021,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 3.1994991251093614,
-            "height": 2.855999562554681
+            "height": 2.4079997812773404
           },
           "z_order": 1
         },
@@ -713,9 +1118,9 @@
           "item_id": "P3",
           "bounding_box": {
             "left": 8.876499343832021,
-            "top": 1.5559995625546807,
+            "top": 2.2579997812773405,
             "width": 3.1994991251093614,
-            "height": 2.855999562554681
+            "height": 2.4079997812773404
           },
           "z_order": 2
         },
@@ -728,9 +1133,9 @@
           "item_id": "REGION-CRITERIA",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 4.82,
+            "top": 5.01,
             "width": 7.11,
-            "height": 0.6119991251093613
+            "height": 0.5159995625546807
           },
           "z_order": 3
         },
@@ -743,16 +1148,16 @@
           "item_id": "REGION-DECISION",
           "bounding_box": {
             "left": 8.994998906386702,
-            "top": 4.82,
+            "top": 5.01,
             "width": 3.080999562554681,
-            "height": 0.6119991251093613
+            "height": 0.5159995625546807
           },
           "z_order": 4
         }
       ]
     },
     {
-      "physical_slide_index": 11,
+      "physical_slide_index": 16,
       "planner_shape_count": 7,
       "regions": [
         {
@@ -764,9 +1169,9 @@
           "item_id": "P1",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.6829997812773403
+            "height": 1.418999343832021
           },
           "z_order": 0
         },
@@ -779,9 +1184,9 @@
           "item_id": "P3",
           "bounding_box": {
             "left": 4.8475,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.3179997812773405,
-            "height": 1.6829997812773403
+            "height": 1.418999343832021
           },
           "z_order": 1
         },
@@ -794,9 +1199,9 @@
           "item_id": "REGION-PLOT",
           "bounding_box": {
             "left": 8.52099956255468,
-            "top": 1.505,
+            "top": 2.2149989063867017,
             "width": 3.555,
-            "height": 2.4479997812773404
+            "height": 2.063999343832021
           },
           "z_order": 2
         },
@@ -809,9 +1214,9 @@
           "item_id": "REGION-CAPTION_A",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 3.3919991251093613,
+            "top": 3.8059995625546805,
             "width": 3.3179997812773405,
-            "height": 0.51
+            "height": 0.43
           },
           "z_order": 3
         },
@@ -824,9 +1229,9 @@
           "item_id": "REGION-CAPTION_B",
           "bounding_box": {
             "left": 4.8475,
-            "top": 3.3919991251093613,
+            "top": 3.8059995625546805,
             "width": 3.3179997812773405,
-            "height": 0.51
+            "height": 0.43
           },
           "z_order": 4
         },
@@ -839,9 +1244,9 @@
           "item_id": "P2",
           "bounding_box": {
             "left": 8.52099956255468,
-            "top": 4.207999781277341,
+            "top": 4.493999343832021,
             "width": 3.555,
-            "height": 1.02
+            "height": 0.86
           },
           "z_order": 5
         },
@@ -854,11 +1259,731 @@
           "item_id": "REGION-CONTEXT",
           "bounding_box": {
             "left": 1.173999343832021,
-            "top": 4.411999125109362,
+            "top": 4.66599956255468,
             "width": 6.991499343832021,
-            "height": 0.8669991251093613
+            "height": 0.7309995625546807
           },
           "z_order": 6
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 17,
+      "planner_shape_count": 5,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::explanation::procedure::GOLDEN-EXPLANATION",
+          "logical_slide_id": "PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "candidate_id": "PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "region_id": "explanation",
+          "presentation_role": "procedure",
+          "item_id": "GOLDEN-EXPLANATION",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.1719991251093616,
+            "width": 3.3179997812773405,
+            "height": 3.353999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::matrix_a::primary_visual::GOLDEN-MATRIX_A",
+          "logical_slide_id": "PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "candidate_id": "PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "region_id": "matrix_a",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-MATRIX_A",
+          "bounding_box": {
+            "left": 5.084499125109361,
+            "top": 2.2149989063867017,
+            "width": 3.080999562554681,
+            "height": 1.4619991251093614
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::matrix_b::secondary_visual::GOLDEN-MATRIX_B",
+          "logical_slide_id": "PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "candidate_id": "PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "region_id": "matrix_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-MATRIX_B",
+          "bounding_box": {
+            "left": 8.75799978127734,
+            "top": 2.2149989063867017,
+            "width": 3.080999562554681,
+            "height": 1.4619991251093614
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::matrix_c::secondary_visual::GOLDEN-MATRIX_C",
+          "logical_slide_id": "PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "candidate_id": "PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "region_id": "matrix_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-MATRIX_C",
+          "bounding_box": {
+            "left": 5.084499125109361,
+            "top": 4.020999562554681,
+            "width": 3.080999562554681,
+            "height": 1.4619991251093614
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX::matrix_d::secondary_visual::GOLDEN-MATRIX_D",
+          "logical_slide_id": "PPA-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "candidate_id": "PPC-GOLDEN-FEASIBILITY-EVIDENCE-MATRIX",
+          "region_id": "matrix_d",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-MATRIX_D",
+          "bounding_box": {
+            "left": 8.75799978127734,
+            "top": 4.020999562554681,
+            "width": 3.080999562554681,
+            "height": 1.4619991251093614
+          },
+          "z_order": 4
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 18,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE::PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE::hardware::primary_visual::GOLDEN-HARDWARE",
+          "logical_slide_id": "PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+          "candidate_id": "PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+          "region_id": "hardware",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-HARDWARE",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2149989063867017,
+            "width": 6.635999562554681,
+            "height": 3.01
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE::PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE::procedure::procedure::GOLDEN-PROCEDURE",
+          "logical_slide_id": "PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+          "candidate_id": "PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+          "region_id": "procedure",
+          "presentation_role": "procedure",
+          "item_id": "GOLDEN-PROCEDURE",
+          "bounding_box": {
+            "left": 8.4025,
+            "top": 2.2149989063867017,
+            "width": 3.6734995625546807,
+            "height": 2.063999343832021
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE::PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE::go::go_criterion::GOLDEN-GO",
+          "logical_slide_id": "PPA-GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+          "candidate_id": "PPC-GOLDEN-HARDWARE-DESIGN-PROCEDURE",
+          "region_id": "go",
+          "presentation_role": "go_criterion",
+          "item_id": "GOLDEN-GO",
+          "bounding_box": {
+            "left": 8.4025,
+            "top": 4.58,
+            "width": 3.6734995625546807,
+            "height": 0.6879997812773403
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 19,
+      "planner_shape_count": 7,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::visual_a::primary_visual::GOLDEN-VISUAL_A",
+          "logical_slide_id": "PPA-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "candidate_id": "PPC-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "region_id": "visual_a",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-VISUAL_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.505
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::visual_b::secondary_visual::GOLDEN-VISUAL_B",
+          "logical_slide_id": "PPA-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "candidate_id": "PPC-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "region_id": "visual_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-VISUAL_B",
+          "bounding_box": {
+            "left": 4.96599956255468,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.505
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::visual_c::secondary_visual::GOLDEN-VISUAL_C",
+          "logical_slide_id": "PPA-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "candidate_id": "PPC-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "region_id": "visual_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-VISUAL_C",
+          "bounding_box": {
+            "left": 8.75799978127734,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.505
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::cite_a::citation_strip::GOLDEN-CITE_A",
+          "logical_slide_id": "PPA-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "candidate_id": "PPC-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "region_id": "cite_a",
+          "presentation_role": "citation_strip",
+          "item_id": "GOLDEN-CITE_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.8919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.343999343832021
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::cite_b::citation_strip::GOLDEN-CITE_B",
+          "logical_slide_id": "PPA-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "candidate_id": "PPC-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "region_id": "cite_b",
+          "presentation_role": "citation_strip",
+          "item_id": "GOLDEN-CITE_B",
+          "bounding_box": {
+            "left": 4.96599956255468,
+            "top": 3.8919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.343999343832021
+          },
+          "z_order": 4
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::cite_c::citation_strip::GOLDEN-CITE_C",
+          "logical_slide_id": "PPA-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "candidate_id": "PPC-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "region_id": "cite_c",
+          "presentation_role": "citation_strip",
+          "item_id": "GOLDEN-CITE_C",
+          "bounding_box": {
+            "left": 8.75799978127734,
+            "top": 3.8919991251093613,
+            "width": 3.3179997812773405,
+            "height": 0.343999343832021
+          },
+          "z_order": 5
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-LITERATURE-VISUAL-MATRIX::PPC-GOLDEN-LITERATURE-VISUAL-MATRIX::synthesis::synthesis_callout::GOLDEN-SYNTHESIS",
+          "logical_slide_id": "PPA-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "candidate_id": "PPC-GOLDEN-LITERATURE-VISUAL-MATRIX",
+          "region_id": "synthesis",
+          "presentation_role": "synthesis_callout",
+          "item_id": "GOLDEN-SYNTHESIS",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.66599956255468,
+            "width": 10.901999125109361,
+            "height": 0.6879997812773403
+          },
+          "z_order": 6
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 20,
+      "planner_shape_count": 7,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::photo_a::primary_visual::GOLDEN-PHOTO_A",
+          "logical_slide_id": "PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "candidate_id": "PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "region_id": "photo_a",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-PHOTO_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.418999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::photo_b::secondary_visual::GOLDEN-PHOTO_B",
+          "logical_slide_id": "PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "candidate_id": "PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "region_id": "photo_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-PHOTO_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 2.2149989063867017,
+            "width": 3.3179997812773405,
+            "height": 1.418999343832021
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::plot::validation_plot::GOLDEN-PLOT",
+          "logical_slide_id": "PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "candidate_id": "PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "region_id": "plot",
+          "presentation_role": "validation_plot",
+          "item_id": "GOLDEN-PLOT",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 2.2149989063867017,
+            "width": 3.555,
+            "height": 2.063999343832021
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::caption_a::caption::GOLDEN-CAPTION_A",
+          "logical_slide_id": "PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "candidate_id": "PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "region_id": "caption_a",
+          "presentation_role": "caption",
+          "item_id": "GOLDEN-CAPTION_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.8059995625546805,
+            "width": 3.3179997812773405,
+            "height": 0.43
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::caption_b::caption::GOLDEN-CAPTION_B",
+          "logical_slide_id": "PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "candidate_id": "PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "region_id": "caption_b",
+          "presentation_role": "caption",
+          "item_id": "GOLDEN-CAPTION_B",
+          "bounding_box": {
+            "left": 4.8475,
+            "top": 3.8059995625546805,
+            "width": 3.3179997812773405,
+            "height": 0.43
+          },
+          "z_order": 4
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::measurement_c::secondary_visual::GOLDEN-MEASUREMENT_C",
+          "logical_slide_id": "PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "candidate_id": "PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "region_id": "measurement_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-MEASUREMENT_C",
+          "bounding_box": {
+            "left": 8.52099956255468,
+            "top": 4.493999343832021,
+            "width": 3.555,
+            "height": 0.86
+          },
+          "z_order": 5
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX::PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX::context::compact_context::GOLDEN-CONTEXT",
+          "logical_slide_id": "PPA-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "candidate_id": "PPC-GOLDEN-PHYSICAL-VALIDATION-MATRIX",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "GOLDEN-CONTEXT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.66599956255468,
+            "width": 6.991499343832021,
+            "height": 0.7309995625546807
+          },
+          "z_order": 6
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 21,
+      "planner_shape_count": 4,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::principle::primary_visual::GOLDEN-PRINCIPLE",
+          "logical_slide_id": "PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+          "candidate_id": "PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+          "region_id": "principle",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-PRINCIPLE",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2579997812773405,
+            "width": 5.3325,
+            "height": 2.278999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::formula::formula::GOLDEN-FORMULA",
+          "logical_slide_id": "PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+          "candidate_id": "PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+          "region_id": "formula",
+          "presentation_role": "formula",
+          "item_id": "GOLDEN-FORMULA",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.8379997812773405,
+            "width": 5.3325,
+            "height": 0.6879997812773403
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::equipment::secondary_visual::GOLDEN-EQUIPMENT",
+          "logical_slide_id": "PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+          "candidate_id": "PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+          "region_id": "equipment",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-EQUIPMENT",
+          "bounding_box": {
+            "left": 6.980499781277341,
+            "top": 2.2579997812773405,
+            "width": 5.09549978127734,
+            "height": 2.063999343832021
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT::specification::specification_table::GOLDEN-SPECIFICATION",
+          "logical_slide_id": "PPA-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+          "candidate_id": "PPC-GOLDEN-PRINCIPLE-EQUIPMENT-SPLIT",
+          "region_id": "specification",
+          "presentation_role": "specification_table",
+          "item_id": "GOLDEN-SPECIFICATION",
+          "bounding_box": {
+            "left": 6.980499781277341,
+            "top": 4.58,
+            "width": 5.09549978127734,
+            "height": 0.9459995625546807
+          },
+          "z_order": 3
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 22,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PROBLEM-TO-SOLUTION::PPC-GOLDEN-PROBLEM-TO-SOLUTION::problem::problem_statement::GOLDEN-PROBLEM",
+          "logical_slide_id": "PPA-GOLDEN-PROBLEM-TO-SOLUTION",
+          "candidate_id": "PPC-GOLDEN-PROBLEM-TO-SOLUTION",
+          "region_id": "problem",
+          "presentation_role": "problem_statement",
+          "item_id": "GOLDEN-PROBLEM",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.1719991251093616,
+            "width": 10.901999125109361,
+            "height": 1.1609995625546807
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PROBLEM-TO-SOLUTION::PPC-GOLDEN-PROBLEM-TO-SOLUTION::solution::solution_path::GOLDEN-SOLUTION",
+          "logical_slide_id": "PPA-GOLDEN-PROBLEM-TO-SOLUTION",
+          "candidate_id": "PPC-GOLDEN-PROBLEM-TO-SOLUTION",
+          "region_id": "solution",
+          "presentation_role": "solution_path",
+          "item_id": "GOLDEN-SOLUTION",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.6769991251093614,
+            "width": 6.754499125109361,
+            "height": 1.6769991251093612
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-PROBLEM-TO-SOLUTION::PPC-GOLDEN-PROBLEM-TO-SOLUTION::support::support_visual::GOLDEN-SUPPORT",
+          "logical_slide_id": "PPA-GOLDEN-PROBLEM-TO-SOLUTION",
+          "candidate_id": "PPC-GOLDEN-PROBLEM-TO-SOLUTION",
+          "region_id": "support",
+          "presentation_role": "support_visual",
+          "item_id": "GOLDEN-SUPPORT",
+          "bounding_box": {
+            "left": 8.639499125109362,
+            "top": 3.6769991251093614,
+            "width": 3.436499343832021,
+            "height": 1.6769991251093612
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 23,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-REAL-RESULT-VALIDATION::PPC-GOLDEN-REAL-RESULT-VALIDATION::result::primary_visual::GOLDEN-RESULT",
+          "logical_slide_id": "PPA-GOLDEN-REAL-RESULT-VALIDATION",
+          "candidate_id": "PPC-GOLDEN-REAL-RESULT-VALIDATION",
+          "region_id": "result",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-RESULT",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2579997812773405,
+            "width": 7.346999125109361,
+            "height": 2.8809995625546807
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-REAL-RESULT-VALIDATION::PPC-GOLDEN-REAL-RESULT-VALIDATION::metric::metric_callout::GOLDEN-METRIC",
+          "logical_slide_id": "PPA-GOLDEN-REAL-RESULT-VALIDATION",
+          "candidate_id": "PPC-GOLDEN-REAL-RESULT-VALIDATION",
+          "region_id": "metric",
+          "presentation_role": "metric_callout",
+          "item_id": "GOLDEN-METRIC",
+          "bounding_box": {
+            "left": 9.231999125109361,
+            "top": 2.343999343832021,
+            "width": 2.843999343832021,
+            "height": 0.9459995625546807
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-REAL-RESULT-VALIDATION::PPC-GOLDEN-REAL-RESULT-VALIDATION::context::compact_context::GOLDEN-CONTEXT",
+          "logical_slide_id": "PPA-GOLDEN-REAL-RESULT-VALIDATION",
+          "candidate_id": "PPC-GOLDEN-REAL-RESULT-VALIDATION",
+          "region_id": "context",
+          "presentation_role": "compact_context",
+          "item_id": "GOLDEN-CONTEXT",
+          "bounding_box": {
+            "left": 9.231999125109361,
+            "top": 3.72,
+            "width": 2.843999343832021,
+            "height": 1.418999343832021
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 24,
+      "planner_shape_count": 4,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-TECHNOLOGY-COMPARISON::PPC-GOLDEN-TECHNOLOGY-COMPARISON::approach_a::primary_visual::GOLDEN-APPROACH_A",
+          "logical_slide_id": "PPA-GOLDEN-TECHNOLOGY-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-TECHNOLOGY-COMPARISON",
+          "region_id": "approach_a",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-APPROACH_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2579997812773405,
+            "width": 3.3179997812773405,
+            "height": 2.063999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-TECHNOLOGY-COMPARISON::PPC-GOLDEN-TECHNOLOGY-COMPARISON::criteria::criteria_table::GOLDEN-CRITERIA",
+          "logical_slide_id": "PPA-GOLDEN-TECHNOLOGY-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-TECHNOLOGY-COMPARISON",
+          "region_id": "criteria",
+          "presentation_role": "criteria_table",
+          "item_id": "GOLDEN-CRITERIA",
+          "bounding_box": {
+            "left": 4.96599956255468,
+            "top": 2.2579997812773405,
+            "width": 3.3179997812773405,
+            "height": 2.063999343832021
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-TECHNOLOGY-COMPARISON::PPC-GOLDEN-TECHNOLOGY-COMPARISON::approach_b::secondary_visual::GOLDEN-APPROACH_B",
+          "logical_slide_id": "PPA-GOLDEN-TECHNOLOGY-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-TECHNOLOGY-COMPARISON",
+          "region_id": "approach_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-APPROACH_B",
+          "bounding_box": {
+            "left": 8.75799978127734,
+            "top": 2.2579997812773405,
+            "width": 3.3179997812773405,
+            "height": 2.063999343832021
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-TECHNOLOGY-COMPARISON::PPC-GOLDEN-TECHNOLOGY-COMPARISON::mechanism::mechanism_pair::GOLDEN-MECHANISM",
+          "logical_slide_id": "PPA-GOLDEN-TECHNOLOGY-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-TECHNOLOGY-COMPARISON",
+          "region_id": "mechanism",
+          "presentation_role": "mechanism_pair",
+          "item_id": "GOLDEN-MECHANISM",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 4.66599956255468,
+            "width": 10.901999125109361,
+            "height": 0.773999343832021
+          },
+          "z_order": 3
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 25,
+      "planner_shape_count": 3,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL::PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL::text_top::text_top::GOLDEN-TEXT_TOP",
+          "logical_slide_id": "PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL",
+          "candidate_id": "PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL",
+          "region_id": "text_top",
+          "presentation_role": "text_top",
+          "item_id": "GOLDEN-TEXT_TOP",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.128999343832021,
+            "width": 10.901999125109361,
+            "height": 0.773999343832021
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL::PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL::left_visual::primary_visual::GOLDEN-LEFT_VISUAL",
+          "logical_slide_id": "PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL",
+          "candidate_id": "PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL",
+          "region_id": "left_visual",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-LEFT_VISUAL",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 3.1179997812773403,
+            "width": 5.09549978127734,
+            "height": 2.58
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL::PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL::right_visual::secondary_visual::GOLDEN-RIGHT_VISUAL",
+          "logical_slide_id": "PPA-GOLDEN-TEXT-TOP-DUAL-VISUAL",
+          "candidate_id": "PPC-GOLDEN-TEXT-TOP-DUAL-VISUAL",
+          "region_id": "right_visual",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-RIGHT_VISUAL",
+          "bounding_box": {
+            "left": 6.980499781277341,
+            "top": 3.1179997812773403,
+            "width": 5.09549978127734,
+            "height": 2.58
+          },
+          "z_order": 2
+        }
+      ]
+    },
+    {
+      "physical_slide_index": 26,
+      "planner_shape_count": 5,
+      "regions": [
+        {
+          "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::column_a::primary_visual::GOLDEN-COLUMN_A",
+          "logical_slide_id": "PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "region_id": "column_a",
+          "presentation_role": "primary_visual",
+          "item_id": "GOLDEN-COLUMN_A",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 2.2579997812773405,
+            "width": 3.1994991251093614,
+            "height": 2.4079997812773404
+          },
+          "z_order": 0
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::column_b::secondary_visual::GOLDEN-COLUMN_B",
+          "logical_slide_id": "PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "region_id": "column_b",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-COLUMN_B",
+          "bounding_box": {
+            "left": 5.025249343832021,
+            "top": 2.2579997812773405,
+            "width": 3.1994991251093614,
+            "height": 2.4079997812773404
+          },
+          "z_order": 1
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::column_c::secondary_visual::GOLDEN-COLUMN_C",
+          "logical_slide_id": "PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "region_id": "column_c",
+          "presentation_role": "secondary_visual",
+          "item_id": "GOLDEN-COLUMN_C",
+          "bounding_box": {
+            "left": 8.876499343832021,
+            "top": 2.2579997812773405,
+            "width": 3.1994991251093614,
+            "height": 2.4079997812773404
+          },
+          "z_order": 2
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::criteria::criteria_strip::GOLDEN-CRITERIA",
+          "logical_slide_id": "PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "region_id": "criteria",
+          "presentation_role": "criteria_strip",
+          "item_id": "GOLDEN-CRITERIA",
+          "bounding_box": {
+            "left": 1.173999343832021,
+            "top": 5.01,
+            "width": 7.11,
+            "height": 0.5159995625546807
+          },
+          "z_order": 3
+        },
+        {
+          "shape_name": "PPA::PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON::decision::decision_callout::GOLDEN-DECISION",
+          "logical_slide_id": "PPA-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "candidate_id": "PPC-GOLDEN-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "region_id": "decision",
+          "presentation_role": "decision_callout",
+          "item_id": "GOLDEN-DECISION",
+          "bounding_box": {
+            "left": 8.994998906386702,
+            "top": 5.01,
+            "width": 3.080999562554681,
+            "height": 0.5159995625546807
+          },
+          "z_order": 4
         }
       ]
     }

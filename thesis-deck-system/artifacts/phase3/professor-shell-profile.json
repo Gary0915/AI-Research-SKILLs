@@ -195,9 +195,9 @@
   "body_content_safe_region": {
     "geometry_inches": {
       "left": 0.7,
-      "top": 1.25,
+      "top": 2.0,
       "width": 11.85,
-      "height": 5.1
+      "height": 4.3
     },
     "evidence_level": "synthetic_system_owned",
     "fidelity_status": "insufficient_evidence",
@@ -315,5 +315,5 @@
   ],
   "measurement_evidence_level": "partial",
   "fidelity_status": "insufficient_evidence",
-  "shell_profile_sha256": "1334a9fe1e9b675060ae9a2965162f3da65d7afe476e0e1320888a73c20d4aec"
+  "shell_profile_sha256": "e69ab4e064d152a590571debf87f587609300fc783e12a1356c582f6952309b4"
 }

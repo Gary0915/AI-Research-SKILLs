@@ -870,7 +870,9 @@
           "z_order_class": "body",
           "required": true,
           "accepted_content_kinds": [
-            "text"
+            "text",
+            "citation",
+            "formula"
           ],
           "caption_behavior": "none",
           "callout_behavior": "none",
@@ -891,7 +893,8 @@
             "photo",
             "cad",
             "plot",
-            "schematic"
+            "schematic",
+            "table"
           ],
           "caption_behavior": "none",
           "callout_behavior": "none",
@@ -912,7 +915,8 @@
             "photo",
             "cad",
             "plot",
-            "schematic"
+            "schematic",
+            "table"
           ],
           "caption_behavior": "none",
           "callout_behavior": "none",
@@ -923,7 +927,7 @@
         "JDP-TSMC-2026-0814-BODY"
       ],
       "geometry_authority_status": "body_only_reference_supported",
-      "geometry_hash": "d373c312fd2e590dc69781c7ad9ef6576516529dc4551700ce594ac60492402b"
+      "geometry_hash": "174a9b42729080581e13cace3d65a544cd9a883659a2137d430086d868b865a7"
     },
     {
       "recipe_id": "BCR-THREE-COLUMN-PHYSICAL-COMPARISON",

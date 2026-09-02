@@ -352,7 +352,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-943c2bc3624aaf43",
+        "content_shape_id": "SCS-943C2BC3624AAF43",
         "slide_id": "PPA-CASE-A-EXPERIMENT",
         "semantic_stage": "experiment_design",
         "observations": {
@@ -377,8 +377,8 @@
             "value": 0
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 1
           },
           "plot_count": {
             "state": "value",
@@ -401,8 +401,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -412,9 +412,17 @@
             "state": "value",
             "value": 0
           },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 1
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -426,11 +434,11 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 3
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "secondary_visual_count": {
             "state": "value",
@@ -438,7 +446,7 @@
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "CAD",
@@ -464,7 +472,7 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "db53372b46198982f8fef510dd3630d9f41988447de15f99cf6a301951471c30"
+        "content_shape_sha256": "ef5cde91fbdf63bffe51b4a732cb0a6fd7233c61ec94d53f7d87b8daf42261de"
       },
       "eligible_body_families": [
         "BCF-HARDWARE-DESIGN-PROCEDURE"
@@ -482,16 +490,26 @@
             "go_criterion"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "exact_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 40
           },
           "candidate_status": "eligible"
         }
@@ -556,7 +574,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-9b3fcf497e86aaf5",
+        "content_shape_id": "SCS-9B3FCF497E86AAF5",
         "slide_id": "PPA-CASE-B-PHYSICAL",
         "semantic_stage": "result_comparison",
         "observations": {
@@ -578,15 +596,15 @@
           },
           "photo_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "plot_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           },
           "schematic_count": {
             "state": "value",
@@ -605,8 +623,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -614,11 +632,19 @@
           },
           "caption_count": {
             "state": "value",
+            "value": 1
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
             "value": 0
           },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -630,19 +656,19 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 5
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           },
           "secondary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           }
         },
         "text_density_class": "high",
-        "evidence_density_class": "low",
+        "evidence_density_class": "high",
         "composition_content_items": [
           {
             "item_id": "PHOTO-1",
@@ -682,7 +708,7 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "acf1f297f17f27beb8648c7e90a5f3d3ccda947ab95fe654107f5a58300f0cf8"
+        "content_shape_sha256": "b2e50029c2dfa58b41363a31a7545588205885b64bf4f65ef3cde6d416dbbc5d"
       },
       "eligible_body_families": [
         "BCF-PHYSICAL-VALIDATION-MATRIX"
@@ -700,16 +726,26 @@
             "caption_matrix"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 4,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 38
           },
           "candidate_status": "eligible"
         }
@@ -755,7 +791,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-1a5ae3cf9be4d386",
+        "content_shape_id": "SCS-1A5AE3CF9BE4D386",
         "slide_id": "PPA-CASE-C-RESULT",
         "semantic_stage": "result_single",
         "observations": {
@@ -780,12 +816,12 @@
             "value": 0
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "plot_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "schematic_count": {
             "state": "value",
@@ -804,8 +840,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -815,9 +851,17 @@
             "state": "value",
             "value": 0
           },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 1
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -829,11 +873,11 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "secondary_visual_count": {
             "state": "value",
@@ -841,7 +885,7 @@
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "PLOT",
@@ -860,12 +904,48 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "5259aaa12c903976854764e334beb3832e210a1fd31ac4edcc7f069a357d7f56"
+        "content_shape_sha256": "e81b0f7716bf0fc76956c03fe94c21864c3fb3315a6a133679bd28059bd7c812"
       },
       "eligible_body_families": [
+        "BCF-PHYSICAL-VALIDATION-MATRIX",
         "BCF-REAL-RESULT-VALIDATION"
       ],
       "candidates": [
+        {
+          "candidate_id": "PPC-497C2609E843D136",
+          "slide_id": "PPA-CASE-C-RESULT",
+          "dependency_hash": "48a29afa4399d21fa29f72745c76d15fd8e2c7d0fe75dc2005e8a7d85c36acad",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "structure_fingerprint": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+          "region_plan": [
+            "physical_visual_grid",
+            "validation_plot",
+            "caption_matrix"
+          ],
+          "score": {
+            "semantic_fit": 4,
+            "capacity_fit": 3,
+            "evidence_fit": 2,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 36
+          },
+          "candidate_status": "eligible"
+        },
         {
           "candidate_id": "PPC-6DC7B591568B4649",
           "slide_id": "PPA-CASE-C-RESULT",
@@ -878,16 +958,23 @@
             "compact_context"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 2,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "exact_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 20
           },
           "candidate_status": "eligible"
         }
@@ -896,14 +983,15 @@
         "slide_id": "PPA-CASE-C-RESULT",
         "dependency_hash": "48a29afa4399d21fa29f72745c76d15fd8e2c7d0fe75dc2005e8a7d85c36acad",
         "candidate_ids": [
+          "PPC-497C2609E843D136",
           "PPC-6DC7B591568B4649"
         ],
-        "selected_candidate_id": "PPC-6DC7B591568B4649",
+        "selected_candidate_id": "PPC-497C2609E843D136",
         "selection_mode": "automatic",
         "historical_lock_status": "not_locked",
         "planner_version": "2.0.0",
         "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
-        "decision_hash": "d638189affac244df273b213ef137e37413852380ecea6bd3cb720bdd2a9f0c4"
+        "decision_hash": "a1230b67c8177005889abdb009931ab4177547ff0bbd2726236a922e297c14ec"
       },
       "rejection_reasons": []
     },
@@ -938,7 +1026,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-805533db5c02973a",
+        "content_shape_id": "SCS-805533DB5C02973A",
         "slide_id": "PPA-CASE-D-MULTIMODAL",
         "semantic_stage": "result_comparison",
         "observations": {
@@ -960,15 +1048,15 @@
           },
           "photo_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "plot_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "schematic_count": {
             "state": "value",
@@ -987,8 +1075,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -996,11 +1084,19 @@
           },
           "caption_count": {
             "state": "value",
+            "value": 1
+          },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
             "value": 0
           },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -1012,11 +1108,11 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 3
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           },
           "secondary_visual_count": {
             "state": "value",
@@ -1024,7 +1120,7 @@
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "PHOTO",
@@ -1050,7 +1146,7 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "da175cc5631128746e88c2591da733f5697b9daaeae1c7f973d9b1bdbe2b6612"
+        "content_shape_sha256": "d6b00d15c56805b6d980ea84647515b3ddafa42664108bd94ec056e61937bf60"
       },
       "eligible_body_families": [
         "BCF-PHYSICAL-VALIDATION-MATRIX"
@@ -1068,16 +1164,26 @@
             "caption_matrix"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 4,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 38
           },
           "candidate_status": "eligible"
         }
@@ -1128,7 +1234,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-52bd4b89493e5710",
+        "content_shape_id": "SCS-52BD4B89493E5710",
         "slide_id": "PPA-CASE-E-LITERATURE",
         "semantic_stage": "literature_mechanism",
         "observations": {
@@ -1153,8 +1259,8 @@
             "value": 0
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "plot_count": {
             "state": "value",
@@ -1162,7 +1268,7 @@
           },
           "schematic_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           },
           "table_count": {
             "state": "value",
@@ -1177,8 +1283,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -1188,9 +1294,17 @@
             "state": "value",
             "value": 0
           },
+          "citation_count": {
+            "state": "value",
+            "value": 1
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -1202,19 +1316,19 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 3
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "secondary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "FIG-1",
@@ -1240,10 +1354,11 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "d041152d57238644d439105fe65b2fabd1a2528a26d8e88d6a2000013cb686d4"
+        "content_shape_sha256": "1de2afd893b6da83da360cbe5b82890c51faa360be020378a44a179036205d1d"
       },
       "eligible_body_families": [
-        "BCF-LITERATURE-VISUAL-MATRIX"
+        "BCF-LITERATURE-VISUAL-MATRIX",
+        "BCF-TEXT-TOP-DUAL-VISUAL"
       ],
       "candidates": [
         {
@@ -1258,16 +1373,55 @@
             "synthesis_callout"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "exact_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 22
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "PPC-E2D8E8694848D8DD",
+          "slide_id": "PPA-CASE-E-LITERATURE",
+          "dependency_hash": "1da93e10838aba88cd17575cde4630183ddc58379c5e010cfe33ba31175c77d7",
+          "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+          "structure_fingerprint": "452603b45ef24568f366d0460de0977038464f82c9233daef6021c54ae37741d",
+          "region_plan": [
+            "text_top",
+            "dual_visual",
+            "supporting_context"
+          ],
+          "score": {
+            "semantic_fit": 4,
+            "capacity_fit": 3,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 20
           },
           "candidate_status": "eligible"
         }
@@ -1276,14 +1430,15 @@
         "slide_id": "PPA-CASE-E-LITERATURE",
         "dependency_hash": "1da93e10838aba88cd17575cde4630183ddc58379c5e010cfe33ba31175c77d7",
         "candidate_ids": [
-          "PPC-2067AD3AC8E29B97"
+          "PPC-2067AD3AC8E29B97",
+          "PPC-E2D8E8694848D8DD"
         ],
         "selected_candidate_id": "PPC-2067AD3AC8E29B97",
         "selection_mode": "automatic",
         "historical_lock_status": "not_locked",
         "planner_version": "2.0.0",
         "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
-        "decision_hash": "5cface2b88ab3756635c5f9503327d98a402d056a9d4fefe1be7d9155fcd1c81"
+        "decision_hash": "def1d28a61499b434cdb6e4e0815c5b1da8c3b65bcbe2a682b48c87e23e30a5a"
       },
       "rejection_reasons": []
     },
@@ -1318,7 +1473,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-a790ebc082d49f0f",
+        "content_shape_id": "SCS-A790EBC082D49F0F",
         "slide_id": "PPA-CASE-F-COMPARISON",
         "semantic_stage": "layer_integrated_discussion",
         "observations": {
@@ -1343,8 +1498,8 @@
             "value": 0
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "plot_count": {
             "state": "value",
@@ -1352,11 +1507,11 @@
           },
           "schematic_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           },
           "table_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "table_rows_max": {
             "state": "unavailable",
@@ -1367,8 +1522,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -1378,9 +1533,17 @@
             "state": "value",
             "value": 0
           },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -1392,19 +1555,19 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 3
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "secondary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "A",
@@ -1430,10 +1593,11 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "fff12dd0ad4f1e9e2561ec0ce943430194b112fcecc753edae2356fdc5b58b01"
+        "content_shape_sha256": "41c449ef7c3e7da17d2f69314191f4cd386d4750be0c3ba74eeba1c2efd5d8be"
       },
       "eligible_body_families": [
-        "BCF-TECHNOLOGY-COMPARISON"
+        "BCF-TECHNOLOGY-COMPARISON",
+        "BCF-THREE-COLUMN-PHYSICAL-COMPARISON"
       ],
       "candidates": [
         {
@@ -1448,16 +1612,58 @@
             "mechanism_pair"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 40
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "PPC-44A416081EC9BE79",
+          "slide_id": "PPA-CASE-F-COMPARISON",
+          "dependency_hash": "7ad58f5447c5ae967bccf31081d662189ea4c2c1679f14588e97749225bf2f0d",
+          "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "structure_fingerprint": "8f1f9b421132e6915274f6e4233879424c5311fea469a2aec8aae16ecaa0496c",
+          "region_plan": [
+            "three_physical_columns",
+            "criteria_strip",
+            "decision_callout"
+          ],
+          "score": {
+            "semantic_fit": 5,
+            "capacity_fit": 3,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 22
           },
           "candidate_status": "eligible"
         }
@@ -1466,14 +1672,15 @@
         "slide_id": "PPA-CASE-F-COMPARISON",
         "dependency_hash": "7ad58f5447c5ae967bccf31081d662189ea4c2c1679f14588e97749225bf2f0d",
         "candidate_ids": [
-          "PPC-1BB2BEBF7E6618D7"
+          "PPC-1BB2BEBF7E6618D7",
+          "PPC-44A416081EC9BE79"
         ],
         "selected_candidate_id": "PPC-1BB2BEBF7E6618D7",
         "selection_mode": "automatic",
         "historical_lock_status": "not_locked",
         "planner_version": "2.0.0",
         "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
-        "decision_hash": "080bcc2b2b01269a978941b7dfeeea4cc5297b6cfd69e1d71a26e661d44653e7"
+        "decision_hash": "272bf8cfb5ba0768b54b92fc453e1cc6149645cb3caf30ea1b8db5c864826538"
       },
       "rejection_reasons": []
     },
@@ -1508,7 +1715,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-275b17a8475e08e9",
+        "content_shape_id": "SCS-275B17A8475E08E9",
         "slide_id": "PPA-CASE-G-PRINCIPLE",
         "semantic_stage": "hypothesis_transition",
         "observations": {
@@ -1533,8 +1740,8 @@
             "value": 0
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "plot_count": {
             "state": "value",
@@ -1542,11 +1749,11 @@
           },
           "schematic_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "table_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "table_rows_max": {
             "state": "unavailable",
@@ -1557,8 +1764,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 1
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -1568,9 +1775,17 @@
             "state": "value",
             "value": 0
           },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -1582,11 +1797,11 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 3
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "secondary_visual_count": {
             "state": "value",
@@ -1594,7 +1809,7 @@
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "PRINCIPLE",
@@ -1620,10 +1835,11 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "156e865d7c5d772105f68c1f0a2ccf5f8f55157e90f060e710d63f16f874f2ce"
+        "content_shape_sha256": "b5e2fd7833f017b658659d3f86861c73a3670fbfa0320d1b052da795ebaa3272"
       },
       "eligible_body_families": [
-        "BCF-PRINCIPLE-EQUIPMENT-SPLIT"
+        "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+        "BCF-TEXT-TOP-DUAL-VISUAL"
       ],
       "candidates": [
         {
@@ -1638,16 +1854,59 @@
             "specification_table"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 11,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0617",
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 3,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "exact_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 44
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "PPC-CF994760E192A2C1",
+          "slide_id": "PPA-CASE-G-PRINCIPLE",
+          "dependency_hash": "7eafc23eb5f7f0b3c0952be3f586303bebb25052298341af3e2128cda673b374",
+          "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+          "structure_fingerprint": "452603b45ef24568f366d0460de0977038464f82c9233daef6021c54ae37741d",
+          "region_plan": [
+            "text_top",
+            "dual_visual",
+            "supporting_context"
+          ],
+          "score": {
+            "semantic_fit": 4,
+            "capacity_fit": 3,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 20
           },
           "candidate_status": "eligible"
         }
@@ -1656,6 +1915,7 @@
         "slide_id": "PPA-CASE-G-PRINCIPLE",
         "dependency_hash": "7eafc23eb5f7f0b3c0952be3f586303bebb25052298341af3e2128cda673b374",
         "candidate_ids": [
+          "PPC-CF994760E192A2C1",
           "PPC-E866D0D74E77404B"
         ],
         "selected_candidate_id": "PPC-E866D0D74E77404B",
@@ -1663,7 +1923,7 @@
         "historical_lock_status": "not_locked",
         "planner_version": "2.0.0",
         "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
-        "decision_hash": "0cad72e5133eb925d8b3b6101c9ce1562f4315f93d4351972c25db47b547fa96"
+        "decision_hash": "39286702dac91633b46de66a89e9cf6e7e542433d96132fac86f45a652df7c5f"
       },
       "rejection_reasons": []
     },
@@ -1691,7 +1951,7 @@
       "historical": true,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-605f16c1b97563bd",
+        "content_shape_id": "SCS-605F16C1B97563BD",
         "slide_id": "PPA-CASE-H-HISTORICAL",
         "semantic_stage": "result_single",
         "observations": {
@@ -1716,12 +1976,12 @@
             "value": 0
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "plot_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "schematic_count": {
             "state": "value",
@@ -1740,8 +2000,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -1751,9 +2011,17 @@
             "state": "value",
             "value": 0
           },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 1
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -1765,11 +2033,11 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "secondary_visual_count": {
             "state": "value",
@@ -1777,7 +2045,7 @@
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "PLOT",
@@ -1796,12 +2064,48 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "363ce00af1f1e296d8582cf30d1b264e86943e76c31e9801901e41684bdd4069"
+        "content_shape_sha256": "dca23988b79deb93e360b1abd9bcf359f8a794d721af3aced523859b87737607"
       },
       "eligible_body_families": [
+        "BCF-PHYSICAL-VALIDATION-MATRIX",
         "BCF-REAL-RESULT-VALIDATION"
       ],
       "candidates": [
+        {
+          "candidate_id": "PPC-453ABDFB2283E7A6",
+          "slide_id": "PPA-CASE-H-HISTORICAL",
+          "dependency_hash": "c210899640d65475f943ca1a0c220c46279e065a7014abcb615fafff0f076853",
+          "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+          "structure_fingerprint": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+          "region_plan": [
+            "physical_visual_grid",
+            "validation_plot",
+            "caption_matrix"
+          ],
+          "score": {
+            "semantic_fit": 4,
+            "capacity_fit": 3,
+            "evidence_fit": 2,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 36
+          },
+          "candidate_status": "eligible"
+        },
         {
           "candidate_id": "PPC-468E2014216AC345",
           "slide_id": "PPA-CASE-H-HISTORICAL",
@@ -1814,16 +2118,23 @@
             "compact_context"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 2,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "exact_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 20
           },
           "candidate_status": "eligible"
         }
@@ -1832,14 +2143,15 @@
         "slide_id": "PPA-CASE-H-HISTORICAL",
         "dependency_hash": "c210899640d65475f943ca1a0c220c46279e065a7014abcb615fafff0f076853",
         "candidate_ids": [
+          "PPC-453ABDFB2283E7A6",
           "PPC-468E2014216AC345"
         ],
-        "selected_candidate_id": "PPC-468E2014216AC345",
+        "selected_candidate_id": "PPC-453ABDFB2283E7A6",
         "selection_mode": "historical_reuse",
         "historical_lock_status": "locked_dependency_unchanged",
         "planner_version": "2.0.0",
         "selection_reason": "accepted_history_preserved",
-        "decision_hash": "df28b31c32176981ec770747c17493c25c30fd74517ed43be83acd1ea6897c3d"
+        "decision_hash": "d1b003836d445e93ee0a1b8a066a6df741bdbfa5ab0ca55402d4352749f7be2b"
       },
       "rejection_reasons": []
     },
@@ -1874,7 +2186,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-7eeea1ade37d8b48",
+        "content_shape_id": "SCS-7EEEA1ADE37D8B48",
         "slide_id": "PPA-CASE-I-CONTINUATION",
         "semantic_stage": "experiment_design",
         "observations": {
@@ -1899,8 +2211,8 @@
             "value": 0
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 1
           },
           "plot_count": {
             "state": "value",
@@ -1923,8 +2235,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -1934,9 +2246,17 @@
             "state": "value",
             "value": 0
           },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 1
+          },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 1
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -1948,11 +2268,11 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 3
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "secondary_visual_count": {
             "state": "value",
@@ -1960,7 +2280,7 @@
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "CAD",
@@ -1986,7 +2306,7 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "20ae573427a7ca6be9170841da84c17a7d6de08e2cc00ba79e3c6725811bd5db"
+        "content_shape_sha256": "0fb82320bc478717f5b5a027ff267e592c66f94527b16eb708fa5a6f7296dbea"
       },
       "eligible_body_families": [
         "BCF-HARDWARE-DESIGN-PROCEDURE"
@@ -2004,16 +2324,26 @@
             "go_criterion"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
             "historical_consistency_fit": 2,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "exact_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 30
+            "total": 42
           },
           "candidate_status": "eligible"
         }
@@ -2064,7 +2394,7 @@
       "historical": false,
       "tie": false,
       "content_shape": {
-        "content_shape_id": "SCS-9c131399ee1ca2a3",
+        "content_shape_id": "SCS-9C131399EE1CA2A3",
         "slide_id": "PPA-CASE-J-DIVERSITY",
         "semantic_stage": "result_comparison",
         "observations": {
@@ -2089,12 +2419,12 @@
             "value": 0
           },
           "cad_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "plot_count": {
             "state": "value",
-            "value": 0
+            "value": 3
           },
           "schematic_count": {
             "state": "value",
@@ -2113,8 +2443,8 @@
             "value": null
           },
           "formula_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "comparison_side_count": {
             "state": "unavailable",
@@ -2124,9 +2454,17 @@
             "state": "value",
             "value": 0
           },
+          "citation_count": {
+            "state": "value",
+            "value": 0
+          },
+          "metric_count": {
+            "state": "value",
+            "value": 0
+          },
           "result_metric_count": {
-            "state": "unavailable",
-            "value": null
+            "state": "value",
+            "value": 0
           },
           "mechanism_node_count": {
             "state": "unavailable",
@@ -2138,19 +2476,19 @@
           },
           "evidence_item_count": {
             "state": "value",
-            "value": 0
+            "value": 3
           },
           "primary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 1
           },
           "secondary_visual_count": {
             "state": "value",
-            "value": 0
+            "value": 2
           }
         },
         "text_density_class": "medium",
-        "evidence_density_class": "low",
+        "evidence_density_class": "medium",
         "composition_content_items": [
           {
             "item_id": "P1",
@@ -2176,38 +2514,13 @@
         ],
         "content_items_provided": true,
         "shape_basis": "canonical_slidespec_projection",
-        "content_shape_sha256": "ff6e2e38f193ca9711dd3169ece28859a2741f6568c5e082638c573e00efa2ca"
+        "content_shape_sha256": "4aa591ced2c291fd76f11d5604d4e0e89049c2895ee22ace2f6a1f655f484223"
       },
       "eligible_body_families": [
-        "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
-        "BCF-PHYSICAL-VALIDATION-MATRIX"
+        "BCF-PHYSICAL-VALIDATION-MATRIX",
+        "BCF-THREE-COLUMN-PHYSICAL-COMPARISON"
       ],
       "candidates": [
-        {
-          "candidate_id": "PPC-8B074929C8B57B90",
-          "slide_id": "PPA-CASE-J-DIVERSITY",
-          "dependency_hash": "61ddc4568cf93c159b92c29c3fda90d8e2352c7b366fba0c20e3a106167753ca",
-          "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
-          "structure_fingerprint": "8f1f9b421132e6915274f6e4233879424c5311fea469a2aec8aae16ecaa0496c",
-          "region_plan": [
-            "three_physical_columns",
-            "criteria_strip",
-            "decision_callout"
-          ],
-          "score": {
-            "semantic_fit": 6,
-            "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
-            "historical_consistency_fit": 0,
-            "bounded_diversity_fit": 0,
-            "semantic_hard_match": true,
-            "capacity_hard_match": true,
-            "required_role_coverage": true,
-            "total": 28
-          },
-          "candidate_status": "eligible"
-        },
         {
           "candidate_id": "PPC-EFFDE13A1C6DCF85",
           "slide_id": "PPA-CASE-J-DIVERSITY",
@@ -2220,16 +2533,58 @@
             "caption_matrix"
           ],
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 4,
             "capacity_fit": 3,
-            "evidence_fit": 1,
-            "body_recurrence_fit": 1,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
             "historical_consistency_fit": 0,
             "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
             "semantic_hard_match": true,
             "capacity_hard_match": true,
             "required_role_coverage": true,
-            "total": 28
+            "total": 38
+          },
+          "candidate_status": "eligible"
+        },
+        {
+          "candidate_id": "PPC-8B074929C8B57B90",
+          "slide_id": "PPA-CASE-J-DIVERSITY",
+          "dependency_hash": "61ddc4568cf93c159b92c29c3fda90d8e2352c7b366fba0c20e3a106167753ca",
+          "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+          "structure_fingerprint": "8f1f9b421132e6915274f6e4233879424c5311fea469a2aec8aae16ecaa0496c",
+          "region_plan": [
+            "three_physical_columns",
+            "criteria_strip",
+            "decision_callout"
+          ],
+          "score": {
+            "semantic_fit": 5,
+            "capacity_fit": 3,
+            "evidence_fit": 3,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 22
           },
           "candidate_status": "eligible"
         }
@@ -2241,12 +2596,12 @@
           "PPC-8B074929C8B57B90",
           "PPC-EFFDE13A1C6DCF85"
         ],
-        "selected_candidate_id": "PPC-8B074929C8B57B90",
+        "selected_candidate_id": "PPC-EFFDE13A1C6DCF85",
         "selection_mode": "automatic",
         "historical_lock_status": "not_locked",
         "planner_version": "2.0.0",
         "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
-        "decision_hash": "bfd45638fe5dc18c77b09e14e5532c4a6a0d60e2d80875829343d998b91edf1f"
+        "decision_hash": "aba1c1f0f3c57cadd93dd9e86ce73e3df245cd78bff1687d14be4329665768af"
       },
       "rejection_reasons": []
     }
@@ -2254,11 +2609,51 @@
   "candidate_difference_audit": {
     "records": [
       {
+        "slide_id": "PPA-CASE-C-RESULT",
+        "candidate_a": "PPC-497C2609E843D136",
+        "candidate_b": "PPC-6DC7B591568B4649",
+        "structure_fingerprint_a": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+        "structure_fingerprint_b": "8848c6775dbcae232a24319e73b16d33057e80f6ac6b62622a1332e543fcfbd3",
+        "structurally_distinct": true
+      },
+      {
+        "slide_id": "PPA-CASE-E-LITERATURE",
+        "candidate_a": "PPC-2067AD3AC8E29B97",
+        "candidate_b": "PPC-E2D8E8694848D8DD",
+        "structure_fingerprint_a": "717522fbabbb111732dccebd2e1f8c5c4d92845563411a237900f4da14a7ecf9",
+        "structure_fingerprint_b": "452603b45ef24568f366d0460de0977038464f82c9233daef6021c54ae37741d",
+        "structurally_distinct": true
+      },
+      {
+        "slide_id": "PPA-CASE-F-COMPARISON",
+        "candidate_a": "PPC-1BB2BEBF7E6618D7",
+        "candidate_b": "PPC-44A416081EC9BE79",
+        "structure_fingerprint_a": "bf8424cc639ca5f614bfbe1e2c3142a3d9c31a958ff81583baa5b306f07ce728",
+        "structure_fingerprint_b": "8f1f9b421132e6915274f6e4233879424c5311fea469a2aec8aae16ecaa0496c",
+        "structurally_distinct": true
+      },
+      {
+        "slide_id": "PPA-CASE-G-PRINCIPLE",
+        "candidate_a": "PPC-E866D0D74E77404B",
+        "candidate_b": "PPC-CF994760E192A2C1",
+        "structure_fingerprint_a": "4077ddcd09484723edf39959c0ee40ec07b0d4044c9cc2b8f9a29844ce7cdcff",
+        "structure_fingerprint_b": "452603b45ef24568f366d0460de0977038464f82c9233daef6021c54ae37741d",
+        "structurally_distinct": true
+      },
+      {
+        "slide_id": "PPA-CASE-H-HISTORICAL",
+        "candidate_a": "PPC-453ABDFB2283E7A6",
+        "candidate_b": "PPC-468E2014216AC345",
+        "structure_fingerprint_a": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+        "structure_fingerprint_b": "8848c6775dbcae232a24319e73b16d33057e80f6ac6b62622a1332e543fcfbd3",
+        "structurally_distinct": true
+      },
+      {
         "slide_id": "PPA-CASE-J-DIVERSITY",
-        "candidate_a": "PPC-8B074929C8B57B90",
-        "candidate_b": "PPC-EFFDE13A1C6DCF85",
-        "structure_fingerprint_a": "8f1f9b421132e6915274f6e4233879424c5311fea469a2aec8aae16ecaa0496c",
-        "structure_fingerprint_b": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+        "candidate_a": "PPC-EFFDE13A1C6DCF85",
+        "candidate_b": "PPC-8B074929C8B57B90",
+        "structure_fingerprint_a": "a7c6719ca1b91600f3fb930e8a264a4587577b3c6d032e12e9412cc3e326b044",
+        "structure_fingerprint_b": "8f1f9b421132e6915274f6e4233879424c5311fea469a2aec8aae16ecaa0496c",
         "structurally_distinct": true
       }
     ],
@@ -2266,10 +2661,10 @@
   },
   "metrics": {
     "logical_slides_evaluated": 10,
-    "candidate_count": 11,
+    "candidate_count": 16,
     "candidate_count_distribution": {
-      "1": 9,
-      "2": 1
+      "1": 4,
+      "2": 6
     },
     "automatic_selections": 9,
     "historical_reuse_selections": 1,
@@ -2278,11 +2673,9 @@
     "body_family_distribution": {
       "BCF-HARDWARE-DESIGN-PROCEDURE": 2,
       "BCF-LITERATURE-VISUAL-MATRIX": 1,
-      "BCF-PHYSICAL-VALIDATION-MATRIX": 2,
+      "BCF-PHYSICAL-VALIDATION-MATRIX": 5,
       "BCF-PRINCIPLE-EQUIPMENT-SPLIT": 1,
-      "BCF-REAL-RESULT-VALIDATION": 2,
-      "BCF-TECHNOLOGY-COMPARISON": 1,
-      "BCF-THREE-COLUMN-PHYSICAL-COMPARISON": 1
+      "BCF-TECHNOLOGY-COMPARISON": 1
     }
   }
 }

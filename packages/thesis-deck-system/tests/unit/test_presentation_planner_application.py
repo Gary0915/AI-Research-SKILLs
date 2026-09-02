@@ -376,6 +376,8 @@ def test_physical_realization_candidate_state_hashes_the_exact_execution_surface
 
     assert state["component_count"] == len(state["component_hashes"])
     assert state["component_count"] >= 12
+    assert "thesis-deck-system/schemas/planner-visual-calibration-qa.schema.json" in state["component_hashes"]
+    assert "thesis-deck-system/artifacts/phase3/planner-visual-calibration-qa.json" in state["component_hashes"]
     assert len(state["candidate_state_sha256"]) == 64
     assert all(len(value) == 64 for value in state["component_hashes"].values())
 

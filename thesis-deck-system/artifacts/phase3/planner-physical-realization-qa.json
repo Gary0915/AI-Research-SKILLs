@@ -5,15 +5,19 @@
   "content_driven_eligibility": "pass",
   "recipe_coverage": {
     "recipe_count": 10,
-    "physical_family_coverage": "10/10",
+    "physical_family_coverage": "8/10",
+    "recipe_registry_family_coverage": "10/10",
+    "physical_recipe_test_coverage": "10/10",
+    "review_deck_materialized_family_coverage": "10/10",
+    "fully_occupied_golden_family_coverage": "10/10",
     "duplicate_recipe_id_count": 0,
     "missing_family_count": 0
   },
   "candidate_counts": {
     "logical_case_count": 10,
-    "eligible_candidate_count": 11,
-    "multi_candidate_case_count": 1,
-    "multi_candidate_status": "insufficient_multi_candidate_evidence"
+    "eligible_candidate_count": 16,
+    "multi_candidate_case_count": 6,
+    "multi_candidate_status": "sufficient_multi_candidate_coverage"
   },
   "planner_fit": {
     "hard_semantic_mismatch_selected_count": 0,

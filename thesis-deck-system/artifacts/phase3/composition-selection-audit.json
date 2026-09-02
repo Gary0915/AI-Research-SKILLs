@@ -1,563 +1,988 @@
 {
   "audit_id": "PP-SELECT-001",
   "slide_count": 20,
-  "candidate_count": 23,
+  "candidate_count": 29,
   "selections": [
     {
       "slide_id": "FVCC-COVER-001",
-      "content_shape_hash": "f336866775afdd0be0c6f5edf1db01b5939f15f614716771bc3004291c234527",
+      "content_shape_hash": "5ffc4736dafff65ff7442ed973828d80b0a3052a3c8cf5d687cb41e927b83caa",
       "candidate_ids": [
-        "CC-F402A483DBDEB3AB"
+        "CC-20ECD9CD3C33BFC1"
       ],
-      "selected_candidate_id": "CC-F402A483DBDEB3AB",
+      "selected_candidate_id": "CC-20ECD9CD3C33BFC1",
       "selection_mode": "automatic",
       "historical_lock_status": "not_locked",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-F402A483DBDEB3AB",
+          "candidate_id": "CC-20ECD9CD3C33BFC1",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 4,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 7
           }
         }
       ],
       "selection_reason": "deterministic_fit_then_bounded_diversity_tiebreaker",
-      "decision_sha256": "c1f1306e0748fc9497842b1ff1a134b32cdf4417246dc3896c6e37c2d2949d66"
+      "decision_sha256": "a733d3aa39a2335386328e3fe929c8f87f0b0479738d866de8dfc753c14dc662"
     },
     {
       "slide_id": "S-PHASE2-PROGRESS-01",
-      "content_shape_hash": "30876dff1656f02e9c9dfeaa4c0cbef8886f4be717d477858fbf155a0c13c1fa",
+      "content_shape_hash": "4c451bfb8ebd6559df2247302e1a316277284db013a571dbdf9d3360db453b15",
       "candidate_ids": [
-        "CC-DBE13175EDAD8C18"
+        "CC-BE586E33CDE0CF36"
       ],
-      "selected_candidate_id": "CC-DBE13175EDAD8C18",
+      "selected_candidate_id": "CC-BE586E33CDE0CF36",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-DBE13175EDAD8C18",
+          "candidate_id": "CC-BE586E33CDE0CF36",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 4,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 7
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "c5595fa62ffa4e4789ba6392b3c4a0852e425feacb7c8f54d5ebcf26085dc09d"
+      "decision_sha256": "24991ddd90eef2fe16d32311809550889731549cb1cf9952beb41122f2d14635"
     },
     {
       "slide_id": "S-H001-HYPOTHESIS-TITLE-01",
-      "content_shape_hash": "b1f3b54099097145ecb943e874c7a82cc8241557a41dd99a9f6692632138c546",
+      "content_shape_hash": "9a4a1fbf45995cf5587a9ccc18ef8794a9a1b3fbc85db1ced9bc5271d5c5cbcb",
       "candidate_ids": [
-        "CC-F4710FB399D4624F"
+        "CC-53A93492A4D850D9"
       ],
-      "selected_candidate_id": "CC-F4710FB399D4624F",
+      "selected_candidate_id": "CC-53A93492A4D850D9",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-F4710FB399D4624F",
+          "candidate_id": "CC-53A93492A4D850D9",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "47213651564a10da7305de5e2aa4475171150c205f36783424fece56d246650e"
+      "decision_sha256": "cefa1e5ef2c50b238baaaf6ddcf314eef853884fb57f65c42210edc30db0a67f"
     },
     {
       "slide_id": "S-H001-PROBLEM-DEFINITION-02",
-      "content_shape_hash": "af204fc2041b24020659bc8812e8dcc6861333f832ad16adc898df289b3ab245",
+      "content_shape_hash": "b6c18f25a56ff107922afa3a0fd31acf3e08497d9d55f40aaca3d221067141cf",
       "candidate_ids": [
-        "CC-404F57043FFA3A97"
+        "CC-9EFF5DABAE9428F4"
       ],
-      "selected_candidate_id": "CC-404F57043FFA3A97",
+      "selected_candidate_id": "CC-9EFF5DABAE9428F4",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-404F57043FFA3A97",
+          "candidate_id": "CC-9EFF5DABAE9428F4",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "c3e73b6ae19a1e8248e965db210ec6cc024021261da0408b5b649d7792539d5e"
+      "decision_sha256": "63e0ce9d99a7237396b7fae0b3e11f803566412a565b76d3317ccaa7972e006d"
     },
     {
       "slide_id": "S-H001-FISHBONE-LOCATOR-03",
-      "content_shape_hash": "f9382fb300554ec489d778f10894e4d9e7441e2b46387b3a4e6e55a1ab6488ed",
+      "content_shape_hash": "c09292490b69b27601b202760765a12d66fde112de6ae5d66aabc3653d9709ae",
       "candidate_ids": [
-        "CC-8A1DF57A9722958F"
+        "CC-C0F9ED4A97A21177"
       ],
-      "selected_candidate_id": "CC-8A1DF57A9722958F",
+      "selected_candidate_id": "CC-C0F9ED4A97A21177",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-8A1DF57A9722958F",
+          "candidate_id": "CC-C0F9ED4A97A21177",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "b92ab3e03edf61323b2aa0e00e2f21e65c9f8efb941777d7c4662f31dfce621b"
+      "decision_sha256": "3307d264b5f566c74d03b3e454e929efcb936967df6bcec5bd8d163886c10b1f"
     },
     {
       "slide_id": "S-H001-OBSERVATION-PROBLEM-04",
-      "content_shape_hash": "7b46be215c3430b81b6978b3a9c4a7f6c6fd5758a22258084143ec8fde44e90d",
+      "content_shape_hash": "e4b945cfa5ca14ad52f587973256513248f451661e6163ac56f019382f5e09ef",
       "candidate_ids": [
-        "CC-FE93719DB1BCFEB6"
+        "CC-A314F2417EDB2D61"
       ],
-      "selected_candidate_id": "CC-FE93719DB1BCFEB6",
+      "selected_candidate_id": "CC-A314F2417EDB2D61",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-FE93719DB1BCFEB6",
+          "candidate_id": "CC-A314F2417EDB2D61",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "c17965e11e5314458b6c1e502d3c91f450952627d6411e610a75a25db4e50b9a"
+      "decision_sha256": "06718f0196984cde123b90d2c0870467686f340b92a9789447d12097a3ef13d9"
     },
     {
       "slide_id": "S-H001-LITERATURE-MECHANISM-05",
-      "content_shape_hash": "312c78236ecb754df1f008dce9175e8bc4866c091b2d61f615be95a9801c5b7a",
+      "content_shape_hash": "b8fe82534cfef76b25b90e68cd7727f0e96dd9049bd402436742c6c2d062c8f0",
       "candidate_ids": [
-        "CC-56E66BBCD62E6ACA",
-        "CC-83ADB08EC0C364E1"
+        "CC-942410A9126B8FD3",
+        "CC-CE1BA7F4B6BE13C0",
+        "CC-F8C0D6C428646FB6"
       ],
-      "selected_candidate_id": "CC-83ADB08EC0C364E1",
+      "selected_candidate_id": "CC-942410A9126B8FD3",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-56E66BBCD62E6ACA",
+          "candidate_id": "CC-942410A9126B8FD3",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         },
         {
-          "candidate_id": "CC-83ADB08EC0C364E1",
+          "candidate_id": "CC-CE1BA7F4B6BE13C0",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 11,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0617",
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 3,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 19
+          }
+        },
+        {
+          "candidate_id": "CC-F8C0D6C428646FB6",
+          "score": {
+            "semantic_fit": 4,
+            "capacity_fit": 3,
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 7
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "6de8430204dadec1642e9222186701dfbdea6eb925d7c1f82a429c38ed97cf56"
+      "decision_sha256": "5867c23589ed78274ed9dd7815ee8d189e6e2f1122f71ce857aad6d2272df476"
     },
     {
       "slide_id": "S-H001-EXPERIMENT-DESIGN-06",
-      "content_shape_hash": "8f81794fc9c3e82bdac9f4b3a32c0d8f2e1609e1ce78fdec239b0981d006d9b1",
+      "content_shape_hash": "0b249bbeb3375bda3aed7f9bf604b89f453acd873cbb52c65ca9ba4669b64b7c",
       "candidate_ids": [
-        "CC-6FD31F7545E767FF",
-        "CC-854E50E3AC19BB8F"
+        "CC-D92085395047546A",
+        "CC-F56EA69EE7BCA0CB"
       ],
-      "selected_candidate_id": "CC-854E50E3AC19BB8F",
+      "selected_candidate_id": "CC-D92085395047546A",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-6FD31F7545E767FF",
+          "candidate_id": "CC-D92085395047546A",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 11,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0617",
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 3,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 19
           }
         },
         {
-          "candidate_id": "CC-854E50E3AC19BB8F",
+          "candidate_id": "CC-F56EA69EE7BCA0CB",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 17
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "97f48afa1b97faf5428436ffbf8c8d1eb2c728033a2386c82d13f5ca2b25899e"
+      "decision_sha256": "43f9f4ce855f835d66cf71f08903469003b114ed643284c70f4f8d874f12c427"
     },
     {
       "slide_id": "S-H001-EXPERIMENT-DESIGN-07",
-      "content_shape_hash": "90dfcef6f41c9c6e6f2437df93ad054b6066934b12d0f75e0ca8c12b65d49eae",
+      "content_shape_hash": "111ab45a132412d69255ced78d8e959c6970d7d4c569cbbe87a031321e0e00e5",
       "candidate_ids": [
-        "CC-4E7FDB82A9E953EF",
-        "CC-87FB145D0CD23442"
+        "CC-084C16127C1D9DE6",
+        "CC-1B33AB218272733F"
       ],
-      "selected_candidate_id": "CC-4E7FDB82A9E953EF",
+      "selected_candidate_id": "CC-084C16127C1D9DE6",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-4E7FDB82A9E953EF",
+          "candidate_id": "CC-084C16127C1D9DE6",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 11,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0617",
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 3,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 19
           }
         },
         {
-          "candidate_id": "CC-87FB145D0CD23442",
+          "candidate_id": "CC-1B33AB218272733F",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 17
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "6165e16b2e99489eb8ee7b844d993559a700a5e3f15b2b76094ef2863aa17b7f"
+      "decision_sha256": "ef5424408c46c8a6fbd0382e4dfab179b5ed057a164eb9226da3f9f0147f80b9"
     },
     {
       "slide_id": "S-H001-RESULT-SINGLE-08",
-      "content_shape_hash": "9c8a409e36d3ce908d598a3aabef5d411d9a911d29f0236d637faf40b63324ac",
+      "content_shape_hash": "3a512f9f317bfa4bb77afc7ca6313776412665cb82f60da2612da2b960fbe41e",
       "candidate_ids": [
-        "CC-7E3219982650D6A4"
+        "CC-02BFF563453F683C",
+        "CC-C5001AE46A25A458"
       ],
-      "selected_candidate_id": "CC-7E3219982650D6A4",
+      "selected_candidate_id": "CC-02BFF563453F683C",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-7E3219982650D6A4",
+          "candidate_id": "CC-02BFF563453F683C",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
+          }
+        },
+        {
+          "candidate_id": "CC-C5001AE46A25A458",
+          "score": {
+            "semantic_fit": 4,
+            "capacity_fit": 3,
+            "evidence_fit": 0,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 16
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "13a11434e601bdafed269b7d8c4a1b8915e5d6598229ca378db2c956618035b7"
+      "decision_sha256": "12cb37905aba90246982b7e446db661d7a11dad492855a94c022afb3882198d6"
     },
     {
       "slide_id": "S-H001-RESULT-SINGLE-09",
-      "content_shape_hash": "9c8a409e36d3ce908d598a3aabef5d411d9a911d29f0236d637faf40b63324ac",
+      "content_shape_hash": "3a512f9f317bfa4bb77afc7ca6313776412665cb82f60da2612da2b960fbe41e",
       "candidate_ids": [
-        "CC-431711D9D5B58705"
+        "CC-8AFE63424ED280F7",
+        "CC-A5276BDBC05ADFF3"
       ],
-      "selected_candidate_id": "CC-431711D9D5B58705",
+      "selected_candidate_id": "CC-A5276BDBC05ADFF3",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-431711D9D5B58705",
+          "candidate_id": "CC-8AFE63424ED280F7",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 4,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 16
+          }
+        },
+        {
+          "candidate_id": "CC-A5276BDBC05ADFF3",
+          "score": {
+            "semantic_fit": 5,
+            "capacity_fit": 3,
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "68bf1859bc24d545fb479281f9e5b3c4d27c3ffab184e2315515ccd67add938f"
+      "decision_sha256": "390925e757579d697302dc260d0575a96140bba8903226f2b142b5d8f3f22cba"
     },
     {
       "slide_id": "S-H001-LAYER-INTEGRATED-DISCUSSION-10",
-      "content_shape_hash": "3b2f83c5d2ca13637acc27e41fb2e32bf72b5abe28174adf2bacc693cab4ebe2",
+      "content_shape_hash": "b578a183829edeea23c2c483aefb4fc899304e203e5239e3964cdd9d338e7331",
       "candidate_ids": [
-        "CC-97EF1B03684BA638"
+        "CC-F0F90F93ACC9FB5F",
+        "CC-F9D51958741DB8E1"
       ],
-      "selected_candidate_id": "CC-97EF1B03684BA638",
+      "selected_candidate_id": "CC-F9D51958741DB8E1",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-97EF1B03684BA638",
+          "candidate_id": "CC-F0F90F93ACC9FB5F",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
+          }
+        },
+        {
+          "candidate_id": "CC-F9D51958741DB8E1",
+          "score": {
+            "semantic_fit": 5,
+            "capacity_fit": 3,
+            "evidence_fit": 0,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 17
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "02e5c8a8c89b9d157c9cb79b0bbc8333810507c5a654304292de22f26c297b93"
+      "decision_sha256": "e9ee940b5255b40847b1154908ef08bb9b671113da0f7fe18383f4e6d8672fd2"
     },
     {
       "slide_id": "S-H001-LAYER-SUMMARY-DECISION-11",
-      "content_shape_hash": "83c486a9b95eb65ea5de322ded3a5274318b7f5631abf62194263c28b18d240f",
+      "content_shape_hash": "d2471892fdc51f1eae2cce0921c74044385d62049564f4ae330501a820ff38a0",
       "candidate_ids": [
-        "CC-50C0E894108D97EF"
+        "CC-048FD2B83C83C2C3"
       ],
-      "selected_candidate_id": "CC-50C0E894108D97EF",
+      "selected_candidate_id": "CC-048FD2B83C83C2C3",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-50C0E894108D97EF",
+          "candidate_id": "CC-048FD2B83C83C2C3",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "7b60dec7dd0543b44d4c0469fad4db86df8e9f575f76acf0abde2d1c77f20f40"
+      "decision_sha256": "a031fc97b82d8c301fb9ea151bbeffdee791fe85896999503a99fd2b030ba446"
     },
     {
       "slide_id": "S-H001-HYPOTHESIS-TRANSITION-12",
-      "content_shape_hash": "ea866838c6549b96cdae5c1bb51572e001bae356e2439bd4cb317e5dccda1d2e",
+      "content_shape_hash": "2c93c5ba4bf024fbd097a3a1b82f62a1fe803956769c355d2c404ff254819811",
       "candidate_ids": [
-        "CC-DBB1ECB4ACDB3E45"
+        "CC-20FBA38129A6E1CF",
+        "CC-5A8E7DC84D56ACBB"
       ],
-      "selected_candidate_id": "CC-DBB1ECB4ACDB3E45",
+      "selected_candidate_id": "CC-5A8E7DC84D56ACBB",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-DBB1ECB4ACDB3E45",
+          "candidate_id": "CC-20FBA38129A6E1CF",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 4,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 7
+          }
+        },
+        {
+          "candidate_id": "CC-5A8E7DC84D56ACBB",
+          "score": {
+            "semantic_fit": 5,
+            "capacity_fit": 3,
+            "evidence_fit": 0,
+            "body_recurrence_fit": 11,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0617",
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 3,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 19
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "9669da263845fd1b7c9248fa08782b48e491b565aad1c2025b7fbc6a441faf39"
+      "decision_sha256": "765a687a656df58a0149faeab81647f08d0cf423bd2845c17f42fc04f7075f5d"
     },
     {
       "slide_id": "S-H002-HYPOTHESIS-TITLE-01",
-      "content_shape_hash": "f4f57f2ab01bf9be7b590e0ff7e38d0734561e18074386ba90a50dc4fa328e49",
+      "content_shape_hash": "6cf4077ec4cd74bbb61309f42bfebe4081923c31511ffb696c60eb9d3bc78d87",
       "candidate_ids": [
-        "CC-A09F7CD73948A2B1"
+        "CC-E0FDC550DEF561CD"
       ],
-      "selected_candidate_id": "CC-A09F7CD73948A2B1",
+      "selected_candidate_id": "CC-E0FDC550DEF561CD",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-A09F7CD73948A2B1",
+          "candidate_id": "CC-E0FDC550DEF561CD",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "3aca2deaceb3b5d3727bc8b31f33c82d8745286e836005843cdbc698237aa6d7"
+      "decision_sha256": "a2d20d67d95bdf635c49a691cb1388ca4b2346367835e050dea9481cebaa5b2a"
     },
     {
       "slide_id": "S-H002-PROBLEM-DEFINITION-02",
-      "content_shape_hash": "af204fc2041b24020659bc8812e8dcc6861333f832ad16adc898df289b3ab245",
+      "content_shape_hash": "b6c18f25a56ff107922afa3a0fd31acf3e08497d9d55f40aaca3d221067141cf",
       "candidate_ids": [
-        "CC-731F589A427540BC"
+        "CC-1C407EDA81D1F71E"
       ],
-      "selected_candidate_id": "CC-731F589A427540BC",
+      "selected_candidate_id": "CC-1C407EDA81D1F71E",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-731F589A427540BC",
+          "candidate_id": "CC-1C407EDA81D1F71E",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "c383874aad6dcfbddfb0da2d3f3be2501041653c453d3678d27a95c8b9abb9c9"
+      "decision_sha256": "75180fc62f7b24230e6ecfea1dcdb37daa00c1f758a06476e554ff3c5f2befb9"
     },
     {
       "slide_id": "S-H002-FISHBONE-LOCATOR-03",
-      "content_shape_hash": "f9382fb300554ec489d778f10894e4d9e7441e2b46387b3a4e6e55a1ab6488ed",
+      "content_shape_hash": "c09292490b69b27601b202760765a12d66fde112de6ae5d66aabc3653d9709ae",
       "candidate_ids": [
-        "CC-1F214789386408E0"
+        "CC-443B2CDEBFEFF593"
       ],
-      "selected_candidate_id": "CC-1F214789386408E0",
+      "selected_candidate_id": "CC-443B2CDEBFEFF593",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-1F214789386408E0",
+          "candidate_id": "CC-443B2CDEBFEFF593",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "113f7b21e23ceb20c128bdf17888cecd441814f3fb38549de0a498a5251de8eb"
+      "decision_sha256": "cc1759a214ecda3ecef00f65bfa62c9953662daa74ce11466c25988fa5e98533"
     },
     {
       "slide_id": "S-H002-OBSERVATION-PROBLEM-04",
-      "content_shape_hash": "612b71a83e2dc04dbbffb9d7ba6f9c544e1d0dd0ff0c2dd640f251aebfe82b52",
+      "content_shape_hash": "55d952956b65c715a3cbfb2dc1633555242bcabaf1bfe2c7a20b33208022a961",
       "candidate_ids": [
-        "CC-E18BAA996BF160C0"
+        "CC-A1048502BA743144"
       ],
-      "selected_candidate_id": "CC-E18BAA996BF160C0",
+      "selected_candidate_id": "CC-A1048502BA743144",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-E18BAA996BF160C0",
+          "candidate_id": "CC-A1048502BA743144",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "769c997e135f6f6d9caf1cec51cd7395995bbeddac441609f2e62ce9c5383a30"
+      "decision_sha256": "6a90f8bd4e66748da6788358dc132e9e0e959655a1b22da2a1da5a692d59da74"
     },
     {
       "slide_id": "S-H002-EXPERIMENT-DESIGN-06",
-      "content_shape_hash": "ae1256bd68dcc6cc53a75904413af9087c12703b21a6f16f219984baaf59b061",
+      "content_shape_hash": "5eefbb810835654dade571705a1e03426a06ebbb8d393db190ec6c45d0900680",
       "candidate_ids": [
-        "CC-7AA891013F357AA5"
+        "CC-2EC1F3BA5CA4BB3C",
+        "CC-D0368131B86C7559"
       ],
-      "selected_candidate_id": "CC-7AA891013F357AA5",
+      "selected_candidate_id": "CC-2EC1F3BA5CA4BB3C",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-7AA891013F357AA5",
+          "candidate_id": "CC-2EC1F3BA5CA4BB3C",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 4,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 9,
+            "body_recurrence_evidence": {
+              "reference_ids": [
+                "JDP-TSMC-2026-0730",
+                "JDP-TSMC-2026-0814"
+              ],
+              "reference_count": 2,
+              "priority_rank": 1,
+              "evidence_state": "reference_supported"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 16
+          }
+        },
+        {
+          "candidate_id": "CC-D0368131B86C7559",
+          "score": {
+            "semantic_fit": 5,
+            "capacity_fit": 3,
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "0bb1a30c2775b09dbf51aebde5c43e7b7b77c429b925e09ea27ac960ab0e8b4d"
+      "decision_sha256": "8fe69e48fb1bbe4a9eedcbadf48e1d83fa1f758851b23d870b6036850ab4d508"
     },
     {
       "slide_id": "S-H002-LAYER-SUMMARY-DECISION-09",
-      "content_shape_hash": "98aa737827b5cfb7bfb0668ed76864d619a33d6c4b3cca894550e36ffddd38ba",
+      "content_shape_hash": "8e12bdc9e3f7afa87742df89cc0443f12bd3804a824d8f01597cf50fcbf215f1",
       "candidate_ids": [
-        "CC-FDD0552E0C9C1C69"
+        "CC-3C2F1B0BA7A41359"
       ],
-      "selected_candidate_id": "CC-FDD0552E0C9C1C69",
+      "selected_candidate_id": "CC-3C2F1B0BA7A41359",
       "selection_mode": "historical_reuse",
       "historical_lock_status": "locked_dependency_unchanged",
       "planner_version": "1.0.0",
       "candidate_component_scores": [
         {
-          "candidate_id": "CC-FDD0552E0C9C1C69",
+          "candidate_id": "CC-3C2F1B0BA7A41359",
           "score": {
-            "semantic_fit": 6,
+            "semantic_fit": 5,
             "capacity_fit": 3,
-            "historical_consistency": 0,
-            "bounded_diversity": 0,
-            "hard_capacity_match": true,
-            "total": 9
+            "evidence_fit": 0,
+            "body_recurrence_fit": 0,
+            "body_recurrence_evidence": {
+              "reference_ids": [],
+              "reference_count": 0,
+              "priority_rank": null,
+              "evidence_state": "single_example_provisional"
+            },
+            "historical_consistency_fit": 0,
+            "bounded_diversity_fit": 0,
+            "compatibility_level": "compatible_fit",
+            "semantic_hard_match": true,
+            "capacity_hard_match": true,
+            "required_role_coverage": true,
+            "total": 8
           }
         }
       ],
       "selection_reason": "accepted_history_preserved",
-      "decision_sha256": "802561837058f8bde0234dd3b28640ba2a9ad2dc29f83d9029145b4cc9af2f89"
+      "decision_sha256": "4a0a2698ff5a1de2a167e317db8c8f5f0a19190b628185ce237c1e227d0abc68"
     }
   ],
   "unchanged_historical_slide_style_migration_count": 0,
