@@ -97,6 +97,38 @@ def test_v2_candidate_eligibility_is_derived_from_content_shape_and_items_not_a_
     assert "BCF-HARDWARE-DESIGN-PROCEDURE" not in missing_hardware_families
 
 
+def test_content_items_are_the_authoritative_capacity_observations_and_hash_input():
+    from thesis_deck_system.presentation_planner import build_scientific_content_shape
+
+    base = {
+        "slide_id": "S-SHAPE-ITEMS-001",
+        "semantic_stage": "experiment_design",
+        "title": "Synthetic capacity fixture",
+        "visible_text": ["controlled text"],
+        "source_semantic_fields": {"experiment_design": {}},
+        "source_bindings": {"evidence_refs": ["EV-001"]},
+        "governed_figure_route": None,
+        "composition_content_items": [
+            {"item_id": "PHOTO", "semantic_role": "setup", "presentation_role": "primary_visual", "content_kind": "photo", "required": True},
+            {"item_id": "PLOT", "semantic_role": "validation", "presentation_role": "secondary_visual", "content_kind": "plot", "required": True},
+            {"item_id": "CAP", "semantic_role": "validation", "presentation_role": "caption", "content_kind": "caption", "required": True},
+            {"item_id": "CITE", "semantic_role": "citation", "presentation_role": "citation_strip", "content_kind": "citation", "required": True},
+            {"item_id": "METRIC", "semantic_role": "validation", "presentation_role": "metric_callout", "content_kind": "metric", "required": True},
+        ],
+    }
+    first = build_scientific_content_shape(base)
+    changed_kind = build_scientific_content_shape(base | {"composition_content_items": base["composition_content_items"][:-1] + [{**base["composition_content_items"][-1], "content_kind": "callout"}]})
+
+    assert first["observations"]["photo_count"]["value"] == 1
+    assert first["observations"]["plot_count"]["value"] == 1
+    assert first["observations"]["caption_count"]["value"] == 1
+    assert first["observations"]["citation_count"]["value"] == 1
+    assert first["observations"]["metric_count"]["value"] == 1
+    assert first["observations"]["primary_visual_count"]["value"] == 1
+    assert first["observations"]["secondary_visual_count"]["value"] == 1
+    assert first["content_shape_sha256"] != changed_kind["content_shape_sha256"]
+
+
 def test_selection_rejects_candidates_that_fail_any_v2_hard_fit_gate():
     from thesis_deck_system.presentation_planner import select_composition
 

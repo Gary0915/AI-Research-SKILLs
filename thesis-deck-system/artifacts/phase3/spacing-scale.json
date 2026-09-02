@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "spacing_scale_id": "PSS-001",
+  "evidence_status": "synthetic_system_owned",
+  "tokens": {
+    "shell_title_gap": 0.18,
+    "region_gap": 0.16,
+    "panel_gap": 0.12,
+    "figure_caption_gap": 0.06,
+    "caption_to_next_content_gap": 0.12,
+    "table_cell_padding": 0.06,
+    "text_box_margin": 0.04,
+    "callout_padding": 0.08,
+    "section_separation": 0.22
+  }
+}

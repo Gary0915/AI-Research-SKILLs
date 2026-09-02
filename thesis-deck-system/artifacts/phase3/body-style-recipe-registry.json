@@ -1,0 +1,636 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "BSR-REG-001",
+  "recipes": [
+    {
+      "body_style_recipe_id": "BSR-FEASIBILITY-EVIDENCE-MATRIX",
+      "body_family_id": "BCF-FEASIBILITY-EVIDENCE-MATRIX",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-HARDWARE-DESIGN-PROCEDURE",
+      "body_family_id": "BCF-HARDWARE-DESIGN-PROCEDURE",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-LITERATURE-VISUAL-MATRIX",
+      "body_family_id": "BCF-LITERATURE-VISUAL-MATRIX",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-PHYSICAL-VALIDATION-MATRIX",
+      "body_family_id": "BCF-PHYSICAL-VALIDATION-MATRIX",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-PRINCIPLE-EQUIPMENT-SPLIT",
+      "body_family_id": "BCF-PRINCIPLE-EQUIPMENT-SPLIT",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-PROBLEM-TO-SOLUTION",
+      "body_family_id": "BCF-PROBLEM-TO-SOLUTION",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-REAL-RESULT-VALIDATION",
+      "body_family_id": "BCF-REAL-RESULT-VALIDATION",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-TECHNOLOGY-COMPARISON",
+      "body_family_id": "BCF-TECHNOLOGY-COMPARISON",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-TEXT-TOP-DUAL-VISUAL",
+      "body_family_id": "BCF-TEXT-TOP-DUAL-VISUAL",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    },
+    {
+      "body_style_recipe_id": "BSR-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "body_family_id": "BCF-THREE-COLUMN-PHYSICAL-COMPARISON",
+      "style_recipe_version": "1.0.0",
+      "spacing_scale_id": "PSS-001",
+      "source_evidence_ids": [
+        "JDP-TSMC-2026-0814-BODY"
+      ],
+      "evidence_status": "body_reference_supported",
+      "panel_treatment": {
+        "color_role": "background",
+        "border_role": "border"
+      },
+      "visual_frame_treatment": {
+        "border_role": "border"
+      },
+      "caption_treatment": {
+        "color_role": "caption_background",
+        "typography_role": "caption",
+        "spacing_token": "figure_caption_gap"
+      },
+      "citation_treatment": {
+        "color_role": "background",
+        "typography_role": "citation"
+      },
+      "metric_callout_treatment": {
+        "color_role": "focus",
+        "typography_role": "metric_primary"
+      },
+      "table_treatment": {
+        "header_color_role": "foreground",
+        "body_color_role": "background",
+        "padding_token": "table_cell_padding"
+      },
+      "equation_treatment": {
+        "color_role": "foreground",
+        "typography_role": "formula"
+      },
+      "focus_annotation": {
+        "color_role": "focus",
+        "typography_role": "callout"
+      },
+      "connector_roles": {
+        "major": "foreground",
+        "warning": "warning",
+        "measurement": "measurement_reference"
+      },
+      "section_divider": {
+        "color_role": "border"
+      },
+      "supporting_context_treatment": {
+        "color_role": "background",
+        "typography_role": "body"
+      },
+      "hierarchy": {
+        "primary": "primary_visual",
+        "secondary": "secondary_visual",
+        "supporting": "compact_context",
+        "caption": "caption",
+        "metric": "metric_callout",
+        "decision": "decision_callout"
+      }
+    }
+  ]
+}

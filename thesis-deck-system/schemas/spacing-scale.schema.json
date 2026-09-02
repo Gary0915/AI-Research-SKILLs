@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "spacing-scale.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "spacing_scale_id", "evidence_status", "tokens"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"}, "spacing_scale_id": {"const": "PSS-001"}, "evidence_status": {"const": "synthetic_system_owned"},
+    "tokens": {"type": "object", "additionalProperties": false, "required": ["shell_title_gap", "region_gap", "panel_gap", "figure_caption_gap", "caption_to_next_content_gap", "table_cell_padding", "text_box_margin", "callout_padding", "section_separation"], "properties": {"shell_title_gap": {"$ref": "#/$defs/token"}, "region_gap": {"$ref": "#/$defs/token"}, "panel_gap": {"$ref": "#/$defs/token"}, "figure_caption_gap": {"$ref": "#/$defs/token"}, "caption_to_next_content_gap": {"$ref": "#/$defs/token"}, "table_cell_padding": {"$ref": "#/$defs/token"}, "text_box_margin": {"$ref": "#/$defs/token"}, "callout_padding": {"$ref": "#/$defs/token"}, "section_separation": {"$ref": "#/$defs/token"}}}
+  }, "$defs": {"token": {"type": "number", "exclusiveMinimum": 0}}
+}

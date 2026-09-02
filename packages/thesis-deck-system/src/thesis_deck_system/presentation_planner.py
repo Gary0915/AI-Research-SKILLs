@@ -95,31 +95,41 @@ def build_scientific_content_shape(record: dict[str, Any]) -> dict[str, Any]:
     visible = record.get("visible_text") if isinstance(record.get("visible_text"), list) else []
     controls = _semantic_count(stage_fields, ("controls", "control", "control_conditions"))
     result_metric = _semantic_count(stage_fields, ("metrics", "result_metric", "result_identity"))
+    item_counts = {kind: sum(item["content_kind"] == kind for item in content_items) for kind in _CONTENT_KINDS}
+    primary_visual_items = sum(item["presentation_role"] == "primary_visual" and item["content_kind"] in {"photo", "cad", "plot", "schematic"} for item in content_items)
+    secondary_visual_items = sum(item["presentation_role"] == "secondary_visual" and item["content_kind"] in {"photo", "cad", "plot", "schematic"} for item in content_items)
+    item_observation = lambda kind, fallback: _observation(item_counts[kind] if content_items_provided else fallback)
     observations = {
         "title_chars": _observation(len(record["title"]) if isinstance(record["title"], str) else None),
         "primary_claim_count": _observation(_semantic_count(stage_fields, ("claim", "claims", "takeaway"))),
         "bullet_count": _observation(len(visible)),
         "paragraph_count": _observation(len(visible)),
-        "photo_count": _observation(1 if route == "photo" else 0),
-        "cad_count": _observation(_semantic_count(stage_fields, ("cad", "design"))),
-        "plot_count": _observation(1 if route == "scientific_plot" else 0),
-        "schematic_count": _observation(1 if route in {"mechanism", "experiment"} else 0),
-        "table_count": _observation(1 if route == "comparison" else 0),
+        "photo_count": item_observation("photo", 1 if route == "photo" else 0),
+        "cad_count": item_observation("cad", _semantic_count(stage_fields, ("cad", "design"))),
+        "plot_count": item_observation("plot", 1 if route == "scientific_plot" else 0),
+        "schematic_count": item_observation("schematic", 1 if route in {"mechanism", "experiment"} else 0),
+        "table_count": item_observation("table", 1 if route == "comparison" else 0),
         "table_rows_max": _observation(None),
         "table_columns_max": _observation(None),
-        "formula_count": _observation(_semantic_count(stage_fields, ("formula", "equations"))),
+        "formula_count": item_observation("formula", _semantic_count(stage_fields, ("formula", "equations"))),
         "comparison_side_count": _observation(2 if route == "comparison" else None),
-        "caption_count": _observation(1 if route else 0),
-        "result_metric_count": _observation(result_metric),
+        "caption_count": item_observation("caption", 1 if route else 0),
+        "citation_count": item_observation("citation", None),
+        "metric_count": item_observation("metric", result_metric),
+        "result_metric_count": item_observation("metric", result_metric),
         "mechanism_node_count": _observation(_semantic_count(stage_fields, ("nodes", "mechanism_nodes"))),
         "experiment_control_count": _observation(controls),
-        "evidence_item_count": _observation(len(record.get("source_bindings", {}).get("evidence_refs", [])) if isinstance(record.get("source_bindings"), dict) else None),
-        "primary_visual_count": _observation(1 if route else 0),
-        "secondary_visual_count": _observation(0),
+        "evidence_item_count": _observation(len(content_items) if content_items_provided else (len(record.get("source_bindings", {}).get("evidence_refs", [])) if isinstance(record.get("source_bindings"), dict) else None)),
+        "primary_visual_count": _observation(primary_visual_items if content_items_provided else (1 if route else 0)),
+        "secondary_visual_count": _observation(secondary_visual_items if content_items_provided else 0),
     }
     fingerprint = {
         "semantic_stage": record["semantic_stage"], "route": route,
         "observations": observations,
+        "normalized_composition_items": [
+            {key: item[key] for key in ("item_id", "semantic_role", "presentation_role", "content_kind", "required")}
+            for item in content_items
+        ],
         "text_density_class": _density(len(visible)),
         "evidence_density_class": _density(observations["evidence_item_count"]["value"]),
     }
@@ -137,16 +147,16 @@ def build_scientific_content_shape(record: dict[str, Any]) -> dict[str, Any]:
 def build_layout_capability_registry() -> list[dict[str, Any]]:
     """Return the bounded, queryable recipes; capacity is system heuristic only."""
     recipe_rows = (
-        ("BCF-TEXT-TOP-DUAL-VISUAL", ("A01", "A02"), ("formal_cover", "progress_todo"), (), ("text", "photo", "cad", "plot", "schematic"), 0, 2),
+        ("BCF-TEXT-TOP-DUAL-VISUAL", ("A01", "A02"), ("formal_cover", "progress_todo", "literature_mechanism", "hypothesis_transition"), (), ("text", "photo", "cad", "plot", "schematic", "citation", "formula", "table"), 0, 2),
         ("BCF-PRINCIPLE-EQUIPMENT-SPLIT", ("A17",), ("hypothesis_transition", "literature_mechanism"), ("principle", "equipment"), ("text", "schematic", "formula", "table", "photo"), 1, 2),
         ("BCF-FEASIBILITY-EVIDENCE-MATRIX", ("A09",), ("experiment_design",), ("setup",), ("text", "photo", "plot", "schematic", "caption"), 1, 4),
         ("BCF-HARDWARE-DESIGN-PROCEDURE", ("A09",), ("experiment_design",), ("hardware", "controls", "decision"), ("text", "cad", "schematic", "metric", "callout"), 1, 2),
-        ("BCF-PHYSICAL-VALIDATION-MATRIX", ("A11",), ("result_comparison",), ("validation",), ("photo", "plot", "caption", "metric", "text"), 2, 5),
+        ("BCF-PHYSICAL-VALIDATION-MATRIX", ("A11",), ("result_comparison", "result_single"), (), ("photo", "plot", "caption", "metric", "text"), 1, 5),
         ("BCF-TECHNOLOGY-COMPARISON", ("A14",), ("layer_integrated_discussion",), ("approach_a", "approach_b"), ("text", "table", "schematic", "plot", "metric"), 1, 3),
         ("BCF-PROBLEM-TO-SOLUTION", ("A03", "A04", "A05", "A12"), ("hypothesis_title", "problem_definition", "fishbone_locator", "observation_problem"), ("problem", "solution"), ("text", "schematic", "callout"), 0, 2),
         ("BCF-REAL-RESULT-VALIDATION", ("A10",), ("result_single",), ("result",), ("plot", "metric", "photo", "text", "caption"), 1, 2),
         ("BCF-LITERATURE-VISUAL-MATRIX", ("A06",), ("literature_mechanism",), ("literature", "citation"), ("photo", "plot", "schematic", "citation", "caption", "text"), 2, 4),
-        ("BCF-THREE-COLUMN-PHYSICAL-COMPARISON", ("A16",), ("layer_summary_decision", "result_comparison"), ("comparison",), ("text", "photo", "plot", "schematic", "table", "metric"), 3, 4),
+        ("BCF-THREE-COLUMN-PHYSICAL-COMPARISON", ("A16",), ("layer_summary_decision", "result_comparison", "layer_integrated_discussion"), ("comparison",), ("text", "photo", "plot", "schematic", "table", "metric"), 3, 4),
     )
     registry: list[dict[str, Any]] = []
     for family, archetypes, stages, required_roles, kinds, minimum, maximum in recipe_rows:

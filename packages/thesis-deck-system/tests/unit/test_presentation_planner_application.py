@@ -36,6 +36,16 @@ def test_candidates_are_structurally_distinct_and_tie_break_is_deterministic():
     assert first["candidate_difference_audit"]["fake_candidate_variant_count"] == 0
 
 
+def test_candidate_breadth_exposes_at_least_four_genuinely_valid_structural_alternatives():
+    from thesis_deck_system.presentation_planner_application import build_planner_application
+
+    application = build_planner_application(ROOT)
+    multi = [case for case in application["cases"] if len(case["candidates"]) >= 2]
+
+    assert len(multi) >= 4
+    assert all(len({candidate["structure_fingerprint"] for candidate in case["candidates"]}) == len(case["candidates"]) for case in multi)
+
+
 def test_all_closed_body_families_have_distinct_normalized_physical_recipes():
     from thesis_deck_system.presentation_planner_application import build_body_composition_recipe_registry
 
@@ -58,6 +68,16 @@ def test_candidate_physical_plans_bind_each_candidate_to_its_recipe_geometry():
     by_candidate = {plan["candidate_id"]: plan for plan in plans}
     for record in application["candidate_difference_audit"]["records"]:
         assert by_candidate[record["candidate_a"]]["geometry_hash"] != by_candidate[record["candidate_b"]]["geometry_hash"]
+
+
+def test_each_physical_plan_binds_a_closed_body_style_recipe_and_spacing_scale():
+    from thesis_deck_system.presentation_planner_application import build_physical_composition_plans, build_planner_application
+
+    plans = build_physical_composition_plans(build_planner_application(ROOT))
+
+    assert all(plan["body_style_recipe_id"].startswith("BSR-") for plan in plans)
+    assert all(plan["spacing_scale_id"] == "PSS-001" for plan in plans)
+    assert all(plan["style_authority_status"] == "body_only_no_shell_override" for plan in plans)
 
 
 def test_reverse_physical_audit_recovers_deterministic_region_identity_from_pptx(tmp_path: Path):

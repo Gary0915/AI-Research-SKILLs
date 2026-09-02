@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "presentation-typography-profile.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "typography_profile_id", "version", "style_profile_id", "roles", "font_family_fidelity", "theme_binding_valid", "native_render_verified", "source_evidence_ids", "status", "typography_profile_sha256"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"}, "typography_profile_id": {"const": "PTP-001"}, "version": {"const": "1.0.0"}, "style_profile_id": {"const": "VSP003"},
+    "roles": {"type": "array", "minItems": 16, "items": {"$ref": "#/$defs/role"}},
+    "font_family_fidelity": {"const": "insufficient_evidence"}, "theme_binding_valid": {"const": true}, "native_render_verified": {"const": false},
+    "source_evidence_ids": {"type": "array", "items": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"}},
+    "status": {"const": "partial_structural_calibration"}, "typography_profile_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "role": {"type": "object", "additionalProperties": false, "required": ["role", "latin_font_family", "cjk_font_family", "fallback_family", "font_size_pt", "minimum_font_size_pt", "weight", "italic", "color_role", "alignment", "vertical_alignment", "line_spacing", "paragraph_space_before_pt", "paragraph_space_after_pt", "text_box_margins_pt", "maximum_line_count", "fit_policy", "evidence_status"], "properties": {
+      "role": {"enum": ["deck_title", "section_title", "slide_title", "body", "body_emphasis", "caption", "citation", "metric_primary", "metric_secondary", "table_header", "table_body", "formula", "figure_label", "callout", "footer", "page_number"]},
+      "latin_font_family": {"const": "Aptos"}, "cjk_font_family": {"const": "Aptos"}, "fallback_family": {"const": "Aptos"},
+      "font_size_pt": {"type": "number", "exclusiveMinimum": 0}, "minimum_font_size_pt": {"type": "number", "exclusiveMinimum": 0}, "weight": {"enum": ["normal", "bold"]}, "italic": {"type": "boolean"},
+      "color_role": {"enum": ["background", "foreground", "muted", "border", "caption_background", "accent_primary", "focus", "warning", "measurement_reference"]}, "alignment": {"enum": ["left", "center", "right"]}, "vertical_alignment": {"const": "middle"}, "line_spacing": {"type": "number", "exclusiveMinimum": 0}, "paragraph_space_before_pt": {"type": "number", "minimum": 0}, "paragraph_space_after_pt": {"type": "number", "minimum": 0},
+      "text_box_margins_pt": {"type": "object", "additionalProperties": false, "required": ["left", "right", "top", "bottom"], "properties": {"left": {"type": "number", "minimum": 0}, "right": {"type": "number", "minimum": 0}, "top": {"type": "number", "minimum": 0}, "bottom": {"type": "number", "minimum": 0}}}, "maximum_line_count": {"type": "integer", "minimum": 1}, "fit_policy": {"const": "static_fit_no_uncontrolled_shrink"}, "evidence_status": {"const": "synthetic_system_owned"}
+    }}
+  }
+}

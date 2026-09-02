@@ -15,6 +15,7 @@ from typing import Any
 from pptx import Presentation
 
 from .pptx import PythonPptxAssembler
+from .body_style import build_body_style_recipe_registry
 from .presentation_planner import build_layout_capability_registry, build_scientific_content_shape, generate_composition_candidates
 from .template import create_sanitized_native_template
 from .incremental_deck_lineage import (
@@ -62,7 +63,7 @@ def _recipe_region(region_id: str, semantic_role: str, presentation_role: str, x
 def build_body_composition_recipe_registry() -> list[dict[str, Any]]:
     """Return the ten body-only normalized physical recipes used by Planner v2."""
     rows = {
-        "BCF-TEXT-TOP-DUAL-VISUAL": [_recipe_region("text_top", "explanation", "text_top", .04, .03, .92, .18), _recipe_region("left_visual", "evidence", "primary_visual", .04, .26, .43, .60, kinds=("photo", "cad", "plot", "schematic")), _recipe_region("right_visual", "evidence", "secondary_visual", .53, .26, .43, .60, kinds=("photo", "cad", "plot", "schematic"))],
+        "BCF-TEXT-TOP-DUAL-VISUAL": [_recipe_region("text_top", "explanation", "text_top", .04, .03, .92, .18, kinds=("text", "citation", "formula")), _recipe_region("left_visual", "evidence", "primary_visual", .04, .26, .43, .60, kinds=("photo", "cad", "plot", "schematic", "table")), _recipe_region("right_visual", "evidence", "secondary_visual", .53, .26, .43, .60, kinds=("photo", "cad", "plot", "schematic", "table"))],
         "BCF-PRINCIPLE-EQUIPMENT-SPLIT": [_recipe_region("principle", "principle", "primary_visual", .04, .06, .45, .53, kinds=("schematic", "text")), _recipe_region("formula", "principle", "formula", .04, .66, .45, .16, kinds=("formula", "text")), _recipe_region("equipment", "equipment", "secondary_visual", .53, .06, .43, .48, kinds=("photo", "schematic", "table")), _recipe_region("specification", "equipment", "specification_table", .53, .60, .43, .22, kinds=("table", "text"))],
         "BCF-FEASIBILITY-EVIDENCE-MATRIX": [_recipe_region("explanation", "setup", "procedure", .04, .04, .28, .78, kinds=("text", "metric")), _recipe_region("matrix_a", "setup", "primary_visual", .37, .05, .26, .34, kinds=("photo", "plot", "schematic")), _recipe_region("matrix_b", "setup", "secondary_visual", .68, .05, .26, .34, kinds=("photo", "plot", "schematic")), _recipe_region("matrix_c", "setup", "secondary_visual", .37, .47, .26, .34, kinds=("photo", "plot", "schematic")), _recipe_region("matrix_d", "setup", "secondary_visual", .68, .47, .26, .34, kinds=("photo", "plot", "schematic"))],
         "BCF-HARDWARE-DESIGN-PROCEDURE": [_recipe_region("hardware", "hardware", "primary_visual", .04, .05, .56, .70, kinds=("cad", "schematic", "photo")), _recipe_region("procedure", "controls", "procedure", .65, .05, .31, .48, kinds=("text", "table")), _recipe_region("go", "decision", "go_criterion", .65, .60, .31, .16, kinds=("metric", "callout"), z_order_class="emphasis")],
@@ -83,11 +84,13 @@ def build_body_composition_recipe_registry() -> list[dict[str, Any]]:
 def build_physical_composition_plans(application: dict[str, Any]) -> list[dict[str, Any]]:
     """Bind every eligible candidate to its recipe using the existing shell content bounds."""
     recipes = {item["body_family_id"]: item for item in build_body_composition_recipe_registry()}
+    styles = {item["body_family_id"]: item for item in build_body_style_recipe_registry(Path("."))}
     content_bounds = {"left": 0.7, "top": 1.25, "width": 11.85, "height": 5.1}
     plans: list[dict[str, Any]] = []
     for case in application["cases"]:
         for candidate in case["candidates"]:
             recipe = recipes[candidate["body_family_id"]]
+            style = styles[candidate["body_family_id"]]
             available = list(recipe["regions"])
             assignments = []
             for item in case["content_items"]:
@@ -112,7 +115,7 @@ def build_physical_composition_plans(application: dict[str, Any]) -> list[dict[s
                 for region in recipe["regions"]
             ]
             core = {"slide_id": case["slide_id"], "candidate_id": candidate["candidate_id"], "recipe_id": recipe["recipe_id"], "assignments": assignments, "physical_regions": physical_regions, "content_bounds": content_bounds}
-            plans.append({"physical_plan_id": f"PCP-{_hash(core)[:16].upper()}", "slide_id": case["slide_id"], "candidate_id": candidate["candidate_id"], "body_family_id": candidate["body_family_id"], "body_recipe_id": recipe["recipe_id"], "shell_profile_id": "VSP003", "content_bounds": content_bounds, "regions": recipe["regions"], "physical_regions": physical_regions, "content_item_assignments": assignments, "required_role_coverage_status": "pass" if required_content_assigned else "fail", "overflow_status": "pass", "geometry_hash": _hash({"recipe_id": recipe["recipe_id"], "regions": recipe["regions"]}), "physical_composition_hash": _hash(core), "unassigned_required_region_ids": sorted(required_regions - assigned_regions)})
+            plans.append({"physical_plan_id": f"PCP-{_hash(core)[:16].upper()}", "slide_id": case["slide_id"], "candidate_id": candidate["candidate_id"], "body_family_id": candidate["body_family_id"], "body_recipe_id": recipe["recipe_id"], "body_style_recipe_id": style["body_style_recipe_id"], "spacing_scale_id": style["spacing_scale_id"], "style_authority_status": "body_only_no_shell_override", "shell_profile_id": "VSP003", "content_bounds": content_bounds, "regions": recipe["regions"], "physical_regions": physical_regions, "content_item_assignments": assignments, "required_role_coverage_status": "pass" if required_content_assigned else "fail", "overflow_status": "pass", "geometry_hash": _hash({"recipe_id": recipe["recipe_id"], "regions": recipe["regions"]}), "physical_composition_hash": _hash(core), "unassigned_required_region_ids": sorted(required_regions - assigned_regions)})
     return plans
 
 
